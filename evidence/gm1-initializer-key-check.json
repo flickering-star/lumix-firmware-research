@@ -1,0 +1,1014 @@
+{
+  "schema": 1,
+  "scope": "Offline literal-key hypothesis checks in one acquired GM1 data initializer",
+  "source": {
+    "work/gm1-ram-initializer-window.bin": {
+      "bytes": 32768,
+      "sha256": "adc677a6184a3762271469a1c4ee52c109a6959f15df30fd68ff73538e22f349"
+    },
+    "captures/gm1-usb-flash-TOsIFxZY/result/flash-prefix.bin": {
+      "bytes": 64,
+      "sha256": "f0e7a9103888098d5b9d9c9c83ae40afb2b7b3591931f911decdd6e1ce4dcc12"
+    },
+    "firmware/official-gm1-v11/GM1__V11.bin": {
+      "bytes": 31983104,
+      "sha256": "3e8b4aab23f79db160cd016af0e466011f047add07bb7441c642f6b70df30d90"
+    }
+  },
+  "verifier": {
+    "path": "tools/gm1_initializer_key_probe.py",
+    "sha256": "aea2ad65e4bb64d336070f8d332463406421d88dd8c8f882688ab5c9ea68b3a5"
+  },
+  "openssl_version": "LibreSSL 3.3.6",
+  "candidate_rule": "Explicit early RAM offsets plus four-byte-aligned literal windows with at least 14/16 or 28/32 distinct byte values, inside the traced initializer only",
+  "candidate_counts_by_key_bytes": {
+    "16": 136,
+    "32": 106
+  },
+  "candidate_offsets": [
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x10"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x18"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x20"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x28"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x30"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x38"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x40"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x48"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x50"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x60"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x80"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3a4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3a8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3ac"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3b0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3b4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3b8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3bc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3c0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3c4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3c8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3cc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3dc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3e0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3e4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3e8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3ec"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3f0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3f4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3f8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3fc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x400"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x404"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x408"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x40c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x410"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x414"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x418"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x41c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x420"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x424"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x428"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x42c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x430"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x434"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x438"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x43c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x440"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x444"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x448"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x44c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x450"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x454"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x458"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x45c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x460"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x464"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x468"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x46c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x470"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x474"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x478"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x47c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x480"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x484"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x494"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x498"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x49c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4a0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4a4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4a8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4ac"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4b0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4b4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4b8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4bc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4c0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4c4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4c8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4cc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4d0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4d4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4d8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4dc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4e0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4e4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4e8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4ec"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4f0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4f4"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4f8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x4fc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x500"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x504"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x508"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x50c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x510"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x514"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x518"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x51c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x520"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x524"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x528"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x52c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x530"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x534"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x538"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x53c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x540"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x544"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x548"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x54c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x550"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x554"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x558"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x55c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x560"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x564"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x568"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x56c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x570"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x574"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x7f0"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x7f8"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d6c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d70"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d7c"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d80"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x3d84"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x7bdc"
+    },
+    {
+      "key_bytes": 16,
+      "ram_initializer_offset": "0x7be8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x10"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x18"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x20"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x28"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x30"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x38"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x40"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x48"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x50"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x60"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x80"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3ac"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3b0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3b4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3b8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3bc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3c0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3c4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3c8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3cc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3d0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3d4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3d8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3dc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3e0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3e4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3e8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3f0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3f4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3f8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3fc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x400"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x404"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x408"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x40c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x410"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x418"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x424"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x428"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x42c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x434"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x438"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x43c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x440"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x444"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x448"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x44c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x450"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x454"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x458"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x45c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x460"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x464"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x468"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x46c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x470"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x474"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x494"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x498"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x49c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4a0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4a4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4a8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4ac"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4b0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4b4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4b8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4bc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4c0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4c4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4c8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4cc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4d0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4d4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4dc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4e0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4e4"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4f0"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4f8"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x4fc"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x500"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x504"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x508"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x50c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x510"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x514"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x518"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x520"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x524"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x528"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x52c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x530"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x534"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x538"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x53c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x540"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x544"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x548"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x54c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x550"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x554"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x558"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x55c"
+    },
+    {
+      "key_bytes": 32,
+      "ram_initializer_offset": "0x3d70"
+    }
+  ],
+  "modes": [
+    "AES-128-CBC",
+    "AES-256-CBC",
+    "AES-128-ECB",
+    "AES-256-ECB"
+  ],
+  "cbc_check": "Compare known blocks 2..4 independent of IV; derive and confirm IV only on a match",
+  "official_component_ciphertext_offset": "0x600",
+  "known_plaintext_bytes": 64,
+  "matches": [],
+  "limits": [
+    "No conclusion about nonliteral keys, other locations, obfuscation, other cipher modes or framing.",
+    "The traced GM1 initializer starts with font/GUI records; its offset 0x28 is not the GH2 update-key field.",
+    "No GM5 key or native updater consumer is established by this bounded test."
+  ],
+  "camera_contacted": false
+}

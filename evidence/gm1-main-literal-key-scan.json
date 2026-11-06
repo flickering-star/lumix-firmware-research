@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "scope": "Offline literal 16/32-byte key search across the acquired GM1 main program; AES-CBC/ECB and program ciphertext alignment only",
+  "source": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+  "source_bytes": 9437184,
+  "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+  "scanner_source": "tools/gm1_literal_key_scan_macos.c",
+  "scanner_sha256": "cb37895123ae2cc91fe33b7a548587e1215c2bf18b838a34b3e630f318643264",
+  "ciphertext": "work/gm1-official-program-ciphertext64.bin",
+  "ciphertext_sha256": "e979d8dc338f2bef86c2b623879d63794225fbaf17582c3b32c1ee7ebf1b292d",
+  "known_plaintext": "captures/gm1-usb-flash-TOsIFxZY/result/flash-prefix.bin",
+  "known_plaintext_sha256": "f0e7a9103888098d5b9d9c9c83ae40afb2b7b3591931f911decdd6e1ce4dcc12",
+  "results": [
+    {
+      "event": "progress",
+      "offset": 1048576
+    },
+    {
+      "event": "progress",
+      "offset": 2097152
+    },
+    {
+      "event": "progress",
+      "offset": 3145728
+    },
+    {
+      "event": "progress",
+      "offset": 4194304
+    },
+    {
+      "event": "progress",
+      "offset": 5242880
+    },
+    {
+      "event": "progress",
+      "offset": 6291456
+    },
+    {
+      "event": "progress",
+      "offset": 7340032
+    },
+    {
+      "event": "progress",
+      "offset": 8388608
+    },
+    {
+      "event": "summary",
+      "blob_bytes": 9437184,
+      "tested_128": 5935284,
+      "tested_256": 5965747,
+      "duplicate_128": 3501885,
+      "duplicate_256": 3471406,
+      "matches": 0
+    }
+  ],
+  "exit_status": 0,
+  "elapsed_seconds": 2.849793042,
+  "limits": "No transformed keys, other key lengths/ciphers/modes, or component framing are tested. A negative result is not a statement that no key exists in the camera.",
+  "camera_contacted": false
+}

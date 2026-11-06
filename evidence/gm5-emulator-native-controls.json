@@ -1,0 +1,4290 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T03:33:16.616279+00:00",
+  "scope": "Offline GM5 native CPU milestone; no complete camera hardware model",
+  "native_controls_passed": 44,
+  "suites": [
+    {
+      "name": "updater",
+      "summary": {
+        "schema": 1,
+        "scope": "GNU AM33-2 execution of GM5 native header/policy/marker routines",
+        "controls": [
+          {
+            "name": "official_header",
+            "expected_return": "0x0",
+            "actual_return": "0x0",
+            "steps": 309,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/official_header/report.json"
+          },
+          {
+            "name": "raised_header",
+            "expected_return": "0x0",
+            "actual_return": "0x0",
+            "steps": 309,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/raised_header/report.json"
+          },
+          {
+            "name": "version_not_above_floor",
+            "expected_return": "0x80000064",
+            "actual_return": "0x80000064",
+            "steps": 276,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/version_not_above_floor/report.json"
+          },
+          {
+            "name": "relaxed_version_floor",
+            "expected_return": "0x0",
+            "actual_return": "0x0",
+            "steps": 301,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/relaxed_version_floor/report.json"
+          },
+          {
+            "name": "invalid_digest_selector",
+            "expected_return": "0x80000006",
+            "actual_return": "0x80000006",
+            "steps": 289,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/invalid_digest_selector/report.json"
+          },
+          {
+            "name": "invalid_cipher_selector",
+            "expected_return": "0x80000006",
+            "actual_return": "0x80000006",
+            "steps": 307,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/invalid_cipher_selector/report.json"
+          },
+          {
+            "name": "cipher_without_digest",
+            "expected_return": "0x80000006",
+            "actual_return": "0x80000006",
+            "steps": 294,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/cipher_without_digest/report.json"
+          },
+          {
+            "name": "old_revision_flag_one",
+            "expected_return": "0x80000064",
+            "actual_return": "0x80000064",
+            "steps": 220,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/old_revision_flag_one/report.json"
+          },
+          {
+            "name": "old_revision_flag_zero",
+            "expected_return": "0x0",
+            "actual_return": "0x0",
+            "steps": 309,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/old_revision_flag_zero/report.json"
+          },
+          {
+            "name": "wrong_model",
+            "expected_return": "0x80000064",
+            "actual_return": "0x80000064",
+            "steps": 237,
+            "call_frame_preserved": true,
+            "report": "work/gm5-emulator-updater-release/wrong_model/report.json"
+          },
+          {
+            "name": "allowance_flag_0",
+            "runtime_flag": 0,
+            "actual_allowance": 1
+          },
+          {
+            "name": "marker_00_flag_0",
+            "runtime_flag": 0,
+            "allowance_from_native_job": 1,
+            "expected_stop": "unsigned_allowed",
+            "actual_stop": "unsigned_allowed",
+            "return_register": "0x00000000",
+            "steps": 15
+          },
+          {
+            "name": "marker_70_flag_0",
+            "runtime_flag": 0,
+            "allowance_from_native_job": 1,
+            "expected_stop": "signature_required",
+            "actual_stop": "signature_required",
+            "return_register": "0x00000001",
+            "steps": 9
+          },
+          {
+            "name": "allowance_flag_1",
+            "runtime_flag": 1,
+            "actual_allowance": 0
+          },
+          {
+            "name": "marker_00_flag_1",
+            "runtime_flag": 1,
+            "allowance_from_native_job": 0,
+            "expected_stop": "unsigned_rejected",
+            "actual_stop": "unsigned_rejected",
+            "return_register": "0x80000065",
+            "steps": 12
+          },
+          {
+            "name": "marker_70_flag_1",
+            "runtime_flag": 1,
+            "allowance_from_native_job": 0,
+            "expected_stop": "signature_required",
+            "actual_stop": "signature_required",
+            "return_register": "0x00000001",
+            "steps": 9
+          }
+        ],
+        "passed": 16,
+        "camera_contacted": false,
+        "limits": [
+          "Function-level CPU execution; no Lumix ASIC/device or full boot model yet.",
+          "This suite stops before ECDSA; use signature-tests for native P-256 execution.",
+          "The complete updater and NOR programming path have not been emulated."
+        ]
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "allowance_flag_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "allowance_ready",
+            "steps": 7,
+            "pc": "0x7bd4fc2c",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4fc2c",
+              "0x00000000",
+              "0x00100001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "8ca08adffbd9c080bfe978424aaa7a7b876a587aa8adee5312aac50df0e05859",
+          "trace_sha256": "802d6e266d116a4ab166b73f73cca4dc1ec211749462ec988ff229874e3551f3",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.043896,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "allowance_flag_1",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "allowance_ready",
+            "steps": 5,
+            "pc": "0x7bd4fc2c",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4fc2c",
+              "0x00000000",
+              "0x00100000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "da033b223d3a1bfaa258342e5b9c7b0e14400d731f8ae2fed279fa1fe70700e4",
+          "trace_sha256": "cc43b62640f193088bfa4c4b2c2cdffa59f318091679aba12f711d164d233bb0",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.042989,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "cipher_without_digest",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 294,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000006",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "608aaa6ce7cc0349b3a64db4dac5a2929ecf6a78d3b695f4123edacda67c06c0",
+          "trace_sha256": "675d16b052a710ba1af6eaf4302f28410c1074cf0cc38a97e0037d59affc06fc",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.044681,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "invalid_cipher_selector",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 307,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000006",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100006",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "abd8ea64fd55c364b346d11e4af71b763f5b3b05034c02b0e7184309dd0396a8",
+          "trace_sha256": "e13baccd2e936d791b0426683d977633f477b9212664e26fcc35750673513c67",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.043632,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "invalid_digest_selector",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 289,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000006",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x700effd7",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100006",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "8e1928882a6d5a6fede08ba2ef601041566fd5551e89f727d7ac8359d1b5f450",
+          "trace_sha256": "9e56d74129f442d9f56ebd3a9ad9c6567e389d7d01a3e2fc5d1f92302df2f8dc",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.043381,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "marker_00_flag_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "unsigned_allowed",
+            "steps": 15,
+            "pc": "0x7bd4f1c5",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70020000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4f1c5",
+              "0x00000000",
+              "0x00100001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "f6aae4d8c4eb870ec7dc29c8328ab766370728d8aff90c06c1966ad53dc52ca1",
+          "trace_sha256": "1cb3bfd169aee5978c7a7b34a003e76fcdad79845210fc4d190678c589aeaaa9",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.044044,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "marker_00_flag_1",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "unsigned_rejected",
+            "steps": 12,
+            "pc": "0x7bd4ef98",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000065",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70020000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4ef98",
+              "0x00000000",
+              "0x00100001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "e3d4522c07e833357c4055908b94a90ce70ed3c17c6fae4c074078119570fa19",
+          "trace_sha256": "66c0037dec2b8fe510a9536a2263aa7b1a282a46aa33c7b16c8ae13554e9d1b8",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.042524,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "marker_70_flag_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "signature_required",
+            "steps": 9,
+            "pc": "0x7bd4f16e",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70030000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4f16e",
+              "0x00000000",
+              "0x00100000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "1db7bb68c97133b0acf7a53993944de5302109b7e0547884e69e67096d248d37",
+          "trace_sha256": "06b02de984a3e5e0647d7992c6eb1b1f5341e888fc13f7b54f5c2cc038304723",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.042815,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "marker_70_flag_1",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "signature_required",
+            "steps": 9,
+            "pc": "0x7bd4f16e",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70030000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x7bd4f16e",
+              "0x00000000",
+              "0x00100000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "76329448a3b6a24dd38f25d1ccda040dd6de96610eceb204c218fe6e1b79fd60",
+          "trace_sha256": "06b02de984a3e5e0647d7992c6eb1b1f5341e888fc13f7b54f5c2cc038304723",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.043158,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "official_header",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 309,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "aade55c9aaead4065014a056b539c365895ff6f251226f9a600b7ec3643568d7",
+          "trace_sha256": "cfc0a8c5f221d17c40af8c3d475b5b5debe5c97c0708a6d41f727ac2f89ba5af",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.045024,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "old_revision_flag_one",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 220,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000064",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x700effd4",
+              "0x404cb553",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x402779f9",
+              "0x00100006",
+              "0x4141f045",
+              "0x7bc790a4",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "6cbc02b71b148378fdf4b3d98294e534c25e13fb404e406a70ce5bc48227150b",
+          "trace_sha256": "f88aec38e3728e662277411c8cc3e670ac6ec4202d672bd50d873ad617487314",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.044745,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "old_revision_flag_zero",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 309,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "965986bca6e76241dd343e8a9fe2d5e6ba7e5176340b9edc8881ce8e2d08c4a1",
+          "trace_sha256": "a650dda9edf0619c268a9958704c03dcbf6c742b3caec971f0f87e1a76eff9e2",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.044101,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "raised_header",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 309,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "45df2dc89728ed80bca8d2cdfe31a3103e2487addc7eeaadb2728ce7b036fb25",
+          "trace_sha256": "c8366c652805c0510d0bc3d57f312a50fa20e7360abe5ab5a6d629cd076a577c",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.044922,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "relaxed_version_floor",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 301,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x22332233",
+              "0x33443344",
+              "0x7001002c",
+              "0x70010034",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "c4d4f022a519de36b27a1c305cb58b48bbea8da0f74dbd7337c1a1c57a92eaa6",
+          "trace_sha256": "bed2714f5a3ead61dbbca852d07c7e01bc3bdbb43aadda63cda819312854901f",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.042973,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "version_not_above_floor",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 276,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000064",
+              "0x00000110",
+              "0x22332233",
+              "0x33443344",
+              "0x70010200",
+              "0x700effd7",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100001",
+              "0x00a040f0",
+              "0x7bc79083",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "1f5507d2ef4690efccd6c9bf749385aa48130083f12a5072a5aafae0c8e1f43c",
+          "trace_sha256": "1235721fe3c8c3a496dd014ac78bea7f64db3055f58a9b6a59836ba51cf1dcd9",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.045262,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "wrong_model",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 237,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000064",
+              "0x00000047",
+              "0x22332233",
+              "0x33443344",
+              "0x7001000c",
+              "0x700effd4",
+              "0x44554455",
+              "0x55665566",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4fa57",
+              "0x00100000",
+              "0x4141f045",
+              "0x7bc790a4",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "d4b30c67e8a20968d962dee4afecdb7ff9bf5bd848622735beb1fd7279b78d11",
+          "trace_sha256": "9c5ed2fb325d5e2860c72fcbb6b9733a7e6f6790d8a0e37492d4c69eb27afeba",
+          "trace_every_instructions": 1,
+          "execution_wall_seconds": 0.04496,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    },
+    {
+      "name": "initializers",
+      "summary": {
+        "schema": 1,
+        "scope": "GNU AM33-2 execution of actual GM5 initializer loops and one-byte virtual ROM policy patch",
+        "controls": [
+          {
+            "name": "key_initializer",
+            "source": "0x40643b7c",
+            "end_exclusive": "0x4064b5b8",
+            "destination": "0x70000000",
+            "copied_bytes": 31292,
+            "native_steps": 46944,
+            "entire_destination_matches_rom": true,
+            "destination_sha256": "58f47b2907de14ecb274c561eb3c5e43021f1f23cca2a7b143a549b95d53059d",
+            "virtual_rom_patched": false,
+            "trace_every_instructions": 1000,
+            "key_ram_matches_recovered_key": true
+          },
+          {
+            "name": "policy_initializer_stock",
+            "source": "0x4064b5b8",
+            "end_exclusive": "0x406dd768",
+            "destination": "0x70a01e6c",
+            "copied_bytes": 598448,
+            "native_steps": 897678,
+            "entire_destination_matches_rom": true,
+            "destination_sha256": "0c7062d8d9847c72b6ac7a756de6d33d6ce2f915c328720ff50579f52603544a",
+            "virtual_rom_patched": false,
+            "trace_every_instructions": 1000,
+            "policy_ram_byte": 1
+          },
+          {
+            "name": "policy_initializer_patched",
+            "source": "0x4064b5b8",
+            "end_exclusive": "0x406dd768",
+            "destination": "0x70a01e6c",
+            "copied_bytes": 598448,
+            "native_steps": 897678,
+            "entire_destination_matches_rom": true,
+            "destination_sha256": "2d621f0dea9db21578e535d1511ebf9b0c144a7dde295eadc5d7d389c7fc2ebc",
+            "virtual_rom_patched": true,
+            "trace_every_instructions": 1000,
+            "policy_ram_byte": 0
+          }
+        ],
+        "passed": 3,
+        "patched_ram_differences": [
+          "0x70a68490"
+        ],
+        "camera_contacted": false,
+        "physical_firmware_modified": false,
+        "limits": [
+          "Starts at data-copy loops, after the first initializer's hardware-control prefix.",
+          "Does not establish safe full boot, installation, persistence of other settings, or recovery."
+        ]
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "key_initializer",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "copy_finished",
+            "steps": 46944,
+            "pc": "0x400001ad",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x4064b5b8",
+              "0x00000000",
+              "0x00000000",
+              "0x4064b5b8",
+              "0x70007a3c",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x400001ad",
+              "0x00000000",
+              "0x00100001",
+              "0x51506170",
+              "0x400001aa",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "584415bee9c631c00ae58d4c8e8e8b94ae86c3010ba9e7fdbf387fc8b8070c82",
+          "trace_sha256": "a344951f19847453817bcebcac785202b6a051dcea4716dccc570b7d89a104f2",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.053957,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "policy_initializer_patched",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "copy_finished",
+            "steps": 897678,
+            "pc": "0x4000301e",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0xffff0000",
+              "0x406dd768",
+              "0x00000000",
+              "0x00000000",
+              "0x406dd768",
+              "0x70a9401c",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x4000301e",
+              "0x00000000",
+              "0x00100001",
+              "0x51506170",
+              "0x4000301b",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "8b0e7a058e92a9031da37dbddd75470b30d6f01fe383f1441720814961af3ea7",
+          "trace_sha256": "fd0c1c41e9578d7ed5a821347e6c1424a90df4dd07a61a6d25263fc1f0c4b414",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.069968,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "policy_initializer_stock",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "copy_finished",
+            "steps": 897678,
+            "pc": "0x4000301e",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0xffff0000",
+              "0x406dd768",
+              "0x00000000",
+              "0x00000000",
+              "0x406dd768",
+              "0x70a9401c",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x4000301e",
+              "0x00000000",
+              "0x00100001",
+              "0x51506170",
+              "0x4000301b",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "da63e7c82316a6f9755ce5fc9f95340f654249e1f557d4c381ed37f6fd1a6dc2",
+          "trace_sha256": "fd0c1c41e9578d7ed5a821347e6c1424a90df4dd07a61a6d25263fc1f0c4b414",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.069864,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    },
+    {
+      "name": "sha256",
+      "summary": {
+        "schema": 1,
+        "scope": "Native GM5 SHA-256, including short byte-swap instructions and padding boundaries",
+        "passed": 9,
+        "controls": [
+          {
+            "name": "empty",
+            "input_bytes": 0,
+            "native_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches_hashlib": true,
+            "native_instructions": 8479,
+            "report": "work/gm5-emulator-sha-final/empty/report.json"
+          },
+          {
+            "name": "abc",
+            "input_bytes": 3,
+            "native_digest": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+            "matches_hashlib": true,
+            "native_instructions": 8480,
+            "report": "work/gm5-emulator-sha-final/abc/report.json"
+          },
+          {
+            "name": "length_55",
+            "input_bytes": 55,
+            "native_digest": "90049a7259f123e69f1cea2403d496ffa7b647cd45ea9f4487dd778f9578b246",
+            "matches_hashlib": true,
+            "native_instructions": 8477,
+            "report": "work/gm5-emulator-sha-final/length_55/report.json"
+          },
+          {
+            "name": "length_56",
+            "input_bytes": 56,
+            "native_digest": "40f60a3a579d89962bdffdbc476f9bd0d9a28231f4b65711c902127841d298e2",
+            "matches_hashlib": true,
+            "native_instructions": 16487,
+            "report": "work/gm5-emulator-sha-final/length_56/report.json"
+          },
+          {
+            "name": "length_63",
+            "input_bytes": 63,
+            "native_digest": "bfb702913b0eabf76eb88475599bd4932114c08fce4e205593d6b7a34eb85a2e",
+            "matches_hashlib": true,
+            "native_instructions": 16484,
+            "report": "work/gm5-emulator-sha-final/length_63/report.json"
+          },
+          {
+            "name": "length_64",
+            "input_bytes": 64,
+            "native_digest": "e7a402f6bfefa6ff48bc1fe1bb5b77e5c9c24ca9185937a8cf07a8fdaf2424f0",
+            "matches_hashlib": true,
+            "native_instructions": 16482,
+            "report": "work/gm5-emulator-sha-final/length_64/report.json"
+          },
+          {
+            "name": "length_65",
+            "input_bytes": 65,
+            "native_digest": "d1c3eeb9bcf3d1593eaddd2664f0adb6f4a9c0dc048012780e4b098d4c0aaca8",
+            "matches_hashlib": true,
+            "native_instructions": 16510,
+            "report": "work/gm5-emulator-sha-final/length_65/report.json"
+          },
+          {
+            "name": "length_812",
+            "input_bytes": 812,
+            "native_digest": "2d8d8545c4d1d99c2cf27c6a717875c7f27d0c34af554c91a50605d7caadb7b7",
+            "matches_hashlib": true,
+            "native_instructions": 104840,
+            "report": "work/gm5-emulator-sha-final/length_812/report.json"
+          },
+          {
+            "name": "length_4096",
+            "input_bytes": 4096,
+            "native_digest": "4bdb590eaadb6efc9fc001b29f09b2af9edf289898cd204289fcf5557d97cb87",
+            "matches_hashlib": true,
+            "native_instructions": 522372,
+            "report": "work/gm5-emulator-sha-final/length_4096/report.json"
+          }
+        ],
+        "camera_contacted": false
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "sha256_abc",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 8480,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x174d83c6",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "6c95e5a2e9d45b1d64eae0cd42d894cea0c759e1fd3d6f960191ce0b0466b552",
+          "trace_sha256": "c4b3296aa5ae36ec5a50ed7780c89f786af1b3299efe7168c3fc77102acb2ca3",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.041184,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_empty",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 8479,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0xcaadc8b6",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "c0b2fced999986906999efb303e469e716345be4c56a172b4c35f0821510b65e",
+          "trace_sha256": "653c9c1e822249e435227f616aad4bfdb0f9f993ba7635862ece2565da453161",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.041769,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_4096",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 522372,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0xc6a7af67",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "46b3a30df70cb48249b86015e6a7e5db685926cc32e797964716dd73b442df5c",
+          "trace_sha256": "354c5208d858d1c46957738535408d6a9c9f6399e00f4b4f3fb3e354d33e391d",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.058991,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_55",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 8477,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0xe97b2f69",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "fa1ae879e16cf913159efa8114d67081d5351d7df9df22e6f8e87ae39da9a366",
+          "trace_sha256": "7f01377b2c4306335075bf79393dd4701e75a92f6f860c16d40ab7a99dd1d010",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.041675,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_56",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 16487,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x70021a40",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "8dfd05580385ae9d032a9322a83eff0f7a3c567d17f898c855f1dabc40582762",
+          "trace_sha256": "682c8bf10144e25cbfca37649ba58ca0ba5ef191449a3882875158d3b9b430f0",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.042599,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_63",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 16484,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x1e3a099d",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "14035337f0f6627dc2f93915cd6cb0fa699d58b437989b0bc4a18a80688cf22b",
+          "trace_sha256": "2f19acb227e6c90e53d22d2a57e9dc439966343b16846c5ba64c89bfa2261a75",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.04215,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_64",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 16482,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0xa6dacfd2",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "4ed5a07c637c178143ed85cbf97349a2fe714abb1f16b11b88a16197d88364b8",
+          "trace_sha256": "22fcf874758fdac409224b28dcf6d8f927f1d1f9d4cd1394bba5e221182d6f07",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.042241,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_65",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 16510,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x73965418",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "b6bf73b18ac9318d750acf238d5c96ac565dde8d4dd3964917e2ff981a6f7933",
+          "trace_sha256": "cf39a61cefb639109af370d020bc2e27be5001f63469ba9ee22c35a125dc4118",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.042167,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "sha256_length_812",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 104840,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x0000001c",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff80",
+              "0x700eff80",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x5768ba49",
+              "0x00100001",
+              "0x09f2fc85",
+              "0x4027424c",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "52e3ad6b5377d8ac2155c5869583197adb3a2a02ceb72e34ede4560f371c6011",
+          "trace_sha256": "153db97e717a3084e75d0f9f3b60d3d030db9b520f83d503c8257ff381b64a7a",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.045255,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    },
+    {
+      "name": "ecdsa",
+      "summary": {
+        "schema": 1,
+        "scope": "Execute GM5 native ECDSA wrapper and P-256 arithmetic in GNU AM33-2 simulator",
+        "passed": 3,
+        "controls": [
+          {
+            "name": "official_directory_signature",
+            "native_return": "0x00000000",
+            "native_instructions": 38121892,
+            "independent_ecdsa_valid": true,
+            "libressl_valid": true,
+            "native_valid": true,
+            "digest_sha256_bytes": "2b11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+            "report": "work/gm5-emulator-signatures-release/official_directory_signature/report.json"
+          },
+          {
+            "name": "modified_directory_digest",
+            "native_return": "0x00000001",
+            "native_instructions": 38085153,
+            "independent_ecdsa_valid": false,
+            "libressl_valid": false,
+            "native_valid": false,
+            "digest_sha256_bytes": "2a11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+            "report": "work/gm5-emulator-signatures-release/modified_directory_digest/report.json"
+          },
+          {
+            "name": "modified_signature",
+            "native_return": "0x00000001",
+            "native_instructions": 38734839,
+            "independent_ecdsa_valid": false,
+            "libressl_valid": false,
+            "native_valid": false,
+            "digest_sha256_bytes": "2b11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+            "report": "work/gm5-emulator-signatures-release/modified_signature/report.json"
+          }
+        ],
+        "camera_contacted": false,
+        "limits": [
+          "Digest is supplied as a function input; this suite does not execute the caller's SHA-256 step.",
+          "Does not emulate the complete update job or NOR programming."
+        ]
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "modified_directory_digest",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 38085153,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff14",
+              "0x700effcc",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x40014f30",
+              "0x00100001",
+              "0xc8a17174",
+              "0x40013f3f",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "ca53936c3d4e8ce46f8675f31d935901b5d53e772d3c0e4b723808bb07f43dff",
+          "trace_sha256": "4869129ae19d3cc23b8e43f83bb1ad96d5ab813905e7bb395600f0810d5a1eb3",
+          "trace_every_instructions": 10000,
+          "execution_wall_seconds": 1.453279,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "modified_signature",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 38734839,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000001",
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x700eff14",
+              "0x700effcc",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x40014f30",
+              "0x00100001",
+              "0xc8a17174",
+              "0x40013f3f",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "fa056448075bc8066cbd306c44525ada3735f93747d74398c620c3d1abb9c682",
+          "trace_sha256": "6a43d7bceb061a95f429a574e9cfbfeb5c5fdb3dc4951b417864d0dcbdaec028",
+          "trace_every_instructions": 10000,
+          "execution_wall_seconds": 1.261632,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "official_directory_signature",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 38121892,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700efef4",
+              "0x700effac",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x40014f30",
+              "0x00100001",
+              "0xc8a17174",
+              "0x40013f3f",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "4198cba2b207f292e1819029b2641e4e271b082a8746a3a0519b5819d03117c7",
+          "trace_sha256": "7481337950a48533b82de0eba18752acdf2c646b6a67b35e60b1e7c27b8064bc",
+          "trace_every_instructions": 10000,
+          "execution_wall_seconds": 1.296938,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    },
+    {
+      "name": "decoder",
+      "summary": {
+        "schema": 1,
+        "scope": "Execute native GM5 in-memory header/CRC/policy/signature/AES library validation without installation job",
+        "passed": 6,
+        "controls": [
+          {
+            "name": "unsigned_allowed_fixture",
+            "input_sha256": "c755a68882707d020de7ee97412ac6e4e821bf2bf254d92c93746b9df6d88fbb",
+            "bytes": 2560,
+            "unsigned_allowance": 1,
+            "native_return": "0x00000000",
+            "native_instructions": 94470,
+            "execution_wall_seconds": 0.046745,
+            "components": [
+              {
+                "name": "program",
+                "bytes": 1024,
+                "native_plaintext_sha256": "ed484ed8659511df83b06ec197e5cf6fd33c61c62d63e23b6c0641e9e16b910e",
+                "declared_sha256_matches": true
+              }
+            ],
+            "rejected_input_unchanged": null,
+            "report": "work/gm5-emulator-full-decoder-final/unsigned_allowed_fixture/report.json"
+          },
+          {
+            "name": "unsigned_denied_fixture",
+            "input_sha256": "c755a68882707d020de7ee97412ac6e4e821bf2bf254d92c93746b9df6d88fbb",
+            "bytes": 2560,
+            "unsigned_allowance": 0,
+            "native_return": "0x80000065",
+            "native_instructions": 28330,
+            "execution_wall_seconds": 0.042259,
+            "components": [],
+            "rejected_input_unchanged": true,
+            "report": "work/gm5-emulator-full-decoder-final/unsigned_denied_fixture/report.json"
+          },
+          {
+            "name": "bad_crc_fixture",
+            "input_sha256": "253723b9e75a5dbc50acee1305ca8a758207f1420b6c19692ebd4fe8cea7871b",
+            "bytes": 2560,
+            "unsigned_allowance": 1,
+            "native_return": "0x80000064",
+            "native_instructions": 27763,
+            "execution_wall_seconds": 0.042201,
+            "components": [],
+            "rejected_input_unchanged": true,
+            "report": "work/gm5-emulator-full-decoder-final/bad_crc_fixture/report.json"
+          },
+          {
+            "name": "full_unsigned_candidate",
+            "input_sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3",
+            "bytes": 31901184,
+            "unsigned_allowance": 1,
+            "native_return": "0x00000000",
+            "native_instructions": 2310979844,
+            "execution_wall_seconds": 83.769657,
+            "components": [
+              {
+                "name": "program",
+                "bytes": 8388608,
+                "native_plaintext_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "guires",
+                "bytes": 12582912,
+                "native_plaintext_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "program2",
+                "bytes": 3538944,
+                "native_plaintext_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "armcode",
+                "bytes": 3407872,
+                "native_plaintext_sha256": "c7e1961a121864686f327a3bf82b18d1596e39a44ba13b0e63fc7cd1a6c910b1",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "other",
+                "bytes": 3670016,
+                "native_plaintext_sha256": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_ow_a",
+                "bytes": 131072,
+                "native_plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_ow_b",
+                "bytes": 131072,
+                "native_plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_adjfix",
+                "bytes": 49152,
+                "native_plaintext_sha256": "72be21583acd1f9f93d98b9d7dacef1ab728c13129dfcc02a2efa9ae30b6eacc",
+                "declared_sha256_matches": true
+              }
+            ],
+            "rejected_input_unchanged": null,
+            "report": "work/gm5-emulator-full-decoder-final/full_unsigned_candidate/report.json"
+          },
+          {
+            "name": "full_unsigned_default_policy",
+            "input_sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3",
+            "bytes": 31901184,
+            "unsigned_allowance": 0,
+            "native_return": "0x80000065",
+            "native_instructions": 323203351,
+            "execution_wall_seconds": 9.280319,
+            "components": [],
+            "rejected_input_unchanged": true,
+            "report": "work/gm5-emulator-full-decoder-final/full_unsigned_default_policy/report.json"
+          },
+          {
+            "name": "full_signed_official",
+            "input_sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+            "bytes": 31901184,
+            "unsigned_allowance": 0,
+            "native_return": "0x00000000",
+            "native_instructions": 6351693539,
+            "execution_wall_seconds": 209.807467,
+            "components": [
+              {
+                "name": "program",
+                "bytes": 8388608,
+                "native_plaintext_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "guires",
+                "bytes": 12582912,
+                "native_plaintext_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "program2",
+                "bytes": 3538944,
+                "native_plaintext_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "armcode",
+                "bytes": 3407872,
+                "native_plaintext_sha256": "c7e1961a121864686f327a3bf82b18d1596e39a44ba13b0e63fc7cd1a6c910b1",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "other",
+                "bytes": 3670016,
+                "native_plaintext_sha256": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_ow_a",
+                "bytes": 131072,
+                "native_plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_ow_b",
+                "bytes": 131072,
+                "native_plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+                "declared_sha256_matches": true
+              },
+              {
+                "name": "eep_adjfix",
+                "bytes": 49152,
+                "native_plaintext_sha256": "72be21583acd1f9f93d98b9d7dacef1ab728c13129dfcc02a2efa9ae30b6eacc",
+                "declared_sha256_matches": true
+              }
+            ],
+            "rejected_input_unchanged": null,
+            "report": "work/gm5-emulator-full-decoder-final/full_signed_official/report.json"
+          }
+        ],
+        "full_candidate_included": true,
+        "camera_contacted": false,
+        "programming_job_called": false,
+        "fixture_warning": "Small .data fixtures are for emulator tests only; never copy them to a camera card.",
+        "limits": [
+          "Does not exercise the UI, file discovery, full installation job or NOR programming.",
+          "Component SHA-256 values in unsigned mode are checked by the host after native decoding; the native branch skips them."
+        ]
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "bad_crc_fixture",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "work/gm5-emulator-full-decoder-final/bad-crc-library-input.data",
+              "address": "0x74000000",
+              "bytes": 2560,
+              "sha256": "253723b9e75a5dbc50acee1305ca8a758207f1420b6c19692ebd4fe8cea7871b"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 27763,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000064",
+              "0x00000025",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x74000040",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0x41f044f0",
+              "0x7bc78fcb",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "3be5f90513ee3b17d33edaf3947814263e9974f4c3bb89f4799f991622678547",
+          "trace_sha256": "66fec47d1288f8319813312603983b63be00ad2364ac1b82075fa7518e1dc744",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 0.042201,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "full_signed_official",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "firmware/official-gm5-v11/GM5__V11.bin",
+              "address": "0x74000000",
+              "bytes": 31901184,
+              "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 6351693539,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0x41f044f0",
+              "0x7bc78fcb",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "879aead956afa482ebcc179c922096b088ed441ff47b899645aea51d17c56758",
+          "trace_sha256": "2fb76ccad634836cfd2721fc3bb8c027e8147c0964fe3eb47ab1e7b51af24497",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 209.807467,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "full_unsigned_candidate",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "work/gm5-updater-prompt-0112/advertised-0112/GM5__V11.bin",
+              "address": "0x74000000",
+              "bytes": 31901184,
+              "sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 2310979844,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0xf2507076",
+              "0x40273207",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "2cea2704dff7dd5c42ed104adf0bf3fa507651d2df44d6a3261c1c9525e973b5",
+          "trace_sha256": "3a46706730bc75dc0351037b15cf7f6676a1cd1d07bfcc9e639e89052b4fd354",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 83.769657,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "full_unsigned_default_policy",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "work/gm5-updater-prompt-0112/advertised-0112/GM5__V11.bin",
+              "address": "0x74000000",
+              "bytes": 31901184,
+              "sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 323203351,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000065",
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x740002e0",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0x41f044f0",
+              "0x7bc78fcb",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "efb05e8cc851b4e646301fda322fb5ccd7d0216a2792d431272372101cd4a0b1",
+          "trace_sha256": "b7c25f8aa936e14f3f722ab6b27539ce44c0854db279e5ee3624d8aa5acda3ce",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 9.280319,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "unsigned_allowed_fixture",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "work/gm5-emulator-full-decoder-final/library-input.data",
+              "address": "0x74000000",
+              "bytes": 2560,
+              "sha256": "c755a68882707d020de7ee97412ac6e4e821bf2bf254d92c93746b9df6d88fbb"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 94470,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x00000000",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x00000064",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0xf2507076",
+              "0x40273207",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "dcfb43dfe525d0e168c3c0c44e47d60c6e6ee9953b7bfe00cbfb290cc5320899",
+          "trace_sha256": "66fec47d1288f8319813312603983b63be00ad2364ac1b82075fa7518e1dc744",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 0.046745,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "unsigned_denied_fixture",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            },
+            {
+              "path": "work/gm5-emulator-full-decoder-final/library-input.data",
+              "address": "0x74000000",
+              "bytes": 2560,
+              "sha256": "c755a68882707d020de7ee97412ac6e4e821bf2bf254d92c93746b9df6d88fbb"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 28330,
+            "pc": "0x70008016",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x80000065",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x700efec0",
+              "0x740002e0",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008016",
+              "0x7bd4f3d9",
+              "0x00100001",
+              "0x41f044f0",
+              "0x7bc78fcb",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "1b9de111a2081ec7476c01f04741a95bf96090f871d644dc4ccd3a0e5dbeed40",
+          "trace_sha256": "66fec47d1288f8319813312603983b63be00ad2364ac1b82075fa7518e1dc744",
+          "trace_every_instructions": 1000000,
+          "execution_wall_seconds": 0.042259,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "In-memory library input/context; the installation job and NOR programmer are never called."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    },
+    {
+      "name": "settings_merge",
+      "summary": {
+        "schema": 1,
+        "scope": "Native GM5 settings merge at 0x7bd4f7f7, with synthetic buffers",
+        "passed": 7,
+        "controls": [
+          {
+            "name": "flags_0_argument_0_region_0",
+            "container_flags_low_nibble": 0,
+            "argument": 0,
+            "synthetic_region_word": 0,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "34a9c36f917168fc41a9a54e06fbc36c0e40c29f1c2d3debcea388934e714a7e",
+            "bytes_changed_in_candidate": 504,
+            "native_instructions": 3046,
+            "report": "work/gm5-emulator-settings-merge-final/flags_0_argument_0_region_0/report.json"
+          },
+          {
+            "name": "flags_1_argument_0_region_0",
+            "container_flags_low_nibble": 1,
+            "argument": 0,
+            "synthetic_region_word": 0,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "34a9c36f917168fc41a9a54e06fbc36c0e40c29f1c2d3debcea388934e714a7e",
+            "bytes_changed_in_candidate": 504,
+            "native_instructions": 3048,
+            "report": "work/gm5-emulator-settings-merge-final/flags_1_argument_0_region_0/report.json"
+          },
+          {
+            "name": "flags_1_argument_1_region_0",
+            "container_flags_low_nibble": 1,
+            "argument": 1,
+            "synthetic_region_word": 0,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "35dfc85a8a3f6e7673d9ed2a2a23905f18c10a607f77415376892966ae9906f1",
+            "bytes_changed_in_candidate": 508,
+            "native_instructions": 3102,
+            "report": "work/gm5-emulator-settings-merge-final/flags_1_argument_1_region_0/report.json"
+          },
+          {
+            "name": "flags_2_argument_0_region_0",
+            "container_flags_low_nibble": 2,
+            "argument": 0,
+            "synthetic_region_word": 0,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "98b7d16fb5193e566d2b96e7504bc08ce9d052ad9dba267719a4b8f9be3b5f2b",
+            "bytes_changed_in_candidate": 51282,
+            "native_instructions": 307866,
+            "report": "work/gm5-emulator-settings-merge-final/flags_2_argument_0_region_0/report.json"
+          },
+          {
+            "name": "flags_4_argument_0_region_0",
+            "container_flags_low_nibble": 4,
+            "argument": 0,
+            "synthetic_region_word": 0,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "98b7d16fb5193e566d2b96e7504bc08ce9d052ad9dba267719a4b8f9be3b5f2b",
+            "bytes_changed_in_candidate": 51282,
+            "native_instructions": 307862,
+            "report": "work/gm5-emulator-settings-merge-final/flags_4_argument_0_region_0/report.json"
+          },
+          {
+            "name": "flags_4_argument_0_region_1",
+            "container_flags_low_nibble": 4,
+            "argument": 0,
+            "synthetic_region_word": 1,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "9d9d66064b648ef8f022b88905e25b82f5987f141a2745ae99b86ec7a3796d65",
+            "bytes_changed_in_candidate": 51282,
+            "native_instructions": 307864,
+            "report": "work/gm5-emulator-settings-merge-final/flags_4_argument_0_region_1/report.json"
+          },
+          {
+            "name": "flags_1_argument_1_region_1",
+            "container_flags_low_nibble": 1,
+            "argument": 1,
+            "synthetic_region_word": 1,
+            "whole_candidate_matches_expected": true,
+            "source_buffers_unchanged": true,
+            "merged_sha256": "ef09e91ea096678371af9d4c4d1963a7c8e2f007a6a75ab85da1fbc24844564f",
+            "bytes_changed_in_candidate": 510,
+            "native_instructions": 3104,
+            "report": "work/gm5-emulator-settings-merge-final/flags_1_argument_1_region_1/report.json"
+          }
+        ],
+        "source_sha256": "806f3f0155c28a6c1e256c4ed80d07a2d7afe4502dea2061c49db43f1e40dbf8",
+        "camera_contacted": false,
+        "programming_job_called": false,
+        "limits": [
+          "Tests this native merge function, not complete calibration preservation during installation.",
+          "Does not prove installed Japanese function addresses or all build variants.",
+          "Does not emulate NOR erase/programming or independent storage devices."
+        ]
+      },
+      "executions": [
+        {
+          "schema": 1,
+          "name": "flags_0_argument_0_region_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 3046,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "9706e74dfab022e3a4737963874f42221228c94abd63d4bb93c7d08eac120e13",
+          "trace_sha256": "3f4cb1294aae1e3000f42e897ac367432110ae1e56b3582cc19f2ec6ef4331eb",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.046203,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_1_argument_0_region_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 3048,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000001",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "e5d653fb027a8f93494e59eb4f2b69d8f70e78f4bd4c9922f3dac0b26ef41657",
+          "trace_sha256": "32550f68dfa5d6e45d78ea64506920c304ba2c1630bc3b17cdd6e26281409956",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.045269,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_1_argument_1_region_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 3102,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "bf4e5de1629adf206c295b7b7140b283efa35526d24e5be91d76e0ec9c7803a5",
+          "trace_sha256": "60f87b68c7ff5ca62a5d3697246ae4bafa9aaab80b68823ee522961265b2aedc",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.045831,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_1_argument_1_region_1",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 3104,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "eb794a6c506c68a22614d8b0573c96192a7708a32a732d15fa9d745fbc18d001",
+          "trace_sha256": "39e9e54597cd6c503131891345ae67daca85a626d6c33d77ed875ad57efd4ab6",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.045876,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_2_argument_0_region_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 307866,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "cb317bede53dff3a48c58eb936accbf0c7744b97287e84e1820212dcfc683b95",
+          "trace_sha256": "94de2e258808944c5d6576cbd73f211e2be89ca3834b2d7c570ccc1e949b7718",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.05765,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_4_argument_0_region_0",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 307862,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "54fd1bd8431005814dc6224f8bcba83811762b0a040782f1810a5dfeaf35287f",
+          "trace_sha256": "3df779db714c0956f4b68e791a7ae148a64412763cb3135d2383927bed9c74af",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.057288,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        },
+        {
+          "schema": 1,
+          "name": "flags_4_argument_0_region_1",
+          "images": [
+            {
+              "path": "work/gm5-v11-decoded-verified/00_program.decoded.bin",
+              "address": "0x40000000",
+              "bytes": 8388608,
+              "sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c"
+            },
+            {
+              "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+              "address": "0x7bc00000",
+              "bytes": 3538944,
+              "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+            }
+          ],
+          "result": {
+            "event": "result",
+            "stop": "returned",
+            "steps": 307864,
+            "pc": "0x70008007",
+            "sim_reason": 3,
+            "signal": 5,
+            "registers": [
+              "0x0000005a",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x70041e00",
+              "0x7bfb1ff8",
+              "0x00000000",
+              "0x00000000",
+              "0x700f0000",
+              "0x70008007",
+              "0x7bd4f9eb",
+              "0x00100001",
+              "0xf04541f0",
+              "0x7bc78fec",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000",
+              "0x00000000"
+            ]
+          },
+          "backend": {
+            "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+            "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+          },
+          "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+          "scenario_sha256": "8fe3ab6e41c70890439a5d8df544262d15a39d482c987635c2cdeda0745bff6b",
+          "trace_sha256": "5e918fb805957547d21a35c1e891df7f27b3d175dc765895370ba5e1d9116697",
+          "trace_every_instructions": 1000,
+          "execution_wall_seconds": 0.057547,
+          "execution_mode": "fast",
+          "assumptions": [
+            "Only CPU and explicitly mapped memory are modeled.",
+            "EEPROM string buffers used by the identity getter begin as zero.",
+            "Synthetic settings/payload buffers; no real calibration values are used."
+          ],
+          "camera_contacted": false,
+          "complete_camera_emulation": false
+        }
+      ]
+    }
+  ],
+  "build": {
+    "schema": 1,
+    "scope": "GNU AM33-2 CPU core with offline GM5 execution harness",
+    "gnu_archive": {
+      "path": "work/toolchain/gdb-16.3.tar.xz",
+      "bytes": 24434444,
+      "sha256": "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5",
+      "url": "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
+    },
+    "build_recipe_patches": [
+      {
+        "path": "sim/Makefile.in",
+        "original_sha256": "35b052c0a7dd60eb30ca1496d447343b28c4334ade4cda7eb38da40318a28bf8",
+        "patched_sha256": "0967c8a646087071bfea0aacd6c13ec738d3eba6f912f0abb80fbe7709a88679",
+        "purpose": "BSD sed requires a separator before the closing command-group brace."
+      },
+      {
+        "path": "sim/common/local.mk",
+        "original_sha256": "d07e5a79385312cc127bb946dcf0ce3141d6ffca3958f5d87ef98f9c8de0fb0c",
+        "patched_sha256": "5490848a4619200b94ecf4ebabc73682cb38c458fd005ecf20a3e5feedb547fa",
+        "purpose": "BSD sed requires a separator before the closing command-group brace."
+      },
+      {
+        "path": "sim/mn10300/am33.igen",
+        "original_sha256": "e10def0a98dab57f36d85cda7beeb79365bd0e14d4b76ebf4cf634b3fbe07438",
+        "patched_sha256": "1e55a3f899ae94034e97366e53c1e2ab1ad16e731cc05ad7395ff623eb27c466",
+        "extension": {
+          "path": "tools/mn103_simulator/short-swaps.igen",
+          "bytes": 965,
+          "sha256": "14271fd23652c6ab1ea2a2e4279e7b3f75c42b71e036321b0f61013821d30439"
+        },
+        "purpose": "Add short swap/swaph encodings listed in GNU's opcode table, using its existing long-form semantics."
+      }
+    ],
+    "configure_command": [
+      "work/toolchain/gdb-16.3/configure",
+      "--target=mn10300-elf",
+      "--disable-gdb",
+      "--disable-gdbserver",
+      "--enable-sim",
+      "--disable-nls",
+      "--disable-werror",
+      "--without-python",
+      "--without-guile",
+      "--without-debuginfod",
+      "--without-zstd"
+    ],
+    "make_command": [
+      "make",
+      "-j2",
+      "all-sim",
+      "MAKEINFO=true"
+    ],
+    "harness_compile_command": [
+      "/usr/bin/clang",
+      "-arch",
+      "x86_64",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DPACKAGE=\"gm5-emulator\"",
+      "-DPACKAGE_VERSION=\"0.1\"",
+      "-I",
+      "work/toolchain/gdb-mn10300-build/bfd",
+      "-I",
+      "work/toolchain/gdb-16.3/include",
+      "tools/mn103_simulator/runner.c",
+      "work/toolchain/gdb-mn10300-build/gm5-engine.o",
+      "work/toolchain/gdb-mn10300-build/gm5-hooks.o",
+      "work/toolchain/gdb-mn10300-build/sim/mn10300/libsim.a",
+      "work/toolchain/gdb-mn10300-build/opcodes/.libs/libopcodes.a",
+      "work/toolchain/gdb-mn10300-build/bfd/.libs/libbfd.a",
+      "work/toolchain/gdb-mn10300-build/gnulib/import/libgnu.a",
+      "work/toolchain/gdb-mn10300-build/libiberty/libiberty.a",
+      "-lz",
+      "-lm",
+      "-liconv",
+      "-ltermcap",
+      "-o",
+      "work/toolchain/gdb-mn10300-build/gm5-mn103-sim"
+    ],
+    "host_executable_architecture": "work/toolchain/gdb-mn10300-build/sim/mn10300/run: Mach-O 64-bit executable x86_64",
+    "instrumented_engine_compile_commands": [
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "work/toolchain/gdb-mn10300-build/gm5-engine.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-engine.o"
+      ],
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "tools/mn103_simulator/hooks.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-hooks.o"
+      ]
+    ],
+    "gnu_libraries": [
+      {
+        "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/libsim.a",
+        "bytes": 8929224,
+        "sha256": "90f6f0a8e90ea30eaf9669b2b034c4cb7696fa3c0469bc217c829170ad88fce7"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/opcodes/.libs/libopcodes.a",
+        "bytes": 548536,
+        "sha256": "05163c7d8b6d785e0c7adf13065855125c4f54066d439e54c54d9c510df4628e"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/bfd/.libs/libbfd.a",
+        "bytes": 7680032,
+        "sha256": "5ea12f4c47cd53838544f33f7a60a7a406cda6b297853304dc1380dcc58ffa7c"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/gnulib/import/libgnu.a",
+        "bytes": 455872,
+        "sha256": "62e99b5fc03e133cb432c3432edf4294c3ed5a74f2f063e711a3f50d14de5e33"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/libiberty/libiberty.a",
+        "bytes": 1434816,
+        "sha256": "f6c35d9bf6dcc46937909489214b1d27c6ae5729b0f165fd1b0683fa14b517d9"
+      }
+    ],
+    "generated_modules": {
+      "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/modules.c",
+      "bytes": 579,
+      "sha256": "099cab05a829f415fd1e075cb5fbec39bb7752d14131644a6d78ee43066fb8ae"
+    },
+    "original_generated_engine": {
+      "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/engine.c",
+      "bytes": 879738,
+      "sha256": "f66c290dad36e059bf77f0db3b3cb9c64accf5d4fca4598b14c8ab68a21dd53a"
+    },
+    "instrumented_engine_copy": {
+      "path": "work/toolchain/gdb-mn10300-build/gm5-engine.c",
+      "bytes": 879757,
+      "sha256": "099692cd7e23b7db4b00f8f4546bb25a78c1d8157da3158734b37317acf2564b"
+    },
+    "execution_hooks": [
+      {
+        "path": "tools/mn103_simulator/hooks.c",
+        "bytes": 760,
+        "sha256": "51685bb029f8cbd8e419cd09d8a0edf6cb3b95bf8bf5e5dddde45fc74a01f52a"
+      },
+      {
+        "path": "tools/mn103_simulator/hooks.h",
+        "bytes": 512,
+        "sha256": "59adb0d636312516a093045fc0cedef14155cd6fbad8d4807d958d199319f400"
+      }
+    ],
+    "instrumentation": "GNU's instruction-prefix hook adds bounded stops/traces; generated CPU instruction semantics are unchanged.",
+    "harness_source": {
+      "path": "tools/mn103_simulator/runner.c",
+      "bytes": 9956,
+      "sha256": "f27a5a983498bd22781ed66787dc2400aea5a443184940a21d2b74a185caa865"
+    },
+    "build_driver": {
+      "path": "tools/mn103_simulator/build.py",
+      "bytes": 9425,
+      "sha256": "5c1cd795f2f6390e0946345e51c3a6238dff0e00109e644296578e0f571f913a"
+    },
+    "executable": {
+      "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+      "bytes": 2015456,
+      "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+    },
+    "camera_contacted": false,
+    "license": "GNU core and linked harness: GPL-3.0-or-later; GNU notices retained in source tree."
+  },
+  "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+  "collector_sha256": "3930c7155b0f16a10c62a53a1cd27da76c04ff11c73926f50d78268a939d538d",
+  "repository_tests": {
+    "passed": 61,
+    "log": "work/gm5-emulator-unittest-final.log",
+    "log_sha256": "75a5ab5c514e6fd80d85d9af70c2c75cc68cfa2863e720b2b6a69ae648c2e37d",
+    "command": "python3 -m unittest discover -s tests -v"
+  },
+  "camera_contacted": false,
+  "physical_flash_written": false,
+  "limits": [
+    "Preset routines use official decoded GM5 programs, not yet the complete installed Japanese build.",
+    "No full boot, ASIC/display/sensor/USB/SD device model, or NOR command model.",
+    "No installation job or physical flash acceptance demonstrated by these CPU controls.",
+    "Signed library validation executes native SHA/ECDSA; unsigned component hashes are independently checked afterward by the host."
+  ]
+}

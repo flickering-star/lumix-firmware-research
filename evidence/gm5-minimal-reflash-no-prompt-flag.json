@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "capture": "captures/gm5-usb-runtime-control-sks23bnT",
+  "model": "DMC-GM5",
+  "mode": "runtime-control",
+  "complete": true,
+  "settings_bytes_verified": 32,
+  "word_responses_verified": 16,
+  "program_block_responses_verified": 1,
+  "resume_anchors_verified": 0,
+  "copied_prefix_bytes": 0,
+  "program_file": "captures/gm5-usb-runtime-control-sks23bnT/result/runtime-control.bin",
+  "verified_prefix_bytes": 1024,
+  "program_sha256": "2fa740e6ab65b850b6763ae7c9f96a9fb2111b753414da1a2edf59e9eb70ebd5",
+  "program_file_base": "0x70a68400",
+  "program_file_offset": 0,
+  "next_program_address": "0x70a68800",
+  "terminal_phase": "idle",
+  "errors": [],
+  "flag_halfword": 0,
+  "stage": "After unchanged-program2 control showed normal playback with no prompt",
+  "owner_report": "Reconnected; it stayed awake throughout"
+}

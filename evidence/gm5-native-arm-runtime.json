@@ -1,0 +1,1951 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T20:25:20.518176+00:00",
+  "scope": "Native ARM FP/BSS/kernel initialization, real application queues and captured-request kernel transport",
+  "camera_contacted": false,
+  "physical_region_patch_installed": false,
+  "arm_source": {
+    "path": "work/gm5-arm-private-inputs/installed-armcode.bin",
+    "bytes": 3407872,
+    "sha256": "3538e32f5310a89e48a2534f4cb4737fda679b8683a635bea31ab557cf762d3c"
+  },
+  "cpu_execution_function_ast_sha256": "1951266f2009d34d996bd784c5fcd2b5bb4a98bd7ecded522c38b9b1b5970ecd",
+  "actual_core_source_versions": [
+    "a71442d7c96c3444587a63386d8a6ca39806c795fe6be55298cd9819b606e71a",
+    "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb"
+  ],
+  "retained_release": [
+    {
+      "path": "work/gm5-arm-runtime-release-1/arm-core-a71442d7c96c3444.py",
+      "bytes": 15692,
+      "sha256": "a71442d7c96c3444587a63386d8a6ca39806c795fe6be55298cd9819b606e71a"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/arm-core-94eaf08266be2e30.py",
+      "bytes": 18209,
+      "sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/startup-probe.py",
+      "bytes": 6809,
+      "sha256": "f82aa21da561af0fd78c42f1f5b1f8e286cee6cd91e25d54fda0bbe394db4429"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/application-objects.py",
+      "bytes": 5653,
+      "sha256": "0571d53881a8df22ef30c4cbaf760589cc7768b9baf15d52b2c89a459da7e574"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/kernel-ipc.py",
+      "bytes": 9280,
+      "sha256": "5c320476954745c369b2b432e30572d0059ada0efb1ecef5155415063f8e6d59"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/runtime-evidence.py",
+      "bytes": 9977,
+      "sha256": "ec6935187d9e2dfa404e5499309726569df2bf8269e8e29be014ad96066b3317"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/requirements-macos.txt",
+      "bytes": 772,
+      "sha256": "c829f5ffd1161e91bcc34d7e0d4127c193e966776ec8ab13f94d14a5f81dfad1"
+    },
+    {
+      "path": "work/gm5-arm-runtime-release-1/test_architecture_state.py",
+      "bytes": 6784,
+      "sha256": "aee1cb7b8c087cbf2c970fcc45f98d674397f96d77488c3b79886154cf07acf0"
+    }
+  ],
+  "repository_tests": {
+    "passed": 111,
+    "skipped": 0,
+    "log": {
+      "path": "work/gm5-arm-state-full-tests.log",
+      "bytes": 12040,
+      "sha256": "a56c94a2aa291c8404be0010696eb3cef1ad98ea29defc65f137d18663e694f3"
+    }
+  },
+  "native_fp_setup": {
+    "directory": "work/gm5-arm-native-startup-3/native_fp_enable",
+    "result": {
+      "stop": "native_fp_ready",
+      "instructions_started": 8,
+      "pc": "0x338",
+      "registers": {
+        "r0": "0x0",
+        "r1": "0x40000000",
+        "r2": "0xf00000",
+        "r3": "0x0",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "sp": "0x7000e000",
+        "lr": "0x7000fff1",
+        "pc": "0x338",
+        "cpsr": "0x93"
+      },
+      "banked_registers": {
+        "system": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0"
+        },
+        "fiq": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "spsr": "0x0"
+        },
+        "irq": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "supervisor": {
+          "sp": "0x7000e000",
+          "lr": "0x7000fff1",
+          "spsr": "0x0"
+        },
+        "abort": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "undefined": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        }
+      },
+      "floating_point_registers": {
+        "fpexc": "0x40000000",
+        "fpscr": "0x0",
+        "d0": "0x0",
+        "d1": "0x0",
+        "d2": "0x0",
+        "d3": "0x0",
+        "d4": "0x0",
+        "d5": "0x0",
+        "d6": "0x0",
+        "d7": "0x0",
+        "d8": "0x0",
+        "d9": "0x0",
+        "d10": "0x0",
+        "d11": "0x0",
+        "d12": "0x0",
+        "d13": "0x0",
+        "d14": "0x0",
+        "d15": "0x0",
+        "d16": "0x0",
+        "d17": "0x0",
+        "d18": "0x0",
+        "d19": "0x0",
+        "d20": "0x0",
+        "d21": "0x0",
+        "d22": "0x0",
+        "d23": "0x0",
+        "d24": "0x0",
+        "d25": "0x0",
+        "d26": "0x0",
+        "d27": "0x0",
+        "d28": "0x0",
+        "d29": "0x0",
+        "d30": "0x0",
+        "d31": "0x0",
+        "cpacr": "0x0"
+      },
+      "fault": null,
+      "engine_error": null
+    },
+    "scenario_sha256": "92620a37e2b11ccb8d0e0ab795dddab5cc4c79599936b628b41ae531faf6d986",
+    "trace_sha256": "f3f6e59ffadaeb56b1b452ee252889c372b819158e6db8eab711892379fa9a06",
+    "driver_sha256": "a71442d7c96c3444587a63386d8a6ca39806c795fe6be55298cd9819b606e71a",
+    "cpu_model_fixture": "Cortex-A9"
+  },
+  "native_copy_bss": {
+    "directory": "work/gm5-arm-native-startup-3/native_data_initialization",
+    "result": {
+      "stop": "returned",
+      "instructions_started": 439536,
+      "pc": "0x7000fff0",
+      "registers": {
+        "r0": "0x41a5ec58",
+        "r1": "0x3fc22c",
+        "r2": "0x0",
+        "r3": "0x0",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x7000fff1",
+        "sp": "0x7000e000",
+        "lr": "0x240",
+        "pc": "0x7000fff0",
+        "cpsr": "0x600000b3"
+      },
+      "banked_registers": {
+        "system": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x7000fff1"
+        },
+        "fiq": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "spsr": "0x0"
+        },
+        "irq": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "supervisor": {
+          "sp": "0x7000e000",
+          "lr": "0x240",
+          "spsr": "0x0"
+        },
+        "abort": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "undefined": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        }
+      },
+      "floating_point_registers": {
+        "fpexc": "0x40000000",
+        "fpscr": "0x0",
+        "d0": "0x0",
+        "d1": "0x0",
+        "d2": "0x0",
+        "d3": "0x0",
+        "d4": "0x0",
+        "d5": "0x0",
+        "d6": "0x0",
+        "d7": "0x0",
+        "d8": "0x0",
+        "d9": "0x0",
+        "d10": "0x0",
+        "d11": "0x0",
+        "d12": "0x0",
+        "d13": "0x0",
+        "d14": "0x0",
+        "d15": "0x0",
+        "d16": "0x0",
+        "d17": "0x0",
+        "d18": "0x0",
+        "d19": "0x0",
+        "d20": "0x0",
+        "d21": "0x0",
+        "d22": "0x0",
+        "d23": "0x0",
+        "d24": "0x0",
+        "d25": "0x0",
+        "d26": "0x0",
+        "d27": "0x0",
+        "d28": "0x0",
+        "d29": "0x0",
+        "d30": "0x0",
+        "d31": "0x0",
+        "cpacr": "0x0"
+      },
+      "fault": null,
+      "engine_error": null
+    },
+    "scenario_sha256": "e1b15a8a93239d28dc53a52aa90ddc2aa780a42e589256f7023df9f42060b082",
+    "trace_sha256": "bc23a6f91a139c0d16c8a14ea21b1311873985ba93811b22165751f4830dde9d",
+    "driver_sha256": "a71442d7c96c3444587a63386d8a6ca39806c795fe6be55298cd9819b606e71a",
+    "cpu_model_fixture": "Cortex-A9"
+  },
+  "native_kernel_prefix": {
+    "directory": "work/gm5-arm-native-startup-3/native_kernel_prefix",
+    "result": {
+      "stop": "before_application_object_creation",
+      "instructions_started": 495,
+      "pc": "0x1a1af8",
+      "registers": {
+        "r0": "0x797034",
+        "r1": "0x0",
+        "r2": "0x2fcf50",
+        "r3": "0x0",
+        "r4": "0x2fcf2c",
+        "r5": "0xf0f0f0f0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x7000fff1",
+        "sp": "0x7000dff0",
+        "lr": "0x1a3454",
+        "pc": "0x1a1af8",
+        "cpsr": "0xa0000093"
+      },
+      "banked_registers": {
+        "system": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x7000fff1"
+        },
+        "fiq": {
+          "sp": "0x796c30",
+          "lr": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "spsr": "0x0"
+        },
+        "irq": {
+          "sp": "0x797030",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "supervisor": {
+          "sp": "0x7000dff0",
+          "lr": "0x1a3454",
+          "spsr": "0x0"
+        },
+        "abort": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        },
+        "undefined": {
+          "sp": "0x0",
+          "lr": "0x0",
+          "spsr": "0x0"
+        }
+      },
+      "floating_point_registers": {
+        "fpexc": "0x40000000",
+        "fpscr": "0x0",
+        "d0": "0x0",
+        "d1": "0x0",
+        "d2": "0x0",
+        "d3": "0x0",
+        "d4": "0x0",
+        "d5": "0x0",
+        "d6": "0x0",
+        "d7": "0x0",
+        "d8": "0x0",
+        "d9": "0x0",
+        "d10": "0x0",
+        "d11": "0x0",
+        "d12": "0x0",
+        "d13": "0x0",
+        "d14": "0x0",
+        "d15": "0x0",
+        "d16": "0x0",
+        "d17": "0x0",
+        "d18": "0x0",
+        "d19": "0x0",
+        "d20": "0x0",
+        "d21": "0x0",
+        "d22": "0x0",
+        "d23": "0x0",
+        "d24": "0x0",
+        "d25": "0x0",
+        "d26": "0x0",
+        "d27": "0x0",
+        "d28": "0x0",
+        "d29": "0x0",
+        "d30": "0x0",
+        "d31": "0x0",
+        "cpacr": "0x0"
+      },
+      "fault": null,
+      "engine_error": null
+    },
+    "scenario_sha256": "8019a2894bb7abd8ba90bb4607f51b0bafbb5ee047aa4e96dc9deeea43132f2a",
+    "trace_sha256": "9dd2667df2efcec240f6999e2f4b0f767c748b189b627a24be00faac0d0a3a30",
+    "driver_sha256": "a71442d7c96c3444587a63386d8a6ca39806c795fe6be55298cd9819b606e71a",
+    "cpu_model_fixture": "Cortex-A9"
+  },
+  "bss_oracle": {
+    "start": "0x340000",
+    "end_exclusive": "0x3fc22c",
+    "bytes": 770604,
+    "initial_poison": 165,
+    "exact_native_zero_oracle_passed": true,
+    "page_suffix_still_poisoned": true
+  },
+  "zero_a5_application_controls": [
+    {
+      "name": "zero_work_storage",
+      "initial_work_fill": 0,
+      "execution": {
+        "directory": "work/gm5-arm-native-application-objects-1/zero_work_storage",
+        "result": {
+          "stop": "queue11_created",
+          "instructions_started": 143903,
+          "pc": "0x6932",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x20000093",
+            "r2": "0x0",
+            "r3": "0x1",
+            "r4": "0x0",
+            "r5": "0x1",
+            "r6": "0xa",
+            "r7": "0x5",
+            "r8": "0x3",
+            "r9": "0x1",
+            "r10": "0x20",
+            "r11": "0x1e",
+            "r12": "0x2fcf34",
+            "sp": "0x7000df58",
+            "lr": "0x6933",
+            "pc": "0x6932",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x3",
+              "r9": "0x1",
+              "r10": "0x20",
+              "r11": "0x1e",
+              "r12": "0x2fcf34"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000df58",
+              "lr": "0x6933",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "d1cde89ac1e13af11d2509f9044ca9d792882f469f922d043b874dd22487195b",
+        "trace_sha256": "190556a36494555b0fdaddb8291416e4697653d9339dc3ab2387726364b1837f",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "poison_work_storage",
+      "initial_work_fill": 165,
+      "execution": {
+        "directory": "work/gm5-arm-native-application-objects-1/poison_work_storage",
+        "result": {
+          "stop": "queue11_created",
+          "instructions_started": 143903,
+          "pc": "0x6932",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x20000093",
+            "r2": "0x0",
+            "r3": "0x1",
+            "r4": "0x0",
+            "r5": "0x1",
+            "r6": "0xa",
+            "r7": "0x5",
+            "r8": "0x3",
+            "r9": "0x1",
+            "r10": "0x20",
+            "r11": "0x1e",
+            "r12": "0x2fcf34",
+            "sp": "0x7000df58",
+            "lr": "0x6933",
+            "pc": "0x6932",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x3",
+              "r9": "0x1",
+              "r10": "0x20",
+              "r11": "0x1e",
+              "r12": "0x2fcf34"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000df58",
+              "lr": "0x6933",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "e212ead01c9c9891a14a5ff87e83ff503ba031f06720b1c4c4a5fd2ee6fa6f27",
+        "trace_sha256": "190556a36494555b0fdaddb8291416e4697653d9339dc3ab2387726364b1837f",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    }
+  ],
+  "native_queue11": {
+    "id": 11,
+    "tcb": "0x368e6c",
+    "attributes": 0,
+    "capacity_words": 5,
+    "storage": "0x571fd0",
+    "read_index": 0,
+    "write_index": 0,
+    "queued_words": 0,
+    "native_caller_parameters": [
+      "0x0",
+      "0x5",
+      "0x571fd0"
+    ],
+    "created_queue_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "native_queue_transport": [
+    {
+      "name": "actual_application_registration_arguments",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 0,
+        "count": 0,
+        "storage_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/actual_application_registration_arguments",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 3,
+          "pc": "0x19dfe",
+          "registers": {
+            "r0": "0x800f",
+            "r1": "0xbb8d",
+            "r2": "0x0",
+            "r3": "0x1",
+            "r4": "0x0",
+            "r5": "0x1",
+            "r6": "0xa",
+            "r7": "0x5",
+            "r8": "0x3",
+            "r9": "0x1",
+            "r10": "0x20",
+            "r11": "0x1e",
+            "r12": "0x2fcf34",
+            "sp": "0x7000e000",
+            "lr": "0xbc8f",
+            "pc": "0x19dfe",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x3",
+              "r9": "0x1",
+              "r10": "0x20",
+              "r11": "0x1e",
+              "r12": "0x2fcf34"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0xbc8f",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "b368192b7a4188018007bcd75ca9d285aa165514c6ac153dbc7b2ed9c9f8e275",
+        "trace_sha256": "027a3fd47fa9655a077c03293f91a45984351076a412c282e810447815b605ad",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_service_context_prefix",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 0,
+        "count": 0,
+        "storage_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_service_context_prefix",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 8,
+          "pc": "0x604c",
+          "registers": {
+            "r0": "0x363480",
+            "r1": "0x3638f8",
+            "r2": "0x0",
+            "r3": "0x1",
+            "r4": "0x0",
+            "r5": "0x1",
+            "r6": "0xa",
+            "r7": "0x5",
+            "r8": "0x3",
+            "r9": "0x1",
+            "r10": "0x20",
+            "r11": "0x1e",
+            "r12": "0x2fcf34",
+            "sp": "0x7000dff8",
+            "lr": "0x7000fff1",
+            "pc": "0x604c",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x3",
+              "r9": "0x1",
+              "r10": "0x20",
+              "r11": "0x1e",
+              "r12": "0x2fcf34"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000dff8",
+              "lr": "0x7000fff1",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "f2da1143a5aff749f3b57084bf6c549c5fabeac8e9eb9b8a518351bc64964f9b",
+        "trace_sha256": "5ecfa319e0102d355438477f76c26c7630ea60acd6fc835bb59caa25cbbccd83",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_callback_registered_before_notification",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 0,
+        "count": 0,
+        "storage_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_callback_registered_before_notification",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 86,
+          "pc": "0x23f68",
+          "registers": {
+            "r0": "0x9c013006",
+            "r1": "0x1",
+            "r2": "0xf",
+            "r3": "0x1",
+            "r4": "0x93f01000",
+            "r5": "0x0",
+            "r6": "0xf",
+            "r7": "0x0",
+            "r8": "0x800f",
+            "r9": "0xbb8d",
+            "r10": "0x1",
+            "r11": "0x1e",
+            "r12": "0x2fcf34",
+            "sp": "0x7000dfe0",
+            "lr": "0x23eed",
+            "pc": "0x23f68",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x800f",
+              "r9": "0xbb8d",
+              "r10": "0x1",
+              "r11": "0x1e",
+              "r12": "0x2fcf34"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000dfe0",
+              "lr": "0x23eed",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "934740d6a32e91f45806ef06736b54f842f0f86e68bf7533f715a426b5fd2dcc",
+        "trace_sha256": "df5e1dc76c7ae6dffaed1e7cb39ecd46e919b22a90bec2cbe66c4ca09617452b",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_receiver_message0_before_local_irq",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 0,
+        "count": 0,
+        "storage_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_receiver_message0_before_local_irq",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 285,
+          "pc": "0x23964",
+          "registers": {
+            "r0": "0x20",
+            "r1": "0x363480",
+            "r2": "0xffffffe8",
+            "r3": "0x4",
+            "r4": "0x93f01110",
+            "r5": "0x363488",
+            "r6": "0x93f01118",
+            "r7": "0x93f01124",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x0",
+            "sp": "0x7000dfd8",
+            "lr": "0x23c8d",
+            "pc": "0x23964",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x0"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000dfd8",
+              "lr": "0x23c8d",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "8a96ab6d28f3a48764bd0686ed526419939d7ed24b1c9c2020f4ff2132695257",
+        "trace_sha256": "736e75bbac60ef2db414e27f176afae08e25146d823f461467f790b4fd20eda2",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_receiver_message1_before_local_irq",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 0,
+        "count": 0,
+        "storage_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_receiver_message1_before_local_irq",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 298,
+          "pc": "0x23964",
+          "registers": {
+            "r0": "0x20",
+            "r1": "0x363488",
+            "r2": "0xffffffe8",
+            "r3": "0x0",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x0",
+            "sp": "0x7000dfd8",
+            "lr": "0x23c8d",
+            "pc": "0x23964",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x0"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000dfd8",
+              "lr": "0x23c8d",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "d1a6d6971eb03144f7b4789b4b23453818f7c90020ca0e9decfa6cbcf78eb4ed",
+        "trace_sha256": "63934e953257ef78b6c2c11abf7484b3115a4f76b06bebc040deff55c3d2dd8a",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_dispatch_and_kernel_send0",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 1,
+        "count": 1,
+        "storage_words": [
+          539476348,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_dispatch_and_kernel_send0",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 214,
+          "pc": "0x7000fff0",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x3638ec",
+            "r2": "0x0",
+            "r3": "0x2",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x0",
+            "sp": "0x7000e000",
+            "lr": "0x23b87",
+            "pc": "0x7000fff0",
+            "cpsr": "0x400000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x0"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0x23b87",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "7d7861d1f05fcf517b7015d2b6cd9fb72685cef103383646005a07e01efdf2a4",
+        "trace_sha256": "bd77eec7afbcf95a3b8c2f810344e5846cd400f5efaa5dd16a8e09b2f3ae12c0",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_dispatch_and_kernel_send1",
+      "queue11": {
+        "read_index": 0,
+        "write_index": 2,
+        "count": 2,
+        "storage_words": [
+          539476348,
+          539476012,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_dispatch_and_kernel_send1",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 214,
+          "pc": "0x7000fff0",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x3638ec",
+            "r2": "0x0",
+            "r3": "0x0",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x1",
+            "sp": "0x7000e000",
+            "lr": "0x23b87",
+            "pc": "0x7000fff0",
+            "cpsr": "0x400000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x1"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0x23b87",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "f47bd301b5b440aaed37257a88a4caf455fd5969b8943a2f0f619babc77be8a5",
+        "trace_sha256": "1579b65768638ce1bb3a26667c8054eb3906b5e52d1126ace3037f7a0c98df44",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_kernel_poll_receive0",
+      "queue11": {
+        "read_index": 1,
+        "write_index": 2,
+        "count": 1,
+        "storage_words": [
+          539476348,
+          539476012,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_kernel_poll_receive0",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 49,
+          "pc": "0x7000fff0",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x1",
+            "r2": "0x0",
+            "r3": "0xfffffffb",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x1",
+            "sp": "0x7000e000",
+            "lr": "0x20dfac",
+            "pc": "0x7000fff0",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x1"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0x20dfac",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "3c1354d0071520dbb99b2e00631d03d32b99d653eee733ec26902a4aa8b01ff5",
+        "trace_sha256": "939ee24881045fb6222073d144777e55e9f17908e683cbdf121b1e773a7dfdb1",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_kernel_poll_receive1",
+      "queue11": {
+        "read_index": 2,
+        "write_index": 2,
+        "count": 0,
+        "storage_words": [
+          539476348,
+          539476012,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_kernel_poll_receive1",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 49,
+          "pc": "0x7000fff0",
+          "registers": {
+            "r0": "0x0",
+            "r1": "0x2",
+            "r2": "0x0",
+            "r3": "0xfffffffc",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x1",
+            "sp": "0x7000e000",
+            "lr": "0x20dfac",
+            "pc": "0x7000fff0",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x1"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0x20dfac",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "5670ed9ceb76c82a33f326d125cfc2ada3f0a25a00fe727e30a0152ae5380535",
+        "trace_sha256": "373f57afbd086e418ded222bf6746dee7e27a01fd0d803e21c3d6c39998869fb",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    },
+    {
+      "name": "native_empty_queue_poll_control",
+      "queue11": {
+        "read_index": 2,
+        "write_index": 2,
+        "count": 0,
+        "storage_words": [
+          539476348,
+          539476012,
+          0,
+          0,
+          0
+        ]
+      },
+      "execution": {
+        "directory": "work/gm5-arm-native-kernel-ipc-2/native_empty_queue_poll_control",
+        "result": {
+          "stop": "reviewed_boundary",
+          "instructions_started": 29,
+          "pc": "0x7000fff0",
+          "registers": {
+            "r0": "0xffffffce",
+            "r1": "0x70001000",
+            "r2": "0x0",
+            "r3": "0xfffffffc",
+            "r4": "0x93f01110",
+            "r5": "0x363514",
+            "r6": "0x93f01118",
+            "r7": "0x93f01130",
+            "r8": "0x363480",
+            "r9": "0x2f1d08",
+            "r10": "0xfffffff8",
+            "r11": "0x1e",
+            "r12": "0x1",
+            "sp": "0x7000e000",
+            "lr": "0x7000fff1",
+            "pc": "0x7000fff0",
+            "cpsr": "0x200000b3"
+          },
+          "banked_registers": {
+            "system": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "r8": "0x363480",
+              "r9": "0x2f1d08",
+              "r10": "0xfffffff8",
+              "r11": "0x1e",
+              "r12": "0x1"
+            },
+            "fiq": {
+              "sp": "0x796c30",
+              "lr": "0x0",
+              "r8": "0x0",
+              "r9": "0x0",
+              "r10": "0x0",
+              "r11": "0x0",
+              "r12": "0x0",
+              "spsr": "0x0"
+            },
+            "irq": {
+              "sp": "0x797030",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "supervisor": {
+              "sp": "0x7000e000",
+              "lr": "0x7000fff1",
+              "spsr": "0x0"
+            },
+            "abort": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            },
+            "undefined": {
+              "sp": "0x0",
+              "lr": "0x0",
+              "spsr": "0x0"
+            }
+          },
+          "floating_point_registers": {
+            "fpexc": "0x40000000",
+            "fpscr": "0x0",
+            "d0": "0x0",
+            "d1": "0x0",
+            "d2": "0x0",
+            "d3": "0x0",
+            "d4": "0x0",
+            "d5": "0x0",
+            "d6": "0x0",
+            "d7": "0x0",
+            "d8": "0x0",
+            "d9": "0x0",
+            "d10": "0x0",
+            "d11": "0x0",
+            "d12": "0x0",
+            "d13": "0x0",
+            "d14": "0x0",
+            "d15": "0x0",
+            "d16": "0x0",
+            "d17": "0x0",
+            "d18": "0x0",
+            "d19": "0x0",
+            "d20": "0x0",
+            "d21": "0x0",
+            "d22": "0x0",
+            "d23": "0x0",
+            "d24": "0x0",
+            "d25": "0x0",
+            "d26": "0x0",
+            "d27": "0x0",
+            "d28": "0x0",
+            "d29": "0x0",
+            "d30": "0x0",
+            "d31": "0x0",
+            "cpacr": "0x0"
+          },
+          "fault": null,
+          "engine_error": null
+        },
+        "scenario_sha256": "8f6dec5a288055e716b7860c4d22ac49a1d9bfc6ba851e05148be59793bc32f9",
+        "trace_sha256": "0e0f205be520ac227fcd560357be67a7d702ebcc49da47187f966c47765e05e9",
+        "driver_sha256": "94eaf08266be2e30ad14f8763767ac6f84d5b5bcc8dd7f42e6187703e5f61fdb",
+        "cpu_model_fixture": "Cortex-A9"
+      }
+    }
+  ],
+  "native_sent_and_received_words": [
+    "0x2027c17c",
+    "0x2027c02c"
+  ],
+  "empty_poll_status": -50,
+  "mn103_ring_source_sha256": "01b1b6b5fbae6836fa0911b827a23007aa1f6a2a03c03aa2ff023dd444c707d0",
+  "native_instructions_started": 729080,
+  "complete_ui_or_worker_reply_flow": false,
+  "kernel_queue_api_return_stubs_used": false,
+  "interrupt_delivery_or_peer_acknowledgements_supplied": false,
+  "source_is_emulated_mn103_state_not_physical_ram_dump": true,
+  "limits": [
+    "Direct prefix/handler/kernel calls use fresh Supervisor caller frames; complete scheduler/interrupt delivery is not modeled.",
+    "Receiver/registration stages stop before local-controller/notification accesses. The real kernel queue send/receive bodies execute without return stubs.",
+    "The native worker that processes queue11 and produces a reply has not run. No complete camera UI flow is claimed.",
+    "Cortex-A9 is an explicit CPU fixture; physical ARM identity/cache/MMU/timer behavior is not established.",
+    "The native FP setup writesCPACR0x00f00000, but this fixture's native/API readback is0. CPACR privilege behavior is not a hardware prediction; FPEXC and native NEON execution have separate controls.",
+    "Application initialization currently stops atqueue11 creation. The remaining objects, worker tasks, scheduler and replies have not run.",
+    "Ordinary work storage400000..799000 is an explicit ROM-selected buffer/stack/pool fixture; zero/A5 controls do not measure physical reset contents."
+  ]
+}

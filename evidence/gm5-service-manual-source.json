@@ -1,0 +1,31 @@
+{
+  "schema": 2,
+  "repository": "flickering-star/gm5",
+  "revision": "0d4474a1948c9fc2c317ccb97e5c519820962271",
+  "path": "GM5 Service Manual-1.pdf",
+  "git_blob_sha1": "0d23448e51264230701e59488bd3a4ec89b54c51",
+  "bytes": 8586793,
+  "source_url": "https://github.com/flickering-star/gm5/blob/0d4474a1948c9fc2c317ccb97e5c519820962271/GM5%20Service%20Manual-1.pdf",
+  "status": "locally_verified_and_reviewed",
+  "local_pdf_acquired": true,
+  "pdf_contents_inspected": true,
+  "limitations": [
+    "The uploaded PDF is a service manual, not a firmware image or complete component-level schematic.",
+    "Extracted text omits some table and diagram content; relevant graphics were checked separately.",
+    "No physical camera, memory-read operation or service tool was exercised."
+  ],
+  "sha256": "8b517daaaaad766987180fc4dc8fe13e3b7a0e31cdec848a471c73f09ce3a8de",
+  "page_count": 62,
+  "historical_access_issues": [
+    "GitHub tree metadata identifies the uploaded PDF and its blob SHA-1.",
+    "GitHub fetch_file returned empty content for this large file; binary blob tools could not decode it as UTF-8.",
+    "The browsing tool could not fetch the new PDF URL.",
+    "Local git fetch failed to resolve github.com under the session network restrictions.",
+    "No GM5-named PDF was found under the local Downloads, Desktop or Documents directories."
+  ],
+  "observations": [
+    "The owner fetched the PDF into the local checkout.",
+    "The local size and Git blob SHA-1 match the uploaded file.",
+    "Text was extracted from all 62 pages; key tables and diagrams were also inspected as images."
+  ]
+}

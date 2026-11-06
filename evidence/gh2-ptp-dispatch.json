@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "scope": "GH2 PTP dispatch comparison; no new GM5 commands established",
+  "source": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "bytes": 15598592,
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "verifier": {
+    "path": "tools/gh2_ptp_verify.py",
+    "sha256": "9c357aab568c45a467113cab752e8718db99418996c5eb2eaa51adfbdfa43ef6",
+    "decoder": "work/toolchain/mn10300/mn103-dis",
+    "decoder_sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde"
+  },
+  "mechanical_checks": {
+    "regions": [
+      {
+        "name": "opcode_range_and_hash_dispatch",
+        "start": "0x401f1e85",
+        "end_exclusive": "0x401f1ed2",
+        "body_offset": "0x1f2285",
+        "bytes": 77,
+        "sha256": "d4775c21fcc6d99ed0560ef8f9db90690be15000ff5b00e060b5cba22a941676",
+        "instructions": 29,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f1e85  movhu\t(0x744dcca6),d1\t; fcada6cc4d74\n401f1e8b  cmp\t4097,d1\t; fac90110\n401f1e8f  bge\t0x401f1e94\t; c205\n401f1e91  jmp\t0x401f1fc9\t; cc3801\n401f1e94  cmp\t38917,d1\t; fcc905980000\n401f1e9a  ble\t0x401f1e9f\t; c305\n401f1e9c  jmp\t0x401f1fc9\t; cc2d01\n401f1e9f  add\t-4096,d1\t; fac100f0\n401f1ea3  mov\t1082076200,a1\t; fcdd282c7f40\n401f1ea9  mov\ta1,a0\t; 94\n401f1eaa  mov\t31,d0\t; 801f\n401f1eac  and\td1,d0\t; f204\n401f1eae  asl\t3,d0\t; f8c003\n401f1eb1  add\td0,a0\t; f160\n401f1eb3  mov\t(a0),d0\t; 70\n401f1eb4  cmp\td1,d0\t; a4\n401f1eb5  beq\t0x401f1ecd\t; c818\n401f1eb7  cmp\t0,d0\t; a000\n401f1eb9  bne\t0x401f1ebe\t; c905\n401f1ebb  jmp\t0x401f1fc9\t; cc0e01\n401f1ebe  add\t8,a0\t; 2008\n401f1ec0  cmp\t1082076456,a0\t; fcd8282d7f40\n401f1ec6  bcs\t0x401f1ec9\t; c403\n401f1ec8  mov\ta1,a0\t; 94\n401f1ec9  mov\t(a0),d0\t; 70\n401f1eca  cmp\td1,d0\t; a4\n401f1ecb  bne\t0x401f1eb7\t; c9ec\n401f1ecd  mov\t(4,a0),a1\t; f82404\n401f1ed0  jmp\t(a1)\t; f0f5\n"
+      },
+      {
+        "name": "device_info_format_selection",
+        "start": "0x401f1ed2",
+        "end_exclusive": "0x401f1eee",
+        "body_offset": "0x1f22d2",
+        "bytes": 28,
+        "sha256": "fb6383afa5ff246d2f8cf8d1a8b6699011610435ed352cbb70347625aaffeaf7",
+        "instructions": 9,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f1ed2  movhu\t(0x744ddf36),d1\t; fcad36df4d74\n401f1ed8  cmp\t5,d1\t; a505\n401f1eda  bne\t0x401f1ee5\t; c90b\n401f1edc  mov\td2,d0\t; 88\n401f1edd  call\t0x401f2a00,[d2,d3,a2,a3],204\t; cd230bf0cc\n401f1ee2  ret\t[d2,d3,a2,a3],20\t; dff014\n401f1ee5  mov\td2,d0\t; 88\n401f1ee6  call\t0x401f265f,[d2,d3,a2,a3],184\t; cd7907f0b8\n401f1eeb  ret\t[d2,d3,a2,a3],20\t; dff014\n"
+      },
+      {
+        "name": "normal_operation_list_copy",
+        "start": "0x401f265f",
+        "end_exclusive": "0x401f2676",
+        "body_offset": "0x1f2a5f",
+        "bytes": 23,
+        "sha256": "e40f1d32274b2882bf5e9cebc0135089c1d32aec35b9b2a7ba23db7af529404e",
+        "instructions": 13,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f265f  mov\td0,d2\t; 82\n401f2660  mov\td2,a2\t; f1ea\n401f2662  mov\t1082075694,a1\t; fcdd2e2a7f40\n401f2668  mov\tsp,a0\t; 3c\n401f2669  add\t36,a0\t; 2024\n401f266b  mov\t-32,d1\t; 85e0\n401f266d  setlb\t\t; db\n401f266e  movbu\t(a1),d0\t; f041\n401f2670  inc\ta1\t; 45\n401f2671  movbu\td0,(a0)\t; f050\n401f2673  inc\ta0\t; 41\n401f2674  inc\td1\t; 44\n401f2675  lne\t\t; d9\n"
+      },
+      {
+        "name": "normal_operation_list_serialization",
+        "start": "0x401f284a",
+        "end_exclusive": "0x401f286d",
+        "body_offset": "0x1f2c4a",
+        "bytes": 35,
+        "sha256": "6fdc0ef26ec9aa73b40337a03691459d562c8523eb81d543d779b65b8a0de583",
+        "instructions": 25,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f284a  mov\t16,d0\t; 8010\n401f284c  mov\td0,(28,sp)\t; 421c\n401f284e  mov\t(16,sp),a0\t; 5c10\n401f2850  clr\td0\t; 00\n401f2851  setlb\t\t; db\n401f2852  movbu\t(a0),d1\t; f044\n401f2854  inc\ta0\t; 41\n401f2855  movbu\td1,(a2)\t; f056\n401f2857  inc\ta2\t; 49\n401f2858  inc\td0\t; 40\n401f2859  exthu\td0\t; 1c\n401f285a  cmp\t4,d0\t; a004\n401f285c  llt\t\t; d0\n401f285d  mov\tsp,a0\t; 3c\n401f285e  add\t36,a0\t; 2024\n401f2860  clr\td0\t; 00\n401f2861  setlb\t\t; db\n401f2862  movbu\t(a0),d1\t; f044\n401f2864  inc\ta0\t; 41\n401f2865  movbu\td1,(a2)\t; f056\n401f2867  inc\ta2\t; 49\n401f2868  inc\td0\t; 40\n401f2869  exthu\td0\t; 1c\n401f286a  cmp\t32,d0\t; a020\n401f286c  llt\t\t; d0\n"
+      },
+      {
+        "name": "alternate_operation_list_copy",
+        "start": "0x401f2a00",
+        "end_exclusive": "0x401f2a17",
+        "body_offset": "0x1f2e00",
+        "bytes": 23,
+        "sha256": "293e7029efdf08ebeac68c11042bbf9f01322463676a344788142f2aa9dfe2e4",
+        "instructions": 13,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f2a00  mov\td0,d2\t; 82\n401f2a01  mov\td2,a2\t; f1ea\n401f2a03  mov\t1082075751,a1\t; fcdd672a7f40\n401f2a09  mov\tsp,a0\t; 3c\n401f2a0a  add\t36,a0\t; 2024\n401f2a0c  mov\t-42,d1\t; 85d6\n401f2a0e  setlb\t\t; db\n401f2a0f  movbu\t(a1),d0\t; f041\n401f2a11  inc\ta1\t; 45\n401f2a12  movbu\td0,(a0)\t; f050\n401f2a14  inc\ta0\t; 41\n401f2a15  inc\td1\t; 44\n401f2a16  lne\t\t; d9\n"
+      },
+      {
+        "name": "unsupported_dispatch_branch",
+        "start": "0x401f1fc9",
+        "end_exclusive": "0x401f1fd7",
+        "body_offset": "0x1f23c9",
+        "bytes": 14,
+        "sha256": "f47eba910a482d4b0a830475e9938e91a59d8f9b7d0985d96cd3acc137f29490",
+        "instructions": 4,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f1fc9  call\t0x401f4835,[],0\t; cd6c280000\n401f1fce  mov\td2,d0\t; 88\n401f1fcf  call\t0x401f25a4,[d2,d3],24\t; cdd505c018\n401f1fd4  ret\t[d2,d3,a2,a3],20\t; dff014\n"
+      },
+      {
+        "name": "operation_not_supported_response",
+        "start": "0x401f4835",
+        "end_exclusive": "0x401f4841",
+        "body_offset": "0x1f4c35",
+        "bytes": 12,
+        "sha256": "9d63dd652f6984803f3de398717d2f17b5ff1c2a0026b6c8f8a2130b961df7b8",
+        "instructions": 3,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f4835  mov\t8197,d0\t; 2c0520\n401f4838  movhu\td0,(0x744dccc6)\t; fc83c6cc4d74\n401f483e  retf\t[],0\t; de0000\n"
+      }
+    ],
+    "calls": [
+      {
+        "address": "0x401f1edd",
+        "target": "0x401f2a00"
+      },
+      {
+        "address": "0x401f1ee6",
+        "target": "0x401f265f"
+      },
+      {
+        "address": "0x401f1fc9",
+        "target": "0x401f4835"
+      }
+    ],
+    "operation_lists": [
+      {
+        "address": "0x407f2a2e",
+        "entries": 16,
+        "operations": [
+          "0x1001",
+          "0x1002",
+          "0x1003",
+          "0x1004",
+          "0x1005",
+          "0x1006",
+          "0x1007",
+          "0x1008",
+          "0x1009",
+          "0x100a",
+          "0x100c",
+          "0x100d",
+          "0x1014",
+          "0x1015",
+          "0x1016",
+          "0x101b"
+        ]
+      },
+      {
+        "address": "0x407f2a67",
+        "entries": 21,
+        "operations": [
+          "0x1001",
+          "0x1002",
+          "0x1003",
+          "0x1004",
+          "0x1005",
+          "0x1006",
+          "0x1007",
+          "0x1008",
+          "0x1009",
+          "0x100a",
+          "0x100b",
+          "0x100f",
+          "0x1010",
+          "0x1014",
+          "0x1015",
+          "0x1016",
+          "0x101b",
+          "0x9801",
+          "0x9802",
+          "0x9803",
+          "0x9805"
+        ]
+      }
+    ],
+    "dispatch_table": {
+      "address": "0x407f2c28",
+      "slots": 32,
+      "sha256": "ba82b0668f57fa5eb6b6db411a38bc0ba4abafbda6319b9b0f55cfbe7793a41e",
+      "active_entries": [
+        {
+          "opcode": "0x1001",
+          "branch": "0x401f1ed2"
+        },
+        {
+          "opcode": "0x1002",
+          "branch": "0x401f1eee"
+        },
+        {
+          "opcode": "0x1003",
+          "branch": "0x401f1ef6"
+        },
+        {
+          "opcode": "0x1004",
+          "branch": "0x401f1efe"
+        },
+        {
+          "opcode": "0x1005",
+          "branch": "0x401f1f07"
+        },
+        {
+          "opcode": "0x1006",
+          "branch": "0x401f1f10"
+        },
+        {
+          "opcode": "0x1007",
+          "branch": "0x401f1f19"
+        },
+        {
+          "opcode": "0x1008",
+          "branch": "0x401f1f23"
+        },
+        {
+          "opcode": "0x1009",
+          "branch": "0x401f1f2c"
+        },
+        {
+          "opcode": "0x100a",
+          "branch": "0x401f1f36"
+        },
+        {
+          "opcode": "0x100b",
+          "branch": "0x401f1f7f"
+        },
+        {
+          "opcode": "0x100c",
+          "branch": "0x401f1f40"
+        },
+        {
+          "opcode": "0x100d",
+          "branch": "0x401f1f48"
+        },
+        {
+          "opcode": "0x9801",
+          "branch": "0x401f1f87"
+        },
+        {
+          "opcode": "0x100f",
+          "branch": "0x401f1f77"
+        },
+        {
+          "opcode": "0x1010",
+          "branch": "0x401f1f56"
+        },
+        {
+          "opcode": "0x9802",
+          "branch": "0x401f1f8f"
+        },
+        {
+          "opcode": "0x9803",
+          "branch": "0x401f1f97"
+        },
+        {
+          "opcode": "0x9805",
+          "branch": "0x401f1fa0"
+        },
+        {
+          "opcode": "0x1014",
+          "branch": "0x401f1f5d"
+        },
+        {
+          "opcode": "0x1015",
+          "branch": "0x401f1f66"
+        },
+        {
+          "opcode": "0x1016",
+          "branch": "0x401f1f6f"
+        },
+        {
+          "opcode": "0x101b",
+          "branch": "0x401f1fc0"
+        }
+      ],
+      "active_set_equals_union_of_lists": true
+    },
+    "lookup_model_controls": {
+      "present_operations": 23,
+      "unsupported_examples": [
+        "0x70",
+        "0x9b",
+        "0x1000",
+        "0x100e",
+        "0x9102",
+        "0x9103",
+        "0x9104",
+        "0x9703",
+        "0x9806"
+      ]
+    }
+  },
+  "gm5_positive_control": {
+    "report": "evidence/gm5-usb-pc-ptp.json",
+    "model": "DMC-GM5",
+    "device_version": "1.1",
+    "dataset_sha256": "35306eead9b8a752e7659d455925a7c5d2b38918e23594ea3022f97d602a8aa1",
+    "all_16_measured_operations_equal_gh2_normal_list": true,
+    "new_device_query_performed": false
+  },
+  "manual_review": {
+    "dispatch": "The reviewed dispatcher bounds the operation to 0x1001..0x9805, subtracts 0x1000, hashes with mask 31, probes eight-byte key/branch records and returns unsupported on an empty slot. It jumps indirectly to the matched branch.",
+    "device_info": "Operation 0x1001 reaches 0x401f1ed2. State word 0x744ddf36 equal to 5 chooses 0x401f2a00 and its 21-entry alternate list; the other branch calls 0x401f265f, whose reviewed serialization copies the 16-entry normal list with count 16. This state word is not the descriptor-mode byte or the saved maintenance mode.",
+    "unsupported": "Branch 0x401f1fc9 calls 0x401f4835, which stores response code 0x2005 at RAM 0x744dccc6. The selected native regions support the lookup model; this is not a full CPU or camera emulator.",
+    "limits": "All 23 table operations belong to the two embedded lists. No manufacturer-specific opcode or diagnostic memory-reader target appears in this reviewed table. This does not exhaust other USB transports or prove any GM5 implementation beyond the measured operation-list equality."
+  },
+  "limits": {
+    "camera_contacted": false,
+    "packet_produced": false,
+    "target_code_executed": false,
+    "plaintext_dump_obtained": false
+  }
+}

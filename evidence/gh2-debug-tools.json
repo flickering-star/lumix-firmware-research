@@ -1,0 +1,477 @@
+{
+  "schema": 1,
+  "scope": "Static GH2 1.2 diagnostic consumers; not GM5 compatibility or hardware validation",
+  "source": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "bytes": 15598592,
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea",
+    "md5": "35cb77e2ef08df9ef334ff1e496b0b02",
+    "official_package_md5_matches": true,
+    "provenance": "evidence/gh2-settings-consumers.json"
+  },
+  "verifier": {
+    "path": "tools/gh2_debug_verify.py",
+    "sha256": "5b84a69d08380620e496a61ecb2ad43ad2f0c9fdee2c4592054a126e7241bf4f"
+  },
+  "decoder": {
+    "path": "work/toolchain/mn10300/mn103-dis",
+    "sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde",
+    "build_receipt": "work/toolchain/mn10300/build.json",
+    "machine_argument": 332
+  },
+  "secondary_segment": {
+    "body_offset": "0x8c0400",
+    "flash_source_start": "0x408c0000",
+    "flash_source_end": "0x40ae0000",
+    "copied_bytes": 2228224,
+    "linked_start": "0x7bbc0000",
+    "file_zero_base": "0x7b2ffc00",
+    "copy_destination_arithmetic": "0xbbbc0000",
+    "support": "Reset vector, USBMNT string reference, libc loops and startup copy agree; alias hardware details not established"
+  },
+  "dispatch": {
+    "entry": "0x401ef0a5",
+    "command_source_state": "0x744dcbe8",
+    "table": "0x407f2064",
+    "body_offset": "0x7f2464",
+    "entries": 212,
+    "table_sha256": "63b511a25e3ce8bc88cdba1cc9eed63b0f70a6b30624eff103fba0a4f6701dfb",
+    "selected_links_verified": 6,
+    "readers": [
+      {
+        "command": "0x35",
+        "branch": "0x401ef189",
+        "handler": "0x401ef8af",
+        "name": "settings_buffer_word",
+        "static_review": "16-bit word index; area selects a bounded settings buffer"
+      },
+      {
+        "command": "0x38",
+        "branch": "0x401ef181",
+        "handler": "0x401ef9ae",
+        "name": "settings_flash_word",
+        "static_review": "16-bit word index; areas 0x10/0x11/0x20 select bounded EEPROM flash banks"
+      },
+      {
+        "command": "0x46",
+        "branch": "0x401ef1c5",
+        "handler": "0x401efc76",
+        "name": "register_window_word",
+        "static_review": "16-bit word index below 0xffff; reads 0x9c000000 + 2*index"
+      },
+      {
+        "command": "0x70",
+        "branch": "0x401ef265",
+        "handler": "0x401f01d3",
+        "name": "flash_relative_word",
+        "static_review": "32-bit little-endian word index; reads two bytes at 0x40000000 + 2*index"
+      },
+      {
+        "command": "0x75",
+        "branch": "0x401ef26d",
+        "handler": "0x401f022b",
+        "name": "ram_relative_word",
+        "static_review": "32-bit little-endian word index; reads two bytes at 0xb4000000 + 2*index"
+      },
+      {
+        "command": "0x9b",
+        "branch": "0x401ef27d",
+        "handler": "0x401f02cb",
+        "name": "absolute_word",
+        "static_review": "32-bit little-endian byte address; directly loads a 16-bit word"
+      }
+    ]
+  },
+  "regions": [
+    {
+      "name": "main_reset",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x40000000",
+      "end_exclusive": "0x40000038",
+      "body_offset": "0x400",
+      "bytes": 56,
+      "native_sha256": "771273cf1335bc9cb24b5dce2a7494cec11f3189ce40da58e87a5501e4e4eb9d",
+      "instruction_count": 32,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "70cf2795f186260cee918d3bcaab37f53ebf8d5d797fa788cc5ece60fd83ccd2"
+    },
+    {
+      "name": "secondary_code_copy",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x400046e7",
+      "end_exclusive": "0x40004769",
+      "body_offset": "0x4ae7",
+      "bytes": 130,
+      "native_sha256": "d79255ea53efc2de8a631b555fcbaa47a88bb78cde7502009d30703c869a2465",
+      "instruction_count": 64,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "e0abb5a564ea8bad3c649e2c32941b953e745cd932320215fc1d43358eb31db6",
+      "disassembly": "400046e7  mov\t1082916864,a1\t; fcdd00008c40\n400046ed  mov\t1085145088,d2\t; fcce0000ae40\n400046f3  mov\t2075918336,d1\t; fccd0000bc7b\n400046f9  add\t-1946157056,d1\t; fcc10000008c\n400046ff  add\t-1275068416,d1\t; fcc1000000b4\n40004705  mov\td1,a3\t; f1e7\n40004707  mov\ta3,a0\t; 9c\n40004708  setlb\t\t; db\n40004709  mov\t(a1),d0\t; 71\n4000470a  inc4\ta1\t; 51\n4000470b  mov\td0,(a0)\t; 60\n4000470c  mov\t(a1),d0\t; 71\n4000470d  inc4\ta0\t; 50\n4000470e  mov\td0,(a0)\t; 60\n4000470f  inc4\ta1\t; 51\n40004710  mov\t(a1),d0\t; 71\n40004711  inc4\ta0\t; 50\n40004712  mov\td0,(a0)\t; 60\n40004713  inc4\ta1\t; 51\n40004714  mov\t(a1),d0\t; 71\n40004715  inc4\ta0\t; 50\n40004716  mov\td0,(a0)\t; 60\n40004717  inc4\ta1\t; 51\n40004718  inc4\ta0\t; 50\n40004719  cmp\t1083473264,a1\t; fcd9707d9440\n4000471f  lcs\t\t; d4\n40004720  mov\t-1677672398,a2\t; fcde32c0009c\n40004726  movhu\t(a2),d0\t; f062\n40004728  or\t128,d0\t; f8e480\n4000472b  movhu\td0,(a2)\t; f072\n4000472d  mov\t-1677672340,a2\t; fcde6cc0009c\n40004733  movhu\t(a2),d0\t; f062\n40004735  or\t32,d0\t; f8e420\n40004738  movhu\td0,(a2)\t; f072\n4000473a  cmp\td2,a1\t; f1a9\n4000473c  bcc\t0x40004752\t; c616\n4000473e  setlb\t\t; db\n4000473f  mov\t(a1),d0\t; 71\n40004740  inc4\ta1\t; 51\n40004741  mov\td0,(a0)\t; 60\n40004742  mov\t(a1),d0\t; 71\n40004743  inc4\ta0\t; 50\n40004744  mov\td0,(a0)\t; 60\n40004745  inc4\ta1\t; 51\n40004746  mov\t(a1),d0\t; 71\n40004747  inc4\ta0\t; 50\n40004748  mov\td0,(a0)\t; 60\n40004749  inc4\ta1\t; 51\n4000474a  mov\t(a1),d0\t; 71\n4000474b  inc4\ta0\t; 50\n4000474c  mov\td0,(a0)\t; 60\n4000474d  inc4\ta1\t; 51\n4000474e  inc4\ta0\t; 50\n4000474f  cmp\td2,a1\t; f1a9\n40004751  lcs\t\t; d4\n40004752  mov\t(a3),d0\t; 73\n40004753  mov\td0,(sp)\t; 4200\n40004755  mov\t(64,a3),d0\t; f80340\n40004758  mov\td0,(sp)\t; 4200\n4000475a  mov\t(128,a3),d0\t; fa038000\n4000475e  mov\td0,(sp)\t; 4200\n40004760  mov\t(192,a3),d0\t; fa03c000\n40004764  mov\td0,(sp)\t; 4200\n40004766  retf\t[d2,a2,a3],16\t; deb010\n"
+    },
+    {
+      "name": "secondary_reset",
+      "file_zero_base": "0x7b2ffc00",
+      "start": "0x7bbc0000",
+      "end_exclusive": "0x7bbc00e3",
+      "body_offset": "0x8c0400",
+      "bytes": 227,
+      "native_sha256": "3baba9da249958181c29445573b5fe7ab26c96b682ba06e7ba571badd39bcf75",
+      "instruction_count": 87,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "b1c5e4160cc869b7cc48464a72196defc3317365339fa4940d79c132ba6c1bf8"
+    },
+    {
+      "name": "secondary_libc",
+      "file_zero_base": "0x7b2ffc00",
+      "start": "0x7bc519c8",
+      "end_exclusive": "0x7bc51aac",
+      "body_offset": "0x951dc8",
+      "bytes": 228,
+      "native_sha256": "89ca38da4104d28bad149159ab31b92c83d24df63d2945acd36600a733f31e8c",
+      "instruction_count": 143,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "2765386f6747d6e329a721f3c656b95ae4fee688050c15b74b32681750886906"
+    },
+    {
+      "name": "secondary_maintenance_tag_check",
+      "file_zero_base": "0x7b2ffc00",
+      "start": "0x7bcfc527",
+      "end_exclusive": "0x7bcfc550",
+      "body_offset": "0x9fc927",
+      "bytes": 41,
+      "native_sha256": "bad6a90990c6e236ff62ac579957452a68b865f1c6655acd74a6288d8d461342",
+      "instruction_count": 13,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "aef16d777191e21dacbdd2bf08a656a04c628753ea15cecef00a7df6733d863a"
+    },
+    {
+      "name": "main_maintenance_tag_check",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x400d7959",
+      "end_exclusive": "0x400d79c0",
+      "body_offset": "0xd7d59",
+      "bytes": 103,
+      "native_sha256": "585a70ac63045cbaabca51ccf2821af446fdaa88d59c1d0baab6e965421e6305",
+      "instruction_count": 30,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "1e6e03bb31b1ca1c588dc72604609a02c24094cba8390726633d45f40492f0b2"
+    },
+    {
+      "name": "receive_state_dispatch",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401eee32",
+      "end_exclusive": "0x401eeeba",
+      "body_offset": "0x1ef232",
+      "bytes": 136,
+      "native_sha256": "b03f26d8fd8fcdc9ba1f1b0eaa8f39ab0bdc2b25e3f001b384027462d25ed3c9",
+      "instruction_count": 43,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "d277c4e2fc27422b97fcb87e0cf5de592bd914bfe29795b42b4cae4b9ca4aa90"
+    },
+    {
+      "name": "primary_command_dispatch",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401ef0a5",
+      "end_exclusive": "0x401ef0c6",
+      "body_offset": "0x1ef4a5",
+      "bytes": 33,
+      "native_sha256": "73fd436a284c4105df464abd5003c20c09935fd659382169ecaebd319b1cbb48",
+      "instruction_count": 11,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "34cf822420d2a6c89d7d39ff57f28edb75fa66d2a7b03babf583236d001522f5",
+      "disassembly": "401ef0a5  movhu\t(0x744dcbe8),d0\t; fcace8cb4d74\n401ef0ab  cmp\t0,d0\t; a000\n401ef0ad  bge\t0x401ef0b2\t; c205\n401ef0af  jmp\t0x401ef374\t; ccc502\n401ef0b2  cmp\t211,d0\t; fac8d300\n401ef0b6  ble\t0x401ef0bb\t; c305\n401ef0b8  jmp\t0x401ef374\t; ccbc02\n401ef0bb  asl2\td0\t; 54\n401ef0bc  mov\t1082073188,a1\t; fcdd64207f40\n401ef0c2  mov\t(d0,a1),a1\t; f391\n401ef0c4  jmp\t(a1)\t; f0f5\n"
+    },
+    {
+      "name": "reader_dispatch_branches",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401ef255",
+      "end_exclusive": "0x401ef28d",
+      "body_offset": "0x1ef655",
+      "bytes": 56,
+      "native_sha256": "0ed309272bc7d979267652087d97f48e40801dec107584ad02e4869f16754d9e",
+      "instruction_count": 14,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "469ae45530c7c8e8ca4206c1a233c2ff882ae5d71e1305090c128a01b777f06e",
+      "disassembly": "401ef255  call\t0x401f0187,[],4\t; cd320f0004\n401ef25a  ret\t[],4\t; df0004\n401ef25d  call\t0x401f0197,[d2],28\t; cd3a0f801c\n401ef262  ret\t[],4\t; df0004\n401ef265  call\t0x401f01d3,[],24\t; cd6e0f0018\n401ef26a  ret\t[],4\t; df0004\n401ef26d  call\t0x401f022b,[],24\t; cdbe0f0018\n401ef272  ret\t[],4\t; df0004\n401ef275  call\t0x401f0283,[d2],8\t; cd0e108008\n401ef27a  ret\t[],4\t; df0004\n401ef27d  call\t0x401f02cb,[],16\t; cd4e100010\n401ef282  ret\t[],4\t; df0004\n401ef285  call\t0x401f0313,[d2],8\t; cd8e108008\n401ef28a  ret\t[],4\t; df0004\n"
+    },
+    {
+      "name": "response_helpers",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401ef37c",
+      "end_exclusive": "0x401ef49b",
+      "body_offset": "0x1ef77c",
+      "bytes": 287,
+      "native_sha256": "77f209ee6bb6729fe61158b9f229d558ead5ee99d4275f78a6a1f8255113b8ec",
+      "instruction_count": 144,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "7e928a5194b00328cef328ebf833fef466a9686683a34c7b33d523b7d9016b24"
+    },
+    {
+      "name": "settings_buffer_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401ef8af",
+      "end_exclusive": "0x401ef92f",
+      "body_offset": "0x1efcaf",
+      "bytes": 128,
+      "native_sha256": "e0a5ef9d0322243152ec25fa836a7430490b936f0e0e55d31b57b0fdf7deedb5",
+      "instruction_count": 50,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "d6c12a1519af3c55748766672e075e2160b32a19c7ec96174627b15cbec42d06"
+    },
+    {
+      "name": "settings_flash_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401ef9ae",
+      "end_exclusive": "0x401efa2b",
+      "body_offset": "0x1efdae",
+      "bytes": 125,
+      "native_sha256": "4b820a1e0967a3e929c02e64ad6217b1f8ea94ad3bfbacba4d9c3a92736fecf0",
+      "instruction_count": 47,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "1d650538f70d69b2457c8c9949567e7fb743d6084fc1c2b9bc30b99fb0cd506c",
+      "disassembly": "401ef9ae  mov\t3,d0\t; 8003\n401ef9b0  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401ef9b6  mov\t2,d0\t; 8002\n401ef9b8  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401ef9be  movbu\t(6,a0),d0\t; f84006\n401ef9c1  mov\t-1259625472,a1\t; fcdd00a4ebb4\n401ef9c7  cmp\t16,d0\t; a010\n401ef9c9  bne\t0x401ef9d3\t; c90a\n401ef9cb  mov\t1090125824,a1\t; fcdd0000fa40\n401ef9d1  bra\t0x401ef9dd\t; ca0c\n401ef9d3  cmp\t17,d0\t; a011\n401ef9d5  bne\t0x401ef9e2\t; c90d\n401ef9d7  mov\t1090256896,a1\t; fcdd0000fc40\n401ef9dd  mov\t4096,d3\t; 2f0010\n401ef9e0  bra\t0x401ef9f0\t; ca10\n401ef9e2  clr\td3\t; 0c\n401ef9e3  cmp\t32,d0\t; a020\n401ef9e5  bne\t0x401ef9f0\t; c90b\n401ef9e7  mov\t1090387968,a1\t; fcdd0000fe40\n401ef9ed  mov\t16384,d3\t; 2f0040\n401ef9f0  movbu\t(4,a0),d1\t; f84404\n401ef9f3  movbu\t(5,a0),d2\t; f84805\n401ef9f6  exthu\td3\t; 1f\n401ef9f7  asl\t8,d2\t; f8c208\n401ef9fa  or\td2,d1\t; f219\n401ef9fc  exthu\td1\t; 1d\n401ef9fd  cmp\td3,d1\t; ad\n401ef9fe  bge\t0x401efa21\t; c223\n401efa00  add\td1,d1\t; e5\n401efa01  movbu\t(d1,a1),d0\t; f405\n401efa03  inc\ta1\t; 45\n401efa04  movbu\td0,(12,sp)\t; f8920c\n401efa07  movbu\t(d1,a1),d0\t; f405\n401efa09  mov\tsp,a1\t; 3d\n401efa0a  movbu\td0,(13,sp)\t; f8920d\n401efa0d  add\t12,a1\t; 210c\n401efa0f  mov\t54,d0\t; 8036\n401efa11  mov\td0,(4,sp)\t; 4204\n401efa13  mov\t2,d0\t; 8002\n401efa15  mov\td0,(8,sp)\t; 4208\n401efa17  mov\t8,d0\t; 8008\n401efa19  clr\td1\t; 04\n401efa1a  call\t0x401ef37c,[d2,d3,a2,a3],32\t; cd62f9f020\n401efa1f  bra\t0x401efa28\t; ca09\n401efa21  mov\t3,d0\t; 8003\n401efa23  call\t0x401ef49b,[],16\t; cd78fa0010\n401efa28  ret\t[d2,d3],32\t; dfc020\n"
+    },
+    {
+      "name": "register_window_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401efc76",
+      "end_exclusive": "0x401efcd1",
+      "body_offset": "0x1f0076",
+      "bytes": 91,
+      "native_sha256": "6559e2df86e80f5aebcd3f9d62e74b7d0bf8452795a554d316e4483a571c6f56",
+      "instruction_count": 34,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "6210f719ef8819e2eabc7cca55e5f853f9cd57f7e936686dbea7eae168127130"
+    },
+    {
+      "name": "flash_relative_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401f01d3",
+      "end_exclusive": "0x401f022b",
+      "body_offset": "0x1f05d3",
+      "bytes": 88,
+      "native_sha256": "b4e4248aa7e08424c057c488d586508d5d734d22d5a44cfb674a34220a6fb312",
+      "instruction_count": 31,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "36d5b3987fd00b9bba267ecf63d0b3ed5745f25963deee3b751ee87ebd5e032a",
+      "disassembly": "401f01d3  mov\t3,d0\t; 8003\n401f01d5  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401f01db  mov\t2,d0\t; 8002\n401f01dd  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401f01e3  movbu\t(4,a0),d1\t; f84404\n401f01e6  movbu\t(5,a0),d0\t; f84005\n401f01e9  mov\t1073741824,a1\t; fcdd00000040\n401f01ef  asl\t8,d0\t; f8c008\n401f01f2  or\td1,d0\t; f214\n401f01f4  movbu\t(6,a0),d1\t; f84406\n401f01f7  asl\t16,d1\t; f8c110\n401f01fa  or\td0,d1\t; f211\n401f01fc  movbu\t(7,a0),d0\t; f84007\n401f01ff  asl\t24,d0\t; f8c018\n401f0202  or\td1,d0\t; f214\n401f0204  add\td0,d0\t; e0\n401f0205  movbu\t(d0,a1),d1\t; f411\n401f0207  mov\t1073741825,a1\t; fcdd01000040\n401f020d  movbu\td1,(12,sp)\t; f8960c\n401f0210  movbu\t(d0,a1),d0\t; f401\n401f0212  mov\tsp,a1\t; 3d\n401f0213  movbu\td0,(13,sp)\t; f8920d\n401f0216  add\t12,a1\t; 210c\n401f0218  mov\t54,d0\t; 8036\n401f021a  mov\td0,(4,sp)\t; 4204\n401f021c  mov\t2,d0\t; 8002\n401f021e  mov\td0,(8,sp)\t; 4208\n401f0220  mov\t8,d0\t; 8008\n401f0222  clr\td1\t; 04\n401f0223  call\t0x401ef37c,[d2,d3,a2,a3],32\t; cd59f1f020\n401f0228  ret\t[],24\t; df0018\n"
+    },
+    {
+      "name": "ram_relative_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401f022b",
+      "end_exclusive": "0x401f0283",
+      "body_offset": "0x1f062b",
+      "bytes": 88,
+      "native_sha256": "09b2673d28e642d816c2907760efad4a811fdd23f2681ebce1f2f64616c0c191",
+      "instruction_count": 31,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "1daeaf25e40077b8053143940ab9e72194bce0e60d197c3105eb504832bc5914",
+      "disassembly": "401f022b  mov\t3,d0\t; 8003\n401f022d  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401f0233  mov\t2,d0\t; 8002\n401f0235  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401f023b  movbu\t(4,a0),d1\t; f84404\n401f023e  movbu\t(5,a0),d0\t; f84005\n401f0241  mov\t-1275068416,a1\t; fcdd000000b4\n401f0247  asl\t8,d0\t; f8c008\n401f024a  or\td1,d0\t; f214\n401f024c  movbu\t(6,a0),d1\t; f84406\n401f024f  asl\t16,d1\t; f8c110\n401f0252  or\td0,d1\t; f211\n401f0254  movbu\t(7,a0),d0\t; f84007\n401f0257  asl\t24,d0\t; f8c018\n401f025a  or\td1,d0\t; f214\n401f025c  add\td0,d0\t; e0\n401f025d  movbu\t(d0,a1),d1\t; f411\n401f025f  mov\t-1275068415,a1\t; fcdd010000b4\n401f0265  movbu\td1,(12,sp)\t; f8960c\n401f0268  movbu\t(d0,a1),d0\t; f401\n401f026a  mov\tsp,a1\t; 3d\n401f026b  movbu\td0,(13,sp)\t; f8920d\n401f026e  add\t12,a1\t; 210c\n401f0270  mov\t54,d0\t; 8036\n401f0272  mov\td0,(4,sp)\t; 4204\n401f0274  mov\t2,d0\t; 8002\n401f0276  mov\td0,(8,sp)\t; 4208\n401f0278  mov\t8,d0\t; 8008\n401f027a  clr\td1\t; 04\n401f027b  call\t0x401ef37c,[d2,d3,a2,a3],32\t; cd01f1f020\n401f0280  ret\t[],24\t; df0018\n"
+    },
+    {
+      "name": "absolute_word_read",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x401f02cb",
+      "end_exclusive": "0x401f0313",
+      "body_offset": "0x1f06cb",
+      "bytes": 72,
+      "native_sha256": "cc60b1ef77fdd59b7a1ab2638d13a57a76ec1732810c7357617c4a6b50280a63",
+      "instruction_count": 27,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "1000f739c588b9f7843e81eb1566599f113f22d3dac0e5001029cdd0519ab3ab",
+      "disassembly": "401f02cb  mov\t3,d0\t; 8003\n401f02cd  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401f02d3  mov\t2,d0\t; 8002\n401f02d5  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401f02db  movbu\t(4,a0),d0\t; f84004\n401f02de  movbu\t(5,a0),d1\t; f84405\n401f02e1  asl\t8,d1\t; f8c108\n401f02e4  or\td0,d1\t; f211\n401f02e6  movbu\t(6,a0),d0\t; f84006\n401f02e9  asl\t16,d0\t; f8c010\n401f02ec  or\td0,d1\t; f211\n401f02ee  movbu\t(7,a0),d0\t; f84007\n401f02f1  asl\t24,d0\t; f8c018\n401f02f4  or\td1,d0\t; f214\n401f02f6  mov\td0,a1\t; f1e1\n401f02f8  movhu\t(a1),d1\t; f065\n401f02fa  mov\tsp,a1\t; 3d\n401f02fb  movhu\td1,(12,sp)\t; f8970c\n401f02fe  add\t12,a1\t; 210c\n401f0300  mov\t54,d0\t; 8036\n401f0302  mov\td0,(4,sp)\t; 4204\n401f0304  mov\t2,d0\t; 8002\n401f0306  mov\td0,(8,sp)\t; 4208\n401f0308  mov\t8,d0\t; 8008\n401f030a  clr\td1\t; 04\n401f030b  call\t0x401ef37c,[d2,d3,a2,a3],32\t; cd71f0f020\n401f0310  ret\t[],16\t; df0010\n"
+    },
+    {
+      "name": "log_file_export",
+      "file_zero_base": "0x3ffffc00",
+      "start": "0x400f0283",
+      "end_exclusive": "0x400f02ef",
+      "body_offset": "0xf0683",
+      "bytes": 108,
+      "native_sha256": "e341717b994b5092843fcadf711a4e392f3041f69a9d9caa21c0e9fc8632ec53",
+      "instruction_count": 28,
+      "raw_annotations_match_source": true,
+      "disassembly_sha256": "5992d09ea1782e7c1703b93c409c7b2c638c84d065e5337bef8a059e276a9970"
+    }
+  ],
+  "literal_search": {
+    "method": "Case-insensitive literal bytes, all offsets in the complete decoded body; UTF-16 searches are not independent alignment proofs",
+    "results": [
+      {
+        "term": "debug",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "console",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "shell",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "telnet",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "uart",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "assert",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "memdump",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "readmem",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "readflash",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "dump",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "password",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "baud",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "115200",
+        "counts": {
+          "ascii": 0,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "help",
+        "counts": {
+          "ascii": 1,
+          "utf-16-le": 2,
+          "utf-16-be": 2
+        }
+      },
+      {
+        "term": "login",
+        "counts": {
+          "ascii": 1,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      },
+      {
+        "term": "command",
+        "counts": {
+          "ascii": 14,
+          "utf-16-le": 4,
+          "utf-16-be": 4
+        }
+      },
+      {
+        "term": "SDLOG",
+        "counts": {
+          "ascii": 1,
+          "utf-16-le": 0,
+          "utf-16-be": 0
+        }
+      }
+    ],
+    "context_review": {
+      "help_ascii": "One substring of a longer printable byte run at body offset 0xe5291c; no prompt/parser context identified",
+      "login_ascii": "One substring of a longer printable byte run at body offset 0xe0a96c; no prompt/parser context identified",
+      "command_ascii": "All 14 matches are in SD-card driver message tags, not a text command interpreter",
+      "sdlog": "Filename and log text at 0x22ff9c..0x230017; no direct little-endian main-mapping pointer to SDLOG.TXT identified"
+    }
+  },
+  "log_exports": {
+    "entry": "0x400f0283",
+    "condition": "input byte equals zero",
+    "files": [
+      {
+        "name": "A:\\develop.bin",
+        "source": "0x74010b38",
+        "bytes": 1024
+      },
+      {
+        "name": "A:\\histlog.bin",
+        "source": "0x7400cb38",
+        "bytes": 16384
+      },
+      {
+        "name": "A:\\userlog.bin",
+        "source": "0x74019b3c",
+        "bytes": 16384,
+        "entry": "0x400f02c3"
+      }
+    ],
+    "full_activation_conditions_traced": false
+  },
+  "interpretation": {
+    "interactive_text_shell_established": false,
+    "binary_memory_read_handlers_present": true,
+    "bounds_note": "No address-range comparison identified inside 0x70, 0x75 or 0x9b reader bodies; upstream activation and transport conditions remain unresolved",
+    "physical_usb_reachability_verified": false,
+    "gm5_equivalence_verified": false,
+    "firmware_or_camera_instructions_executed": false,
+    "camera_contacted": false
+  }
+}

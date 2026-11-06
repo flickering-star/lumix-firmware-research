@@ -1,0 +1,459 @@
+{
+  "schema": 1,
+  "scope": "Offline GH2 1.2 service-selection study, compared with saved normal GM5 USB descriptors",
+  "source": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "bytes": 15598592,
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "verifier": {
+    "path": "tools/gh2_usb_entry_verify.py",
+    "sha256": "a1e32cffdcd08c0f4772da335ec822172b3ba14119257d3ca8b5b1347ca398d3",
+    "shared_helpers": "tools/gh2_debug_verify.py",
+    "shared_helpers_sha256": "5b84a69d08380620e496a61ecb2ad43ad2f0c9fdee2c4592054a126e7241bf4f"
+  },
+  "decoder": {
+    "path": "work/toolchain/mn10300/mn103-dis",
+    "sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde",
+    "machine_argument": 332
+  },
+  "mechanical_checks": {
+    "relative_calls": [
+      {
+        "address": "0x40003891",
+        "target": "0x7bccb3b7"
+      },
+      {
+        "address": "0x400d50dd",
+        "target": "0x400d6556"
+      },
+      {
+        "address": "0x400d50f6",
+        "target": "0x400e9a8f"
+      },
+      {
+        "address": "0x400e9b0b",
+        "target": "0x401e678d"
+      },
+      {
+        "address": "0x401e67c4",
+        "target": "0x401f70c4"
+      },
+      {
+        "address": "0x401f80ae",
+        "target": "0x401f8356"
+      },
+      {
+        "address": "0x401f8368",
+        "target": "0x401f87ee"
+      },
+      {
+        "address": "0x401f8370",
+        "target": "0x401f8740"
+      },
+      {
+        "address": "0x401f8378",
+        "target": "0x401f88f5"
+      },
+      {
+        "address": "0x401f896d",
+        "target": "0x401e9808"
+      },
+      {
+        "address": "0x401e8dc7",
+        "target": "0x401e8de9"
+      },
+      {
+        "address": "0x401e8dce",
+        "target": "0x401e8e5c"
+      },
+      {
+        "address": "0x401e8ddc",
+        "target": "0x401e8ee3"
+      },
+      {
+        "address": "0x401e71e9",
+        "target": "0x401e8fe7"
+      },
+      {
+        "address": "0x401e6ac9",
+        "target": "0x401eee32"
+      }
+    ],
+    "mode_message_table": {
+      "address": "0x407f31a4",
+      "entries": 64,
+      "sha256": "5dabec81fce39378e3af84b00bf814aade8fd05a53ceac1f1ce920a28515348c",
+      "message": "0xd042",
+      "slot": 2,
+      "branch": "0x401f80a8"
+    },
+    "regions": [
+      {
+        "name": "boot_state_override",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x40003891",
+        "end_exclusive": "0x400038bb",
+        "body_offset": "0x3c91",
+        "bytes": 42,
+        "native_sha256": "a34381cd632dcad7279f73093233e1f7cfb6041d14363c470b79e9a19c6d32d5",
+        "instruction_count": 13,
+        "raw_annotations_match_source": true,
+        "disassembly": "40003891  call\t0x7bccb3b7,[d2],8\t; dd267bcc3b8008\n40003898  extbu\td0\t; 14\n40003899  cmp\t1,d0\t; a001\n4000389b  bne\t0x400038a7\t; c90c\n4000389d  mov\t2,d0\t; 8002\n4000389f  movhu\td0,(0x74001e30)\t; fc83301e0074\n400038a5  bra\t0x400038bb\t; ca16\n400038a7  call\t0x7bccb3f7,[d2],8\t; dd507bcc3b8008\n400038ae  extbu\td0\t; 14\n400038af  cmp\t1,d0\t; a001\n400038b1  bne\t0x400038bb\t; c90a\n400038b3  mov\t1,d0\t; 8001\n400038b5  movbu\td0,(0x743673a6)\t; fc82a6733674\n"
+      },
+      {
+        "name": "boot_input_predicate",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bccb3b7",
+        "end_exclusive": "0x7bccb3f7",
+        "body_offset": "0x9cb7b7",
+        "bytes": 64,
+        "native_sha256": "ecfa75c48a2d8fa6b98782fc1b74ba876f3f0e02d8f6100ee5fc1528d2a1e2eb",
+        "instruction_count": 20,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bccb3b7  movhu\t(0x745ceaba),d0\t; fcacbaea5c74\n7bccb3bd  movhu\t(0x745ceab6),d1\t; fcadb6ea5c74\n7bccb3c3  call\t0x7bccaa55,[d2,d3],12\t; cd92f6c00c\n7bccb3c8  mov\td0,d2\t; 82\n7bccb3c9  movhu\t(0x745ceae0),d0\t; fcace0ea5c74\n7bccb3cf  call\t0x7bcca999,[d2,d3],12\t; cdcaf5c00c\n7bccb3d4  extbu\td2\t; 16\n7bccb3d5  cmp\t2,d2\t; aa02\n7bccb3d7  bne\t0x7bccb3f3\t; c91c\n7bccb3d9  cmp\t1024,d0\t; fac80004\n7bccb3dd  bne\t0x7bccb3f3\t; c916\n7bccb3df  call\t0x7bccb358,[],4\t; cd79ff0004\n7bccb3e4  extbu\td0\t; 14\n7bccb3e5  cmp\t0,d0\t; a000\n7bccb3e7  beq\t0x7bccb3f3\t; c80c\n7bccb3e9  movhu\t(0x74001e30),d0\t; fcac301e0074\n7bccb3ef  cmp\t1,d0\t; a001\n7bccb3f1  beq\t0x7bccb3f4\t; c803\n7bccb3f3  clr\td0\t; 00\n7bccb3f4  ret\t[d2],8\t; df8008\n"
+      },
+      {
+        "name": "temporary_override_event",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x400d6475",
+        "end_exclusive": "0x400d64d0",
+        "body_offset": "0xd6875",
+        "bytes": 91,
+        "native_sha256": "1b7328e58605e6034dac499d0ba423a51c39cf546d5c1802dfb1697684b14dcc",
+        "instruction_count": 28,
+        "raw_annotations_match_source": true,
+        "disassembly": "400d6475  mov\t(8,a0),d0\t; f80008\n400d6478  btst\t128,d0\t; f8ec80\n400d647b  beq\t0x400d64cd\t; c852\n400d647d  call\t0x400d84a2,[],0\t; cd25200000\n400d6482  cmp\t1,d0\t; a001\n400d6484  bne\t0x400d64cd\t; c949\n400d6486  call\t0x4015600e,[],0\t; dd88fb07000000\n400d648d  cmp\t1,d0\t; a001\n400d648f  bne\t0x400d64a5\t; c916\n400d6491  movbu\t(0x7435b189),d0\t; fca889b13574\n400d6497  cmp\t1,d0\t; a001\n400d6499  bne\t0x400d64a5\t; c90c\n400d649b  mov\t2,d0\t; 8002\n400d649d  movbu\td0,(0x7435b189)\t; fc8289b13574\n400d64a3  bra\t0x400d64cd\t; ca2a\n400d64a5  call\t0x400cb8f1,[],0\t; dd4c54ffff0000\n400d64ac  extbu\td0\t; 14\n400d64ad  cmp\t0,d0\t; a000\n400d64af  bne\t0x400d64cd\t; c91e\n400d64b1  movhu\t(0x74001e34),d0\t; fcac341e0074\n400d64b7  cmp\t0,d0\t; a000\n400d64b9  bne\t0x400d64bf\t; c906\n400d64bb  mov\t1,d0\t; 8001\n400d64bd  bra\t0x400d64c0\t; ca03\n400d64bf  clr\td0\t; 00\n400d64c0  movhu\td0,(0x74001e34)\t; fc83341e0074\n400d64c6  call\t0x400cd967,[],4\t; dda174ffff0004\n400d64cd  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "prepare_service_selection",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x400d6524",
+        "end_exclusive": "0x400d6556",
+        "body_offset": "0xd6924",
+        "bytes": 50,
+        "native_sha256": "36f55a4b512493f0ef5894e62525ce7def9154b18d1487c42d08fda6410c9d00",
+        "instruction_count": 14,
+        "raw_annotations_match_source": true,
+        "disassembly": "400d6524  call\t0x4015600e,[],0\t; ddeafa07000000\n400d652b  cmp\t1,d0\t; a001\n400d652d  bne\t0x400d654b\t; c91e\n400d652f  movbu\t(0x7435b189),d0\t; fca889b13574\n400d6535  cmp\t0,d0\t; a000\n400d6537  bne\t0x400d6541\t; c90a\n400d6539  mov\t1,d0\t; 8001\n400d653b  movbu\td0,(0x7435b189)\t; fc8289b13574\n400d6541  movbu\t(0x7435b189),d0\t; fca889b13574\n400d6547  cmp\t2,d0\t; a002\n400d6549  bne\t0x400d6553\t; c90a\n400d654b  mov\t2,d0\t; 8002\n400d654d  movbu\td0,(0x7435b18a)\t; fc828ab13574\n400d6553  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "service_eligibility",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x400d6556",
+        "end_exclusive": "0x400d6587",
+        "body_offset": "0xd6956",
+        "bytes": 49,
+        "native_sha256": "df7fb5b0197bff865babd3feea26bba8412dcb67c72f1b487eb34c09e82afa94",
+        "instruction_count": 19,
+        "raw_annotations_match_source": true,
+        "disassembly": "400d6556  mov\td0,d2\t; 82\n400d6557  call\t0x4015600e,[],0\t; ddb7fa07000000\n400d655e  cmp\t1,d0\t; a001\n400d6560  bne\t0x400d656c\t; c90c\n400d6562  movbu\t(0x7435b189),d1\t; fca989b13574\n400d6568  cmp\t2,d1\t; a502\n400d656a  bne\t0x400d6583\t; c919\n400d656c  movbu\t(0x7435b18a),d1\t; fca98ab13574\n400d6572  cmp\t3,d1\t; a503\n400d6574  beq\t0x400d657f\t; c80b\n400d6576  extbu\td2\t; 16\n400d6577  cmp\t1,d2\t; aa01\n400d6579  bne\t0x400d6583\t; c90a\n400d657b  cmp\t2,d1\t; a502\n400d657d  bne\t0x400d6583\t; c906\n400d657f  mov\t1,d0\t; 8001\n400d6581  bra\t0x400d6584\t; ca03\n400d6583  clr\td0\t; 00\n400d6584  ret\t[d2],8\t; df8008\n"
+      },
+      {
+        "name": "connection_service_branch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x400d50d6",
+        "end_exclusive": "0x400d50ff",
+        "body_offset": "0xd54d6",
+        "bytes": 41,
+        "native_sha256": "bebd6746e63aa353436f6eb755ed20585b8bd4981d789377fd4f463d28609e0b",
+        "instruction_count": 16,
+        "raw_annotations_match_source": true,
+        "disassembly": "400d50d6  extbu\td2\t; 16\n400d50d7  cmp\t0,d2\t; aa00\n400d50d9  beq\t0x400d5115\t; c83c\n400d50db  extbu\td3\t; 17\n400d50dc  mov\td3,d0\t; 8c\n400d50dd  call\t0x400d6556,[d2],8\t; cd79148008\n400d50e2  extbu\td0\t; 14\n400d50e3  cmp\t0,d0\t; a000\n400d50e5  beq\t0x400d50ff\t; c81a\n400d50e7  mov\t1,d0\t; 8001\n400d50e9  movbu\td0,(4,sp)\t; f89204\n400d50ec  cmp\t2,a2\t; ba02\n400d50ee  beq\t0x400d5128\t; c83a\n400d50f0  movbu\t(0x7435b18a),d0\t; fca88ab13574\n400d50f6  call\t0x400e9a8f,[d2,d3],12\t; dd99490100c00c\n400d50fd  bra\t0x400d5125\t; ca28\n"
+      },
+      {
+        "name": "connection_request",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x400e9a8f",
+        "end_exclusive": "0x400e9b17",
+        "body_offset": "0xe9e8f",
+        "bytes": 136,
+        "native_sha256": "9469b9a34f2160c36415acdaf44ee73bc323fcc18729c9201301aa249d0e3f4b",
+        "instruction_count": 50,
+        "raw_annotations_match_source": true,
+        "disassembly": "400e9a8f  mov\t(0x7435b25c),d1\t; fca55cb23574\n400e9a95  mov\td0,d3\t; 83\n400e9a96  cmp\t0,d1\t; a500\n400e9a98  beq\t0x400e9a9e\t; c806\n400e9a9a  clr\td0\t; 00\n400e9a9b  ret\t[d2,d3],12\t; dfc00c\n400e9a9e  mov\td1,d2\t; 86\n400e9a9f  cmp\t0,d0\t; a000\n400e9aa1  beq\t0x400e9aae\t; c80d\n400e9aa3  mov\t1,d2\t; 8a01\n400e9aa5  cmp\td2,d0\t; a8\n400e9aa6  beq\t0x400e9aae\t; c808\n400e9aa8  mov\t2,d2\t; 8a02\n400e9aaa  cmp\td2,d0\t; a8\n400e9aab  beq\t0x400e9aae\t; c803\n400e9aad  mov\td1,d2\t; 86\n400e9aae  mov\t1,d0\t; 8001\n400e9ab0  call\t0x401d8f93,[],4\t; dde3f40e000004\n400e9ab7  mov\td3,(0x743e64e4)\t; fc8de4643e74\n400e9abd  mov\t1,d0\t; 8001\n400e9abf  mov\td0,(0x7435b25c)\t; fc815cb23574\n400e9ac5  mov\t1950246120,a1\t; fcdde8643e74\n400e9acb  mov\t1950246144,a0\t; fcdc00653e74\n400e9ad1  mov\t-6,d1\t; 85fa\n400e9ad3  setlb\t\t; db\n400e9ad4  mov\t(a1),d0\t; 71\n400e9ad5  inc4\ta1\t; 51\n400e9ad6  mov\td0,(a0)\t; 60\n400e9ad7  inc4\ta0\t; 50\n400e9ad8  inc\td1\t; 44\n400e9ad9  lne\t\t; d9\n400e9ada  cmp\t2,d3\t; af02\n400e9adc  bne\t0x400e9ae9\t; c90d\n400e9ade  mov\t13,d0\t; 800d\n400e9ae0  mov\t2,d1\t; 8502\n400e9ae2  call\t0x7bd13de3,[d2,d3,a2,a3],24\t; dd01a3c23bf018\n400e9ae9  call\t0x400cb8f1,[],0\t; dd081efeff0000\n400e9af0  extbu\td0\t; 14\n400e9af1  cmp\t0,d0\t; a000\n400e9af3  beq\t0x400e9b00\t; c80d\n400e9af5  call\t0x400cba90,[],0\t; dd9b1ffeff0000\n400e9afc  mov\t2,d1\t; 8502\n400e9afe  bra\t0x400e9b08\t; ca0a\n400e9b00  call\t0x400cba90,[],0\t; dd901ffeff0000\n400e9b07  clr\td1\t; 04\n400e9b08  mov\t1,a1\t; 9501\n400e9b0a  mov\td2,d0\t; 88\n400e9b0b  call\t0x401e678d,[],16\t; dd82cc0f000010\n400e9b12  mov\t1,d0\t; 8001\n400e9b14  ret\t[d2,d3],12\t; dfc00c\n"
+      },
+      {
+        "name": "enqueue_mode_record",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e678d",
+        "end_exclusive": "0x401e67ce",
+        "body_offset": "0x1e6b8d",
+        "bytes": 65,
+        "native_sha256": "1d1d85607593e61dd85d06adbba5aa0401775cb833d8c9b8cbe55e68fbc7e52a",
+        "instruction_count": 16,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e678d  mov\td0,(0x744dca4c)\t; fc814cca4d74\n401e6793  mov\ta1,(0x744dca54)\t; fc8454ca4d74\n401e6799  mov\td1,(0x744dca50)\t; fc8550ca4d74\n401e679f  mov\ta0,(0x744dca58)\t; fc8058ca4d74\n401e67a5  mov\t53314,d0\t; fccc42d00000\n401e67ab  mov\td0,(4,sp)\t; 4204\n401e67ad  mov\t4,d0\t; 8004\n401e67af  mov\td0,(8,sp)\t; 4208\n401e67b1  mov\t1951255116,d0\t; fccc4cca4d74\n401e67b7  mov\td0,(12,sp)\t; 420c\n401e67b9  mov\t11,d0\t; 800b\n401e67bb  mov\t1951255144,a0\t; fcdc68ca4d74\n401e67c1  mov\td0,d1\t; 81\n401e67c2  mov\t13,a1\t; 950d\n401e67c4  call\t0x401f70c4,[],4\t; dd000901000004\n401e67cb  ret\t[],16\t; df0010\n"
+      },
+      {
+        "name": "settings_word_accessor",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x40155ff0",
+        "end_exclusive": "0x40156017",
+        "body_offset": "0x1563f0",
+        "bytes": 39,
+        "native_sha256": "a344060c8b609111d91a064a30149153fe94cc6bca7e27bb8cfe27c2dc2db4f5",
+        "instruction_count": 13,
+        "raw_annotations_match_source": true,
+        "disassembly": "40155ff0  cmp\t0,d0\t; a000\n40155ff2  beq\t0x40155ffc\t; c80a\n40155ff4  cmp\t1,d0\t; a001\n40155ff6  beq\t0x40155ffc\t; c806\n40155ff8  cmp\t2,d0\t; a002\n40155ffa  bne\t0x40156005\t; c90b\n40155ffc  movhu\td0,(0x74001e30)\t; fc83301e0074\n40156002  clr\td0\t; 00\n40156003  bra\t0x4015600b\t; ca08\n40156005  mov\t-2147483647,d0\t; fccc01000080\n4015600b  retf\t[],0\t; de0000\n4015600e  movhu\t(0x74001e30),d0\t; fcac301e0074\n40156014  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "message_dispatch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401f805d",
+        "end_exclusive": "0x401f80b6",
+        "body_offset": "0x1f845d",
+        "bytes": 89,
+        "native_sha256": "6b07862a47d3786d5cd4edaba1fbc294b28429d55c6cb234b744775ed7ac9d89",
+        "instruction_count": 39,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f805d  mov\tsp,a1\t; 3d\n401f805e  add\t40,a1\t; 2128\n401f8060  mov\t(4,a1),d1\t; f80504\n401f8063  mov\tsp,a0\t; 3c\n401f8064  add\t40,a0\t; 2028\n401f8066  cmp\t1,d1\t; a501\n401f8068  bcc\t0x401f806d\t; c605\n401f806a  ret\t[d2,d3,a2],36\t; dfe024\n401f806d  cmp\t50335749,d1\t; fcc905100003\n401f8073  bls\t0x401f8078\t; c705\n401f8075  ret\t[d2,d3,a2],36\t; dfe024\n401f8078  mov\td1,d0\t; 84\n401f8079  and\t63,d0\t; f8e03f\n401f807c  asl\t3,d0\t; f8c003\n401f807f  mov\t1082077604,a2\t; fcdea4317f40\n401f8085  mov\ta2,a1\t; 99\n401f8086  add\td0,a1\t; f161\n401f8088  mov\t(a1),d0\t; 71\n401f8089  cmp\td1,d0\t; a4\n401f808a  beq\t0x401f80a3\t; c819\n401f808c  setlb\t\t; db\n401f808d  nop\t\t; cb\n401f808e  cmp\t0,d0\t; a000\n401f8090  bne\t0x401f8095\t; c905\n401f8092  ret\t[d2,d3,a2],36\t; dfe024\n401f8095  add\t8,a1\t; 2108\n401f8097  cmp\t1082078116,a1\t; fcd9a4337f40\n401f809d  bcs\t0x401f80a0\t; c403\n401f809f  mov\ta2,a1\t; 99\n401f80a0  mov\t(a1),d0\t; 71\n401f80a1  cmp\td1,d0\t; a4\n401f80a2  lne\t\t; d9\n401f80a3  mov\t(4,a1),a1\t; f82504\n401f80a6  jmp\t(a1)\t; f0f5\n401f80a8  mov\tsp,a0\t; 3c\n401f80a9  add\t40,a0\t; 2028\n401f80ab  mov\t(8,a0),d0\t; f80008\n401f80ae  call\t0x401f8356,[],4\t; cda8020004\n401f80b3  ret\t[d2,d3,a2],36\t; dfe024\n"
+      },
+      {
+        "name": "mode_record_dispatch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401f8356",
+        "end_exclusive": "0x401f8380",
+        "body_offset": "0x1f8756",
+        "bytes": 42,
+        "native_sha256": "75e752b79592f3a8ca79105ce495d0e8ded7ed50c0a2542c86fba76b44c2ce94",
+        "instruction_count": 18,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f8356  mov\td0,a0\t; f1e0\n401f8358  mov\t(a0),d0\t; 70\n401f8359  cmp\t0,d0\t; a000\n401f835b  beq\t0x401f8367\t; c80c\n401f835d  cmp\t1,d0\t; a001\n401f835f  beq\t0x401f836f\t; c810\n401f8361  cmp\t2,d0\t; a002\n401f8363  beq\t0x401f8377\t; c814\n401f8365  bra\t0x401f837d\t; ca18\n401f8367  inc4\ta0\t; 50\n401f8368  call\t0x401f87ee,[a2],8\t; cd86042008\n401f836d  bra\t0x401f837d\t; ca10\n401f836f  inc4\ta0\t; 50\n401f8370  call\t0x401f8740,[d2,a2,a3],16\t; cdd003b010\n401f8375  bra\t0x401f837d\t; ca08\n401f8377  inc4\ta0\t; 50\n401f8378  call\t0x401f88f5,[a2],8\t; cd7d052008\n401f837d  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "ptp_mode_setup",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401f8740",
+        "end_exclusive": "0x401f87ee",
+        "body_offset": "0x1f8b40",
+        "bytes": 174,
+        "native_sha256": "f8fb3b4ed05bec93569fb47f8227e5baf05442a4609c4a1a5aeb3477437d1327",
+        "instruction_count": 46,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f8740  mov\ta0,a3\t; 93\n401f8741  mov\t1,d0\t; 8001\n401f8743  clr\td1\t; 04\n401f8744  call\t0x401e6932,[d2,d3],20\t; ddeee1feffc014\n401f874b  mov\t8,a2\t; 9a08\n401f874d  add\ta3,a2\t; f17e\n401f874f  mov\t(a2),d0\t; 72\n401f8750  mov\td0,(0x744de3c0)\t; fc81c0e34d74\n401f8756  call\t0x401f16e0,[],0\t; cd8a8f0000\n401f875b  call\t0x401ec13c,[],4\t; dde139ffff0004\n401f8762  mov\t3,d0\t; 8003\n401f8764  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401f876a  mov\td0,d2\t; 82\n401f876b  movhu\td2,(0x744dde14)\t; fc8b14de4d74\n401f8771  clr\td0\t; 00\n401f8772  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401f8778  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401f877e  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401f8784  movhu\td0,(0x744dde20)\t; fc8320de4d74\n401f878a  mov\t1,d0\t; 8001\n401f878c  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f8792  clr\td0\t; 00\n401f8793  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f8799  call\t0x401e69f0,[],4\t; dd57e2feff0004\n401f87a0  call\t0x401cd807,[a2],8\t; dd6750fdff2008\n401f87a7  call\t0x401f8fa0,[],4\t; cdf9070004\n401f87ac  mov\t(a3),d0\t; 73\n401f87ad  cmp\t2,d0\t; a002\n401f87af  beq\t0x401f87b7\t; c808\n401f87b1  cmp\t0,d0\t; a000\n401f87b3  beq\t0x401f87d0\t; c81d\n401f87b5  bra\t0x401f87eb\t; ca36\n401f87b7  mov\t(0x744de02c),a0\t; fca02ce04d74\n401f87bd  clr\td0\t; 00\n401f87be  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f87c4  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f87ca  cmp\t0,a0\t; b000\n401f87cc  beq\t0x401f87eb\t; c81f\n401f87ce  bra\t0x401f87e4\t; ca16\n401f87d0  movhu\td2,(0x744ddf58)\t; fc8b58df4d74\n401f87d6  movhu\td2,(0x744de31c)\t; fc8b1ce34d74\n401f87dc  mov\t(a2),d0\t; 72\n401f87dd  mov\td0,a0\t; f1e0\n401f87df  call\t0x401f8d2c,[],8\t; cd4d050008\n401f87e4  call\t0x401e9808,[],4\t; dd2410ffff0004\n401f87eb  ret\t[d2,a2,a3],16\t; dfb010\n"
+      },
+      {
+        "name": "storage_mode_setup",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401f87ee",
+        "end_exclusive": "0x401f88f5",
+        "body_offset": "0x1f8bee",
+        "bytes": 263,
+        "native_sha256": "8e1a332c892b50c2ae3abf972fcf9c7ee306f10813e3954b919ad7c076f82ac8",
+        "instruction_count": 67,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f87ee  mov\ta0,a2\t; 92\n401f87ef  call\t0x40143d28,[],4\t; dd39b5f4ff0004\n401f87f6  extbu\td0\t; 14\n401f87f7  cmp\t1,d0\t; a001\n401f87f9  bne\t0x401f8805\t; c90c\n401f87fb  mov\t0,a0\t; 9000\n401f87fd  mov\ta0,a1\t; 91\n401f87fe  call\t0x40143c85,[],4\t; dd87b4f4ff0004\n401f8805  mov\t16,d1\t; 8510\n401f8807  mov\t255,d0\t; 2cff00\n401f880a  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8810  mov\td0,(0x744de3a8)\t; fc81a8e34d74\n401f8816  mov\t1951261592,a0\t; fcdc98e34d74\n401f881c  clr\td0\t; 00\n401f881d  call\t0x7bc51a08,[a2],4\t; ddeb91a53b2004\n401f8824  mov\t1951261620,a0\t; fcdcb4e34d74\n401f882a  clr\td0\t; 00\n401f882b  mov\t12,d1\t; 850c\n401f882d  call\t0x7bc51a08,[a2],4\t; dddb91a53b2004\n401f8834  mov\t1,d0\t; 8001\n401f8836  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401f883c  clr\td0\t; 00\n401f883d  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401f8843  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401f8849  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401f884f  movhu\td0,(0x744dde20)\t; fc8320de4d74\n401f8855  mov\t1,d0\t; 8001\n401f8857  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f885d  mov\t(4,a2),d0\t; f80204\n401f8860  clr\td1\t; 04\n401f8861  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8867  clr\td0\t; 00\n401f8868  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f886e  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f8874  mov\t1,d0\t; 8001\n401f8876  call\t0x401e6932,[d2,d3],20\t; ddbce0feffc014\n401f887d  call\t0x401f8bc7,[d2,d3,a2],28\t; cd4a03e01c\n401f8882  cmp\t0,d0\t; a000\n401f8884  beq\t0x401f8889\t; c805\n401f8886  ret\t[a2],8\t; df2008\n401f8889  call\t0x401f8c3a,[d2],8\t; cdb1038008\n401f888e  cmp\t0,d0\t; a000\n401f8890  bne\t0x401f88f2\t; c962\n401f8892  mov\t(a2),d0\t; 72\n401f8893  cmp\t0,d0\t; a000\n401f8895  bne\t0x401f88e4\t; c94f\n401f8897  call\t0x401f8c96,[d2,d3,a2],28\t; cdff03e01c\n401f889c  cmp\t0,d0\t; a000\n401f889e  bne\t0x401f88e4\t; c946\n401f88a0  mov\t(0x744de3b4),d0\t; fca4b4e34d74\n401f88a6  mov\td0,(0x744ddf50)\t; fc8150df4d74\n401f88ac  mov\t(0x744de3b8),d0\t; fca4b8e34d74\n401f88b2  mov\td0,(0x744ddf54)\t; fc8154df4d74\n401f88b8  mov\t(0x744de3bc),d0\t; fca4bce34d74\n401f88be  movbu\td0,(0x744ddf5b)\t; fc825bdf4d74\n401f88c4  call\t0x401f9155,[d2],8\t; cd91088008\n401f88c9  extbu\td0\t; 14\n401f88ca  cmp\t1,d0\t; a001\n401f88cc  bne\t0x401f88d6\t; c90a\n401f88ce  mov\t1,d0\t; 8001\n401f88d0  movbu\td0,(0x744ddf5b)\t; fc825bdf4d74\n401f88d6  mov\t3,d0\t; 8003\n401f88d8  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f88de  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f88e4  call\t0x401e69f0,[],4\t; dd0ce1feff0004\n401f88eb  call\t0x401e9808,[],4\t; dd1d0fffff0004\n401f88f2  ret\t[a2],8\t; df2008\n"
+      },
+      {
+        "name": "service_mode_setup",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401f88f5",
+        "end_exclusive": "0x401f8977",
+        "body_offset": "0x1f8cf5",
+        "bytes": 130,
+        "native_sha256": "d4bdc3cb27c970e176d68f84c4878a7e07381d2df2b430b1854a905ce4bcbec0",
+        "instruction_count": 34,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f88f5  mov\ta0,a2\t; 92\n401f88f6  mov\t1,d0\t; 8001\n401f88f8  clr\td1\t; 04\n401f88f9  call\t0x401e6932,[d2,d3],20\t; dd39e0feffc014\n401f8900  mov\t(4,a2),d0\t; f80204\n401f8903  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8909  movhu\td0,(0x744de398)\t; fc8398e34d74\n401f890f  cmp\t1,d0\t; a001\n401f8911  beq\t0x401f8919\t; c808\n401f8913  cmp\t0,d0\t; a000\n401f8915  beq\t0x401f891c\t; c807\n401f8917  bra\t0x401f8924\t; ca0d\n401f8919  clr\td0\t; 00\n401f891a  bra\t0x401f891e\t; ca04\n401f891c  mov\t1,d0\t; 8001\n401f891e  mov\td0,(0x744de3a8)\t; fc81a8e34d74\n401f8924  mov\t3,d0\t; 8003\n401f8926  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f892c  mov\t255,d0\t; 2cff00\n401f892f  mov\td0,(0x744ddf50)\t; fc8150df4d74\n401f8935  mov\t512,d0\t; 2c0002\n401f8938  mov\td0,(0x744ddf54)\t; fc8154df4d74\n401f893e  mov\t1,d0\t; 8001\n401f8940  mov\t2,d1\t; 8502\n401f8942  movbu\td1,(0x744dd1ed)\t; fc86edd14d74\n401f8948  clr\td1\t; 04\n401f8949  mov\td1,(0x744dd1f4)\t; fc85f4d14d74\n401f894f  movhu\td1,(0x744dd1f0)\t; fc87f0d14d74\n401f8955  movhu\td1,(0x744dd1ee)\t; fc87eed14d74\n401f895b  movbu\td1,(0x744dd1f2)\t; fc86f2d14d74\n401f8961  movhu\td0,(0x744dd9d8)\t; fc83d8d94d74\n401f8967  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f896d  call\t0x401e9808,[],4\t; dd9b0effff0004\n401f8974  ret\t[a2],8\t; df2008\n"
+      },
+      {
+        "name": "device_descriptor_dispatch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e8db3",
+        "end_exclusive": "0x401e8de9",
+        "body_offset": "0x1e91b3",
+        "bytes": 54,
+        "native_sha256": "81cd59274f75710e48ae02abb90be809721f264b74e8bf77d43c7316aae28836",
+        "instruction_count": 23,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e8db3  mov\t1,d2\t; 8a01\n401e8db5  extbu\td0\t; 14\n401e8db6  cmp\t2,d0\t; a002\n401e8db8  beq\t0x401e8dc7\t; c80f\n401e8dba  cmp\t3,d0\t; a003\n401e8dbc  beq\t0x401e8dce\t; c812\n401e8dbe  cmp\t4,d0\t; a004\n401e8dc0  beq\t0x401e8dd5\t; c815\n401e8dc2  cmp\td2,d0\t; a8\n401e8dc3  beq\t0x401e8ddc\t; c819\n401e8dc5  bra\t0x401e8de3\t; ca1e\n401e8dc7  call\t0x401e8de9,[],0\t; cd22000000\n401e8dcc  bra\t0x401e8de4\t; ca18\n401e8dce  call\t0x401e8e5c,[a2],12\t; cd8e00200c\n401e8dd3  bra\t0x401e8de4\t; ca11\n401e8dd5  call\t0x401e8f6a,[],0\t; cd95010000\n401e8dda  bra\t0x401e8de4\t; ca0a\n401e8ddc  call\t0x401e8ee3,[a2],12\t; cd0701200c\n401e8de1  bra\t0x401e8de4\t; ca03\n401e8de3  clr\td2\t; 08\n401e8de4  mov\td2,d0\t; 88\n401e8de5  extbu\td0\t; 14\n401e8de6  ret\t[d2],8\t; df8008\n"
+      },
+      {
+        "name": "service_device_descriptor",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e8de9",
+        "end_exclusive": "0x401e8e5c",
+        "body_offset": "0x1e91e9",
+        "bytes": 115,
+        "native_sha256": "c265ef0a2d111f7e4a3cb5e14ad14494b228393bd5f73b0dea780cea97d4e10a",
+        "instruction_count": 63,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e8de9  mov\t18,d0\t; 8012\n401e8deb  movbu\td0,(a0)\t; f050\n401e8ded  inc\ta0\t; 41\n401e8dee  mov\t1,d0\t; 8001\n401e8df0  movbu\td0,(a0)\t; f050\n401e8df2  inc\ta0\t; 41\n401e8df3  clr\td0\t; 00\n401e8df4  movbu\td0,(a0)\t; f050\n401e8df6  inc\ta0\t; 41\n401e8df7  mov\t2,d0\t; 8002\n401e8df9  movbu\td0,(a0)\t; f050\n401e8dfb  inc\ta0\t; 41\n401e8dfc  clr\td0\t; 00\n401e8dfd  movbu\td0,(a0)\t; f050\n401e8dff  inc\ta0\t; 41\n401e8e00  movbu\td0,(a0)\t; f050\n401e8e02  inc\ta0\t; 41\n401e8e03  movbu\td0,(a0)\t; f050\n401e8e05  inc\ta0\t; 41\n401e8e06  mov\t64,d0\t; 8040\n401e8e08  movbu\td0,(a0)\t; f050\n401e8e0a  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8e10  inc\ta0\t; 41\n401e8e11  cmp\t2,d0\t; a002\n401e8e13  beq\t0x401e8e15\t; c802\n401e8e15  mov\t218,d0\t; 2cda00\n401e8e18  movbu\td0,(a0)\t; f050\n401e8e1a  inc\ta0\t; 41\n401e8e1b  mov\t4,d0\t; 8004\n401e8e1d  movbu\td0,(a0)\t; f050\n401e8e1f  mov\ta0,d0\t; f1d0\n401e8e21  inc\td0\t; 40\n401e8e22  mov\td0,a0\t; f1e0\n401e8e24  inc\td0\t; 40\n401e8e25  mov\t112,d1\t; 8570\n401e8e27  movbu\td1,(a0)\t; f054\n401e8e29  mov\td0,a0\t; f1e0\n401e8e2b  inc\td0\t; 40\n401e8e2c  mov\t35,d1\t; 8523\n401e8e2e  movbu\td1,(a0)\t; f054\n401e8e30  mov\td0,a0\t; f1e0\n401e8e32  clr\td1\t; 04\n401e8e33  movbu\td1,(a0)\t; f054\n401e8e35  inc\ta0\t; 41\n401e8e36  mov\t1,d0\t; 8001\n401e8e38  movbu\td0,(a0)\t; f050\n401e8e3a  inc\ta0\t; 41\n401e8e3b  movbu\td0,(a0)\t; f050\n401e8e3d  inc\ta0\t; 41\n401e8e3e  mov\t2,d0\t; 8002\n401e8e40  movbu\td0,(a0)\t; f050\n401e8e42  movhu\t(0x74001e30),d0\t; fcac301e0074\n401e8e48  inc\ta0\t; 41\n401e8e49  cmp\t1,d0\t; a001\n401e8e4b  bne\t0x401e8e51\t; c906\n401e8e4d  mov\t3,d0\t; 8003\n401e8e4f  bra\t0x401e8e52\t; ca03\n401e8e51  mov\td1,d0\t; 84\n401e8e52  movbu\td0,(a0)\t; f050\n401e8e54  inc\ta0\t; 41\n401e8e55  mov\t1,d0\t; 8001\n401e8e57  movbu\td0,(a0)\t; f050\n401e8e59  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "normal_device_descriptors",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e8e5c",
+        "end_exclusive": "0x401e8fe7",
+        "body_offset": "0x1e925c",
+        "bytes": 395,
+        "native_sha256": "66d1634eeb3581afc35ca754fab949c3e9dda9e03508ba6c81520e7e7834f6fb",
+        "instruction_count": 206,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e8e5c  mov\ta0,a2\t; 92\n401e8e5d  mov\tsp,a0\t; 3c\n401e8e5e  inc4\ta0\t; 50\n401e8e5f  call\t0x401ea0a6,[],0\t; cd47120000\n401e8e64  mov\t18,d0\t; 8012\n401e8e66  movbu\td0,(a2)\t; f052\n401e8e68  inc\ta2\t; 49\n401e8e69  mov\t1,d0\t; 8001\n401e8e6b  movbu\td0,(a2)\t; f052\n401e8e6d  inc\ta2\t; 49\n401e8e6e  mov\ta2,a0\t; 98\n401e8e6f  inc\ta0\t; 41\n401e8e70  clr\td0\t; 00\n401e8e71  movbu\td0,(a2)\t; f052\n401e8e73  mov\t2,d0\t; 8002\n401e8e75  movbu\td0,(a0)\t; f050\n401e8e77  inc\ta0\t; 41\n401e8e78  clr\td0\t; 00\n401e8e79  movbu\td0,(a0)\t; f050\n401e8e7b  inc\ta0\t; 41\n401e8e7c  movbu\td0,(a0)\t; f050\n401e8e7e  inc\ta0\t; 41\n401e8e7f  movbu\td0,(a0)\t; f050\n401e8e81  inc\ta0\t; 41\n401e8e82  mov\t64,d0\t; 8040\n401e8e84  movbu\td0,(a0)\t; f050\n401e8e86  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8e8c  inc\ta0\t; 41\n401e8e8d  cmp\t2,d0\t; a002\n401e8e8f  beq\t0x401e8e91\t; c802\n401e8e91  mov\t218,d0\t; 2cda00\n401e8e94  movbu\td0,(a0)\t; f050\n401e8e96  inc\ta0\t; 41\n401e8e97  mov\t4,d0\t; 8004\n401e8e99  movbu\td0,(a0)\t; f050\n401e8e9b  inc\ta0\t; 41\n401e8e9c  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8ea2  cmp\t2,d0\t; a002\n401e8ea4  bne\t0x401e8eaa\t; c906\n401e8ea6  mov\t117,d0\t; 8075\n401e8ea8  bra\t0x401e8eac\t; ca04\n401e8eaa  mov\t116,d0\t; 8074\n401e8eac  movbu\td0,(a0)\t; f050\n401e8eae  inc\ta0\t; 41\n401e8eaf  mov\t35,d0\t; 8023\n401e8eb1  movbu\td0,(a0)\t; f050\n401e8eb3  inc\ta0\t; 41\n401e8eb4  movbu\t(4,sp),d0\t; f8b804\n401e8eb7  movbu\td0,(a0)\t; f050\n401e8eb9  movbu\t(5,sp),d0\t; f8b805\n401e8ebc  inc\ta0\t; 41\n401e8ebd  movbu\td0,(a0)\t; f050\n401e8ebf  inc\ta0\t; 41\n401e8ec0  mov\t1,d0\t; 8001\n401e8ec2  movbu\td0,(a0)\t; f050\n401e8ec4  inc\ta0\t; 41\n401e8ec5  mov\t2,d0\t; 8002\n401e8ec7  movbu\td0,(a0)\t; f050\n401e8ec9  movhu\t(0x74001e30),d0\t; fcac301e0074\n401e8ecf  inc\ta0\t; 41\n401e8ed0  cmp\t1,d0\t; a001\n401e8ed2  bne\t0x401e8ed8\t; c906\n401e8ed4  mov\t3,d0\t; 8003\n401e8ed6  bra\t0x401e8ed9\t; ca03\n401e8ed8  clr\td0\t; 00\n401e8ed9  movbu\td0,(a0)\t; f050\n401e8edb  inc\ta0\t; 41\n401e8edc  mov\t1,d0\t; 8001\n401e8ede  movbu\td0,(a0)\t; f050\n401e8ee0  ret\t[a2],12\t; df200c\n401e8ee3  mov\ta0,a2\t; 92\n401e8ee4  mov\tsp,a0\t; 3c\n401e8ee5  inc4\ta0\t; 50\n401e8ee6  call\t0x401ea0a6,[],0\t; cdc0110000\n401e8eeb  mov\t18,d0\t; 8012\n401e8eed  movbu\td0,(a2)\t; f052\n401e8eef  inc\ta2\t; 49\n401e8ef0  mov\t1,d0\t; 8001\n401e8ef2  movbu\td0,(a2)\t; f052\n401e8ef4  inc\ta2\t; 49\n401e8ef5  mov\ta2,a0\t; 98\n401e8ef6  inc\ta0\t; 41\n401e8ef7  clr\td0\t; 00\n401e8ef8  movbu\td0,(a2)\t; f052\n401e8efa  mov\t2,d0\t; 8002\n401e8efc  movbu\td0,(a0)\t; f050\n401e8efe  inc\ta0\t; 41\n401e8eff  clr\td0\t; 00\n401e8f00  movbu\td0,(a0)\t; f050\n401e8f02  inc\ta0\t; 41\n401e8f03  movbu\td0,(a0)\t; f050\n401e8f05  inc\ta0\t; 41\n401e8f06  movbu\td0,(a0)\t; f050\n401e8f08  inc\ta0\t; 41\n401e8f09  mov\t64,d0\t; 8040\n401e8f0b  movbu\td0,(a0)\t; f050\n401e8f0d  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8f13  inc\ta0\t; 41\n401e8f14  cmp\t2,d0\t; a002\n401e8f16  beq\t0x401e8f18\t; c802\n401e8f18  mov\t218,d0\t; 2cda00\n401e8f1b  movbu\td0,(a0)\t; f050\n401e8f1d  inc\ta0\t; 41\n401e8f1e  mov\t4,d0\t; 8004\n401e8f20  movbu\td0,(a0)\t; f050\n401e8f22  inc\ta0\t; 41\n401e8f23  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8f29  cmp\t2,d0\t; a002\n401e8f2b  bne\t0x401e8f31\t; c906\n401e8f2d  mov\t115,d0\t; 8073\n401e8f2f  bra\t0x401e8f33\t; ca04\n401e8f31  mov\t114,d0\t; 8072\n401e8f33  movbu\td0,(a0)\t; f050\n401e8f35  inc\ta0\t; 41\n401e8f36  mov\t35,d0\t; 8023\n401e8f38  movbu\td0,(a0)\t; f050\n401e8f3a  inc\ta0\t; 41\n401e8f3b  movbu\t(4,sp),d0\t; f8b804\n401e8f3e  movbu\td0,(a0)\t; f050\n401e8f40  movbu\t(5,sp),d0\t; f8b805\n401e8f43  inc\ta0\t; 41\n401e8f44  movbu\td0,(a0)\t; f050\n401e8f46  inc\ta0\t; 41\n401e8f47  mov\t1,d0\t; 8001\n401e8f49  movbu\td0,(a0)\t; f050\n401e8f4b  inc\ta0\t; 41\n401e8f4c  mov\t2,d0\t; 8002\n401e8f4e  movbu\td0,(a0)\t; f050\n401e8f50  movhu\t(0x74001e30),d0\t; fcac301e0074\n401e8f56  inc\ta0\t; 41\n401e8f57  cmp\t1,d0\t; a001\n401e8f59  bne\t0x401e8f5f\t; c906\n401e8f5b  mov\t3,d0\t; 8003\n401e8f5d  bra\t0x401e8f60\t; ca03\n401e8f5f  clr\td0\t; 00\n401e8f60  movbu\td0,(a0)\t; f050\n401e8f62  inc\ta0\t; 41\n401e8f63  mov\t1,d0\t; 8001\n401e8f65  movbu\td0,(a0)\t; f050\n401e8f67  ret\t[a2],12\t; df200c\n401e8f6a  mov\t18,d0\t; 8012\n401e8f6c  movbu\td0,(a0)\t; f050\n401e8f6e  inc\ta0\t; 41\n401e8f6f  mov\t1,d0\t; 8001\n401e8f71  movbu\td0,(a0)\t; f050\n401e8f73  inc\ta0\t; 41\n401e8f74  clr\td0\t; 00\n401e8f75  movbu\td0,(a0)\t; f050\n401e8f77  inc\ta0\t; 41\n401e8f78  mov\t2,d0\t; 8002\n401e8f7a  movbu\td0,(a0)\t; f050\n401e8f7c  inc\ta0\t; 41\n401e8f7d  clr\td0\t; 00\n401e8f7e  movbu\td0,(a0)\t; f050\n401e8f80  inc\ta0\t; 41\n401e8f81  movbu\td0,(a0)\t; f050\n401e8f83  inc\ta0\t; 41\n401e8f84  movbu\td0,(a0)\t; f050\n401e8f86  inc\ta0\t; 41\n401e8f87  mov\t64,d0\t; 8040\n401e8f89  movbu\td0,(a0)\t; f050\n401e8f8b  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8f91  inc\ta0\t; 41\n401e8f92  cmp\t2,d0\t; a002\n401e8f94  beq\t0x401e8f96\t; c802\n401e8f96  mov\t218,d0\t; 2cda00\n401e8f99  movbu\td0,(a0)\t; f050\n401e8f9b  inc\ta0\t; 41\n401e8f9c  mov\t4,d0\t; 8004\n401e8f9e  movbu\td0,(a0)\t; f050\n401e8fa0  inc\ta0\t; 41\n401e8fa1  movhu\t(0x7400b938),d0\t; fcac38b90074\n401e8fa7  cmp\t2,d0\t; a002\n401e8fa9  bne\t0x401e8faf\t; c906\n401e8fab  mov\t118,d0\t; 8076\n401e8fad  bra\t0x401e8fb1\t; ca04\n401e8faf  mov\t114,d0\t; 8072\n401e8fb1  movbu\td0,(a0)\t; f050\n401e8fb3  inc\ta0\t; 41\n401e8fb4  mov\t35,d0\t; 8023\n401e8fb6  movbu\td0,(a0)\t; f050\n401e8fb8  mov\ta0,d0\t; f1d0\n401e8fba  inc\td0\t; 40\n401e8fbb  mov\td0,a0\t; f1e0\n401e8fbd  clr\td1\t; 04\n401e8fbe  movbu\td1,(a0)\t; f054\n401e8fc0  inc\ta0\t; 41\n401e8fc1  mov\t1,d0\t; 8001\n401e8fc3  movbu\td0,(a0)\t; f050\n401e8fc5  inc\ta0\t; 41\n401e8fc6  movbu\td0,(a0)\t; f050\n401e8fc8  inc\ta0\t; 41\n401e8fc9  mov\t2,d0\t; 8002\n401e8fcb  movbu\td0,(a0)\t; f050\n401e8fcd  movhu\t(0x74001e30),d0\t; fcac301e0074\n401e8fd3  inc\ta0\t; 41\n401e8fd4  cmp\t1,d0\t; a001\n401e8fd6  bne\t0x401e8fdc\t; c906\n401e8fd8  mov\t3,d0\t; 8003\n401e8fda  bra\t0x401e8fdd\t; ca03\n401e8fdc  mov\td1,d0\t; 84\n401e8fdd  movbu\td0,(a0)\t; f050\n401e8fdf  inc\ta0\t; 41\n401e8fe0  mov\t1,d0\t; 8001\n401e8fe2  movbu\td0,(a0)\t; f050\n401e8fe4  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "configuration_descriptor",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e8fe7",
+        "end_exclusive": "0x401e9173",
+        "body_offset": "0x1e93e7",
+        "bytes": 396,
+        "native_sha256": "6ddcc6475d31f64a8efae45443066034effd0f7250eee9e90b7bfbe28ae4c0d1",
+        "instruction_count": 212,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e8fe7  movhu\t(0x9c007400),d1\t; fcad0074009c\n401e8fed  clr\td2\t; 08\n401e8fee  and\t32,d1\t; f8e120\n401e8ff1  cmp\t32,d1\t; a520\n401e8ff3  bne\t0x401e8ff7\t; c904\n401e8ff5  mov\t1,d2\t; 8a01\n401e8ff7  mov\t9,d1\t; 8509\n401e8ff9  movbu\td1,(a0)\t; f054\n401e8ffb  inc\ta0\t; 41\n401e8ffc  mov\t2,d1\t; 8502\n401e8ffe  movbu\td1,(a0)\t; f054\n401e9000  movbu\t(0x744dd1ed),d1\t; fca9edd14d74\n401e9006  inc\ta0\t; 41\n401e9007  cmp\t3,d1\t; a503\n401e9009  beq\t0x401e900f\t; c806\n401e900b  cmp\t2,d1\t; a502\n401e900d  bne\t0x401e9013\t; c906\n401e900f  mov\t39,d1\t; 8527\n401e9011  bra\t0x401e9015\t; ca04\n401e9013  mov\t32,d1\t; 8520\n401e9015  movbu\td1,(a0)\t; f054\n401e9017  inc\ta0\t; 41\n401e9018  clr\td1\t; 04\n401e9019  movbu\td1,(a0)\t; f054\n401e901b  inc\ta0\t; 41\n401e901c  mov\t1,d1\t; 8501\n401e901e  movbu\td1,(a0)\t; f054\n401e9020  inc\ta0\t; 41\n401e9021  movbu\td1,(a0)\t; f054\n401e9023  inc\ta0\t; 41\n401e9024  clr\td1\t; 04\n401e9025  movbu\td1,(a0)\t; f054\n401e9027  inc\ta0\t; 41\n401e9028  mov\t192,d1\t; 2dc000\n401e902b  movbu\td1,(a0)\t; f054\n401e902d  inc\ta0\t; 41\n401e902e  mov\t1,d1\t; 8501\n401e9030  movbu\td1,(a0)\t; f054\n401e9032  inc\ta0\t; 41\n401e9033  mov\t9,d1\t; 8509\n401e9035  movbu\td1,(a0)\t; f054\n401e9037  inc\ta0\t; 41\n401e9038  mov\t4,d1\t; 8504\n401e903a  movbu\td1,(a0)\t; f054\n401e903c  inc\ta0\t; 41\n401e903d  clr\td1\t; 04\n401e903e  movbu\td1,(a0)\t; f054\n401e9040  inc\ta0\t; 41\n401e9041  movbu\td1,(a0)\t; f054\n401e9043  movbu\t(0x744dd1ed),d1\t; fca9edd14d74\n401e9049  inc\ta0\t; 41\n401e904a  cmp\t3,d1\t; a503\n401e904c  beq\t0x401e9052\t; c806\n401e904e  cmp\t2,d1\t; a502\n401e9050  bne\t0x401e9056\t; c906\n401e9052  mov\t3,d1\t; 8503\n401e9054  bra\t0x401e9058\t; ca04\n401e9056  mov\t2,d1\t; 8502\n401e9058  movbu\td1,(a0)\t; f054\n401e905a  mov\ta0,d1\t; f1d1\n401e905c  inc\td1\t; 44\n401e905d  extbu\td0\t; 14\n401e905e  cmp\t2,d0\t; a002\n401e9060  bne\t0x401e9078\t; c918\n401e9062  mov\t255,d0\t; 2cff00\n401e9065  mov\td1,a0\t; f1e4\n401e9067  movbu\td0,(a0)\t; f050\n401e9069  inc\td1\t; 44\n401e906a  mov\t160,d0\t; 2ca000\n401e906d  mov\td1,a0\t; f1e4\n401e906f  movbu\td0,(a0)\t; f050\n401e9071  mov\td1,d0\t; 84\n401e9072  inc\td0\t; 40\n401e9073  mov\t176,d1\t; 2db000\n401e9076  bra\t0x401e90a6\t; ca30\n401e9078  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e907e  cmp\t3,d0\t; a003\n401e9080  bne\t0x401e9095\t; c915\n401e9082  mov\t6,d0\t; 8006\n401e9084  mov\td1,a0\t; f1e4\n401e9086  movbu\td0,(a0)\t; f050\n401e9088  inc\td1\t; 44\n401e9089  mov\t1,d0\t; 8001\n401e908b  mov\td1,a0\t; f1e4\n401e908d  movbu\td0,(a0)\t; f050\n401e908f  mov\td1,d0\t; 84\n401e9090  inc\td0\t; 40\n401e9091  mov\t1,d1\t; 8501\n401e9093  bra\t0x401e90a6\t; ca13\n401e9095  mov\t8,d0\t; 8008\n401e9097  mov\td1,a0\t; f1e4\n401e9099  movbu\td0,(a0)\t; f050\n401e909b  inc\td1\t; 44\n401e909c  mov\t6,d0\t; 8006\n401e909e  mov\td1,a0\t; f1e4\n401e90a0  movbu\td0,(a0)\t; f050\n401e90a2  mov\td1,d0\t; 84\n401e90a3  inc\td0\t; 40\n401e90a4  mov\t80,d1\t; 8550\n401e90a6  mov\td0,a0\t; f1e0\n401e90a8  movbu\td1,(a0)\t; f054\n401e90aa  inc\td0\t; 40\n401e90ab  clr\td1\t; 04\n401e90ac  mov\td0,a0\t; f1e0\n401e90ae  movbu\td1,(a0)\t; f054\n401e90b0  inc\td0\t; 40\n401e90b1  mov\t7,d1\t; 8507\n401e90b3  mov\td0,a0\t; f1e0\n401e90b5  movbu\td1,(a0)\t; f054\n401e90b7  inc\td0\t; 40\n401e90b8  mov\t5,d1\t; 8505\n401e90ba  mov\td0,a0\t; f1e0\n401e90bc  movbu\td1,(a0)\t; f054\n401e90be  inc\ta0\t; 41\n401e90bf  mov\t1,d0\t; 8001\n401e90c1  movbu\td0,(a0)\t; f050\n401e90c3  inc\ta0\t; 41\n401e90c4  mov\t2,d0\t; 8002\n401e90c6  movbu\td0,(a0)\t; f050\n401e90c8  inc\ta0\t; 41\n401e90c9  exthu\td2\t; 1e\n401e90ca  cmp\t1,d2\t; aa01\n401e90cc  bne\t0x401e90d8\t; c90c\n401e90ce  clr\td0\t; 00\n401e90cf  movbu\td0,(a0)\t; f050\n401e90d1  mov\ta0,d0\t; f1d0\n401e90d3  inc\td0\t; 40\n401e90d4  mov\t2,d1\t; 8502\n401e90d6  bra\t0x401e90e0\t; ca0a\n401e90d8  mov\t64,d0\t; 8040\n401e90da  movbu\td0,(a0)\t; f050\n401e90dc  mov\ta0,d0\t; f1d0\n401e90de  inc\td0\t; 40\n401e90df  clr\td1\t; 04\n401e90e0  mov\td0,a0\t; f1e0\n401e90e2  movbu\td1,(a0)\t; f054\n401e90e4  inc\td0\t; 40\n401e90e5  clr\td1\t; 04\n401e90e6  mov\td0,a0\t; f1e0\n401e90e8  movbu\td1,(a0)\t; f054\n401e90ea  inc\ta0\t; 41\n401e90eb  mov\t7,d0\t; 8007\n401e90ed  movbu\td0,(a0)\t; f050\n401e90ef  inc\ta0\t; 41\n401e90f0  mov\t5,d0\t; 8005\n401e90f2  movbu\td0,(a0)\t; f050\n401e90f4  inc\ta0\t; 41\n401e90f5  mov\t130,d0\t; 2c8200\n401e90f8  movbu\td0,(a0)\t; f050\n401e90fa  inc\ta0\t; 41\n401e90fb  mov\t2,d0\t; 8002\n401e90fd  movbu\td0,(a0)\t; f050\n401e90ff  inc\ta0\t; 41\n401e9100  cmp\t1,d2\t; aa01\n401e9102  bne\t0x401e910d\t; c90b\n401e9104  movbu\td1,(a0)\t; f054\n401e9106  mov\ta0,d0\t; f1d0\n401e9108  inc\td0\t; 40\n401e9109  mov\t2,d1\t; 8502\n401e910b  bra\t0x401e9114\t; ca09\n401e910d  mov\t64,d0\t; 8040\n401e910f  movbu\td0,(a0)\t; f050\n401e9111  mov\ta0,d0\t; f1d0\n401e9113  inc\td0\t; 40\n401e9114  mov\td0,a0\t; f1e0\n401e9116  movbu\td1,(a0)\t; f054\n401e9118  inc\td0\t; 40\n401e9119  mov\td0,a0\t; f1e0\n401e911b  clr\td1\t; 04\n401e911c  movbu\td1,(a0)\t; f054\n401e911e  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e9124  inc\ta0\t; 41\n401e9125  cmp\t3,d0\t; a003\n401e9127  beq\t0x401e912d\t; c806\n401e9129  cmp\t2,d0\t; a002\n401e912b  bne\t0x401e9170\t; c945\n401e912d  mov\t7,d0\t; 8007\n401e912f  movbu\td0,(a0)\t; f050\n401e9131  inc\ta0\t; 41\n401e9132  mov\t5,d0\t; 8005\n401e9134  movbu\td0,(a0)\t; f050\n401e9136  inc\ta0\t; 41\n401e9137  mov\t131,d0\t; 2c8300\n401e913a  movbu\td0,(a0)\t; f050\n401e913c  inc\ta0\t; 41\n401e913d  mov\t3,d0\t; 8003\n401e913f  movbu\td0,(a0)\t; f050\n401e9141  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e9147  inc\ta0\t; 41\n401e9148  cmp\t3,d0\t; a003\n401e914a  bne\t0x401e9150\t; c906\n401e914c  mov\t8,d0\t; 8008\n401e914e  bra\t0x401e915d\t; ca0f\n401e9150  cmp\t1,d2\t; aa01\n401e9152  bne\t0x401e915b\t; c909\n401e9154  movbu\td1,(a0)\t; f054\n401e9156  inc\ta0\t; 41\n401e9157  mov\t2,d0\t; 8002\n401e9159  bra\t0x401e9161\t; ca08\n401e915b  mov\t64,d0\t; 8040\n401e915d  movbu\td0,(a0)\t; f050\n401e915f  inc\ta0\t; 41\n401e9160  mov\td1,d0\t; 84\n401e9161  movbu\td0,(a0)\t; f050\n401e9163  inc\ta0\t; 41\n401e9164  cmp\t1,d2\t; aa01\n401e9166  bne\t0x401e916c\t; c906\n401e9168  mov\t8,d0\t; 8008\n401e916a  bra\t0x401e916e\t; ca04\n401e916c  mov\t16,d0\t; 8010\n401e916e  movbu\td0,(a0)\t; f050\n401e9170  retf\t[d2],4\t; de8004\n"
+      },
+      {
+        "name": "configuration_caller",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e71df",
+        "end_exclusive": "0x401e7201",
+        "body_offset": "0x1e75df",
+        "bytes": 34,
+        "native_sha256": "5591dec34b31f17192fb16aa5d3dcc9cdbde098f2051bddba9678f46f617e732",
+        "instruction_count": 13,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e71df  mov\tsp,a2\t; 3e\n401e71e0  add\t8,a2\t; 2208\n401e71e2  mov\ta2,a0\t; 98\n401e71e3  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e71e9  call\t0x401e8fe7,[d2],4\t; cdfe1d8004\n401e71ee  movbu\t(2,a2),d3\t; f84e02\n401e71f1  movbu\t(3,a2),d0\t; f84203\n401e71f4  asl\t8,d0\t; f8c008\n401e71f7  or\td0,d3\t; f213\n401e71f9  exthu\td3\t; 1f\n401e71fa  cmp\t0,d3\t; af00\n401e71fc  bgt\t0x401e7201\t; c105\n401e71fe  ret\t[d2,d3,a2,a3],124\t; dff07c\n"
+      },
+      {
+        "name": "bulk_phase_dispatch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e6aa3",
+        "end_exclusive": "0x401e6ae4",
+        "body_offset": "0x1e6ea3",
+        "bytes": 65,
+        "native_sha256": "26bf1fcb96a98441012ba9b54abcc310c0dad7156d0b679b8b70b362c82fde48",
+        "instruction_count": 21,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e6aa3  clr\td0\t; 00\n401e6aa4  movhu\td0,(0x744de01e)\t; fc831ee04d74\n401e6aaa  movhu\t(0x744dd1e6),d0\t; fcace6d14d74\n401e6ab0  cmp\t1,d0\t; a001\n401e6ab2  beq\t0x401e6ac2\t; c810\n401e6ab4  cmp\t2,d0\t; a002\n401e6ab6  beq\t0x401e6ac2\t; c80c\n401e6ab8  cmp\t3,d0\t; a003\n401e6aba  beq\t0x401e6ac9\t; c80f\n401e6abc  cmp\t4,d0\t; a004\n401e6abe  beq\t0x401e6ac9\t; c80b\n401e6ac0  bra\t0x401e6ad0\t; ca10\n401e6ac2  call\t0x401ea231,[d2,a2],12\t; cd6f37a00c\n401e6ac7  bra\t0x401e6ad0\t; ca09\n401e6ac9  call\t0x401eee32,[d2,d3,a2,a3],28\t; dd69830000f01c\n401e6ad0  movhu\t(0x744dd1e8),d0\t; fcace8d14d74\n401e6ad6  cmp\t86,d0\t; a056\n401e6ad8  bne\t0x401e6ae1\t; c909\n401e6ada  clr\td0\t; 00\n401e6adb  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401e6ae1  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "pending_mode_to_maintenance_phase",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e6b40",
+        "end_exclusive": "0x401e6b77",
+        "body_offset": "0x1e6f40",
+        "bytes": 55,
+        "native_sha256": "4c0455f61064c03fec14f3991b3c2e9df33a3d9c1aa344c7a91691f9c9318ecb",
+        "instruction_count": 12,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e6b40  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401e6b46  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401e6b4c  clr\td0\t; 00\n401e6b4d  mov\td0,(0x744dd358)\t; fc8158d34d74\n401e6b53  mov\td0,(0x744dd354)\t; fc8154d34d74\n401e6b59  mov\t3,d0\t; 8003\n401e6b5b  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401e6b61  clr\td0\t; 00\n401e6b62  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401e6b68  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401e6b6e  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401e6b74  retf\t[],0\t; de0000\n"
+      }
+    ]
+  },
+  "manual_static_review": {
+    "service_usb_identity": {
+      "vid": "0x04da",
+      "pid": "0x2370",
+      "bcd_device": "0x0100",
+      "interface": "ff/a0/b0",
+      "bulk_out": "0x01",
+      "bulk_in": "0x82",
+      "interrupt_in": "0x83"
+    },
+    "settings_state": {
+      "address": "0x74001e30",
+      "update_buffer_relative_byte": "0x2f8",
+      "word_coordinate_if_same_layout": "H017 Lc",
+      "setter_accepts": [
+        0,
+        1,
+        2
+      ],
+      "note": "GH2 consumer only; no GM1/GM5 field identity inferred"
+    },
+    "boot_override": "0x40003891 calls input predicate 0x7bccb3b7; a return value of 1 makes it store 2 to settings RAM 0x74001e30. Physical key mapping remains unresolved.",
+    "selection_prepare": "0x400d6524 sets volatile selected_mode 0x7435b18a to 2 when settings_word != 1 or override 0x7435b189 == 2; otherwise it arms override from 0 to 1.",
+    "eligibility": "0x400d6556 requires settings_word != 1 or override == 2, then selected_mode == 3 or (connection_state == 1 and selected_mode == 2). This predicate alone does not request a USB mode change.",
+    "override_event": "0x400d6475 requires input word at +8 to contain bit 0x80, state helper 0x400d84a2 == 1, settings_word == 1 and override == 1, then sets RAM override to 2. Physical event mapping remains unresolved.",
+    "request_chain": "0x400d50f6 passes selected_mode to 0x400e9a8f; it maps 0/1/2 to the first word of the D042 record queued by 0x401e678d. Worker branch 0x401f80a8 calls 0x401f8356; record values 0/1/2 choose storage/PTP/vendor initialization.",
+    "descriptor_mode": {
+      "address": "0x744dd1ed",
+      "values": {
+        "1": "storage",
+        "2": "vendor service",
+        "3": "PTP"
+      }
+    },
+    "bulk_phase": {
+      "address": "0x744dd1e6",
+      "note": "Separate from descriptor mode: phases 1/2 choose mass-storage handling; phases 3/4 call binary diagnostic receive handler 0x401eee32."
+    },
+    "nearby_fixed_settings": "0x7400b938 selects normal PID variants; 0x7400b93c selects some transfer sizes. Neither is established as a debug-enable flag."
+  },
+  "descriptor_positive_controls": {
+    "source": "evidence/gm5-usb-pc-ptp.json",
+    "source_sha256": "72d6f6c1b895b7bf6585df823898b0018d6d3b273a87c376e9b063bfb704b41f",
+    "results": [
+      {
+        "gh2_model_mode": 1,
+        "gm5_observed_mode": "pc",
+        "bytes": 32,
+        "byte_for_byte_match": true,
+        "hex": "09022000010100c0010904000002080650000705010200020007058202000200"
+      },
+      {
+        "gh2_model_mode": 3,
+        "gm5_observed_mode": "ptp",
+        "bytes": 39,
+        "byte_for_byte_match": true,
+        "hex": "09022700010100c001090400000306010100070501020002000705820200020007058303080008"
+      }
+    ]
+  },
+  "configuration_model_outputs": [
+    {
+      "gh2_mode": 1,
+      "high_speed_layout": false,
+      "bytes": 32,
+      "hex": "09022000010100c0010904000002080650000705010240000007058202400000",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    },
+    {
+      "gh2_mode": 1,
+      "high_speed_layout": true,
+      "bytes": 32,
+      "hex": "09022000010100c0010904000002080650000705010200020007058202000200",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    },
+    {
+      "gh2_mode": 2,
+      "high_speed_layout": false,
+      "bytes": 39,
+      "hex": "09022700010100c0010904000003ffa0b000070501024000000705820240000007058303400010",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    },
+    {
+      "gh2_mode": 2,
+      "high_speed_layout": true,
+      "bytes": 39,
+      "hex": "09022700010100c0010904000003ffa0b000070501020002000705820200020007058303000208",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    },
+    {
+      "gh2_mode": 3,
+      "high_speed_layout": false,
+      "bytes": 39,
+      "hex": "09022700010100c001090400000306010100070501024000000705820240000007058303080010",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    },
+    {
+      "gh2_mode": 3,
+      "high_speed_layout": true,
+      "bytes": 39,
+      "hex": "09022700010100c001090400000306010100070501020002000705820200020007058303080008",
+      "provenance": "Manual semantic model of 0x401e8fe7; not a GH2 or GM5 live capture"
+    }
+  ],
+  "limitations": {
+    "semantic_models_independently_executed_on_firmware": false,
+    "complete_physical_entry_sequence_established": false,
+    "gh2_service_transport_tested": false,
+    "gm5_service_interface_or_reader_equivalence_established": false,
+    "camera_contacted_by_this_study": false,
+    "settings_changed_or_firmware_executed": false,
+    "descriptor_matches_prove_identical_firmware": false
+  }
+}

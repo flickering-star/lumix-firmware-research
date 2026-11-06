@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "source_firmware_sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+  "reference": {
+    "repository": "fishcu/oly_fw_analysis",
+    "revision": "9be1867ace6638d79e705048212dfddd3a1e794f",
+    "path": "tools/oly_container.py",
+    "sha256": "ab842e186049074848a24dda432e8a5b85d52390fd22af9d059bf630def9cb6b",
+    "url": "https://github.com/fishcu/oly_fw_analysis/blob/9be1867ace6638d79e705048212dfddd3a1e794f/tools/oly_container.py"
+  },
+  "positive_control": {
+    "source_file": "pen-f/analysis/vendor-catalog/OLY_E_122_3101_0000_0000.BIN",
+    "container_sha256": "77398610b379f80238117f31a6d5bbf65d608b49ec563666c64d84367e969f2c",
+    "components_validated": 4,
+    "roundtrip_identical": true,
+    "main_decoded_sha256": "a2eb1d1f1afe47cce148e9aae0a04dfb82547d9de9437d342e012341140913f4",
+    "encoded_main_statistics": {
+      "entropy_bits_per_byte": 5.872547961,
+      "zero_bytes": 4580982,
+      "ff_bytes": 3432339,
+      "ascii_strings_12plus": 530,
+      "longest_ascii_string_12plus": 5517,
+      "keyword_strings": []
+    },
+    "decoded_main_statistics": {
+      "entropy_bits_per_byte": 5.872547961,
+      "zero_bytes": 3432339,
+      "ff_bytes": 4580982,
+      "ascii_strings_12plus": 51327,
+      "longest_ascii_string_12plus": 13785,
+      "keyword_strings": [
+        {
+          "offset": 1690662,
+          "text": "LensFirmwareVersion[0] :"
+        },
+        {
+          "offset": 1690974,
+          "text": "LensAdapterFirmwareVersion1[0] :"
+        },
+        {
+          "offset": 4032384,
+          "text": "api_firmup_Check_FirmwareUpdate"
+        },
+        {
+          "offset": 4032416,
+          "text": "api_firmup_Execute_FirmwareUpdate"
+        },
+        {
+          "offset": 4032450,
+          "text": "Execute_FirmwareUpdate info->display.id"
+        },
+        {
+          "offset": 4032490,
+          "text": "Execute_FirmwareUpdate info->display.size"
+        },
+        {
+          "offset": 4032532,
+          "text": "Execute_FirmwareUpdate info->success.id"
+        },
+        {
+          "offset": 4032572,
+          "text": "Execute_FirmwareUpdate info->success.size"
+        },
+        {
+          "offset": 4032614,
+          "text": "Execute_FirmwareUpdate info->error.id"
+        },
+        {
+          "offset": 4032652,
+          "text": "Execute_FirmwareUpdate info->error.size"
+        },
+        {
+          "offset": 4032692,
+          "text": "Execute_FirmwareUpdate info->version"
+        },
+        {
+          "offset": 4032742,
+          "text": "api_firmup_Check_FirmwareUpdate_Strobe"
+        },
+        {
+          "offset": 4032817,
+          "text": "api_firmup_Execute_FirmwareUpdate_Strobe"
+        },
+        {
+          "offset": 4032858,
+          "text": "Execute_FirmwareUpdate_Strobe()"
+        },
+        {
+          "offset": 4032922,
+          "text": "api_firmup_Check_FirmwareUpdate_Lens"
+        },
+        {
+          "offset": 4032971,
+          "text": "api_firmup_Execute_FirmwareUpdate_Lens"
+        },
+        {
+          "offset": 4033010,
+          "text": "Execute_FirmwareUpdate_Lens()"
+        },
+        {
+          "offset": 6106102,
+          "text": "[AVM_DBG] CPU0 Memdump Over!!"
+        },
+        {
+          "offset": 6106135,
+          "text": "[AVM_DBG] CPU1 Memdump Over!!"
+        },
+        {
+          "offset": 6107140,
+          "text": "   28  : AVM_DBG_MEMDUMP_CPU0       "
+        },
+        {
+          "offset": 6107177,
+          "text": "   29  : AVM_DBG_MEMDUMP_CPU1       "
+        },
+        {
+          "offset": 9706525,
+          "text": "Maintenance::updateFirmware"
+        },
+        {
+          "offset": 9706553,
+          "text": "Maintenance::updateFirmwareCard"
+        },
+        {
+          "offset": 9706585,
+          "text": "Maintenance::canUpdateFirmwareCard"
+        },
+        {
+          "offset": 9710715,
+          "text": "InternalWiFi::updateFirmware"
+        },
+        {
+          "offset": 9848113,
+          "text": "updateFirmware"
+        },
+        {
+          "offset": 9848132,
+          "text": "updateFirmwareCard"
+        },
+        {
+          "offset": 9848155,
+          "text": "canUpdateFirmwareCard"
+        },
+        {
+          "offset": 9923413,
+          "text": "usage: sdk api %s aspectRatio pattern"
+        },
+        {
+          "offset": 10158630,
+          "text": "getAspectRatio ======== start"
+        }
+      ]
+    }
+  },
+  "gm5_results": "gm5-v11-container.json: components[].olympus_transform_check",
+  "all_eight_gm5_roundtrips_passed": true,
+  "gm5_field32_matches_after_transform": 0,
+  "gm5_keyword_strings_after_transform": 0,
+  "interpretation": "Exact Olympus OE obfuscation alone did not expose readable GM5 content. It does not change byte-value entropy; a fixed permutation/XOR preserves counts up to relabeling.",
+  "limitations": [
+    "Does not rule out an extra compression/encryption layer or another algorithm.",
+    "Re-encoding a reversible transform proves implementation consistency, not plaintext correctness.",
+    "No GM5 processor architecture or update authentication mechanism established."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "method": "Byte-value Shannon entropy: -sum((count/n)*log2(count/n)) for observed byte counts. Full indicated regions, not a sample.",
+  "regions": [
+    {
+      "label": "GH2 original full update BIN",
+      "file": "work/legacy-control/GH2__V12.bin",
+      "file_offset": 0,
+      "bytes": 15599104,
+      "entropy_bits_per_byte": 7.999990161,
+      "sha256": "e192ba2a7dba4167e4100efc896c5475faffd51164bd949e600964430454e817"
+    },
+    {
+      "label": "GM5 original full update BIN",
+      "file": "firmware/official-gm5-v11/GM5__V11.bin",
+      "file_offset": 0,
+      "bytes": 31901184,
+      "entropy_bits_per_byte": 7.999994668,
+      "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+    },
+    {
+      "label": "GH2 encrypted body",
+      "file": "work/legacy-control/GH2__V12.bin",
+      "file_offset": 512,
+      "bytes": 15598592,
+      "entropy_bits_per_byte": 7.999990081,
+      "sha256": "2d89b90fff78c79a7a6c7adf8f6dbf894e03f9b9fea373061ce45de914b40eb0"
+    },
+    {
+      "label": "GM5 encoded payload tail",
+      "file": "firmware/official-gm5-v11/GM5__V11.bin",
+      "file_offset": 1536,
+      "bytes": 31899648,
+      "entropy_bits_per_byte": 7.999994818,
+      "sha256": "212a37e6b74358882a189ce3c427edde41a7d0583ba295ec6fbdd8e4d33c1052"
+    },
+    {
+      "label": "GM5 encoded program component",
+      "file": "firmware/official-gm5-v11/GM5__V11.bin",
+      "file_offset": 1536,
+      "bytes": 8388608,
+      "entropy_bits_per_byte": 7.999979003,
+      "sha256": "f94d6f75995369de3ee1b4b581b95066a8d107336cdca20843cf0323b4399e5c"
+    },
+    {
+      "label": "GH2 decrypted body",
+      "file": "work/legacy-control/GH2__V12.body.decoded.bin",
+      "file_offset": 0,
+      "bytes": 15598592,
+      "entropy_bits_per_byte": 6.86946469,
+      "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+    },
+    {
+      "label": "GH2 decrypted program component",
+      "file": "work/legacy-control/GH2__V12.body.decoded.bin",
+      "file_offset": 1024,
+      "bytes": 15204352,
+      "entropy_bits_per_byte": 6.952409376,
+      "sha256": "18b815b8856f12c3b6487a8c698ab7bb2466c16d6678f3806b9db1e201d69f1e"
+    },
+    {
+      "label": "GH2 decrypted EEPROM component",
+      "file": "work/legacy-control/GH2__V12.body.decoded.bin",
+      "file_offset": 15205376,
+      "bytes": 393216,
+      "entropy_bits_per_byte": 0.777392167,
+      "sha256": "7aae46e9143fbbf1a892ef7d73d758675d4ed25ec8c38a10d07c79fbe82df6d9"
+    }
+  ],
+  "interpretation": "Both original updates and encoded payload regions are essentially at 8 bits/byte. This does not establish matching encryption, key or compression. The verified GH2 decode demonstrates a substantial entropy drop for its plaintext.",
+  "gh2_plaintext_md5_verified": true,
+  "gm5_plaintext_available": false
+}

@@ -1,0 +1,431 @@
+{
+  "schema": 1,
+  "updated_utc": "2026-11-06T00:45:15.147312+00:00",
+  "scope": "Bounded live GM5 service reads and complete official update decoding; no writes or flash attempt at this checkpoint",
+  "identity": {
+    "product": "DMC-GM5",
+    "vid": "0x04da",
+    "pid": "0x2370",
+    "interface": "ff/a0/b0"
+  },
+  "first_marker_mismatch": {
+    "capture": "captures/gm5-usb-flash-1CMPlGi1",
+    "result": "Sixteen valid replies; GM1 marker coordinates do not contain GM5 model strings; stopped before program reads."
+  },
+  "successful_captures": [
+    {
+      "capture": "captures/gm5-usb-flash-nvS5I149",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-flash-nvS5I149",
+        "model": "DMC-GM5",
+        "mode": "flash",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 48,
+        "program_block_responses_verified": 0,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": null,
+        "verified_prefix_bytes": 0,
+        "program_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40000000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-flash-nvS5I149/probe-source.c",
+        "bytes": 30565,
+        "sha256": "50605fc28221c2898a8b771e81544bf3a26788aad8c79fbc6443b86086c74332"
+      },
+      "events": {
+        "path": "captures/gm5-usb-flash-nvS5I149/result/events.jsonl",
+        "bytes": 39063,
+        "sha256": "7148186a56ccb5f7576e522d2cefa66ea0e30f3e5502a28130313ef087a72e39"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-block-pkIFgUrJ",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-block-pkIFgUrJ",
+        "model": "DMC-GM5",
+        "mode": "block",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-block-pkIFgUrJ/result/program-block.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "b51dfb20cbb6696e2edbab762c50a82af33c5014d1132fe349e519a6126dcde5",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40000400",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-block-pkIFgUrJ/probe-source.c",
+        "bytes": 30565,
+        "sha256": "50605fc28221c2898a8b771e81544bf3a26788aad8c79fbc6443b86086c74332"
+      },
+      "events": {
+        "path": "captures/gm5-usb-block-pkIFgUrJ/result/events.jsonl",
+        "bytes": 18788,
+        "sha256": "cac98b3d12c0e29b47357ff9beae564dda17bc04c70b29ed83a16218f731f48f"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-initializer-ujPIpkWZ",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-initializer-ujPIpkWZ",
+        "model": "DMC-GM5",
+        "mode": "initializer",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 32,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-initializer-ujPIpkWZ/result/ram-initializer.bin",
+        "verified_prefix_bytes": 32768,
+        "program_sha256": "1af08947c71c7471aa4c5ec94dd6f6a0ef255346936e707d9fc42ea91b5ed25e",
+        "program_file_base": "0x40643800",
+        "program_file_offset": 0,
+        "next_program_address": "0x4064b800",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-initializer-ujPIpkWZ/probe-source.c",
+        "bytes": 30762,
+        "sha256": "d67b90a7e693f6146af2636b9f7c21f1b57d2745da34896d731ea6719c5540b3"
+      },
+      "events": {
+        "path": "captures/gm5-usb-initializer-ujPIpkWZ/result/events.jsonl",
+        "bytes": 168989,
+        "sha256": "a8f58ef6c30c16154cfad3e19c8c07a47565da77797e34f93b6e7ca02f50efae"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-window-Hqd18GAn",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-window-Hqd18GAn",
+        "model": "DMC-GM5",
+        "mode": "window",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 16,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-window-Hqd18GAn/result/program-window.bin",
+        "verified_prefix_bytes": 8192,
+        "program_sha256": "d0ff829bad093b91ecb3b88decfe58df65ab35933230eb1e28fa5f130e6da156",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40002000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-window-Hqd18GAn/probe-source.c",
+        "bytes": 30762,
+        "sha256": "d67b90a7e693f6146af2636b9f7c21f1b57d2745da34896d731ea6719c5540b3"
+      },
+      "events": {
+        "path": "captures/gm5-usb-window-Hqd18GAn/result/events.jsonl",
+        "bytes": 91464,
+        "sha256": "7a6161f0a223bf6b73c08a961e46d7014d59f7d5bf8af8837f6c0899c71846d7"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-startup-data-Bw7zBQvv",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-startup-data-Bw7zBQvv",
+        "model": "DMC-GM5",
+        "mode": "startup-data",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-startup-data-Bw7zBQvv/result/startup-data.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "90388b9bbad72de0655d8b20352aba5cb3a79ac5e2508fca19476595a9ba8a55",
+        "program_file_base": "0x40003000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40003400",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-startup-data-Bw7zBQvv/probe-source.c",
+        "bytes": 32384,
+        "sha256": "830e1601bace57f9a89c9f9502953b50dfd79ae4a7c38c28fd362fbb522aa9a7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-startup-data-Bw7zBQvv/result/events.jsonl",
+        "bytes": 18795,
+        "sha256": "8b57bc40b86f5bd149f7738c7a6f3aa11813181bb1e89f3da5c868eed7615df9"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-security-flag-4c6eB5MF",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-security-flag-4c6eB5MF",
+        "model": "DMC-GM5",
+        "mode": "security-flag",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-security-flag-4c6eB5MF/result/security-flag.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "6d76a45b6286ec0bb42bef6f24d41fc771d5b463511a327b98846ad1c33d49fc",
+        "program_file_base": "0x406b1800",
+        "program_file_offset": 0,
+        "next_program_address": "0x406b1c00",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-security-flag-4c6eB5MF/probe-source.c",
+        "bytes": 32384,
+        "sha256": "830e1601bace57f9a89c9f9502953b50dfd79ae4a7c38c28fd362fbb522aa9a7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-security-flag-4c6eB5MF/result/events.jsonl",
+        "bytes": 18796,
+        "sha256": "0e4e32f7b3702fa66441d25a3b08c722f790f9b89be610a8f86939568f2cf2ef"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-updater-window-qX2cjoe6",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-updater-window-qX2cjoe6",
+        "model": "DMC-GM5",
+        "mode": "updater-window",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 16,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-updater-window-qX2cjoe6/result/updater-window.bin",
+        "verified_prefix_bytes": 16384,
+        "program_sha256": "cbda9861262b204427d73b61bfe22d08f385c6a52cbc4f15b355679afc53614e",
+        "program_file_base": "0x4154e000",
+        "program_file_offset": 0,
+        "next_program_address": "0x41552000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-updater-window-qX2cjoe6/probe-source.c",
+        "bytes": 32384,
+        "sha256": "830e1601bace57f9a89c9f9502953b50dfd79ae4a7c38c28fd362fbb522aa9a7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-updater-window-qX2cjoe6/result/events.jsonl",
+        "bytes": 91472,
+        "sha256": "2fec678bd5efa870109e937811baf960051985aa6368b9fce5efa23479c41550"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-runtime-control-fAOaGfyB",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-runtime-control-fAOaGfyB",
+        "model": "DMC-GM5",
+        "mode": "runtime-control",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-runtime-control-fAOaGfyB/result/runtime-control.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "4d4a3cded8de7fe88cf67ef3127ec712546eaee3e3887231d20fdb633080510f",
+        "program_file_base": "0x70a68400",
+        "program_file_offset": 0,
+        "next_program_address": "0x70a68800",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-runtime-control-fAOaGfyB/probe-source.c",
+        "bytes": 32384,
+        "sha256": "830e1601bace57f9a89c9f9502953b50dfd79ae4a7c38c28fd362fbb522aa9a7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-runtime-control-fAOaGfyB/result/events.jsonl",
+        "bytes": 18798,
+        "sha256": "39e1a5627e51544803ec44118676ca26101f6734ba1658c8ed7dfe79ac6cf811"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-usb-handler-NhRSm6fb",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-usb-handler-NhRSm6fb",
+        "model": "DMC-GM5",
+        "mode": "usb-handler",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 16,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-usb-handler-NhRSm6fb/result/usb-handler.bin",
+        "verified_prefix_bytes": 16384,
+        "program_sha256": "27f897166adedd5c49342763ff2e347fff3e051b0171c17a56120192e19fc4d6",
+        "program_file_base": "0x4036c000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40370000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-usb-handler-NhRSm6fb/probe-source.c",
+        "bytes": 33483,
+        "sha256": "f5c0bf6afbf9e26746abb02d8d911011653427aa513c236d7bdd52e7ae89f7e7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-usb-handler-NhRSm6fb/result/events.jsonl",
+        "bytes": 91469,
+        "sha256": "68c57d18daa932f7569c0c1fcdba8f6392d68d6d53d16184a4dd4d31d29265e8"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-usb-state-C87YNdO7",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-usb-state-C87YNdO7",
+        "model": "DMC-GM5",
+        "mode": "usb-state",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-usb-state-C87YNdO7/result/usb-state.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "c8090378f0cefdc3bb03c412ea204c8d00500763219b83748d3efac4ca68f02d",
+        "program_file_base": "0x702ff800",
+        "program_file_offset": 0,
+        "next_program_address": "0x702ffc00",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-usb-state-C87YNdO7/probe-source.c",
+        "bytes": 33483,
+        "sha256": "f5c0bf6afbf9e26746abb02d8d911011653427aa513c236d7bdd52e7ae89f7e7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-usb-state-C87YNdO7/result/events.jsonl",
+        "bytes": 18792,
+        "sha256": "07a861c40f6bf5948e4083817c3d7a2b9b0f8c18c0f6029d22727d6e61146512"
+      }
+    },
+    {
+      "capture": "captures/gm5-usb-update-profile-2PvVDjFp",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-usb-update-profile-2PvVDjFp",
+        "model": "DMC-GM5",
+        "mode": "update-profile",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-usb-update-profile-2PvVDjFp/result/update-profile.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "eb011916c728c5bdbee306d79333491c0eb60b874b34b19af0b3956d35e0d0e5",
+        "program_file_base": "0x4162a400",
+        "program_file_offset": 0,
+        "next_program_address": "0x4162a800",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "source": {
+        "path": "captures/gm5-usb-update-profile-2PvVDjFp/probe-source.c",
+        "bytes": 33483,
+        "sha256": "f5c0bf6afbf9e26746abb02d8d911011653427aa513c236d7bdd52e7ae89f7e7"
+      },
+      "events": {
+        "path": "captures/gm5-usb-update-profile-2PvVDjFp/result/events.jsonl",
+        "bytes": 18797,
+        "sha256": "ac70e4b18476c52179a42f7fda06397d4cead96e5a04f477cc28dbf9a1d60602"
+      }
+    }
+  ],
+  "update_decoder": "evidence/gm5-v11-decoded.json",
+  "key_evidence": "evidence/gm5-update-key-candidate.json",
+  "signature": "evidence/gm5-directory-signature.json",
+  "physical_public_key": {
+    "capture": "captures/gm5-usb-update-profile-2PvVDjFp",
+    "profile_linked_address": "0x7be2a770",
+    "key_linked_address": "0x7be2a714",
+    "equals_official_key": true,
+    "sha256": "555494372cd6c1617c675516e983dd2580adafb2bd07e750fcf4209595287fb7"
+  },
+  "signature_control": {
+    "ram_address": "0x70a68490",
+    "live_value": 1,
+    "flash_source": "0x406b1bdc",
+    "flash_value": 1,
+    "installed_job": "0x7bd4fb93",
+    "initialized_source_start": "0x4064b5b8",
+    "initialized_source_end_exclusive": "0x406dd76c",
+    "initialized_destination": "0x70a01e6c"
+  },
+  "usb_write_mode": {
+    "address": "0x702ff85d",
+    "live_value": 0,
+    "interpretation": "The inspected 0x9c handler selects direct halfword write when this byte is zero."
+  },
+  "variant": {
+    "official_words_0x6a0_0x6a2": [
+      "0x0110",
+      "0x0110"
+    ],
+    "physical_words_0x6a0_0x6a2": [
+      "0x0111",
+      "0x0111"
+    ],
+    "interpretation": "Field meanings and cause of build differences not established; owner reports Japanese locked-language body."
+  },
+  "limits": {
+    "ram_writes_performed": false,
+    "flash_writes_performed": false,
+    "settings_writes_performed": false,
+    "full_physical_backup_complete": false,
+    "modified_update_accepted": false,
+    "factory_entry_verified": false
+  },
+  "checkpoint_note": "Read-only acquisition checkpoint; historical no-write limits apply to its listed captures. Later RAM writes and disconnect test are recorded separately.",
+  "followups": {
+    "ram_control": "evidence/gm5-ram-signature-control.json",
+    "usb_disconnect": "evidence/gm5-usb-disconnect-test.json",
+    "prompt_packages": "evidence/gm5-updater-prompt-package.json",
+    "language_deferred": "evidence/gm5-language-change.json"
+  }
+}

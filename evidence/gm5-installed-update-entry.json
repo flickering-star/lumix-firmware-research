@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "capture": "captures/gm5-usb-update-entry-Fd6ZOqs0",
+  "model": "DMC-GM5",
+  "mode": "update-entry",
+  "complete": true,
+  "settings_bytes_verified": 32,
+  "word_responses_verified": 16,
+  "program_block_responses_verified": 3,
+  "resume_anchors_verified": 0,
+  "copied_prefix_bytes": 0,
+  "program_file": "captures/gm5-usb-update-entry-Fd6ZOqs0/result/update-entry.bin",
+  "verified_prefix_bytes": 3072,
+  "program_sha256": "9863d695d199c752a49df9d1b50403a2157ab51b8f7440170a4af2a7be7254f4",
+  "program_file_base": "0x4023b800",
+  "program_file_offset": 0,
+  "next_program_address": "0x4023c400",
+  "terminal_phase": "idle",
+  "errors": []
+}

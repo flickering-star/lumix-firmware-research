@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "source_record": "evidence/gm5-service-manual-source.json",
+  "pdf_sha256": "8b517daaaaad766987180fc4dc8fe13e3b7a0e31cdec848a471c73f09ce3a8de",
+  "printed_pages_match_one_based_pdf_pages": true,
+  "text_pages_extracted": 62,
+  "visually_reviewed_pages": [
+    28,
+    36,
+    38,
+    43,
+    53,
+    58,
+    60,
+    62
+  ],
+  "local_artifacts": [
+    {
+      "local_path": "work/gm5-manual/manual.txt",
+      "bytes": 60387,
+      "sha256": "f2a1722ff05b8e721de747488621d4107c39adf36a22014ab04d14890d61ae0e"
+    },
+    {
+      "local_path": "work/gm5-manual/extraction.json",
+      "bytes": 8972,
+      "sha256": "c98ce7ea40f281c9445385267db946a06ead2691d0adc104acfb5a614a3d27e9"
+    },
+    {
+      "local_path": "work/gm5-manual/page-008.txt",
+      "bytes": 1021,
+      "sha256": "bc841a30c767307a28032f3e0ffc6ce20a343f1d19bca7e667746e762a5105db"
+    },
+    {
+      "local_path": "work/gm5-manual/page-015.txt",
+      "bytes": 693,
+      "sha256": "4a27239b84e73ff60d442586329b7692730abcb89729052017df44d62b87853a"
+    },
+    {
+      "local_path": "work/gm5-manual/page-018.txt",
+      "bytes": 1597,
+      "sha256": "a7dacec5463ae7e3046159ec5b455f4f42f6eb6d8ee7739bbc87a548d16ed76e"
+    },
+    {
+      "local_path": "work/gm5-manual/page-027.txt",
+      "bytes": 1289,
+      "sha256": "cb8a785a6ec0111593f0d921d6e35389c62fdb1bfba9f6645c36ce518f1f5a48"
+    },
+    {
+      "local_path": "work/gm5-manual/page-028.txt",
+      "bytes": 96,
+      "sha256": "8885ceb1496a2e0a001e5b2333dec840f8ba4054c9a5dce106e5f9a50b7ce1ab"
+    },
+    {
+      "local_path": "work/gm5-manual/page-029.txt",
+      "bytes": 949,
+      "sha256": "88d32019b2e96f61a168f6b509736e6baec383fa9381fbabd2ab532b2245eb0b"
+    },
+    {
+      "local_path": "work/gm5-manual/page-036.txt",
+      "bytes": 196,
+      "sha256": "b0477fd5a96089afc45c18168dabfe21361076252ee6c967307611204ae47a49"
+    },
+    {
+      "local_path": "work/gm5-manual/page-038.txt",
+      "bytes": 509,
+      "sha256": "88371587ed6457762d68a2e41c41adfc041622d9ddb6f98f04721c27bf96b2c7"
+    },
+    {
+      "local_path": "work/gm5-manual/page-043.txt",
+      "bytes": 58,
+      "sha256": "1daec0359ad8f46cceb4c9834ae2ea7b8c4620422631d1c861ccdc4d734cbe33"
+    },
+    {
+      "local_path": "work/gm5-manual/page-053.txt",
+      "bytes": 2251,
+      "sha256": "7b6cf09494d99bd7489deee8bb40f54fdc77944409a468ec141ddc9a9f693470"
+    },
+    {
+      "local_path": "work/gm5-manual/page-056.txt",
+      "bytes": 1114,
+      "sha256": "bbba28d5da83b75736d7b9cabcafcee121b883d26cd3e30aa9ab7af1e9d6ee89"
+    },
+    {
+      "local_path": "work/gm5-manual/page-058.txt",
+      "bytes": 3768,
+      "sha256": "3bbc22da1a50589521355742aa7b0b6eef6c7e7ecd39a6434af89cac65b8bc13"
+    },
+    {
+      "local_path": "work/gm5-manual/page-059.txt",
+      "bytes": 2637,
+      "sha256": "0e1d51f236d0fd3057e9f588c01ae97bb3fbba52c6f450611f32b0e2396d1adf"
+    },
+    {
+      "local_path": "work/gm5-manual/page-060.txt",
+      "bytes": 1572,
+      "sha256": "423e77a8e98e442614079ea48e2c25c2e8215de8bbe2b74299f5bf2977ca0584"
+    },
+    {
+      "local_path": "work/gm5-manual/page-062.txt",
+      "bytes": 4521,
+      "sha256": "0cd354a9b2eb2e6162e9241610ea4b40bea4bc81c354ea5efc54854995145bef"
+    },
+    {
+      "local_path": "work/gm5-manual/page-028.png",
+      "bytes": 865151,
+      "sha256": "26ce6d158c67c2dfae5fd8c4c49c81dde14fd05ba8c10a7185f4782a5b4a5c6d"
+    },
+    {
+      "local_path": "work/gm5-manual/page-036.png",
+      "bytes": 539474,
+      "sha256": "028b1b15ddcc57d57bf87a5c00e917dd1e9945bc553c2855141c69dccff363f1"
+    },
+    {
+      "local_path": "work/gm5-manual/page-038.png",
+      "bytes": 601442,
+      "sha256": "6489b05288009b15b06fcb6004a61dbc011fcfc218ae7590084e4ce46eb3f836"
+    },
+    {
+      "local_path": "work/gm5-manual/page-043.png",
+      "bytes": 887227,
+      "sha256": "06851d112547b20917e9a5672a6242a1a8d864a8a5104ae40429d97e9c059329"
+    },
+    {
+      "local_path": "work/gm5-manual/page-053.png",
+      "bytes": 716463,
+      "sha256": "2a858a5664287b642fd24d2426d3e53f8376a194599cdb3bbd55cfbcd3a9b62f"
+    },
+    {
+      "local_path": "work/gm5-manual/page-058.png",
+      "bytes": 1028728,
+      "sha256": "617aa3dc1a156f70deec63cda26cfef9fd21b3506dcf9da84b191050a1bd73d5"
+    },
+    {
+      "local_path": "work/gm5-manual/page-060.png",
+      "bytes": 598991,
+      "sha256": "228334d1125f90568df1876ef6a700ffae4d4d381f951c06b9cc444e4858b0b6"
+    },
+    {
+      "local_path": "work/gm5-manual/page-062.png",
+      "bytes": 969711,
+      "sha256": "6ce73eb75121a6cc174fb89829415a930a3829a5d4814fca0487357f02bd226b"
+    },
+    {
+      "local_path": "work/gm5-manual/flash-bus-detail.png",
+      "bytes": 57412,
+      "sha256": "2940acd4baabe9d04d2925b8520007ef22550a685665fe049e42100300bca7d2"
+    }
+  ],
+  "claims": [
+    {
+      "id": "service_backup",
+      "pages": [
+        8,
+        28,
+        53
+      ],
+      "established": "Adjustment software can communicate with the camera to back up IC6003 data.",
+      "unresolved": "Scope, format, transport, commands and whether program-area bytes are exported."
+    },
+    {
+      "id": "parallel_flash",
+      "pages": [
+        56,
+        58
+      ],
+      "established": "IC6003 is 256-Mbit NOR with DQ0..DQ15, A0..A23, WE#, OE#, CE# and RST#; capacity is 33554432 bytes.",
+      "unresolved": "Exact part, supply voltage, full ball map, CPU mapping, bus isolation and stored-code encoding."
+    },
+    {
+      "id": "hotshoe_serial_labels",
+      "pages": [
+        60,
+        62
+      ],
+      "established": "FP9009 TXD pin 14 and RXD pin 13 route to hot-shoe flash signals STTXD/STRXD, RL7955/RL7956.",
+      "unresolved": "Any diagnostic GPIO remapping; no engineering UART established."
+    },
+    {
+      "id": "service_gui",
+      "pages": [
+        27,
+        28,
+        29,
+        35
+      ],
+      "established": "The documented service screens expose error history/camera information; the Wi-Fi section covers reset/fault isolation.",
+      "unresolved": "Undocumented engineering interfaces remain possible; no memory-dump command found in this manual."
+    },
+    {
+      "id": "other_interfaces",
+      "pages": [
+        8,
+        56,
+        59,
+        62
+      ],
+      "established": "IC6001 is package-on-package; the system diagram lists 2-Gbit LP-DDR2. Wi-Fi uses SDIO; JK2001 exposes USB and AV lines.",
+      "unresolved": "CPU ISA, runtime mapping, host/module software split and service USB protocol."
+    }
+  ],
+  "flash_bus_endpoints": [
+    {
+      "flash_signal": "DQ0",
+      "flash_ball": "G2",
+      "venus_signal": "CPUD16",
+      "venus_ball": "R1",
+      "page": 58
+    },
+    {
+      "flash_signal": "DQ7",
+      "flash_ball": "G7",
+      "venus_signal": "CPUD23",
+      "venus_ball": "P4",
+      "page": 58
+    },
+    {
+      "flash_signal": "DQ8",
+      "flash_ball": "H2",
+      "venus_signal": "GPIO63",
+      "venus_ball": "N3",
+      "page": 58
+    },
+    {
+      "flash_signal": "DQ15",
+      "flash_ball": "F7",
+      "venus_signal": "GPIO70",
+      "venus_ball": "K2",
+      "page": 58
+    },
+    {
+      "flash_signal": "WE#",
+      "flash_ball": "A5",
+      "venus_signal": "CPUWE2B",
+      "venus_ball": "T3",
+      "page": 58
+    },
+    {
+      "flash_signal": "OE#",
+      "flash_ball": "F2",
+      "venus_signal": "CPUREB",
+      "venus_ball": "T2",
+      "page": 58
+    },
+    {
+      "flash_signal": "CE#",
+      "flash_ball": "F1",
+      "venus_signal": "FROM CS",
+      "venus_ball": "T1",
+      "page": 58
+    },
+    {
+      "flash_signal": "A0",
+      "flash_ball": "E1",
+      "venus_signal": "GPIO71",
+      "venus_ball": "K3",
+      "page": 58
+    },
+    {
+      "flash_signal": "A23",
+      "flash_ball": "B5",
+      "venus_signal": "GPIO94",
+      "venus_ball": "C1",
+      "page": 58
+    }
+  ],
+  "limitations": [
+    "Endpoint rows do not enumerate intermediate package balls.",
+    "Local render hashes describe the inspected artifacts, not platform-independent expected renders.",
+    "Text extraction and diagram inspection establish manual contents, not live-camera behavior."
+  ]
+}

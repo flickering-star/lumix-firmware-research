@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T21:40:01.524918+00:00",
+  "owner_update_report": "It works, connected camera so you can confirm. Flashed in normal mode(not service)",
+  "owner_power_cycle_report": "Selected English; it stayed English after off/on",
+  "owner_reports_flash_in_normal_mode": true,
+  "owner_selected_english_in_camera": true,
+  "owner_reports_english_survived_manual_off_on": true,
+  "patch_capture": "captures/gm5-region-check-fVZhFe1y",
+  "rom_capture": "captures/gm5-usb-security-flag-tZlRbtkD",
+  "ram_capture": "captures/gm5-usb-runtime-control-sUgsNFRq",
+  "settings_capture": "captures/gm5-usb-update-settings-MIG3e9TE",
+  "language_capture": "captures/gm5-language-inspect-4qtPLxE6",
+  "owner_stopped_full_readback": true,
+  "stopped_readback_record": "captures/gm5-program-readback-03dq4mbo/owner-stop.json"
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "algorithm": "five-round AES-128-CBC",
+  "windows_tested": 32753,
+  "matches": [
+    {
+      "offset": 31948,
+      "key_hex": "f630c6cfad87f78031327ba55193fa4c",
+      "all_64_bytes_match": true,
+      "flash_address": "0x4064b4cc",
+      "ram_address": "0x70007950"
+    }
+  ],
+  "match_count": 1,
+  "model": "GM5",
+  "flash_base": "0x40643800",
+  "window": "captures/gm5-usb-initializer-ujPIpkWZ/result/ram-initializer.bin",
+  "window_sha256": "1af08947c71c7471aa4c5ec94dd6f6a0ef255346936e707d9fc42ea91b5ed25e",
+  "ciphertext64": "work/gm5-official-program-ciphertext64.bin",
+  "plaintext64": "captures/gm5-usb-flash-nvS5I149/result/flash-prefix.bin",
+  "iv": "8403c7fbf98bde15a69e7cbaeebe5f6a",
+  "capture_verification": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-initializer-ujPIpkWZ",
+    "model": "DMC-GM5",
+    "mode": "initializer",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 32,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-initializer-ujPIpkWZ/result/ram-initializer.bin",
+    "verified_prefix_bytes": 32768,
+    "program_sha256": "1af08947c71c7471aa4c5ec94dd6f6a0ef255346936e707d9fc42ea91b5ed25e",
+    "program_file_base": "0x40643800",
+    "program_file_offset": 0,
+    "next_program_address": "0x4064b800",
+    "terminal_phase": "idle",
+    "errors": []
+  }
+}

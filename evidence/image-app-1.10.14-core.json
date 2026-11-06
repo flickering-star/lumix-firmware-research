@@ -1,0 +1,3240 @@
+{
+  "schema": 1,
+  "source_file_count": 52,
+  "files": [
+    {
+      "path": "BabyMonitorCommand.java",
+      "bytes": 4319,
+      "sha256": "c14916fb88f02c2787aef755c7061ea7b5a706a453e23ddd876ad0f1da9a2f5e"
+    },
+    {
+      "path": "C1436aa.java",
+      "bytes": 1383,
+      "sha256": "25882a49def2d2d5300135d67a7a6e20cc97dd67e6f8c7465af24ddb7e094b55"
+    },
+    {
+      "path": "C1438ac.java",
+      "bytes": 18493,
+      "sha256": "8fedd6205d2e50c0461f770971092b900575a154b0fabe0eb69925ee5d41c54e"
+    },
+    {
+      "path": "C1439ad.java",
+      "bytes": 1349,
+      "sha256": "e99633917dbc69e316576e3603946965831b6d59ab706deb7ab82da5f6fa74ec"
+    },
+    {
+      "path": "C1440ae.java",
+      "bytes": 772,
+      "sha256": "5ba0d29bf68ac358434daca6b400ba5a1b1d7731c97a336aca04c4e050aba3ca"
+    },
+    {
+      "path": "C1445ai.java",
+      "bytes": 5757,
+      "sha256": "af6ad278813666586ea63273a4918dfc9c926cbd908156b2daae9bf7f366dadf"
+    },
+    {
+      "path": "C1448aj.java",
+      "bytes": 1310,
+      "sha256": "60b6dd10f09ecac3450e0240ce0fdf13b15957db207af0e14fbbb45e86872aba"
+    },
+    {
+      "path": "C1449ak.java",
+      "bytes": 582,
+      "sha256": "56ece1a51a72ad5bcbca2d175d9386a7fbd7c383aa2af7148b93d2517eac736c"
+    },
+    {
+      "path": "C1450al.java",
+      "bytes": 38554,
+      "sha256": "4428690db1ab7d325bb0763b71b06450141759bae6179024e45dcadd340f1795"
+    },
+    {
+      "path": "C1462am.java",
+      "bytes": 8433,
+      "sha256": "4d28453f218c13b803fdb9eee9b100d885b8999b7b79fcb4aa8537149b819bb5"
+    },
+    {
+      "path": "C1465an.java",
+      "bytes": 38485,
+      "sha256": "e0fe12212b99b93a00786f85034c889730da7709c2a0c84e07b46c6489cc31eb"
+    },
+    {
+      "path": "C1468ao.java",
+      "bytes": 16027,
+      "sha256": "d8ca34fca0d4f72516027882eed1f69864592d67e35ff97af18237b9117a4dcf"
+    },
+    {
+      "path": "C1469ap.java",
+      "bytes": 5600,
+      "sha256": "b711bbb3d0de48903b0b1bb05976a5d23a586d6a65f7def6a49549e40a5c4db9"
+    },
+    {
+      "path": "C1470aq.java",
+      "bytes": 4836,
+      "sha256": "8eb756861b8e1739509c293e30435a02209286bf1bb402ab6601dc90ccdbd63c"
+    },
+    {
+      "path": "C1471ar.java",
+      "bytes": 938,
+      "sha256": "f51d16c1b196fbe627d7ea6e892d2971438cd7229a46c46df876edef87fa7b84"
+    },
+    {
+      "path": "C1472as.java",
+      "bytes": 1390,
+      "sha256": "c1c56c115db22c84a8627b3f5e69890f0b920bc285a1e9363ff354995de1e00e"
+    },
+    {
+      "path": "C1473at.java",
+      "bytes": 33007,
+      "sha256": "d592cab9c905030c2687d91cae77f8c0ee0c6771e13a47e81f7c75fcde8debb6"
+    },
+    {
+      "path": "C1490au.java",
+      "bytes": 4751,
+      "sha256": "2fa1bd53e8395eb75f525f42e8e54e85a4d0814eea77bfc829a22f41f334c2b3"
+    },
+    {
+      "path": "C1491av.java",
+      "bytes": 8089,
+      "sha256": "2c93298a4472c288f1634d11444d43c560620dc57e2936141e35f3e9a5339e17"
+    },
+    {
+      "path": "C1492aw.java",
+      "bytes": 7146,
+      "sha256": "546d4d451d8cf5f1cf056e3bf3bd73d8d2f34e3cf0937075a24a04abd1711561"
+    },
+    {
+      "path": "C1493ax.java",
+      "bytes": 2557,
+      "sha256": "f58fb087af03202d34937b04783db7b8cd74e5f21db4f652b3b4dbf171de016f"
+    },
+    {
+      "path": "C1494ay.java",
+      "bytes": 3986,
+      "sha256": "b8ac67198ddabb7bd8d44c4e8cf3cd5c8cb797a6a484cf9711b352b9b9445e51"
+    },
+    {
+      "path": "C1495az.java",
+      "bytes": 1174,
+      "sha256": "35c62bf5e04300ad0fa010dad533ca6ffae94661b107053b5ce5744232b48c42"
+    },
+    {
+      "path": "C1496b.java",
+      "bytes": 2037,
+      "sha256": "821d81d210391144be48e92d9a275b0d772858d75431252eb0111fe062a73a17"
+    },
+    {
+      "path": "C1497c.java",
+      "bytes": 14650,
+      "sha256": "fb6d18558a5e1781dd974228b7e39080ed20052685e1f806274b876bf096c343"
+    },
+    {
+      "path": "C1501d.java",
+      "bytes": 21334,
+      "sha256": "877b065fbe4f6251575f5c7ae782c4eabe1a6d662954de6b91501229ceb72631"
+    },
+    {
+      "path": "C1506e.java",
+      "bytes": 2515,
+      "sha256": "7e57658ee4b63dc4aaf8e07de71df90d1e7b08737836f75aa73eb14cdf8d693a"
+    },
+    {
+      "path": "C1507f.java",
+      "bytes": 1769,
+      "sha256": "bc7ea6f5641dd06e05026c4c03dd7f6cc46f306ac091bb887368811ed682e35f"
+    },
+    {
+      "path": "C1508g.java",
+      "bytes": 8816,
+      "sha256": "c3bdce3fcd8bfda31dda331421a57525d4a19cf2dafe469fbb9e5aa490d4d639"
+    },
+    {
+      "path": "C1519h.java",
+      "bytes": 37709,
+      "sha256": "228a7369c5595367fbe2e5892c23ddcfc48679352f7334d9fc1b24e8f375eca6"
+    },
+    {
+      "path": "C1525i.java",
+      "bytes": 2687,
+      "sha256": "2c985cc2c14024b67edbf18be1ff0436c87589a39bea3327dbd0c94b5a3199cc"
+    },
+    {
+      "path": "C1526j.java",
+      "bytes": 20356,
+      "sha256": "f2c280922a47c1ebd66abbd0892ba8100a23c30ab1a9671543a696a2c721fbe4"
+    },
+    {
+      "path": "C1527k.java",
+      "bytes": 262,
+      "sha256": "0c28b815e2c11f9c20b7f3b4498486de9999fba839978026829a5d9e40dc4ea5"
+    },
+    {
+      "path": "C1528l.java",
+      "bytes": 301,
+      "sha256": "da86710309d28979e0f44f3a9ba0f60bd9ab6f0268a93052ce4084a0f1459479"
+    },
+    {
+      "path": "C1529m.java",
+      "bytes": 230,
+      "sha256": "4a011c1c85555ed2d8aee3311cc29118600d8b74f385e2b0e94af3ea1d3ee813"
+    },
+    {
+      "path": "C1530n.java",
+      "bytes": 262,
+      "sha256": "4d59794521af80e30a46203375a1ab030d786cfbea99fd467cc651df97a4bd3d"
+    },
+    {
+      "path": "C1531o.java",
+      "bytes": 267,
+      "sha256": "0f0e643de6250af38a0175364fc765ff0a14e31b68e291f6e4dd5496a468078e"
+    },
+    {
+      "path": "C1532p.java",
+      "bytes": 359,
+      "sha256": "bb0ac8fe7b7ab20caec6fd345faa5b24cd528ce031374423cc47c37aa8dcdada"
+    },
+    {
+      "path": "C1533q.java",
+      "bytes": 576,
+      "sha256": "ffb71fcf9b5a4c9c86ce7c6a258a7e221e503d2f5ac8882a39d38ac6e249d97d"
+    },
+    {
+      "path": "C1534r.java",
+      "bytes": 347,
+      "sha256": "a79b5663efabbd53865c9aa089a874249329d3c4fcd6bce2b75ecd91a0f51902"
+    },
+    {
+      "path": "C1535s.java",
+      "bytes": 29060,
+      "sha256": "e400ca7de956f89f51bff3b7d52a2c2ec4a24c6fc6b564569c678a7b1d6bb76f"
+    },
+    {
+      "path": "C1536t.java",
+      "bytes": 9633,
+      "sha256": "cf659dc77369c49e998f9e76ce0c9802e2b22d2d8710a8be379fb1b9c1d6781f"
+    },
+    {
+      "path": "C1539u.java",
+      "bytes": 3480,
+      "sha256": "8c29ef3075a1007b325f2e3c8024dbde065012395b69d159e2db1120a8c50b69"
+    },
+    {
+      "path": "C1540v.java",
+      "bytes": 2422,
+      "sha256": "0bbfe8ae11486870c397c772f22940f4116fdfa78a38ed94a9791eef4335e526"
+    },
+    {
+      "path": "C1541w.java",
+      "bytes": 2899,
+      "sha256": "57c74f7122cbfa9502baa11123eb07e66d008b85a1bcb86698eee1ece3f53cdf"
+    },
+    {
+      "path": "C1542x.java",
+      "bytes": 13183,
+      "sha256": "d0f7cd0409e5189548b5cdb555b4a25a784623f952e6f19c04e203741b39b9f1"
+    },
+    {
+      "path": "C1543y.java",
+      "bytes": 5129,
+      "sha256": "71160d9689ff00b7b4c74272c267611a9fa4046ace0d2a4548f22ed6e1cfd912"
+    },
+    {
+      "path": "C1544z.java",
+      "bytes": 8716,
+      "sha256": "f621de473e1095361ab2b09774132c3e5a553a742726cb73996be9df5c31b36a"
+    },
+    {
+      "path": "PantiluterCommand.java",
+      "bytes": 11142,
+      "sha256": "1ae0be83fc86483acab78a59ec8e961af3d55485a02aba6c6ade8f7d99ccad37"
+    },
+    {
+      "path": "RecordCommand.java",
+      "bytes": 16649,
+      "sha256": "4f29878a1d514195be16d35d1349390be9b5fb6d9e79560c4d98cad5096b9f21"
+    },
+    {
+      "path": "RecordVianaCommand.java",
+      "bytes": 3642,
+      "sha256": "d36e1775d0141a4aa37b1cac5d7e1f4d8020ee936ec7fd7d87c01f7688080ffb"
+    },
+    {
+      "path": "RemoteStreamCommand.java",
+      "bytes": 4659,
+      "sha256": "8f90b80aa896d64291e91a6673a835620ac340cf6fa73a8e982e5e8ad95fdeaf"
+    }
+  ],
+  "unique_cgi_literal_count": 135,
+  "cgi_literals": [
+    {
+      "literal": "%1$s/cam.cgi?mode=playcmd&type=iskip&value=%2$d&value2=%3$s",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "iskip"
+        ],
+        [
+          "value",
+          "%2$d"
+        ],
+        [
+          "value2",
+          "%3$s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "literal": "%1$s/cam.cgi?mode=playcmd&type=restart&value=%2$d&value2=pause",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "restart"
+        ],
+        [
+          "value",
+          "%2$d"
+        ],
+        [
+          "value2",
+          "pause"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "literal": "%1$s/cam.cgi?mode=playcmd&type=restart&value=%2$d&value2=play",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "restart"
+        ],
+        [
+          "value",
+          "%2$d"
+        ],
+        [
+          "value2",
+          "play"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "literal": "%1$s/cam.cgi?mode=playcmd&type=setplayscene&value=%2$d&value2=%3$s",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "setplayscene"
+        ],
+        [
+          "value",
+          "%2$d"
+        ],
+        [
+          "value2",
+          "%3$s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?",
+      "query_fields": [],
+      "locations": [
+        {
+          "file": "C1497c.java",
+          "line": 353
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=%s&type=%s&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "%s"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1540v.java",
+          "line": 15
+        },
+        {
+          "file": "C1541w.java",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=%s&type=%s&value=%s&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "%s"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1540v.java",
+          "line": 20
+        },
+        {
+          "file": "C1541w.java",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=abortsenddata",
+      "query_fields": [
+        [
+          "mode",
+          "abortsenddata"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 494
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=anmastcmd&type=autoreviewunlock",
+      "query_fields": [
+        [
+          "mode",
+          "anmastcmd"
+        ],
+        [
+          "type",
+          "autoreviewunlock"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1539u.java",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=anmastcmd&type=createproject",
+      "query_fields": [
+        [
+          "mode",
+          "anmastcmd"
+        ],
+        [
+          "type",
+          "createproject"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1539u.java",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=anmastcmd&type=dellastphoto",
+      "query_fields": [
+        [
+          "mode",
+          "anmastcmd"
+        ],
+        [
+          "type",
+          "dellastphoto"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1539u.java",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          ""
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 19
+        },
+        {
+          "file": "C1494ay.java",
+          "line": 72
+        },
+        {
+          "file": "C1495az.java",
+          "line": 21
+        },
+        {
+          "file": "C1508g.java",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=3boxplaymode",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "3boxplaymode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1543y.java",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=4kphoto_marking",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "4kphoto_marking"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 441
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=af_area_reset",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "af_area_reset"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=autoreviewunlock",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "autoreviewunlock"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=balchkstart",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "balchkstart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 423
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=balchkstop",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "balchkstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 432
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=capture",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "capture"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 21
+        },
+        {
+          "file": "RecordVianaCommand.java",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=capture_cancel",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "capture_cancel"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=far_max",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "far_max"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 194
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=finishmultiphoto",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "finishmultiphoto"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1544z.java",
+          "line": 215
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=highlightcancel",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "highlightcancel"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=lcd_on",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "lcd_on"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=menu_entry",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "menu_entry"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=menu_exit",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "menu_exit"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=pictmode",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "pictmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1543y.java",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=playmode",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "playmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 537
+        },
+        {
+          "file": "C1543y.java",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=poweroff",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "poweroff"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1501d.java",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=pushaf",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "pushaf"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 203
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=recmode",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "recmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1543y.java",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=recstart",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "recstart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordVianaCommand.java",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=recstop",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "recstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordVianaCommand.java",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=stop_slowzoom",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "stop_slowzoom"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touch_ae_cancel",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touch_ae_cancel"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 176
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touch_af_cancel",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touch_af_cancel"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touchaerelease",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touchaerelease"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touchaf_magnify_off",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touchaf_magnify_off"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touchafaerelease",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touchafaerelease"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=touchafrelease",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "touchafrelease"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=video_recstart",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "video_recstart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 333
+        },
+        {
+          "file": "RecordCommand.java",
+          "line": 363
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=video_recstop",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "video_recstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 393
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=wbset",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "wbset"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1440ae.java",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=wifioff",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "wifioff"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1472as.java",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camcmd&value=zoomstop",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "zoomstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 28
+        },
+        {
+          "file": "C1495az.java",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=%s&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1508g.java",
+          "line": 146
+        },
+        {
+          "file": "C1508g.java",
+          "line": 174
+        },
+        {
+          "file": "C1508g.java",
+          "line": 185
+        },
+        {
+          "file": "C1508g.java",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=%s&value=%s&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1508g.java",
+          "line": 194
+        },
+        {
+          "file": "C1508g.java",
+          "line": 203
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=add_location_data&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "add_location_data"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 250
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=af_ae_lock&value=",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "af_ae_lock"
+        ],
+        [
+          "value",
+          ""
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1508g.java",
+          "line": 251
+        },
+        {
+          "file": "C1508g.java",
+          "line": 260
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=frame_ctrl&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "frame_ctrl"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=hrs&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "hrs"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=mot_conv&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "mot_conv"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1542x.java",
+          "line": 223
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=stop_motion&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "stop_motion"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1470aq.java",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=stop_motion&value=%s&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "stop_motion"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1470aq.java",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touch&value=%d/%d",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touch"
+        ],
+        [
+          "value",
+          "%d/%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touch&value=%d/%d&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touch"
+        ],
+        [
+          "value",
+          "%d/%d"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 177
+        },
+        {
+          "file": "RecordCommand.java",
+          "line": 208
+        },
+        {
+          "file": "RecordCommand.java",
+          "line": 273
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchae_ctrl&value=off",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchae_ctrl"
+        ],
+        [
+          "value",
+          "off"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 167
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchae_ctrl&value=on",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchae_ctrl"
+        ],
+        [
+          "value",
+          "on"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchaf&value=%d/%d",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchaf"
+        ],
+        [
+          "value",
+          "%d/%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchaf_chg_area&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchaf_chg_area"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchaf_chg_pos&value=%d/%d",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchaf_chg_pos"
+        ],
+        [
+          "value",
+          "%d/%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchcapt&value=%d/%d&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchcapt"
+        ],
+        [
+          "value",
+          "%d/%d"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 117
+        },
+        {
+          "file": "RecordCommand.java",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=camctrl&type=touchcapt_ctrl&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "camctrl"
+        ],
+        [
+          "type",
+          "touchcapt_ctrl"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "RecordCommand.java",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=editcmd&type=backside_delete&value=%s&value2=%d",
+      "query_fields": [
+        [
+          "mode",
+          "editcmd"
+        ],
+        [
+          "type",
+          "backside_delete"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1490au.java",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=editcmd&type=frontside_delete&value=%s&value2=%d",
+      "query_fields": [
+        [
+          "mode",
+          "editcmd"
+        ],
+        [
+          "type",
+          "frontside_delete"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1490au.java",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=editcmd&type=splitdeletecheck&value=%s&value2=%d",
+      "query_fields": [
+        [
+          "mode",
+          "editcmd"
+        ],
+        [
+          "type",
+          "splitdeletecheck"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1490au.java",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=endsenddata",
+      "query_fields": [
+        [
+          "mode",
+          "endsenddata"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 464
+        },
+        {
+          "file": "C1544z.java",
+          "line": 185
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=exclusion",
+      "query_fields": [
+        [
+          "mode",
+          "exclusion"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 350
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=get_content_info",
+      "query_fields": [
+        [
+          "mode",
+          "get_content_info"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 320
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=get_content_info&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "get_content_info"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 290
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=%s",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=allmenu",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "allmenu"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 123
+        },
+        {
+          "file": "C1469ap.java",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=camsetting",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "camsetting"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1450al.java",
+          "line": 217
+        },
+        {
+          "file": "C1468ao.java",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=capability",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "capability"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 93
+        },
+        {
+          "file": "C1469ap.java",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=curmenu",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "curmenu"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 153
+        },
+        {
+          "file": "C1469ap.java",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=curmode",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "curmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 260
+        },
+        {
+          "file": "C1469ap.java",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=ddd",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "ddd"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1469ap.java",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=highlightscene",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "highlightscene"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 247
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=initialsetinfo",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "initialsetinfo"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 170
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=lens",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "lens"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 410
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getinfo&type=multiphoto",
+      "query_fields": [
+        [
+          "mode",
+          "getinfo"
+        ],
+        [
+          "type",
+          "multiphoto"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1544z.java",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getprogress&type=add_location_data",
+      "query_fields": [
+        [
+          "mode",
+          "getprogress"
+        ],
+        [
+          "type",
+          "add_location_data"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 276
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getprogress&type=highlight",
+      "query_fields": [
+        [
+          "mode",
+          "getprogress"
+        ],
+        [
+          "type",
+          "highlight"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 336
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getprogress&type=mot_conv",
+      "query_fields": [
+        [
+          "mode",
+          "getprogress"
+        ],
+        [
+          "type",
+          "mot_conv"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1542x.java",
+          "line": 256
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getprogress&type=multiphoto",
+      "query_fields": [
+        [
+          "mode",
+          "getprogress"
+        ],
+        [
+          "type",
+          "multiphoto"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1544z.java",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getprogress&type=splitdelete",
+      "query_fields": [
+        [
+          "mode",
+          "getprogress"
+        ],
+        [
+          "type",
+          "splitdelete"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1490au.java",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=angle",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "angle"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=ex_tele_conv",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "ex_tele_conv"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 466
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=focusmode",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "focusmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 440
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=play_sort_mode",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "play_sort_mode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1540v.java",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=slowzoomspeed",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "slowzoomspeed"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=touch_type",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "touch_type"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 455
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getsetting&type=videoformat",
+      "query_fields": [
+        [
+          "mode",
+          "getsetting"
+        ],
+        [
+          "type",
+          "videoformat"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1440ae.java",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getstate",
+      "query_fields": [
+        [
+          "mode",
+          "getstate"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 33
+        },
+        {
+          "file": "C1468ao.java",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=getstate&type=keep_alive",
+      "query_fields": [
+        [
+          "mode",
+          "getstate"
+        ],
+        [
+          "type",
+          "keep_alive"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 380
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=notify&type=clock&value=%04d%02d%02d%02d%02d%02d",
+      "query_fields": [
+        [
+          "mode",
+          "notify"
+        ],
+        [
+          "type",
+          "clock"
+        ],
+        [
+          "value",
+          "\u0004d\u0002d\u0002d\u0002d\u0002d\u0002d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 554
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=autopause",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "autopause"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 57
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=autostart",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "autostart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 24
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=checkstart",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "checkstart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 90
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=delrounddata",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "delrounddata"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 470
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=getposinfo",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "getposinfo"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 219
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=getroundinfo",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "getroundinfo"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 249
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 210
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=pantiltstart&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "pantiltstart"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 123
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=pantiltstop&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "pantiltstop"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 156
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 141
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=presetstart&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "presetstart"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 279
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 240
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=presetstop",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "presetstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 309
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 249
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=roundpause",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "roundpause"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 399
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 276
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=roundstart",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "roundstart"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 339
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 258
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=roundstop",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "roundstop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 369
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 267
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=pantiltcmd&type=setposition&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "pantiltcmd"
+        ],
+        [
+          "type",
+          "setposition"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 189
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=playcmd&type=pause",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "pause"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=playcmd&type=start",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "start"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=playcmd&type=stop",
+      "query_fields": [
+        [
+          "mode",
+          "playcmd"
+        ],
+        [
+          "type",
+          "stop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1491av.java",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=requestsenddata",
+      "query_fields": [
+        [
+          "mode",
+          "requestsenddata"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 439
+        },
+        {
+          "file": "C1544z.java",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=senddata",
+      "query_fields": [
+        [
+          "mode",
+          "senddata"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "BabyMonitorCommand.java",
+          "line": 51
+        },
+        {
+          "file": "C1438ac.java",
+          "line": 459
+        },
+        {
+          "file": "C1468ao.java",
+          "line": 231
+        },
+        {
+          "file": "C1492aw.java",
+          "line": 160
+        },
+        {
+          "file": "C1526j.java",
+          "line": 307
+        },
+        {
+          "file": "C1526j.java",
+          "line": 409
+        },
+        {
+          "file": "C1544z.java",
+          "line": 126
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 294
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=senddata&value2=1",
+      "query_fields": [
+        [
+          "mode",
+          "senddata"
+        ],
+        [
+          "value2",
+          "1"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 584
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=%s&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 137
+        },
+        {
+          "file": "C1508g.java",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=%s&value=%s&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=angle&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "angle"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=clock&value=%04d%02d%02d%02d%02d%02d",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "clock"
+        ],
+        [
+          "value",
+          "\u0004d\u0002d\u0002d\u0002d\u0002d\u0002d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 368
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=focusassist&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "focusassist"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 185
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=peaking&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "peaking"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1536t.java",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=setsetting&type=slowzoomspeed&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "setsetting"
+        ],
+        [
+          "type",
+          "slowzoomspeed"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1494ay.java",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=%s&value=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 379
+        },
+        {
+          "file": "C1544z.java",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=camsetting&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "camsetting"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1468ao.java",
+          "line": 204
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=connectiondata&value=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "connectiondata"
+        ],
+        [
+          "value",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1492aw.java",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=geodata&value=%s&value2=1",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "geodata"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "1"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 562
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=highlightdata&value=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "highlightdata"
+        ],
+        [
+          "value",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1526j.java",
+          "line": 278
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startsenddata&type=rounddata&value=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startsenddata"
+        ],
+        [
+          "type",
+          "rounddata"
+        ],
+        [
+          "value",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1438ac.java",
+          "line": 429
+        },
+        {
+          "file": "PantiluterCommand.java",
+          "line": 285
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startstream&value=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startstream"
+        ],
+        [
+          "value",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1535s.java",
+          "line": 538
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=stopstream",
+      "query_fields": [
+        [
+          "mode",
+          "stopstream"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1535s.java",
+          "line": 590
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=wirelesstwin&type=start",
+      "query_fields": [
+        [
+          "mode",
+          "wirelesstwin"
+        ],
+        [
+          "type",
+          "start"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1493ax.java",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=wirelesstwin&type=stop",
+      "query_fields": [
+        [
+          "mode",
+          "wirelesstwin"
+        ],
+        [
+          "type",
+          "stop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1493ax.java",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "literal": "ExecuteGeoTagSend=/cam.cgi?mode=camcmd&value=playmode",
+      "query_fields": [
+        [
+          "mode",
+          "camcmd"
+        ],
+        [
+          "value",
+          "playmode"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "C1519h.java",
+          "line": 538
+        }
+      ]
+    }
+  ],
+  "review_candidates": [],
+  "limitations": [
+    "Literal extraction only: no Java/smali execution or call-graph analysis.",
+    "Templates and fragments are retained verbatim; parameters passed to generic builders are not resolved.",
+    "Comments and unreachable code can contain matches. File coverage is limited to the supplied directory.",
+    "App-side strings do not establish GM5 support, camera memory access, vulnerabilities or firmware keys.",
+    "No camera connection, command replay, decryption or firmware modification is performed."
+  ],
+  "provenance": {
+    "repository": "https://github.com/maiermic/panasonic-image-app",
+    "revision": "ef9bd7c2a8390204894c53b49d1e01a230141e2d",
+    "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a",
+    "kind": "Third-party decompilation; not a verified extraction of the owner installed APK",
+    "validation": "All selected source bytes matched their Git blob SHA-1 values before inventory."
+  }
+}

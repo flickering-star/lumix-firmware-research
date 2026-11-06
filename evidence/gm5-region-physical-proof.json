@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T21:40:02.376934+00:00",
+  "scope": "Short physical verification of GM5 language patch and post-cycle English/policy state",
+  "package": {
+    "path": "work/gm5-region-package-2/GM5__V11.bin",
+    "bytes": 8390144,
+    "sha256": "4954b517462b8ee5f900945496b882ddfa45f97b540f0d1dad6dcdf706ea50c7"
+  },
+  "expected_main_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+  "expected_main_hash_is_not_a_complete_physical_readback": true,
+  "physical_patch_windows_match_exact_candidate": true,
+  "physical_patch_window_bytes": 3072,
+  "patches_verified": [
+    {
+      "offset": 4790528,
+      "address": 1078532352,
+      "before": 197,
+      "after": 171,
+      "region": 256,
+      "purpose": "saved-language validation/default",
+      "dispatch_entry_address": 1078532348,
+      "original_target": 1075912645,
+      "target": 1075912619
+    },
+    {
+      "offset": 3644400,
+      "address": 1077386224,
+      "before": 143,
+      "after": 101,
+      "region": 256,
+      "purpose": "language-menu construction",
+      "dispatch_entry_address": 1077386220,
+      "original_target": 1074431375,
+      "target": 1074431333
+    },
+    {
+      "offset": 696349,
+      "address": 1074438173,
+      "before": 201,
+      "after": 202,
+      "region": 256,
+      "purpose": "preserve the Language setup-menu item instead of hiding it",
+      "original_branch": "bne0x400aa030",
+      "patched_branch": "bra0x400aa030"
+    }
+  ],
+  "rom_policy": 0,
+  "ram_policy": 0,
+  "saved_language_shadow_id": 1,
+  "active_ui_language_id": 1,
+  "settings_mode": 2,
+  "region_word": "0x100",
+  "live_language_entries": [
+    {
+      "id": 1,
+      "state": 4
+    },
+    {
+      "id": 2,
+      "state": 4
+    },
+    {
+      "id": 3,
+      "state": 4
+    },
+    {
+      "id": 19,
+      "state": 4
+    },
+    {
+      "id": 4,
+      "state": 4
+    },
+    {
+      "id": 5,
+      "state": 4
+    },
+    {
+      "id": 8,
+      "state": 4
+    },
+    {
+      "id": 6,
+      "state": 4
+    },
+    {
+      "id": 7,
+      "state": 4
+    },
+    {
+      "id": 9,
+      "state": 4
+    },
+    {
+      "id": 10,
+      "state": 4
+    },
+    {
+      "id": 11,
+      "state": 4
+    },
+    {
+      "id": 12,
+      "state": 4
+    },
+    {
+      "id": 13,
+      "state": 4
+    },
+    {
+      "id": 14,
+      "state": 4
+    },
+    {
+      "id": 15,
+      "state": 4
+    },
+    {
+      "id": 16,
+      "state": 4
+    },
+    {
+      "id": 23,
+      "state": 4
+    },
+    {
+      "id": 17,
+      "state": 4
+    },
+    {
+      "id": 18,
+      "state": 4
+    },
+    {
+      "id": 20,
+      "state": 4
+    },
+    {
+      "id": 21,
+      "state": 4
+    },
+    {
+      "id": 22,
+      "state": 4
+    },
+    {
+      "id": 24,
+      "state": 4
+    },
+    {
+      "id": 25,
+      "state": 4
+    },
+    {
+      "id": 0,
+      "state": 4
+    }
+  ],
+  "owner_observation": {
+    "schema": 1,
+    "time_utc": "2026-11-06T21:40:01.524918+00:00",
+    "owner_update_report": "It works, connected camera so you can confirm. Flashed in normal mode(not service)",
+    "owner_power_cycle_report": "Selected English; it stayed English after off/on",
+    "owner_reports_flash_in_normal_mode": true,
+    "owner_selected_english_in_camera": true,
+    "owner_reports_english_survived_manual_off_on": true,
+    "patch_capture": "captures/gm5-region-check-fVZhFe1y",
+    "rom_capture": "captures/gm5-usb-security-flag-tZlRbtkD",
+    "ram_capture": "captures/gm5-usb-runtime-control-sUgsNFRq",
+    "settings_capture": "captures/gm5-usb-update-settings-MIG3e9TE",
+    "language_capture": "captures/gm5-language-inspect-4qtPLxE6",
+    "owner_stopped_full_readback": true,
+    "stopped_readback_record": "captures/gm5-program-readback-03dq4mbo/owner-stop.json"
+  },
+  "read_only_checks": {
+    "patch_windows": {
+      "capture": "captures/gm5-region-check-fVZhFe1y",
+      "windows": [
+        {
+          "address": "0x400aa000",
+          "path": "captures/gm5-region-check-fVZhFe1y/result/language-visibility.bin",
+          "bytes": 1024,
+          "sha256": "1cc7141dfd6ec2e2537a4df6498aaee59c205b21dc2b146e849a6d0cf5b01614"
+        },
+        {
+          "address": "0x40379800",
+          "path": "captures/gm5-region-check-fVZhFe1y/result/language-list.bin",
+          "bytes": 1024,
+          "sha256": "7aed13775337049265696091bd4d74fe532357a9ab56e50618b7c9e325835850"
+        },
+        {
+          "address": "0x40491800",
+          "path": "captures/gm5-region-check-fVZhFe1y/result/language-normalizer.bin",
+          "bytes": 1024,
+          "sha256": "55bb93d742af382e1d884310cb22bd519c4fdce064cb5f1e833a016a9ea1e521"
+        }
+      ],
+      "events": {
+        "path": "captures/gm5-region-check-fVZhFe1y/result/events.jsonl",
+        "bytes": 28464,
+        "sha256": "fd27a157b57a9667a06f62452a8e0794d0cac8eca9315ca854849c39e75523e4"
+      },
+      "request_count": 19,
+      "all_requests_are_reads": true
+    },
+    "rom": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-security-flag-tZlRbtkD",
+      "model": "DMC-GM5",
+      "mode": "security-flag",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 1,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-security-flag-tZlRbtkD/result/security-flag.bin",
+      "verified_prefix_bytes": 1024,
+      "program_sha256": "c689d119f652f1e45aef3e71936f470308a6c9ed5aa8585cb371bf1355f2115f",
+      "program_file_base": "0x406b1800",
+      "program_file_offset": 0,
+      "next_program_address": "0x406b1c00",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "ram": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-runtime-control-sUgsNFRq",
+      "model": "DMC-GM5",
+      "mode": "runtime-control",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 1,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-runtime-control-sUgsNFRq/result/runtime-control.bin",
+      "verified_prefix_bytes": 1024,
+      "program_sha256": "2fa740e6ab65b850b6763ae7c9f96a9fb2111b753414da1a2edf59e9eb70ebd5",
+      "program_file_base": "0x70a68400",
+      "program_file_offset": 0,
+      "next_program_address": "0x70a68800",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "settings": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-update-settings-MIG3e9TE",
+      "model": "DMC-GM5",
+      "mode": "update-settings",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 18,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-update-settings-MIG3e9TE/result/update-settings.bin",
+      "verified_prefix_bytes": 18432,
+      "program_sha256": "8df6226ef8432305356e71a83b53490c3d0bf873118e1e698f4dbb9429ef90e3",
+      "program_file_base": "0x7bfb0000",
+      "program_file_offset": 0,
+      "next_program_address": "0x7bfb4800",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "language": {
+      "capture": "captures/gm5-language-inspect-4qtPLxE6",
+      "windows": [
+        {
+          "address": "0x4061e400",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/settings-dispatch.bin",
+          "bytes": 1024,
+          "sha256": "789c1dd614af1b74b8e68c4eb9262bdc44f193556804f5af6164eb2f6af5a6de"
+        },
+        {
+          "address": "0x4036cc00",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/settings-branch.bin",
+          "bytes": 1024,
+          "sha256": "7c580db12c5c5fc37afcacb9a0c75929d4164b49c6a03f54f307135e882348d9"
+        },
+        {
+          "address": "0x4036d400",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/settings-writer.bin",
+          "bytes": 1024,
+          "sha256": "e7d2ae44cdb3116fa96df1d70b2cd9c269bee3b764735b3a4df9736c26e290c7"
+        },
+        {
+          "address": "0x701af000",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/language-ui-state.bin",
+          "bytes": 1024,
+          "sha256": "fadce41f4e3f6237c86fc82b752245204898c1870d9aee143726b70ba9e1f6a3"
+        },
+        {
+          "address": "0x70a0f000",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/language-menu-state.bin",
+          "bytes": 1024,
+          "sha256": "0c4070cb8df6bd227bcec0c449095bbc9d476c4e2bb45d91e95534b1a3f81027"
+        },
+        {
+          "address": "0x70a67800",
+          "path": "captures/gm5-language-inspect-4qtPLxE6/result/shutdown-state.bin",
+          "bytes": 1024,
+          "sha256": "316e4e2bd08c6d7cd7ff4e80a5664255b7b0c9c7196f1b4c7853582ebd166724"
+        }
+      ],
+      "events": {
+        "path": "captures/gm5-language-inspect-4qtPLxE6/result/events.jsonl",
+        "bytes": 43003,
+        "sha256": "03e957c873994fbce442322f85683f87ab2551d49563b1ef1cfc63966bf4c6b2"
+      },
+      "request_count": 22,
+      "all_requests_are_reads": true
+    }
+  },
+  "post_update_host_policy_language_or_nor_writes": false,
+  "complete_main_readback_performed": false,
+  "collector_sha256": "b79ff26fd1a43c5f038e0e914b30f2dd8b646b12937f10c2ca612991a0a03bf7",
+  "limits": [
+    "Three patched ROM windows are verified; this is not a complete installed-main/NOR comparison.",
+    "Normal-mode installation, menu selection and manual off/on are owner observations.",
+    "Settings/UI language and ROM/RAM policy are packet-verified reads after that reported off/on."
+  ]
+}

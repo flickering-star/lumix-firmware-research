@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Missing short encodings present in GNU opcodes/m10300-opc.c (GDB 16.3).
+// Operations match GNU's existing AM33 long-form swap/swaph implementations.
+
+// 1111 0110 1000 Dm Dn; swap Dm,Dn
+8.0xf6+4.0x8,2.DM1,2.DN0:D0:::swap
+"swap"
+*am33
+*am33_2
+{
+  uint32_t value = State.regs[REG_D0 + DM1];
+  PC = cia;
+  State.regs[REG_D0 + DN0] = (((value & 0xff) << 24)
+                            | (((value >> 8) & 0xff) << 16)
+                            | (((value >> 16) & 0xff) << 8)
+                            | ((value >> 24) & 0xff));
+}
+
+// 1111 0110 1001 Dm Dn; swaph Dm,Dn
+8.0xf6+4.0x9,2.DM1,2.DN0:D0:::swaph
+"swaph"
+*am33
+*am33_2
+{
+  uint32_t value = State.regs[REG_D0 + DM1];
+  PC = cia;
+  State.regs[REG_D0 + DN0] = (((value & 0xff) << 8)
+                            | ((value >> 8) & 0xff)
+                            | (((value >> 16) & 0xff) << 24)
+                            | (((value >> 24) & 0xff) << 16));
+}

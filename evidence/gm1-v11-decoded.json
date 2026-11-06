@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "scope": "Offline complete official update decoding; no flashing or repacking",
+  "model": "GM1",
+  "source": {
+    "path": "firmware/official-gm1-v11/GM1__V11.bin",
+    "bytes": 31983104,
+    "sha256": "3e8b4aab23f79db160cd016af0e466011f047add07bb7441c642f6b70df30d90"
+  },
+  "key_source": {
+    "path": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+    "bytes": 9437184,
+    "sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe"
+  },
+  "key": {
+    "hex": "350481b566d22d5b89dc46775e644622",
+    "bytes": 16,
+    "physical_flash_address": "0x405ab460",
+    "initialized_ram_address": "0x70007bdc",
+    "consumer_copy_call": "0x7bd4a358"
+  },
+  "algorithm": {
+    "name": "Five-round AES-128-CBC",
+    "selector": 3,
+    "standard_aes128_rounds": 10,
+    "selected_rounds": 5,
+    "padding": "none",
+    "iv_source": "Component directory entry +60, 16 bytes",
+    "digest": "SHA-256 of each decoded component",
+    "outer_digest": "CRC32 of encoded body"
+  },
+  "decoder": {
+    "path": "work/panasonic-aes5",
+    "bytes": 34432,
+    "sha256": "213527b66e72ea6a940cfb3546859988d8b329f28e55f0ed996cc4eed5d02177"
+  },
+  "decoder_source": {
+    "path": "tools/panasonic_aes5.c",
+    "bytes": 9509,
+    "sha256": "de3b839fed8a37ff5c8b5d3968eccc118ccd6296d109edf2e5cdf3bc5e30d94c"
+  },
+  "driver": {
+    "path": "tools/panasonic_v2_decode.py",
+    "bytes": 6974,
+    "sha256": "ccfea0e9c9382e32734c90c85c173975a529d943f68ee98ea78bf469ff0e6c13"
+  },
+  "host_selftest": "NIST AES-128, physical GM1 five-round block and substitution tables verified.",
+  "retained_decoder_source": {
+    "path": "work/gm1-v11-decoded-verified/decoder-source.c",
+    "bytes": 9509,
+    "sha256": "de3b839fed8a37ff5c8b5d3968eccc118ccd6296d109edf2e5cdf3bc5e30d94c"
+  },
+  "retained_driver_source": {
+    "path": "work/gm1-v11-decoded-verified/driver-source.py",
+    "bytes": 6974,
+    "sha256": "ccfea0e9c9382e32734c90c85c173975a529d943f68ee98ea78bf469ff0e6c13"
+  },
+  "all_component_hashes_match": true,
+  "components": [
+    {
+      "index": 0,
+      "name": "program",
+      "entry_offset": 748,
+      "stored_file_offset": 1024,
+      "file_offset": 1536,
+      "size": 9437184,
+      "destination_offset_candidate": 0,
+      "flags_raw": 3,
+      "field32_hex": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+      "field16_hex": "31b778a6c30c98666d54d12db4d8bdf2",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/00_program.decoded.bin",
+      "plaintext_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": true
+    },
+    {
+      "index": 1,
+      "name": "guires",
+      "entry_offset": 840,
+      "stored_file_offset": 9438208,
+      "file_offset": 9438720,
+      "size": 11534336,
+      "destination_offset_candidate": 9437184,
+      "flags_raw": 3,
+      "field32_hex": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+      "field16_hex": "a10c709775de363ad456d410edaf41f9",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/01_guires.decoded.bin",
+      "plaintext_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": null
+    },
+    {
+      "index": 2,
+      "name": "program2",
+      "entry_offset": 932,
+      "stored_file_offset": 20972544,
+      "file_offset": 20973056,
+      "size": 3538944,
+      "destination_offset_candidate": 20971520,
+      "flags_raw": 3,
+      "field32_hex": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+      "field16_hex": "0f81bab0e8df54d4cb4f10f912d62029",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/02_program2.decoded.bin",
+      "plaintext_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": true
+    },
+    {
+      "index": 3,
+      "name": "armcode",
+      "entry_offset": 1024,
+      "stored_file_offset": 24511488,
+      "file_offset": 24512000,
+      "size": 3407872,
+      "destination_offset_candidate": 24510464,
+      "flags_raw": 3,
+      "field32_hex": "f9918698295c495373a41dcc8689c4faa05ac9aee8965ee2118ba29a3b1b1124",
+      "field16_hex": "38c19848852ee5ea9bf2013eca139263",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/03_armcode.decoded.bin",
+      "plaintext_sha256": "f9918698295c495373a41dcc8689c4faa05ac9aee8965ee2118ba29a3b1b1124",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": null
+    },
+    {
+      "index": 4,
+      "name": "other",
+      "entry_offset": 1116,
+      "stored_file_offset": 27919360,
+      "file_offset": 27919872,
+      "size": 3670016,
+      "destination_offset_candidate": 28573696,
+      "flags_raw": 3,
+      "field32_hex": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+      "field16_hex": "5e7ec1a9f8cc6fc7fbc4f83cbd2cf40d",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/04_other.decoded.bin",
+      "plaintext_sha256": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": null
+    },
+    {
+      "index": 5,
+      "name": "eep",
+      "entry_offset": 1208,
+      "stored_file_offset": 31589376,
+      "file_offset": 31589888,
+      "size": 393216,
+      "destination_offset_candidate": 33161216,
+      "flags_raw": 3,
+      "field32_hex": "9e7f1ea599b8ef41559a5911b6933d5c9ca2a5ee8c7199c2bd5ee3a36d2c5b5e",
+      "field16_hex": "d81440c6e1318303e69d19a2caba29de",
+      "reserved16_hex": "00000000000000000000000000000000",
+      "plaintext_file": "work/gm1-v11-decoded-verified/05_eep.decoded.bin",
+      "plaintext_sha256": "9e7f1ea599b8ef41559a5911b6933d5c9ca2a5ee8c7199c2bd5ee3a36d2c5b5e",
+      "plaintext_sha256_matches_directory": true,
+      "physical_control_byte_for_byte_match": null
+    }
+  ],
+  "limits": [
+    "Component hashes establish exact agreement with the official directory, not signature validity.",
+    "The directory authentication path requires separate verification.",
+    "No encoded update, modified firmware, flash write, or camera operation is produced."
+  ]
+}

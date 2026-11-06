@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "gm5-v11-jp-policy-zero",
+  "model": "DMC-GM5",
+  "component": "program",
+  "input_bytes": 8388608,
+  "scope": "Exact installed Japanese 1.1 code build; other inputs are rejected",
+  "variants": [
+    {
+      "input_sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+      "output_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+      "patches": [
+        {
+          "offset": "0x6b1bdc",
+          "before": "01",
+          "after": "00",
+          "purpose": "Initialize unsigned-input policy to zero"
+        }
+      ]
+    }
+  ]
+}

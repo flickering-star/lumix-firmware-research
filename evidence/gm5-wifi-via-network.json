@@ -1,0 +1,30 @@
+{
+  "source_url": "https://help.na.panasonic.com/wp-content/uploads/2023/02/DMCGM5_SQW0047_ENG.pdf",
+  "local_path": "work/gm5-owner-manual/DMCGM5_SQW0047_ENG.pdf",
+  "bytes": 15062388,
+  "sha256": "60c1f3101b17ba07e49803e35930b1894b3faa7d90f5b6a4fb086808f155c85f",
+  "pages": 367,
+  "examined_pages": [
+    262,
+    265,
+    294,
+    295,
+    296
+  ],
+  "findings": [
+    "Remote smartphone connection supports Via Network through a wireless access point.",
+    "On the QR/SSID screen, DISP changes the connection method.",
+    "Via Network then From List selects a router; the camera prompts for its encryption key."
+  ],
+  "mac_observation": {
+    "internet_default_interface": "en0",
+    "phone": "Xiaomi 15 Ultra",
+    "usb_interface_names": [
+      "RNDIS Communications Control",
+      "RNDIS Ethernet Data"
+    ],
+    "new_tether_network_interface_created": false,
+    "network_settings_changed": false
+  },
+  "note": "Phone identifiers, router SSID/password and local addressing are omitted."
+}

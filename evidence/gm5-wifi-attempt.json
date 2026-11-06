@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "scope": "Owner-authorized GM5 connection attempt through phone hotspot; candidate identity unconfirmed",
+  "observed_utc": "2026-11-05T06:12:31.320481+00:00",
+  "ssdp": {
+    "attempts": 1,
+    "search_target": "urn:schemas-upnp-org:device:MediaServer:1",
+    "result": "Host socket send failed with errno 65, No route to host",
+    "responses_received": 0
+  },
+  "http": {
+    "attempts": 1,
+    "method": "GET",
+    "path": "/cam.cgi?mode=getstate",
+    "destination": "One candidate peer, not independently identified as camera",
+    "error": "[Errno 65] No route to host",
+    "elapsed_seconds": 0.019,
+    "response_received": false
+  },
+  "access_request_sent": false,
+  "camera_command_support_or_pairing_established": false,
+  "owner_report": "Camera later discharged; owner suspected the displayed error was a timeout.",
+  "conclusion": "Host errors do not identify the cause of the camera display error; local permission, routing and hotspot behavior remain unresolved.",
+  "raw_http_log": {
+    "path": "captures/gm5-wifi-state-20261105T061231Z/observation.json",
+    "bytes": 207,
+    "sha256": "20ce4de04710128d0e69c9f0b41f90627edc911064956fdf4d46b02891558e33"
+  },
+  "privacy": "Hotspot SSID, addresses and device identifiers omitted from this report.",
+  "subsequent_work": "Offline GH2 firmware analysis; no further camera-network probes during that study."
+}

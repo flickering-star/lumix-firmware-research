@@ -1,0 +1,412 @@
+{
+  "schema": 1,
+  "gm5_sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+  "positive_control": {
+    "source_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GH2__V12.zip",
+    "archive_sha256": "456ce05fa715d8822ee15132b7d41e15823f755be0bc3183fcb04190cf10d433",
+    "binary_sha256": "e192ba2a7dba4167e4100efc896c5475faffd51164bd949e600964430454e817",
+    "binary_bytes": 15599104,
+    "key_source": "https://github.com/Siegfried82/lumix-s1m2-research/blob/8f625cfabb31e8a71177b86e2b63a69c686de5e8/analysis/ptool_crypto_results.json",
+    "aes128_key_hex": "90b43b5ce34c6e667fb28376b5fa5c27",
+    "mode": "AES-128-CBC",
+    "iv": "eaefe7eee29547706360c431f8452b50",
+    "expected_md5_hex": "35cb77e2ef08df9ef334ff1e496b0b02",
+    "actual_md5_hex": "35cb77e2ef08df9ef334ff1e496b0b02",
+    "full_plaintext_md5_matches": true,
+    "plaintext_head_hex": "4748320000000000000000000000000020012001040000003817230800000000",
+    "plaintext_sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "tests": [
+    {
+      "component": "program",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "45ab67c8f3f15e6f72f6a03c1b2f2277fa58973f3db889de3f41a01dcaa3c6be",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999978538,
+        "zero_bytes": 32690,
+        "ff_bytes": 32877,
+        "ascii_strings_12plus": 38,
+        "longest_ascii_string_12plus": 14,
+        "keyword_strings": []
+      },
+      "head_hex": "5c5ba9f74fe59b60d097905d0b2224fe170113434d49358d6ab685080ad03af3"
+    },
+    {
+      "component": "program",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "214fd6c20c1cc75b5fefaecf5d31e662e1f5938b8f08886164ee90970bc9b2aa",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999978542,
+        "zero_bytes": 32690,
+        "ff_bytes": 32877,
+        "ascii_strings_12plus": 38,
+        "longest_ascii_string_12plus": 14,
+        "keyword_strings": []
+      },
+      "head_hex": "d8586e0cb66e45757609ece7e59c7b94170113434d49358d6ab685080ad03af3"
+    },
+    {
+      "component": "program",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "56a35d86313277731219cd117f41d7e4350a76d7e303b894d4f7722a000c2cd1",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999976189,
+        "zero_bytes": 32793,
+        "ff_bytes": 32748,
+        "ascii_strings_12plus": 25,
+        "longest_ascii_string_12plus": 16,
+        "keyword_strings": []
+      },
+      "head_hex": "d8586e0cb66e45757609ece7e59c7b944908d949d7fb1f41cd43eb7cef4a8c4b"
+    },
+    {
+      "component": "guires",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "680a616c2371f0b6aa925ab71b89f7c0eaa298857088c50f8254fb5377f4c2eb",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999986037,
+        "zero_bytes": 49116,
+        "ff_bytes": 49067,
+        "ascii_strings_12plus": 57,
+        "longest_ascii_string_12plus": 17,
+        "keyword_strings": []
+      },
+      "head_hex": "3737d40258063b91c32ca5d47c9605655a2637366f18b5483b0d82a56af1d3d3"
+    },
+    {
+      "component": "guires",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "7db43cd6f2740d3cfde73c45b022ced370c37955d2b9532305fada73233b3614",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999986039,
+        "zero_bytes": 49116,
+        "ff_bytes": 49067,
+        "ascii_strings_12plus": 57,
+        "longest_ascii_string_12plus": 17,
+        "keyword_strings": []
+      },
+      "head_hex": "65d4b7b4f30f269cd7ad0bbda2e01e745a2637366f18b5483b0d82a56af1d3d3"
+    },
+    {
+      "component": "guires",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "5e8f05174c2d823de5cbb96936ef2c93360cd5fd9288a72dcd9ca72c97fc0ad6",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999984066,
+        "zero_bytes": 49405,
+        "ff_bytes": 48870,
+        "ascii_strings_12plus": 58,
+        "longest_ascii_string_12plus": 19,
+        "keyword_strings": []
+      },
+      "head_hex": "65d4b7b4f30f269cd7ad0bbda2e01e74e92019e43c8a154c914e42bbdc07924f"
+    },
+    {
+      "component": "program2",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "bb9da3050a628641942c6e75de40452b22cefbedc2f0b6321804632e673289ab",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999944278,
+        "zero_bytes": 13653,
+        "ff_bytes": 13917,
+        "ascii_strings_12plus": 22,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "767e5a2b54dad86802f9103e5d558bb1ba366114136aa04601d729e5f599e226"
+    },
+    {
+      "component": "program2",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "49a7330770a446f46cbcb5f9f31aed7127524174aa80088fb060f5b3709b81da",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999944264,
+        "zero_bytes": 13653,
+        "ff_bytes": 13917,
+        "ascii_strings_12plus": 22,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "4fbacedb558ae715649206af6cebd32eba366114136aa04601d729e5f599e226"
+    },
+    {
+      "component": "program2",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "9c06697ae9351258114def49ca83c4c6506632cd69e0f528b80bd8e52f0a0a4c",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999949605,
+        "zero_bytes": 13751,
+        "ff_bytes": 13935,
+        "ascii_strings_12plus": 13,
+        "longest_ascii_string_12plus": 16,
+        "keyword_strings": []
+      },
+      "head_hex": "4fbacedb558ae715649206af6cebd32e53d66bb3da57b9c4d9d59f70b3f39f12"
+    },
+    {
+      "component": "armcode",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "7b55e1fccb75f2384730fba3c13a0dd6c4b562b8708a1746ef00204e78470644",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999945273,
+        "zero_bytes": 13435,
+        "ff_bytes": 13365,
+        "ascii_strings_12plus": 14,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "e3f5d1a5f8f577c3d497ecfb5aef20c5b90172ded8d694ff50e04cfab337a9b5"
+    },
+    {
+      "component": "armcode",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "5704dad620062740df932e7028e1a666b570030e85e4610f29b66fa88214a28c",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999945269,
+        "zero_bytes": 13435,
+        "ff_bytes": 13365,
+        "ascii_strings_12plus": 14,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "adef4143110e9bf546ec30d0730a9475b90172ded8d694ff50e04cfab337a9b5"
+    },
+    {
+      "component": "armcode",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "772ef2bb010e7e70c0ec7af74946dc535ab31165306d0dd8a604ef472c88213a",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999946498,
+        "zero_bytes": 13266,
+        "ff_bytes": 13144,
+        "ascii_strings_12plus": 12,
+        "longest_ascii_string_12plus": 16,
+        "keyword_strings": []
+      },
+      "head_hex": "adef4143110e9bf546ec30d0730a9475aa91c04828d5cc8420d2225459bf59b0"
+    },
+    {
+      "component": "other",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "074854038a7ddc24216719a3d2b33198f7c650273f531a131d9d9ed25be4ca0d",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999948013,
+        "zero_bytes": 14492,
+        "ff_bytes": 14401,
+        "ascii_strings_12plus": 12,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "2948bf97fef67db34f0c036c44f926737b80949067cd7bfacecd131f3f40a41e"
+    },
+    {
+      "component": "other",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "c653bac423522042cacb1c200a15b7173bb4e193b0158ad56919ab61fd3cd212",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999948024,
+        "zero_bytes": 14492,
+        "ff_bytes": 14401,
+        "ascii_strings_12plus": 12,
+        "longest_ascii_string_12plus": 15,
+        "keyword_strings": []
+      },
+      "head_hex": "17c6aaac1f47766b6b41125e822d5e8f7b80949067cd7bfacecd131f3f40a41e"
+    },
+    {
+      "component": "other",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "1d2a0029103937f6cd75439004bd56f7d1215b06a588c86612a7d9ee88b27c1f",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.999939983,
+        "zero_bytes": 14411,
+        "ff_bytes": 14296,
+        "ascii_strings_12plus": 13,
+        "longest_ascii_string_12plus": 14,
+        "keyword_strings": []
+      },
+      "head_hex": "17c6aaac1f47766b6b41125e822d5e8f8748d2582eb71d37ccd8137ba1d57804"
+    },
+    {
+      "component": "eep_ow_a",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "946d9e71b98ef242e2f978c83061c6e5fe1af96b283a9e05053b664a3f7a318d",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.998531445,
+        "zero_bytes": 511,
+        "ff_bytes": 459,
+        "ascii_strings_12plus": 1,
+        "longest_ascii_string_12plus": 12,
+        "keyword_strings": []
+      },
+      "head_hex": "a4351804d80b0da74f38daccf8cea6dce450adcf173681c65c23bc2411266b75"
+    },
+    {
+      "component": "eep_ow_a",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "e4b30f6610234358725a734a5ee5e2f14bdc195f82ae512b234ce8790d12de70",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.998530755,
+        "zero_bytes": 511,
+        "ff_bytes": 459,
+        "ascii_strings_12plus": 1,
+        "longest_ascii_string_12plus": 12,
+        "keyword_strings": []
+      },
+      "head_hex": "20b330371becc7bb3b63caf89deea476e450adcf173681c65c23bc2411266b75"
+    },
+    {
+      "component": "eep_ow_a",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "20df1883a037406bd9fc37294c5c790c6f92152779247330e37682dcdb691ca0",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.998651203,
+        "zero_bytes": 476,
+        "ff_bytes": 535,
+        "ascii_strings_12plus": 0,
+        "longest_ascii_string_12plus": 0,
+        "keyword_strings": []
+      },
+      "head_hex": "20b330371becc7bb3b63caf89deea4761d1b33d3c45d1dc23ba0178c370640c6"
+    },
+    {
+      "component": "eep_ow_b",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "3e009e100d87919d289c592d5fffe281cd35b0bfbe28ba3fd832d084fb348ea6",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.99847091,
+        "zero_bytes": 537,
+        "ff_bytes": 523,
+        "ascii_strings_12plus": 1,
+        "longest_ascii_string_12plus": 12,
+        "keyword_strings": []
+      },
+      "head_hex": "943e90a9e5968b82745121c10616d4300a9018654f9f4233dbfcf38c8fdf77be"
+    },
+    {
+      "component": "eep_ow_b",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "80f5455598ed75e0477a26b93260922d05928ff349f87bcc35227a7f0bca0ebc",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.998473087,
+        "zero_bytes": 537,
+        "ff_bytes": 523,
+        "ascii_strings_12plus": 1,
+        "longest_ascii_string_12plus": 12,
+        "keyword_strings": []
+      },
+      "head_hex": "e0d978109d5ee888f1e66bea7aeabbd00a9018654f9f4233dbfcf38c8fdf77be"
+    },
+    {
+      "component": "eep_ow_b",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "1279f1edef98577d72a0cba67c0a5cfe9cbc09f55958319c06111db778e43264",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.998676838,
+        "zero_bytes": 533,
+        "ff_bytes": 508,
+        "ascii_strings_12plus": 0,
+        "longest_ascii_string_12plus": 0,
+        "keyword_strings": []
+      },
+      "head_hex": "e0d978109d5ee888f1e66bea7aeabbd0b68eeb211ba286be809cd3db2846ea13"
+    },
+    {
+      "component": "eep_adjfix",
+      "mode": "CBC_directory_field16",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "25202ad1210658aa89162b4fcdf9e4f1b3491f34a87569e226648d6edd6e91e6",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.995556629,
+        "zero_bytes": 170,
+        "ff_bytes": 193,
+        "ascii_strings_12plus": 0,
+        "longest_ascii_string_12plus": 0,
+        "keyword_strings": []
+      },
+      "head_hex": "195dfd4b2f4b6b1d40ce9003a73c3074e3c6ef9002fa762bf87ca66bbf7d9f56"
+    },
+    {
+      "component": "eep_adjfix",
+      "mode": "CBC_zero",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "10ff698b710c8a7593fd77b5408b51598823dfbfd682c2b68426beaf589538d0",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.99555149,
+        "zero_bytes": 170,
+        "ff_bytes": 193,
+        "ascii_strings_12plus": 0,
+        "longest_ascii_string_12plus": 0,
+        "keyword_strings": []
+      },
+      "head_hex": "aed41933649a0b6f88b972b6713f33b1e3c6ef9002fa762bf87ca66bbf7d9f56"
+    },
+    {
+      "component": "eep_adjfix",
+      "mode": "ECB",
+      "key_source": "GH2__V12.bin positive control",
+      "candidate_plaintext_sha256": "e4022479a6bf2ea30c9b9bfc52a49a21e0ad1fc486a6969ad5bb5db735403555",
+      "field32_matches_candidate_sha256": false,
+      "statistics": {
+        "entropy_bits_per_byte": 7.996327677,
+        "zero_bytes": 210,
+        "ff_bytes": 182,
+        "ascii_strings_12plus": 1,
+        "longest_ascii_string_12plus": 12,
+        "keyword_strings": []
+      },
+      "head_hex": "aed41933649a0b6f88b972b6713f33b1053a31579efbb880bbff3474f14d6809"
+    }
+  ],
+  "conclusion": "The verified GH2 AES-128 key yielded no matching candidate digest or meaningful keyword strings for these direct CBC/ECB hypotheses.",
+  "limitations": [
+    "One public legacy key, three direct layouts; no KDF or additional compression tested.",
+    "The GM5 32-byte field is not established as a plaintext SHA-256.",
+    "Negative results do not exclude AES with another key or layout.",
+    "No camera command or write performed."
+  ]
+}

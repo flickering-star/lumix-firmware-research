@@ -1,0 +1,370 @@
+{
+  "schema": 1,
+  "scope": "Native initializer tests using this GM5's complete packet-verified installed programs",
+  "passed": 3,
+  "controls": [
+    {
+      "name": "installed_key_initializer",
+      "source": "0x40643b7c",
+      "end_exclusive": "0x4064b5b8",
+      "destination": "0x70000000",
+      "bytes": 31292,
+      "sha256": "7f9cbf2bfdd9d4d0fbd6dc3d599916d4c9a919fc7370f47f6c443aa758d5fd0f",
+      "entire_destination_matches_expected_rom": true,
+      "virtual_patch": false,
+      "execution": {
+        "schema": 1,
+        "name": "installed_key_initializer",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "copy_finished",
+          "steps": 46944,
+          "pc": "0x400001ad",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x4064b5b8",
+            "0x00000000",
+            "0x00000000",
+            "0x4064b5b8",
+            "0x70007a3c",
+            "0x00000000",
+            "0x00000000",
+            "0x700f0000",
+            "0x400001ad",
+            "0x00000000",
+            "0x00100001",
+            "0x51506170",
+            "0x400001aa",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "8a77eda4747226253d51082f5ab5b2c93de23293fc9bed41611ae0105b9cfc78",
+        "trace_sha256": "a344951f19847453817bcebcac785202b6a051dcea4716dccc570b7d89a104f2",
+        "trace_every_instructions": 1000,
+        "execution_wall_seconds": 0.052066,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Installed native copy loops only; hardware initialization prefix is not executed.",
+          "Actual Japanese build's second initializer ends four bytes later than the official image."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      },
+      "recovered_key_matches": true
+    },
+    {
+      "name": "installed_policy_stock",
+      "source": "0x4064b5b8",
+      "end_exclusive": "0x406dd76c",
+      "destination": "0x70a01e6c",
+      "bytes": 598452,
+      "sha256": "33a510fff8f795782b8598d06fde1d2df46b3a2f1be47d10b90855161887c4c1",
+      "entire_destination_matches_expected_rom": true,
+      "virtual_patch": false,
+      "execution": {
+        "schema": 1,
+        "name": "installed_policy_stock",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "copy_finished",
+          "steps": 897684,
+          "pc": "0x4000301e",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffff0000",
+            "0x406dd76c",
+            "0x00000000",
+            "0x00000000",
+            "0x406dd76c",
+            "0x70a94020",
+            "0x00000000",
+            "0x00000000",
+            "0x700f0000",
+            "0x4000301e",
+            "0x00000000",
+            "0x00100001",
+            "0x51506170",
+            "0x4000301b",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "b34955e157f0747233d7059aa25f13fe2573afc3c7877f74acd89ae906f9bde0",
+        "trace_sha256": "1a207e14dfdba062deddc6ba163c608f75bdec31f22a989449636053e20a656d",
+        "trace_every_instructions": 1000,
+        "execution_wall_seconds": 0.066456,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Installed native copy loops only; hardware initialization prefix is not executed.",
+          "Actual Japanese build's second initializer ends four bytes later than the official image."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      },
+      "ram_policy_value": 1
+    },
+    {
+      "name": "installed_policy_virtual_patch",
+      "source": "0x4064b5b8",
+      "end_exclusive": "0x406dd76c",
+      "destination": "0x70a01e6c",
+      "bytes": 598452,
+      "sha256": "8b9e58f7535dcd6fbb996f7fb14bef2ec3666e8ca7a5baf5990d71d28e3aac02",
+      "entire_destination_matches_expected_rom": true,
+      "virtual_patch": true,
+      "execution": {
+        "schema": 1,
+        "name": "installed_policy_virtual_patch",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "copy_finished",
+          "steps": 897684,
+          "pc": "0x4000301e",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffff0000",
+            "0x406dd76c",
+            "0x00000000",
+            "0x00000000",
+            "0x406dd76c",
+            "0x70a94020",
+            "0x00000000",
+            "0x00000000",
+            "0x700f0000",
+            "0x4000301e",
+            "0x00000000",
+            "0x00100001",
+            "0x51506170",
+            "0x4000301b",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "2f32811137242b72e328f4c5e8139125f11831f05fdfc7e11c5e2deb69bd6ca7",
+        "trace_sha256": "1a207e14dfdba062deddc6ba163c608f75bdec31f22a989449636053e20a656d",
+        "trace_every_instructions": 1000,
+        "execution_wall_seconds": 0.064955,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Installed native copy loops only; hardware initialization prefix is not executed.",
+          "Actual Japanese build's second initializer ends four bytes later than the official image."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      },
+      "ram_policy_value": 0
+    }
+  ],
+  "backup_extraction": {
+    "schema": 1,
+    "scope": "Complete GM5 mapped NOR readback and private emulator component extraction",
+    "capture_verification": {
+      "schema": 1,
+      "capture": "captures/gm5-flash-backup-9z320rtf",
+      "model": "DMC-GM5",
+      "mode": "resume-nor-backup",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 10322,
+      "resume_anchors_verified": 3,
+      "copied_prefix_bytes": 22987776,
+      "program_file": "captures/gm5-flash-backup-9z320rtf/result/flash32m.bin",
+      "verified_prefix_bytes": 33554432,
+      "program_sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+      "program_file_base": "0x40000000",
+      "program_file_offset": 0,
+      "next_program_address": "0x42000000",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "earlier_flash_windows": [
+      {
+        "capture": "gm5-usb-window-Hqd18GAn",
+        "flash_start": "0x40000000",
+        "bytes": 8192,
+        "sha256": "d0ff829bad093b91ecb3b88decfe58df65ab35933230eb1e28fa5f130e6da156",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-updater-window-qX2cjoe6",
+        "flash_start": "0x4154e000",
+        "bytes": 16384,
+        "sha256": "cbda9861262b204427d73b61bfe22d08f385c6a52cbc4f15b355679afc53614e",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-initializer-ujPIpkWZ",
+        "flash_start": "0x40643800",
+        "bytes": 32768,
+        "sha256": "1af08947c71c7471aa4c5ec94dd6f6a0ef255346936e707d9fc42ea91b5ed25e",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-update-entry-Fd6ZOqs0",
+        "flash_start": "0x4023b800",
+        "bytes": 3072,
+        "sha256": "9863d695d199c752a49df9d1b50403a2157ab51b8f7440170a4af2a7be7254f4",
+        "matches_complete_dump": true
+      }
+    ],
+    "components": [
+      {
+        "name": "program",
+        "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+        "flash_start": "0x40000000",
+        "linked_address": "0x40000000",
+        "bytes": 8388608,
+        "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+        "official_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+        "byte_identical_to_official": false,
+        "byte_differences_at_same_offsets": 13698,
+        "comparison_note": "Same-offset count includes alignment shifts; it is not a count of semantic changes."
+      },
+      {
+        "name": "program2",
+        "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+        "flash_start": "0x41400000",
+        "linked_address": "0x7bc00000",
+        "bytes": 3538944,
+        "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+        "official_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+        "byte_identical_to_official": false,
+        "byte_differences_at_same_offsets": 1520048,
+        "comparison_note": "Same-offset count includes alignment shifts; it is not a count of semantic changes."
+      }
+    ],
+    "physical_policy_source": {
+      "address": "0x406b1bdc",
+      "value": 1
+    },
+    "verifier_sha256": "c4d14c778825bd5efa7099a8f7a5d12d4d26809a596824f8bd360e9b1ed88fa8",
+    "camera_contacted": false,
+    "limits": [
+      "Sequential acquisition, with three matching anchors after the battery replacement; not an atomic snapshot.",
+      "Covers the mapped NOR range only, not every independent storage device or volatile RAM.",
+      "Private program slices are native-emulator inputs, not flashable update packages.",
+      "No tested hardware recovery programmer or firmware writer is supplied."
+    ]
+  },
+  "virtual_patch_ram_differences": [
+    "0x70a68490"
+  ],
+  "source_sha256": "6a7a82542c3d318afe1e46dcad91c2b24d5b71fc25401678e7f210eac0cc6635",
+  "camera_contacted": false,
+  "physical_firmware_modified": false,
+  "limits": [
+    "Does not execute full boot, hardware setup, installed update decoder or NOR programming.",
+    "A one-byte virtual ROM patch proves initializer behavior, not safe installation or recovery."
+  ]
+}

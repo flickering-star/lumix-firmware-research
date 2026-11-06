@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T10:04:04.396744+00:00",
+  "stage": "Post-owner-reported completed progress and automatic restart: version/policy check",
+  "owner_report": "Progress bar went all the way to the end, camera restarted, no message appeared, connected now.",
+  "package_sha256": "f978123c4eafb4a8bd0961c46ee013eb161babda6020eb1e3cbd0c68833dc4c8",
+  "advertised_container_halfwords": [
+    "0x112",
+    "0x112"
+  ],
+  "version_access": "Read-only service USB memory read of the installed version fields consumed by native identity getter0x402779c5; no dedicated version-query opcode was sent.",
+  "installed_version_fields_after": {
+    "version_halfword_a": "0x111",
+    "version_halfword_b": "0x111",
+    "field_6a4": "0x209",
+    "field_6a6": "0x1444",
+    "build_word": "0x2091444"
+  },
+  "installed_version_fields_before": {
+    "version_halfword_a": "0x111",
+    "version_halfword_b": "0x111",
+    "field_6a4": "0x209",
+    "field_6a6": "0x1444",
+    "build_word": "0x2091444"
+  },
+  "version_fields_unchanged": true,
+  "main_window_byte_identical_to_backup": true,
+  "version_capture": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-window-GlaxjA1U",
+    "model": "DMC-GM5",
+    "mode": "window",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 16,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-window-GlaxjA1U/result/program-window.bin",
+    "verified_prefix_bytes": 8192,
+    "program_sha256": "d0ff829bad093b91ecb3b88decfe58df65ab35933230eb1e28fa5f130e6da156",
+    "program_file_base": "0x40000000",
+    "program_file_offset": 0,
+    "next_program_address": "0x40002000",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "post_restart_policy": 1,
+  "policy_capture": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-runtime-control-wG8ZjVbF",
+    "model": "DMC-GM5",
+    "mode": "runtime-control",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 1,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-runtime-control-wG8ZjVbF/result/runtime-control.bin",
+    "verified_prefix_bytes": 1024,
+    "program_sha256": "4d4a3cded8de7fe88cf67ef3127ec712546eaee3e3887231d20fdb633080510f",
+    "program_file_base": "0x70a68400",
+    "program_file_offset": 0,
+    "next_program_address": "0x70a68800",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "host_ram_writes_sent": false,
+  "host_nor_writes_sent": false,
+  "program2_full_readback_complete": false,
+  "physical_programming_proven": false
+}

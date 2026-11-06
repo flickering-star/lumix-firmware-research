@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "scope": "Complete physical GM1 secondary program; GM5 untested",
+  "recorded_utc": "2026-11-06T00:20:24.642958+00:00",
+  "flash_start": "0x41400000",
+  "flash_end_exclusive": "0x41760000",
+  "linked_base": "0x7bc00000",
+  "sample": {
+    "path": "captures/gm1-usb-resume-fveg1az5/result/program2.bin",
+    "bytes": 3538944,
+    "sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968"
+  },
+  "capture_verification": {
+    "schema": 1,
+    "capture": "captures/gm1-usb-resume-fveg1az5",
+    "mode": "resume-secondary",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 3395,
+    "resume_anchors_verified": 3,
+    "copied_prefix_bytes": 65536,
+    "program_file": "captures/gm1-usb-resume-fveg1az5/result/program2.bin",
+    "verified_prefix_bytes": 3538944,
+    "program_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+    "program_file_base": "0x41400000",
+    "program_file_offset": 0,
+    "next_program_address": "0x41760000",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "native_source": {
+    "path": "captures/gm1-usb-resume-fveg1az5/probe-source.c",
+    "bytes": 28951,
+    "sha256": "a8d94e0b073e4bdd68a9d66a9dae84ec71a6c89c7aec387cd057009bfaf20294"
+  },
+  "events": {
+    "path": "captures/gm1-usb-resume-fveg1az5/result/events.jsonl",
+    "bytes": 16462893,
+    "sha256": "2e6bf1f5ac11683471edda54155f8870d00f1225d641a6a0377b1663d0531514"
+  },
+  "official_directory_component": {
+    "name": "program2",
+    "file_offset": 20973056,
+    "bytes": 3538944,
+    "destination_offset_candidate": 20971520,
+    "flags": 3,
+    "field32_hex": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+    "field16_hex": "0f81bab0e8df54d4cb4f10f912d62029",
+    "encoded_sha256": "8469f2a1dad7649894252f4ceb27fc66ea1ee479600c58460429dc3e64c8b670"
+  },
+  "plaintext_sha256_equals_directory_field32": true,
+  "independent_windows": [
+    {
+      "path": "captures/gm1-usb-secondary-window-z4CoRCM6/result/program2-window.bin",
+      "bytes": 65536,
+      "sha256": "7eaec6c8a65805d282a5e0e3e1f137c5cc0a1d2774d070e9da388aad25a49fc5",
+      "component_offset": "0x0",
+      "byte_for_byte_match": true
+    },
+    {
+      "path": "captures/gm1-usb-secondary-data-R1YFDLJt/result/program2-data.bin",
+      "bytes": 18432,
+      "sha256": "a5a356bf430c272fcd4b8fa654d403f8150dc147209be8745891b7d3b816f1fd",
+      "component_offset": "0x2c3000",
+      "byte_for_byte_match": true
+    }
+  ],
+  "no_settings_or_flash_writes": true
+}

@@ -1,0 +1,432 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T09:19:34.918537+00:00",
+  "scope": "Prepared unchanged-program2 GM5 control; physical installation remains untested",
+  "build": {
+    "schema": 1,
+    "scope": "Offline unchanged-installed-program2 reflash control",
+    "package": {
+      "path": "work/gm5-reflash-control-2/GM5__V11.bin",
+      "bytes": 3540480,
+      "sha256": "f978123c4eafb4a8bd0961c46ee013eb161babda6020eb1e3cbd0c68833dc4c8"
+    },
+    "component": {
+      "index": 0,
+      "name": "program2",
+      "entry_offset": 748,
+      "stored_file_offset": 1024,
+      "file_offset": 1536,
+      "size": 3538944,
+      "destination_offset_candidate": 20971520,
+      "flags_raw": 3,
+      "field32_hex": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+      "field16_hex": "39c494f001503f7d666b169131be589f",
+      "reserved16_hex": "00000000000000000000000000000000"
+    },
+    "backup": {
+      "path": "captures/gm5-flash-backup-9z320rtf/result/flash32m.bin",
+      "bytes": 33554432,
+      "sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca"
+    },
+    "official_template": {
+      "path": "firmware/official-gm5-v11/GM5__V11.bin",
+      "bytes": 31901184,
+      "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+    },
+    "installed_plaintext_sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+    "plaintext_byte_identical_to_backup": true,
+    "original_decoder_roundtrip_byte_identical": true,
+    "official_ciphertext_oracles": [
+      {
+        "name": "program",
+        "bytes": 8388608,
+        "plaintext_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+        "ciphertext_sha256": "f94d6f75995369de3ee1b4b581b95066a8d107336cdca20843cf0323b4399e5c",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "guires",
+        "bytes": 12582912,
+        "plaintext_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+        "ciphertext_sha256": "a4d795680d5fdd8d7d193026c9fe19f98f121aec7cb73a9def3077145aa989a9",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "program2",
+        "bytes": 3538944,
+        "plaintext_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+        "ciphertext_sha256": "3105d13a2fae8dac14b58e49512d7ea82cd11b941a4b16bf43f8e3060a322fa2",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "armcode",
+        "bytes": 3407872,
+        "plaintext_sha256": "c7e1961a121864686f327a3bf82b18d1596e39a44ba13b0e63fc7cd1a6c910b1",
+        "ciphertext_sha256": "cbac5342abb0d94705c340b279c0ac0231c2c516823e37fe678d801cb4e86bda",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "other",
+        "bytes": 3670016,
+        "plaintext_sha256": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+        "ciphertext_sha256": "f03b2b86dc0e89a2e0cf47b9f76db993d1e3f676fc63524c8ac0a6ff482aa430",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "eep_ow_a",
+        "bytes": 131072,
+        "plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+        "ciphertext_sha256": "bee29cb948e438a89871207c7af506caf88c34b1d14c6afa3076d25094938b00",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "eep_ow_b",
+        "bytes": 131072,
+        "plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+        "ciphertext_sha256": "c2860a4ca8d14e6d9da4c3f9d02f98c422ec16c832e61710a7b4b6f05b9ca344",
+        "official_ciphertext_byte_identical": true
+      },
+      {
+        "name": "eep_adjfix",
+        "bytes": 49152,
+        "plaintext_sha256": "72be21583acd1f9f93d98b9d7dacef1ab728c13129dfcc02a2efa9ae30b6eacc",
+        "ciphertext_sha256": "f8f39ceb007ab8880a64a6b29011a1a86cb10c2ecb3b468741af8b553b62357d",
+        "official_ciphertext_byte_identical": true
+      }
+    ],
+    "codec": {
+      "path": "work/gm5-reflash-control-2/codec",
+      "bytes": 34456,
+      "sha256": "b7f83f863cb6b95ee97b780e4ac07bc062facce148994974cfbf2800347adcf6"
+    },
+    "original_decoder": {
+      "path": "work/gm5-reflash-control-2/original-decoder",
+      "bytes": 34432,
+      "sha256": "213527b66e72ea6a940cfb3546859988d8b329f28e55f0ed996cc4eed5d02177"
+    },
+    "codec_selftest": "Encryption/decryption: NIST AES-128, physical GM1 five-round block and substitution tables verified.",
+    "builder_sha256": "142c13e50cde788f24c2c1fd56778fd8cb748f35d9b37d0343e1daaf3db51e6a",
+    "advertised_halfwords": [
+      "0x112",
+      "0x112"
+    ],
+    "installed_version_bytes_unchanged": true,
+    "signature_valid": false,
+    "required_unsigned_allowance": 1,
+    "nor_range": {
+      "offset": "0x1400000",
+      "end_exclusive": "0x1760000",
+      "sectors": 27,
+      "program_buffers": 3456
+    },
+    "excluded": [
+      "program",
+      "guires",
+      "armcode",
+      "other",
+      "eep_ow_a",
+      "eep_ow_b",
+      "eep_adjfix"
+    ],
+    "camera_contacted": false,
+    "sd_card_written": false,
+    "physical_flash_written": false,
+    "native_validation_complete": false,
+    "virtual_programming_complete": false,
+    "retained_sources": [
+      {
+        "path": "work/gm5-reflash-control-2/builder-source.py",
+        "bytes": 22764,
+        "sha256": "142c13e50cde788f24c2c1fd56778fd8cb748f35d9b37d0343e1daaf3db51e6a"
+      },
+      {
+        "path": "work/gm5-reflash-control-2/codec-source.c",
+        "bytes": 11055,
+        "sha256": "17ca748dabbe60e0acc12e98a8df7f22065b4f1305efc9d54f8cb580839ff961"
+      },
+      {
+        "path": "work/gm5-reflash-control-2/original-decoder-source.c",
+        "bytes": 9509,
+        "sha256": "de3b839fed8a37ff5c8b5d3968eccc118ccd6296d109edf2e5cdf3bc5e30d94c"
+      }
+    ]
+  },
+  "component": {
+    "index": 0,
+    "name": "program2",
+    "entry_offset": 748,
+    "stored_file_offset": 1024,
+    "file_offset": 1536,
+    "size": 3538944,
+    "destination_offset_candidate": 20971520,
+    "flags_raw": 3,
+    "field32_hex": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+    "field16_hex": "39c494f001503f7d666b169131be589f",
+    "reserved16_hex": "00000000000000000000000000000000"
+  },
+  "native_controls_passed": 7,
+  "controls": [
+    {
+      "name": "installed_program2_startup_copy",
+      "regions": [
+        {
+          "start": "0x40000030",
+          "end_exclusive": "0x40000035",
+          "instructions": 1,
+          "bytes_sha256": "ade759274be835fb46ebc5a2509174c40bf3ea48434c30f82fa094136c05d78d",
+          "disassembly": "40000030  jmp\t0x7bc00000\t; dcd0ffbf3b\n"
+        },
+        {
+          "start": "0x4001e801",
+          "end_exclusive": "0x4001e807",
+          "instructions": 1,
+          "bytes_sha256": "5e4c0e9257e78c8486f270cd3fb03d117d891a5308cdfd159ad5fd5633e4e151",
+          "disassembly": "4001e801  mov\t1879048192,a0\t; fcdc00000070\n"
+        },
+        {
+          "start": "0x4001e8ee",
+          "end_exclusive": "0x4001e924",
+          "instructions": 28,
+          "bytes_sha256": "944cd6a3517b4c291ccef8326469b03a63f85cb906527753d9d90602812485a8",
+          "disassembly": "4001e8ee  mov\t1094713344,a1\t; fcdd00004041\n4001e8f4  mov\t2076180480,d2\t; fcce0000c07b\n4001e8fa  sub\ta0,d2\t; f112\n4001e8fc  add\t-1342177280,d2\t; fcc2000000b0\n4001e902  mov\td2,a2\t; f1ea\n4001e904  mov\ta2,a0\t; 98\n4001e905  movbu\t(sp),d0\t; f8b800\n4001e908  cmp\t1,d0\t; a001\n4001e90a  beq\t0x4001e924\t; c81a\n4001e90c  setlb\t\t; db\n4001e90d  mov\t(a1),d0\t; 71\n4001e90e  inc4\ta1\t; 51\n4001e90f  mov\td0,(a0)\t; 60\n4001e910  mov\t(a1),d0\t; 71\n4001e911  inc4\ta0\t; 50\n4001e912  mov\td0,(a0)\t; 60\n4001e913  inc4\ta1\t; 51\n4001e914  mov\t(a1),d0\t; 71\n4001e915  inc4\ta0\t; 50\n4001e916  mov\td0,(a0)\t; 60\n4001e917  inc4\ta1\t; 51\n4001e918  mov\t(a1),d0\t; 71\n4001e919  inc4\ta0\t; 50\n4001e91a  mov\td0,(a0)\t; 60\n4001e91b  inc4\ta1\t; 51\n4001e91c  inc4\ta0\t; 50\n4001e91d  cmp\t1098252288,a1\t; fcd900007641\n4001e923  lcs\t\t; d4\n"
+        }
+      ],
+      "complete_component_copy_matches_backup": true,
+      "copy_destination": "0xbbc00000",
+      "linked_entry": "0x7bc00000",
+      "physical_alias_independently_verified": false,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/startup_copy",
+        "stop": "copy_finished",
+        "native_return_d0": "0xffffffff",
+        "instructions": 3981322,
+        "wall_seconds": 0.199038,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "c9bd8d887e04c7f38055daf2e2543bc18d6787e03d3640aae7ce0bb65c01aa4a",
+        "trace_sha256": "11ca5548dd26668baa4447aaf7c3ce1e1dc532a2ae35c66dc737681e3a0fd3a6"
+      }
+    },
+    {
+      "name": "minimal_decode_allowed",
+      "expected_status": "0x0",
+      "host_checked_native_plaintext_matches_backup": true,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_decode_allowed",
+        "stop": "returned",
+        "native_return_d0": "0x00000000",
+        "instructions": 256396229,
+        "wall_seconds": 10.502816,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "f7663f04856a8123fc1b38f1108c433137363d8232b28aa8c7bdfaff78b43d36",
+        "trace_sha256": "0217777b953e8141bde9138018d12fdc058777876cac6fde59381a5a1467f905"
+      }
+    },
+    {
+      "name": "minimal_decode_default_policy",
+      "expected_status": "0x80000065",
+      "host_checked_native_plaintext_matches_backup": false,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_decode_default_policy",
+        "stop": "returned",
+        "native_return_d0": "0x80000065",
+        "instructions": 35872175,
+        "wall_seconds": 1.178437,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "c3eab9f490ed1452064766603b587f4399fbff20df898363dec42384afa44e70",
+        "trace_sha256": "94e5efc6ac333345553d54b8490d933089c5e5019e00ad51b54890009552ac6c"
+      }
+    },
+    {
+      "name": "minimal_decode_bad_crc",
+      "expected_status": "0x80000064",
+      "host_checked_native_plaintext_matches_backup": false,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_decode_bad_crc",
+        "stop": "returned",
+        "native_return_d0": "0x80000064",
+        "instructions": 35871608,
+        "wall_seconds": 1.318314,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "b42415baddebd821c726d2cf1b8ae67c60762d75527cba3ee17a9b1bc18beae0",
+        "trace_sha256": "94e5efc6ac333345553d54b8490d933089c5e5019e00ad51b54890009552ac6c"
+      }
+    },
+    {
+      "name": "minimal_native_install",
+      "complete_readback_matches_operation_oracle": true,
+      "whole_flash_byte_identical_to_backup": true,
+      "outside_program2_byte_identical": true,
+      "settings_and_calibration_byte_identical": true,
+      "all_mutation_commands_inside_program2": true,
+      "component_writer_returns": [
+        "0x0"
+      ],
+      "readback_detects_incomplete_install": false,
+      "outer_job_reaches_end_despite_writer_error": false,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_native_install",
+        "stop": "programming_finished",
+        "native_return_d0": "0x00000001",
+        "instructions": 12678832,
+        "wall_seconds": 0.954125,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "8f1dec33a99f6bfa316640159e38009d97df510d4e12241ccf605279c35699d8",
+        "trace_sha256": "dccadf67e4abcd9694c89654a3886cbbbdf5d3104928db0a6c6251642e12a2f3",
+        "nor": {
+          "bytes": 33554432,
+          "sector_bytes": 131072,
+          "buffer_bytes": 1024,
+          "erase_attempts": 27,
+          "program_attempts": 3456,
+          "erases": 27,
+          "programs": 3456,
+          "reads": 10449,
+          "writes": 1787157,
+          "erased_bytes": 3538944,
+          "programmed_bytes": 3538944,
+          "zero_to_one_words": 0,
+          "phase": 0,
+          "pending": 0
+        },
+        "nor_output_sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+        "nor_event_sha256": "48c79de01c460e4a83eee03cbb947b01f3f0a739ca37d4ee92aee6a64ba59b0a"
+      }
+    },
+    {
+      "name": "minimal_native_program_failure",
+      "complete_readback_matches_operation_oracle": true,
+      "whole_flash_byte_identical_to_backup": false,
+      "outside_program2_byte_identical": true,
+      "settings_and_calibration_byte_identical": true,
+      "all_mutation_commands_inside_program2": true,
+      "component_writer_returns": [
+        "0x8000000c"
+      ],
+      "readback_detects_incomplete_install": true,
+      "outer_job_reaches_end_despite_writer_error": true,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_native_program_failure",
+        "stop": "programming_finished",
+        "native_return_d0": "0x00000001",
+        "instructions": 11092,
+        "wall_seconds": 0.142786,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "ac4ad62cd77e9ed744c79197455f4b113aff5a64215238c4356de7ea1ee6bce9",
+        "trace_sha256": "70428e87308050fd2b6c89657960ade477bbf086b98d16a75c9d93c857f32ba3",
+        "nor": {
+          "bytes": 33554432,
+          "sector_bytes": 131072,
+          "buffer_bytes": 1024,
+          "erase_attempts": 1,
+          "program_attempts": 1,
+          "erases": 1,
+          "programs": 0,
+          "reads": 7,
+          "writes": 532,
+          "erased_bytes": 131072,
+          "programmed_bytes": 0,
+          "zero_to_one_words": 0,
+          "phase": 0,
+          "pending": 0
+        },
+        "nor_output_sha256": "f95cfa28b423ba2623b876ed71e7684fbcb2ab67c30022d38676752271a7ac4a",
+        "nor_event_sha256": "4da6c63c4909bd2959d34fa9e903a6b51af7cb2d65b947a3189fd923bc0702d7"
+      }
+    },
+    {
+      "name": "minimal_native_power_cut",
+      "complete_readback_matches_operation_oracle": true,
+      "whole_flash_byte_identical_to_backup": false,
+      "outside_program2_byte_identical": true,
+      "settings_and_calibration_byte_identical": true,
+      "all_mutation_commands_inside_program2": true,
+      "component_writer_returns": [],
+      "readback_detects_incomplete_install": true,
+      "outer_job_reaches_end_despite_writer_error": false,
+      "run": {
+        "directory": "work/gm5-reflash-control-native-2/minimal_native_power_cut",
+        "stop": "nor_power_cut",
+        "native_return_d0": "0x000000a0",
+        "instructions": 8896,
+        "wall_seconds": 0.133273,
+        "backend_sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14",
+        "scenario_sha256": "3c2b8873fe98062fbc4fc5e14ce346943966a743e6f401e3ab885d26f548710e",
+        "trace_sha256": "2d92db4f712cfd189714e570f566eda7d388eab0571cc87f47257dc2ca56bf48",
+        "nor": {
+          "bytes": 33554432,
+          "sector_bytes": 131072,
+          "buffer_bytes": 1024,
+          "erase_attempts": 1,
+          "program_attempts": 1,
+          "erases": 1,
+          "programs": 1,
+          "reads": 6,
+          "writes": 528,
+          "erased_bytes": 131072,
+          "programmed_bytes": 1024,
+          "zero_to_one_words": 0,
+          "phase": 0,
+          "pending": 0
+        },
+        "nor_output_sha256": "4dcee6f92b51914b93fbd1344d4beed8c41565da688e645945ab266e2970dd62",
+        "nor_event_sha256": "0c9f7c000a5c7029c882c873b49f0e4823ffef871c7895b7e61e696a21ec162c"
+      }
+    }
+  ],
+  "native_driver_sha256": "142c13e50cde788f24c2c1fd56778fd8cb748f35d9b37d0343e1daaf3db51e6a",
+  "retained_native_helpers": [
+    {
+      "path": "work/gm5-reflash-control-native-2/gm5_emulator.py",
+      "bytes": 28570,
+      "sha256": "a72fb1eef3acf4f181c78f3775dfbcc00e827db52de75663662f79349cd84429"
+    },
+    {
+      "path": "work/gm5-reflash-control-native-2/gm5_virtual_install.py",
+      "bytes": 22955,
+      "sha256": "2ccf265c565f29f3749cfb012a09d5e5e910b7fce248b68963a963237d8d1330"
+    },
+    {
+      "path": "work/gm5-reflash-control-native-2/panasonic_upd.py",
+      "bytes": 10494,
+      "sha256": "664101d8e15dd40687163d0f866793d289e6208a053a59ff4e01e3d8bd5b0243"
+    },
+    {
+      "path": "work/gm5-reflash-control-native-2/gh2_debug_verify.py",
+      "bytes": 10696,
+      "sha256": "5b84a69d08380620e496a61ecb2ad43ad2f0c9fdee2c4592054a126e7241bf4f"
+    }
+  ],
+  "retained_backend": {
+    "path": "work/gm5-emulator-nor-release-backend/gm5-mn103-sim",
+    "bytes": 2024944,
+    "sha256": "770ed0f49ad3d5aaa6589e7b6236c7b6133bc6cfff39ecf3f29c442b2543bc14"
+  },
+  "repository_tests": {
+    "passed": 68,
+    "log": {
+      "path": "work/gm5-reflash-control-final-tests.log",
+      "bytes": 6758,
+      "sha256": "8c023ad25a7d173ea34cc545cc9f333575128fcafeb123654e69041e29add8c2"
+    }
+  },
+  "status": {
+    "package_built": true,
+    "all_official_ciphertexts_reproduced": true,
+    "original_decoder_roundtrip_matches_backup": true,
+    "installed_native_decoder_accepts_with_allowance": true,
+    "installed_native_decoder_rejects_default_policy": true,
+    "virtual_installation_leaves_whole_flash_identical": true,
+    "settings_and_calibration_payloads_excluded": true,
+    "camera_contacted": false,
+    "sd_card_written": false,
+    "physical_installation_tested": false
+  },
+  "success_criterion_limit": "Unchanged physical readback alone cannot distinguish successful identical reprogramming from rejection/no write. It is a preservation control, not final proof of a flashing route. A separately reviewed distinguishable modification or direct programming evidence is still required.",
+  "limits": [
+    "Unsigned native decoding skips component SHA checks; host checks every decoded byte against the backup.",
+    "Explicit board/RTOS/cache abstractions and partial entry states remain; no full physical machine is modeled.",
+    "The 0xbbc00000/0x7bc00000 runtime alias is indicated by native code, not independently measured.",
+    "Physical acceptance, final cleanup/restart and a working recovery writer remain unproven."
+  ],
+  "collector_sha256": "a7b3e99f4fc32045c1b684a44529eeabcd13437b072f8a0cf6a7636a7427e61f"
+}

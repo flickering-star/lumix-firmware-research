@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "observed_utc": "2026-11-05T22:55:44+00:00",
+  "scope": "Initial restricted-session registry observation and failed access attempt; superseded by evidence/gm1-usb-readback.json",
+  "owner_report": {
+    "camera": "GM1",
+    "language_changed_to_english_via_service_patch": true,
+    "service_message_persists": true,
+    "startup_for_this_connection": "already in a service/settings state",
+    "exact_activation_sequence_not_reproduced": true,
+    "usb_connection": "through hub"
+  },
+  "registry_observation": {
+    "product_name": "DMC-GM1",
+    "vendor_id": "0x04da",
+    "product_id": "0x2370",
+    "bcd_device": "0x0100",
+    "bcd_usb": "0x0200",
+    "configuration": 1,
+    "interface_number": 0,
+    "alternate_setting": 0,
+    "interface_class": "0xff",
+    "interface_subclass": "0xa0",
+    "interface_protocol": "0xb0",
+    "endpoint_count": 3,
+    "serial_string_index": 0,
+    "raw_registry_capture": {
+      "path": "captures/gm1-usb-access-tGyiv56t/registry.txt",
+      "bytes": 3127,
+      "sha256": "15d330cc1f1c93ee1af4a6dc51d5f021f93caf25a977c3ed2574696dc0ae3d3d"
+    },
+    "full_configuration_descriptor_obtained": false,
+    "endpoint_addresses_and_packet_sizes_measured": false,
+    "passive_probe_capture": "captures/gm1-usb-inspect-20261105T225832Z",
+    "passive_probe_exit_status": 0,
+    "passive_probe_summary": {
+      "schema": 1,
+      "mode": "inspect",
+      "exit_status": 0,
+      "interface_opened": false,
+      "control_requests_attempted": 0,
+      "bulk_writes_attempted": 0,
+      "validated_word_responses": 0,
+      "settings_bytes": 0,
+      "settings_markers_match": false,
+      "flash_prefix_bytes": 0
+    }
+  },
+  "gh2_comparison": {
+    "reference": "evidence/gh2-usb-maintenance-entry.json",
+    "vendor_product_ids_match": true,
+    "interface_class_subclass_protocol_match": true,
+    "interface_endpoint_count_match": true,
+    "gm1_handler_compatibility_established": false,
+    "gm5_service_interface_measured": false
+  },
+  "access_attempt": {
+    "api": "IOCreatePlugInInterfaceForService with kIOUSBInterfaceUserClientTypeID",
+    "result": "0xe00002be",
+    "symbol": "kIOReturnNoResources",
+    "device_user_client_also_failed": "0xe00002be",
+    "summary": {
+      "schema": 1,
+      "mode": "access",
+      "exit_status": 1,
+      "interface_opened": false,
+      "control_requests_attempted": 0,
+      "bulk_writes_attempted": 0,
+      "validated_word_responses": 0,
+      "settings_bytes": 0,
+      "settings_markers_match": false,
+      "flash_prefix_bytes": 0
+    },
+    "events": {
+      "path": "captures/gm1-usb-access-tGyiv56t/result/events.jsonl",
+      "bytes": 427,
+      "sha256": "85e6a13d01bc12408ca10cb9904599b35f3ebc4139459f28c0892bf55eae0586"
+    },
+    "normal_terminal_comparison": "pending",
+    "cause": "Host API failure before USB interface open; exact cause not established. Restricted session access is a candidate; hub causality not established."
+  },
+  "prepared_probe": {
+    "source": {
+      "path": "captures/gm1-usb-access-tGyiv56t/probe-source.c",
+      "bytes": 15548,
+      "sha256": "c59a9070549d3ff721dcdec51ccab94ebb9c71c3c1973a0d8c00157cc4607367"
+    },
+    "runner": {
+      "path": "tools/run_gm1_usb_probe.sh",
+      "bytes": 1049,
+      "sha256": "3ef640fbc5f92cb1b657cd5091c24d71706a91ab83b8486f6c46222b5926673c"
+    },
+    "compiled_executable": {
+      "path": "captures/gm1-usb-access-tGyiv56t/gm1-usb-probe",
+      "bytes": 36320,
+      "sha256": "64737e0133314c151747d6ae60f81a45c7a4b1853caf3b2d686ddc58dcb2a6ba"
+    },
+    "compiler_flags": [
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-deprecated-declarations"
+    ],
+    "offline_selftest_passed": true,
+    "settings_sample": {
+      "operation": "0x38",
+      "area": "0x20",
+      "start_word": "0x3f80",
+      "word_count": 16,
+      "source_export": "evidence/gm1-settings-backup.json",
+      "marker_bytes_match_saved_export": true
+    },
+    "optional_flash_sample": {
+      "operation": "0x70",
+      "gh2_assumed_base": "0x40000000",
+      "start_word": 0,
+      "word_count": 32,
+      "requires_successful_settings_marker_check": true,
+      "gm1_memory_map_unverified": true,
+      "attempted": false
+    },
+    "protocol_compatibility_with_gm1": "unverified",
+    "automatic_retries": false,
+    "validation_receipt": "work/gm1-usb-probe-validation.json",
+    "sanitizer_selftest_passed": true,
+    "invalid_cli_and_existing_output_preservation_verified": true
+  },
+  "limits": [
+    "No GM1 memory data, firmware plaintext or decryption key recovered.",
+    "Registry bcdDevice 0x0100 is the service descriptor release; it does not establish the installed firmware version.",
+    "No settings/flash write, configuration/alternate-setting change, reset, driver detach or seize was invoked.",
+    "Service USB transport is not evidence of breakpoints, single stepping or an interactive shell."
+  ],
+  "api_reference": "https://developer.apple.com/library/archive/documentation/DeviceDrivers/Conceptual/USBBook/USBDeviceInterfaces/USBDevInterfaces.html",
+  "followup_evidence": "evidence/gm1-usb-readback.json",
+  "owner_reports_original_market": "Japan",
+  "owner_market_confirmation": "gm1 also was japanese version",
+  "market_confirmation_basis": "Owner statement; not a new EEPROM/region measurement"
+}

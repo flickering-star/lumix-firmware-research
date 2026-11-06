@@ -1,0 +1,2110 @@
+{
+  "schema": 1,
+  "scope": "Partial official ZIP acquisition and headers only; CRC/body integrity is not verified",
+  "script_sha256": "f63140d5356e8317fa180baa618fe9fc5464b5dc0e0650e5b3dbbc701c2a579e",
+  "results": [
+    {
+      "page_index": 0,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gh3.html",
+      "download_page_path": "work/transition-headers/page-0.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GH3__V12.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:10.635958+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/GH3__V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "319c6d5846000c690e91b6251673225cf182c3bea802a5e399dd41ab2ff9bdfa",
+      "response_headers_sha256": "2f4675a0d913037ede23fa32726b6048cbf0786bb4e22d7f9428861d82ad9560",
+      "zip_prefix": {
+        "member": "GH3__V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 26612282,
+        "declared_member_bytes": 26609152,
+        "declared_crc32": "0x71f3a259",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66414,
+        "member_prefix_sha256": "5f0e89bafff9376810bb11d32b1f695c41354a9802f1d3c5718997f75f5f8569"
+      },
+      "upd_header": {
+        "model": "GH3",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 26608640,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x600",
+          "bytes": 5505024,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "b328be8e83b5b34204b6928a6a0fd831"
+        },
+        {
+          "name": "guires",
+          "file_offset": "0x540600",
+          "bytes": 11010048,
+          "destination_candidate": "0x540000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "program2",
+          "file_offset": "0xfc0600",
+          "bytes": 4325376,
+          "destination_candidate": "0xfc0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "net",
+          "file_offset": "0x13e0600",
+          "bytes": 1703936,
+          "destination_candidate": "0x14c0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "other",
+          "file_offset": "0x1580600",
+          "bytes": 3670016,
+          "destination_candidate": "0x1b40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1900600",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 26612404
+      }
+    },
+    {
+      "page_index": 1,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/g5.html",
+      "download_page_path": "work/transition-headers/page-1.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/G5___V11.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:10.729686+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/G5___V11.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "b6597c5e9e3fdb88b874986e8b8a4e1d1aecc39b1462f39fa944d0eba29e5f4b",
+      "response_headers_sha256": "3c0cd4d19280c67cfcef99f5647c9e4a761e2deee60495b6f68e1aaa7e37a1b3",
+      "zip_prefix": {
+        "member": "G5___V11.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 32642241,
+        "declared_member_bytes": 32637952,
+        "declared_crc32": "0x643a9504",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66175,
+        "member_prefix_sha256": "fe1815dac44b17d98fa8a62655b12f62902f8e3170b3617e9eba012e44b2f7ab"
+      },
+      "upd_header": {
+        "model": "G5",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 32637440,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x400",
+          "bytes": 32243712,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "452425455a021c9816dc2a3310b21260"
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1ec0400",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 32642363
+      }
+    },
+    {
+      "page_index": 2,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/g6.html",
+      "download_page_path": "work/transition-headers/page-2.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/G6___V12.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:10.683091+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/G6___V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "a1983c4d9c96f93880d5647e7706cc980d0e0eb6cbd98b2a1ad946ed077e4abf",
+      "response_headers_sha256": "0329ed9c9f95172f984f4787277755a134fb505695db777696ce4d3d99ca48cb",
+      "zip_prefix": {
+        "member": "G6___V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 31987059,
+        "declared_member_bytes": 31983104,
+        "declared_crc32": "0xe3293d09",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66409,
+        "member_prefix_sha256": "be47407307276508db6fec4142c3f58802def4bf6ad245dde96a17b59e20950e"
+      },
+      "upd_header": {
+        "model": "G6",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 31982592,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x600",
+          "bytes": 9437184,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "2102b738b2fb29936fe303759f58e99b"
+        },
+        {
+          "name": "guires",
+          "file_offset": "0x900600",
+          "bytes": 11534336,
+          "destination_candidate": "0x900000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "program2",
+          "file_offset": "0x1400600",
+          "bytes": 3538944,
+          "destination_candidate": "0x1400000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x1760600",
+          "bytes": 3407872,
+          "destination_candidate": "0x1760000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "other",
+          "file_offset": "0x1aa0600",
+          "bytes": 3670016,
+          "destination_candidate": "0x1b40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1e20600",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 31987181
+      }
+    },
+    {
+      "page_index": 3,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gf6.html",
+      "download_page_path": "work/transition-headers/page-3.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GF6__V12.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:10.771435+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/GF6__V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "d921804f50deb13ca3a1e6603680d3daf37be053b12b2a0cfbcb1fd151770209",
+      "response_headers_sha256": "7dac1c642ceb2256cac456d30210d9c379f8a951b02d4a56679d01c65f377b6f",
+      "zip_prefix": {
+        "member": "GF6__V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 31987060,
+        "declared_member_bytes": 31983104,
+        "declared_crc32": "0x4aa1cf04",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66408,
+        "member_prefix_sha256": "7852de3cf31a1e009a6038abd2558874203aca34dfceeb6c5d694820bddd0de5"
+      },
+      "upd_header": {
+        "model": "GF6",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 31982592,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x600",
+          "bytes": 9437184,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "7bfc6dae9164793b25dc78d76ac47e83"
+        },
+        {
+          "name": "guires",
+          "file_offset": "0x900600",
+          "bytes": 11534336,
+          "destination_candidate": "0x900000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "program2",
+          "file_offset": "0x1400600",
+          "bytes": 3538944,
+          "destination_candidate": "0x1400000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x1760600",
+          "bytes": 3407872,
+          "destination_candidate": "0x1760000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "other",
+          "file_offset": "0x1aa0600",
+          "bytes": 3670016,
+          "destination_candidate": "0x1b40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1e20600",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 31987182
+      }
+    },
+    {
+      "page_index": 4,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gx7.html",
+      "download_page_path": "work/transition-headers/page-4.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GX7__V13.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.211419+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/GX7__V13.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "cd7e1c50359f36c03556241c04640a4128bd1004cab2c0345650fff1c914e907",
+      "response_headers_sha256": "a53c33d556cdc625986b054836894072d2973243fd9e02ed1d57170e64f91870",
+      "zip_prefix": {
+        "member": "GX7__V13.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 31987060,
+        "declared_member_bytes": 31983104,
+        "declared_crc32": "0x98ba5636",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66408,
+        "member_prefix_sha256": "e8fa751bc7f0b0942fbef56e459bedfbed60f5953e4bc37fd996cd39b253a43e"
+      },
+      "upd_header": {
+        "model": "GX7",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 31982592,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x600",
+          "bytes": 9437184,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "d14c5256d268d59d6e29966034d176b3"
+        },
+        {
+          "name": "guires",
+          "file_offset": "0x900600",
+          "bytes": 11534336,
+          "destination_candidate": "0x900000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "program2",
+          "file_offset": "0x1400600",
+          "bytes": 3538944,
+          "destination_candidate": "0x1400000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x1760600",
+          "bytes": 3407872,
+          "destination_candidate": "0x1760000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "other",
+          "file_offset": "0x1aa0600",
+          "bytes": 3670016,
+          "destination_candidate": "0x1b40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1e20600",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 31987182
+      }
+    },
+    {
+      "page_index": 5,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm1.html",
+      "download_page_path": "work/transition-headers/page-5.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GM1__V11.zip",
+      "other_zip_urls": [
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GMC__V11.zip"
+      ],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.237468+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/GM1__V11.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "8f2ba4a06ec6461d4cd56439571005d7ae5f7030c21510212453e79f9cf7fcb5",
+      "response_headers_sha256": "a9c9d9368377e60b6faf0fac74858f08066c0eea5ffad47e38547a41af199c05",
+      "zip_prefix": {
+        "member": "GM1__V11.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 31987058,
+        "declared_member_bytes": 31983104,
+        "declared_crc32": "0xe76e7200",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66410,
+        "member_prefix_sha256": "1197a44db5d6c16d51241944514ecdf85bd27644531985bb1400e8dd7db8a7d1"
+      },
+      "upd_header": {
+        "model": "GM1",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 31982592,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "program",
+          "file_offset": "0x600",
+          "bytes": 9437184,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "147069b0d8d7a35b439688d2b8e59278"
+        },
+        {
+          "name": "guires",
+          "file_offset": "0x900600",
+          "bytes": 11534336,
+          "destination_candidate": "0x900000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "program2",
+          "file_offset": "0x1400600",
+          "bytes": 3538944,
+          "destination_candidate": "0x1400000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x1760600",
+          "bytes": 3407872,
+          "destination_candidate": "0x1760000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "other",
+          "file_offset": "0x1aa0600",
+          "bytes": 3670016,
+          "destination_candidate": "0x1b40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep",
+          "file_offset": "0x1e20600",
+          "bytes": 393216,
+          "destination_candidate": "0x1fa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 31987180
+      }
+    },
+    {
+      "page_index": 6,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/FT5_TS5/index.html",
+      "download_page_path": "work/transition-headers/download-6.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/ft5_ts5/FT5__V14.zip",
+      "other_zip_urls": [
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/ft5_ts5/TS5__V14.zip"
+      ],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.358997+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/FT5__V14.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "1252e01d1c58ebc2c2592a4000bc9801b40344beb7941952691113b1250957c0",
+      "response_headers_sha256": "252848c62b135fb50a82b4a72f4e6b5828a226dd5192e4ae420097ed56c7e3d3",
+      "zip_prefix": {
+        "member": "FT5__V14.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 102363865,
+        "declared_member_bytes": 104306176,
+        "declared_crc32": "0xa6526cc",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 67250,
+        "member_prefix_sha256": "df05f8109c5221ee4b9940ab5557445a74c13461c9d3d97edf82f90ad0df7ff0"
+      },
+      "upd_header": {
+        "model": "FT5",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 104305664,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xe00",
+          "bytes": 32768,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "3df294b97296dbe47c3773a5dff024b7"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8e00",
+          "bytes": 7178240,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "10ab7edbb27204cc95377be09c0588af"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x6e1600",
+          "bytes": 0,
+          "destination_candidate": "0x820000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot1",
+          "file_offset": "0x6e1600",
+          "bytes": 1175552,
+          "destination_candidate": "0x820000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot2",
+          "file_offset": "0x800600",
+          "bytes": 641024,
+          "destination_candidate": "0x93f000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot3",
+          "file_offset": "0x89ce00",
+          "bytes": 2048,
+          "destination_candidate": "0x9db800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot4",
+          "file_offset": "0x89d600",
+          "bytes": 358400,
+          "destination_candidate": "0x9dc000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot5",
+          "file_offset": "0x8f4e00",
+          "bytes": 802816,
+          "destination_candidate": "0xa33800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "post_spare",
+          "file_offset": "0x9b8e00",
+          "bytes": 165888,
+          "destination_candidate": "0xaf7800",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x9e1600",
+          "bytes": 4194304,
+          "destination_candidate": "0xb20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0xde1600",
+          "bytes": 8192,
+          "destination_candidate": "0xf20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0xde3600",
+          "bytes": 8192,
+          "destination_candidate": "0xf40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0xde5600",
+          "bytes": 12288,
+          "destination_candidate": "0xf60000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0xde8600",
+          "bytes": 20480,
+          "destination_candidate": "0xf63000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0xded600",
+          "bytes": 131072,
+          "destination_candidate": "0xf80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0xe0d600",
+          "bytes": 163840,
+          "destination_candidate": "0xfa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0xe35600",
+          "bytes": 5505024,
+          "destination_candidate": "0xfe0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0x1375600",
+          "bytes": 3506176,
+          "destination_candidate": "0x1520000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0x16cd600",
+          "bytes": 5767168,
+          "destination_candidate": "0x1960000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x1c4d600",
+          "bytes": 16384,
+          "destination_candidate": "0x2080000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1c51600",
+          "bytes": 114688,
+          "destination_candidate": "0x20a0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1c6d600",
+          "bytes": 16384,
+          "destination_candidate": "0x20c0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_a",
+          "file_offset": "0x1c71600",
+          "bytes": 16384,
+          "destination_candidate": "0x20e0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_b",
+          "file_offset": "0x1c75600",
+          "bytes": 16384,
+          "destination_candidate": "0x2100000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "map",
+          "file_offset": "0x1c79600",
+          "bytes": 71827456,
+          "destination_candidate": "0x2160000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "gps_assist",
+          "file_offset": "0x60f9600",
+          "bytes": 2621440,
+          "destination_candidate": "0x66c0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 102363987
+      }
+    },
+    {
+      "page_index": 7,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/LF1/index.html",
+      "download_page_path": "work/transition-headers/download-7.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/lf1/LF1__V12.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.306250+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/LF1__V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "861b3f9fc0e72d14fa205210e5480bfb94208a49844db78b9da18e60038fcf81",
+      "response_headers_sha256": "99a91e089df57a8890926685d68bce70bb986c9f32b7429cfef99f3cf74e046a",
+      "zip_prefix": {
+        "member": "LF1__V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 29433143,
+        "declared_member_bytes": 30118912,
+        "declared_crc32": "0xfa338bed",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66903,
+        "member_prefix_sha256": "cee1815d8412c455a963facd883cc33cb218a9ed77b5b23c4a9a3adcb9913a2a"
+      },
+      "upd_header": {
+        "model": "LF1",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 30118400,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xc00",
+          "bytes": 32768,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "53dce9aa73c4cc99c1cf32f47a10e455"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8c00",
+          "bytes": 6785024,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "5742ee07220b6ab41cc4c86bf7f8ae6d"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x681400",
+          "bytes": 0,
+          "destination_candidate": "0x820000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot1",
+          "file_offset": "0x681400",
+          "bytes": 1175552,
+          "destination_candidate": "0x820000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot2",
+          "file_offset": "0x7a0400",
+          "bytes": 641024,
+          "destination_candidate": "0x93f000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot3",
+          "file_offset": "0x83cc00",
+          "bytes": 2048,
+          "destination_candidate": "0x9db800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot4",
+          "file_offset": "0x83d400",
+          "bytes": 358400,
+          "destination_candidate": "0x9dc000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot5",
+          "file_offset": "0x894c00",
+          "bytes": 540672,
+          "destination_candidate": "0xa33800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "post_spare",
+          "file_offset": "0x918c00",
+          "bytes": 428032,
+          "destination_candidate": "0xab7800",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x981400",
+          "bytes": 4194304,
+          "destination_candidate": "0xb20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0xd81400",
+          "bytes": 8192,
+          "destination_candidate": "0xf20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0xd83400",
+          "bytes": 8192,
+          "destination_candidate": "0xf40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0xd85400",
+          "bytes": 12288,
+          "destination_candidate": "0xf60000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0xd88400",
+          "bytes": 20480,
+          "destination_candidate": "0xf63000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0xd8d400",
+          "bytes": 131072,
+          "destination_candidate": "0xf80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0xdad400",
+          "bytes": 163840,
+          "destination_candidate": "0xfa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0xdd5400",
+          "bytes": 5505024,
+          "destination_candidate": "0xfe0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0x1315400",
+          "bytes": 4161536,
+          "destination_candidate": "0x1520000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0x170d400",
+          "bytes": 5767168,
+          "destination_candidate": "0x1a00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x1c8d400",
+          "bytes": 16384,
+          "destination_candidate": "0x2120000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1c91400",
+          "bytes": 114688,
+          "destination_candidate": "0x2140000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1cad400",
+          "bytes": 16384,
+          "destination_candidate": "0x2160000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_a",
+          "file_offset": "0x1cb1400",
+          "bytes": 16384,
+          "destination_candidate": "0x2180000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_b",
+          "file_offset": "0x1cb5400",
+          "bytes": 16384,
+          "destination_candidate": "0x21a0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 29433265
+      }
+    },
+    {
+      "page_index": 8,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/SZ5/index.html",
+      "download_page_path": "work/transition-headers/download-8.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/sz5/SZ5__V12.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.797182+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/SZ5__V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "129821f20a22cb882469a044893b8dc3068c0877477ab0738575a81987da6b48",
+      "response_headers_sha256": "5dc41d3b7bd536d6f25824e7e44aa5bc4fbfa5ccdd244da1e0cb2ac40cbb4986",
+      "zip_prefix": {
+        "member": "SZ5__V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 30907148,
+        "declared_member_bytes": 46531584,
+        "declared_crc32": "0x61f79148",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 67100,
+        "member_prefix_sha256": "ed2067d28f6396bd3a2209dab8d1c82c1903bc7ab6f8b3b9c1b141d24b3aa853"
+      },
+      "upd_header": {
+        "model": "SZ5",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 46531072,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xc00",
+          "bytes": 30720,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "b1d4b74b71737dec5243828b881aeffd"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8400",
+          "bytes": 8257536,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "b70b138c27c4a45ac2613d73e50f1a4c"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x7e8400",
+          "bytes": 0,
+          "destination_candidate": "0xa80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0x7e8400",
+          "bytes": 8192,
+          "destination_candidate": "0xa80000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0x7ea400",
+          "bytes": 8192,
+          "destination_candidate": "0xaa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0x7ec400",
+          "bytes": 12288,
+          "destination_candidate": "0xac0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0x7ef400",
+          "bytes": 20480,
+          "destination_candidate": "0xac3000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0x7f4400",
+          "bytes": 131072,
+          "destination_candidate": "0xae0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0x814400",
+          "bytes": 163840,
+          "destination_candidate": "0xb00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0x83c400",
+          "bytes": 4718592,
+          "destination_candidate": "0xb40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0xcbc400",
+          "bytes": 2097152,
+          "destination_candidate": "0xfc0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0xebc400",
+          "bytes": 5767168,
+          "destination_candidate": "0x1280000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x143c400",
+          "bytes": 16384,
+          "destination_candidate": "0x19a0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1440400",
+          "bytes": 114688,
+          "destination_candidate": "0x19c0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "web_uploade",
+          "file_offset": "0x145c400",
+          "bytes": 8388608,
+          "destination_candidate": "0x1a00000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "frame_pack",
+          "file_offset": "0x1c5c400",
+          "bytes": 3670016,
+          "destination_candidate": "0x2e00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "wifi_prog",
+          "file_offset": "0x1fdc400",
+          "bytes": 2605056,
+          "destination_candidate": "0x3180000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_a",
+          "file_offset": "0x2258400",
+          "bytes": 16384,
+          "destination_candidate": "0x3400000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_b",
+          "file_offset": "0x225c400",
+          "bytes": 16384,
+          "destination_candidate": "0x3420000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "wifi_data",
+          "file_offset": "0x2260400",
+          "bytes": 10485760,
+          "destination_candidate": "0x3460000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 30907270
+      }
+    },
+    {
+      "page_index": 9,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/SZ7/index.html",
+      "download_page_path": "work/transition-headers/download-9.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/sz7/SZ7__V11.zip",
+      "other_zip_urls": [],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.735239+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/SZ7__V11.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "100bafc78900932247de39c0f3a1d4b85fa1bd30ee0d29d7639135bf77d326aa",
+      "response_headers_sha256": "85dd66a30cdd68236f73de738289d689c4b742cb49ccd09248f6d417d33deeb7",
+      "zip_prefix": {
+        "member": "SZ7__V11.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 24826914,
+        "declared_member_bytes": 32899584,
+        "declared_crc32": "0xb28b3ddc",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66770,
+        "member_prefix_sha256": "d83e23e57473700a4dd9565b63cc728edd48ba0e4107e411eec91c3135c90b9d"
+      },
+      "upd_header": {
+        "model": "SZ7",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 32899072,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xa00",
+          "bytes": 30720,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "f90c4521feeeb3b62e9e6323670b7e03"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8200",
+          "bytes": 7790592,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "f86d49fc53a039803aa2af784a466869"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x776200",
+          "bytes": 0,
+          "destination_candidate": "0xa80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0x776200",
+          "bytes": 8192,
+          "destination_candidate": "0xa80000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0x778200",
+          "bytes": 8192,
+          "destination_candidate": "0xaa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0x77a200",
+          "bytes": 12288,
+          "destination_candidate": "0xac0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0x77d200",
+          "bytes": 20480,
+          "destination_candidate": "0xac3000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0x782200",
+          "bytes": 131072,
+          "destination_candidate": "0xae0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0x7a2200",
+          "bytes": 163840,
+          "destination_candidate": "0xb00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0x7ca200",
+          "bytes": 4718592,
+          "destination_candidate": "0xb40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0xc4a200",
+          "bytes": 2039808,
+          "destination_candidate": "0xfc0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0xe3c200",
+          "bytes": 5767168,
+          "destination_candidate": "0x1280000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x13bc200",
+          "bytes": 16384,
+          "destination_candidate": "0x19a0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x13c0200",
+          "bytes": 114688,
+          "destination_candidate": "0x19c0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "web_uploade",
+          "file_offset": "0x13dc200",
+          "bytes": 8388608,
+          "destination_candidate": "0x1a00000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "frame_pack",
+          "file_offset": "0x1bdc200",
+          "bytes": 3670016,
+          "destination_candidate": "0x2c00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1f5c200",
+          "bytes": 16384,
+          "destination_candidate": "0x2f80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 24827036
+      }
+    },
+    {
+      "page_index": 10,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/TZ27_ZS19/index.html",
+      "download_page_path": "work/transition-headers/download-10.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz27_zs19/TZ27_V11.zip",
+      "other_zip_urls": [
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz27_zs19/ZS19_V11.zip"
+      ],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.839620+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/TZ27_V11.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "b85770a0be843d014b5b8b9bf576a145e528772518130c8b9b94b4b307dc9add",
+      "response_headers_sha256": "63e743578f067a7303a811a965a8267642895dfff7522fa8072ec8b10c4ce546",
+      "zip_prefix": {
+        "member": "TZ27_V11.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 22889180,
+        "declared_member_bytes": 31085568,
+        "declared_crc32": "0xd16486b4",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 67125,
+        "member_prefix_sha256": "e622db6ef5383e6e99ea1202d2c091fd3d11156bbebbea1bb124d03f73bc832e"
+      },
+      "upd_header": {
+        "model": "TZ27",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 31085056,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xc00",
+          "bytes": 30720,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "4ae1fcca88016c059e3eebae9f09887c"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8400",
+          "bytes": 9175040,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "eda719f2845a857cbb8429af2e644b89"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x8c8400",
+          "bytes": 0,
+          "destination_candidate": "0xa80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0x8c8400",
+          "bytes": 8192,
+          "destination_candidate": "0xa80000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_ow_a",
+          "file_offset": "0x8ca400",
+          "bytes": 10240,
+          "destination_candidate": "0xa82000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0x8ccc00",
+          "bytes": 8192,
+          "destination_candidate": "0xaa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_ow_b",
+          "file_offset": "0x8cec00",
+          "bytes": 10240,
+          "destination_candidate": "0xaa2000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0x8d1400",
+          "bytes": 12288,
+          "destination_candidate": "0xac0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0x8d4400",
+          "bytes": 20480,
+          "destination_candidate": "0xac3000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_adj",
+          "file_offset": "0x8d9400",
+          "bytes": 16384,
+          "destination_candidate": "0xac8000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_fix",
+          "file_offset": "0x8dd400",
+          "bytes": 16384,
+          "destination_candidate": "0xacc000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0x8e1400",
+          "bytes": 131072,
+          "destination_candidate": "0xae0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0x901400",
+          "bytes": 163840,
+          "destination_candidate": "0xb00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0x929400",
+          "bytes": 4718592,
+          "destination_candidate": "0xb40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0xda9400",
+          "bytes": 2457600,
+          "destination_candidate": "0xfc0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0x1001400",
+          "bytes": 5767168,
+          "destination_candidate": "0x1320000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x1581400",
+          "bytes": 16384,
+          "destination_candidate": "0x1a40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1585400",
+          "bytes": 114688,
+          "destination_candidate": "0x1a60000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "web_uploade",
+          "file_offset": "0x15a1400",
+          "bytes": 8388608,
+          "destination_candidate": "0x1aa0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1da1400",
+          "bytes": 16384,
+          "destination_candidate": "0x22a0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 22889302
+      }
+    },
+    {
+      "page_index": 11,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/TZ30_31_ZS20/index.html",
+      "download_page_path": "work/transition-headers/download-11.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz30_tz31_zs20/TZ30_V12.zip",
+      "other_zip_urls": [
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz30_tz31_zs20/TZ31_V12.zip",
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz30_tz31_zs20/ZS20_V12.zip"
+      ],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:11.916593+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/TZ30_V12.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "05bd19f3556b4876484bbb847f01975ad1cf71f3b5ac807c898a805eda9aa9a9",
+      "response_headers_sha256": "408b3ab0004c72c7bffea833a7adf50aa3538b7e3211718b93385b124fe6049c",
+      "zip_prefix": {
+        "member": "TZ30_V12.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 24873898,
+        "declared_member_bytes": 37639168,
+        "declared_crc32": "0x50bc8722",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 66973,
+        "member_prefix_sha256": "6712cbf25cff8b75d3622f0ba41c7ee6476c4c0c7987b8b2463d46688ad95d34"
+      },
+      "upd_header": {
+        "model": "TZ30",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 37638656,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xc00",
+          "bytes": 30720,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "c70df13472b7bd9bf2c2e710abebece2"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8400",
+          "bytes": 9175040,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "8185202e8a18faa444e7e0f441e738ae"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x8c8400",
+          "bytes": 0,
+          "destination_candidate": "0xa80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0x8c8400",
+          "bytes": 8192,
+          "destination_candidate": "0xa80000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_ow_a",
+          "file_offset": "0x8ca400",
+          "bytes": 10240,
+          "destination_candidate": "0xa82000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0x8ccc00",
+          "bytes": 8192,
+          "destination_candidate": "0xaa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_ow_b",
+          "file_offset": "0x8cec00",
+          "bytes": 10240,
+          "destination_candidate": "0xaa2000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0x8d1400",
+          "bytes": 12288,
+          "destination_candidate": "0xac0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0x8d4400",
+          "bytes": 20480,
+          "destination_candidate": "0xac3000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_adj",
+          "file_offset": "0x8d9400",
+          "bytes": 16384,
+          "destination_candidate": "0xac8000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep3_fix",
+          "file_offset": "0x8dd400",
+          "bytes": 16384,
+          "destination_candidate": "0xacc000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0x8e1400",
+          "bytes": 131072,
+          "destination_candidate": "0xae0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0x901400",
+          "bytes": 163840,
+          "destination_candidate": "0xb00000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0x929400",
+          "bytes": 4718592,
+          "destination_candidate": "0xb40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0xda9400",
+          "bytes": 2457600,
+          "destination_candidate": "0xfc0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0x1001400",
+          "bytes": 5767168,
+          "destination_candidate": "0x1320000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x1581400",
+          "bytes": 16384,
+          "destination_candidate": "0x1a40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1585400",
+          "bytes": 114688,
+          "destination_candidate": "0x1a60000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "web_uploade",
+          "file_offset": "0x15a1400",
+          "bytes": 6946816,
+          "destination_candidate": "0x1aa0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1c41400",
+          "bytes": 16384,
+          "destination_candidate": "0x2140000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "map",
+          "file_offset": "0x1c45400",
+          "bytes": 4849664,
+          "destination_candidate": "0x2160000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "map_prog",
+          "file_offset": "0x20e5400",
+          "bytes": 524288,
+          "destination_candidate": "0x6640000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "gps_assist",
+          "file_offset": "0x2165400",
+          "bytes": 2621440,
+          "destination_candidate": "0x66c0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 24874020
+      }
+    },
+    {
+      "page_index": 12,
+      "official_page_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/TZ40_TZ41_ZS30/index.html",
+      "download_page_path": "work/transition-headers/download-12.html",
+      "zip_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz40_tz41_zs30/TZ40_V13.zip",
+      "other_zip_urls": [
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz40_tz41_zs30/TZ41_V13.zip",
+        "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/tz40_tz41_zs30/ZS30_V13.zip"
+      ],
+      "curl_returncode": 0,
+      "curl_summary": "206 65536",
+      "curl_error": "",
+      "acquired_utc": "2026-11-05T16:13:12.431577+00:00",
+      "request_range": "bytes=0-65535",
+      "tls_verification_disabled": false,
+      "range_path": "work/transition-headers/TZ40_V13.zip.range",
+      "range_bytes": 65536,
+      "range_sha256": "41a886e16b1b61b3f3059f76d2efdaa8e118ca95d791d34644e98c61ab5cf9c8",
+      "response_headers_sha256": "13232ee92e03935e5640cbd8508a670607b119ba02638e2b8fc0f9ad9d0c11fe",
+      "zip_prefix": {
+        "member": "TZ40_V13.bin",
+        "method": 8,
+        "flags": 0,
+        "declared_packed_bytes": 102887616,
+        "declared_member_bytes": 104830464,
+        "declared_crc32": "0x73dd2825",
+        "full_zip_crc_verified": false,
+        "available_member_prefix_bytes": 67187,
+        "member_prefix_sha256": "6e2ac08247738d29814e6b4ed9883c09f8e7a62b74f1c113298328a6de2b70fa"
+      },
+      "upd_header": {
+        "model": "TZ40",
+        "format": "0x200",
+        "field_0x2c": "0x3",
+        "field_0x30": "0x0",
+        "field_0x34": "0x3",
+        "declared_body_bytes": 104829952,
+        "member_length_agrees_with_outer": true
+      },
+      "v2_directory": [
+        {
+          "name": "boot",
+          "file_offset": "0xe00",
+          "bytes": 32768,
+          "destination_candidate": "0x0",
+          "flags": "0x3",
+          "first_16_bytes": "0e584b0875d7a876a2dbc5d14adcea74"
+        },
+        {
+          "name": "program",
+          "file_offset": "0x8e00",
+          "bytes": 7178240,
+          "destination_candidate": "0x80000",
+          "flags": "0x3",
+          "first_16_bytes": "3114fc92b0e9bae93d2da70012b67ce6"
+        },
+        {
+          "name": "storage",
+          "file_offset": "0x6e1600",
+          "bytes": 0,
+          "destination_candidate": "0x820000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot1",
+          "file_offset": "0x6e1600",
+          "bytes": 1175552,
+          "destination_candidate": "0x820000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot2",
+          "file_offset": "0x800600",
+          "bytes": 641024,
+          "destination_candidate": "0x93f000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot3",
+          "file_offset": "0x89ce00",
+          "bytes": 2048,
+          "destination_candidate": "0x9db800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot4",
+          "file_offset": "0x89d600",
+          "bytes": 358400,
+          "destination_candidate": "0x9dc000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "postboot5",
+          "file_offset": "0x8f4e00",
+          "bytes": 802816,
+          "destination_candidate": "0xa33800",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "post_spare",
+          "file_offset": "0x9b8e00",
+          "bytes": 165888,
+          "destination_candidate": "0xaf7800",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "armcode",
+          "file_offset": "0x9e1600",
+          "bytes": 4194304,
+          "destination_candidate": "0xb20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_a",
+          "file_offset": "0xde1600",
+          "bytes": 8192,
+          "destination_candidate": "0xf20000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_ow_b",
+          "file_offset": "0xde3600",
+          "bytes": 8192,
+          "destination_candidate": "0xf40000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_adj",
+          "file_offset": "0xde5600",
+          "bytes": 12288,
+          "destination_candidate": "0xf60000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_fix",
+          "file_offset": "0xde8600",
+          "bytes": 20480,
+          "destination_candidate": "0xf63000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "history",
+          "file_offset": "0xded600",
+          "bytes": 131072,
+          "destination_candidate": "0xf80000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "opedata",
+          "file_offset": "0xe0d600",
+          "bytes": 163840,
+          "destination_candidate": "0xfa0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osdover",
+          "file_offset": "0xe35600",
+          "bytes": 5505024,
+          "destination_candidate": "0xfe0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "osddata",
+          "file_offset": "0x1375600",
+          "bytes": 3506176,
+          "destination_candidate": "0x1520000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "packfile",
+          "file_offset": "0x16cd600",
+          "bytes": 5767168,
+          "destination_candidate": "0x1960000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc1",
+          "file_offset": "0x1c4d600",
+          "bytes": 16384,
+          "destination_candidate": "0x2080000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "ninsho_fc2",
+          "file_offset": "0x1c51600",
+          "bytes": 114688,
+          "destination_candidate": "0x20a0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "avchd_info",
+          "file_offset": "0x1c6d600",
+          "bytes": 16384,
+          "destination_candidate": "0x20c0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_a",
+          "file_offset": "0x1c71600",
+          "bytes": 16384,
+          "destination_candidate": "0x20e0000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "eep_net_b",
+          "file_offset": "0x1c75600",
+          "bytes": 16384,
+          "destination_candidate": "0x2100000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "map",
+          "file_offset": "0x1c79600",
+          "bytes": 71827456,
+          "destination_candidate": "0x2160000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "map_prog",
+          "file_offset": "0x60f9600",
+          "bytes": 524288,
+          "destination_candidate": "0x6640000",
+          "flags": "0x3",
+          "first_16_bytes": ""
+        },
+        {
+          "name": "gps_assist",
+          "file_offset": "0x6179600",
+          "bytes": 2621440,
+          "destination_candidate": "0x66c0000",
+          "flags": "0x2",
+          "first_16_bytes": ""
+        }
+      ],
+      "http_content_range_verified": {
+        "start": 0,
+        "end_inclusive": 65535,
+        "total_zip_bytes": 102887738
+      }
+    }
+  ],
+  "positive_control": {
+    "model": "TZ30",
+    "complete_zip_path": "work/transition-tz30/TZ30_V12.zip",
+    "complete_zip_sha256": "352b3ab6607b72a1985feb36ae9ef9751b7717d04f5f5a8f2740019aa83de37f",
+    "range_equals_complete_zip_prefix": true,
+    "inflated_prefix_equals_complete_crc_verified_BIN": true
+  }
+}

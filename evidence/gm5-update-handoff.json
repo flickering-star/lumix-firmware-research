@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "scope": "Installed GM5 confirmation bridge, validation boundary and cleanup; offline only",
+  "images": [
+    {
+      "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+      "address": "0x40000000",
+      "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+    },
+    {
+      "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+      "address": "0x7bc00000",
+      "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+    }
+  ],
+  "regions": [
+    {
+      "name": "confirmation_dispatch",
+      "start": "0x4023bb23",
+      "end_exclusive": "0x4023bb9c",
+      "sha256": "6798668b3ac5056a616829647be43d40eb8293bef45078d52841d02cf974cff2",
+      "instructions": 40,
+      "raw_annotations_match_source": true,
+      "disassembly": "4023bb23  mov\t1,d0\t; 8001\n4023bb25  mov\ta0,a2\t; 92\n4023bb26  call\t0x7be006e7,[],4\t; ddc14bbc3b0004\n4023bb2d  mov\t10,d0\t; 800a\n4023bb2f  call\t0x7be01bff,[d2,a2,a3],16\t; ddd060bc3bb010\n4023bb36  mov\t(0x701f9738),d1\t; fca538971f70\n4023bb3c  btst\t7340032,d1\t; fced00007000\n4023bb42  bne\t0x4023bb6a\t; c928\n4023bb44  btst\t458752,d1\t; fced00000700\n4023bb4a  beq\t0x4023bb57\t; c80d\n4023bb4c  mov\t(8,a2),d0\t; f80208\n4023bb4f  extbu\td0\t; 14\n4023bb50  call\t0x4023c141,[d2,d3,a2],84\t; cdf105e054\n4023bb55  bra\t0x4023bb73\t; ca1e\n4023bb57  btst\t16777216,d1\t; fced00000001\n4023bb5d  beq\t0x4023bb6a\t; c80d\n4023bb5f  mov\t(8,a2),d0\t; f80208\n4023bb62  extbu\td0\t; 14\n4023bb63  call\t0x4023bf42,[d2,d3,a2,a3],112\t; cddf03f070\n4023bb68  bra\t0x4023bb73\t; ca0b\n4023bb6a  mov\t(8,a2),d0\t; f80208\n4023bb6d  extbu\td0\t; 14\n4023bb6e  call\t0x4023bdb9,[d2,a2,a3],56\t; cd4b02b038\n4023bb73  extb\td0\t; 10\n4023bb74  cmp\t0,d0\t; a000\n4023bb76  bge\t0x4023bb99\t; c223\n4023bb78  movhu\t(a2),d0\t; f062\n4023bb7a  mov\t36866,d1\t; fccd02900000\n4023bb80  exth\td0\t; 18\n4023bb81  mov\td1,(4,sp)\t; 4604\n4023bb83  clr\td1\t; 04\n4023bb84  mov\td1,(8,sp)\t; 4608\n4023bb86  mov\td1,(12,sp)\t; 460c\n4023bb88  mov\t-1,d1\t; 85ff\n4023bb8a  mov\td1,(16,sp)\t; 4610\n4023bb8c  mov\t9,d1\t; 8509\n4023bb8e  mov\t9,a0\t; 9009\n4023bb90  mov\t1,a1\t; 9501\n4023bb92  call\t0x7bc8866b,[d2,d3,a2,a3],32\t; ddd9caa43bf020\n4023bb99  ret\t[a2],24\t; df2018\n"
+    },
+    {
+      "name": "installation_bridge",
+      "start": "0x4023c141",
+      "end_exclusive": "0x4023c1b3",
+      "sha256": "ace10c551c884cdb161c1678e6729c2aa3eb7bc21365e0e306844d2eb1913a66",
+      "instructions": 45,
+      "raw_annotations_match_source": true,
+      "disassembly": "4023c141  mov\td1,d2\t; 86\n4023c142  mov\tsp,a0\t; 3c\n4023c143  mov\ta0,d3\t; f1d3\n4023c145  add\t8,d3\t; 2b08\n4023c147  clr\td0\t; 00\n4023c148  mov\td3,a0\t; f1ec\n4023c14a  call\t0x402377f4,[d2,d3,a2,a3],24\t; cdaab6f018\n4023c14f  cmp\t0,d0\t; a000\n4023c151  bne\t0x4023c1ab\t; c95a\n4023c153  btst\t458752,d2\t; fcee00000700\n4023c159  beq\t0x4023c1ab\t; c852\n4023c15b  mov\tsp,a2\t; 3e\n4023c15c  add\t40,a2\t; 2228\n4023c15e  mov\ta2,a0\t; 98\n4023c15f  mov\t24,d1\t; 8518\n4023c161  call\t0x7bc79020,[a2],4\t; ddbfcea33b2004\n4023c168  mov\td3,(40,sp)\t; 4e28\n4023c16a  mov\t2,d0\t; 8002\n4023c16c  mov\td0,(44,sp)\t; 422c\n4023c16e  mov\t1,d0\t; 8001\n4023c170  movbu\td0,(48,sp)\t; f89230\n4023c173  movhu\t(0x400006b2),d0\t; fcacb2060040\n4023c179  mov\tsp,a0\t; 3c\n4023c17a  mov\td0,(52,sp)\t; 4234\n4023c17c  inc4\ta0\t; 50\n4023c17d  mov\t1,d0\t; 8001\n4023c17f  movbu\td0,(49,sp)\t; f89231\n4023c182  clr\td0\t; 00\n4023c183  mov\td0,(4,sp)\t; 4204\n4023c185  mov\ta0,(64,sp)\t; 4340\n4023c187  mov\t2077381724,d0\t; fccc5c54d27b\n4023c18d  mov\td0,(68,sp)\t; 4244\n4023c18f  call\t0x7bd25445,[],4\t; ddb692ae3b0004\n4023c196  mov\tsp,a1\t; 3d\n4023c197  add\t64,a1\t; 2140\n4023c199  mov\ta2,a0\t; 98\n4023c19a  call\t0x7bd4fb93,[d2,d3,a2,a3],16\t; ddf939b13bf010\n4023c1a1  clr\td1\t; 04\n4023c1a2  movbu\td1,(0x70303d04)\t; fc86043d3070\n4023c1a8  cmp\td1,d0\t; a4\n4023c1a9  bge\t0x4023c1af\t; c206\n4023c1ab  mov\t-1,d0\t; 80ff\n4023c1ad  bra\t0x4023c1b0\t; ca03\n4023c1af  clr\td0\t; 00\n4023c1b0  ret\t[d2,d3,a2],84\t; dfe054\n"
+    },
+    {
+      "name": "job_samples_policy",
+      "start": "0x7bd4fb93",
+      "end_exclusive": "0x7bd4fba2",
+      "sha256": "62365c3533f4a9eb9c89b25881a77c2027fc471c62f0632f34f5b958a355904a",
+      "instructions": 5,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4fb93  add\t-328,sp\t; fafeb8fe\n7bd4fb97  movbu\t(0x70a68490),d0\t; fca89084a670\n7bd4fb9d  mov\ta1,(40,sp)\t; 4728\n7bd4fb9f  mov\ta0,a3\t; 93\n7bd4fba0  mov\td0,(16,sp)\t; 4210\n"
+    },
+    {
+      "name": "full_decode_and_error_branch",
+      "start": "0x7bd4fca9",
+      "end_exclusive": "0x7bd4fceb",
+      "sha256": "9c3a29165f30b4e62d2b72a2ac14cf34a78f4b938db4a2e7bacfcf15b73aa448",
+      "instructions": 26,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4fca9  clr\td0\t; 00\n7bd4fcaa  mov\td0,(80,sp)\t; 4250\n7bd4fcac  mov\t(56,sp),d0\t; 5838\n7bd4fcae  mov\tsp,a1\t; 3d\n7bd4fcaf  mov\td0,(264,sp)\t; fa910801\n7bd4fcb3  add\t264,a1\t; fad10801\n7bd4fcb7  mov\t2077556984,d0\t; fcccf800d57b\n7bd4fcbd  mov\td0,(268,sp)\t; fa910c01\n7bd4fcc1  clr\td0\t; 00\n7bd4fcc2  mov\td0,(84,sp)\t; 4254\n7bd4fcc4  mov\t100,d0\t; 8064\n7bd4fcc6  mov\td0,(88,sp)\t; 4258\n7bd4fcc8  clr\td0\t; 00\n7bd4fcc9  mov\td0,(92,sp)\t; 425c\n7bd4fccb  mov\t30,d0\t; 801e\n7bd4fccd  mov\td0,(96,sp)\t; 4260\n7bd4fccf  mov\t(28,sp),a0\t; 5c1c\n7bd4fcd1  call\t0x7bd4ee4e,[a2,a3],12\t; cd7df1300c\n7bd4fcd6  mov\td0,(24,sp)\t; 4218\n7bd4fcd8  cmp\t0,d0\t; a000\n7bd4fcda  beq\t0x7bd4fcdf\t; c805\n7bd4fcdc  jmp\t0x7bd50093\t; ccb703\n7bd4fcdf  mov\t(48,sp),a0\t; 5c30\n7bd4fce1  call\t0x40275566,[],4\t; dd855852c40004\n7bd4fce8  clr\td0\t; 00\n7bd4fce9  mov\td0,(44,sp)\t; 422c\n"
+    },
+    {
+      "name": "post_program_and_common_cleanup",
+      "start": "0x7bd50074",
+      "end_exclusive": "0x7bd500e9",
+      "sha256": "9842b6603517798ebeb2d6de9d87add6f8ca01d496e68f1d74b6bf7b2bfd640e",
+      "instructions": 35,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd50074  mov\t(20,sp),d0\t; 5814\n7bd50076  cmp\t0,d0\t; a000\n7bd50078  beq\t0x7bd50087\t; c80f\n7bd5007a  mov\t(40,sp),a0\t; 5c28\n7bd5007c  mov\t2,d0\t; 8002\n7bd5007e  mov\t100,d1\t; 8564\n7bd50080  mov\t100,a1\t; 9564\n7bd50082  call\t0x7bd500e9,[d2,a2],12\t; cd6700a00c\n7bd50087  call\t0x7bce8b10,[d2],8\t; dd898af9ff8008\n7bd5008e  call\t0x7bd4ddbd,[d2,d3],12\t; cd2fddc00c\n7bd50093  mov\t(52,sp),d0\t; 5834\n7bd50095  cmp\t0,d0\t; a000\n7bd50097  beq\t0x7bd500a3\t; c80c\n7bd50099  mov\tsp,a0\t; 3c\n7bd5009a  add\t140,a0\t; fad08c00\n7bd5009e  call\t0x7bd4ec77,[],0\t; cdd9eb0000\n7bd500a3  mov\t(44,sp),d0\t; 582c\n7bd500a5  cmp\t0,d0\t; a000\n7bd500a7  beq\t0x7bd500b2\t; c80b\n7bd500a9  mov\t(48,sp),a0\t; 5c30\n7bd500ab  call\t0x40275566,[],4\t; ddbb5452c40004\n7bd500b2  mov\t9,d0\t; 8009\n7bd500b4  call\t0x7bd4e4ea,[d2,d3,a2,a3],56\t; cd36e4f038\n7bd500b9  mov\t322961408,d0\t; fccc00004013\n7bd500bf  mov\t32768,d1\t; fccd00800000\n7bd500c5  call\t0x402784bb,[d2],8\t; ddf68352c48008\n7bd500cc  mov\t3,d0\t; 8003\n7bd500ce  clr\td1\t; 04\n7bd500cf  call\t0x7be0040f,[],4\t; dd40030b000004\n7bd500d6  clr\td0\t; 00\n7bd500d7  mov\t1,d1\t; 8501\n7bd500d9  call\t0x7be00426,[d2,d3,a2,a3],20\t; dd4d030b00f014\n7bd500e0  mov\t(24,sp),d0\t; 5818\n7bd500e2  add\t328,sp\t; fafe4801\n7bd500e6  ret\t[d2,d3,a2,a3],16\t; dff010\n"
+    },
+    {
+      "name": "cleanup_context_release",
+      "start": "0x7bd4ec77",
+      "end_exclusive": "0x7bd4ec7b",
+      "sha256": "8f38d9b09275075ab0bf00b367256df240b3db5d8857f66a0833dec832ecc131",
+      "instructions": 2,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4ec77  clr\td0\t; 00\n7bd4ec78  retf\t[],0\t; de0000\n"
+    },
+    {
+      "name": "board_control_forwarder",
+      "start": "0x40254702",
+      "end_exclusive": "0x40254719",
+      "sha256": "a51c71a18b27cb9b908f99d993c07308d0ea55712ab48773fd441c14836a1889",
+      "instructions": 9,
+      "raw_annotations_match_source": true,
+      "disassembly": "40254702  clr\td0\t; 00\n40254703  movbu\td0,(4,sp)\t; f89204\n40254706  movbu\td0,(5,sp)\t; f89205\n40254709  mov\t10,d0\t; 800a\n4025470b  mov\t11,d1\t; 850b\n4025470d  mov\tsp,a0\t; 3c\n4025470e  inc4\ta0\t; 50\n4025470f  call\t0x7be005eb,[d2,d3,a2,a3],28\t; dddcbeba3bf01c\n40254716  ret\t[],8\t; df0008\n"
+    },
+    {
+      "name": "hardware_handshake_enter",
+      "start": "0x7bd4dd87",
+      "end_exclusive": "0x7bd4ddbd",
+      "sha256": "03f4433727c943e672fda8756ded18a0d1fdaabdccc75e20470a57e71fc5ac90",
+      "instructions": 17,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4dd87  mov\t-1812987856,d0\t; fccc3000f093\n7bd4dd8d  mov\td0,(4,sp)\t; 4204\n7bd4dd8f  mov\t32787,d0\t; fccc13800000\n7bd4dd95  mov\tsp,a0\t; 3c\n7bd4dd96  inc4\ta0\t; 50\n7bd4dd97  mov\t4,d1\t; 8504\n7bd4dd99  mov\t-1,a1\t; fcddffffffff\n7bd4dd9f  call\t0x7bc15cdf,[d2,d3,a2,a3],24\t; dd407fecfff018\n7bd4dda6  clr\td1\t; 04\n7bd4dda7  setlb\t\t; db\n7bd4dda8  mov\t(0x93f00030),d0\t; fca43000f093\n7bd4ddae  cmp\t0,d0\t; a000\n7bd4ddb0  bne\t0x7bd4ddba\t; c90a\n7bd4ddb2  inc\td1\t; 44\n7bd4ddb3  cmp\t792000,d1\t; fcc9c0150c00\n7bd4ddb9  llt\t\t; d0\n7bd4ddba  ret\t[],8\t; df0008\n"
+    },
+    {
+      "name": "hardware_handshake_exit_prefix",
+      "start": "0x7bd4ddbd",
+      "end_exclusive": "0x7bd4de07",
+      "sha256": "3b17af4151277d8cc0d0e5ee468c3eb2ea7388087569981d1d3235617932560f",
+      "instructions": 30,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4ddbd  clr\td2\t; 08\n7bd4ddbe  mov\t1,d0\t; 8001\n7bd4ddc0  mov\td0,(0x93f00028)\t; fc812800f093\n7bd4ddc6  mov\td2,d1\t; 89\n7bd4ddc7  mov\t792000,d3\t; fccfc0150c00\n7bd4ddcd  setlb\t\t; db\n7bd4ddce  mov\t(0x93f0002c),d0\t; fca42c00f093\n7bd4ddd4  cmp\td2,d0\t; a8\n7bd4ddd5  bne\t0x7bd4ddda\t; c905\n7bd4ddd7  inc\td1\t; 44\n7bd4ddd8  cmp\td3,d1\t; ad\n7bd4ddd9  llt\t\t; d0\n7bd4ddda  mov\td2,d1\t; 89\n7bd4dddb  setlb\t\t; db\n7bd4dddc  movhu\t(0x9c012ff2),d0\t; fcacf22f019c\n7bd4dde2  cmp\t16384,d0\t; fac80040\n7bd4dde6  bne\t0x7bd4ddf1\t; c90b\n7bd4dde8  movhu\t(0x9c012ff0),d0\t; fcacf02f019c\n7bd4ddee  cmp\td2,d0\t; a8\n7bd4ddef  beq\t0x7bd4ddf4\t; c805\n7bd4ddf1  inc\td1\t; 44\n7bd4ddf2  cmp\td3,d1\t; ad\n7bd4ddf3  llt\t\t; d0\n7bd4ddf4  call\t0x7bd4ea93,[],0\t; cd9f0c0000\n7bd4ddf9  mov\t2048,d1\t; 2d0008\n7bd4ddfc  exthu\td0\t; 1c\n7bd4ddfd  and\td1,d0\t; f204\n7bd4ddff  cmp\td1,d0\t; a4\n7bd4de00  bne\t0x7bd4de07\t; c907\n7bd4de02  call\t0x7bd4dd87,[],8\t; cd85ff0008\n"
+    }
+  ],
+  "calls": [
+    {
+      "at": "0x4023bb50",
+      "target": "0x4023c141"
+    },
+    {
+      "at": "0x4023c19a",
+      "target": "0x7bd4fb93"
+    },
+    {
+      "at": "0x7bd4fcd1",
+      "target": "0x7bd4ee4e"
+    },
+    {
+      "at": "0x7bd5009e",
+      "target": "0x7bd4ec77"
+    },
+    {
+      "at": "0x7bd500ab",
+      "target": "0x40275566"
+    },
+    {
+      "at": "0x7bd500c5",
+      "target": "0x402784bb"
+    },
+    {
+      "at": "0x4025470f",
+      "target": "0x7be005eb"
+    }
+  ],
+  "supported_findings": [
+    "The reviewed confirmation dispatch calls the installation bridge, which calls the updater directly in the current CPU context.",
+    "The job samples the RAM policy before the full decoder. Decoder failure branches to common cleanup before the post-decode programming stage.",
+    "The job returns the saved status from SP+24. The bridge maps a negative job return to failure; the dispatcher emits its error notification.",
+    "Board-control/handshake calls used by the virtual installation occur after full decoding; their physical effects are not fully established."
+  ],
+  "limits": [
+    "This is local control-flow evidence, not complete UI, asynchronous callback or hardware execution.",
+    "No separate boot-time authentication mechanism is proved absent, including code outside the NOR dump.",
+    "No camera access, RAM writes, SD copying or physical update was performed."
+  ],
+  "next_control": {
+    "purpose": "Prepare a byte-identical installed-firmware reflash control before a permanent patch",
+    "package_prepared": false,
+    "physical_update_authorized": false,
+    "prerequisites": [
+      "Validate a container encoding the installed bytes with the recovered cipher, all hashes and native checks.",
+      "Check real settings/calibration handling and the physical entry conditions.",
+      "Specify the exact payload scope and post-update readback before a camera attempt."
+    ]
+  },
+  "verifier_sha256": "34eabf230015b85e20eef372adeb0aae0b22fe41efc462fd132f88a77cdc8aed",
+  "decoder_sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde",
+  "camera_contacted": false
+}

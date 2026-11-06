@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T01:46:44.475215+00:00",
+  "stage": "Untouched signed official GM5 1.1 control; stop before installation",
+  "source": "firmware/official-gm5-v11/GM5__V11.bin",
+  "destination": "/Volumes/LUMIX/GM5__V11.bin",
+  "volume_uuid": "PRIVATE_CARD_UUID",
+  "bytes": 31901184,
+  "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+  "replaced_known_test_candidate_sha256": "aa91363a49248b0635b6f1b2dc4739498d429ffacdcc7995d47069c63c1f9ae8",
+  "readback_byte_identical": true,
+  "signature_verification": {
+    "schema": 1,
+    "scope": "Official update-directory signature against recovered model public key",
+    "source": {
+      "path": "firmware/official-gm5-v11/GM5__V11.bin",
+      "bytes": 31901184,
+      "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+    },
+    "model": "GM5",
+    "key_model": "GM5",
+    "key_source": {
+      "path": "work/gm5-v11-decoded-verified/02_program2.decoded.bin",
+      "sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+      "linked_address": "0x7be2a65c",
+      "bytes": 64,
+      "hex": "274fab5aed54d05774099739f1aa0518329a64a9ad9772986bf201148adc2e0e764e7f31e1495235a85473d02db6c21d7b298f9f9e30a62009a994276b4134d4"
+    },
+    "algorithm": "ECDSA P-256 with SHA-256; raw uint256 fields and hash interpreted little endian",
+    "directory": {
+      "file_start": "0x2a0",
+      "file_end_exclusive": "0x5cc",
+      "bytes": 812,
+      "sha256": "2b11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+      "component_count": 8
+    },
+    "signature": {
+      "file_start": "0x220",
+      "bytes": 64,
+      "hex": "091ad7cd278230178518177b0afe57deba203041f1976412a0a339658545286cf82d0075996a32731d0afec78d9bafe58a172c786437b1cb24ee69d1b09a1efb",
+      "layout": "32-byte little-endian r followed by 32-byte little-endian s"
+    },
+    "independent_math_valid": true,
+    "openssl_valid": true,
+    "openssl_version": "LibreSSL 3.3.6",
+    "controls": {
+      "modified_hash_accepted": false,
+      "modified_signature_accepted": false
+    },
+    "verifier": {
+      "path": "tools/panasonic_signature_verify.py",
+      "sha256": "f0f961c1b519b439ac4797adaecc179c70d453d248825f208965147d9a28815f"
+    },
+    "limits": [
+      "Each public key verifies its recorded model; a cross-model failure does not disprove the other model's signature.",
+      "Signature validity and static call tracing do not establish every hardware acceptance condition.",
+      "No private signing key, signing function, modified update or camera operation is produced."
+    ]
+  },
+  "firmware_modified": false,
+  "firmware_flash_performed": false,
+  "safely_ejected": true
+}

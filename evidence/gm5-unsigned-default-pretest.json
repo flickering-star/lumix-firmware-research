@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "scope": "Default-flag raised-version unsigned installation control, user explicitly authorized",
+  "owner_request": "Try flashing raised-version unsigned image without changing the RAM flag",
+  "ram_capture": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-runtime-control-wgZvaGOH",
+    "model": "DMC-GM5",
+    "mode": "runtime-control",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 1,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-runtime-control-wgZvaGOH/result/runtime-control.bin",
+    "verified_prefix_bytes": 1024,
+    "program_sha256": "daba4f6a86c61eca9d88b9f37e31ec5be35d96bcf8b09903a5c6374d0e7714be",
+    "program_file_base": "0x70a68400",
+    "program_file_offset": 0,
+    "next_program_address": "0x70a68800",
+    "terminal_phase": "idle",
+    "errors": [],
+    "flag_halfword": 1
+  },
+  "host_ram_writes": 0,
+  "candidate_sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3",
+  "candidate_marker_byte": 0,
+  "last_verified_sd_copy": "evidence/gm5-prompt-0112-sd.json",
+  "current_sd_re_read_over_service_usb": false,
+  "owner_reports_prompt_in_normal_mode": true,
+  "camera_confirmed_for_this_test": false
+}

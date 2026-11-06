@@ -1,0 +1,381 @@
+{
+  "schema": 1,
+  "inspected_utc": "2026-11-05T03:52:05.556209+00:00",
+  "input": {
+    "path": "PRIVATE.zip",
+    "bytes": 52404,
+    "sha256": "11e597cce5687bb1de1c4b48434302d4b6a5a75259ccc9b6d5224dc09c004087",
+    "zip_crc_verified": true,
+    "member_count": 24,
+    "members": [
+      {
+        "path": "PRIVATE/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/PLAYLIST/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/CLIPINF/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/STREAM/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/INDEX.BDM",
+        "bytes": 504,
+        "compressed_bytes": 110,
+        "crc32": "be93c029"
+      },
+      {
+        "path": "PRIVATE/AVCHD/BDMV/MOVIEOBJ.BDM",
+        "bytes": 66,
+        "compressed_bytes": 22,
+        "crc32": "d76e1948"
+      },
+      {
+        "path": "PRIVATE/AVCHD/AVCHDTN/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/AVCHD/AVCHDTN/THUMB.TID",
+        "bytes": 72,
+        "compressed_bytes": 18,
+        "crc32": "0fae16f6"
+      },
+      {
+        "path": "PRIVATE/AVCHD/AVCHDTN/THUMB.TDT",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/CONTENTS.D00",
+        "bytes": 98304,
+        "compressed_bytes": 1503,
+        "crc32": "655af568"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/CONTENTS.B00",
+        "bytes": 1155072,
+        "compressed_bytes": 2032,
+        "crc32": "9bf0292e"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/GROUPINF.D00",
+        "bytes": 24576,
+        "compressed_bytes": 510,
+        "crc32": "44e15ebf"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/GROUPINF.B00",
+        "bytes": 1155072,
+        "compressed_bytes": 22856,
+        "crc32": "8ce28e7c"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/FILEINFO.TBL",
+        "bytes": 14980,
+        "compressed_bytes": 31,
+        "crc32": "1a927a44"
+      },
+      {
+        "path": "PRIVATE/PANA_GRP/PAVC/LUMIX/CACHE.DAT",
+        "bytes": 4096,
+        "compressed_bytes": 72,
+        "crc32": "b88b7ba5"
+      },
+      {
+        "path": "GM1F.TXT",
+        "bytes": 89407,
+        "compressed_bytes": 17055,
+        "crc32": "f5217dda"
+      },
+      {
+        "path": "GM1U.TXT",
+        "bytes": 44859,
+        "compressed_bytes": 3621,
+        "crc32": "8125267e"
+      },
+      {
+        "path": "DCIM/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "MISC/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      }
+    ]
+  },
+  "provenance": {
+    "model_user_reported": "GM1",
+    "language_already_edited_user_confirmed": true,
+    "original_region": null,
+    "installed_firmware_version": null,
+    "note": "No original pre-edit file was supplied; unknown origin/region/version should not be inferred from the edited language field.",
+    "untouched_pre_edit_backup_supplied": false
+  },
+  "tables": [
+    {
+      "area_code": 32,
+      "area_name": "FIX ADJUST",
+      "type_code": 0,
+      "start_word": 0,
+      "word_count": 16384,
+      "row_count": 1024,
+      "source_bytes": 89407,
+      "source_sha256": "f35feda24db57846cab08497a31862f2344335c600556dece929394d74643953",
+      "model": "GM1",
+      "filename": "GM1F.TXT",
+      "decoded_bytes": 32768,
+      "zero_words": 8705,
+      "ffff_words": 144,
+      "unique_word_values": 2225,
+      "word_serializations": {
+        "little": {
+          "sha256": "92a73882ebdfa47e77c4b72850e52e71a0b0b7b91081085fe96241a2f88c906c",
+          "entropy_bits_per_byte": 3.421066053,
+          "ascii_strings_6plus": 57,
+          "diagnostic_keyword_hits": [],
+          "known_text_markers": {
+            "Panasonic": [
+              32512
+            ],
+            "LUMIX": [
+              32568
+            ],
+            "DMC-GM1": [
+              32528
+            ]
+          }
+        },
+        "big": {
+          "sha256": "13db6c2f60cb7641e95411ca2117004a3b032250e1561bd72169abbd9c63eeeb",
+          "entropy_bits_per_byte": 3.421066053,
+          "ascii_strings_6plus": 56,
+          "diagnostic_keyword_hits": [],
+          "known_text_markers": {}
+        }
+      },
+      "language_pattern_candidates": [],
+      "identical_nonzero_256_word_blocks": [],
+      "limitations": [
+        "Word coordinates identify the exported area, not a physical flash or CPU address.",
+        "Both byte orders are reported; readable markers do not establish processor endianness.",
+        "Repeated settings are not proven backup banks, defaults or custom profiles.",
+        "String absence cannot exclude numeric flags or diagnostics elsewhere in firmware.",
+        "String contents and complete word arrays are omitted; no checksum/authentication claim is made."
+      ]
+    },
+    {
+      "area_code": 16,
+      "area_name": "UPDATE",
+      "type_code": 0,
+      "start_word": 0,
+      "word_count": 8192,
+      "row_count": 512,
+      "source_bytes": 44859,
+      "source_sha256": "b5766eee715f6572544d5c0f2061a7ecc3fdb8543592e80059634f255f963375",
+      "model": "GM1",
+      "filename": "GM1U.TXT",
+      "decoded_bytes": 16384,
+      "zero_words": 6488,
+      "ffff_words": 14,
+      "unique_word_values": 309,
+      "word_serializations": {
+        "little": {
+          "sha256": "5776b3565a006d038eaab7ab341d0828dfeb55cd7b14c85574c90eee0000529b",
+          "entropy_bits_per_byte": 1.433988703,
+          "ascii_strings_6plus": 20,
+          "diagnostic_keyword_hits": [],
+          "known_text_markers": {}
+        },
+        "big": {
+          "sha256": "819d6996bcdfeef39bcff7261fa27ddc2994fb90fb3191bf47852b590653e189",
+          "entropy_bits_per_byte": 1.433988703,
+          "ascii_strings_6plus": 20,
+          "diagnostic_keyword_hits": [],
+          "known_text_markers": {}
+        }
+      },
+      "language_pattern_candidates": [
+        {
+          "export_word_address": 227,
+          "row": "H00e",
+          "column": "L3",
+          "value_hex": "0100",
+          "relative_byte_offset": 454,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        },
+        {
+          "export_word_address": 2019,
+          "row": "H07e",
+          "column": "L3",
+          "value_hex": "0000",
+          "relative_byte_offset": 4038,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        },
+        {
+          "export_word_address": 2275,
+          "row": "H08e",
+          "column": "L3",
+          "value_hex": "0000",
+          "relative_byte_offset": 4550,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        },
+        {
+          "export_word_address": 2531,
+          "row": "H09e",
+          "column": "L3",
+          "value_hex": "0000",
+          "relative_byte_offset": 5062,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        },
+        {
+          "export_word_address": 3043,
+          "row": "H0be",
+          "column": "L3",
+          "value_hex": "0000",
+          "relative_byte_offset": 6086,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        },
+        {
+          "export_word_address": 4323,
+          "row": "H10e",
+          "column": "L3",
+          "value_hex": "0000",
+          "relative_byte_offset": 8646,
+          "interpretation": "Published language-edit pattern; not a debug flag"
+        }
+      ],
+      "identical_nonzero_256_word_blocks": [
+        {
+          "start_word_addresses": [
+            1792,
+            2048,
+            2304,
+            2816,
+            4096
+          ],
+          "words_per_block": 256
+        }
+      ],
+      "limitations": [
+        "Word coordinates identify the exported area, not a physical flash or CPU address.",
+        "Both byte orders are reported; readable markers do not establish processor endianness.",
+        "Repeated settings are not proven backup banks, defaults or custom profiles.",
+        "String absence cannot exclude numeric flags or diagnostics elsewhere in firmware.",
+        "String contents and complete word arrays are omitted; no checksum/authentication claim is made."
+      ]
+    }
+  ],
+  "all_archive_members_debug_keyword_scan": {
+    "terms": [
+      "debug",
+      "telnet",
+      "shell",
+      "console",
+      "mdump",
+      "readmem",
+      "bootrom"
+    ],
+    "encodings": [
+      "ascii",
+      "utf-16-le",
+      "utf-16-be"
+    ],
+    "hits": []
+  },
+  "settings_structure": {
+    "update_language_coordinate": {
+      "area": 16,
+      "export_word_address": 227,
+      "row": "H00e",
+      "column": "L3",
+      "relative_byte_offset": 454,
+      "current_word": "0100",
+      "interpretation": "Consistent with published English edit and owner confirmation; not a debug flag or GM5 offset"
+    },
+    "five_equal_nonzero_blocks": {
+      "start_word_addresses": [
+        1792,
+        2048,
+        2304,
+        2816,
+        4096
+      ],
+      "words_per_block": 256,
+      "differences_vs_first_256_words": 40,
+      "semantics": "Unknown; not proven defaults, profiles or redundant banks"
+    },
+    "unmapped_physical_addresses": true
+  },
+  "local_raw_string_contents_included": false,
+  "related_evidence": [
+    "gm1-firmware-comparison.json"
+  ],
+  "public_references": [
+    {
+      "url": "https://www.microfournerds.com/blog/lumix-japanese-to-english",
+      "kind": "Firsthand GM5/GF7 language-change account; corroborates user-described service backup method, not a console"
+    },
+    {
+      "url": "https://www.mobile01.com/topicdetail.php?f=250&p=1&t=6759489",
+      "kind": "Earlier GM5 procedure and later firsthand GF7 confirmation"
+    }
+  ],
+  "limitations": [
+    "Only GM1 settings supplied; no GM5 EEPROM export or paired pre-edit capture.",
+    "A static settings table does not name the code that consumes each field.",
+    "No diagnostic flag, engineering-console entry, memory-read command or update key was identified.",
+    "Editable region/language settings do not establish a diagnostic listener or automatic SD script loader.",
+    "No camera communication, settings import, service-mode change or firmware flash was performed."
+  ]
+}

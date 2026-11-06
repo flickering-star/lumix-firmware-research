@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T10:38:05.154773+00:00",
+  "stage": "First read-only ROM measurement after policy-zero attempt",
+  "owner_report": "Took longer this time, I think camera restarted before reaching end of progress bar. Can you check that changed flag now?",
+  "normal_off_on_after_auto_restart_confirmed": false,
+  "capture": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-security-flag-72Lw4iIb",
+    "model": "DMC-GM5",
+    "mode": "security-flag",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 1,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-security-flag-72Lw4iIb/result/security-flag.bin",
+    "verified_prefix_bytes": 1024,
+    "program_sha256": "c689d119f652f1e45aef3e71936f470308a6c9ed5aa8585cb371bf1355f2115f",
+    "program_file_base": "0x406b1800",
+    "program_file_offset": 0,
+    "next_program_address": "0x406b1c00",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "rom_policy_halfword": 0,
+  "differences_from_immediate_pretest_window": [
+    {
+      "offset": "0x3dc",
+      "address": "0x406b1bdc",
+      "before": 1,
+      "after": 0
+    }
+  ],
+  "host_ram_or_nor_writes_before_measurement": false
+}

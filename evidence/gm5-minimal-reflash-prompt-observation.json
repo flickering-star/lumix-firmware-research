@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T09:54:47.802386+00:00",
+  "package_sha256": "f978123c4eafb4a8bd0961c46ee013eb161babda6020eb1e3cbd0c68833dc4c8",
+  "owner_reports": [
+    "it shows playback menu",
+    "Reconnected; it stayed awake throughout",
+    "It prompts in both. Probably sd should be inserted when camera off.",
+    "connected camera now, set flag."
+  ],
+  "initial_no_prompt_followup_flag_record": "evidence/gm5-minimal-reflash-no-prompt-flag.json",
+  "initial_followup_flag": 0,
+  "later_prompt_reported_in": [
+    "service mode",
+    "standard mode"
+  ],
+  "owner_hypothesis": "Card should be inserted while camera is off",
+  "interpretation": "Initial no-prompt state followed by prompt after card/power transition; card-detection timing is plausible, not a proven firmware requirement. Prompt is eligibility evidence only.",
+  "installation_confirmed": false,
+  "next_action": "Fresh guard/English preparation and flag0 verification; retain existing card file; no recopy."
+}

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "scope": "Official update-directory signature against recovered GM1 public key",
+  "source": {
+    "path": "firmware/official-gm5-v11/GM5__V11.bin",
+    "bytes": 31901184,
+    "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+  },
+  "model": "GM5",
+  "key_model": "GM1",
+  "key_source": {
+    "path": "captures/gm1-usb-resume-fveg1az5/result/program2.bin",
+    "sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+    "linked_address": "0x7be1ce64",
+    "bytes": 64,
+    "hex": "28d17ce88ec14a8e501fe2e8d84d0754791053de0b61315ef7ba2a256252bf349f38bb17b0997648277863dd3cd0807d7e315ac745df3a4f8964b02f9b69c38b"
+  },
+  "algorithm": "ECDSA P-256 with SHA-256; raw uint256 fields and hash interpreted little endian",
+  "directory": {
+    "file_start": "0x2a0",
+    "file_end_exclusive": "0x5cc",
+    "bytes": 812,
+    "sha256": "2b11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+    "component_count": 8
+  },
+  "signature": {
+    "file_start": "0x220",
+    "bytes": 64,
+    "hex": "091ad7cd278230178518177b0afe57deba203041f1976412a0a339658545286cf82d0075996a32731d0afec78d9bafe58a172c786437b1cb24ee69d1b09a1efb",
+    "layout": "32-byte little-endian r followed by 32-byte little-endian s"
+  },
+  "independent_math_valid": false,
+  "openssl_valid": false,
+  "openssl_version": "LibreSSL 3.3.6",
+  "controls": {
+    "modified_hash_accepted": false,
+    "modified_signature_accepted": false
+  },
+  "verifier": {
+    "path": "tools/panasonic_signature_verify.py",
+    "sha256": "11ee804134a952eadcdcc79867859a53f23df02f989b841e681d20d48a0b325b"
+  },
+  "limits": [
+    "The recovered public key verifies GM1; a GM5 failure does not identify GM5's key or disprove its signature.",
+    "Signature validity and static call tracing do not establish every hardware acceptance condition.",
+    "No private signing key, signing function, modified update or camera operation is produced."
+  ]
+}

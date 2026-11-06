@@ -1,0 +1,41 @@
+{
+  "source_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GM5__V11.zip",
+  "final_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GM5__V11.zip",
+  "referer": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm5.html",
+  "retrieved_utc": "2026-11-05T00:29:41.629573+00:00",
+  "http_status": 200,
+  "acquisition_client": "/usr/bin/curl; system TLS trust; no verification bypass",
+  "tls_verification_result": 0,
+  "bytes": 31905359,
+  "sha256": "0e9be7b3bb0eb0378f67110efe3ef7657d7b7920f9a52e1534653029ef21e515",
+  "zip_crc_verified": true,
+  "firmware_downloaded": true,
+  "archive_members": [
+    {
+      "name": "GM5__V11.bin",
+      "bytes": 31901184,
+      "compressed_bytes": 31905237,
+      "compression": 8,
+      "crc32": "caf1c5d7"
+    }
+  ],
+  "files": [
+    {
+      "name": "GM5__V11.zip",
+      "bytes": 31905359,
+      "sha256": "0e9be7b3bb0eb0378f67110efe3ef7657d7b7920f9a52e1534653029ef21e515"
+    },
+    {
+      "name": "GM5__V11.bin",
+      "bytes": 31901184,
+      "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+    }
+  ],
+  "hash_note": "Locally computed hashes identify this sample; they are not a Panasonic signature or a publisher-provided checksum.",
+  "official_page": {
+    "source_url": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm5.html",
+    "local_path": "work/firmware-acquisition/gm5-official-page.html",
+    "bytes": 4859,
+    "sha256": "e4bf18522ad4a0c05fecbbfdffe57a2308d6d81b5addfc8e0992af3584f681c4"
+  }
+}

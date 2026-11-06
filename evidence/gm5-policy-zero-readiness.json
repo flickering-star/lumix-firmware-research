@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T10:20:02.400258+00:00",
+  "stage": "Next one-byte policy candidate prepared offline after unchanged control readback",
+  "package": {
+    "path": "work/gm5-policy-zero-1/GM5__V11.bin",
+    "bytes": 8390144,
+    "sha256": "86832e6eafa90b453894237805dafe128f61d346066f73a3752a8071d8286f16"
+  },
+  "payload_byte_differences": [
+    {
+      "offset": "0x6b1bdc",
+      "flash_address": "0x406b1bdc",
+      "before": 1,
+      "after": 0
+    }
+  ],
+  "patched_main_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+  "expected_complete_virtual_nor_sha256": "672d389bb8f09a551c0889e66d911ff307932768ed37221cd727d68abc28b67a",
+  "native_controls_passed": 8,
+  "fresh_initialization_policy_halfword": 0,
+  "repository_tests": {
+    "passed": 71,
+    "log": "work/gm5-policy-zero-final-tests.log",
+    "sha256": "a17d90f7846fa755d9f17a52517b3b86265824cb0be5aa6ec1045d428dfa6ed4"
+  },
+  "package_evidence": {
+    "path": "evidence/gm5-policy-zero-package.json",
+    "sha256": "521adee2ce16063a5af781e087634db033d9e642e0d4d8f2def29702af405662"
+  },
+  "previous_control_posttest_record": "evidence/gm5-minimal-reflash-posttest.json",
+  "physical_scope": {
+    "component": "program",
+    "nor_offset": "0x0",
+    "bytes": 8388608,
+    "sector_erases": 64,
+    "buffer_programs": 8192,
+    "includes_main_boot_code": true,
+    "settings_calibration_payloads_included": false
+  },
+  "physical_installation_authorized_for_this_candidate": false,
+  "sd_card_written_with_this_candidate": false,
+  "physical_installation_attempted_with_this_candidate": false,
+  "current_camera_policy_last_measured": 1,
+  "proof_criteria": [
+    "After completed installation, perform normal power-off/on; use only read commands before measuring policy.",
+    "ROM0x406b1bdc must change1->0 and RAM0x70a68490 must initialize0 without any service policy write.",
+    "Fresh main readback must match c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d.",
+    "Start a fresh post-update acquisition; never resume a capture from a different firmware installation epoch."
+  ],
+  "limits": [
+    "Explicit board/handshake/RTOS/cache abstractions remain; this is not a complete machine or physical write test.",
+    "Native unsigned decoding skips SHA verification; the host compares every decoded byte with the exact expected patch.",
+    "Copy-loop initialization establishes flag behavior, not full boot or absence of additional boot authentication.",
+    "The main program includes boot code; programming it spans 64 sectors despite a one-byte intended difference.",
+    "Physical recovery has not been validated. The prepared candidate has not been copied or installed."
+  ]
+}

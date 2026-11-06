@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "scope": "Observed owner GM5 over USB; normal PC and PictBridge modes only",
+  "pc_observed_utc": "2026-11-05T04:55:57Z",
+  "ptp_observed_utc": "2026-11-05T05:02:36Z",
+  "pc": {
+    "vendor_id": 1242,
+    "product_id": 9074,
+    "bcd_device": 272,
+    "exclusive_open": false,
+    "configuration_source": "IOKit GetConfigurationDescriptorPtr",
+    "configurations": [
+      {
+        "index": 0,
+        "bytes": 32,
+        "hex": "09022000010100c0010904000002080650000705010200020007058202000200",
+        "sha256": "7b8ae19de0c5a39b36ddeef483f5eec241d0b7a7b829f3d252d131a78d5410bb",
+        "descriptors": [
+          {
+            "offset": 0,
+            "type": 2,
+            "bytes": 9,
+            "hex": "09022000010100c001",
+            "total_length": 32,
+            "interfaces": 1,
+            "configuration_value": 1
+          },
+          {
+            "offset": 9,
+            "type": 4,
+            "bytes": 9,
+            "hex": "090400000208065000",
+            "interface": 0,
+            "alternate": 0,
+            "endpoints": 2,
+            "class_code": 8,
+            "subclass": 6,
+            "protocol": 80
+          },
+          {
+            "offset": 18,
+            "type": 5,
+            "bytes": 7,
+            "hex": "07050102000200",
+            "address": "0x1",
+            "direction": "OUT",
+            "transfer_type": "bulk",
+            "max_packet_bytes": 512
+          },
+          {
+            "offset": 25,
+            "type": 5,
+            "bytes": 7,
+            "hex": "07058202000200",
+            "address": "0x82",
+            "direction": "IN",
+            "transfer_type": "bulk",
+            "max_packet_bytes": 512
+          }
+        ]
+      }
+    ]
+  },
+  "ptp": {
+    "vendor_id": 1242,
+    "product_id": 9076,
+    "bcd_device": 272,
+    "exclusive_open": false,
+    "configuration_source": "IOKit GetConfigurationDescriptorPtr",
+    "configurations": [
+      {
+        "index": 0,
+        "bytes": 39,
+        "hex": "09022700010100c001090400000306010100070501020002000705820200020007058303080008",
+        "sha256": "a174da605a896e822ce46f561a8693e97947f63b54470a8351e0bd1e137609a0",
+        "descriptors": [
+          {
+            "offset": 0,
+            "type": 2,
+            "bytes": 9,
+            "hex": "09022700010100c001",
+            "total_length": 39,
+            "interfaces": 1,
+            "configuration_value": 1
+          },
+          {
+            "offset": 9,
+            "type": 4,
+            "bytes": 9,
+            "hex": "090400000306010100",
+            "interface": 0,
+            "alternate": 0,
+            "endpoints": 3,
+            "class_code": 6,
+            "subclass": 1,
+            "protocol": 1
+          },
+          {
+            "offset": 18,
+            "type": 5,
+            "bytes": 7,
+            "hex": "07050102000200",
+            "address": "0x1",
+            "direction": "OUT",
+            "transfer_type": "bulk",
+            "max_packet_bytes": 512
+          },
+          {
+            "offset": 25,
+            "type": 5,
+            "bytes": 7,
+            "hex": "07058202000200",
+            "address": "0x82",
+            "direction": "IN",
+            "transfer_type": "bulk",
+            "max_packet_bytes": 512
+          },
+          {
+            "offset": 32,
+            "type": 5,
+            "bytes": 7,
+            "hex": "07058303080008",
+            "address": "0x83",
+            "direction": "IN",
+            "transfer_type": "interrupt",
+            "max_packet_bytes": 8
+          }
+        ]
+      }
+    ]
+  },
+  "device_info": {
+    "standard_version": 100,
+    "vendor_extension_id": 6,
+    "vendor_extension_version": 100,
+    "vendor_extension_description": "",
+    "functional_mode": 0,
+    "operations": [
+      "0x1001",
+      "0x1002",
+      "0x1003",
+      "0x1004",
+      "0x1005",
+      "0x1006",
+      "0x1007",
+      "0x1008",
+      "0x1009",
+      "0x100a",
+      "0x100c",
+      "0x100d",
+      "0x1014",
+      "0x1015",
+      "0x1016",
+      "0x101b"
+    ],
+    "events": [
+      "0x4004",
+      "0x4005",
+      "0x4008",
+      "0x4009"
+    ],
+    "device_properties": [
+      "0xd406",
+      "0xd407"
+    ],
+    "capture_formats": [],
+    "image_formats": [
+      "0x3001",
+      "0x3002",
+      "0x3006",
+      "0x300d",
+      "0x3801",
+      "0x380d"
+    ],
+    "manufacturer": "Panasonic",
+    "model": "DMC-GM5",
+    "device_version": "1.1",
+    "serial_omitted": true,
+    "dataset_bytes": 199,
+    "dataset_sha256": "35306eead9b8a752e7659d455925a7c5d2b38918e23594ea3022f97d602a8aa1",
+    "dataset_consumed_exactly": true,
+    "response": {
+      "container_length": 12,
+      "container_type": 3,
+      "code": "0x2001",
+      "transaction_id": 13,
+      "parameters": []
+    }
+  },
+  "explicit_ptp_operations_sent": [
+    "0x1001 GetDeviceInfo"
+  ],
+  "ptp_response_ok": true,
+  "advertised_vendor_operation_count": 0,
+  "image_capture_session_closed": true,
+  "pc_card": {
+    "capacity_bytes": 15931539456,
+    "filesystem": "FAT32",
+    "scope": "Directory names inspected; no photograph download invoked by the tools",
+    "safely_ejected_before_owner_mode_change": true
+  },
+  "raw_capture_files": [
+    {
+      "path": "captures/gm5-usb-pc-20261105T045557Z/cached-descriptors.json",
+      "bytes": 291,
+      "sha256": "eb4a3a46ba2ceb64e7478074d89d253665cdaa553764316eda9b79ca288e6efa"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/cached-descriptors.json",
+      "bytes": 305,
+      "sha256": "c43628dbeaa68b7135bbf7813173d58b78f27d4add7b15ab7e51c6f0346d8867"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/device-info/get-device-info-command.bin",
+      "bytes": 12,
+      "sha256": "def940348f0b0e6213ffd695759131f1d61176b8d3a9b15240edac298e4a2df2"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/device-info/get-device-info-data.bin",
+      "bytes": 199,
+      "sha256": "35306eead9b8a752e7659d455925a7c5d2b38918e23594ea3022f97d602a8aa1"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/device-info/get-device-info-response.bin",
+      "bytes": 12,
+      "sha256": "c75c32c02d958ae2df768bcf613b721d1f4ba84832bb41f93a40fe1bd73dfe61"
+    }
+  ],
+  "probe_sources_at_capture": [
+    {
+      "path": "captures/gm5-usb-pc-20261105T045557Z/descriptor-reader-source.c",
+      "bytes": 5056,
+      "sha256": "6c868e74f89a7fa684d1146ea8d25ce95abedbf1321a032ea6259fecb9e1fdec"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/descriptor-reader-source.c",
+      "bytes": 5375,
+      "sha256": "860e8db54f01843bc86bef23f13be306e2160c0770b1b73a015d9fbaef11366d"
+    },
+    {
+      "path": "captures/gm5-usb-ptp-20261105T050236Z/ptp-info-probe-source.m",
+      "bytes": 6996,
+      "sha256": "d708eeaf1b749787c6af31f7991ec73c29f57943be1087f84248cc0b37a74982"
+    }
+  ],
+  "current_reproduction_tools": [
+    {
+      "path": "tools/gm5_usb_descriptors_macos.c",
+      "bytes": 5375,
+      "sha256": "860e8db54f01843bc86bef23f13be306e2160c0770b1b73a015d9fbaef11366d"
+    },
+    {
+      "path": "tools/gm5_ptp_info_macos.m",
+      "bytes": 7327,
+      "sha256": "7fda1b179d3fe4b4fe08a1119de4a2729ef26569d736edc3e81adecb83c0f856"
+    },
+    {
+      "path": "tools/ptp_device_info.py",
+      "bytes": 3601,
+      "sha256": "22a362055d66b7adb314731d6d38ddb63bd2872b1856700bb2f35109839f2884"
+    }
+  ],
+  "limitations": [
+    "Advertised normal PTP operations are not a complete list of undocumented firmware functionality.",
+    "No vendor-specific command or GH2 maintenance packet was sent.",
+    "No firmware or CPU-memory dump, firmware key, service-mode entry, camera settings write or flash operation was performed.",
+    "ImageCaptureCore manages its normal USB/session traffic; the explicit pass-through operation was GetDeviceInfo.",
+    "Raw captures remain in ignored captures directories and can contain device identifiers; the public DeviceInfo report omits the serial."
+  ]
+}

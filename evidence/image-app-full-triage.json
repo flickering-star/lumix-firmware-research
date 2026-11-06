@@ -1,0 +1,401 @@
+{
+  "schema": 1,
+  "source_url": "https://codeload.github.com/maiermic/panasonic-image-app/tar.gz/ef9bd7c2a8390204894c53b49d1e01a230141e2d",
+  "revision": "ef9bd7c2a8390204894c53b49d1e01a230141e2d",
+  "archive_bytes": 31917087,
+  "archive_sha256": "a3d781a40c1466ba8e4b354cb675656ea4629dbc1f5bb9107aea4bc707add33f",
+  "git_blob_checks_passed": true,
+  "verified_file_count": 896,
+  "panasonic_java_files": 886,
+  "native_libraries": [
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libcheckaac.so",
+      "bytes": 25792,
+      "git_blob_sha1": "c277ae8f8b7cf1b792a0160c62129b996e0ce9fc",
+      "sha256": "aea08d9bf7bd5bb8c3fa1d0e5c534dce8301b0456cb3ab309dd13e8b2306cceb",
+      "dynamic_symbol_count": 159,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libdlnaCore.so",
+      "bytes": 1364032,
+      "git_blob_sha1": "148a317879d1d8e377514192044a072a8c673de0",
+      "sha256": "f1fefe0a889b166ca487ab20ce07036f3465bcfa7222d799b991970cb59a3025",
+      "dynamic_symbol_count": 1808,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libg711Codec.so",
+      "bytes": 13452,
+      "git_blob_sha1": "c9f332954fa419524929e0594e97ba086e8cf577",
+      "sha256": "dfc5ff200820e44195eb8738f9395f0e5d69af8c635a5c6ed4a527ab44068186",
+      "dynamic_symbol_count": 59,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libhttpc.so",
+      "bytes": 38032,
+      "git_blob_sha1": "f86d688594e8ada7cde864751f1bad18cedff4ba",
+      "sha256": "98385fd755c4790ffefa03431bcc27e658561301254e96dbed5625ed97a1e0b6",
+      "dynamic_symbol_count": 207,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libisys.so",
+      "bytes": 51560,
+      "git_blob_sha1": "e0d84de9c13a88afc41ec9949f1215e6bb96d5fa",
+      "sha256": "fb5c41249be70f100840422550c2da71868d655c9c7f21a7d2fa22851d38d430",
+      "dynamic_symbol_count": 394,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libmp4_gps_remover.so",
+      "bytes": 17600,
+      "git_blob_sha1": "eedbcf76d2daa32845fa8e5e20ac009912539372",
+      "sha256": "e3c4c24f8493bd2f8bf72069511f08b238483e40067180288bd0e0eae957da9a",
+      "dynamic_symbol_count": 106,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libp2papl_api.so",
+      "bytes": 1031492,
+      "git_blob_sha1": "3cce5b14e3b7a209e0c80f799593ffcb028b0457",
+      "sha256": "9b37fbd59a85bd817140863d5a17a55960edcfe1ce03d108da34fc51cdd831ef",
+      "dynamic_symbol_count": 3207,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libpacketLossConcealer.so",
+      "bytes": 17500,
+      "git_blob_sha1": "5de04e9ea9c64ded13b9b75551de35931edb0714",
+      "sha256": "05c5f801803f6f73da5d0cc959c9a21a0d3c4bd82966d4c6958d399a7a9ddf3f",
+      "dynamic_symbol_count": 89,
+      "firmware_or_memory_literal_matches": []
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/lib/armeabi/libtsuru3.so",
+      "bytes": 103844,
+      "git_blob_sha1": "5d59b52c95dee25b75d29ad6ce95684931cd988b",
+      "sha256": "570f430eec9f64865c04bccd0fbd7bc40d83bbc59fd427585fd498dbc2180963",
+      "dynamic_symbol_count": 579,
+      "firmware_or_memory_literal_matches": []
+    }
+  ],
+  "unique_cgi_literal_count": 142,
+  "additional_cgi_literals_vs_52_class_review": [
+    {
+      "literal": "/cam.cgi?mode=speak&type=start",
+      "query_fields": [
+        [
+          "mode",
+          "speak"
+        ],
+        [
+          "type",
+          "start"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/model/service/p064k/C2178a.java",
+          "line": 247
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=speak&type=stop",
+      "query_fields": [
+        [
+          "mode",
+          "speak"
+        ],
+        [
+          "type",
+          "stop"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/model/service/p064k/C2178a.java",
+          "line": 275
+        }
+      ]
+    },
+    {
+      "literal": "/cam.cgi?mode=startstream&value=%d&value2=%d",
+      "query_fields": [
+        [
+          "mode",
+          "startstream"
+        ],
+        [
+          "value",
+          "%d"
+        ],
+        [
+          "value2",
+          "%d"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/model/service/p064k/C2178a.java",
+          "line": 186
+        }
+      ]
+    },
+    {
+      "literal": "cam.cgi",
+      "query_fields": [],
+      "locations": [
+        {
+          "file": "avc/cng/core/p040a/p041a/C1424f.java",
+          "line": 236
+        }
+      ]
+    },
+    {
+      "literal": "http://%s/cam.cgi?mode=%s&type=%s",
+      "query_fields": [
+        [
+          "mode",
+          "%s"
+        ],
+        [
+          "type",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/view/setting/C5630au.java",
+          "line": 707
+        },
+        {
+          "file": "avc/cng/view/setting/C5824w.java",
+          "line": 201
+        },
+        {
+          "file": "avc/cng/view/setting/C5830x.java",
+          "line": 166
+        },
+        {
+          "file": "avc/cng/view/setting/C5838y.java",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "literal": "http://%s/cam.cgi?mode=%s&type=%s&value=%s",
+      "query_fields": [
+        [
+          "mode",
+          "%s"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/view/setting/C5531ak.java",
+          "line": 104
+        },
+        {
+          "file": "avc/cng/view/setting/C5596ar.java",
+          "line": 155
+        },
+        {
+          "file": "avc/cng/view/setting/C5602as.java",
+          "line": 155
+        },
+        {
+          "file": "avc/cng/view/setting/C5641av.java",
+          "line": 165
+        },
+        {
+          "file": "avc/cng/view/setting/C5651aw.java",
+          "line": 235
+        },
+        {
+          "file": "avc/cng/view/setting/C5780o.java",
+          "line": 194
+        },
+        {
+          "file": "avc/cng/view/setting/C5780o.java",
+          "line": 250
+        },
+        {
+          "file": "avc/cng/view/setting/C5792s.java",
+          "line": 147
+        },
+        {
+          "file": "avc/cng/view/setting/C5798t.java",
+          "line": 329
+        },
+        {
+          "file": "avc/cng/view/setting/C5798t.java",
+          "line": 332
+        },
+        {
+          "file": "avc/cng/view/setting/C5824w.java",
+          "line": 167
+        },
+        {
+          "file": "avc/cng/view/setting/C5830x.java",
+          "line": 139
+        },
+        {
+          "file": "avc/cng/view/setting/C5838y.java",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "literal": "http://%s/cam.cgi?mode=%s&type=%s&value=%s&value2=%s",
+      "query_fields": [
+        [
+          "mode",
+          "%s"
+        ],
+        [
+          "type",
+          "%s"
+        ],
+        [
+          "value",
+          "%s"
+        ],
+        [
+          "value2",
+          "%s"
+        ]
+      ],
+      "locations": [
+        {
+          "file": "avc/cng/view/setting/C5630au.java",
+          "line": 663
+        },
+        {
+          "file": "avc/cng/view/setting/C5780o.java",
+          "line": 221
+        },
+        {
+          "file": "avc/cng/view/setting/C5838y.java",
+          "line": 133
+        }
+      ]
+    }
+  ],
+  "literal_review_candidates": [
+    {
+      "file": "avc/cng/model/p051c/C1853h.java",
+      "line": 495,
+      "literal": "encryption"
+    }
+  ],
+  "selected_sources": [
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/C1501d.java",
+      "bytes": 21334,
+      "git_blob_sha1": "49c6df205d2845e271d60020fa7696f5f7a72456",
+      "sha256": "877b065fbe4f6251575f5c7ae782c4eabe1a6d662954de6b91501229ceb72631"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/C1497c.java",
+      "bytes": 14650,
+      "git_blob_sha1": "24bb5364f3f6423ff828035278ab50af10491805",
+      "sha256": "fb6d18558a5e1781dd974228b7e39080ed20052685e1f806274b876bf096c343"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/p051c/C1853h.java",
+      "bytes": 25532,
+      "git_blob_sha1": "8f17db963a72b394667ca4c2a62a686e31e0ca89",
+      "sha256": "b4ffc75a52d62f97967efe4f677c0d4ad2b87d96d32d4e88689255ce8ab38f6c"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/service/p056c/C2013a.java",
+      "bytes": 76079,
+      "git_blob_sha1": "bb7889ed3458e9277710219b9bce74fff05fdc53",
+      "sha256": "a123ee80d7e75f566db5403bd94678d768f018253601af664a4e132d342e627b"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/service/imageapp/ImageAppTotalService.java",
+      "bytes": 148664,
+      "git_blob_sha1": "83e89b1971d2c64e74e652a06894cfee6f439e3f",
+      "sha256": "23f4e9079e470845cfaa3c418903af64904114a6cc93dfe5494d531da0783b6a"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/service/p064k/C2178a.java",
+      "bytes": 10217,
+      "git_blob_sha1": "fa9203f457970101b2f034341ad8cf9e61709fb3",
+      "sha256": "071874a2be973bb26213389d56697aaa41e5e4620b5b45e9cd8551441776abf5"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/service/p064k/C2180c.java",
+      "bytes": 28581,
+      "git_blob_sha1": "43de0338a631ebc0d7eb97034b6a74ada238c5eb",
+      "sha256": "7978304f6afbfa8a9840c71603aa23c1ec02838f5395305e11fedebade0de686"
+    },
+    {
+      "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/dlna/DlnaWrapper.java",
+      "bytes": 17346,
+      "git_blob_sha1": "3b90cf091a4921bdbded7ccf45d9d9c8e317be5f",
+      "sha256": "9529287e1befc61c2c7e4f0ee68c63b613b66e44a719a658af2d1ea9918ea14a"
+    }
+  ],
+  "local_reports": [
+    {
+      "path": "work/image-app-full/provenance.json",
+      "bytes": 260928,
+      "sha256": "3cc2143dda36d3d5a0bc1922e3e53af5e92929e2643fe42720aab2f2b3bd6a91"
+    },
+    {
+      "path": "work/image-app-full/full-inventory.json",
+      "bytes": 215594,
+      "sha256": "c9e967cd861fdf4c7064dc3ab886c54b4d5edb0ec51d4cee9c8a4f6e52db111b"
+    },
+    {
+      "path": "work/image-app-full/native-static-inventory.json",
+      "bytes": 821861,
+      "sha256": "991303953efa5f04c0f97c5069e87b2ffe2f7aaf92380ec95a8ec039c9526b72"
+    }
+  ],
+  "findings": {
+    "access_request": {
+      "builder": "avc/cng/core/p040a/C1501d.java:171-181",
+      "format": "mode=accctrl&type=req_acc&value=CLIENT_ID&value2=URL_ENCODED_NAME",
+      "identity_callers": [
+        "avc/cng/model/service/p056c/C2013a.java:1463-1515",
+        "avc/cng/model/service/imageapp/ImageAppTotalService.java:2761-2765"
+      ],
+      "identity_prefix": "4D454930-0100-1000-8001-",
+      "identity_suffix_preference": "Dlna_UUID_Seed",
+      "pending_results": [
+        "ok_under_research",
+        "ok_under_research_no_msg"
+      ],
+      "rejection_results": [
+        "err_others_requesting",
+        "err_user_refused"
+      ],
+      "camera_validated": false,
+      "decompilation_limit": "C2013a method recovered as instruction dump; ImageAppTotalService control flow has decompiler errors. Treat literal checks and request data as static leads, not an executable reconstruction."
+    },
+    "encryption_literal": "C1853h.java:495 parses Wi-Fi settings alongside ssid/passwordlen/security; not a firmware cipher handler.",
+    "libdlnaCore_shell_strings": "ASCII XML document inspection help at file offsets 0x124b5d..0x1250bd; not evidence of a camera engineering shell. Telnet-option errors occur in the embedded HTTP client context.",
+    "libp2papl_api_crypto": "VIANA_COM_EncryptMsg/DecryptMsg, CRP_AES, RSA, DES and SSL symbols occur in the P2P library; no connection to GM5 UPD consumers has been established. Java C2180c loads the library through P2pmwlibJNI."
+  },
+  "limitations": [
+    "Third-party decompilation; not authenticated against installed owner APK.",
+    "All Panasonic Java literal inventory and all nine native-library dynamic symbols/ASCII strings were covered; only selected paths were manually traced/disassembled.",
+    "Other packages, Java bytecode not recovered correctly, runtime-generated commands and camera-supplied menus are not fully characterized.",
+    "No absence-of-functionality proof follows from negative string results.",
+    "No camera connection, native-library execution, firmware plaintext or update key."
+  ]
+}

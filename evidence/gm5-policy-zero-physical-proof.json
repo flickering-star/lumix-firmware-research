@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T10:54:19.658208+00:00",
+  "scope": "Physical modified GM5 main installation, exact readback and normal-power-cycle policy persistence",
+  "model": "DMC-GM5",
+  "package": {
+    "path": "work/gm5-policy-zero-1/GM5__V11.bin",
+    "bytes": 8390144,
+    "sha256": "86832e6eafa90b453894237805dafe128f61d346066f73a3752a8071d8286f16"
+  },
+  "expected_main_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+  "actual_main_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+  "main_readback_bytes": 8388608,
+  "main_byte_identical_to_candidate_plaintext": true,
+  "differences_from_original_main": [
+    {
+      "offset": "0x6b1bdc",
+      "flash_address": "0x406b1bdc",
+      "before": 1,
+      "after": 0
+    }
+  ],
+  "version_halfwords_unchanged": [
+    "0x111",
+    "0x111"
+  ],
+  "rom_policy_before": 1,
+  "rom_policy_after": 0,
+  "ram_policy_after_normal_power_cycle": 0,
+  "owner_update_observation": "Took longer this time, I think camera restarted before reaching end of progress bar. Can you check that changed flag now?",
+  "owner_power_cycle_confirmation": {
+    "schema": 1,
+    "time_utc": "2026-11-06T10:43:54.110066+00:00",
+    "owner_confirmation": "I also did a normal off/on cycle",
+    "refers_to": "After the automatic update restart and before reconnecting for the first post-update ROM/RAM reads",
+    "rom_read_record": "evidence/gm5-policy-zero-first-rom-read.json",
+    "ram_read_record": "evidence/gm5-policy-zero-first-flash-proof.json",
+    "rom_policy_halfword_after_normal_off_on": 0,
+    "ram_policy_halfword_after_normal_off_on": 0,
+    "post_restart_host_ram_or_nor_writes": false,
+    "persistence_across_owner_reported_normal_off_on_verified": true,
+    "whole_main_integrity_check_pending": true,
+    "additional_power_cycle_required": false
+  },
+  "preparation_request_audit": {
+    "fixed_ram_writes": 1,
+    "other_outgoing_requests_are_reads": true,
+    "read_requests": 22,
+    "write_address": "0x70a68490",
+    "host_nor_programming_request_present": false,
+    "transcript_sha256": "2313216dc36124631c89f17c182adfd45b8ecfbbb11e631f258ee96ee6b83c73"
+  },
+  "read_only_capture_checks": {
+    "before_rom": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-security-flag-Xk61O5CJ",
+      "model": "DMC-GM5",
+      "mode": "security-flag",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 1,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-security-flag-Xk61O5CJ/result/security-flag.bin",
+      "verified_prefix_bytes": 1024,
+      "program_sha256": "6d76a45b6286ec0bb42bef6f24d41fc771d5b463511a327b98846ad1c33d49fc",
+      "program_file_base": "0x406b1800",
+      "program_file_offset": 0,
+      "next_program_address": "0x406b1c00",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "after_rom": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-security-flag-72Lw4iIb",
+      "model": "DMC-GM5",
+      "mode": "security-flag",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 1,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-security-flag-72Lw4iIb/result/security-flag.bin",
+      "verified_prefix_bytes": 1024,
+      "program_sha256": "c689d119f652f1e45aef3e71936f470308a6c9ed5aa8585cb371bf1355f2115f",
+      "program_file_base": "0x406b1800",
+      "program_file_offset": 0,
+      "next_program_address": "0x406b1c00",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "after_ram": {
+      "schema": 1,
+      "capture": "captures/gm5-usb-runtime-control-Shpyrejn",
+      "model": "DMC-GM5",
+      "mode": "runtime-control",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 1,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-usb-runtime-control-Shpyrejn/result/runtime-control.bin",
+      "verified_prefix_bytes": 1024,
+      "program_sha256": "ad55d30fefad1923a5039efdd8bc77a5a13e668e2f0f209a979889be5a44c3b0",
+      "program_file_base": "0x70a68400",
+      "program_file_offset": 0,
+      "next_program_address": "0x70a68800",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "complete_main": {
+      "schema": 1,
+      "capture": "captures/gm5-program-readback-f61hhqc_",
+      "model": "DMC-GM5",
+      "mode": "program",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 8192,
+      "resume_anchors_verified": 0,
+      "copied_prefix_bytes": 0,
+      "program_file": "captures/gm5-program-readback-f61hhqc_/result/program-main.bin",
+      "verified_prefix_bytes": 8388608,
+      "program_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+      "program_file_base": "0x40000000",
+      "program_file_offset": 0,
+      "next_program_address": "0x40800000",
+      "terminal_phase": "idle",
+      "errors": []
+    }
+  },
+  "original_backup": {
+    "path": "captures/gm5-flash-backup-9z320rtf/result/flash32m.bin",
+    "bytes": 33554432,
+    "sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca"
+  },
+  "original_backup_unchanged": true,
+  "native_candidate_evidence": {
+    "path": "evidence/gm5-policy-zero-package.json",
+    "bytes": 40302,
+    "sha256": "521adee2ce16063a5af781e087634db033d9e642e0d4d8f2def29702af405662"
+  },
+  "sd_preparation_evidence": {
+    "path": "evidence/gm5-policy-zero-sd.json",
+    "bytes": 1111,
+    "sha256": "3590f9e88ac7a06e7e64de2230bb80a56ef41cb84f63b7fa6d2447e545998088"
+  },
+  "arm_evidence": {
+    "path": "evidence/gm5-policy-zero-arm.json",
+    "bytes": 2500,
+    "sha256": "ce01fb55bf17959d66db9da6d91f742087f30a502b64956caccbda5df690f596"
+  },
+  "collector_sha256": "1194e6ea2c8657e892763f3cf637290d8b101e63414bb21c9183999f6e4d23b4",
+  "verified": {
+    "modified_unsigned_sd_main_installation": true,
+    "complete_8MiB_main_matches_exact_candidate": true,
+    "persistent_rom_and_ram_policy_zero": true,
+    "post_update_measurement_transfers_are_read_only": true
+  },
+  "limits": [
+    "This confirms this connected GM5/build and exact candidate, not all firmware variants or arbitrary patches.",
+    "The complete 32 MiB NOR and other independent storage were not reread after this test; no full physical calibration comparison is claimed.",
+    "Normal off/on is an owner observation; the ROM/RAM values and complete main are packet-verified service reads.",
+    "No external recovery programmer has been validated, and broader camera-function testing is outside this proof."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T10:43:54.110066+00:00",
+  "owner_confirmation": "I also did a normal off/on cycle",
+  "refers_to": "After the automatic update restart and before reconnecting for the first post-update ROM/RAM reads",
+  "rom_read_record": "evidence/gm5-policy-zero-first-rom-read.json",
+  "ram_read_record": "evidence/gm5-policy-zero-first-flash-proof.json",
+  "rom_policy_halfword_after_normal_off_on": 0,
+  "ram_policy_halfword_after_normal_off_on": 0,
+  "post_restart_host_ram_or_nor_writes": false,
+  "persistence_across_owner_reported_normal_off_on_verified": true,
+  "whole_main_integrity_check_pending": true,
+  "additional_power_cycle_required": false
+}

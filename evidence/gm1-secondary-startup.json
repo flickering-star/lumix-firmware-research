@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "scope": "GM1 secondary startup/data mappings; no updater key inferred",
+  "source": {
+    "path": "captures/gm1-usb-secondary-window-z4CoRCM6/result/program2-window.bin",
+    "prefix_bytes": 65536,
+    "prefix_sha256": "7eaec6c8a65805d282a5e0e3e1f137c5cc0a1d2774d070e9da388aad25a49fc5"
+  },
+  "verifier": {
+    "path": "tools/gm1_secondary_verify.py",
+    "sha256": "946397edf7b2ff47e4885a1a990f7fbf1219c9d6b079ba780ebf2a03aadc4e4f"
+  },
+  "flash_base": "0x41400000",
+  "linked_base": "0x7bc00000",
+  "regions": [
+    {
+      "name": "secondary_reset",
+      "start": "0x7bc00000",
+      "end_exclusive": "0x7bc00058",
+      "instruction_count": 51,
+      "raw_annotations_match_source": true,
+      "native_sha256": "5e9f3921c319eac46322f83866ab3d34a2b8aa4210ff8d3fba960b6305619456",
+      "disassembly": "7bc00000  mov\t2076180560,a1\t; fcdd5000c07b\n7bc00006  jmp\t(a1)\t; f0f5\n7bc00008  clr\td0\t; 00\n7bc00009  clr\td0\t; 00\n7bc0000a  clr\td0\t; 00\n7bc0000b  clr\td0\t; 00\n7bc0000c  clr\td0\t; 00\n7bc0000d  clr\td0\t; 00\n7bc0000e  clr\td0\t; 00\n7bc0000f  clr\td0\t; 00\n7bc00010  clr\td0\t; 00\n7bc00011  clr\td0\t; 00\n7bc00012  clr\td0\t; 00\n7bc00013  clr\td0\t; 00\n7bc00014  clr\td0\t; 00\n7bc00015  clr\td0\t; 00\n7bc00016  clr\td0\t; 00\n7bc00017  clr\td0\t; 00\n7bc00018  jmp\t0x7bdf2ea9\t; dc912e1f00\n7bc0001d  clr\td0\t; 00\n7bc0001e  clr\td0\t; 00\n7bc0001f  clr\td0\t; 00\n7bc00020  jmp\t0x7bdf2ea9\t; dc892e1f00\n7bc00025  clr\td0\t; 00\n7bc00026  clr\td0\t; 00\n7bc00027  clr\td0\t; 00\n7bc00028  jmp\t0x7bdf2ea9\t; dc812e1f00\n7bc0002d  clr\td0\t; 00\n7bc0002e  clr\td0\t; 00\n7bc0002f  clr\td0\t; 00\n7bc00030  jmp\t0x7bdf2ea9\t; dc792e1f00\n7bc00035  clr\td0\t; 00\n7bc00036  clr\td0\t; 00\n7bc00037  clr\td0\t; 00\n7bc00038  jmp\t0x7bdf2ea9\t; dc712e1f00\n7bc0003d  clr\td0\t; 00\n7bc0003e  clr\td0\t; 00\n7bc0003f  clr\td0\t; 00\n7bc00040  jmp\t0x7bdf2ea9\t; dc692e1f00\n7bc00045  clr\td0\t; 00\n7bc00046  clr\td0\t; 00\n7bc00047  clr\td0\t; 00\n7bc00048  jmp\t0x7bdf2ea9\t; dc612e1f00\n7bc0004d  clr\td0\t; 00\n7bc0004e  clr\td0\t; 00\n7bc0004f  clr\td0\t; 00\n7bc00050  clr\td1\t; 04\n7bc00051  mov\td1,psw\t; f2f7\n7bc00053  nop\t\t; cb\n7bc00054  nop\t\t; cb\n7bc00055  jmp\t0x7bc00128\t; ccd300\n"
+    },
+    {
+      "name": "first_data_initialization",
+      "start": "0x7bc000e3",
+      "end_exclusive": "0x7bc00119",
+      "instruction_count": 24,
+      "raw_annotations_match_source": true,
+      "native_sha256": "195415f8596c77dce19fa2af528e681554f7101791eef1b409ce05cd3863066a",
+      "disassembly": "7bc000e3  mov\t1888989184,a0\t; fcdc00b09770\n7bc000e9  mov\t1888990364,a1\t; fcdd9cb49770\n7bc000ef  cmp\ta0,a1\t; b1\n7bc000f0  beq\t0x7bc000f9\t; c809\n7bc000f2  clr\td0\t; 00\n7bc000f3  setlb\t\t; db\n7bc000f4  mov\td0,(a0)\t; 60\n7bc000f5  inc4\ta0\t; 50\n7bc000f6  cmp\ta1,a0\t; b4\n7bc000f7  nop\t\t; cb\n7bc000f8  lcs\t\t; d4\n7bc000f9  mov\t2079076704,a0\t; fcdc6031ec7b\n7bc000ff  mov\t2079076704,d1\t; fccd6031ec7b\n7bc00105  cmp\ta0,d1\t; f191\n7bc00107  beq\t0x7bc00117\t; c810\n7bc00109  mov\t1888989184,a1\t; fcdd00b09770\n7bc0010f  setlb\t\t; db\n7bc00110  mov\t(a0),d0\t; 70\n7bc00111  mov\td0,(a1)\t; 61\n7bc00112  inc4\ta0\t; 50\n7bc00113  inc4\ta1\t; 51\n7bc00114  cmp\td1,a0\t; f1a4\n7bc00116  lcs\t\t; d4\n7bc00117  jmp\t(a3)\t; f0f7\n"
+    },
+    {
+      "name": "later_data_initialization",
+      "start": "0x7bc001b5",
+      "end_exclusive": "0x7bc0022e",
+      "instruction_count": 50,
+      "raw_annotations_match_source": true,
+      "native_sha256": "4632d9a8dccae3dd8df55a1293169d43e231816d5277504dcb7fb624170810eb",
+      "disassembly": "7bc001b5  mov\t1890587516,a0\t; fcdc7c13b070\n7bc001bb  mov\t1890685008,a1\t; fcdd5090b170\n7bc001c1  cmp\ta0,a1\t; b1\n7bc001c2  beq\t0x7bc001cb\t; c809\n7bc001c4  clr\td0\t; 00\n7bc001c5  setlb\t\t; db\n7bc001c6  mov\td0,(a0)\t; 60\n7bc001c7  inc4\ta0\t; 50\n7bc001c8  cmp\ta1,a0\t; b4\n7bc001c9  nop\t\t; cb\n7bc001ca  lcs\t\t; d4\n7bc001cb  mov\t2079076704,a0\t; fcdc6031ec7b\n7bc001d1  mov\t2079076712,d1\t; fccd6831ec7b\n7bc001d7  cmp\ta0,d1\t; f191\n7bc001d9  beq\t0x7bc001e9\t; c810\n7bc001db  mov\t1890587508,a1\t; fcdd7413b070\n7bc001e1  setlb\t\t; db\n7bc001e2  mov\t(a0),d0\t; 70\n7bc001e3  mov\td0,(a1)\t; 61\n7bc001e4  inc4\ta0\t; 50\n7bc001e5  inc4\ta1\t; 51\n7bc001e6  cmp\td1,a0\t; f1a4\n7bc001e8  lcs\t\t; d4\n7bc001e9  mov\t1890702860,a0\t; fcdc0cd6b170\n7bc001ef  mov\t1890812420,a1\t; fcdd0482b370\n7bc001f5  cmp\ta0,a1\t; b1\n7bc001f6  beq\t0x7bc001ff\t; c809\n7bc001f8  clr\td0\t; 00\n7bc001f9  setlb\t\t; db\n7bc001fa  mov\td0,(a0)\t; 60\n7bc001fb  inc4\ta0\t; 50\n7bc001fc  cmp\ta1,a0\t; b4\n7bc001fd  nop\t\t; cb\n7bc001fe  lcs\t\t; d4\n7bc001ff  mov\t2079076712,a0\t; fcdc6831ec7b\n7bc00205  mov\t2079094564,d1\t; fccd2477ec7b\n7bc0020b  cmp\ta0,d1\t; f191\n7bc0020d  beq\t0x7bc0021d\t; c810\n7bc0020f  mov\t1890685008,a1\t; fcdd5090b170\n7bc00215  setlb\t\t; db\n7bc00216  mov\t(a0),d0\t; 70\n7bc00217  mov\td0,(a1)\t; 61\n7bc00218  inc4\ta0\t; 50\n7bc00219  inc4\ta1\t; 51\n7bc0021a  cmp\td1,a0\t; f1a4\n7bc0021c  lcs\t\t; d4\n7bc0021d  mov\t(0x9c010200),d0\t; fca40002019c\n7bc00223  or\t16,d0\t; f8e410\n7bc00226  mov\td0,(0x9c010200)\t; fc810002019c\n7bc0022c  jmp\t(a3)\t; f0f7\n"
+    }
+  ],
+  "initialized_copies": [
+    {
+      "linked_source_start": "0x7bec3160",
+      "linked_source_end_exclusive": "0x7bec3168",
+      "flash_start": "0x416c3160",
+      "flash_end_exclusive": "0x416c3168",
+      "ram_destination": "0x70b01374",
+      "bytes": 8
+    },
+    {
+      "linked_source_start": "0x7bec3168",
+      "linked_source_end_exclusive": "0x7bec7724",
+      "flash_start": "0x416c3168",
+      "flash_end_exclusive": "0x416c7724",
+      "ram_destination": "0x70b19050",
+      "bytes": 17852
+    }
+  ],
+  "limits": [
+    "Mapping follows the main startup copy and the physically matched secondary reset.",
+    "No initializer field is identified as an update key by this verifier.",
+    "No camera connection, native target execution or flash write occurs."
+  ]
+}

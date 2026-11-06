@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "scope": "Physically read GM1 startup mappings; no GM5 or update-key identity inferred",
+  "source": {
+    "path": "captures/gm1-usb-program-qUdxsgb3/result/program-main.bin",
+    "verified_prefix_bytes": 1226752,
+    "verified_prefix_sha256": "ae9ec5587e03aa57e68b61922bd9e516e90eabdf90eb23c29fc71c38db36e0d8",
+    "acquisition": "evidence/gm1-usb-readback.json"
+  },
+  "verifier": {
+    "path": "tools/gm1_startup_verify.py",
+    "sha256": "ba34daa99d93a93f60a8339c590f8d8608a278705f4f93c7f52abbaedc5b6073"
+  },
+  "regions": [
+    {
+      "name": "main_reset",
+      "start": "0x40000000",
+      "end_exclusive": "0x40000038",
+      "instruction_count": 32,
+      "raw_annotations_match_source": true,
+      "native_sha256": "3b8ad9bd7053757c5b5307e62522abc1028ab4d17085d19a7beec9631eb7e130",
+      "disassembly": "40000000  mov\t1073741848,a1\t; fcdd18000040\n40000006  jmp\t(a1)\t; f0f5\n40000008  bra\t0x40000046\t; ca3e\n4000000a  clr\td0\t; 00\n4000000b  clr\td0\t; 00\n4000000c  clr\td0\t; 00\n4000000d  clr\td0\t; 00\n4000000e  clr\td0\t; 00\n4000000f  clr\td0\t; 00\n40000010  rti\t\t; f0fd\n40000012  clr\td0\t; 00\n40000013  clr\td0\t; 00\n40000014  clr\td0\t; 00\n40000015  clr\td0\t; 00\n40000016  clr\td0\t; 00\n40000017  clr\td0\t; 00\n40000018  mov\t(0x00008050),d0\t; 305080\n4000001b  asl\t3,d0\t; f8c003\n4000001e  mov\t1073741864,a0\t; fcdc28000040\n40000024  add\td0,a0\t; f160\n40000026  jmp\t(a0)\t; f0f4\n40000028  bra\t0x4000008c\t; ca64\n4000002a  clr\td0\t; 00\n4000002b  clr\td0\t; 00\n4000002c  clr\td0\t; 00\n4000002d  clr\td0\t; 00\n4000002e  clr\td0\t; 00\n4000002f  clr\td0\t; 00\n40000030  jmp\t0x7bc00000\t; dcd0ffbf3b\n40000035  clr\td0\t; 00\n40000036  clr\td0\t; 00\n40000037  clr\td0\t; 00\n"
+    },
+    {
+      "name": "initialized_data_copy",
+      "start": "0x4000017d",
+      "end_exclusive": "0x400001af",
+      "instruction_count": 20,
+      "raw_annotations_match_source": true,
+      "native_sha256": "a6732a5bb8c16d33b55d5f10462b13be0e22d7d7d18c643cf77d9ff215cfcf0c",
+      "disassembly": "4000017d  setlb\t\t; db\n4000017e  movhu\t(0x00008988),d0\t; 388889\n40000181  btst\t64,d0\t; f8ec40\n40000184  leq\t\t; d8\n40000185  and\t61440,d0\t; fae000f0\n40000189  or\t7,d0\t; f8e407\n4000018c  movhu\td0,(0x00008988)\t; 038889\n4000018f  mov\t1079654532,a0\t; fcdc84385a40\n40000195  mov\t1079686476,d1\t; fccd4cb55a40\n4000019b  cmp\ta0,d1\t; f191\n4000019d  beq\t0x400001ad\t; c810\n4000019f  mov\t1879048192,a1\t; fcdd00000070\n400001a5  setlb\t\t; db\n400001a6  mov\t(a0),d0\t; 70\n400001a7  mov\td0,(a1)\t; 61\n400001a8  inc4\ta0\t; 50\n400001a9  inc4\ta1\t; 51\n400001aa  cmp\td1,a0\t; f1a4\n400001ac  lcs\t\t; d4\n400001ad  jmp\t(a3)\t; f0f7\n"
+    },
+    {
+      "name": "secondary_code_copy",
+      "start": "0x400510dd",
+      "end_exclusive": "0x4005121d",
+      "instruction_count": 97,
+      "raw_annotations_match_source": true,
+      "native_sha256": "70a2bce1be5b430a6388aae8a39177ab1d0ee8ccc30f1d4382d7f08ddddcbd1e",
+      "disassembly": "400510dd  mov\t1879080136,d3\t; fccfc87c0070\n400510e3  mov\t1882410180,d0\t; fcccc44c3370\n400510e9  mov\t1879048192,a0\t; fcdc00000070\n400510ef  cmp\ta0,d3\t; f193\n400510f1  bcs\t0x400510fb\t; c40a\n400510f3  cmp\t2147483647,d3\t; fccbffffff7f\n400510f9  bls\t0x4005110b\t; c712\n400510fb  cmp\t-1342177280,d3\t; fccb000000b0\n40051101  bcs\t0x4005113e\t; c43d\n40051103  cmp\t-1073741825,d3\t; fccbffffffbf\n40051109  bhi\t0x4005113e\t; c535\n4005110b  cmp\ta0,d3\t; f193\n4005110d  bcs\t0x40051120\t; c413\n4005110f  mov\td3,d1\t; 8d\n40051110  sub\ta0,d1\t; f111\n40051112  or\t268435456,d1\t; fce500000010\n40051118  cmp\t2147483647,d3\t; fccbffffff7f\n4005111e  bls\t0x4005114b\t; c72d\n40051120  mov\t-1342177280,d1\t; fccd000000b0\n40051126  cmp\td1,d3\t; a7\n40051127  bcs\t0x4005113b\t; c414\n40051129  mov\td3,d2\t; 8e\n4005112a  sub\td1,d2\t; f106\n4005112c  mov\td2,d1\t; 89\n4005112d  or\t268435456,d1\t; fce500000010\n40051133  cmp\t-1073741825,d3\t; fccbffffffbf\n40051139  bls\t0x4005114b\t; c712\n4005113b  mov\td3,d1\t; 8d\n4005113c  bra\t0x4005114b\t; ca0f\n4005113e  mov\td3,d1\t; 8d\n4005113f  and\t268435455,d1\t; fce1ffffff0f\n40051145  or\t268435456,d1\t; fce500000010\n4005114b  mov\t8224,d2\t; 2e2020\n4005114e  movhu\td2,(0x9c011000)\t; fc8b0010019c\n40051154  movhu\td1,(0x9c011002)\t; fc870210019c\n4005115a  mov\td1,d2\t; 86\n4005115b  lsr\t16,d2\t; f8c610\n4005115e  movhu\td2,(0x9c011004)\t; fc8b0410019c\n40051164  clr\td2\t; 08\n40051165  movhu\td2,(0x9c011006)\t; fc8b0610019c\n4005116b  movhu\td2,(0x9c011008)\t; fc8b0810019c\n40051171  lsr\t28,d1\t; f8c51c\n40051174  asl\t4,d1\t; f8c104\n40051177  movhu\td1,(0x9c011012)\t; fc871210019c\n4005117d  mov\td2,d1\t; 89\n4005117e  movhu\td1,(0x9c01100a)\t; fc870a10019c\n40051184  movhu\td1,(0x9c01100c)\t; fc870c10019c\n4005118a  movhu\td1,(0x9c014000)\t; fc870040019c\n40051190  mov\t4608,d1\t; 2d0012\n40051193  movhu\td1,(0x9c01400a)\t; fc870a40019c\n40051199  mov\t39937,d1\t; fccd019c0000\n4005119f  movhu\td1,(0x9c01400c)\t; fc870c40019c\n400511a5  mov\t4104,d2\t; 2e0810\n400511a8  movhu\td2,(0x9c014006)\t; fc8b0640019c\n400511ae  movhu\td1,(0x9c014008)\t; fc870840019c\n400511b4  sub\td3,d0\t; f10c\n400511b6  movhu\td0,(0x9c01400e)\t; fc830e40019c\n400511bc  lsr\t16,d0\t; f8c410\n400511bf  movhu\td0,(0x9c014010)\t; fc831040019c\n400511c5  mov\t16576,d0\t; 2cc040\n400511c8  movhu\td0,(0x9c014002)\t; fc830240019c\n400511ce  mov\t1,d0\t; 8001\n400511d0  movhu\td0,(0x9c014004)\t; fc830440019c\n400511d6  mov\t1094713344,a1\t; fcdd00004041\n400511dc  mov\t2076180480,d1\t; fccd0000c07b\n400511e2  sub\ta0,d1\t; f111\n400511e4  add\t-1342177280,d1\t; fcc1000000b0\n400511ea  mov\td1,a2\t; f1e6\n400511ec  mov\ta2,a0\t; 98\n400511ed  setlb\t\t; db\n400511ee  mov\t(a1),d0\t; 71\n400511ef  inc4\ta1\t; 51\n400511f0  mov\td0,(a0)\t; 60\n400511f1  mov\t(a1),d0\t; 71\n400511f2  inc4\ta0\t; 50\n400511f3  mov\td0,(a0)\t; 60\n400511f4  inc4\ta1\t; 51\n400511f5  mov\t(a1),d0\t; 71\n400511f6  inc4\ta0\t; 50\n400511f7  mov\td0,(a0)\t; 60\n400511f8  inc4\ta1\t; 51\n400511f9  mov\t(a1),d0\t; 71\n400511fa  inc4\ta0\t; 50\n400511fb  mov\td0,(a0)\t; 60\n400511fc  inc4\ta1\t; 51\n400511fd  inc4\ta0\t; 50\n400511fe  cmp\t1098252288,a1\t; fcd900007641\n40051204  lcs\t\t; d4\n40051205  mov\t(a2),d0\t; 72\n40051206  mov\td0,(sp)\t; 4200\n40051208  mov\t(256,a2),d0\t; fa020001\n4005120c  mov\td0,(sp)\t; 4200\n4005120e  mov\t(512,a2),d0\t; fa020002\n40051212  mov\td0,(sp)\t; 4200\n40051214  mov\t(768,a2),d0\t; fa020003\n40051218  mov\td0,(sp)\t; 4200\n4005121a  retf\t[d2,d3,a2],16\t; dee010\n"
+    }
+  ],
+  "initialized_data": {
+    "flash_start": "0x405a3884",
+    "flash_end_exclusive": "0x405ab54c",
+    "ram_start": "0x70000000",
+    "bytes": 31944
+  },
+  "secondary_code": {
+    "flash_start": "0x41400000",
+    "flash_end_exclusive": "0x41760000",
+    "bytes": 3538944,
+    "linked_entry": "0x7bc00000",
+    "official_directory_component": "program2",
+    "alias_note": "The copy destination uses address arithmetic; physical/runtime alias hardware is not independently verified."
+  },
+  "limits": [
+    "RAM initializer is located; no field in it is established as a GM1 update key yet.",
+    "Secondary program is mapped by native code but not acquired by this verifier.",
+    "No camera or firmware code is executed by this tool."
+  ]
+}

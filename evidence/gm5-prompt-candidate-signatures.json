@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "scope": "Independent ECDSA and LibreSSL checks on all three prompt candidates; no camera contact",
+  "public_key_sha256": "555494372cd6c1617c675516e983dd2580adafb2bd07e750fcf4209595287fb7",
+  "signed_region_start": "0x2a0",
+  "signed_region_bytes": 812,
+  "candidates": [
+    {
+      "variant": "standard-version",
+      "candidate_sha256": "aa91363a49248b0635b6f1b2dc4739498d429ffacdcc7995d47069c63c1f9ae8",
+      "signed_directory_sha256": "2b11f8a02fa14c2d81f6b9c41a418cd33b51c477bc30e0c2001e1d36ba924bec",
+      "independent_ecdsa_valid": true,
+      "libressl_valid": true,
+      "unsigned_marker_selected": true
+    },
+    {
+      "variant": "relaxed-version",
+      "candidate_sha256": "e1ae4ad23a7eb88bc691d2e6bab49e594ccfe82626f114723fd8ac9ca775fa14",
+      "signed_directory_sha256": "8c3f88c04c46d09bb03905237571a93e3cf75855dfc2fd5f32ace4714b6bcb7a",
+      "independent_ecdsa_valid": false,
+      "libressl_valid": false,
+      "unsigned_marker_selected": true
+    },
+    {
+      "variant": "advertised-0112",
+      "candidate_sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3",
+      "signed_directory_sha256": "8bb282c1e9e3ad02ea560055f41ff9b0cb1bbe0234825b909817b6f45c04f285",
+      "independent_ecdsa_valid": false,
+      "libressl_valid": false,
+      "unsigned_marker_selected": true
+    }
+  ],
+  "correction": "Earlier package reports incorrectly described the signature as invalid for every variant. Minimal marker-only variant changes bytes outside signed input and retains a valid directory signature."
+}

@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "scope": "Demonstrated volatile GM5 RAM flag control; firmware flashing remains untested",
+  "capture": "captures/gm5-ram-enable-unsigned-na8tSwJi",
+  "mode": "ram-enable",
+  "complete": true,
+  "model": "DMC-GM5",
+  "address": "0x70a68490",
+  "halfword_values_read_back": [
+    1,
+    0
+  ],
+  "halfword_writes_verified": 1,
+  "original_value_restored": false,
+  "full_ram_block_restored_identically": false,
+  "changed_offsets_after_clear": [
+    "0x90"
+  ],
+  "native_guards": {
+    "operation": "0x9c",
+    "dispatch_table": "0x4061e494",
+    "branch": "0x4036ce71",
+    "handler": "0x4036e086",
+    "usb_mode": 0
+  },
+  "settings_words_verified": 16,
+  "block_responses_verified": 6,
+  "write_acks_verified": 1,
+  "artifacts": {
+    "dispatch-table.bin": {
+      "bytes": 1024,
+      "sha256": "789c1dd614af1b74b8e68c4eb9262bdc44f193556804f5af6164eb2f6af5a6de"
+    },
+    "dispatch-branch.bin": {
+      "bytes": 1024,
+      "sha256": "7c580db12c5c5fc37afcacb9a0c75929d4164b49c6a03f54f307135e882348d9"
+    },
+    "write-handler.bin": {
+      "bytes": 1024,
+      "sha256": "247bdd53e25eb02ccaea710e1b1129b08f3cc71ae388ac08910345bf8ea7a698"
+    },
+    "usb-mode.bin": {
+      "bytes": 1024,
+      "sha256": "c8090378f0cefdc3bb03c412ea204c8d00500763219b83748d3efac4ca68f02d"
+    },
+    "ram-before.bin": {
+      "bytes": 1024,
+      "sha256": "4d4a3cded8de7fe88cf67ef3127ec712546eaee3e3887231d20fdb633080510f"
+    },
+    "ram-cleared.bin": {
+      "bytes": 1024,
+      "sha256": "ad55d30fefad1923a5039efdd8bc77a5a13e668e2f0f209a979889be5a44c3b0"
+    }
+  },
+  "events_sha256": "536560dfc74bd55c8a01df5b72eea26a62eb85c5b637a6ec4163592bde606c30",
+  "ram_source_sha256": "d8f235214645c830098030359052df0502a74b7157b2fb3b3b81fd70508cad8f",
+  "shared_source_sha256": "09bdf9eebf49544756fb181641debec38fc100a6385fefb4bdbcb086a2c6f2ed",
+  "verifier": {
+    "path": "tools/gm5_ram_toggle_verify.py",
+    "sha256": "8e3205d782eac444c96d6c0c0300950adf9195da2b662482105bd8423cad0f7c"
+  },
+  "limits": {
+    "flash_written": false,
+    "settings_written": false,
+    "unsigned_image_accepted": false,
+    "sd_update_invoked": false,
+    "persistence_across_disconnect_or_reboot_tested": false
+  }
+}

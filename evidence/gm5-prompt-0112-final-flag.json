@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "scope": "Demonstrated volatile GM5 RAM flag control; firmware flashing remains untested",
+  "capture": "captures/gm5-ram-restore-signed-B4DJcWzu",
+  "mode": "ram-restore",
+  "complete": true,
+  "model": "DMC-GM5",
+  "address": "0x70a68490",
+  "halfword_values_read_back": [
+    1
+  ],
+  "halfword_writes_verified": 0,
+  "original_value_restored": true,
+  "full_ram_block_restored_identically": false,
+  "changed_offsets_after_clear": [],
+  "native_guards": {
+    "operation": "0x9c",
+    "dispatch_table": "0x4061e494",
+    "branch": "0x4036ce71",
+    "handler": "0x4036e086",
+    "usb_mode": 0
+  },
+  "settings_words_verified": 16,
+  "block_responses_verified": 5,
+  "write_acks_verified": 0,
+  "artifacts": {
+    "dispatch-table.bin": {
+      "bytes": 1024,
+      "sha256": "789c1dd614af1b74b8e68c4eb9262bdc44f193556804f5af6164eb2f6af5a6de"
+    },
+    "dispatch-branch.bin": {
+      "bytes": 1024,
+      "sha256": "7c580db12c5c5fc37afcacb9a0c75929d4164b49c6a03f54f307135e882348d9"
+    },
+    "write-handler.bin": {
+      "bytes": 1024,
+      "sha256": "247bdd53e25eb02ccaea710e1b1129b08f3cc71ae388ac08910345bf8ea7a698"
+    },
+    "usb-mode.bin": {
+      "bytes": 1024,
+      "sha256": "c8090378f0cefdc3bb03c412ea204c8d00500763219b83748d3efac4ca68f02d"
+    },
+    "ram-before.bin": {
+      "bytes": 1024,
+      "sha256": "daba4f6a86c61eca9d88b9f37e31ec5be35d96bcf8b09903a5c6374d0e7714be"
+    }
+  },
+  "events_sha256": "f8191c4a0422b21c8e09bea97e9fab39fe37da14c2d896b6f449523c4f3f0820",
+  "ram_source_sha256": "d8f235214645c830098030359052df0502a74b7157b2fb3b3b81fd70508cad8f",
+  "shared_source_sha256": "04cd025b30b4e33fd315b7cf9070209155f0cbfa265cbc776bf13b9b72e7f1d0",
+  "verifier": {
+    "path": "tools/gm5_ram_toggle_verify.py",
+    "sha256": "6c9c49a2d6542527485ac1371c715bf64effcf18ff9b8ebf8a70174ee68ea7fa"
+  },
+  "limits": {
+    "flash_written": false,
+    "settings_written": false,
+    "unsigned_image_accepted": false,
+    "sd_update_invoked": false,
+    "persistence_across_disconnect_or_reboot_tested": false
+  }
+}

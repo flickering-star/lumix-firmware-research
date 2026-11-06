@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "scope": "Public offline workflow reproduction; no camera operations",
+  "both_known_main_baselines_reproduce_same_language_main": true,
+  "policy_only_recipe_reproduces_verified_baseline": true,
+  "generated_package_byte_identical_to_physical_test_file": true,
+  "main_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+  "package_sha256": "4954b517462b8ee5f900945496b882ddfa45f97b540f0d1dad6dcdf706ea50c7",
+  "package_bytes": 8390144,
+  "codec_roundtrip_exact": true,
+  "recipes": {
+    "gm5-v11-jp-policy-zero.json": "7fc836d7ee585d07726cffb6010d15afba7429c3605954fce51452a4418b593c",
+    "gm5-v11-jp-language.json": "1f2ed5c344077c4b040035e24e2b0e89609b1d4a091027ece0bde0a7773ee5de"
+  },
+  "firmware_binaries_distributed": false,
+  "test_scope_note": "Historical native evidence retains its original experiment counts. The curated public checkout is tested separately; optional private-input tests skip when inputs are absent.",
+  "public_checkout_tests": {
+    "total": 111,
+    "passed": 61,
+    "skipped": 50,
+    "seconds": 45.976
+  }
+}

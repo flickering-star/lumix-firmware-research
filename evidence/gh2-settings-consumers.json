@@ -1,0 +1,416 @@
+{
+  "schema": 1,
+  "scope": "Offline cross-generation code-consumer study; GH2 1.2 only, not GM5 plaintext",
+  "source_positive_control": {
+    "source_url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GH2__V12.zip",
+    "archive_sha256": "456ce05fa715d8822ee15132b7d41e15823f755be0bc3183fcb04190cf10d433",
+    "binary_sha256": "e192ba2a7dba4167e4100efc896c5475faffd51164bd949e600964430454e817",
+    "binary_bytes": 15599104,
+    "key_source": "https://github.com/Siegfried82/lumix-s1m2-research/blob/8f625cfabb31e8a71177b86e2b63a69c686de5e8/analysis/ptool_crypto_results.json",
+    "aes128_key_hex": "90b43b5ce34c6e667fb28376b5fa5c27",
+    "mode": "AES-128-CBC",
+    "iv": "eaefe7eee29547706360c431f8452b50",
+    "expected_md5_hex": "35cb77e2ef08df9ef334ff1e496b0b02",
+    "actual_md5_hex": "35cb77e2ef08df9ef334ff1e496b0b02",
+    "full_plaintext_md5_matches": true,
+    "plaintext_head_hex": "4748320000000000000000000000000020012001040000003817230800000000",
+    "plaintext_sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "inner_directory": {
+    "count": 2,
+    "program": {
+      "file_offset": 1024,
+      "bytes": 15204352,
+      "destination_candidate": 0
+    },
+    "eep": {
+      "file_offset": 15205376,
+      "bytes": 393216,
+      "destination_candidate": 16384000
+    }
+  },
+  "program_mapping": {
+    "program_file_offset": 1024,
+    "runtime_start_candidate": 1073741824,
+    "file_zero_runtime_base": 1073740800,
+    "support": "First program instruction is mov 0x40000018,a1 followed by jmp(a1); string-immediate references match this mapping."
+  },
+  "decoder_build": {
+    "schema": 1,
+    "gnu_sources": [
+      {
+        "path": "work/toolchain/mn10300/opcodes/m10300-dis.c",
+        "bytes": 20405,
+        "sha256": "3e90bed29c09a7b5bb37775835a2514e97ca9f34a63356fc94f339812f2886d3",
+        "url": "https://gnu.googlesource.com/binutils-gdb/+/refs/tags/binutils-2_42/opcodes/m10300-dis.c?format=TEXT"
+      },
+      {
+        "path": "work/toolchain/mn10300/opcodes/m10300-opc.c",
+        "bytes": 103339,
+        "sha256": "248c10cfe1ac537021241297512fda789d09627a3c60d466015e3f63462c1148",
+        "url": "https://gnu.googlesource.com/binutils-gdb/+/refs/tags/binutils-2_42/opcodes/m10300-opc.c?format=TEXT"
+      },
+      {
+        "path": "work/toolchain/mn10300/include/opcode/mn10300.h",
+        "bytes": 4763,
+        "sha256": "99e1076f08acfb0512c8df1a5e91a8c6f5e04bc68cddc1c31071f1e83c923b3d",
+        "url": "https://gnu.googlesource.com/binutils-gdb/+/refs/tags/binutils-2_42/include/opcode/mn10300.h?format=TEXT"
+      }
+    ],
+    "compile_command": [
+      "/usr/bin/clang",
+      "-O0",
+      "-include",
+      "string.h",
+      "-I",
+      "tools/mn103_adapter",
+      "-I",
+      "work/toolchain/mn10300/include",
+      "tools/mn103_adapter/main.c",
+      "work/toolchain/mn10300/opcodes/m10300-dis.c",
+      "work/toolchain/mn10300/opcodes/m10300-opc.c",
+      "-o",
+      "work/toolchain/mn10300/mn103-dis"
+    ],
+    "adapter_sources": [
+      {
+        "path": "tools/mn103_adapter/main.c",
+        "bytes": 2233,
+        "sha256": "9e9beeab496778d0a62567f342299b9db966c27403d93475f56d150934319416"
+      },
+      {
+        "path": "tools/mn103_adapter/sysdep.h",
+        "bytes": 79,
+        "sha256": "d0c415d1cdf21d8c8e4fd9a4c9353ceeaff166482ff36e5a273c8cde0e64b86d"
+      },
+      {
+        "path": "tools/mn103_adapter/opintl.h",
+        "bytes": 23,
+        "sha256": "4f03441c034cee208fe3baaf1d78715c54b0febcda94693bc417c1ed4c4ff392"
+      },
+      {
+        "path": "tools/mn103_adapter/disassemble.h",
+        "bytes": 832,
+        "sha256": "e6ce140d3ae4b35b4c6f5d89d4a8845c94aa18e0477a0abe2fa6ff5d64adc093"
+      }
+    ],
+    "executable": {
+      "path": "work/toolchain/mn10300/mn103-dis",
+      "bytes": 75496,
+      "sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde"
+    },
+    "camera_code_executed": false
+  },
+  "decoder_controls": {
+    "decoder": "Unmodified GNU binutils 2.42 m10300-dis.c and m10300-opc.c with local read-only callback adapter",
+    "native_camera_code_executed": false,
+    "known_instruction_vectors_passed": 7,
+    "instruction_output": "40000000  mov\t1,d0\t; 8001\n40000002  rets\t\t; f0fc\n40000004  mov\t1073741848,a1\t; fcdd18000040\n4000000a  jmp\t(a1)\t; f0f5\n4000000c  bra\t0x4000000e\t; ca02\n4000000e  movhu\t(a0),d1\t; f064\n40000010  ret\t[],4\t; df0004\n",
+    "boundary_controls": [
+      {
+        "case": "before-file",
+        "exit_code": 2,
+        "rejected": true
+      },
+      {
+        "case": "past-file",
+        "exit_code": 2,
+        "rejected": true
+      }
+    ],
+    "current_build_receipt": "work/toolchain/mn10300/build.json",
+    "adapter_sources": [
+      {
+        "path": "tools/mn103_adapter/main.c",
+        "bytes": 2233,
+        "sha256": "9e9beeab496778d0a62567f342299b9db966c27403d93475f56d150934319416"
+      },
+      {
+        "path": "tools/mn103_adapter/sysdep.h",
+        "bytes": 79,
+        "sha256": "d0c415d1cdf21d8c8e4fd9a4c9353ceeaff166482ff36e5a273c8cde0e64b86d"
+      },
+      {
+        "path": "tools/mn103_adapter/opintl.h",
+        "bytes": 23,
+        "sha256": "4f03441c034cee208fe3baaf1d78715c54b0febcda94693bc417c1ed4c4ff392"
+      },
+      {
+        "path": "tools/mn103_adapter/disassemble.h",
+        "bytes": 832,
+        "sha256": "e6ce140d3ae4b35b4c6f5d89d4a8845c94aa18e0477a0abe2fa6ff5d64adc093"
+      }
+    ],
+    "executable": {
+      "path": "work/toolchain/mn10300/mn103-dis",
+      "bytes": 75496,
+      "sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde"
+    }
+  },
+  "regions": [
+    {
+      "name": "reset",
+      "runtime_start_candidate": 1073741824,
+      "runtime_end_exclusive": 1073741880,
+      "decrypted_body_file_offset": 1024,
+      "native_bytes_sha256": "771273cf1335bc9cb24b5dce2a7494cec11f3189ce40da58e87a5501e4e4eb9d",
+      "disassembly": "work/gh2-settings-code/reset.disasm.txt",
+      "disassembly_sha256": "70cf2795f186260cee918d3bcaab37f53ebf8d5d797fa788cc5ece60fd83ccd2"
+    },
+    {
+      "name": "settings-export-import-jobs",
+      "runtime_start_candidate": 1073897398,
+      "runtime_end_exclusive": 1073897756,
+      "decrypted_body_file_offset": 156598,
+      "native_bytes_sha256": "e5709cdc9ade8a6b2c01b682a464613868be87656250a920347572ecbde8d37f",
+      "disassembly": "work/gh2-settings-code/settings-export-import-jobs.disasm.txt",
+      "disassembly_sha256": "32bd12460040e2caf7bc35cb3e90bacb862ab9a6f7b9b9981c5b00db93e3c852"
+    },
+    {
+      "name": "eeprom-path-consumer",
+      "runtime_start_candidate": 1074768087,
+      "runtime_end_exclusive": 1074768227,
+      "decrypted_body_file_offset": 1027287,
+      "native_bytes_sha256": "e1192dfff5aec4fba65bed7a645beb0240eb0cec9cc1961c2c8792368aa0f2e8",
+      "disassembly": "work/gh2-settings-code/eeprom-path-consumer.disasm.txt",
+      "disassembly_sha256": "2030b37ecbd061668717dee70805bf8c0bbdf10a7e7ce364694301fda9de388c"
+    },
+    {
+      "name": "eeprom-format-consumer",
+      "runtime_start_candidate": 1075705663,
+      "runtime_end_exclusive": 1075706427,
+      "decrypted_body_file_offset": 1964863,
+      "native_bytes_sha256": "e79bbc45d288cab77dd7f21eaf6b1f2b712299ff27566c50bdcaf125e4f264ff",
+      "disassembly": "work/gh2-settings-code/eeprom-format-consumer.disasm.txt",
+      "disassembly_sha256": "ec5402c06593ec5560775ea4ad0c850dd6b9e3a33733cf6b5e768f89e0b69956"
+    },
+    {
+      "name": "eeprom-hex-helper",
+      "runtime_start_candidate": 1075706427,
+      "runtime_end_exclusive": 1075706503,
+      "decrypted_body_file_offset": 1965627,
+      "native_bytes_sha256": "ebddf0691d419de5daad71d972fee55f1d93039abf952fa077421d1740e79ff0",
+      "disassembly": "work/gh2-settings-code/eeprom-hex-helper.disasm.txt",
+      "disassembly_sha256": "0faa84ecd9bd11410315503d6cabca5a4e944cb623545f0fe90dbede773169ec"
+    },
+    {
+      "name": "eeprom-row-parser",
+      "runtime_start_candidate": 1075706503,
+      "runtime_end_exclusive": 1075706659,
+      "decrypted_body_file_offset": 1965703,
+      "native_bytes_sha256": "7883297d921609f24004ae6c867e3c19c2d5509c7d88c79b98870242d7442438",
+      "disassembly": "work/gh2-settings-code/eeprom-row-parser.disasm.txt",
+      "disassembly_sha256": "dc92e396699c4487df834f5a2ac4c47a076d7b795e6197ca1666e60abccec721"
+    },
+    {
+      "name": "ship-file-consumer",
+      "runtime_start_candidate": 1073897756,
+      "runtime_end_exclusive": 1073897877,
+      "decrypted_body_file_offset": 156956,
+      "native_bytes_sha256": "991264dad42804fbd6299f7bdde13c8e2caaf4bcc66f34a944ae1e4a257e4e2c",
+      "disassembly": "work/gh2-settings-code/ship-file-consumer.disasm.txt",
+      "disassembly_sha256": "2e3928a969f32b495cc0c43b51f942a52e3a6d0d88d2a8ce61b0a73236f44519"
+    },
+    {
+      "name": "ship-payload-consumer",
+      "runtime_start_candidate": 1074725615,
+      "runtime_end_exclusive": 1074726037,
+      "decrypted_body_file_offset": 984815,
+      "native_bytes_sha256": "10edbb4d86980dadafba17e99f5de9694cf1e0dfeb7f6ab411cf14c6583dff90",
+      "disassembly": "work/gh2-settings-code/ship-payload-consumer.disasm.txt",
+      "disassembly_sha256": "af1a46bfe0bc209061702c465c45b9d62d5f3b4b34c4e5047cc38fa90ed60e49"
+    },
+    {
+      "name": "generic-file-read",
+      "runtime_start_candidate": 1074725259,
+      "runtime_end_exclusive": 1074725405,
+      "decrypted_body_file_offset": 984459,
+      "native_bytes_sha256": "33a5450cd3e0c1c16c3d972feeb4b32d1ce23ce230ed753c4854366f661f1279",
+      "disassembly": "work/gh2-settings-code/generic-file-read.disasm.txt",
+      "disassembly_sha256": "fc5f4424459aa3fd6d1d41961196fec568fc8e572689b99a230d8f00bec62728"
+    }
+  ],
+  "selected_strings": [
+    {
+      "text": "###### EEPROM DATA INFORMATION ######",
+      "body_file_offset": 8299334,
+      "candidate_runtime_address": 1082040134
+    },
+    {
+      "text": "#@1:10     : AREA          : UPDATE ",
+      "body_file_offset": 8299372,
+      "candidate_runtime_address": 1082040172
+    },
+    {
+      "text": "#@1:20     : AREA          : FIX ADJUST ",
+      "body_file_offset": 8299409,
+      "candidate_runtime_address": 1082040209
+    },
+    {
+      "text": "#@1:30     : AREA          : SUB EEP ",
+      "body_file_offset": 8299450,
+      "candidate_runtime_address": 1082040250
+    },
+    {
+      "text": "#@1:40     : AREA          : UNKNOWN ",
+      "body_file_offset": 8299488,
+      "candidate_runtime_address": 1082040288
+    },
+    {
+      "text": "A:\\FACT_U.TXT",
+      "body_file_offset": 2361920,
+      "candidate_runtime_address": 1076102720
+    },
+    {
+      "text": "A:\\FACT_F.TXT",
+      "body_file_offset": 2361934,
+      "candidate_runtime_address": 1076102734
+    },
+    {
+      "text": "A:\\EEPROM00.txt",
+      "body_file_offset": 2361888,
+      "candidate_runtime_address": 1076102688
+    },
+    {
+      "text": "A:\\EEPROM01.txt",
+      "body_file_offset": 2361904,
+      "candidate_runtime_address": 1076102704
+    },
+    {
+      "text": "A:\\%sU.TXT",
+      "body_file_offset": 2361948,
+      "candidate_runtime_address": 1076102748
+    },
+    {
+      "text": "A:\\%sF.TXT",
+      "body_file_offset": 2361959,
+      "candidate_runtime_address": 1076102759
+    },
+    {
+      "text": "ship.txt",
+      "body_file_offset": 2101205,
+      "candidate_runtime_address": 1075842005
+    }
+  ],
+  "exporter": {
+    "entry": 1075705663,
+    "selector_0": {
+      "area_code": 16,
+      "name": "UPDATE",
+      "runtime_buffer_candidate": 1946164024,
+      "words": 4096
+    },
+    "selector_1": {
+      "area_code": 32,
+      "name": "FIX ADJUST",
+      "runtime_buffer_candidate": 1946172216,
+      "words": 16384
+    },
+    "selector_other": {
+      "words": 8192,
+      "runtime_buffer_candidate": 1946227516,
+      "selected_area_labels": [
+        "SUB EEP",
+        "UNKNOWN"
+      ]
+    },
+    "word_loop": 1075706307,
+    "word_load": 1075706313,
+    "source_stride_bytes": 2,
+    "format": "H row labels, four hex digits per native 16-bit value, trailing comma, CRLF after 16 values"
+  },
+  "filename_builder": {
+    "entry": 1074768087,
+    "mode_1": [
+      "A:\\EEPROM00.txt",
+      "A:\\EEPROM01.txt"
+    ],
+    "mode_2": [
+      "A:\\FACT_U.TXT",
+      "A:\\FACT_F.TXT"
+    ],
+    "other": [
+      "A:\\%sU.TXT",
+      "A:\\%sF.TXT"
+    ],
+    "activation_conditions_fully_traced": false
+  },
+  "importer": {
+    "caller": 1073897488,
+    "expected_fixed_text_bytes": 89407,
+    "expected_update_text_bytes": 22587,
+    "fixed_size_check": 1073897574,
+    "update_size_check": 1073897631,
+    "row_parser": 1075706503,
+    "hex_word_helper": 1075706427,
+    "fixed_staging_destination": 3035440128,
+    "update_staging_destination": 3035431936,
+    "output_area_bytes": [
+      32768,
+      8192
+    ],
+    "observation": "Row parser searches H000 then sequentially copies parsed words. It does not consult header address/size records or receive a destination-capacity argument. Reviewed caller separately checks text lengths."
+  },
+  "parser_model_controls": {
+    "scope": "GH2 native-loop behavioral model; firmware not executed",
+    "valid_gm1_format_controls": [
+      {
+        "source": "work/gm1-settings/GM1F.TXT",
+        "source_sha256": "f35feda24db57846cab08497a31862f2344335c600556dece929394d74643953",
+        "decoded_bytes": 32768,
+        "canonical_word_serialization_matches": true
+      },
+      {
+        "source": "work/gm1-settings/GM1U.TXT",
+        "source_sha256": "b5766eee715f6572544d5c0f2061a7ecc3fdb8543592e80059634f255f963375",
+        "decoded_bytes": 16384,
+        "canonical_word_serialization_matches": true
+      }
+    ],
+    "synthetic_size_controls": [
+      {
+        "area": "GH2 update",
+        "caller_expected_text_bytes": 22587,
+        "synthetic_text_bytes": 22587,
+        "caller_size_condition_satisfied": true,
+        "synthetic_input_sha256": "1af2035c3f1baffeb057a91cc46642cd8ef44e6b35680f602e6ea16346ec7093",
+        "modeled_output_bytes": 11290,
+        "expected_area_bytes": 8192,
+        "modeled_excess_bytes": 3098
+      },
+      {
+        "area": "GH2 fixed",
+        "caller_expected_text_bytes": 89407,
+        "synthetic_text_bytes": 89407,
+        "caller_size_condition_satisfied": true,
+        "synthetic_input_sha256": "70f0217bb7c1ca830a8500d979d603d9624a464dec37730a3e7bd34fc6a1624c",
+        "modeled_output_bytes": 44700,
+        "expected_area_bytes": 32768,
+        "modeled_excess_bytes": 11932
+      }
+    ],
+    "limitations": [
+      "Static control-flow review plus a Python model, not native firmware execution.",
+      "No physical GH2 behavior, memory corruption impact or exploitability validated.",
+      "No evidence yet that GM1 or GM5 contains the same parser or same allocation layout.",
+      "Only the reviewed caller's size check is modeled; other preconditions remain unmodeled.",
+      "No settings file for import was saved, sent or restored."
+    ]
+  },
+  "parser_model_source": {
+    "path": "evidence/gh2-row-parser-model.py",
+    "sha256": "fd6930e9a7456776be09e3db1a0a2f02467f72942854beba6461b2004d9af378"
+  },
+  "ship_file": {
+    "reader": 1073897756,
+    "consumer": 1074725615,
+    "observation": "Consumer parses numeric fields and returns them through caller-supplied pointers. No instruction execution or console enabling observed in the traced consumer."
+  },
+  "limitations": [
+    "No physical camera contacted; no firmware instructions emulated or executed.",
+    "Compiler/disassembler controls validate selected decoding cases, not every ISA instruction or every guessed function semantic.",
+    "File-zero runtime mapping and RAM buffer labels describe the GH2 sample only.",
+    "Import expansion past nominal settings extent is a static/model finding; actual allocation boundaries, exploitability and GM5 equivalence are unproven.",
+    "No restore file, debug flag, shell activation, GM5 plaintext or flashable image is produced."
+  ]
+}

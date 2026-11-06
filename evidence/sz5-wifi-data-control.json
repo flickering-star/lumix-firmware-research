@@ -1,0 +1,76 @@
+{
+  "acquired_utc": "2026-11-05T17:03:49.628520+00:00",
+  "official_page": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/SZ5/index.html",
+  "official_zip": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/sz5/SZ5__V12.zip",
+  "zip_bytes": 30907270,
+  "zip_sha256": "78769c1bd44340d4508058d6a9f1c8653e85d7fe7bcbef905b8c0c4eba3ed6e5",
+  "zip_crc_valid": true,
+  "bin_bytes": 46531584,
+  "bin_sha256": "c96dc4a5e8cfe49442b4f56b0fa5485e28d7bbe931a33241a24ec576c59011c9",
+  "revision": "0x200",
+  "body_crc_computed": "0x29051f37",
+  "body_crc_header": "0x29051f37",
+  "body_size_header": 46531072,
+  "outer_inner_first64_equal": true,
+  "scope": "Complete official SZ5 image; clear component comparison, no GM5 decryption or device connection",
+  "clear_components": [
+    {
+      "name": "storage",
+      "file_offset": "0x7e8400",
+      "bytes": 0,
+      "destination_candidate": "0xa80000",
+      "flags": 2,
+      "field32": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "field16": "00000000000000000000000000000000",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_hash_matches": true,
+      "prefix_hex": ""
+    },
+    {
+      "name": "history",
+      "file_offset": "0x7f4400",
+      "bytes": 131072,
+      "destination_candidate": "0xae0000",
+      "flags": 2,
+      "field32": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+      "field16": "00000000000000000000000000000000",
+      "sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+      "stored_hash_matches": true,
+      "prefix_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "web_uploade",
+      "file_offset": "0x145c400",
+      "bytes": 8388608,
+      "destination_candidate": "0x1a00000",
+      "flags": 2,
+      "field32": "a6832dfe1031d75d016a644c14b1da0b1beb413d89ed786966d5c9d851806e84",
+      "field16": "00000000000000000000000000000000",
+      "sha256": "a6832dfe1031d75d016a644c14b1da0b1beb413d89ed786966d5c9d851806e84",
+      "stored_hash_matches": true,
+      "prefix_hex": "5041434b0001000018000000a4000000bc00000094c85200080000004c554d495855502e45584500bc000000a85d33004c575547444a504e2e504446645e3300"
+    },
+    {
+      "name": "wifi_data",
+      "file_offset": "0x2260400",
+      "bytes": 10485760,
+      "destination_candidate": "0x3460000",
+      "flags": 2,
+      "field32": "e5b844cc57f57094ea4585e235f36c78c1cd222262bb89d53c94dcb4d6b3e55d",
+      "field16": "00000000000000000000000000000000",
+      "sha256": "e5b844cc57f57094ea4585e235f36c78c1cd222262bb89d53c94dcb4d6b3e55d",
+      "stored_hash_matches": true,
+      "prefix_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "wifi_data_triage": {
+    "sha256_record": "e5b844cc57f57094ea4585e235f36c78c1cd222262bb89d53c94dcb4d6b3e55d",
+    "bytes": 10485760,
+    "nonzero_bytes": 0,
+    "entropy": -0.0,
+    "first_nonzero": null,
+    "strings_count": 0,
+    "strings_sample": []
+  },
+  "finding": "All 10 MiB of the clear wifi_data component are zero bytes. The distinct wifi_prog component remains encoded with flags 3. This component supplies a digest/zero-data control, not readable network code."
+}

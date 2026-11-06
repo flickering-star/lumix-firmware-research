@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "gm5-v11-jp-language",
+  "model": "DMC-GM5",
+  "component": "program",
+  "input_bytes": 8388608,
+  "scope": "Exact installed Japanese 1.1 code build; other inputs are rejected",
+  "variants": [
+    {
+      "input_sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+      "output_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+      "patches": [
+        {
+          "offset": "0xaa01d",
+          "before": "c9",
+          "after": "ca",
+          "purpose": "Preserve Language setup-menu visibility"
+        },
+        {
+          "offset": "0x379bf0",
+          "before": "8f",
+          "after": "65",
+          "purpose": "Select multilingual language list for Japanese dispatch"
+        },
+        {
+          "offset": "0x491900",
+          "before": "c5",
+          "after": "ab",
+          "purpose": "Select multilingual saved-language normalization for Japanese dispatch"
+        },
+        {
+          "offset": "0x6b1bdc",
+          "before": "01",
+          "after": "00",
+          "purpose": "Initialize unsigned-input policy to zero"
+        }
+      ]
+    },
+    {
+      "input_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+      "output_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+      "patches": [
+        {
+          "offset": "0xaa01d",
+          "before": "c9",
+          "after": "ca",
+          "purpose": "Preserve Language setup-menu visibility"
+        },
+        {
+          "offset": "0x379bf0",
+          "before": "8f",
+          "after": "65",
+          "purpose": "Select multilingual language list for Japanese dispatch"
+        },
+        {
+          "offset": "0x491900",
+          "before": "c5",
+          "after": "ab",
+          "purpose": "Select multilingual saved-language normalization for Japanese dispatch"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "schema": 1,
+  "scope": "Static GH2 service-input and USB-preparation follow-up; no GM5 compatibility or hardware validation",
+  "source": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "bytes": 15598592,
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "verifier": {
+    "path": "tools/gh2_usb_service_verify.py",
+    "sha256": "f43a37e5701f67ef92dc65640d537bd0c2011f2861dc6d61a86ece495da09984",
+    "entry_verifier": {
+      "path": "tools/gh2_usb_entry_verify.py",
+      "sha256": "a1e32cffdcd08c0f4772da335ec822172b3ba14119257d3ca8b5b1347ca398d3",
+      "shared_helpers": "tools/gh2_debug_verify.py",
+      "shared_helpers_sha256": "5b84a69d08380620e496a61ecb2ad43ad2f0c9fdee2c4592054a126e7241bf4f"
+    },
+    "decoder": {
+      "path": "work/toolchain/mn10300/mn103-dis",
+      "sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde",
+      "machine_argument": 332
+    },
+    "pe_decoder": "/usr/bin/objdump",
+    "pe_decoder_sha256": "bed335fb48472e4ee3c2c3a38517b208326f37865bd57792df88b42669ec9603"
+  },
+  "earlier_entry_checks_reperformed": {
+    "reference": "evidence/gh2-usb-maintenance-entry.json",
+    "regions": 21,
+    "instructions": 943,
+    "relative_calls": 15,
+    "descriptor_positive_controls": {
+      "source": "evidence/gm5-usb-pc-ptp.json",
+      "source_sha256": "72d6f6c1b895b7bf6585df823898b0018d6d3b273a87c376e9b063bfb704b41f",
+      "results": [
+        {
+          "gh2_model_mode": 1,
+          "gm5_observed_mode": "pc",
+          "bytes": 32,
+          "byte_for_byte_match": true,
+          "hex": "09022000010100c0010904000002080650000705010200020007058202000200"
+        },
+        {
+          "gh2_model_mode": 3,
+          "gm5_observed_mode": "ptp",
+          "bytes": 39,
+          "byte_for_byte_match": true,
+          "hex": "09022700010100c001090400000306010100070501020002000705820200020007058303080008"
+        }
+      ]
+    }
+  },
+  "mechanical_checks": {
+    "regions": [
+      {
+        "name": "initialized_data_copy",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x40002000",
+        "end_exclusive": "0x40002034",
+        "body_offset": "0x2400",
+        "bytes": 52,
+        "native_sha256": "e042f475640a60f2be0ba90e6bfe29e3f1468bb66a0620e17179c0805a6182b9",
+        "instruction_count": 23,
+        "raw_annotations_match_source": true,
+        "disassembly": "40002000  mov\t1949744744,a0\t; fcdc68be3674\n40002006  mov\t1952425460,a1\t; fcddf4a55f74\n4000200c  cmp\ta0,a1\t; b1\n4000200d  beq\t0x40002016\t; c809\n4000200f  clr\td0\t; 00\n40002010  setlb\t\t; db\n40002011  mov\td0,(a0)\t; 60\n40002012  inc4\ta0\t; 50\n40002013  cmp\ta1,a0\t; b4\n40002014  nop\t\t; cb\n40002015  lcs\t\t; d4\n40002016  mov\t1082090372,a0\t; fcdc84637f40\n4000201c  mov\t1082183672,d1\t; fccdf8cf8040\n40002022  cmp\ta0,d1\t; f191\n40002024  beq\t0x40002034\t; c810\n40002026  mov\t1949651444,a1\t; fcddf4513574\n4000202c  setlb\t\t; db\n4000202d  mov\t(a0),d0\t; 70\n4000202e  mov\td0,(a1)\t; 61\n4000202f  inc4\ta0\t; 50\n40002030  inc4\ta1\t; 51\n40002031  cmp\td1,a0\t; f1a4\n40002033  lcs\t\t; d4\n"
+      },
+      {
+        "name": "all_related_boot_predicates",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bccb358",
+        "end_exclusive": "0x7bccb477",
+        "body_offset": "0x9cb758",
+        "bytes": 287,
+        "native_sha256": "0dd7de6c9694fa4fce3f2bb9fb587a81e9ec583b42a6a736985f8be59399c00f",
+        "instruction_count": 94,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bccb358  movhu\t(0x745ceabe),d0\t; fcacbeea5c74\n7bccb35e  call\t0x7bccaa02,[d2,d3],12\t; cda4f6c00c\n7bccb363  mov\td0,d1\t; 81\n7bccb364  clr\td0\t; 00\n7bccb365  cmp\t2048,d1\t; fac90008\n7bccb369  bne\t0x7bccb36d\t; c904\n7bccb36b  mov\t1,d0\t; 8001\n7bccb36d  extbu\td0\t; 14\n7bccb36e  ret\t[],4\t; df0004\n7bccb371  movhu\t(0x745ceaba),d0\t; fcacbaea5c74\n7bccb377  movhu\t(0x745ceab6),d1\t; fcadb6ea5c74\n7bccb37d  call\t0x7bccaa55,[d2,d3],12\t; cdd8f6c00c\n7bccb382  mov\td0,d2\t; 82\n7bccb383  movhu\t(0x745ceae0),d0\t; fcace0ea5c74\n7bccb389  call\t0x7bcca999,[d2,d3],12\t; cd10f6c00c\n7bccb38e  extbu\td2\t; 16\n7bccb38f  cmp\t3,d2\t; aa03\n7bccb391  bne\t0x7bccb3b3\t; c922\n7bccb393  cmp\t1024,d0\t; fac80004\n7bccb397  bne\t0x7bccb3b3\t; c91c\n7bccb399  call\t0x7bccb358,[],4\t; cdbfff0004\n7bccb39e  extbu\td0\t; 14\n7bccb39f  cmp\t0,d0\t; a000\n7bccb3a1  beq\t0x7bccb3b3\t; c812\n7bccb3a3  call\t0x401457b9,[d2],8\t; dd16a447c48008\n7bccb3aa  extbu\td0\t; 14\n7bccb3ab  cmp\t1,d0\t; a001\n7bccb3ad  bne\t0x7bccb3b3\t; c906\n7bccb3af  mov\t1,d0\t; 8001\n7bccb3b1  bra\t0x7bccb3b4\t; ca03\n7bccb3b3  clr\td0\t; 00\n7bccb3b4  ret\t[d2],8\t; df8008\n7bccb3b7  movhu\t(0x745ceaba),d0\t; fcacbaea5c74\n7bccb3bd  movhu\t(0x745ceab6),d1\t; fcadb6ea5c74\n7bccb3c3  call\t0x7bccaa55,[d2,d3],12\t; cd92f6c00c\n7bccb3c8  mov\td0,d2\t; 82\n7bccb3c9  movhu\t(0x745ceae0),d0\t; fcace0ea5c74\n7bccb3cf  call\t0x7bcca999,[d2,d3],12\t; cdcaf5c00c\n7bccb3d4  extbu\td2\t; 16\n7bccb3d5  cmp\t2,d2\t; aa02\n7bccb3d7  bne\t0x7bccb3f3\t; c91c\n7bccb3d9  cmp\t1024,d0\t; fac80004\n7bccb3dd  bne\t0x7bccb3f3\t; c916\n7bccb3df  call\t0x7bccb358,[],4\t; cd79ff0004\n7bccb3e4  extbu\td0\t; 14\n7bccb3e5  cmp\t0,d0\t; a000\n7bccb3e7  beq\t0x7bccb3f3\t; c80c\n7bccb3e9  movhu\t(0x74001e30),d0\t; fcac301e0074\n7bccb3ef  cmp\t1,d0\t; a001\n7bccb3f1  beq\t0x7bccb3f4\t; c803\n7bccb3f3  clr\td0\t; 00\n7bccb3f4  ret\t[d2],8\t; df8008\n7bccb3f7  movhu\t(0x745ceaba),d0\t; fcacbaea5c74\n7bccb3fd  movhu\t(0x745ceab6),d1\t; fcadb6ea5c74\n7bccb403  call\t0x7bccaa55,[d2,d3],12\t; cd52f6c00c\n7bccb408  mov\td0,d2\t; 82\n7bccb409  movhu\t(0x745ceae0),d0\t; fcace0ea5c74\n7bccb40f  call\t0x7bcca999,[d2,d3],12\t; cd8af5c00c\n7bccb414  extbu\td2\t; 16\n7bccb415  cmp\t0,d2\t; aa00\n7bccb417  bne\t0x7bccb42d\t; c916\n7bccb419  cmp\t1024,d0\t; fac80004\n7bccb41d  bne\t0x7bccb42d\t; c910\n7bccb41f  call\t0x7bccb358,[],4\t; cd39ff0004\n7bccb424  extbu\td0\t; 14\n7bccb425  cmp\t0,d0\t; a000\n7bccb427  beq\t0x7bccb42d\t; c806\n7bccb429  mov\t1,d0\t; 8001\n7bccb42b  bra\t0x7bccb42e\t; ca03\n7bccb42d  clr\td0\t; 00\n7bccb42e  ret\t[d2],8\t; df8008\n7bccb431  movhu\t(0x745ceaba),d0\t; fcacbaea5c74\n7bccb437  movhu\t(0x745ceab6),d1\t; fcadb6ea5c74\n7bccb43d  call\t0x7bccaa55,[d2,d3],12\t; cd18f6c00c\n7bccb442  mov\td0,d2\t; 82\n7bccb443  movhu\t(0x745ceae0),d0\t; fcace0ea5c74\n7bccb449  call\t0x7bcca999,[d2,d3],12\t; cd50f5c00c\n7bccb44e  extbu\td2\t; 16\n7bccb44f  cmp\t1,d2\t; aa01\n7bccb451  bne\t0x7bccb473\t; c922\n7bccb453  cmp\t1024,d0\t; fac80004\n7bccb457  bne\t0x7bccb473\t; c91c\n7bccb459  call\t0x7bccb358,[],4\t; cdfffe0004\n7bccb45e  extbu\td0\t; 14\n7bccb45f  cmp\t0,d0\t; a000\n7bccb461  beq\t0x7bccb473\t; c812\n7bccb463  call\t0x401457b9,[d2],8\t; dd56a347c48008\n7bccb46a  extbu\td0\t; 14\n7bccb46b  cmp\t1,d0\t; a001\n7bccb46d  bne\t0x7bccb473\t; c906\n7bccb46f  mov\t1,d0\t; 8001\n7bccb471  bra\t0x7bccb474\t; ca03\n7bccb473  clr\td0\t; 00\n7bccb474  ret\t[d2],8\t; df8008\n"
+      },
+      {
+        "name": "boot_predicate_calls",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x4000385a",
+        "end_exclusive": "0x400038bb",
+        "body_offset": "0x3c5a",
+        "bytes": 97,
+        "native_sha256": "68ccd4e66588d584e559ccbc93ccc869bb9a49b26d63ddd60d6366004716ed3a",
+        "instruction_count": 27,
+        "raw_annotations_match_source": true,
+        "disassembly": "4000385a  call\t0x7bccb323,[],4\t; ddc97acc3b0004\n40003861  call\t0x7bccb371,[d2],8\t; dd107bcc3b8008\n40003868  extbu\td0\t; 14\n40003869  cmp\t1,d0\t; a001\n4000386b  bne\t0x4000387c\t; c911\n4000386d  clr\td0\t; 00\n4000386e  call\t0x40060e1f,[d2,d3,a2,a3],52\t; ddb1d50500f034\n40003875  call\t0x7bcfe259,[d2,d3,a2,a3],180\t; dde4a9cf3bf0b4\n4000387c  call\t0x7bccb431,[d2],8\t; ddb57bcc3b8008\n40003883  extbu\td0\t; 14\n40003884  cmp\t0,d0\t; a000\n40003886  beq\t0x40003891\t; c80b\n40003888  mov\t1,d0\t; 8001\n4000388a  call\t0x40060e1f,[d2,d3,a2,a3],52\t; dd95d50500f034\n40003891  call\t0x7bccb3b7,[d2],8\t; dd267bcc3b8008\n40003898  extbu\td0\t; 14\n40003899  cmp\t1,d0\t; a001\n4000389b  bne\t0x400038a7\t; c90c\n4000389d  mov\t2,d0\t; 8002\n4000389f  movhu\td0,(0x74001e30)\t; fc83301e0074\n400038a5  bra\t0x400038bb\t; ca16\n400038a7  call\t0x7bccb3f7,[d2],8\t; dd507bcc3b8008\n400038ae  extbu\td0\t; 14\n400038af  cmp\t1,d0\t; a001\n400038b1  bne\t0x400038bb\t; c90a\n400038b3  mov\t1,d0\t; 8001\n400038b5  movbu\td0,(0x743673a6)\t; fc82a6733674\n"
+      },
+      {
+        "name": "absolute_difference_helper",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bc515a0",
+        "end_exclusive": "0x7bc515ac",
+        "body_offset": "0x9519a0",
+        "bytes": 12,
+        "native_sha256": "0a774b95ab62eb9bd1ef2ae403a9384a4d38044aab625f047907acd3e894320e",
+        "instruction_count": 7,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bc515a0  mov\td0,d1\t; 81\n7bc515a1  cmp\t0,d1\t; a500\n7bc515a3  bge\t0x7bc515a9\t; c206\n7bc515a5  not\td1\t; f231\n7bc515a7  mov\td1,d0\t; 84\n7bc515a8  inc\td0\t; 40\n7bc515a9  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "analog_input_acquisition",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bcca443",
+        "end_exclusive": "0x7bcca497",
+        "body_offset": "0x9ca843",
+        "bytes": 84,
+        "native_sha256": "3705f60edc594d8c6ef65abb40401de677744f74b35e80f6e0472c5d43c7708d",
+        "instruction_count": 20,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bcca443  mov\ta0,a3\t; 93\n7bcca444  call\t0x401f7371,[d2,d3,a2,a3],24\t; dd2dcf52c4f018\n7bcca44b  mov\t(0x7401db44),d0\t; fca444db0174\n7bcca451  mov\t5,d1\t; 8505\n7bcca453  movhu\td0,(20,sp)\t; f89314\n7bcca456  clr\td0\t; 00\n7bcca457  mov\t1952246454,a0\t; fcdcb6ea5c74\n7bcca45d  call\t0x4014502b,[d2,d3,a2,a3],28\t; ddceab47c4f01c\n7bcca464  mov\t20,d0\t; 8014\n7bcca466  mov\t6,d1\t; 8506\n7bcca468  mov\t1952246478,a0\t; fcdcceea5c74\n7bcca46e  call\t0x4014502b,[d2,d3,a2,a3],28\t; ddbdab47c4f01c\n7bcca475  mov\t29,d0\t; 801d\n7bcca477  mov\t2,d1\t; 8502\n7bcca479  mov\t1952246494,a0\t; fcdcdeea5c74\n7bcca47f  call\t0x4014502b,[d2,d3,a2,a3],28\t; ddacab47c4f01c\n7bcca486  mov\t26,d0\t; 801a\n7bcca488  mov\t1,d1\t; 8501\n7bcca48a  mov\t1946166626,a0\t; fcdc62250074\n7bcca490  call\t0x4014502b,[d2,d3,a2,a3],28\t; dd9bab47c4f01c\n"
+      },
+      {
+        "name": "rear_key_decoders",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bcca999",
+        "end_exclusive": "0x7bccaa55",
+        "body_offset": "0x9cad99",
+        "bytes": 188,
+        "native_sha256": "23c5b9336160723d05dd0134544cefd23b9206a598d6a92c66fcfca4bb87a97d",
+        "instruction_count": 64,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bcca999  mov\td0,d3\t; 83\n7bcca99a  clr\td2\t; 08\n7bcca99b  exthu\td3\t; 1f\n7bcca99c  movhu\t(0x7400b106),d1\t; fcad06b10074\n7bcca9a2  mov\td3,d0\t; 8c\n7bcca9a3  sub\td1,d0\t; f104\n7bcca9a5  call\t0x7bc515a0,[],0\t; ddfb6bf8ff0000\n7bcca9ac  cmp\t59,d0\t; a03b\n7bcca9ae  bge\t0x7bcca9b5\t; c207\n7bcca9b0  mov\t256,d2\t; 2e0001\n7bcca9b3  bra\t0x7bcca9fe\t; ca4b\n7bcca9b5  movhu\t(0x7400b108),d1\t; fcad08b10074\n7bcca9bb  mov\td3,d0\t; 8c\n7bcca9bc  sub\td1,d0\t; f104\n7bcca9be  call\t0x7bc515a0,[],0\t; dde26bf8ff0000\n7bcca9c5  cmp\t59,d0\t; a03b\n7bcca9c7  bge\t0x7bcca9ce\t; c207\n7bcca9c9  mov\t1024,d2\t; 2e0004\n7bcca9cc  bra\t0x7bcca9fe\t; ca32\n7bcca9ce  movhu\t(0x7400b10a),d1\t; fcad0ab10074\n7bcca9d4  mov\td3,d0\t; 8c\n7bcca9d5  sub\td1,d0\t; f104\n7bcca9d7  call\t0x7bc515a0,[],0\t; ddc96bf8ff0000\n7bcca9de  cmp\t59,d0\t; a03b\n7bcca9e0  bge\t0x7bcca9e7\t; c207\n7bcca9e2  mov\t512,d2\t; 2e0002\n7bcca9e5  bra\t0x7bcca9fe\t; ca19\n7bcca9e7  movhu\t(0x7400b10c),d1\t; fcad0cb10074\n7bcca9ed  sub\td1,d3\t; f107\n7bcca9ef  mov\td3,d0\t; 8c\n7bcca9f0  call\t0x7bc515a0,[],0\t; ddb06bf8ff0000\n7bcca9f7  cmp\t59,d0\t; a03b\n7bcca9f9  bge\t0x7bcca9fe\t; c205\n7bcca9fb  mov\t128,d2\t; 2e8000\n7bcca9fe  mov\td2,d0\t; 88\n7bcca9ff  ret\t[d2,d3],12\t; dfc00c\n7bccaa02  mov\td0,d3\t; 83\n7bccaa03  clr\td2\t; 08\n7bccaa04  exthu\td3\t; 1f\n7bccaa05  movhu\t(0x7400b106),d1\t; fcad06b10074\n7bccaa0b  mov\td3,d0\t; 8c\n7bccaa0c  sub\td1,d0\t; f104\n7bccaa0e  call\t0x7bc515a0,[],0\t; dd926bf8ff0000\n7bccaa15  cmp\t59,d0\t; a03b\n7bccaa17  bge\t0x7bccaa21\t; c20a\n7bccaa19  mov\t32768,d2\t; fcce00800000\n7bccaa1f  bra\t0x7bccaa51\t; ca32\n7bccaa21  movhu\t(0x7400b108),d1\t; fcad08b10074\n7bccaa27  mov\td3,d0\t; 8c\n7bccaa28  sub\td1,d0\t; f104\n7bccaa2a  call\t0x7bc515a0,[],0\t; dd766bf8ff0000\n7bccaa31  cmp\t59,d0\t; a03b\n7bccaa33  bge\t0x7bccaa3a\t; c207\n7bccaa35  mov\t2048,d2\t; 2e0008\n7bccaa38  bra\t0x7bccaa51\t; ca19\n7bccaa3a  movhu\t(0x7400b10a),d1\t; fcad0ab10074\n7bccaa40  sub\td1,d3\t; f107\n7bccaa42  mov\td3,d0\t; 8c\n7bccaa43  call\t0x7bc515a0,[],0\t; dd5d6bf8ff0000\n7bccaa4a  cmp\t59,d0\t; a03b\n7bccaa4c  bge\t0x7bccaa51\t; c205\n7bccaa4e  mov\t4096,d2\t; 2e0010\n7bccaa51  mov\td2,d0\t; 88\n7bccaa52  ret\t[d2,d3],12\t; dfc00c\n"
+      },
+      {
+        "name": "drive_lever_decoder",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bccaa55",
+        "end_exclusive": "0x7bccaac5",
+        "body_offset": "0x9cae55",
+        "bytes": 112,
+        "native_sha256": "1148190f717f6b6940789aaee03cd5767e22ba14c2c8f8ac4ee6f571d8d78f33",
+        "instruction_count": 38,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bccaa55  mov\td0,d3\t; 83\n7bccaa56  mov\t2,d2\t; 8a02\n7bccaa58  movhu\td3,(0x7400253a)\t; fc8f3a250074\n7bccaa5e  movhu\td1,(0x7400253c)\t; fc873c250074\n7bccaa64  exthu\td3\t; 1f\n7bccaa65  movhu\t(0x7400b0d0),d1\t; fcadd0b00074\n7bccaa6b  mov\td3,d0\t; 8c\n7bccaa6c  sub\td1,d0\t; f104\n7bccaa6e  call\t0x7bc515a0,[],0\t; dd326bf8ff0000\n7bccaa75  cmp\t59,d0\t; a03b\n7bccaa77  bge\t0x7bccaa7d\t; c206\n7bccaa79  mov\t3,d2\t; 8a03\n7bccaa7b  bra\t0x7bccaac0\t; ca45\n7bccaa7d  movhu\t(0x7400b0d2),d1\t; fcadd2b00074\n7bccaa83  mov\td3,d0\t; 8c\n7bccaa84  sub\td1,d0\t; f104\n7bccaa86  call\t0x7bc515a0,[],0\t; dd1a6bf8ff0000\n7bccaa8d  cmp\t59,d0\t; a03b\n7bccaa8f  bge\t0x7bccaa95\t; c206\n7bccaa91  mov\t1,d2\t; 8a01\n7bccaa93  bra\t0x7bccaac0\t; ca2d\n7bccaa95  movhu\t(0x7400b0d4),d1\t; fcadd4b00074\n7bccaa9b  mov\td3,d0\t; 8c\n7bccaa9c  sub\td1,d0\t; f104\n7bccaa9e  call\t0x7bc515a0,[],0\t; dd026bf8ff0000\n7bccaaa5  cmp\t59,d0\t; a03b\n7bccaaa7  bge\t0x7bccaaac\t; c205\n7bccaaa9  clr\td2\t; 08\n7bccaaaa  bra\t0x7bccaac0\t; ca16\n7bccaaac  movhu\t(0x7400b0d6),d1\t; fcadd6b00074\n7bccaab2  sub\td1,d3\t; f107\n7bccaab4  mov\td3,d0\t; 8c\n7bccaab5  call\t0x7bc515a0,[],0\t; ddeb6af8ff0000\n7bccaabc  cmp\t59,d0\t; a03b\n7bccaabe  bge\t0x7bccaac0\t; c202\n7bccaac0  mov\td2,d0\t; 88\n7bccaac1  extbu\td0\t; 14\n7bccaac2  ret\t[d2,d3],12\t; dfc00c\n"
+      },
+      {
+        "name": "raw_to_ui_key_mapping",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bccafe2",
+        "end_exclusive": "0x7bccb08a",
+        "body_offset": "0x9cb3e2",
+        "bytes": 168,
+        "native_sha256": "089eaf97df134d9515e23367afd5fb95014a1e9612cde3e097bcd5ad39113967",
+        "instruction_count": 69,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bccafe2  mov\t(4,sp),a0\t; 5c04\n7bccafe4  clr\td2\t; 08\n7bccafe5  mov\t(a0),a1\t; f004\n7bccafe7  mov\t1949739580,a0\t; fcdc3caa3674\n7bccafed  setlb\t\t; db\n7bccafee  mov\t(a0),d1\t; 74\n7bccafef  mov\ta1,d0\t; f1d4\n7bccaff1  and\td1,d0\t; f204\n7bccaff3  beq\t0x7bccaffa\t; c807\n7bccaff5  mov\t(4,a0),d0\t; f80004\n7bccaff8  or\td0,d2\t; f212\n7bccaffa  inc\td3\t; 4c\n7bccaffb  add\t8,a0\t; 2008\n7bccaffd  cmp\t20,d3\t; af14\n7bccafff  llt\t\t; d0\n7bccb000  btst\t512,d2\t; faee0002\n7bccb004  beq\t0x7bccb00a\t; c806\n7bccb006  or\t256,d2\t; fae60001\n7bccb00a  mov\t(8,sp),a0\t; 5c08\n7bccb00c  clr\td1\t; 04\n7bccb00d  movbu\t(a0),d0\t; f040\n7bccb00f  cmp\t3,d0\t; a003\n7bccb011  bne\t0x7bccb018\t; c907\n7bccb013  mov\t768,d1\t; 2d0003\n7bccb016  bra\t0x7bccb01f\t; ca09\n7bccb018  cmp\t2,d0\t; a002\n7bccb01a  bne\t0x7bccb01f\t; c905\n7bccb01c  mov\t256,d1\t; 2d0001\n7bccb01f  or\td1,d2\t; f216\n7bccb021  clr\td3\t; 0c\n7bccb022  mov\t1041,d1\t; 2d1104\n7bccb025  mov\td2,d0\t; 88\n7bccb026  and\td1,d0\t; f204\n7bccb028  cmp\td1,d0\t; a4\n7bccb029  bne\t0x7bccb031\t; c908\n7bccb02b  mov\t16777216,d3\t; fccf00000001\n7bccb031  mov\t1032,d1\t; 2d0804\n7bccb034  mov\td2,d0\t; 88\n7bccb035  and\td1,d0\t; f204\n7bccb037  cmp\td1,d0\t; a4\n7bccb038  bne\t0x7bccb040\t; c908\n7bccb03a  or\t33554432,d3\t; fce700000002\n7bccb040  mov\t1028,d1\t; 2d0404\n7bccb043  mov\td2,d0\t; 88\n7bccb044  and\td1,d0\t; f204\n7bccb046  cmp\td1,d0\t; a4\n7bccb047  bne\t0x7bccb04f\t; c908\n7bccb049  or\t67108864,d3\t; fce700000004\n7bccb04f  mov\t1152,d1\t; 2d8004\n7bccb052  mov\td2,d0\t; 88\n7bccb053  and\td1,d0\t; f204\n7bccb055  cmp\td1,d0\t; a4\n7bccb056  bne\t0x7bccb05e\t; c908\n7bccb058  or\t268435456,d3\t; fce700000010\n7bccb05e  movbu\t(38,sp),d0\t; f8b826\n7bccb061  mov\t(16,sp),a0\t; 5c10\n7bccb063  or\td3,d2\t; f21e\n7bccb065  mov\td0,d1\t; 81\n7bccb066  mov\t1949739296,a1\t; fcdd20a93674\n7bccb06c  mov\td0,a2\t; f1e2\n7bccb06e  mov\td2,d0\t; 88\n7bccb06f  call\t0x7bccb1b5,[d2,d3,a2,a3],28\t; cd4601f01c\n7bccb074  mov\t(4,sp),a0\t; 5c04\n7bccb076  mov\ta2,d1\t; f1d9\n7bccb078  mov\t(32,a0),d0\t; f80020\n7bccb07b  mov\t(16,sp),a0\t; 5c10\n7bccb07d  mov\t1949739424,a1\t; fcdda0a93674\n7bccb083  add\t20,a0\t; 2014\n7bccb085  call\t0x7bccb1b5,[d2,d3,a2,a3],28\t; cd3001f01c\n"
+      },
+      {
+        "name": "key_event_and_repeat_fields",
+        "file_zero_base": "0x7b2ffc00",
+        "start": "0x7bccb1b5",
+        "end_exclusive": "0x7bccb25b",
+        "body_offset": "0x9cb5b5",
+        "bytes": 166,
+        "native_sha256": "defb886c0e91ad91830a909ea81ce63199de0dd223a34677d36662a61be4056e",
+        "instruction_count": 85,
+        "raw_annotations_match_source": true,
+        "disassembly": "7bccb1b5  mov\td0,(sp)\t; 4200\n7bccb1b7  mov\t(a0),d3\t; 7c\n7bccb1b8  mov\t(sp),d2\t; 5a00\n7bccb1ba  xor\td3,d0\t; f22c\n7bccb1bc  mov\td0,(4,sp)\t; 4204\n7bccb1be  and\td2,d0\t; f208\n7bccb1c0  mov\td0,(8,sp)\t; 4208\n7bccb1c2  extbu\td1\t; 15\n7bccb1c3  clr\td0\t; 00\n7bccb1c4  cmp\td0,d1\t; a1\n7bccb1c5  bne\t0x7bccb23e\t; c979\n7bccb1c7  mov\t(a1),d1\t; 75\n7bccb1c8  cmp\td0,d1\t; a1\n7bccb1c9  beq\t0x7bccb23e\t; c875\n7bccb1cb  setlb\t\t; db\n7bccb1cc  mov\t(a1),d3\t; 7d\n7bccb1cd  mov\t(sp),d1\t; 5900\n7bccb1cf  and\td3,d1\t; f20d\n7bccb1d1  beq\t0x7bccb22b\t; c85a\n7bccb1d3  mov\t(sp),d1\t; 5900\n7bccb1d5  mov\t(4,a1),d2\t; f80904\n7bccb1d8  xor\td3,d1\t; f22d\n7bccb1da  and\td2,d1\t; f209\n7bccb1dc  bne\t0x7bccb231\t; c955\n7bccb1de  mov\t(8,sp),d1\t; 5908\n7bccb1e0  and\td3,d1\t; f20d\n7bccb1e2  bne\t0x7bccb1ee\t; c90c\n7bccb1e4  mov\t14,a3\t; 9f0e\n7bccb1e6  add\ta1,a3\t; f177\n7bccb1e8  movhu\t(a3),d1\t; f067\n7bccb1ea  cmp\t0,d1\t; a500\n7bccb1ec  bne\t0x7bccb1f6\t; c90a\n7bccb1ee  mov\t1,d1\t; 8501\n7bccb1f0  movhu\td1,(14,a1)\t; f8750e\n7bccb1f3  clr\td1\t; 04\n7bccb1f4  bra\t0x7bccb235\t; ca41\n7bccb1f6  mov\t12,a2\t; 9a0c\n7bccb1f8  add\ta1,a2\t; f176\n7bccb1fa  movhu\t(a2),d1\t; f066\n7bccb1fc  inc\td1\t; 44\n7bccb1fd  movhu\td1,(a2)\t; f076\n7bccb1ff  movhu\t(a3),d1\t; f067\n7bccb201  cmp\t1,d1\t; a501\n7bccb203  bne\t0x7bccb20f\t; c90c\n7bccb205  movhu\t(a2),d2\t; f06a\n7bccb207  movhu\t(8,a1),d1\t; f86508\n7bccb20a  cmp\td1,d2\t; a6\n7bccb20b  blt\t0x7bccb238\t; c02d\n7bccb20d  bra\t0x7bccb21b\t; ca0e\n7bccb20f  cmp\t2,d1\t; a502\n7bccb211  bne\t0x7bccb226\t; c915\n7bccb213  movhu\t(a2),d2\t; f06a\n7bccb215  movhu\t(10,a1),d1\t; f8650a\n7bccb218  cmp\td1,d2\t; a6\n7bccb219  blt\t0x7bccb238\t; c01f\n7bccb21b  or\td3,d0\t; f21c\n7bccb21d  mov\t2,d1\t; 8502\n7bccb21f  movhu\td1,(a3)\t; f077\n7bccb221  clr\td1\t; 04\n7bccb222  movhu\td1,(a2)\t; f076\n7bccb224  bra\t0x7bccb238\t; ca14\n7bccb226  clr\td1\t; 04\n7bccb227  movhu\td1,(a3)\t; f077\n7bccb229  bra\t0x7bccb222\t; caf9\n7bccb22b  mov\t(4,sp),d1\t; 5904\n7bccb22d  and\td3,d1\t; f20d\n7bccb22f  beq\t0x7bccb238\t; c809\n7bccb231  clr\td1\t; 04\n7bccb232  movhu\td1,(14,a1)\t; f8750e\n7bccb235  movhu\td1,(12,a1)\t; f8750c\n7bccb238  add\t16,a1\t; 2110\n7bccb23a  mov\t(a1),d1\t; 75\n7bccb23b  cmp\t0,d1\t; a500\n7bccb23d  lne\t\t; d9\n7bccb23e  mov\t(sp),d1\t; 5900\n7bccb240  mov\td1,(a0)\t; 64\n7bccb241  mov\t(8,sp),d1\t; 5908\n7bccb243  mov\td1,(4,a0)\t; f81404\n7bccb246  mov\td0,(8,a0)\t; f81008\n7bccb249  mov\t(sp),d0\t; 5800\n7bccb24b  mov\t(4,sp),d1\t; 5904\n7bccb24d  xor\t-1,d0\t; fce8ffffffff\n7bccb253  and\td1,d0\t; f204\n7bccb255  mov\td0,(12,a0)\t; f8100c\n7bccb258  retf\t[d2,d3,a2,a3],28\t; def01c\n"
+      },
+      {
+        "name": "setup_packet_decode",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e966d",
+        "end_exclusive": "0x401e96bf",
+        "body_offset": "0x1e9a6d",
+        "bytes": 82,
+        "native_sha256": "5245da180be150377bc7f9f52e77066b8ff3dfbcfb61dca4ea7d25893959290b",
+        "instruction_count": 41,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e966d  movbu\t(a0),d0\t; f040\n401e966f  inc\ta0\t; 41\n401e9670  movbu\td0,(a1)\t; f051\n401e9672  movbu\t(a0),d0\t; f040\n401e9674  inc\ta0\t; 41\n401e9675  movbu\td0,(1,a1)\t; f85101\n401e9678  movbu\t(a0),d0\t; f040\n401e967a  inc\ta0\t; 41\n401e967b  mov\t2,a2\t; 9a02\n401e967d  add\ta1,a2\t; f176\n401e967f  movbu\td0,(a2)\t; f052\n401e9681  movbu\t(a0),d0\t; f040\n401e9683  inc\ta0\t; 41\n401e9684  movbu\td0,(1,a2)\t; f85201\n401e9687  movbu\t(a0),d0\t; f040\n401e9689  mov\ta1,a2\t; 96\n401e968a  inc4\ta2\t; 52\n401e968b  movbu\td0,(a2)\t; f052\n401e968d  inc\ta0\t; 41\n401e968e  movbu\t(a0),d0\t; f040\n401e9690  inc\ta0\t; 41\n401e9691  movbu\td0,(1,a2)\t; f85201\n401e9694  movbu\t(a0),d0\t; f040\n401e9696  inc\ta0\t; 41\n401e9697  mov\t6,a2\t; 9a06\n401e9699  add\ta1,a2\t; f176\n401e969b  movbu\td0,(a2)\t; f052\n401e969d  movbu\t(a0),d0\t; f040\n401e969f  movbu\td0,(1,a2)\t; f85201\n401e96a2  movbu\t(a1),d0\t; f041\n401e96a4  and\t255,d0\t; f8e0ff\n401e96a7  extbu\td0\t; 14\n401e96a8  movhu\td0,(8,a1)\t; f87108\n401e96ab  movbu\t(a1),d0\t; f041\n401e96ad  and\t96,d0\t; f8e060\n401e96b0  extbu\td0\t; 14\n401e96b1  movhu\td0,(10,a1)\t; f8710a\n401e96b4  movbu\t(a1),d0\t; f041\n401e96b6  and\t31,d0\t; f8e01f\n401e96b9  movhu\td0,(12,a1)\t; f8710c\n401e96bc  retf\t[a2],4\t; de2004\n"
+      },
+      {
+        "name": "setup_request_type",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e96eb",
+        "end_exclusive": "0x401e970a",
+        "body_offset": "0x1e9aeb",
+        "bytes": 31,
+        "native_sha256": "b8aa8789be0653f7fafba0c08082b554283af074ce2feb96e8ac5ad4223c7a16",
+        "instruction_count": 16,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e96eb  clr\td1\t; 04\n401e96ec  and\t96,d0\t; f8e060\n401e96ef  asr\t5,d0\t; f8c805\n401e96f2  cmp\td1,d0\t; a4\n401e96f3  beq\t0x401e9705\t; c812\n401e96f5  cmp\t1,d0\t; a001\n401e96f7  beq\t0x401e96ff\t; c808\n401e96f9  cmp\t2,d0\t; a002\n401e96fb  beq\t0x401e9703\t; c808\n401e96fd  bra\t0x401e9705\t; ca08\n401e96ff  mov\t1,d1\t; 8501\n401e9701  bra\t0x401e9705\t; ca04\n401e9703  mov\t2,d1\t; 8502\n401e9705  mov\td1,d0\t; 84\n401e9706  extbu\td0\t; 14\n401e9707  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "setup_request_dispatch",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401e74cd",
+        "end_exclusive": "0x401e755b",
+        "body_offset": "0x1e78cd",
+        "bytes": 142,
+        "native_sha256": "da3801a62a076c806ed74b0ffce6d03239f307ff61d4d969d2d68e6e25aed846",
+        "instruction_count": 39,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e74cd  mov\t1951257116,a2\t; fcde1cd24d74\n401e74d3  mov\ta2,a0\t; 98\n401e74d4  movhu\t(0x744dd34e),d0\t; fcac4ed34d74\n401e74da  call\t0x401e7d15,[d2,a2],12\t; cd3b08a00c\n401e74df  mov\t1951257080,a1\t; fcddf8d14d74\n401e74e5  mov\ta2,a0\t; 98\n401e74e6  call\t0x401e966d,[a2],4\t; cd87212004\n401e74eb  movbu\t(0x744dd1f8),d0\t; fca8f8d14d74\n401e74f1  call\t0x401e96eb,[],0\t; cdfa210000\n401e74f6  extbu\td0\t; 14\n401e74f7  cmp\t0,d0\t; a000\n401e74f9  beq\t0x401e7505\t; c80c\n401e74fb  cmp\t1,d0\t; a001\n401e74fd  beq\t0x401e7520\t; c823\n401e74ff  cmp\t2,d0\t; a002\n401e7501  beq\t0x401e753c\t; c83b\n401e7503  bra\t0x401e7551\t; ca4e\n401e7505  clr\td0\t; 00\n401e7506  movhu\td0,(0x744dd1e4)\t; fc83e4d14d74\n401e750c  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401e7512  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401e7518  call\t0x401e84dd,[d2],8\t; cdc50f8008\n401e751d  jmp\t0x401e762a\t; cc0d01\n401e7520  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e7526  cmp\t3,d0\t; a003\n401e7528  bne\t0x401e7534\t; c90c\n401e752a  call\t0x401f1748,[d2,d3,a2],32\t; dd1ea20000e020\n401e7531  jmp\t0x401e762a\t; ccf900\n401e7534  call\t0x401ea0d1,[d2],8\t; cd9d2b8008\n401e7539  jmp\t0x401e762a\t; ccf100\n401e753c  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e7542  cmp\t2,d0\t; a002\n401e7544  beq\t0x401e7549\t; c805\n401e7546  jmp\t0x401e762a\t; cce400\n401e7549  call\t0x401eed80,[],4\t; cd37780004\n401e754e  jmp\t0x401e762a\t; ccdc00\n401e7551  clr\td0\t; 00\n401e7552  movhu\td0,(0x744dd1ea)\t; fc83ead14d74\n401e7558  jmp\t0x401e762a\t; ccd200\n"
+      },
+      {
+        "name": "vendor_bulk_preparation",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401eed80",
+        "end_exclusive": "0x401eee32",
+        "body_offset": "0x1ef180",
+        "bytes": 178,
+        "native_sha256": "48a3f9952da32f11afc4659147dd3a8b53e62a99579549de3999a67add2d9b7a",
+        "instruction_count": 51,
+        "raw_annotations_match_source": true,
+        "disassembly": "401eed80  movbu\t(0x744dd1f9),d1\t; fca9f9d14d74\n401eed86  clr\td0\t; 00\n401eed87  cmp\td0,d1\t; a1\n401eed88  bne\t0x401eeda0\t; c918\n401eed8a  movhu\t(0x744dd1fc),d0\t; fcacfcd14d74\n401eed90  cmp\t0,d0\t; a000\n401eed92  bne\t0x401eed9b\t; c909\n401eed94  call\t0x401eedad,[],4\t; cd19000004\n401eed99  bra\t0x401eeda0\t; ca07\n401eed9b  call\t0x401eedef,[],4\t; cd54000004\n401eeda0  extbu\td0\t; 14\n401eeda1  cmp\t0,d0\t; a000\n401eeda3  bne\t0x401eedaa\t; c907\n401eeda5  call\t0x401e963e,[],4\t; cd99a80004\n401eedaa  ret\t[],4\t; df0004\n401eedad  clr\td0\t; 00\n401eedae  movhu\td0,(0x744dcc00)\t; fc8300cc4d74\n401eedb4  movhu\td0,(0x744dcc02)\t; fc8302cc4d74\n401eedba  mov\t3,d0\t; 8003\n401eedbc  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401eedc2  mov\t5,d0\t; 8005\n401eedc4  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401eedca  mov\t2,d0\t; 8002\n401eedcc  call\t0x401ea03c,[d2],8\t; cd70b28008\n401eedd1  call\t0x401e95c9,[],4\t; cdf8a70004\n401eedd6  mov\t1,d0\t; 8001\n401eedd8  call\t0x401e9486,[d2],8\t; cdaea68008\n401eeddd  clr\td0\t; 00\n401eedde  movbu\td0,(0x744de022)\t; fc8222e04d74\n401eede4  mov\td0,(0x744dd1f4)\t; fc81f4d14d74\n401eedea  mov\t1,d0\t; 8001\n401eedec  ret\t[],4\t; df0004\n401eedef  movbu\t(0x744de022),d0\t; fca822e04d74\n401eedf5  cmp\t0,d0\t; a000\n401eedf7  mov\t32,d0\t; 8020\n401eedf9  movhu\td0,(0x744dd1e4)\t; fc83e4d14d74\n401eedff  mov\t3,d0\t; 8003\n401eee01  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401eee07  bne\t0x401eee11\t; c90a\n401eee09  mov\t1,d0\t; 8001\n401eee0b  movhu\td0,(0x744de01e)\t; fc831ee04d74\n401eee11  call\t0x401e95c9,[],4\t; cdb8a70004\n401eee16  movhu\t(0x744dd1e8),d0\t; fcace8d14d74\n401eee1c  cmp\t4,d0\t; a004\n401eee1e  bne\t0x401eee26\t; c908\n401eee20  clr\td0\t; 00\n401eee21  call\t0x401e97ab,[],0\t; cd8aa90000\n401eee26  clr\td0\t; 00\n401eee27  mov\td0,(0x744dd358)\t; fc8158d34d74\n401eee2d  mov\t1,d0\t; 8001\n401eee2f  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "endpoint_preparation_helper",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401ea03c",
+        "end_exclusive": "0x401ea0a6",
+        "body_offset": "0x1ea43c",
+        "bytes": 106,
+        "native_sha256": "2f6085e760f7307ecc76aa2307872879569dfe14b0e7a8024ae5e8cb19aeac03",
+        "instruction_count": 36,
+        "raw_annotations_match_source": true,
+        "disassembly": "401ea03c  movhu\t(0x9c00740e),d2\t; fcae0e74009c\n401ea042  exthu\td0\t; 1c\n401ea043  call\t0x401e9504,[],0\t; cdc1f40000\n401ea048  movhu\t(0x9c007420),d0\t; fcac2074009c\n401ea04e  btst\t1,d0\t; f8ec01\n401ea051  beq\t0x401ea079\t; c828\n401ea053  mov\t-1677691866,a0\t; fcdc2674009c\n401ea059  movhu\t(a0),d0\t; f060\n401ea05b  btst\t3,d0\t; f8ec03\n401ea05e  beq\t0x401ea068\t; c80a\n401ea060  movhu\t(a0),d0\t; f060\n401ea062  or\t2048,d0\t; fae40008\n401ea066  movhu\td0,(a0)\t; f070\n401ea068  movhu\t(a0),d0\t; f060\n401ea06a  btst\t3,d0\t; f8ec03\n401ea06d  beq\t0x401ea09d\t; c830\n401ea06f  movhu\t(a0),d0\t; f060\n401ea071  or\t2048,d0\t; fae40008\n401ea075  movhu\td0,(a0)\t; f070\n401ea077  bra\t0x401ea09d\t; ca26\n401ea079  mov\t-1677691868,a0\t; fcdc2474009c\n401ea07f  movhu\t(a0),d0\t; f060\n401ea081  btst\t3,d0\t; f8ec03\n401ea084  beq\t0x401ea08e\t; c80a\n401ea086  movhu\t(a0),d0\t; f060\n401ea088  or\t2048,d0\t; fae40008\n401ea08c  movhu\td0,(a0)\t; f070\n401ea08e  movhu\t(a0),d0\t; f060\n401ea090  btst\t3,d0\t; f8ec03\n401ea093  beq\t0x401ea09d\t; c80a\n401ea095  movhu\t(a0),d0\t; f060\n401ea097  or\t2048,d0\t; fae40008\n401ea09b  movhu\td0,(a0)\t; f070\n401ea09d  mov\td2,d0\t; 88\n401ea09e  call\t0x401e9504,[],0\t; cd66f40000\n401ea0a3  ret\t[d2],8\t; df8008\n"
+      },
+      {
+        "name": "bulk_receive_to_command_state",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401eefc2",
+        "end_exclusive": "0x401ef059",
+        "body_offset": "0x1ef3c2",
+        "bytes": 151,
+        "native_sha256": "1ac9f262f2c6d883e42543f6c9c6052b9918dcdae779ef485580c29602b231ee",
+        "instruction_count": 48,
+        "raw_annotations_match_source": true,
+        "disassembly": "401eefc2  mov\t1,d0\t; 8001\n401eefc4  call\t0x401e950d,[d2],8\t; cd49a58008\n401eefc9  exthu\td0\t; 1c\n401eefca  cmp\t0,d0\t; a000\n401eefcc  bne\t0x401eefd1\t; c905\n401eefce  ret\t[d2,d3,a2,a3],28\t; dff01c\n401eefd1  mov\t(0x744dd354),d0\t; fca454d34d74\n401eefd7  mov\t8192,d3\t; 2f0020\n401eefda  cmp\td3,d0\t; ac\n401eefdb  bls\t0x401eeff7\t; c71c\n401eefdd  movhu\t(0x7400b93c),d0\t; fcac3cb90074\n401eefe3  cmp\t1,d0\t; a001\n401eefe5  bne\t0x401eeff7\t; c912\n401eefe7  mov\t(0x744dd358),d0\t; fca458d34d74\n401eefed  cmp\t0,d0\t; a000\n401eefef  beq\t0x401eeff7\t; c808\n401eeff1  mov\t-1259625472,a2\t; fcde00a4ebb4\n401eeff7  mov\t(0x744dd358),d0\t; fca458d34d74\n401eeffd  lsr\t1,d0\t; f8c401\n401ef000  add\td0,d0\t; e0\n401ef001  add\td0,a2\t; f162\n401ef003  mov\ta2,a0\t; 98\n401ef004  call\t0x401e80d6,[d2,d3,a2,a3],28\t; cdd290f01c\n401ef009  mov\t(0x744dd358),d1\t; fca558d34d74\n401ef00f  mov\td0,d2\t; 82\n401ef010  cmp\t0,d1\t; a500\n401ef012  bne\t0x401ef033\t; c921\n401ef014  mov\ta2,a0\t; 98\n401ef015  call\t0x401ef4b2,[a2],4\t; cd9d042004\n401ef01a  mov\t(0x744dd354),d1\t; fca554d34d74\n401ef020  cmp\td3,d1\t; ad\n401ef021  bls\t0x401ef033\t; c712\n401ef023  mov\t-1259625472,a0\t; fcdc00a4ebb4\n401ef029  mov\td2,d0\t; 88\n401ef02a  exthu\td0\t; 1c\n401ef02b  mov\ta3,a1\t; 9d\n401ef02c  call\t0x7bc519c8,[a2,a3],8\t; dd9c29a63b3008\n401ef033  mov\t(0x744dd358),d1\t; fca558d34d74\n401ef039  exthu\td2\t; 1e\n401ef03a  add\td1,d2\t; e6\n401ef03b  mov\t(0x744dd354),d1\t; fca554d34d74\n401ef041  mov\td2,(0x744dd358)\t; fc8958d34d74\n401ef047  cmp\td1,d2\t; a6\n401ef048  bcs\t0x401ef07b\t; c433\n401ef04a  clr\td0\t; 00\n401ef04b  mov\td0,(0x744dd358)\t; fc8158d34d74\n401ef051  mov\t1,d0\t; 8001\n401ef053  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n"
+      },
+      {
+        "name": "binary_header_decode",
+        "file_zero_base": "0x3ffffc00",
+        "start": "0x401ef4b2",
+        "end_exclusive": "0x401ef592",
+        "body_offset": "0x1ef8b2",
+        "bytes": 224,
+        "native_sha256": "7c8a8ec997ae6168021ea62f5a8bbe727ce74a392433acc68b5c134880819185",
+        "instruction_count": 77,
+        "raw_annotations_match_source": true,
+        "disassembly": "401ef4b2  movbu\t(3,a0),d0\t; f84003\n401ef4b5  movhu\td0,(0x744dcbe8)\t; fc83e8cb4d74\n401ef4bb  movhu\t(0x744dcbe8),d1\t; fcade8cb4d74\n401ef4c1  cmp\t12,d1\t; a50c\n401ef4c3  blt\t0x401ef52d\t; c06a\n401ef4c5  cmp\t194,d1\t; fac9c200\n401ef4c9  bgt\t0x401ef52d\t; c164\n401ef4cb  add\t-11,d1\t; 29f5\n401ef4cd  mov\t1082074036,a2\t; fcdeb4237f40\n401ef4d3  mov\t15,d0\t; 800f\n401ef4d5  and\td1,d0\t; f204\n401ef4d7  asl\t3,d0\t; f8c003\n401ef4da  mov\td0,a1\t; f1e1\n401ef4dc  add\ta2,a1\t; f179\n401ef4de  mov\t(a1),d0\t; 71\n401ef4df  cmp\td1,d0\t; a4\n401ef4e0  beq\t0x401ef4f5\t; c815\n401ef4e2  cmp\t0,d0\t; a000\n401ef4e4  beq\t0x401ef52d\t; c849\n401ef4e6  add\t8,a1\t; 2108\n401ef4e8  cmp\t1082074164,a1\t; fcd934247f40\n401ef4ee  bcs\t0x401ef4f1\t; c403\n401ef4f0  mov\ta2,a1\t; 99\n401ef4f1  mov\t(a1),d0\t; 71\n401ef4f2  cmp\td1,d0\t; a4\n401ef4f3  bne\t0x401ef4e2\t; c9ef\n401ef4f5  mov\t(4,a1),a1\t; f82504\n401ef4f8  jmp\t(a1)\t; f0f5\n401ef4fa  mov\t2,d0\t; 8002\n401ef4fc  bra\t0x401ef52f\t; ca33\n401ef4fe  bra\t0x401ef525\t; ca27\n401ef500  movhu\t(0x7400b93c),d0\t; fcac3cb90074\n401ef506  mov\t3,d1\t; 8503\n401ef508  movhu\td1,(0x744dcbea)\t; fc87eacb4d74\n401ef50e  cmp\t1,d0\t; a001\n401ef510  beq\t0x401ef535\t; c825\n401ef512  bra\t0x401ef525\t; ca13\n401ef514  bra\t0x401ef525\t; ca11\n401ef516  movbu\t(4,a0),d0\t; f84004\n401ef519  mov\t8,d1\t; 8508\n401ef51b  movhu\td1,(0x744dcbea)\t; fc87eacb4d74\n401ef521  cmp\t0,d0\t; a000\n401ef523  beq\t0x401ef535\t; c812\n401ef525  mov\t1,d0\t; 8001\n401ef527  bra\t0x401ef52f\t; ca08\n401ef529  mov\t5,d0\t; 8005\n401ef52b  bra\t0x401ef52f\t; ca04\n401ef52d  mov\t8,d0\t; 8008\n401ef52f  movhu\td0,(0x744dcbea)\t; fc83eacb4d74\n401ef535  movbu\t(a0),d0\t; f040\n401ef537  mov\t1030,d1\t; 2d0604\n401ef53a  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef540  cmp\t1,d0\t; a001\n401ef542  beq\t0x401ef58f\t; c84d\n401ef544  mov\t262,d1\t; 2d0601\n401ef547  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef54d  cmp\t16,d0\t; a010\n401ef54f  beq\t0x401ef58f\t; c840\n401ef551  mov\t32774,d1\t; fccd06800000\n401ef557  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef55d  cmp\t2,d0\t; a002\n401ef55f  beq\t0x401ef58f\t; c830\n401ef561  mov\t8198,d1\t; 2d0620\n401ef564  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef56a  cmp\t3,d0\t; a003\n401ef56c  beq\t0x401ef58f\t; c823\n401ef56e  mov\t4102,d1\t; 2d0610\n401ef571  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef577  cmp\t4,d0\t; a004\n401ef579  beq\t0x401ef58f\t; c816\n401ef57b  mov\t106,d1\t; 856a\n401ef57d  mov\td1,(0x744dd354)\t; fc8554d34d74\n401ef583  cmp\t5,d0\t; a005\n401ef585  beq\t0x401ef58f\t; c80a\n401ef587  mov\t16,d0\t; 8010\n401ef589  mov\td0,(0x744dd354)\t; fc8154d34d74\n401ef58f  retf\t[a2],4\t; de2004\n"
+      }
+    ],
+    "relative_calls": [
+      {
+        "address": "0x7bccb35e",
+        "target": "0x7bccaa02"
+      },
+      {
+        "address": "0x7bccb3c3",
+        "target": "0x7bccaa55"
+      },
+      {
+        "address": "0x7bccb3cf",
+        "target": "0x7bcca999"
+      },
+      {
+        "address": "0x7bccb3df",
+        "target": "0x7bccb358"
+      },
+      {
+        "address": "0x7bcca9be",
+        "target": "0x7bc515a0"
+      },
+      {
+        "address": "0x7bccaa2a",
+        "target": "0x7bc515a0"
+      },
+      {
+        "address": "0x7bccb06f",
+        "target": "0x7bccb1b5"
+      },
+      {
+        "address": "0x401e74e6",
+        "target": "0x401e966d"
+      },
+      {
+        "address": "0x401e74f1",
+        "target": "0x401e96eb"
+      },
+      {
+        "address": "0x401e7549",
+        "target": "0x401eed80"
+      },
+      {
+        "address": "0x401eed94",
+        "target": "0x401eedad"
+      },
+      {
+        "address": "0x401eed9b",
+        "target": "0x401eedef"
+      },
+      {
+        "address": "0x401eedcc",
+        "target": "0x401ea03c"
+      },
+      {
+        "address": "0x401eeeab",
+        "target": "0x401ef0a5"
+      },
+      {
+        "address": "0x401ef015",
+        "target": "0x401ef4b2"
+      }
+    ],
+    "historical_host_regions": [
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.dll",
+        "start": "0x1000102d",
+        "end_exclusive": "0x10001032",
+        "bytes": 5,
+        "native_sha256": "d611ee5af5dad5616059f2d3e0d4f6330fc282b46049286903ec9d70f8b2ea87",
+        "instruction_count": 1,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.dll:\tfile format coff-i386\n\nDisassembly of section .text:\n\n1000102d <preBulkRead_CZ30>:\n1000102d: e9 6e 09 00 00               \tjmp\t0x100019a0 <open_dev+0x964>\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.dll",
+        "start": "0x10001032",
+        "end_exclusive": "0x10001037",
+        "bytes": 5,
+        "native_sha256": "1e0c31aa3aa5afc60becd5934f89130ec4bfebe2fdc625031e7bdb1958febd77",
+        "instruction_count": 1,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.dll:\tfile format coff-i386\n\nDisassembly of section .text:\n\n10001032 <preBulkWrite_CZ30>:\n10001032: e9 19 0a 00 00               \tjmp\t0x10001a50 <open_dev+0xa14>\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.dll",
+        "start": "0x100019a0",
+        "end_exclusive": "0x10001a50",
+        "bytes": 176,
+        "native_sha256": "b3bef857501605c7bff6b326c99c9f18185e96de65a2e01ff0c29e75c38f3b59",
+        "instruction_count": 88,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.dll:\tfile format coff-i386\n\nDisassembly of section .text:\n\n1000103c <open_dev>:\n100019a0: 55                           \tpush\tebp\n100019a1: 8b ec                        \tmov\tebp, esp\n100019a3: 83 ec 48                     \tsub\tesp, 72\n100019a6: 53                           \tpush\tebx\n100019a7: 56                           \tpush\tesi\n100019a8: 57                           \tpush\tedi\n100019a9: 8d 7d b8                     \tlea\tedi, [ebp - 72]\n100019ac: b9 12 00 00 00               \tmov\tecx, 18\n100019b1: b8 cc cc cc cc               \tmov\teax, 3435973836\n100019b6: f3 ab                        \trep\t\tstosd\tdword ptr es:[edi], eax\n100019b8: c7 45 f8 00 00 00 00         \tmov\tdword ptr [ebp - 8], 0\n100019bf: 83 7d 08 ff                  \tcmp\tdword ptr [ebp + 8], -1\n100019c3: 75 04                        \tjne\t0x100019c9 <open_dev+0x98d>\n100019c5: 33 c0                        \txor\teax, eax\n100019c7: eb 4e                        \tjmp\t0x10001a17 <open_dev+0x9db>\n100019c9: 8b f4                        \tmov\tesi, esp\n100019cb: 68 00 00 00 20               \tpush\t536870912\n100019d0: ff 15 1c 62 03 10            \tcall\tdword ptr [268657180]\n100019d6: 3b f4                        \tcmp\tesi, esp\n100019d8: e8 93 25 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n100019dd: 8b f4                        \tmov\tesi, esp\n100019df: 6a 00                        \tpush\t0\n100019e1: 8d 45 f8                     \tlea\teax, [ebp - 8]\n100019e4: 50                           \tpush\teax\n100019e5: 6a 00                        \tpush\t0\n100019e7: 6a 00                        \tpush\t0\n100019e9: 6a 02                        \tpush\t2\n100019eb: 8b 4d 0c                     \tmov\tecx, dword ptr [ebp + 12]\n100019ee: 51                           \tpush\tecx\n100019ef: 68 30 00 23 00               \tpush\t2293808\n100019f4: 8b 55 08                     \tmov\tedx, dword ptr [ebp + 8]\n100019f7: 52                           \tpush\tedx\n100019f8: ff 15 20 62 03 10            \tcall\tdword ptr [268657184]\n100019fe: 3b f4                        \tcmp\tesi, esp\n10001a00: e8 6b 25 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n10001a05: 89 45 fc                     \tmov\tdword ptr [ebp - 4], eax\n10001a08: 83 7d fc 00                  \tcmp\tdword ptr [ebp - 4], 0\n10001a0c: 75 04                        \tjne\t0x10001a12 <open_dev+0x9d6>\n10001a0e: 33 c0                        \txor\teax, eax\n10001a10: eb 05                        \tjmp\t0x10001a17 <open_dev+0x9db>\n10001a12: b8 01 00 00 00               \tmov\teax, 1\n10001a17: 5f                           \tpop\tedi\n10001a18: 5e                           \tpop\tesi\n10001a19: 5b                           \tpop\tebx\n10001a1a: 83 c4 48                     \tadd\tesp, 72\n10001a1d: 3b ec                        \tcmp\tebp, esp\n10001a1f: e8 4c 25 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n10001a24: 8b e5                        \tmov\tesp, ebp\n10001a26: 5d                           \tpop\tebp\n10001a27: c2 08 00                     \tret\t8\n10001a2a: cc                           \tint3\n10001a2b: cc                           \tint3\n10001a2c: cc                           \tint3\n10001a2d: cc                           \tint3\n10001a2e: cc                           \tint3\n10001a2f: cc                           \tint3\n10001a30: cc                           \tint3\n10001a31: cc                           \tint3\n10001a32: cc                           \tint3\n10001a33: cc                           \tint3\n10001a34: cc                           \tint3\n10001a35: cc                           \tint3\n10001a36: cc                           \tint3\n10001a37: cc                           \tint3\n10001a38: cc                           \tint3\n10001a39: cc                           \tint3\n10001a3a: cc                           \tint3\n10001a3b: cc                           \tint3\n10001a3c: cc                           \tint3\n10001a3d: cc                           \tint3\n10001a3e: cc                           \tint3\n10001a3f: cc                           \tint3\n10001a40: cc                           \tint3\n10001a41: cc                           \tint3\n10001a42: cc                           \tint3\n10001a43: cc                           \tint3\n10001a44: cc                           \tint3\n10001a45: cc                           \tint3\n10001a46: cc                           \tint3\n10001a47: cc                           \tint3\n10001a48: cc                           \tint3\n10001a49: cc                           \tint3\n10001a4a: cc                           \tint3\n10001a4b: cc                           \tint3\n10001a4c: cc                           \tint3\n10001a4d: cc                           \tint3\n10001a4e: cc                           \tint3\n10001a4f: cc                           \tint3\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.dll",
+        "start": "0x10001a50",
+        "end_exclusive": "0x10001ada",
+        "bytes": 138,
+        "native_sha256": "a4e149fe69b1ee70fe874297e8aa992e4e95cbfeff5d35c0becb92d037a8bd25",
+        "instruction_count": 50,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.dll:\tfile format coff-i386\n\nDisassembly of section .text:\n\n1000103c <open_dev>:\n10001a50: 55                           \tpush\tebp\n10001a51: 8b ec                        \tmov\tebp, esp\n10001a53: 83 ec 48                     \tsub\tesp, 72\n10001a56: 53                           \tpush\tebx\n10001a57: 56                           \tpush\tesi\n10001a58: 57                           \tpush\tedi\n10001a59: 8d 7d b8                     \tlea\tedi, [ebp - 72]\n10001a5c: b9 12 00 00 00               \tmov\tecx, 18\n10001a61: b8 cc cc cc cc               \tmov\teax, 3435973836\n10001a66: f3 ab                        \trep\t\tstosd\tdword ptr es:[edi], eax\n10001a68: c7 45 f8 00 00 00 00         \tmov\tdword ptr [ebp - 8], 0\n10001a6f: 83 7d 08 ff                  \tcmp\tdword ptr [ebp + 8], -1\n10001a73: 75 04                        \tjne\t0x10001a79 <open_dev+0xa3d>\n10001a75: 33 c0                        \txor\teax, eax\n10001a77: eb 4e                        \tjmp\t0x10001ac7 <open_dev+0xa8b>\n10001a79: 8b f4                        \tmov\tesi, esp\n10001a7b: 68 00 00 00 20               \tpush\t536870912\n10001a80: ff 15 1c 62 03 10            \tcall\tdword ptr [268657180]\n10001a86: 3b f4                        \tcmp\tesi, esp\n10001a88: e8 e3 24 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n10001a8d: 8b f4                        \tmov\tesi, esp\n10001a8f: 6a 00                        \tpush\t0\n10001a91: 8d 45 f8                     \tlea\teax, [ebp - 8]\n10001a94: 50                           \tpush\teax\n10001a95: 6a 00                        \tpush\t0\n10001a97: 6a 00                        \tpush\t0\n10001a99: 6a 02                        \tpush\t2\n10001a9b: 8b 4d 0c                     \tmov\tecx, dword ptr [ebp + 12]\n10001a9e: 51                           \tpush\tecx\n10001a9f: 68 34 00 23 00               \tpush\t2293812\n10001aa4: 8b 55 08                     \tmov\tedx, dword ptr [ebp + 8]\n10001aa7: 52                           \tpush\tedx\n10001aa8: ff 15 20 62 03 10            \tcall\tdword ptr [268657184]\n10001aae: 3b f4                        \tcmp\tesi, esp\n10001ab0: e8 bb 24 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n10001ab5: 89 45 fc                     \tmov\tdword ptr [ebp - 4], eax\n10001ab8: 83 7d fc 00                  \tcmp\tdword ptr [ebp - 4], 0\n10001abc: 75 04                        \tjne\t0x10001ac2 <open_dev+0xa86>\n10001abe: 33 c0                        \txor\teax, eax\n10001ac0: eb 05                        \tjmp\t0x10001ac7 <open_dev+0xa8b>\n10001ac2: b8 01 00 00 00               \tmov\teax, 1\n10001ac7: 5f                           \tpop\tedi\n10001ac8: 5e                           \tpop\tesi\n10001ac9: 5b                           \tpop\tebx\n10001aca: 83 c4 48                     \tadd\tesp, 72\n10001acd: 3b ec                        \tcmp\tebp, esp\n10001acf: e8 9c 24 00 00               \tcall\t0x10003f70 <open_dev+0x2f34>\n10001ad4: 8b e5                        \tmov\tesp, ebp\n10001ad6: 5d                           \tpop\tebp\n10001ad7: c2 08 00                     \tret\t8\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.sys",
+        "start": "0x10cbc",
+        "end_exclusive": "0x10d3a",
+        "bytes": 126,
+        "native_sha256": "ca0840ea1b497f286f96c00b7fb27fd240cc2e8a27d1aaf90e3b7f4c3551abd6",
+        "instruction_count": 48,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.sys:\tfile format coff-i386\n\nDisassembly of section .text:\n\n000102a0 <.text>:\n   10cbc: 55                           \tpush\tebp\n   10cbd: 8b ec                        \tmov\tebp, esp\n   10cbf: 53                           \tpush\tebx\n   10cc0: 56                           \tpush\tesi\n   10cc1: 57                           \tpush\tedi\n   10cc2: 8b 7d 0c                     \tmov\tedi, dword ptr [ebp + 12]\n   10cc5: 33 db                        \txor\tebx, ebx\n   10cc7: 68 57 64 6d 20               \tpush\t544040023\n   10ccc: 6a 50                        \tpush\t80\n   10cce: 53                           \tpush\tebx\n   10ccf: 89 5f 18                     \tmov\tdword ptr [edi + 24], ebx\n   10cd2: ff 15 98 24 01 00            \tcall\tdword ptr [74904]\n   10cd8: 8b 57 0c                     \tmov\tedx, dword ptr [edi + 12]\n   10cdb: 8b f0                        \tmov\tesi, eax\n   10cdd: 3b f3                        \tcmp\tesi, ebx\n   10cdf: 74 4a                        \tje\t0x10d2b <.text+0xa8b>\n   10ce1: 6a 14                        \tpush\t20\n   10ce3: 33 c0                        \txor\teax, eax\n   10ce5: 59                           \tpop\tecx\n   10ce6: 8b fe                        \tmov\tedi, esi\n   10ce8: f3 ab                        \trep\t\tstosd\tdword ptr es:[edi], eax\n   10cea: 56                           \tpush\tesi\n   10ceb: 66 c7 46 02 17 00            \tmov\tword ptr [esi + 2], 23\n   10cf1: ff 75 08                     \tpush\tdword ptr [ebp + 8]\n   10cf4: 66 c7 06 50 00               \tmov\tword ptr [esi], 80\n   10cf9: 89 5e 18                     \tmov\tdword ptr [esi + 24], ebx\n   10cfc: 89 5e 20                     \tmov\tdword ptr [esi + 32], ebx\n   10cff: 89 5e 1c                     \tmov\tdword ptr [esi + 28], ebx\n   10d02: 88 5e 48                     \tmov\tbyte ptr [esi + 72], bl\n   10d05: 88 5e 49                     \tmov\tbyte ptr [esi + 73], bl\n   10d08: 66 8b 02                     \tmov\tax, word ptr [edx]\n   10d0b: 66 89 46 4a                  \tmov\tword ptr [esi + 74], ax\n   10d0f: 66 c7 46 4c 01 00            \tmov\tword ptr [esi + 76], 1\n   10d15: 89 5e 14                     \tmov\tdword ptr [esi + 20], ebx\n   10d18: 89 5e 24                     \tmov\tdword ptr [esi + 36], ebx\n   10d1b: e8 aa f5 ff ff               \tcall\t0x102ca <.text+0x2a>\n   10d20: 56                           \tpush\tesi\n   10d21: 8b f8                        \tmov\tedi, eax\n   10d23: ff 15 94 24 01 00            \tcall\tdword ptr [74900]\n   10d29: eb 05                        \tjmp\t0x10d30 <.text+0xa90>\n   10d2b: bf 9a 00 00 c0               \tmov\tedi, 3221225626\n   10d30: 8b c7                        \tmov\teax, edi\n   10d32: 5f                           \tpop\tedi\n   10d33: 5e                           \tpop\tesi\n   10d34: 5b                           \tpop\tebx\n   10d35: 5d                           \tpop\tebp\n   10d36: c2 08 00                     \tret\t8\n   10d39: cc                           \tint3\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.sys",
+        "start": "0x114a3",
+        "end_exclusive": "0x114e8",
+        "bytes": 69,
+        "native_sha256": "1193613a67ad90efc9e81346915d739c76cf4bf8424a32bb3dd186394018f07c",
+        "instruction_count": 28,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.sys:\tfile format coff-i386\n\nDisassembly of section .text:\n\n000102a0 <.text>:\n   114a3: b9 44 00 23 00               \tmov\tecx, 2293828\n   114a8: 3b c1                        \tcmp\teax, ecx\n   114aa: 77 45                        \tja\t0x114f1 <.text+0x1251>\n   114ac: 74 3a                        \tje\t0x114e8 <.text+0x1248>\n   114ae: 2d 34 00 23 00               \tsub\teax, 2293812\n   114b3: 74 2a                        \tje\t0x114df <.text+0x123f>\n   114b5: 83 e8 04                     \tsub\teax, 4\n   114b8: 74 1c                        \tje\t0x114d6 <.text+0x1236>\n   114ba: 83 e8 04                     \tsub\teax, 4\n   114bd: 74 0e                        \tje\t0x114cd <.text+0x122d>\n   114bf: 83 e8 04                     \tsub\teax, 4\n   114c2: 75 3e                        \tjne\t0x11502 <.text+0x1262>\n   114c4: 56                           \tpush\tesi\n   114c5: 57                           \tpush\tedi\n   114c6: e8 d9 f9 ff ff               \tcall\t0x10ea4 <.text+0xc04>\n   114cb: eb 55                        \tjmp\t0x11522 <.text+0x1282>\n   114cd: 56                           \tpush\tesi\n   114ce: 57                           \tpush\tedi\n   114cf: e8 58 f9 ff ff               \tcall\t0x10e2c <.text+0xb8c>\n   114d4: eb 4c                        \tjmp\t0x11522 <.text+0x1282>\n   114d6: 56                           \tpush\tesi\n   114d7: 57                           \tpush\tedi\n   114d8: e8 d9 f8 ff ff               \tcall\t0x10db6 <.text+0xb16>\n   114dd: eb 43                        \tjmp\t0x11522 <.text+0x1282>\n   114df: 56                           \tpush\tesi\n   114e0: 57                           \tpush\tedi\n   114e1: e8 54 f8 ff ff               \tcall\t0x10d3a <.text+0xa9a>\n   114e6: eb 3a                        \tjmp\t0x11522 <.text+0x1282>\n"
+      },
+      {
+        "source": "work/service-software/fz30-files/mkeusb01.sys",
+        "start": "0x10d3a",
+        "end_exclusive": "0x10db5",
+        "bytes": 123,
+        "native_sha256": "8c75521b11f010f1a79b053d946a68f3bf4a743fa074f4cae07f67d41e637962",
+        "instruction_count": 47,
+        "raw_annotations_match_source": true,
+        "disassembly": "\nwork/service-software/fz30-files/mkeusb01.sys:\tfile format coff-i386\n\nDisassembly of section .text:\n\n000102a0 <.text>:\n   10d3a: 55                           \tpush\tebp\n   10d3b: 8b ec                        \tmov\tebp, esp\n   10d3d: 53                           \tpush\tebx\n   10d3e: 56                           \tpush\tesi\n   10d3f: 57                           \tpush\tedi\n   10d40: 8b 7d 0c                     \tmov\tedi, dword ptr [ebp + 12]\n   10d43: 33 db                        \txor\tebx, ebx\n   10d45: 68 57 64 6d 20               \tpush\t544040023\n   10d4a: 6a 50                        \tpush\t80\n   10d4c: 53                           \tpush\tebx\n   10d4d: 89 5f 18                     \tmov\tdword ptr [edi + 24], ebx\n   10d50: ff 15 98 24 01 00            \tcall\tdword ptr [74904]\n   10d56: 8b 57 0c                     \tmov\tedx, dword ptr [edi + 12]\n   10d59: 8b f0                        \tmov\tesi, eax\n   10d5b: 3b f3                        \tcmp\tesi, ebx\n   10d5d: 74 48                        \tje\t0x10da7 <.text+0xb07>\n   10d5f: 6a 14                        \tpush\t20\n   10d61: 33 c0                        \txor\teax, eax\n   10d63: 59                           \tpop\tecx\n   10d64: 8b fe                        \tmov\tedi, esi\n   10d66: f3 ab                        \trep\t\tstosd\tdword ptr es:[edi], eax\n   10d68: 56                           \tpush\tesi\n   10d69: 66 c7 46 02 17 00            \tmov\tword ptr [esi + 2], 23\n   10d6f: ff 75 08                     \tpush\tdword ptr [ebp + 8]\n   10d72: 66 c7 06 50 00               \tmov\tword ptr [esi], 80\n   10d77: 89 5e 18                     \tmov\tdword ptr [esi + 24], ebx\n   10d7a: 89 5e 20                     \tmov\tdword ptr [esi + 32], ebx\n   10d7d: 89 5e 1c                     \tmov\tdword ptr [esi + 28], ebx\n   10d80: 88 5e 48                     \tmov\tbyte ptr [esi + 72], bl\n   10d83: 88 5e 49                     \tmov\tbyte ptr [esi + 73], bl\n   10d86: 66 8b 02                     \tmov\tax, word ptr [edx]\n   10d89: 66 89 46 4a                  \tmov\tword ptr [esi + 74], ax\n   10d8d: 66 89 5e 4c                  \tmov\tword ptr [esi + 76], bx\n   10d91: 89 5e 14                     \tmov\tdword ptr [esi + 20], ebx\n   10d94: 89 5e 24                     \tmov\tdword ptr [esi + 36], ebx\n   10d97: e8 2e f5 ff ff               \tcall\t0x102ca <.text+0x2a>\n   10d9c: 56                           \tpush\tesi\n   10d9d: 8b f8                        \tmov\tedi, eax\n   10d9f: ff 15 94 24 01 00            \tcall\tdword ptr [74900]\n   10da5: eb 05                        \tjmp\t0x10dac <.text+0xb0c>\n   10da7: bf 9a 00 00 c0               \tmov\tedi, 3221225626\n   10dac: 8b c7                        \tmov\teax, edi\n   10dae: 5f                           \tpop\tedi\n   10daf: 5e                           \tpop\tesi\n   10db0: 5b                           \tpop\tebx\n   10db1: 5d                           \tpop\tebp\n   10db2: c2 08 00                     \tret\t8\n"
+      }
+    ]
+  },
+  "key_mapping": {
+    "initializer_body_offset": "0x80bfcc",
+    "initializer_sha256": "523d8d8b8e46b6574a8104a509634c2fe61076519ed028407c8bb0766d3ab80d",
+    "copy_load_start": "0x407f6384",
+    "copy_load_end_exclusive": "0x4080cff8",
+    "copy_ram_start": "0x743551f4",
+    "consumer_ram_address": "0x7436aa3c",
+    "raw_to_ui_bits": {
+      "0x1": "0x100",
+      "0x2": "0x200",
+      "0x8": "0x4",
+      "0x10": "0x8",
+      "0x20": "0x2",
+      "0x40": "0x1",
+      "0x800": "0x40",
+      "0x80": "0x80",
+      "0x1000": "0x10",
+      "0x100": "0x20",
+      "0x40000": "0x8000",
+      "0x4000": "0x4000",
+      "0x200": "0x2000",
+      "0x400": "0x400",
+      "0x8000": "0x1000",
+      "0x4": "0x10000",
+      "0x2000": "0x800",
+      "0x20000": "0x20000",
+      "0x10000": "0x40000",
+      "0x80000": "0x80000"
+    },
+    "default_analog_key_centers": [
+      0,
+      198,
+      395,
+      593
+    ],
+    "default_drive_centers": [
+      0,
+      270,
+      538,
+      810
+    ],
+    "matching_rule": "Absolute difference from a calibration reference is less than 59; these are default flash values, not measurements of the owner's camera",
+    "manual_interpretation": {
+      "DISPLAY": {
+        "raw": "0x800",
+        "ui": "0x40",
+        "ladder": "REAR_KEYIN2, 2.4 kilohms from the input"
+      },
+      "AF_AE_LOCK": {
+        "raw": "0x400",
+        "ui": "0x400",
+        "ladder": "REAR_KEYIN1, 2.4 kilohms from the input"
+      },
+      "DELETE": {
+        "raw": "0x80",
+        "ui": "0x80",
+        "ladder": "REAR_KEYIN1, 13.8 kilohms from the input"
+      },
+      "startup": "The predicate requires drive result 2, raw AF/AE LOCK 0x400 and DISPLAY 0x800, with settings state 1. This agrees with the manual's documented temporary service entry; the drive-position label is corroborated by that procedure rather than an independent live measurement.",
+      "override": "The separate RAM-override consumer's UI event bit 0x80 maps to DELETE. Full timing/state activation remains unresolved; no standalone button recipe is established."
+    }
+  },
+  "service_manual": {
+    "url": "https://www.partstown.com/modelManual/PAN-DMCGH2_sm.pdf?v=1670948469862",
+    "path": "work/gh2-service-inputs/GH2-service.pdf",
+    "sha256": "e885754a31db62848ddace241f27995f6b0e62bd06e199baeb373d4d39430f8c",
+    "bytes": 8343062,
+    "order_number": "DSC1011058CE",
+    "pdf_pages": 85,
+    "reviewed_pdf_pages": [
+      14,
+      21,
+      60
+    ],
+    "schematic_printed_page": "S-5"
+  },
+  "usb_preparation_manual_review": {
+    "setup_fields": {
+      "bmRequestType": "0x744dd1f8",
+      "bRequest": "0x744dd1f9",
+      "wValue": "0x744dd1fa",
+      "wIndex": "0x744dd1fc",
+      "wLength": "0x744dd1fe"
+    },
+    "routing": "0x401e96eb decodes (bmRequestType & 0x60) >> 5. Vendor type reaches 0x401eed80 only when descriptor mode is 2.",
+    "request_zero": "0x401eed80 accepts bRequest zero; wIndex zero calls 0x401eedad, nonzero calls 0x401eedef. wValue is not read in these two routines.",
+    "index_zero": "Clears two maintenance-state words, sets bulk phase 3 and receive state 5, prepares an endpoint and control status. No flash-writing routine is identified in this reviewed path.",
+    "index_nonzero": "Restores bulk phase 3, readies pending transfer state and resets the transfer cursor. Historical host calls name the matching control preparation preBulkRead_CZ30.",
+    "scope": "These are transfer-preparation operations after vendor mode selection. They do not establish entry from ordinary PC/PTP mode, a key-extraction command, or complete request validation."
+  },
+  "historical_host_comparison": {
+    "sources": [
+      {
+        "path": "work/service-software/fz30-files/mkeusb01.sys",
+        "bytes": 13226,
+        "sha256": "2528eaafc48e8bb87f2828963897f5ec7698314337cda98853d662bb51d25801"
+      },
+      {
+        "path": "work/service-software/fz30-files/mkeusb01.dll",
+        "bytes": 229460,
+        "sha256": "504052d9e34d4d97578ca84bcbac21c688782c11e1e603a69ca86dbd86ca2458"
+      }
+    ],
+    "pre_bulk_write": {
+      "export": "preBulkWrite_CZ30",
+      "export_thunk": "0x10001032",
+      "body": "0x10001a50",
+      "ioctl": "0x230034",
+      "driver_handler": "0x10d3a",
+      "urb_function": "0x17 URB_FUNCTION_VENDOR_DEVICE",
+      "usb_request_type": "0x40",
+      "request": 0,
+      "index": 0,
+      "value": "Caller-supplied 16-bit value",
+      "length": 0
+    },
+    "pre_bulk_read": {
+      "export": "preBulkRead_CZ30",
+      "ioctl": "0x230030",
+      "driver_handler": "0x10cbc",
+      "request": 0,
+      "index": 1,
+      "provenance": "Static review of the pinned host binaries; selected instructions and call links checked above"
+    },
+    "abi_sources": [
+      "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_vendor_or_class_request",
+      "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/shared/usb.h"
+    ],
+    "interpretation": "The older host's request-zero/index-zero OUT preparation agrees with the GH2 camera-side path; this is independent static evidence, not a captured transaction."
+  },
+  "limitations": {
+    "physical_camera_contacted": false,
+    "firmware_or_windows_driver_executed": false,
+    "gm5_service_entry_confirmed": false,
+    "gm5_vendor_requests_sent": false,
+    "complete_ram_override_sequence_established": false,
+    "packet_validation_fully_traced": false
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "acquisition": {
+    "schema": 1,
+    "source_kind": "Official Panasonic update; GM1 comparison sample, not GM5-compatible firmware",
+    "downloaded_utc": "2026-11-05T03:45:54.727960+00:00",
+    "official_page": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm1.html",
+    "url": "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GM1__V11.zip",
+    "tls_certificate_verification_enabled": true,
+    "curl_ssl_verify_result": 0,
+    "zip_crc_verified": true,
+    "files": [
+      {
+        "name": "GM1__V11.zip",
+        "bytes": 31987180,
+        "sha256": "4dbff5b5cd05f288d96506290f8b001ecc55969cea63a61c9fa868cc3084c24b"
+      },
+      {
+        "name": "GM1__V11.bin",
+        "bytes": 31983104,
+        "sha256": "3e8b4aab23f79db160cd016af0e466011f047add07bb7441c642f6b70df30d90"
+      }
+    ]
+  },
+  "verified_body_crc32": "11db930e",
+  "verified_header_copy": true,
+  "verified_payloads_contiguous_to_eof": true,
+  "parts": [
+    {
+      "name": "program",
+      "file_offset": 1536,
+      "bytes": 9437184,
+      "destination_offset_candidate": 0,
+      "flags": 3,
+      "field32_hex": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+      "field16_hex": "31b778a6c30c98666d54d12db4d8bdf2",
+      "encoded_sha256": "927cf67e9ad7c4ddc3f7f96bb790aa714ef22d2793f4829a682f2ba254f94b40"
+    },
+    {
+      "name": "guires",
+      "file_offset": 9438720,
+      "bytes": 11534336,
+      "destination_offset_candidate": 9437184,
+      "flags": 3,
+      "field32_hex": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+      "field16_hex": "a10c709775de363ad456d410edaf41f9",
+      "encoded_sha256": "8d9882d71c68c60909ac004b62717b54f1121914eaa5124d3c27c6c15d5b268b"
+    },
+    {
+      "name": "program2",
+      "file_offset": 20973056,
+      "bytes": 3538944,
+      "destination_offset_candidate": 20971520,
+      "flags": 3,
+      "field32_hex": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+      "field16_hex": "0f81bab0e8df54d4cb4f10f912d62029",
+      "encoded_sha256": "8469f2a1dad7649894252f4ceb27fc66ea1ee479600c58460429dc3e64c8b670"
+    },
+    {
+      "name": "armcode",
+      "file_offset": 24512000,
+      "bytes": 3407872,
+      "destination_offset_candidate": 24510464,
+      "flags": 3,
+      "field32_hex": "f9918698295c495373a41dcc8689c4faa05ac9aee8965ee2118ba29a3b1b1124",
+      "field16_hex": "38c19848852ee5ea9bf2013eca139263",
+      "encoded_sha256": "4c989e8cc08e1ca8b723dbd290482319f2395247c169c81edaf788f4989604c7"
+    },
+    {
+      "name": "other",
+      "file_offset": 27919872,
+      "bytes": 3670016,
+      "destination_offset_candidate": 28573696,
+      "flags": 3,
+      "field32_hex": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+      "field16_hex": "5e7ec1a9f8cc6fc7fbc4f83cbd2cf40d",
+      "encoded_sha256": "cde939eea6d31d03fe13f6af3ef4302532afed1ffcf61e26e87f6f195e99e58c"
+    },
+    {
+      "name": "eep",
+      "file_offset": 31589888,
+      "bytes": 393216,
+      "destination_offset_candidate": 33161216,
+      "flags": 3,
+      "field32_hex": "9e7f1ea599b8ef41559a5911b6933d5c9ca2a5ee8c7199c2bd5ee3a36d2c5b5e",
+      "field16_hex": "d81440c6e1318303e69d19a2caba29de",
+      "encoded_sha256": "24a6532f3b622f3d250dbd44781f93d8c787b0626343039af9d26106e9052f29"
+    }
+  ],
+  "settings_comparisons": [
+    {
+      "settings_serialization": "GM1F.words-big.bin",
+      "bytes": 32768,
+      "sha256": "13db6c2f60cb7641e95411ca2117004a3b032250e1561bd72169abbd9c63eeeb",
+      "aligned_32byte_windows_with_8plus_distinct_bytes": 459,
+      "matching_windows_in_encoded_eep": [],
+      "full_payload_match_offset": -1,
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "GM1F.words-little.bin",
+      "bytes": 32768,
+      "sha256": "92a73882ebdfa47e77c4b72850e52e71a0b0b7b91081085fe96241a2f88c906c",
+      "aligned_32byte_windows_with_8plus_distinct_bytes": 459,
+      "matching_windows_in_encoded_eep": [],
+      "full_payload_match_offset": -1,
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "GM1U.words-big.bin",
+      "bytes": 16384,
+      "sha256": "819d6996bcdfeef39bcff7261fa27ddc2994fb90fb3191bf47852b590653e189",
+      "aligned_32byte_windows_with_8plus_distinct_bytes": 88,
+      "matching_windows_in_encoded_eep": [],
+      "full_payload_match_offset": -1,
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "GM1U.words-little.bin",
+      "bytes": 16384,
+      "sha256": "5776b3565a006d038eaab7ab341d0828dfeb55cd7b14c85574c90eee0000529b",
+      "aligned_32byte_windows_with_8plus_distinct_bytes": 88,
+      "matching_windows_in_encoded_eep": [],
+      "full_payload_match_offset": -1,
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "F_then_U_big",
+      "bytes": 49152,
+      "sha256": "af089a3a4813a080a39f1c3b6eb9c949b6f5d4a69984ba832b7b7d98f9882ca4",
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "U_then_F_big",
+      "bytes": 49152,
+      "sha256": "489533b68d7c66a62ae94ba4395aeaf34cf5aaef4ee85bd74055b750d666863e",
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "F_then_U_little",
+      "bytes": 49152,
+      "sha256": "419bd8c117125c775c7566bd1d99905e758f33662f99482d5d8b3cfefdbadb46",
+      "field32_equals_settings_sha256": false
+    },
+    {
+      "settings_serialization": "U_then_F_little",
+      "bytes": 49152,
+      "sha256": "aa39666d33c31475bd2a6189cbbdd6c797c66d96a596e81eb8d584b590430795",
+      "field32_equals_settings_sha256": false
+    }
+  ],
+  "limits": [
+    "GM1 comparison firmware only; not compatible with GM5.",
+    "Settings sample is already language-edited; installed version and region are unconfirmed.",
+    "No equal unencoded 32-byte windows in this selected test does not identify a cipher or prove the content location.",
+    "No physical address correspondence between EEPROM export coordinates and update destination candidates is established."
+  ],
+  "metadata_as_key_check": {
+    "schema": 1,
+    "hypothesis": "EEP directory field32 is directly an AES-256 key; field16 is IV, zero IV or ECB",
+    "cases": [
+      {
+        "image": "GM1__V11.bin",
+        "component": "eep",
+        "layout": "field32_key_iv",
+        "bytes": 393216,
+        "output_sha256": "269f36150e45684be044f2062f00edfc6aa9701e5b47b75d61d0965357450673",
+        "entropy_bits_per_byte": 7.999560277,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM1__V11.bin",
+        "component": "eep",
+        "layout": "field32_key_zero_iv",
+        "bytes": 393216,
+        "output_sha256": "9066289f916e31db0374a26b43e1a4919a29e3a26311e255e939850d958a26d1",
+        "entropy_bits_per_byte": 7.999560601,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM1__V11.bin",
+        "component": "eep",
+        "layout": "field32_key_ecb",
+        "bytes": 393216,
+        "output_sha256": "dff38bb3ae20a76c43889f09f5ce04edd0a5aaa43d110afc9d6ec33ec7472778",
+        "entropy_bits_per_byte": 7.999551767,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_a",
+        "layout": "field32_key_iv",
+        "bytes": 131072,
+        "output_sha256": "cbc580272a3e2ce08531ee01bf19c85132b8eb4c436b094615dab539de90996b",
+        "entropy_bits_per_byte": 7.998554439,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_a",
+        "layout": "field32_key_zero_iv",
+        "bytes": 131072,
+        "output_sha256": "5b209fea5ec6d4ff00777e88a708aa0bb22c4a12344d50bb5122de648fe00068",
+        "entropy_bits_per_byte": 7.998552572,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_a",
+        "layout": "field32_key_ecb",
+        "bytes": 131072,
+        "output_sha256": "481fd2a6e430fb92a5b8da3d63030238c1f583e2440912b7afeab4c0eb7a0d9d",
+        "entropy_bits_per_byte": 7.998808626,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_b",
+        "layout": "field32_key_iv",
+        "bytes": 131072,
+        "output_sha256": "e593234b4f5cc4c9812b55ad916ce6d13f7008513dbf927afaa1a3bc5bcfbb9e",
+        "entropy_bits_per_byte": 7.998691727,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_b",
+        "layout": "field32_key_zero_iv",
+        "bytes": 131072,
+        "output_sha256": "ec9c409c5a1aac7e39f0ea5120f352e80ff4a73d721342741d44dbc697683189",
+        "entropy_bits_per_byte": 7.998693318,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_ow_b",
+        "layout": "field32_key_ecb",
+        "bytes": 131072,
+        "output_sha256": "01f767488d200f49704d237754876a49b41af8cb4f8c5e917706e78155cf8e5b",
+        "entropy_bits_per_byte": 7.998650575,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_adjfix",
+        "layout": "field32_key_iv",
+        "bytes": 49152,
+        "output_sha256": "06016e556e6278031428fdd210d4d823eac61a3ef7b86267f1a5ce3008214bc6",
+        "entropy_bits_per_byte": 7.996326945,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_adjfix",
+        "layout": "field32_key_zero_iv",
+        "bytes": 49152,
+        "output_sha256": "278fe3be32f492dc48ea5ac27c995f39ee134f188dc10f8d887db4a0932623bc",
+        "entropy_bits_per_byte": 7.996316714,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      },
+      {
+        "image": "GM5__V11.bin",
+        "component": "eep_adjfix",
+        "layout": "field32_key_ecb",
+        "bytes": 49152,
+        "output_sha256": "68eb27c76db540ccf412a8a0c10c493104d56c3f2a01554e088348d8063b4dc5",
+        "entropy_bits_per_byte": 7.996820923,
+        "text_marker_hits": [],
+        "complete_gm1_export_matches": [],
+        "sha256_matches_field32": false
+      }
+    ],
+    "limited_result": "No known text marker or complete supplied settings payload recovered in these layouts. Not a cipher identification or a general decryption result.",
+    "positive_control": "OpenSSL AES execution was previously checked against the complete expected GH2 plaintext MD5; see evidence/gm5-v11-legacy-aes-check.json.",
+    "outputs_saved": false
+  },
+  "directory_fields_found_verbatim_in_supplied_settings": false
+}

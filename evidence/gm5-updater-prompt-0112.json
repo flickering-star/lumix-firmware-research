@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "scope": "Local unsigned GM5 update-prompt candidates; camera acceptance untested",
+  "source": {
+    "path": "firmware/official-gm5-v11/GM5__V11.bin",
+    "bytes": 31901184,
+    "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243"
+  },
+  "builder": {
+    "path": "tools/gm5_prompt_package.py",
+    "bytes": 7483,
+    "sha256": "72b8ba2e6d73c0a700bc1f8b4654128c9221c2dc74c72382c785ef674c4f3d88"
+  },
+  "decoder": {
+    "path": "work/panasonic-aes5",
+    "bytes": 34432,
+    "sha256": "213527b66e72ea6a940cfb3546859988d8b329f28e55f0ed996cc4eed5d02177"
+  },
+  "decoder_selftest": "NIST AES-128, physical GM1 five-round block and substitution tables verified.",
+  "variants": [
+    {
+      "variant": "advertised-0112",
+      "image": {
+        "path": "work/gm5-updater-prompt-0112/advertised-0112/GM5__V11.bin",
+        "bytes": 31901184,
+        "sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3"
+      },
+      "all_eight_payloads_unchanged": true,
+      "all_eight_decoded_hashes_match": true,
+      "outer_crc32_verified": true,
+      "header_copy_verified": true,
+      "flags_before": "0x4",
+      "flags_after": "0x4",
+      "version_words_unchanged": false,
+      "advertised_halfwords_before": [
+        "0x110",
+        "0x110"
+      ],
+      "advertised_halfwords_after": [
+        "0x112",
+        "0x112"
+      ],
+      "payload_version_metadata_unchanged": true,
+      "byte_changes": [
+        {
+          "file_offset": "0x1c",
+          "official": 16,
+          "candidate": 18
+        },
+        {
+          "file_offset": "0x1e",
+          "official": 16,
+          "candidate": 18
+        },
+        {
+          "file_offset": "0x40",
+          "official": 73,
+          "candidate": 226
+        },
+        {
+          "file_offset": "0x41",
+          "official": 161,
+          "candidate": 103
+        },
+        {
+          "file_offset": "0x42",
+          "official": 177,
+          "candidate": 28
+        },
+        {
+          "file_offset": "0x43",
+          "official": 226,
+          "candidate": 52
+        },
+        {
+          "file_offset": "0x200",
+          "official": 112,
+          "candidate": 0
+        },
+        {
+          "file_offset": "0x2bc",
+          "official": 16,
+          "candidate": 18
+        },
+        {
+          "file_offset": "0x2be",
+          "official": 16,
+          "candidate": 18
+        }
+      ],
+      "components": [
+        {
+          "name": "program",
+          "bytes": 8388608,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "guires",
+          "bytes": 12582912,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "program2",
+          "bytes": 3538944,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "armcode",
+          "bytes": 3407872,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "c7e1961a121864686f327a3bf82b18d1596e39a44ba13b0e63fc7cd1a6c910b1",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "other",
+          "bytes": 3670016,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "a2368124c44360d805968200249bd0f20172748a4b410ab6c2ae7454b2b07454",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "eep_ow_a",
+          "bytes": 131072,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "eep_ow_b",
+          "bytes": 131072,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "b34511950d136f0dd17a2d4e8672d7650c2bdba9fb21c893a39b95cb0abd3887",
+          "declared_sha256_matches": true
+        },
+        {
+          "name": "eep_adjfix",
+          "bytes": 49152,
+          "ciphertext_unchanged": true,
+          "plaintext_sha256": "72be21583acd1f9f93d98b9d7dacef1ab728c13129dfcc02a2efa9ae30b6eacc",
+          "declared_sha256_matches": true
+        }
+      ],
+      "signed_directory_unchanged": false,
+      "ecdsa_directory_signature_valid": false,
+      "signature_bytes_unchanged": true
+    }
+  ],
+  "intended_path": "GM5 version-two unsigned marker branch after RAM 0x70a68490 is set to zero",
+  "relaxed_flags_basis": "The inspected header validator skips its version comparison when header flags & 0x0f is zero. Complete camera eligibility is still to be tested.",
+  "testing_stage": "Observe the camera's update confirmation prompt; stop before approving installation.",
+  "limits": {
+    "camera_contacted": false,
+    "sd_card_written": false,
+    "firmware_code_changed": false,
+    "calibration_payload_changed": false,
+    "camera_acceptance_verified": false,
+    "firmware_flash_performed": false,
+    "full_physical_backup_complete": false
+  },
+  "signature_note": "Corrected by independent ECDSA and LibreSSL replay: marker-only edits leave the signed directory intact; flags/version edits inside its header invalidate the retained signature. All candidates select the zero-marker unsigned path."
+}

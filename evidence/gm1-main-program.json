@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "completed_utc": "2026-11-05T23:50:38.366600+00:00",
+  "scope": "Complete physical GM1 main program; not the complete firmware or GM5",
+  "flash_start": "0x40000000",
+  "flash_end_exclusive": "0x40900000",
+  "sample": {
+    "path": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+    "bytes": 9437184,
+    "sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe"
+  },
+  "capture_verification": {
+    "schema": 1,
+    "capture": "captures/gm1-usb-resume-3atwz8co",
+    "mode": "resume",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 6241,
+    "resume_anchors_verified": 3,
+    "copied_prefix_bytes": 3049472,
+    "program_file": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+    "verified_prefix_bytes": 9437184,
+    "program_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+    "program_file_base": "0x40000000",
+    "program_file_offset": 0,
+    "next_program_address": "0x40900000",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "native_source": {
+    "path": "captures/gm1-usb-resume-3atwz8co/probe-source.c",
+    "bytes": 26550,
+    "sha256": "c2de10af32c4be7b089fabdb601c5660d7ff259668ac948766dabb79c58f10f0"
+  },
+  "native_executable": {
+    "path": "captures/gm1-usb-resume-3atwz8co/gm1-usb-probe",
+    "bytes": 28416,
+    "sha256": "4ce8fb8809500f830b85332f19bff95022b24574490d6fe8d4eb0bda036b8d45"
+  },
+  "events": {
+    "path": "captures/gm1-usb-resume-3atwz8co/result/events.jsonl",
+    "bytes": 30251749,
+    "sha256": "644426ef03950b2ddb17bae2303192a94f36f51c9d15acf5420b8baf3950b493"
+  },
+  "official_update": {
+    "path": "firmware/official-gm1-v11/GM1__V11.bin",
+    "bytes": 31983104,
+    "sha256": "3e8b4aab23f79db160cd016af0e466011f047add07bb7441c642f6b70df30d90"
+  },
+  "official_directory_component": {
+    "name": "program",
+    "file_offset": 1536,
+    "bytes": 9437184,
+    "destination_offset_candidate": 0,
+    "flags": 3,
+    "field32_hex": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+    "field16_hex": "31b778a6c30c98666d54d12db4d8bdf2",
+    "encoded_sha256": "927cf67e9ad7c4ddc3f7f96bb790aa714ef22d2793f4829a682f2ba254f94b40"
+  },
+  "plaintext_sha256_equals_directory_field32": true,
+  "interpretation": "Directly read 9 MiB of GM1 program memory equals the plaintext hash represented by the official program directory field. The encrypted official payload hash differs. This is a component integrity/identity result, not a public-key signature.",
+  "coverage": {
+    "program_complete": true,
+    "program2_complete": false,
+    "guires_complete": false,
+    "armcode_complete": false,
+    "other_complete": false,
+    "eep_complete": false
+  },
+  "no_settings_or_flash_writes": true,
+  "no_gm5_command_test": true
+}

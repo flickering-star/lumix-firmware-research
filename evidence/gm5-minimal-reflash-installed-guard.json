@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "capture": "captures/gm5-usb-updater-window-Ygh3Z14R",
+  "model": "DMC-GM5",
+  "mode": "updater-window",
+  "complete": true,
+  "settings_bytes_verified": 32,
+  "word_responses_verified": 16,
+  "program_block_responses_verified": 16,
+  "resume_anchors_verified": 0,
+  "copied_prefix_bytes": 0,
+  "program_file": "captures/gm5-usb-updater-window-Ygh3Z14R/result/updater-window.bin",
+  "verified_prefix_bytes": 16384,
+  "program_sha256": "cbda9861262b204427d73b61bfe22d08f385c6a52cbc4f15b355679afc53614e",
+  "program_file_base": "0x4154e000",
+  "program_file_offset": 0,
+  "next_program_address": "0x41552000",
+  "terminal_phase": "idle",
+  "errors": [],
+  "matches_verified_backup_byte_for_byte": true,
+  "backup_sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+  "stage": "Installed updater guard immediately before temporary English/policy preparation"
+}

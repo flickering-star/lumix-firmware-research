@@ -1,0 +1,394 @@
+{
+  "schema": 1,
+  "scope": "Bounded related-firmware/source survey, not recovered GM5 plaintext",
+  "surveyed_utc": "2026-11-05T17:07:12.290960+00:00",
+  "official_catalog": "https://leica-camera.com/en-US/downloads?field_media_document_topic=1074&page=31&wptouch_preview_theme=enabled",
+  "d_lux_8_page": "https://leica-camera.com/en-US/photography/cameras/d-lux/d-lux-8/downloads",
+  "mirror_index": "https://www.reddotforum.com/content/2023/08/leica-firmware-master-list/",
+  "prefixes": [
+    {
+      "source_url": "https://leica-camera.com/sites/default/files/DLX7_V20.bin",
+      "prefix_path": "work/leica-comparison/DLX7_V20.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "e88e8166c8222e5e69373cca4d9c668f69d8b117b6ae35b7c937fd018064237a",
+      "total_bytes_per_http_content_range": 82863,
+      "content_range_verified": true,
+      "magic_hex": "3c21444f43545950452068746d6c3e0a",
+      "full_file_integrity_verified": false,
+      "role": "official",
+      "finding": "HTML returned under firmware filename; refused as a firmware input"
+    },
+    {
+      "source_url": "https://leica-camera.com/sites/default/files/VLX5_V20.bin",
+      "prefix_path": "work/leica-comparison/VLX5_V20.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "e88e8166c8222e5e69373cca4d9c668f69d8b117b6ae35b7c937fd018064237a",
+      "total_bytes_per_http_content_range": 82863,
+      "content_range_verified": true,
+      "magic_hex": "3c21444f43545950452068746d6c3e0a",
+      "full_file_integrity_verified": false,
+      "role": "official",
+      "finding": "HTML returned under firmware filename; refused as a firmware input"
+    },
+    {
+      "source_url": "https://leica-camera.com/sites/default/files/DL5__V20.zip",
+      "prefix_path": "work/leica-comparison/DL5__V20.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "96c8d1ed1214824812eeddc2864a789115410a41c33c6e7cc539c4b0149c2b8c",
+      "total_bytes_per_http_content_range": 16256696,
+      "content_range_verified": true,
+      "magic_hex": "504b03041400000008005069793f5da9",
+      "full_file_integrity_verified": false,
+      "role": "official",
+      "finding": "ZIP prefix only; no full archive/body verification"
+    },
+    {
+      "source_url": "https://leica-camera.com/sites/default/files/DLX8_190.lfu",
+      "prefix_path": "work/leica-comparison/DLX8_190.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "a651c5c3b266c82f1d78a3844d011d02612d3d1e3c8e3670404720c884221d90",
+      "total_bytes_per_http_content_range": 105977856,
+      "content_range_verified": true,
+      "magic_hex": "55504400000200000002000043443238",
+      "full_file_integrity_verified": false,
+      "role": "official",
+      "format_revision": "0x200",
+      "at_0x2c": 3,
+      "at_0x34": 3,
+      "components": [
+        {
+          "name": "loader1",
+          "flags": 3
+        },
+        {
+          "name": "loader2",
+          "flags": 3
+        },
+        {
+          "name": "loader3",
+          "flags": 3
+        },
+        {
+          "name": "program",
+          "flags": 3
+        },
+        {
+          "name": "storage",
+          "flags": 2
+        },
+        {
+          "name": "postboot1",
+          "flags": 3
+        },
+        {
+          "name": "postboot2",
+          "flags": 3
+        },
+        {
+          "name": "postboot3",
+          "flags": 3
+        },
+        {
+          "name": "postboot4",
+          "flags": 3
+        },
+        {
+          "name": "postboot5",
+          "flags": 3
+        },
+        {
+          "name": "eep_ow_a",
+          "flags": 3
+        },
+        {
+          "name": "eep_ow_b",
+          "flags": 3
+        },
+        {
+          "name": "eep_adj",
+          "flags": 3
+        },
+        {
+          "name": "eep_fix",
+          "flags": 3
+        },
+        {
+          "name": "history",
+          "flags": 2
+        },
+        {
+          "name": "music",
+          "flags": 3
+        },
+        {
+          "name": "osdover",
+          "flags": 3
+        },
+        {
+          "name": "osddata",
+          "flags": 3
+        },
+        {
+          "name": "fileinfo",
+          "flags": 2
+        },
+        {
+          "name": "ninsho_db",
+          "flags": 2
+        },
+        {
+          "name": "koutei_kao",
+          "flags": 3
+        },
+        {
+          "name": "eep_net_a",
+          "flags": 2
+        },
+        {
+          "name": "eep_net_b",
+          "flags": 2
+        },
+        {
+          "name": "wifi_info",
+          "flags": 2
+        },
+        {
+          "name": "nfc_info",
+          "flags": 2
+        },
+        {
+          "name": "zboot",
+          "flags": 3
+        },
+        {
+          "name": "dtb",
+          "flags": 3
+        },
+        {
+          "name": "zimage",
+          "flags": 3
+        },
+        {
+          "name": "rootfs1",
+          "flags": 3
+        },
+        {
+          "name": "rootfs2",
+          "flags": 3
+        },
+        {
+          "name": "gyro_micon",
+          "flags": 3
+        },
+        {
+          "name": "usbcharge",
+          "flags": 3
+        },
+        {
+          "name": "focus_selec",
+          "flags": 3
+        }
+      ],
+      "finding": "UPD v2; main program and loader entries remain flagged 3, as in the sampled encoded Panasonic components"
+    },
+    {
+      "source_url": "https://reddotforum.com/Firmware_files/D-Lux%207/DLX7_V20.bin",
+      "prefix_path": "work/leica-comparison/DLX7-mirror.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "ae228519297cbe493f22b2cb207f7ff9e6fb874393b18d919627cc33cc9959e9",
+      "total_bytes_per_http_content_range": 102701056,
+      "content_range_verified": true,
+      "magic_hex": "55504400000200000002000044433236",
+      "full_file_integrity_verified": false,
+      "role": "third-party firmware mirror",
+      "format_revision": "0x200",
+      "at_0x2c": 3,
+      "at_0x34": 3,
+      "components": [
+        {
+          "name": "loader1",
+          "flags": 3
+        },
+        {
+          "name": "loader2",
+          "flags": 3
+        },
+        {
+          "name": "loader3",
+          "flags": 3
+        },
+        {
+          "name": "program",
+          "flags": 3
+        },
+        {
+          "name": "storage",
+          "flags": 2
+        },
+        {
+          "name": "postboot1",
+          "flags": 3
+        },
+        {
+          "name": "postboot2",
+          "flags": 3
+        },
+        {
+          "name": "postboot3",
+          "flags": 3
+        },
+        {
+          "name": "postboot4",
+          "flags": 3
+        },
+        {
+          "name": "postboot5",
+          "flags": 3
+        },
+        {
+          "name": "eep_ow_a",
+          "flags": 3
+        },
+        {
+          "name": "eep_ow_b",
+          "flags": 3
+        },
+        {
+          "name": "eep_adj",
+          "flags": 3
+        },
+        {
+          "name": "eep_fix",
+          "flags": 3
+        },
+        {
+          "name": "history",
+          "flags": 2
+        },
+        {
+          "name": "music",
+          "flags": 3
+        },
+        {
+          "name": "osdover",
+          "flags": 3
+        },
+        {
+          "name": "osddata",
+          "flags": 3
+        },
+        {
+          "name": "fileinfo",
+          "flags": 2
+        },
+        {
+          "name": "ninsho_db",
+          "flags": 2
+        },
+        {
+          "name": "koutei_kao",
+          "flags": 3
+        },
+        {
+          "name": "eep_net_a",
+          "flags": 2
+        },
+        {
+          "name": "eep_net_b",
+          "flags": 2
+        },
+        {
+          "name": "wifi_info",
+          "flags": 2
+        },
+        {
+          "name": "nfc_info",
+          "flags": 2
+        },
+        {
+          "name": "zboot",
+          "flags": 3
+        },
+        {
+          "name": "dtb",
+          "flags": 3
+        },
+        {
+          "name": "zimage",
+          "flags": 3
+        },
+        {
+          "name": "rootfs1",
+          "flags": 3
+        },
+        {
+          "name": "rootfs2",
+          "flags": 3
+        },
+        {
+          "name": "usbcharge",
+          "flags": 3
+        },
+        {
+          "name": "focus_selec",
+          "flags": 3
+        }
+      ],
+      "finding": "UPD v2; main program and loader entries remain flagged 3, as in the sampled encoded Panasonic components"
+    },
+    {
+      "source_url": "https://leica-camera.com/sites/default/files/pm-14937-Leica-DLUX_8-OSS-SourceCode.zip",
+      "prefix_path": "work/leica-comparison/DLX8-OSS.prefix",
+      "prefix_bytes": 65536,
+      "prefix_sha256": "92eea1b028487298ce37a981d0d25a1aadfb8f16b21b6c0b8a49513cbe4f36ba",
+      "total_bytes_per_http_content_range": 116237550,
+      "content_range_verified": true,
+      "magic_hex": "504b03041400000000002e70b6580000",
+      "full_file_integrity_verified": false,
+      "role": "official",
+      "finding": "ZIP prefix only; no full archive/body verification"
+    }
+  ],
+  "oss_central_directory_scope": "Central directory obtained from separately verified final 65,536-byte HTTP range; ZIP member CRCs not verified",
+  "oss_member_names": [
+    "Leica-DLUX_8-OSS-SourceCode/",
+    "__MACOSX/._Leica-DLUX_8-OSS-SourceCode",
+    "Leica-DLUX_8-OSS-SourceCode/iptables-1.6.1.tar.bz2",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._iptables-1.6.1.tar.bz2",
+    "Leica-DLUX_8-OSS-SourceCode/wireless_tools.30.pre9.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._wireless_tools.30.pre9.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/ifupdown_0.8.16.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._ifupdown_0.8.16.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/bash-3.2.57.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._bash-3.2.57.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/less-394.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._less-394.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/glibc-2.23.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._glibc-2.23.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/grep-2.5.1a.tar.bz2",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._grep-2.5.1a.tar.bz2",
+    "Leica-DLUX_8-OSS-SourceCode/time-1.7.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._time-1.7.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/libnl-3.2.27.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._libnl-3.2.27.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/linux-3.18.48.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._linux-3.18.48.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/tar-1.17.tar.bz2",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._tar-1.17.tar.bz2",
+    "Leica-DLUX_8-OSS-SourceCode/kmod-23.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._kmod-23.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/iputils-55828d1fef3fed7f07abcbf7be9282a9662e78c7.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._iputils-55828d1fef3fed7f07abcbf7be9282a9662e78c7.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/procps-ng-3.3.12.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._procps-ng-3.3.12.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/util-linux-2.29.2.tar.xz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._util-linux-2.29.2.tar.xz",
+    "Leica-DLUX_8-OSS-SourceCode/sysvinit_2.88dsf.orig.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._sysvinit_2.88dsf.orig.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/coreutils-6.9.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._coreutils-6.9.tar.gz",
+    "Leica-DLUX_8-OSS-SourceCode/net-tools-3f170bff115303e92319791cbd56371e33dcbf6d.tar.gz",
+    "__MACOSX/Leica-DLUX_8-OSS-SourceCode/._net-tools-3f170bff115303e92319791cbd56371e33dcbf6d.tar.gz"
+  ],
+  "limits": "Header comparison only. No complete Leica firmware or Linux source archive acquired. No downloaded instructions executed and no camera contacted."
+}

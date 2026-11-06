@@ -1,0 +1,356 @@
+{
+  "schema": 1,
+  "package": "TATSUJIN for DMC-FZ30 series, Ver. 1.00, 2005",
+  "source_url": "https://www.inweb.ch/foto/downloads/Dmc-fz30.exe.zip",
+  "source_kind": "Third-party mirror of historical Panasonic adjustment software; GM5 compatibility unverified",
+  "archive_bytes": 4303322,
+  "archive_sha256": "a686e01733a90c43a80fa91348ec15ffa3c9fce0de620b784c19cf17ab192fc9",
+  "static_extraction": {
+    "source_url": "https://www.inweb.ch/foto/downloads/Dmc-fz30.exe.zip",
+    "archive_sha256": "a686e01733a90c43a80fa91348ec15ffa3c9fce0de620b784c19cf17ab192fc9",
+    "installer_sha256": "e55eaa5379a339bfeef4caad8b09c04f65e138c4d24d5a0d3f05ad9ef02ac598",
+    "extractor_reference": "https://github.com/lifenjoiner/ISx",
+    "reference_source_sha256": "3581ed63c8bfd68d10ed4b73c47a74c00685f6dd45683a8b501c1721d8aa81bc",
+    "method": "Bounded static extraction of three InstallShield records; one file-length nibble-swap/XOR pass with filename-derived key",
+    "installer_executed": false,
+    "camera_contacted": false,
+    "entries": [
+      {
+        "name": "0x0409.ini",
+        "encoded_offset": 250214,
+        "bytes": 5495,
+        "sha256": "43160e278e4302e378e754149c6394bc51d1969a7941687cfcc6c00b25151282"
+      },
+      {
+        "name": "TATSUJIN for DMC-FZ30 series.msi",
+        "encoded_offset": 256021,
+        "bytes": 4290048,
+        "sha256": "17a01499368a384d415a0083788c00c0def02c630a202519ff31b6f13d598c64"
+      },
+      {
+        "name": "Setup.ini",
+        "encoded_offset": 4546381,
+        "bytes": 1892,
+        "sha256": "4202c8a148cc95f352e4e527624da6656a16f2819f00b05ec643ea6eab2411c8"
+      }
+    ]
+  },
+  "files": [
+    {
+      "name": "atr.fmt",
+      "bytes": 198,
+      "sha256": "cbe67228ce14347c243fdd3a0bb9bb25cd5a64ed5c88de025830659471c97ffe"
+    },
+    {
+      "name": "bf.pdf",
+      "bytes": 1609672,
+      "sha256": "4eef8d3adee62e41acc6425b29876076369a8ecfa9486527b9c5710f42708322"
+    },
+    {
+      "name": "completed.rtf",
+      "bytes": 839,
+      "sha256": "ff8555936ad5aa8628f72bd1c998c11aa37b726002537d974f74beb44d1e9fa5"
+    },
+    {
+      "name": "doing.rtf",
+      "bytes": 873,
+      "sha256": "564821e1f83b94f48e95689bfd175faa729ff80d8ba9a956f96241bd60587d21"
+    },
+    {
+      "name": "fz30.exe",
+      "bytes": 891392,
+      "sha256": "5a5852ebb7f9455f61566634baf1861cec65d4b235032117c3612a93da63da70"
+    },
+    {
+      "name": "fz30.txt",
+      "bytes": 490,
+      "sha256": "02e7e2c1057db90e906535b351007be79fbf15bc152d9bf8043f690090a44737"
+    },
+    {
+      "name": "good.rtf",
+      "bytes": 854,
+      "sha256": "cadd4dd0a21ace4388253c81791aacc4023f0b8bfeb9c43260f21e83929ebb93"
+    },
+    {
+      "name": "howto.pdf",
+      "bytes": 157877,
+      "sha256": "659fd25471f95283a6b02d84b80a06467c30e621f887c97cd2d8076a0692a683"
+    },
+    {
+      "name": "inf.rtf",
+      "bytes": 1154,
+      "sha256": "58173ce0d83fae0769d71c3ee18548eeb830db7d7a77c3fcbdfe7824195c079d"
+    },
+    {
+      "name": "mkeusb01.dll",
+      "bytes": 229460,
+      "sha256": "504052d9e34d4d97578ca84bcbac21c688782c11e1e603a69ca86dbd86ca2458"
+    },
+    {
+      "name": "mkeusb01.inf",
+      "bytes": 1395,
+      "sha256": "9aa3a7423fb427068e5a3c5a9477fa8c6d6bccaae6fa9c2cf94c16ba54f48b45"
+    },
+    {
+      "name": "mkeusb01.sys",
+      "bytes": 13226,
+      "sha256": "2528eaafc48e8bb87f2828963897f5ec7698314337cda98853d662bb51d25801"
+    },
+    {
+      "name": "ois.pdf",
+      "bytes": 351789,
+      "sha256": "335b145423963c67c463105fd10b4e429155465c2b250ab96c2a023a5a5a085f"
+    },
+    {
+      "name": "pseadj.rtf",
+      "bytes": 849,
+      "sha256": "1e5402cef0dc71ace5ce143e1215effb337b13b4af992a0d6bac96d05d6156f1"
+    },
+    {
+      "name": "psewait.rtf",
+      "bytes": 850,
+      "sha256": "e33578bf05824cc070d84b077085818d44e8c85ddccb50f90b9ad4b8989f7c1e"
+    },
+    {
+      "name": "rangeover.rtf",
+      "bytes": 952,
+      "sha256": "bb76d0d6c4de0757779ac3b7514497993095c52f3e8f3f7381b759e16e51b3db"
+    },
+    {
+      "name": "scrp.pdf",
+      "bytes": 553675,
+      "sha256": "4e67ff42154a93ee914eb6577fb17a0c0511df94720ef577455a15fd67f71919"
+    },
+    {
+      "name": "shtawb.pdf",
+      "bytes": 527502,
+      "sha256": "f14beb5caf64fd29375ae8117bdec7c0d598c3a2fbeb1c2ad3e84477b2f882c4"
+    },
+    {
+      "name": "stop.rtf",
+      "bytes": 820,
+      "sha256": "667c65ada6eea2009e10429f5f6eb7cb8c95c66c7dbc576fb045f9d850bcafea"
+    },
+    {
+      "name": "submenu.txt",
+      "bytes": 2176,
+      "sha256": "c5ef12a04767d04c7295359ba73ad2650b82975444e584342efcfd711810d0d6"
+    },
+    {
+      "name": "sys.cfg",
+      "bytes": 1168,
+      "sha256": "d3c051fab8c135e67e88223550ee241155d60a171ed6bcc8ba9052213d905892"
+    },
+    {
+      "name": "sysmsg.txt",
+      "bytes": 1721,
+      "sha256": "7f31fa3e10336ddfa39c38bdeb9da0a38f3c8c016c5ce67bb71565f6b05ca18a"
+    },
+    {
+      "name": "timeover.rtf",
+      "bytes": 925,
+      "sha256": "49bb176ebf36e3100f746c2a513d2f1dcfcdffc491c6ed2301aef5afc2a37949"
+    },
+    {
+      "name": "ungood.rtf",
+      "bytes": 808,
+      "sha256": "57ddfa18828be59941af986e0a7fba8f062645e1c09ca21eeed5d0e26acc87aa"
+    },
+    {
+      "name": "unknown.rtf",
+      "bytes": 890,
+      "sha256": "3a163580455562ca5bc97c01acf6f0b8b8fd949a76c63ef05346655a870a7df2"
+    },
+    {
+      "name": "usage.pdf",
+      "bytes": 382851,
+      "sha256": "8f0e5e6cd1c70b33c8856453d8dc7f328a1ceda1aefd710fc1db102f47ef63d9"
+    }
+  ],
+  "observations": [
+    {
+      "subject": "USB device IDs",
+      "source": "mkeusb01.inf, [Mke]",
+      "values": [
+        "04da:0904",
+        "04da:2370"
+      ],
+      "limits": "Historic FZ package bindings; not identifiers observed from a connected GM5."
+    },
+    {
+      "subject": "Driver API",
+      "source": "mkeusb01.dll export directory",
+      "names": [
+        "open_dev",
+        "open_file",
+        "preBulkRead",
+        "setBulkWriteSize",
+        "getBulkReadSize",
+        "getBulkButtonStatus",
+        "preBulkRead_CZ30",
+        "preBulkWrite_CZ30"
+      ],
+      "limits": "Windows driver wrappers; not demonstrated GM5 commands."
+    },
+    {
+      "subject": "Read EEPROM wrapper",
+      "source": "fz30.exe PE virtual addresses 0x40d110 through 0x40d1e5",
+      "observations": [
+        "Busy! Read EEPROM branch identifies the wrapper.",
+        "Copies low/high address bytes from ECX and one selector byte from DL into a three-byte payload.",
+        "Passes type 0x08 and operation 0x38 into a shared request routine."
+      ],
+      "limits": "16-bit address plus selector does not establish a CPU-address memory reader or access to program regions."
+    },
+    {
+      "subject": "Request construction",
+      "source": "fz30.exe PE virtual addresses 0x40c6e4, 0x40cdbc and 0x40c850",
+      "observations": [
+        "For this read path, constructs a 16-byte buffer.",
+        "Prefix is 08 00 ff 38 followed by address-low, address-high and selector.",
+        "Unused payload bytes are zero filled; byte 14 holds the modulo-256 sum of bytes 1..13 and byte 15 is zero."
+      ],
+      "limits": "Static host-side reconstruction only; no captured USB transaction or camera test."
+    },
+    {
+      "subject": "Backup scope",
+      "source": "howto.pdf pages 3-4 and submenu.txt",
+      "observations": [
+        "Labels the saved file as EEPROM data.",
+        "Describes an EEPRAM/EEPROM editor and calibration backup, not a full executable firmware image."
+      ],
+      "limits": "Does not settle the scope of a later GM5 adjustment package."
+    }
+  ],
+  "local_disassemblies": [
+    {
+      "path": "work/service-software/fz30-dll-transfer.disasm.txt",
+      "bytes": 29085,
+      "sha256": "1c95580c663abd67af77c02538353a324319162d0b193969f01e0d9d18e7c9ad"
+    },
+    {
+      "path": "work/service-software/fz30-read-request.disasm.txt",
+      "bytes": 6866,
+      "sha256": "fbb959ec2d0c06dfaf73e6df11ee1360d22a68d4487b675c159bcbe761b60ac6"
+    },
+    {
+      "path": "work/service-software/fz30-read-wrapper.disasm.txt",
+      "bytes": 4097,
+      "sha256": "52fa94ee84be93ca6ddfaec709b9c9eea164250b8cc4838927c331405efcccd5"
+    },
+    {
+      "path": "work/service-software/fz30-request-builder.disasm.txt",
+      "bytes": 6869,
+      "sha256": "736be129c6b395587545eeea7d032152509cbfe5ca5380da0569815e94172513"
+    },
+    {
+      "path": "work/service-software/fz30-send-poll.disasm.txt",
+      "bytes": 11702,
+      "sha256": "f7271e71e41133ecfff6fb684cefbe19e733d45b40b001106979201e6167e635"
+    },
+    {
+      "path": "work/service-software/fz30-transfer-requests.disasm.txt",
+      "bytes": 13242,
+      "sha256": "77d6468e888a543fd3f8c41eaf76ddf27001b8e347c85ee22fec551c257b069f"
+    },
+    {
+      "path": "work/service-software/fz30-usb-wrappers.disasm.txt",
+      "bytes": 88703,
+      "sha256": "d1f5ea85c209287e8d87501a58bdff1497cb3b97e1e071f5a20982a47a7e2e2a"
+    },
+    {
+      "path": "work/service-software/fz30-method-table.json",
+      "bytes": 11996,
+      "sha256": "8584b0a640ecbb026ff9047e8d6b0ae512daf2d0b47d3d6ae7435b653e67ce64"
+    },
+    {
+      "path": "work/service-software/fz30-memory-radio-handlers.disasm.txt",
+      "bytes": 3631,
+      "sha256": "3d1c2a66948218293ac0ad333170a2c371b491e0b6925044012de3b732b3ba94"
+    },
+    {
+      "path": "work/service-software/fz30-radio-areas.disasm.txt",
+      "bytes": 550,
+      "sha256": "a03ee4382c2cb5cc396555ccb790317fa0e550cc468e9a93710790e319d4e456"
+    },
+    {
+      "path": "work/service-software/fz30-memory-dispatch.disasm.txt",
+      "bytes": 1786,
+      "sha256": "99cf99874025e1dd9c5400e4dc04bf5d344290f7c2a8d8923ddea17aa88bfc9a"
+    },
+    {
+      "path": "work/service-software/fz30-word-read-buffer.disasm.txt",
+      "bytes": 4203,
+      "sha256": "b4e073dbd3a2e8a808dc9e696906729c3bc07ec4c4bd17627f57d01fd9f92117"
+    },
+    {
+      "path": "work/service-software/fz30-word-read-rom.disasm.txt",
+      "bytes": 4203,
+      "sha256": "81125721b9e764c21213a60f16beafacdad3c22158a7e14e0f6aaa2996dcd249"
+    },
+    {
+      "path": "work/service-software/fz30-word-response.disasm.txt",
+      "bytes": 834,
+      "sha256": "73ca15035af598b811a670b21c1ac5c0af90048575f752c53440b71dced3df9c"
+    },
+    {
+      "path": "work/service-software/fz30-bulk-eeprom-reader.disasm.txt",
+      "bytes": 17036,
+      "sha256": "e82cb93885678cf6b2de87dec50c9f11b2bf581a8b8097a6ef1e8dd82cc58a5a"
+    },
+    {
+      "path": "work/service-software/fz30-bulk-command-builder.disasm.txt",
+      "bytes": 24654,
+      "sha256": "0a48c7350f44e74259c89f871633bf74147d96bfd2e4bd188a8abfa3aeff8d1f"
+    }
+  ],
+  "installer_executed": false,
+  "driver_installed": false,
+  "camera_contacted": false,
+  "named_read_modes_followup": {
+    "method_record_format": "u16 record length, u32 PE code address, u8 name length, method-name bytes; retained self-consistent records only",
+    "method_record_count": 110,
+    "rom_radio_handler": {
+      "pe_address": 4204808,
+      "host_mode_byte_at_object_offset": 932,
+      "value": 0,
+      "selects_read_wrapper": 4247820,
+      "camera_operation": 56
+    },
+    "buffer_radio_handler": {
+      "pe_address": 4204920,
+      "host_mode_byte_at_object_offset": 932,
+      "value": 1,
+      "selects_read_wrapper": 4247600,
+      "camera_operation": 53
+    },
+    "read_dispatch": 4205200,
+    "update_area_handler": {
+      "pe_address": 4214564,
+      "selector": 16,
+      "host_address_upper_comparison": 4095
+    },
+    "fixed_area_handler": {
+      "pe_address": 4214572,
+      "selector": 32,
+      "host_address_upper_comparison": 16383
+    },
+    "response_word_helper": 4248464,
+    "response_word_offset": 4,
+    "response_word_byte_order": "little",
+    "bulk_read": {
+      "caller": 4258267,
+      "entry": 4251516,
+      "operation": 62,
+      "builder": 4252336,
+      "returned_bytes": 8192,
+      "read_area_selectors": [
+        16,
+        32
+      ]
+    },
+    "interpretation": "Two bounded EEPROM-area read modes are proven in this old host tool. Buffer selects a read operation; this is not a camera debug-console enable flag or an established arbitrary CPU-memory reader.",
+    "physical_camera_requests": false,
+    "gm5_compatibility_verified": false
+  }
+}

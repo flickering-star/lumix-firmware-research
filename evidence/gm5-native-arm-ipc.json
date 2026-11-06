@@ -1,0 +1,604 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T19:35:16.876056+00:00",
+  "scope": "Captured MN103 requests read into native ARM objects and dispatched to their real callback; stops before ARM kernel mailbox posting",
+  "native_bounded_controls_passed": 8,
+  "native_instructions_started": 866,
+  "camera_contacted": false,
+  "input_is_mn103_emulation_snapshot_not_physical_ram_dump": true,
+  "backend_milestone_evidence": {
+    "path": "evidence/gm5-cooperative-arm-extension.json",
+    "bytes": 201759,
+    "sha256": "8c30aef955ce8f75d20b36191dda518abc81a1aa55eaf07d18cdbec2977fbf02"
+  },
+  "native_run_summary": {
+    "path": "work/gm5-arm-native-ipc-1/summary.json",
+    "bytes": 57213,
+    "sha256": "657e34505c25062e24f5c25f5997882a507b02d5b5b621269b7b18b333326c35"
+  },
+  "retained_release": [
+    {
+      "path": "work/gm5-native-arm-ipc-release-1/ipc-probe.py",
+      "bytes": 9965,
+      "sha256": "1e1da32ad32706f95cd8122c9d3228de76712eb67e0a0d085040994ce36f8523"
+    },
+    {
+      "path": "work/gm5-native-arm-ipc-release-1/evidence-collector.py",
+      "bytes": 5337,
+      "sha256": "4bb26474e3c8e3d1f358ab5e01ae73de17c0f7ac4c8aa4f34c367d73f7359b07"
+    }
+  ],
+  "native_cases": [
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_800f_registration_arguments",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 3,
+        "pc": "0x19dfe",
+        "registers": {
+          "r0": "0x800f",
+          "r1": "0xbb8d",
+          "r2": "0x0",
+          "r3": "0x0",
+          "r4": "0x0",
+          "r5": "0x0",
+          "r6": "0x0",
+          "r7": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000e000",
+          "lr": "0xbc8f",
+          "pc": "0x19dfe",
+          "cpsr": "0x3f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "86f7ed1a8d7858c6827d4553a0b71ff3fd523facf245f28899ca0421c0e5ee9d",
+      "trace_sha256": "74b2d26cb9acc252430194e388e77af1afea90d64467fd7910b06fed7078a21b",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_800f_registration_arguments",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "3538e32f5310a89e48a2534f4cb4737fda679b8683a635bea31ab557cf762d3c"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "a95b61bb85aadeb6eae1f4f2aadd31d727479aaf706bed3d1dea87157fba61c5"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_service_context_prefix",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 8,
+        "pc": "0x604c",
+        "registers": {
+          "r0": "0x363480",
+          "r1": "0x3638f8",
+          "r2": "0x0",
+          "r3": "0x0",
+          "r4": "0x0",
+          "r5": "0x0",
+          "r6": "0x0",
+          "r7": "0x0",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dff8",
+          "lr": "0x7000fff1",
+          "pc": "0x604c",
+          "cpsr": "0x3f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "ea8d7c3ee4a351ea14bbbe0625e7c25c5387235f99797aaa34e5478108432b11",
+      "trace_sha256": "f2629ed65c19b252ae7dedb14edecba679df8b4a829e952f70e00acea89c0b2b",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_service_context_prefix",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "f58ead934388884b77b7339c576307e606b307c8fb3a725d0dc4964de910f7b4"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "e6d9824678628560525227642a93ee1018d77a47aa1ac4e30b4fec83ea3c8282"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "a95b61bb85aadeb6eae1f4f2aadd31d727479aaf706bed3d1dea87157fba61c5"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_callback_registration_before_notification",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 86,
+        "pc": "0x23f68",
+        "registers": {
+          "r0": "0x9c013006",
+          "r1": "0x1",
+          "r2": "0xf",
+          "r3": "0x0",
+          "r4": "0x93f01000",
+          "r5": "0x0",
+          "r6": "0xf",
+          "r7": "0x0",
+          "r8": "0x800f",
+          "r9": "0xbb8d",
+          "r10": "0x1",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfe0",
+          "lr": "0x23eed",
+          "pc": "0x23f68",
+          "cpsr": "0x2000003f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "ae7cf0ef4e8bb0a495cafbc7b509d8579d5fbb8b569a28c97acacdd30ae68368",
+      "trace_sha256": "03e333383d7ad380494cb032c57b42b048c717879535af9d87a16eb8c8bef2b7",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_callback_registration_before_notification",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "6a3bc69aa03b5813aaa6eb2fa0a51f670062afdfb114aa2f504baa6d1e3d80cf"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "a34cce0c4b5b3f95f38b3f98c2e6d17ba93dc60b965c24fdf691d5abb4aca92c"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "fda610cb554536094ef02389a69d6acd9e2752d8cc0a26c9871c3d7bfe20cceb"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_first_ring_message_before_local_irq",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 285,
+        "pc": "0x23964",
+        "registers": {
+          "r0": "0x20",
+          "r1": "0x363480",
+          "r2": "0xffffffe8",
+          "r3": "0x4",
+          "r4": "0x93f01110",
+          "r5": "0x363488",
+          "r6": "0x93f01118",
+          "r7": "0x93f01124",
+          "r8": "0x363480",
+          "r9": "0x2f1d08",
+          "r10": "0xfffffff8",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfd8",
+          "lr": "0x23c8d",
+          "pc": "0x23964",
+          "cpsr": "0x2000003f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "d049a21ca8f566b21f8074f869a3b35f52c917855abf034f0e4cf0a4474b3256",
+      "trace_sha256": "74d6d22a81e9e3c74806eda7d31c9fbefb8228699ea462beb30053d4edf49b87",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_first_ring_message_before_local_irq",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "3309e98e6ced246e55fd4a930695977bfe1c7d8d64cd2d85217b7f590a7e13c8"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "35e867387ff2277559b15cc1b97693e4f4e99b2724a746d925ab40b34dca2aa0"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "77ef5e8bbba4cb853a104471d08ad15a6eaba36db1401df862f77a2050dc188b"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_second_ring_message_before_local_irq",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 298,
+        "pc": "0x23964",
+        "registers": {
+          "r0": "0x20",
+          "r1": "0x363488",
+          "r2": "0xffffffe8",
+          "r3": "0x0",
+          "r4": "0x93f01110",
+          "r5": "0x363514",
+          "r6": "0x93f01118",
+          "r7": "0x93f01130",
+          "r8": "0x363480",
+          "r9": "0x2f1d08",
+          "r10": "0xfffffff8",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfd8",
+          "lr": "0x23c8d",
+          "pc": "0x23964",
+          "cpsr": "0x2000003f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "9f0707ffdd99a5e9be6e9d33fb507818a64e90abefb68546949708023d321b74",
+      "trace_sha256": "ecc35db508c294f93bd8f00d47292236ac8513ea1a8db9fec204ab40c0923089",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_second_ring_message_before_local_irq",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "a8ca98f67513ba41cda0b04d54439ae23e361d16b9291ab6a404ad7217470354"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "aa64223a000de7531d1b97a57fb627bad882becab70a4df8a3bdd145e29279c3"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "f6039264955d54ba7cb8ada355973caedebf81f934ee46771ea66c15fd4a9899"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_dispatch_selected_real_callback",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 52,
+        "pc": "0xbb8c",
+        "registers": {
+          "r0": "0x363494",
+          "r1": "0x8",
+          "r2": "0xbb8d",
+          "r3": "0x0",
+          "r4": "0x363488",
+          "r5": "0xf",
+          "r6": "0x2",
+          "r7": "0x800f",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfe8",
+          "lr": "0x23fa7",
+          "pc": "0xbb8c",
+          "cpsr": "0x6000003f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "a0a03e57c67d0ad7351c25aa18533c9042f7874bdd5f2c3f5defaffe39a6f171",
+      "trace_sha256": "3b8e552a80a3cd7361ea47a52e4f063cbbab4846a7e64fad6ce9f963f8a80dfd",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_dispatch_selected_real_callback",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "ef5921101778af2d3d7da60fe6a5fc398dcc5a5396d60cd202795310e81fe8f7"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "aa64223a000de7531d1b97a57fb627bad882becab70a4df8a3bdd145e29279c3"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "f6039264955d54ba7cb8ada355973caedebf81f934ee46771ea66c15fd4a9899"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_message0_before_kernel_mailbox",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 67,
+        "pc": "0x1d3c04",
+        "registers": {
+          "r0": "0xb",
+          "r1": "0x2027c17c",
+          "r2": "0xbb8d",
+          "r3": "0x0",
+          "r4": "0x363494",
+          "r5": "0x8",
+          "r6": "0x2",
+          "r7": "0x800f",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfd8",
+          "lr": "0xbbbd",
+          "pc": "0x1d3c04",
+          "cpsr": "0x1f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "aa002cbfde9516a8af902bb86884153414562f9b7d4af0b96ea4df62c6abf77b",
+      "trace_sha256": "79ade7d13c89e479cc128007fa311fabc21fb7c0f8ac5b4e5af1b39dae354f21",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_message0_before_kernel_mailbox",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "0634b451f4d9612c78d02bffbb1036d50cb86766c8e9f7b7583c6c79822fe19a"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "aa64223a000de7531d1b97a57fb627bad882becab70a4df8a3bdd145e29279c3"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "f6039264955d54ba7cb8ada355973caedebf81f934ee46771ea66c15fd4a9899"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    },
+    {
+      "directory": "work/gm5-arm-native-ipc-1/native_arm_message1_before_kernel_mailbox",
+      "result": {
+        "stop": "reviewed_native_boundary",
+        "instructions_started": 67,
+        "pc": "0x1d3c04",
+        "registers": {
+          "r0": "0xb",
+          "r1": "0x2027c02c",
+          "r2": "0xbb8d",
+          "r3": "0x0",
+          "r4": "0x363520",
+          "r5": "0x8",
+          "r6": "0x2",
+          "r7": "0x800f",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "sp": "0x7000dfd8",
+          "lr": "0xbbbd",
+          "pc": "0x1d3c04",
+          "cpsr": "0x1f"
+        },
+        "fault": null,
+        "engine_error": null
+      },
+      "scenario_sha256": "f2f089951b2b40b0191dc43572c0de81b9a073e12e18b41f385670a0585d6149",
+      "trace_sha256": "e9b79070dcb1f0889d8e43b8d0d27b4808d29fe8eb85d61663360a3776d22f2f",
+      "driver_sha256": "4b097071762c291a6b6b2ef4a45debd4d2a787f904a6180c37f9975abd567be9",
+      "cpu_model_fixture": "Cortex-A9",
+      "name": "native_arm_message1_before_kernel_mailbox",
+      "dumps": [
+        {
+          "name": "arm-state.data",
+          "address": 0,
+          "size": 3407872,
+          "sha256": "63588ac77ed0b3ab0d266a7a143b2339acf1580b6f5ba2ccc283ef145dedac24"
+        },
+        {
+          "name": "caller.data",
+          "address": 1879048192,
+          "size": 65536,
+          "sha256": "32f2d9a08a8f2924f9fb4159cf6426e7121ed05f84d420dde10f26921a91ad15"
+        },
+        {
+          "name": "arm-context.data",
+          "address": 3551232,
+          "size": 4096,
+          "sha256": "aa64223a000de7531d1b97a57fb627bad882becab70a4df8a3bdd145e29279c3"
+        },
+        {
+          "name": "shared-ring.data",
+          "address": 2481983488,
+          "size": 4096,
+          "sha256": "f6039264955d54ba7cb8ada355973caedebf81f934ee46771ea66c15fd4a9899"
+        },
+        {
+          "name": "shared-camera-ram.data",
+          "address": 536870912,
+          "size": 16777216,
+          "sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1"
+        }
+      ]
+    }
+  ],
+  "native_objects": [
+    {
+      "address": "0x363488",
+      "service_id": "0x800f",
+      "payload_bytes": 8,
+      "command": 4,
+      "mn103_pointer": "0xb027c17c",
+      "arm_pointer": "0x2027c17c"
+    },
+    {
+      "address": "0x363514",
+      "service_id": "0x800f",
+      "payload_bytes": 8,
+      "command": 0,
+      "mn103_pointer": "0xb027c02c",
+      "arm_pointer": "0x2027c02c"
+    }
+  ],
+  "native_callback": "0xbb8d",
+  "native_ring_heads": [
+    0,
+    12,
+    24
+  ],
+  "native_ring_tail": 24,
+  "source_ram_sha256": "3e271c5774f674bd5f697a9a2fdc48745c263db6675d42e973f0e472931e20f1",
+  "source_ring_sha256": "01b1b6b5fbae6836fa0911b827a23007aa1f6a2a03c03aa2ff023dd444c707d0",
+  "message_data_and_ring_offsets_written_by_fixture": false,
+  "interrupts_mailbox_posts_or_acknowledgements_supplied": false,
+  "unresolved_boundary": {
+    "native_pc": "0x1d3c04",
+    "instruction_set": "ARM",
+    "kernel_object_id": 11,
+    "interpretation": "Mailbox-send interface, inferred from the paired native receiving/sending call signatures; kernel body not yet executed in this experiment."
+  },
+  "complete_cross_processor_ui_flow": false,
+  "physical_region_patch_installed": false,
+  "limits": [
+    "Direct bounded prefix/function entries use fresh caller frames and explicit ordinary storage.",
+    "ARM registration is tested through the native low-level API; its outer kernel synchronization wrapper has not run.",
+    "Registration and receiver stages stop before unmodeled notification/local interrupt-controller instructions.",
+    "Native callback reaches ARM-mode0x1d3c04 with mailbox11 and the translated pointer, but the ARM kernel/worker/reply path is not initialized."
+  ]
+}

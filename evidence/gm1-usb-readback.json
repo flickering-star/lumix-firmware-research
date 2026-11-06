@@ -1,0 +1,676 @@
+{
+  "schema": 1,
+  "updated_utc": "2026-11-06T00:20:24.705550+00:00",
+  "scope": "Live GM1 service reads, complete 9 MiB main and 3.375 MiB secondary programs, verified resume and exact official component hashes; GM5 untested",
+  "initial_observation": "evidence/gm1-usb-service.json",
+  "normal_terminal_comparison": {
+    "resolved_host_access": true,
+    "attempts": [
+      {
+        "path": "captures/gm1-usb-settings-otE2m24T",
+        "summary": {
+          "schema": 1,
+          "mode": "settings",
+          "exit_status": 1,
+          "interface_opened": true,
+          "control_requests_attempted": 2,
+          "bulk_writes_attempted": 1,
+          "validated_word_responses": 0,
+          "settings_bytes": 0,
+          "settings_markers_match": false,
+          "flash_prefix_bytes": 0
+        },
+        "events": {
+          "path": "captures/gm1-usb-settings-otE2m24T/result/events.jsonl",
+          "bytes": 1774,
+          "sha256": "5bb6e5e6fa1d94b616ed1fb1eaa5349887801c1e0af917a64f3b4d1898223827"
+        },
+        "source": {
+          "path": "captures/gm1-usb-settings-otE2m24T/probe-source.c",
+          "bytes": 15548,
+          "sha256": "c59a9070549d3ff721dcdec51ccab94ebb9c71c3c1973a0d8c00157cc4607367"
+        },
+        "executable": {
+          "path": "captures/gm1-usb-settings-otE2m24T/gm1-usb-probe",
+          "bytes": 36320,
+          "sha256": "64737e0133314c151747d6ae60f81a45c7a4b1853caf3b2d686ddc58dcb2a6ba"
+        }
+      },
+      {
+        "path": "captures/gm1-usb-settings-zlC6tMqb",
+        "summary": {
+          "schema": 1,
+          "mode": "settings",
+          "exit_status": 1,
+          "interface_opened": true,
+          "control_requests_attempted": 2,
+          "bulk_writes_attempted": 1,
+          "validated_word_responses": 0,
+          "settings_bytes": 0,
+          "settings_markers_match": false,
+          "flash_prefix_bytes": 0
+        },
+        "events": {
+          "path": "captures/gm1-usb-settings-zlC6tMqb/result/events.jsonl",
+          "bytes": 1774,
+          "sha256": "2ed936481911148c0b834638fb9ee7f1a149d8422a29ccc9d7ae64f225803a53"
+        },
+        "source": {
+          "path": "captures/gm1-usb-settings-zlC6tMqb/probe-source.c",
+          "bytes": 15548,
+          "sha256": "c59a9070549d3ff721dcdec51ccab94ebb9c71c3c1973a0d8c00157cc4607367"
+        },
+        "executable": {
+          "path": "captures/gm1-usb-settings-zlC6tMqb/gm1-usb-probe",
+          "bytes": 36320,
+          "sha256": "64737e0133314c151747d6ae60f81a45c7a4b1853caf3b2d686ddc58dcb2a6ba"
+        }
+      }
+    ],
+    "result": "The interface opened and read requests succeeded; the first IN transfer returned one type byte 08. The original probe incorrectly required a complete frame on that transfer."
+  },
+  "receive_sequence_correction": {
+    "historical_host_source": {
+      "path": "work/service-software/fz30-usb-wrappers.disasm.txt",
+      "bytes": 88703,
+      "sha256": "d1f5ea85c209287e8d87501a58bdff1497cb3b97e1e071f5a20982a47a7e2e2a"
+    },
+    "first_read_call": "0x40ca41, requested length 1",
+    "type_08_frame_length": 16,
+    "full_frame_read_call": "0x40caf2",
+    "preparation": "Request 40/00, value 0, index 1 before each IN transfer",
+    "sequence": "Read one type byte, prepare a new IN transfer, then read the entire frame including its type byte",
+    "automatic_retries": false
+  },
+  "live_descriptor": {
+    "capture": {
+      "path": "captures/gm1-usb-flash-TOsIFxZY/configuration.json",
+      "bytes": 342,
+      "sha256": "11ab24ed2eea1d744db4014b8943c1db9054d049274693c3cb2dd0ab51480302"
+    },
+    "configuration_hex": "09022700010100c0010904000003ffa0b000070501020002000705820200020007058303000208",
+    "configuration_bytes": 39,
+    "endpoint_addresses": [
+      "0x01",
+      "0x82",
+      "0x83"
+    ],
+    "endpoint_max_packet_bytes": [
+      512,
+      512,
+      512
+    ],
+    "interrupt_interval": 8,
+    "gh2_service_model_exact_match": true,
+    "gh2_model_reference": "evidence/gh2-usb-maintenance-entry.json:configuration_model_outputs[3]"
+  },
+  "settings_read": {
+    "capture": {
+      "path": "captures/gm1-usb-settings-VkPWyjQT",
+      "summary": {
+        "schema": 1,
+        "mode": "settings",
+        "exit_status": 0,
+        "interface_opened": true,
+        "control_requests_attempted": 48,
+        "bulk_writes_attempted": 16,
+        "validated_word_responses": 16,
+        "settings_bytes": 32,
+        "settings_markers_match": true,
+        "flash_prefix_bytes": 0
+      },
+      "events": {
+        "path": "captures/gm1-usb-settings-VkPWyjQT/result/events.jsonl",
+        "bytes": 13890,
+        "sha256": "d38384acb7f59a0cc6c50c6cbc8ea36c5442893f8f440a8cb37d7b85631d3e11"
+      },
+      "source": {
+        "path": "captures/gm1-usb-settings-VkPWyjQT/probe-source.c",
+        "bytes": 16263,
+        "sha256": "906a0fd69ebe7dccd261837447473a7bc94eac4d81f6116f72b35e0ad6645d22"
+      },
+      "executable": {
+        "path": "captures/gm1-usb-settings-VkPWyjQT/gm1-usb-probe",
+        "bytes": 36320,
+        "sha256": "b561255e676819016dc84f9d2d1735de1188c5ce939158ab9e630e7790844c3f"
+      }
+    },
+    "sample": {
+      "path": "captures/gm1-usb-settings-VkPWyjQT/result/fixed-markers.bin",
+      "bytes": 32,
+      "sha256": "832dc82aaaa319c0ae00ae2dce8797c83f01ddfb2dc1c178b558791983f6c633"
+    },
+    "operation": "0x38",
+    "area": "0x20",
+    "word_start": "0x3f80",
+    "word_count": 16,
+    "all_32_bytes_equal_saved_export": true,
+    "source_backup": "evidence/gm1-settings-backup.json",
+    "manufacturer": "Panasonic",
+    "model": "DMC-GM1"
+  },
+  "program_relative_read": {
+    "capture": {
+      "path": "captures/gm1-usb-flash-TOsIFxZY",
+      "summary": {
+        "schema": 1,
+        "mode": "flash",
+        "exit_status": 0,
+        "interface_opened": true,
+        "control_requests_attempted": 144,
+        "bulk_writes_attempted": 48,
+        "validated_word_responses": 48,
+        "settings_bytes": 32,
+        "settings_markers_match": true,
+        "flash_prefix_bytes": 64
+      },
+      "events": {
+        "path": "captures/gm1-usb-flash-TOsIFxZY/result/events.jsonl",
+        "bytes": 39007,
+        "sha256": "a0327c27429923c1f4019e2d3320db8dccec04bc52310092280c119ab5a7472a"
+      },
+      "source": {
+        "path": "captures/gm1-usb-flash-TOsIFxZY/probe-source.c",
+        "bytes": 16263,
+        "sha256": "906a0fd69ebe7dccd261837447473a7bc94eac4d81f6116f72b35e0ad6645d22"
+      },
+      "executable": {
+        "path": "captures/gm1-usb-flash-TOsIFxZY/gm1-usb-probe",
+        "bytes": 36320,
+        "sha256": "b561255e676819016dc84f9d2d1735de1188c5ce939158ab9e630e7790844c3f"
+      }
+    },
+    "sample": {
+      "path": "captures/gm1-usb-flash-TOsIFxZY/result/flash-prefix.bin",
+      "bytes": 64,
+      "sha256": "f0e7a9103888098d5b9d9c9c83ae40afb2b7b3591931f911decdd6e1ce4dcc12"
+    },
+    "operation": "0x70",
+    "word_start": 0,
+    "word_count": 32,
+    "assumed_source_base": "0x40000000",
+    "first_64_bytes_hex": "fcdd18000040f0f5ca3e000000000000f0fd000000000000305080f8c003fcdc28000040f160f0f4ca64000000000000dcd0ffbf3b000000ca0c000000000000",
+    "same_position_gh2_equal_bytes": 54,
+    "disassembly": {
+      "receipt": {
+        "path": "captures/gm1-usb-flash-TOsIFxZY/reset-prefix.disasm.txt",
+        "bytes": 982,
+        "sha256": "68c5aa7446662d758bb7e9eabe14f86d610c1f5d7adba0757247e36c0a04489b"
+      },
+      "machine_argument": 332,
+      "text": "40000000  mov\t1073741848,a1\t; fcdd18000040\n40000006  jmp\t(a1)\t; f0f5\n40000008  bra\t0x40000046\t; ca3e\n4000000a  clr\td0\t; 00\n4000000b  clr\td0\t; 00\n4000000c  clr\td0\t; 00\n4000000d  clr\td0\t; 00\n4000000e  clr\td0\t; 00\n4000000f  clr\td0\t; 00\n40000010  rti\t\t; f0fd\n40000012  clr\td0\t; 00\n40000013  clr\td0\t; 00\n40000014  clr\td0\t; 00\n40000015  clr\td0\t; 00\n40000016  clr\td0\t; 00\n40000017  clr\td0\t; 00\n40000018  mov\t(0x00008050),d0\t; 305080\n4000001b  asl\t3,d0\t; f8c003\n4000001e  mov\t1073741864,a0\t; fcdc28000040\n40000024  add\td0,a0\t; f160\n40000026  jmp\t(a0)\t; f0f4\n40000028  bra\t0x4000008c\t; ca64\n4000002a  clr\td0\t; 00\n4000002b  clr\td0\t; 00\n4000002c  clr\td0\t; 00\n4000002d  clr\td0\t; 00\n4000002e  clr\td0\t; 00\n4000002f  clr\td0\t; 00\n40000030  jmp\t0x7bc00000\t; dcd0ffbf3b\n40000035  clr\td0\t; 00\n40000036  clr\td0\t; 00\n40000037  clr\td0\t; 00\n40000038  bra\t0x40000044\t; ca0c\n4000003a  clr\td0\t; 00\n4000003b  clr\td0\t; 00\n4000003c  clr\td0\t; 00\n4000003d  clr\td0\t; 00\n4000003e  clr\td0\t; 00\n4000003f  clr\td0\t; 00\n"
+    },
+    "interpretation": "The recovered bytes decode as MN103-family reset/startup instructions at the GH2 program base, including a jump to 0x7bc00000; this differs from the GH2 secondary target. This supports executable-memory readback, not a complete GM1 memory map."
+  },
+  "remaining": [
+    "GM5 service interface and bounded read behavior have not been tested.",
+    "GM5 key/decoder and authentication consumer remain unresolved; the GM1 key and public key fail on the official GM5 update.",
+    "GM1 factory AHX entry predicates and complete acceptance/programming behavior need further tracing.",
+    "No flash writer has been exercised; no native XPan patch, interactive shell or instruction-level debugger is established.",
+    "All six GM1 update components are decoded, but this is not a complete physical 32 MiB flash backup including gaps and body-specific data."
+  ],
+  "camera_writes": {
+    "settings_or_flash_writes": false,
+    "reset_detach_seize_or_configuration_change": false,
+    "usb_out_read_requests": true
+  },
+  "block_reader": {
+    "operation": "0x5c",
+    "static_verifier": "tools/gh2_block_read_verify.py",
+    "static_evidence": "evidence/gh2-usb-block-reader.json",
+    "request_type": 1,
+    "request_and_response_bytes": 1030,
+    "payload_bytes": 1024,
+    "request_bounds": "Exactly 1024 bytes per request, within candidate main program 0x40000000..0x40900000",
+    "one_block_sample": {
+      "path": "captures/gm1-usb-block-42OeMRqb/result/program-block.bin",
+      "bytes": 1024,
+      "sha256": "443a54350f4354d6ef7609115e046f27f7c4bfdf0fd2757467978574ec6dd728"
+    },
+    "one_block_matches_independent_word_prefix": true,
+    "window_forward": {
+      "path": "captures/gm1-usb-window-ObH7WZ8c/result/program-window.bin",
+      "bytes": 8192,
+      "sha256": "ffe9505a5ad8a62f34a42bc389d125563a7699590ec3933007ca57c59abae28f"
+    },
+    "window_reverse": {
+      "path": "captures/gm1-usb-window-ObH7WZ8c/result/program-window-repeat.bin",
+      "bytes": 8192,
+      "sha256": "ffe9505a5ad8a62f34a42bc389d125563a7699590ec3933007ca57c59abae28f"
+    },
+    "window_passes_equal": true,
+    "post_write_delay_ms_after_small_window_test": 1
+  },
+  "offline_capture_checks": {
+    "verifier": {
+      "path": "tools/gm1_capture_verify.py",
+      "bytes": 13013,
+      "sha256": "0945b70520a00982842fd34734d7f4b0e518b9074f423e24fc7548ed86604fc1"
+    },
+    "results": {
+      "settings": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-settings-VkPWyjQT",
+        "mode": "settings",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 0,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": null,
+        "verified_prefix_bytes": 0,
+        "program_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "next_program_address": "0x40000000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "words": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-flash-TOsIFxZY",
+        "mode": "flash",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 48,
+        "program_block_responses_verified": 0,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": null,
+        "verified_prefix_bytes": 0,
+        "program_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "next_program_address": "0x40000000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "block": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-block-42OeMRqb",
+        "mode": "block",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm1-usb-block-42OeMRqb/result/program-block.bin",
+        "verified_prefix_bytes": 1024,
+        "program_sha256": "443a54350f4354d6ef7609115e046f27f7c4bfdf0fd2757467978574ec6dd728",
+        "next_program_address": "0x40000400",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "window": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-window-ObH7WZ8c",
+        "mode": "window",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 16,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm1-usb-window-ObH7WZ8c/result/program-window.bin",
+        "verified_prefix_bytes": 8192,
+        "program_sha256": "ffe9505a5ad8a62f34a42bc389d125563a7699590ec3933007ca57c59abae28f",
+        "next_program_address": "0x40002000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "partial_program": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-program-qUdxsgb3",
+        "mode": "program",
+        "complete": false,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1198,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm1-usb-program-qUdxsgb3/result/program-main.bin",
+        "verified_prefix_bytes": 1226752,
+        "program_sha256": "ae9ec5587e03aa57e68b61922bd9e516e90eabdf90eb23c29fc71c38db36e0d8",
+        "next_program_address": "0x4012b800",
+        "terminal_phase": "type_prepared",
+        "errors": [
+          {
+            "event": "api_result",
+            "step": "prepare_bulk_in",
+            "result": "0xe0004051"
+          }
+        ]
+      },
+      "resumed_partial_program": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-resume-e3ej38rd",
+        "mode": "resume",
+        "complete": false,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 1783,
+        "resume_anchors_verified": 3,
+        "copied_prefix_bytes": 1226752,
+        "program_file": "captures/gm1-usb-resume-e3ej38rd/result/program-main.bin",
+        "verified_prefix_bytes": 3049472,
+        "program_sha256": "c0354fe5c4df6a137b366b227d23fa9b682321d892d4e274cb63e91c197fbe08",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x402e8800",
+        "terminal_phase": "type_prepared",
+        "errors": [
+          {
+            "event": "api_result",
+            "step": "prepare_bulk_in",
+            "result": "0xe00002ed"
+          }
+        ]
+      },
+      "initializer": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-initializer-RZ3N4qQ4",
+        "mode": "initializer",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 32,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm1-usb-initializer-RZ3N4qQ4/result/ram-initializer.bin",
+        "verified_prefix_bytes": 32768,
+        "program_sha256": "adc677a6184a3762271469a1c4ee52c109a6959f15df30fd68ff73538e22f349",
+        "program_file_base": "0x405a3800",
+        "program_file_offset": 5912576,
+        "next_program_address": "0x405ab800",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "complete_main": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-resume-3atwz8co",
+        "mode": "resume",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 6241,
+        "resume_anchors_verified": 3,
+        "copied_prefix_bytes": 3049472,
+        "program_file": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+        "verified_prefix_bytes": 9437184,
+        "program_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x40900000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "complete_secondary": {
+        "schema": 1,
+        "capture": "captures/gm1-usb-resume-fveg1az5",
+        "mode": "resume-secondary",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 3395,
+        "resume_anchors_verified": 3,
+        "copied_prefix_bytes": 65536,
+        "program_file": "captures/gm1-usb-resume-fveg1az5/result/program2.bin",
+        "verified_prefix_bytes": 3538944,
+        "program_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+        "program_file_base": "0x41400000",
+        "program_file_offset": 0,
+        "next_program_address": "0x41760000",
+        "terminal_phase": "idle",
+        "errors": []
+      }
+    }
+  },
+  "resume": {
+    "native_source": {
+      "path": "captures/gm1-usb-resume-e3ej38rd/probe-source.c",
+      "bytes": 26125,
+      "sha256": "d5bc86d847878cacc59e93ce1c7ea0a17a739e057a901b3989324a30568929cc"
+    },
+    "runner": {
+      "path": "tools/gm1_program_resume.py",
+      "bytes": 3877,
+      "sha256": "68ff7d86923e2ac78cf99e7d24941df7f1987c000a52e951aba5c5f5c12fbfd1"
+    },
+    "wrapper": {
+      "path": "tools/run_gm1_usb_probe.sh",
+      "bytes": 1302,
+      "sha256": "70c8f2e1bc14035487b948508cee4b40a66b10bd2e0603458cec8e4397e0d64a"
+    },
+    "prefix_validation": "Every saved block is compared with its framed and checksummed USB response before copying",
+    "prefix_sha256": "ae9ec5587e03aa57e68b61922bd9e516e90eabdf90eb23c29fc71c38db36e0d8",
+    "source_preserved": true,
+    "fresh_capture_and_manifest": true,
+    "anchor_blocks": [
+      0,
+      599,
+      1197
+    ],
+    "anchor_bytes_each": 1024,
+    "first_continuation_address": "0x4012b800",
+    "offline_tests": "13 capture-verifier tests and one sanitizer-backed native writer integration test passed",
+    "prepare_only_capture": "captures/gm1-usb-resume-y3vxcjee",
+    "first_live_attempt": {
+      "capture": "captures/gm1-usb-resume-jpqg4kfg",
+      "summary": {
+        "schema": 1,
+        "mode": "resume",
+        "exit_status": 1,
+        "interface_opened": true,
+        "control_requests_attempted": 1,
+        "bulk_writes_attempted": 0,
+        "validated_word_responses": 0,
+        "settings_bytes": 0,
+        "settings_markers_match": false,
+        "flash_prefix_bytes": 0,
+        "program_block_bytes": 0,
+        "copied_prefix_bytes": 0,
+        "resume_anchor_blocks": 0
+      },
+      "result": "Timed out on first prepare_bulk_out before settings control or resume anchors; no new dump bytes acquired"
+    },
+    "live_resume_after_wake_verified": true,
+    "current_capture": "captures/gm1-usb-resume-3atwz8co",
+    "block_delay_ms": 100,
+    "pacing_reason": "Restored the historical 100 ms post-write pause after the 1 ms bulk acquisition froze the camera. This is mitigation, not a proven cause or fix.",
+    "live_resume_detail": "All three program anchors matched after owner removed/reinserted the battery, and acquisition continued at 0x4012b800.",
+    "latest_verified_capture": {
+      "schema": 1,
+      "capture": "captures/gm1-usb-resume-3atwz8co",
+      "mode": "resume",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 6241,
+      "resume_anchors_verified": 3,
+      "copied_prefix_bytes": 3049472,
+      "program_file": "captures/gm1-usb-resume-3atwz8co/result/program-main.bin",
+      "verified_prefix_bytes": 9437184,
+      "program_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+      "program_file_base": "0x40000000",
+      "program_file_offset": 0,
+      "next_program_address": "0x40900000",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "acquisition_in_progress": false,
+    "secondary_capture": "captures/gm1-usb-resume-fveg1az5"
+  },
+  "initializer": {
+    "capture": "captures/gm1-usb-initializer-RZ3N4qQ4",
+    "native_source": {
+      "path": "captures/gm1-usb-initializer-RZ3N4qQ4/probe-source.c",
+      "bytes": 26472,
+      "sha256": "794e6de829ad73b60a5b2ce8d3b9df82c41ff5fd9176870e624ff6cee6d2dec5"
+    },
+    "flash_start": "0x405a3800",
+    "flash_end_exclusive": "0x405ab800",
+    "bytes": 32768,
+    "source_layout": "Original capture used a sparse absolute file offset; preserved unchanged and explicitly verified at offset 0x5a3800. Future native captures use dense window offsets.",
+    "original_sparse_file": {
+      "path": "captures/gm1-usb-initializer-RZ3N4qQ4/result/ram-initializer.bin",
+      "bytes": 5945344,
+      "sha256": "15f6670c7a34f15f08ef8a3e901d9a8e1a5b045c880d445f0591c3b2a03f01e0"
+    },
+    "dense_verified_sample": {
+      "path": "work/gm1-ram-initializer-window.bin",
+      "bytes": 32768,
+      "sha256": "adc677a6184a3762271469a1c4ee52c109a6959f15df30fd68ff73538e22f349"
+    },
+    "startup_mapping_evidence": "evidence/gm1-startup-mappings.json",
+    "initialized_data_flash_start": "0x405a3884",
+    "initialized_data_flash_end_exclusive": "0x405ab54c",
+    "initialized_data_ram_start": "0x70000000",
+    "observation": "Initializer starts with GUI/font records; its offset 0x28 is not the GH2 update key.",
+    "key_check_evidence": "evidence/gm1-initializer-key-check.json",
+    "literal_candidate_windows_tested": 242,
+    "aes_128_256_cbc_ecb_matches": 0,
+    "negative_result_is_bounded": true
+  },
+  "current_tools": [
+    {
+      "path": "tools/gm1_usb_probe_macos.c",
+      "bytes": 28951,
+      "sha256": "a8d94e0b073e4bdd68a9d66a9dae84ec71a6c89c7aec387cd057009bfaf20294"
+    },
+    {
+      "path": "tools/run_gm1_usb_probe.sh",
+      "bytes": 1410,
+      "sha256": "9d3c75bb03f2ce4a6a5963e36d9946fc6b45cb8fdf912580c5f7b11cf0f72f5f"
+    },
+    {
+      "path": "tools/gm1_capture_verify.py",
+      "bytes": 13013,
+      "sha256": "0945b70520a00982842fd34734d7f4b0e518b9074f423e24fc7548ed86604fc1"
+    },
+    {
+      "path": "tools/gm1_program_resume.py",
+      "bytes": 4476,
+      "sha256": "8957726ea1903c528276a868d586ff9e3ee3d6d9ac4007e2a2ad029dee742fd3"
+    },
+    {
+      "path": "tools/gm1_startup_verify.py",
+      "bytes": 3979,
+      "sha256": "ba34daa99d93a93f60a8339c590f8d8608a278705f4f93c7f52abbaedc5b6073"
+    },
+    {
+      "path": "tools/gh2_block_read_verify.py",
+      "bytes": 4001,
+      "sha256": "b60ae340059b3e0b8b2b8f36ccc9a0108593a6a8925b6e991aa17cb0c733733d"
+    },
+    {
+      "path": "tools/gm1_initializer_key_probe.py",
+      "bytes": 5326,
+      "sha256": "aea2ad65e4bb64d336070f8d332463406421d88dd8c8f882688ab5c9ea68b3a5"
+    },
+    {
+      "path": "tools/gm1_secondary_verify.py",
+      "bytes": 3585,
+      "sha256": "946397edf7b2ff47e4885a1a990f7fbf1219c9d6b079ba780ebf2a03aadc4e4f"
+    },
+    {
+      "path": "tools/gm1_crypto_verify.py",
+      "bytes": 4307,
+      "sha256": "f895c83de9ab65bdb4fcccf886df9c39a76a3a28a4b32a84954876d1850dcb8d"
+    },
+    {
+      "path": "tools/gm1_factory_verify.py",
+      "bytes": 7422,
+      "sha256": "80b1e63c06122e240e1278545437ddf48f8c6975cc5c75e038cbd2d2d9b7afd8"
+    },
+    {
+      "path": "tools/panasonic_aes5.c",
+      "bytes": 6896,
+      "sha256": "4bb5a2bbe5223f7de5d6235a32e5120dcebad7b6a334fed8d8f2f0015e308045"
+    },
+    {
+      "path": "tools/panasonic_v2_decode.py",
+      "bytes": 5937,
+      "sha256": "b848b3c1ad2e5072dff83ec24641b65f62934b69f05ac993e23d3303493151a1"
+    },
+    {
+      "path": "tools/panasonic_signature_verify.py",
+      "bytes": 7616,
+      "sha256": "11ee804134a952eadcdcc79867859a53f23df02f989b841e681d20d48a0b325b"
+    }
+  ],
+  "sleep_setting": {
+    "source": "https://help.na.panasonic.com/wp-content/uploads/2023/02/DMCGM1_VQT5D68_ENG.pdf#page=49",
+    "menu": "Setup / Economy / Sleep Mode / OFF",
+    "separate_display_setting": "Auto Monitor Off",
+    "manual_exception": "Economy is disabled for ordinary PC/printer connections; service-mode behavior is unestablished.",
+    "changed_by_agent": false,
+    "long_acquisition_with_sleep_off_tested": false
+  },
+  "update_acceptance": {
+    "official_gm5_download": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm5.html",
+    "modified_gm1_gm5_repacker_established": false,
+    "gm1_gm5_public_key_signature_requirement": "GM1 normal version-2 path has a traced ECDSA check; GM5 consumer not recovered",
+    "direct_flash_writer_established": false,
+    "gh2_comparison": "evidence/gh2-update-consumer.json verifies AES-128-CBC and MD5. No public-key signature verification was identified in that reviewed path; this is not a whole-program absence proof or a GM1/GM5 conclusion.",
+    "gm1_public_key_signature": "ECDSA P-256 over SHA-256 of the directory, verified independently and with LibreSSL; evidence/gm1-directory-signature.json"
+  },
+  "historical_partial_main_program": {
+    "capture": "captures/gm1-usb-resume-e3ej38rd",
+    "sample": {
+      "path": "captures/gm1-usb-resume-e3ej38rd/result/program-main.bin",
+      "bytes": 3049472,
+      "sha256": "c0354fe5c4df6a137b366b227d23fa9b682321d892d4e274cb63e91c197fbe08"
+    },
+    "completed_blocks": 2978,
+    "completed_bytes": 3049472,
+    "planned_bytes": 9437184,
+    "next_address": "0x402e8800",
+    "terminal_api": "prepare_bulk_in",
+    "terminal_result": "0xe00002ed",
+    "terminal_symbol": "kIOReturnNotResponding",
+    "error_definition_source": "Installed Apple MacOSX.sdk IOKit/usb/USB.h",
+    "sleep_causality": "Unconfirmed; camera USB registry instance changed after the interruption",
+    "full_official_program_hash_comparison": "Not performed on a partial image",
+    "owner_followup": "Owner reports the second interruption was sleep, not a freeze. The first faster acquisition had required battery removal.",
+    "first_attempt": {
+      "capture": "captures/gm1-usb-program-qUdxsgb3",
+      "sample": {
+        "path": "captures/gm1-usb-program-qUdxsgb3/result/program-main.bin",
+        "bytes": 1226752,
+        "sha256": "ae9ec5587e03aa57e68b61922bd9e516e90eabdf90eb23c29fc71c38db36e0d8"
+      },
+      "completed_blocks": 1198,
+      "completed_bytes": 1226752,
+      "planned_bytes": 9437184,
+      "next_address": "0x4012b800",
+      "terminal_api": "prepare_bulk_in",
+      "terminal_result": "0xe0004051",
+      "terminal_symbol": "kIOUSBTransactionTimeout",
+      "error_definition_source": "Installed Apple MacOSX.sdk IOKit/usb/USB.h",
+      "sleep_causality": "Unconfirmed; camera USB registry instance changed after the interruption",
+      "full_official_program_hash_comparison": "Not performed on a partial image",
+      "owner_followup": "Owner reports the camera froze and required battery removal; timeout cause is not established."
+    },
+    "superseded_by": "evidence/gm1-main-program.json"
+  },
+  "complete_programs": {
+    "main": "evidence/gm1-main-program.json",
+    "secondary": "evidence/gm1-secondary-program.json",
+    "bytes": 12976128,
+    "both_sha256_match_official_directory": true
+  },
+  "offline_update_decoding": {
+    "report": "evidence/gm1-v11-decoded.json",
+    "all_six_components_decoded": true,
+    "all_component_sha256_match": true,
+    "main_and_secondary_equal_usb_captures": true,
+    "algorithm": "Five-round AES-128-CBC, cipher selector 3",
+    "key_source": "Flash 0x405ab460, initialized to RAM 0x70007bdc",
+    "gm5_with_gm1_key": "No match for program; incomplete candidate output is not validated plaintext"
+  },
+  "factory_programming": {
+    "evidence": "evidence/gm1-factory-programming.json",
+    "gm1_ahx_to_nor_code_traced": true,
+    "activation_procedure_verified": false,
+    "gm5_equivalent_verified": false,
+    "initial_factory_loading_method": "unknown"
+  }
+}

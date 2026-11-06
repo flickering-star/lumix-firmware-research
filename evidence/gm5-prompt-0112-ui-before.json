@@ -1,0 +1,32 @@
+{
+  "capture_verification": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-update-ui-state-STsL9Svk",
+    "model": "DMC-GM5",
+    "mode": "update-ui-state",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 1,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-update-ui-state-STsL9Svk/result/update-ui-state.bin",
+    "verified_prefix_bytes": 1024,
+    "program_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+    "program_file_base": "0x701f9400",
+    "program_file_offset": 0,
+    "next_program_address": "0x701f9800",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "installed_path_mapping": "evidence/gm5-updater-paths-installed.json",
+  "stage": "Advertised0112 startup with card inserted, RAM flag0 and temporary English set; before Playback",
+  "fields": {
+    "0x701f9738": "0x0",
+    "0x701f973c": "0x0",
+    "0x701f973e": "0x0",
+    "0x701f9740": "0x0",
+    "0x701f975a": "0x0",
+    "0x701f975e": "0x0"
+  }
+}

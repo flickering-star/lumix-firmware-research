@@ -1,0 +1,33 @@
+{
+  "official_model_page": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/fs12032.html",
+  "official_download_form": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/fs12032_dl.html",
+  "form_endpoint": "https://av.jpn.support.panasonic.com/support/cgi-bin/global_cs/dsc/download_mft.cgi",
+  "form_MODEL": "FS12032V12.zip",
+  "archive_path": "work/lens-control/FS12032V12.download",
+  "archive_bytes": 169783,
+  "archive_sha256": "a543da50f60a300589075a91723af6dbb88724484568e62d88c2fc59d487c105",
+  "zip_crc_valid": true,
+  "member": "ES102012.lin",
+  "member_bytes": 458816,
+  "member_sha256": "ce9499157483ec1570cce8317d9606bdacc361fa8bc40664474c31be2c9ccc9e",
+  "head64": "504c201000100000000001000000070000120000000000000000000000000000008329a5000142080505008000e0002000ba0065007000043273070707070092",
+  "header_words": [
+    "0x4c50",
+    "0x1020",
+    "0x1000",
+    "0x0",
+    "0x0",
+    "0x1",
+    "0x0",
+    "0x7",
+    "0x1200",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0"
+  ],
+  "lens_connected_or_updated": false
+}

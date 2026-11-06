@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T01:35:53.471440+00:00",
+  "stage": "Repeat after owner formatted card in GM5; prompt not yet tested",
+  "variant": "standard-version",
+  "source": "work/gm5-updater-prompt-test/standard-version/GM5__V11.bin",
+  "destination": "/Volumes/LUMIX/GM5__V11.bin",
+  "volume_uuid": "PRIVATE_CARD_UUID",
+  "device_identifier": "disk6s1",
+  "bytes": 31901184,
+  "sha256": "aa91363a49248b0635b6f1b2dc4739498d429ffacdcc7995d47069c63c1f9ae8",
+  "readback_byte_identical": true,
+  "existing_files_overwritten": false,
+  "card_format_performed_by_host": false,
+  "firmware_flash_performed": false,
+  "safely_ejected": true
+}

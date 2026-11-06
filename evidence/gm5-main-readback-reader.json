@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "scope": "Fixed8MiB GM5 main reader preparation; no camera access by this evidence check",
+  "prepare_only_capture": "captures/gm5-program-readback-_d0euvuh",
+  "target": {
+    "component": "program",
+    "target_bytes": 8388608,
+    "compiler_definitions": [
+      "-DPROBE_GM5_MAIN_ONLY"
+    ]
+  },
+  "tool_hashes": {
+    "probe-source.c": "d8d0578df72ce6f01f354541b6dc0727d4784f248f7943ef2beec7449dc3ed99",
+    "gm1_usb_probe_macos.c": "6607850f81f0215e57ba1c6c1ecf89103c4ea3ac738777b80ac8454e03442cb7",
+    "gm5-flash-backup": "573edfb6f350188d92cc5fad1f81da2e77ede20696ad60d2173428e4e3b54e82",
+    "build-target.json": "380c22fddcd763836fd09d7e5708f15418bf97ee38213cd5e2abbc45875d8c3a"
+  },
+  "regression_tests": {
+    "passed": 73,
+    "log": "work/gm5-main-reader-final-tests.log",
+    "sha256": "d7328b09e3ed51b3cec4a06dc7913f3a7435161669afd3d3b455482cb348e255"
+  },
+  "focused_reader_checks": 6,
+  "compiler_sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "main_interval": [
+    "0x40000000",
+    "0x40800000"
+  ],
+  "resume_policy": "Verified packets/model/component plus three matching live anchors; never reuse prefix across firmware installations."
+}

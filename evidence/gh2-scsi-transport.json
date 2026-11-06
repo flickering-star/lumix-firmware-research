@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "scope": "Static GH2 SCSI/service-state comparison; no GM5 reachability claim",
+  "source": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea",
+    "bytes": 15598592
+  },
+  "verifier": {
+    "path": "tools/gh2_scsi_verify.py",
+    "sha256": "42212ca250caa04c9366620e2f75d7eaab35f4e76f20f7c87ef780173d5fd034",
+    "decoder": "work/toolchain/mn10300/mn103-dis",
+    "decoder_sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde"
+  },
+  "mechanical_checks": {
+    "regions": [
+      {
+        "name": "bulk_out_mode_and_pending_gate",
+        "start": "0x401e762f",
+        "end_exclusive": "0x401e76f4",
+        "body_offset": "0x1e7a2f",
+        "bytes": 197,
+        "sha256": "4c8b18d04c052726170d456036da569ab2dd68e403d4f85a705e944f6bb78550",
+        "instructions": 55,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e762f  mov\t32,d3\t; 8f20\n401e7631  mov\t1,d0\t; 8001\n401e7633  call\t0x401e9504,[],0\t; cdd11e0000\n401e7638  mov\t1,d0\t; 8001\n401e763a  call\t0x401e973f,[],4\t; cd05210004\n401e763f  exthu\td0\t; 1c\n401e7640  btst\t32,d0\t; f8ec20\n401e7643  beq\t0x401e764d\t; c80a\n401e7645  mov\t1,d0\t; 8001\n401e7647  clr\td1\t; 04\n401e7648  call\t0x401e974e,[d2],8\t; cd06218008\n401e764d  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e7653  movhu\t(0x744dd1e8),d1\t; fcade8d14d74\n401e7659  cmp\t2,d0\t; a002\n401e765b  beq\t0x401e7660\t; c805\n401e765d  jmp\t0x401e76f4\t; cc9700\n401e7660  cmp\t5,d1\t; a505\n401e7662  bne\t0x401e7687\t; c925\n401e7664  clr\td0\t; 00\n401e7665  mov\t1,d2\t; 8a01\n401e7667  movhu\td2,(0x744de01e)\t; fc8b1ee04d74\n401e766d  call\t0x401e9486,[d2],8\t; cd191e8008\n401e7672  movhu\td2,(0x744ddf40)\t; fc8b40df4d74\n401e7678  movhu\t(0x744dd1e4),d0\t; fcace4d14d74\n401e767e  cmp\td3,d0\t; ac\n401e767f  bne\t0x401e7684\t; c905\n401e7681  jmp\t0x401e7765\t; cce400\n401e7684  jmp\t0x401e775f\t; ccdb00\n401e7687  mov\t1,d0\t; 8001\n401e7689  call\t0x401e950d,[d2],8\t; cd841e8008\n401e768e  exthu\td0\t; 1c\n401e768f  cmp\t0,d0\t; a000\n401e7691  bne\t0x401e7696\t; c905\n401e7693  jmp\t0x401e7765\t; ccd200\n401e7696  movhu\t(0x744dd1e8),d0\t; fcace8d14d74\n401e769c  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401e76a2  movhu\t(0x744dd1e6),d0\t; fcace6d14d74\n401e76a8  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401e76ae  movbu\t(0x744dd1ed),d0\t; fca8edd14d74\n401e76b4  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401e76ba  movhu\t(0x744dd1e4),d0\t; fcace4d14d74\n401e76c0  cmp\td3,d0\t; ac\n401e76c1  mov\t82,d0\t; 8052\n401e76c3  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401e76c9  mov\t1,d0\t; 8001\n401e76cb  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401e76d1  mov\td0,d1\t; 81\n401e76d2  movhu\td1,(0x744dd1e6)\t; fc87e6d14d74\n401e76d8  mov\td0,(0x744dd1f4)\t; fc81f4d14d74\n401e76de  beq\t0x401e76e6\t; c808\n401e76e0  movhu\td3,(0x744dd1e4)\t; fc8fe4d14d74\n401e76e6  movhu\td1,(0x744de01e)\t; fc871ee04d74\n401e76ec  clr\td0\t; 00\n401e76ed  call\t0x401e9486,[d2],8\t; cd991d8008\n401e76f2  bra\t0x401e7765\t; ca73\n"
+      },
+      {
+        "name": "cbw_fields_and_cdb_copy",
+        "start": "0x401ea3ea",
+        "end_exclusive": "0x401ea4c2",
+        "body_offset": "0x1ea7ea",
+        "bytes": 216,
+        "sha256": "4e56249d5bbd668e6a5aa66c496e21c8c80e069ce50b120f23770ce91837126d",
+        "instructions": 84,
+        "raw_annotations_match_source": true,
+        "disassembly": "401ea3ea  mov\ta0,a2\t; 92\n401ea3eb  clr\td0\t; 00\n401ea3ec  movhu\td0,(0x744dd1e8)\t; fc83e8d14d74\n401ea3f2  mov\t1,d2\t; 8a01\n401ea3f4  movhu\td2,(0x744dd9dc)\t; fc8bdcd94d74\n401ea3fa  call\t0x401e80d6,[d2,d3,a2,a3],28\t; cddcdcf01c\n401ea3ff  clr\td0\t; 00\n401ea400  movhu\td0,(0x744dd9dc)\t; fc83dcd94d74\n401ea406  mov\t1951257096,a0\t; fcdc08d24d74\n401ea40c  setlb\t\t; db\n401ea40d  movbu\t(a2),d1\t; f046\n401ea40f  inc\ta2\t; 49\n401ea410  movbu\td1,(a0)\t; f054\n401ea412  inc\ta0\t; 41\n401ea413  inc\td0\t; 40\n401ea414  exthu\td0\t; 1c\n401ea415  cmp\t4,d0\t; a004\n401ea417  llt\t\t; d0\n401ea418  mov\t1951257104,a0\t; fcdc10d24d74\n401ea41e  clr\td0\t; 00\n401ea41f  setlb\t\t; db\n401ea420  movbu\t(a2),d1\t; f046\n401ea422  inc\ta2\t; 49\n401ea423  movbu\td1,(a0)\t; f054\n401ea425  inc\ta0\t; 41\n401ea426  inc\td0\t; 40\n401ea427  exthu\td0\t; 1c\n401ea428  cmp\t4,d0\t; a004\n401ea42a  llt\t\t; d0\n401ea42b  mov\t1951257108,a0\t; fcdc14d24d74\n401ea431  clr\td0\t; 00\n401ea432  setlb\t\t; db\n401ea433  movbu\t(a2),d1\t; f046\n401ea435  inc\ta2\t; 49\n401ea436  movbu\td1,(a0)\t; f054\n401ea438  inc\ta0\t; 41\n401ea439  inc\td0\t; 40\n401ea43a  exthu\td0\t; 1c\n401ea43b  cmp\t4,d0\t; a004\n401ea43d  llt\t\t; d0\n401ea43e  movbu\t(a2),d0\t; f042\n401ea440  inc\ta2\t; 49\n401ea441  movbu\td0,(0x744dd218)\t; fc8218d24d74\n401ea447  movbu\t(a2),d0\t; f042\n401ea449  inc\ta2\t; 49\n401ea44a  movbu\td0,(0x744dd219)\t; fc8219d24d74\n401ea450  movbu\t(a2),d0\t; f042\n401ea452  inc\ta2\t; 49\n401ea453  movbu\td0,(0x744dd21a)\t; fc821ad24d74\n401ea459  mov\t1951257116,a0\t; fcdc1cd24d74\n401ea45f  clr\td0\t; 00\n401ea460  setlb\t\t; db\n401ea461  movbu\t(a2),d1\t; f046\n401ea463  inc\ta2\t; 49\n401ea464  movbu\td1,(a0)\t; f054\n401ea466  inc\ta0\t; 41\n401ea467  inc\td0\t; 40\n401ea468  exthu\td0\t; 1c\n401ea469  cmp\t16,d0\t; a010\n401ea46b  llt\t\t; d0\n401ea46c  movhu\t(0x744ddf36),d0\t; fcac36df4d74\n401ea472  cmp\t2,d0\t; a002\n401ea474  beq\t0x401ea4ab\t; c837\n401ea476  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401ea47c  cmp\t2,d0\t; a002\n401ea47e  beq\t0x401ea4ab\t; c82d\n401ea480  cmp\t4,d0\t; a004\n401ea482  beq\t0x401ea4ab\t; c829\n401ea484  mov\t2,d0\t; 8002\n401ea486  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401ea48c  movhu\td2,(0x744dde14)\t; fc8b14de4d74\n401ea492  mov\t65537,d0\t; fccc01000100\n401ea498  mov\td0,(0x744dcad8)\t; fc81d8ca4d74\n401ea49e  mov\t5,d0\t; 8005\n401ea4a0  mov\t1951255256,d1\t; fccdd8ca4d74\n401ea4a6  call\t0x401e6932,[d2,d3],20\t; cd8cc4c014\n401ea4ab  mov\t2,d0\t; 8002\n401ea4ad  call\t0x401e94d4,[d2],4\t; cd27f08004\n401ea4b2  mov\td2,d0\t; 88\n401ea4b3  call\t0x401e94d4,[d2],4\t; cd21f08004\n401ea4b8  clr\td0\t; 00\n401ea4b9  call\t0x401e94d4,[d2],4\t; cd1bf08004\n401ea4be  mov\td2,d0\t; 88\n401ea4bf  ret\t[d2,a2],12\t; dfa00c\n"
+      },
+      {
+        "name": "scsi_lookup_and_vendor_gates",
+        "start": "0x401ea54b",
+        "end_exclusive": "0x401ea647",
+        "body_offset": "0x1ea94b",
+        "bytes": 252,
+        "sha256": "337cf1912511915ecff405db17a00c43a0492a96a1f9d644a5814fb1dda6570f",
+        "instructions": 82,
+        "raw_annotations_match_source": true,
+        "disassembly": "401ea54b  movbu\t(0x744dd21c),d1\t; fca91cd24d74\n401ea551  mov\ta0,a2\t; 92\n401ea552  cmp\t0,d1\t; a500\n401ea554  bge\t0x401ea559\t; c205\n401ea556  jmp\t0x401ea736\t; cce001\n401ea559  cmp\t229,d1\t; fac9e500\n401ea55d  ble\t0x401ea562\t; c305\n401ea55f  jmp\t0x401ea736\t; ccd701\n401ea562  inc\td1\t; 44\n401ea563  mov\t1082072304,a1\t; fcddf01c7f40\n401ea569  mov\ta1,a0\t; 94\n401ea56a  mov\t31,d0\t; 801f\n401ea56c  and\td1,d0\t; f204\n401ea56e  asl\t3,d0\t; f8c003\n401ea571  add\td0,a0\t; f160\n401ea573  mov\t(a0),d0\t; 70\n401ea574  cmp\td1,d0\t; a4\n401ea575  beq\t0x401ea58d\t; c818\n401ea577  cmp\t0,d0\t; a000\n401ea579  bne\t0x401ea57e\t; c905\n401ea57b  jmp\t0x401ea736\t; ccbb01\n401ea57e  add\t8,a0\t; 2008\n401ea580  cmp\t1082072560,a0\t; fcd8f01d7f40\n401ea586  bcs\t0x401ea589\t; c403\n401ea588  mov\ta1,a0\t; 94\n401ea589  mov\t(a0),d0\t; 70\n401ea58a  cmp\td1,d0\t; a4\n401ea58b  bne\t0x401ea577\t; c9ec\n401ea58d  mov\t(4,a0),a1\t; f82404\n401ea590  jmp\t(a1)\t; f0f5\n401ea592  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401ea598  cmp\t2,d0\t; a002\n401ea59a  beq\t0x401ea5a6\t; c80c\n401ea59c  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401ea5a2  cmp\t4,d0\t; a004\n401ea5a4  bne\t0x401ea61d\t; c979\n401ea5a6  call\t0x401ebbbd,[d2],12\t; cd1716800c\n401ea5ab  mov\td0,d2\t; 82\n401ea5ac  extbu\td2\t; 16\n401ea5ad  cmp\t0,d2\t; aa00\n401ea5af  bne\t0x401ea5b4\t; c905\n401ea5b1  jmp\t0x401ea6a4\t; ccf300\n401ea5b4  movbu\t(0x744dd21c),d0\t; fca81cd24d74\n401ea5ba  cmp\t228,d0\t; fac8e400\n401ea5be  bne\t0x401ea5cc\t; c90e\n401ea5c0  mov\t(0x744dd9e0),d0\t; fca4e0d94d74\n401ea5c6  mov\td0,(0x744dcaec)\t; fc81ecca4d74\n401ea5cc  movhu\t(0x744dd1e6),d0\t; fcace6d14d74\n401ea5d2  movhu\td0,(0x744de020)\t; fc8320e04d74\n401ea5d8  mov\t12,d0\t; 800c\n401ea5da  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401ea5e0  mov\t1,d0\t; 8001\n401ea5e2  movhu\td0,(0x744dde1e)\t; fc831ede4d74\n401ea5e8  jmp\t0x401ea771\t; cc8901\n401ea5eb  bra\t0x401ea61d\t; ca32\n401ea5ed  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401ea5f3  cmp\t2,d0\t; a002\n401ea5f5  bne\t0x401ea61d\t; c928\n401ea5f7  mov\t1951257116,a0\t; fcdc1cd24d74\n401ea5fd  call\t0x401f0741,[],4\t; cd44610004\n401ea602  extbu\td0\t; 14\n401ea603  mov\td0,a1\t; f1e1\n401ea605  cmp\t0,a1\t; b500\n401ea607  bne\t0x401ea61a\t; c913\n401ea609  clr\td0\t; 00\n401ea60a  movhu\td0,(0x744ddf6c)\t; fc836cdf4d74\n401ea610  mov\t(0x744dd210),d0\t; fca410d24d74\n401ea616  clr\td1\t; 04\n401ea617  jmp\t0x401ea6b4\t; cc9d00\n401ea61a  jmp\t0x401ea771\t; cc5701\n401ea61d  mov\t5,d0\t; 8005\n401ea61f  movhu\td0,(0x744dde22)\t; fc8322de4d74\n401ea625  mov\t32,d0\t; 8020\n401ea627  movhu\td0,(0x744dde24)\t; fc8324de4d74\n401ea62d  clr\td0\t; 00\n401ea62e  movhu\td0,(0x744dde26)\t; fc8326de4d74\n401ea634  mov\t2,d0\t; 8002\n401ea636  call\t0x401e97d9,[d2],8\t; cda3f18008\n401ea63b  mov\t(0x744dd210),d0\t; fca410d24d74\n401ea641  clr\td1\t; 04\n401ea642  mov\t1,a1\t; 9501\n401ea644  jmp\t0x401ea75d\t; cc1901\n"
+      },
+      {
+        "name": "pending_service_restore",
+        "start": "0x401e6b40",
+        "end_exclusive": "0x401e6b77",
+        "body_offset": "0x1e6f40",
+        "bytes": 55,
+        "sha256": "4c0455f61064c03fec14f3991b3c2e9df33a3d9c1aa344c7a91691f9c9318ecb",
+        "instructions": 12,
+        "raw_annotations_match_source": true,
+        "disassembly": "401e6b40  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401e6b46  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401e6b4c  clr\td0\t; 00\n401e6b4d  mov\td0,(0x744dd358)\t; fc8158d34d74\n401e6b53  mov\td0,(0x744dd354)\t; fc8154d34d74\n401e6b59  mov\t3,d0\t; 8003\n401e6b5b  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401e6b61  clr\td0\t; 00\n401e6b62  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401e6b68  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401e6b6e  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401e6b74  retf\t[],0\t; de0000\n"
+      },
+      {
+        "name": "special_scsi_subcommand_dispatch",
+        "start": "0x401f0741",
+        "end_exclusive": "0x401f077a",
+        "body_offset": "0x1f0b41",
+        "bytes": 57,
+        "sha256": "5981afdedb0a2ed961caddaa037b29fcc4805552a66076ebf0e975c543490c27",
+        "instructions": 18,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f0741  clr\td0\t; 00\n401f0742  movhu\td0,(0x744dde22)\t; fc8322de4d74\n401f0748  movhu\td0,(0x744dde24)\t; fc8324de4d74\n401f074e  movhu\td0,(0x744dde26)\t; fc8326de4d74\n401f0754  movbu\t(2,a0),d0\t; f84002\n401f0757  movhu\td0,(0x744dcbec)\t; fc83eccb4d74\n401f075d  cmp\t62,d0\t; a03e\n401f075f  beq\t0x401f0767\t; c808\n401f0761  cmp\t61,d0\t; a03d\n401f0763  beq\t0x401f076e\t; c80b\n401f0765  bra\t0x401f0775\t; ca10\n401f0767  call\t0x401f077a,[d2,d3,a2],20\t; cd1300e014\n401f076c  bra\t0x401f0776\t; ca0a\n401f076e  call\t0x401f0927,[d2,d3,a2,a3],24\t; cdb901f018\n401f0773  bra\t0x401f0776\t; ca03\n401f0775  clr\td0\t; 00\n401f0776  extbu\td0\t; 14\n401f0777  ret\t[],4\t; df0004\n"
+      },
+      {
+        "name": "alternate_pending_service_restore",
+        "start": "0x401f8f1a",
+        "end_exclusive": "0x401f8f51",
+        "body_offset": "0x1f931a",
+        "bytes": 55,
+        "sha256": "1f3085923661a3413f6222155ac3bac5e4bcda91721b59a06140d8bb14215466",
+        "instructions": 14,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f8f1a  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401f8f20  cmp\t2,d0\t; a002\n401f8f22  beq\t0x401f8f28\t; c806\n401f8f24  cmp\t4,d0\t; a004\n401f8f26  bne\t0x401f8f79\t; c953\n401f8f28  movbu\t(0x744dd1f2),d0\t; fca8f2d14d74\n401f8f2e  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401f8f34  mov\t3,d0\t; 8003\n401f8f36  movhu\td0,(0x744dd1e6)\t; fc83e6d14d74\n401f8f3c  clr\td0\t; 00\n401f8f3d  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401f8f43  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401f8f49  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401f8f4f  bra\t0x401f8f79\t; ca2a\n"
+      },
+      {
+        "name": "ptp_mode_and_pending_clear",
+        "start": "0x401f8740",
+        "end_exclusive": "0x401f87ee",
+        "body_offset": "0x1f8b40",
+        "bytes": 174,
+        "sha256": "f8fb3b4ed05bec93569fb47f8227e5baf05442a4609c4a1a5aeb3477437d1327",
+        "instructions": 46,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f8740  mov\ta0,a3\t; 93\n401f8741  mov\t1,d0\t; 8001\n401f8743  clr\td1\t; 04\n401f8744  call\t0x401e6932,[d2,d3],20\t; ddeee1feffc014\n401f874b  mov\t8,a2\t; 9a08\n401f874d  add\ta3,a2\t; f17e\n401f874f  mov\t(a2),d0\t; 72\n401f8750  mov\td0,(0x744de3c0)\t; fc81c0e34d74\n401f8756  call\t0x401f16e0,[],0\t; cd8a8f0000\n401f875b  call\t0x401ec13c,[],4\t; dde139ffff0004\n401f8762  mov\t3,d0\t; 8003\n401f8764  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401f876a  mov\td0,d2\t; 82\n401f876b  movhu\td2,(0x744dde14)\t; fc8b14de4d74\n401f8771  clr\td0\t; 00\n401f8772  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401f8778  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401f877e  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401f8784  movhu\td0,(0x744dde20)\t; fc8320de4d74\n401f878a  mov\t1,d0\t; 8001\n401f878c  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f8792  clr\td0\t; 00\n401f8793  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f8799  call\t0x401e69f0,[],4\t; dd57e2feff0004\n401f87a0  call\t0x401cd807,[a2],8\t; dd6750fdff2008\n401f87a7  call\t0x401f8fa0,[],4\t; cdf9070004\n401f87ac  mov\t(a3),d0\t; 73\n401f87ad  cmp\t2,d0\t; a002\n401f87af  beq\t0x401f87b7\t; c808\n401f87b1  cmp\t0,d0\t; a000\n401f87b3  beq\t0x401f87d0\t; c81d\n401f87b5  bra\t0x401f87eb\t; ca36\n401f87b7  mov\t(0x744de02c),a0\t; fca02ce04d74\n401f87bd  clr\td0\t; 00\n401f87be  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f87c4  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f87ca  cmp\t0,a0\t; b000\n401f87cc  beq\t0x401f87eb\t; c81f\n401f87ce  bra\t0x401f87e4\t; ca16\n401f87d0  movhu\td2,(0x744ddf58)\t; fc8b58df4d74\n401f87d6  movhu\td2,(0x744de31c)\t; fc8b1ce34d74\n401f87dc  mov\t(a2),d0\t; 72\n401f87dd  mov\td0,a0\t; f1e0\n401f87df  call\t0x401f8d2c,[],8\t; cd4d050008\n401f87e4  call\t0x401e9808,[],4\t; dd2410ffff0004\n401f87eb  ret\t[d2,a2,a3],16\t; dfb010\n"
+      },
+      {
+        "name": "storage_mode_and_pending_clear",
+        "start": "0x401f87ee",
+        "end_exclusive": "0x401f88f5",
+        "body_offset": "0x1f8bee",
+        "bytes": 263,
+        "sha256": "8e1a332c892b50c2ae3abf972fcf9c7ee306f10813e3954b919ad7c076f82ac8",
+        "instructions": 67,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f87ee  mov\ta0,a2\t; 92\n401f87ef  call\t0x40143d28,[],4\t; dd39b5f4ff0004\n401f87f6  extbu\td0\t; 14\n401f87f7  cmp\t1,d0\t; a001\n401f87f9  bne\t0x401f8805\t; c90c\n401f87fb  mov\t0,a0\t; 9000\n401f87fd  mov\ta0,a1\t; 91\n401f87fe  call\t0x40143c85,[],4\t; dd87b4f4ff0004\n401f8805  mov\t16,d1\t; 8510\n401f8807  mov\t255,d0\t; 2cff00\n401f880a  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8810  mov\td0,(0x744de3a8)\t; fc81a8e34d74\n401f8816  mov\t1951261592,a0\t; fcdc98e34d74\n401f881c  clr\td0\t; 00\n401f881d  call\t0x7bc51a08,[a2],4\t; ddeb91a53b2004\n401f8824  mov\t1951261620,a0\t; fcdcb4e34d74\n401f882a  clr\td0\t; 00\n401f882b  mov\t12,d1\t; 850c\n401f882d  call\t0x7bc51a08,[a2],4\t; dddb91a53b2004\n401f8834  mov\t1,d0\t; 8001\n401f8836  movbu\td0,(0x744dd1ed)\t; fc82edd14d74\n401f883c  clr\td0\t; 00\n401f883d  movhu\td0,(0x744dd1f0)\t; fc83f0d14d74\n401f8843  movhu\td0,(0x744dd1ee)\t; fc83eed14d74\n401f8849  movbu\td0,(0x744dd1f2)\t; fc82f2d14d74\n401f884f  movhu\td0,(0x744dde20)\t; fc8320de4d74\n401f8855  mov\t1,d0\t; 8001\n401f8857  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f885d  mov\t(4,a2),d0\t; f80204\n401f8860  clr\td1\t; 04\n401f8861  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8867  clr\td0\t; 00\n401f8868  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f886e  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f8874  mov\t1,d0\t; 8001\n401f8876  call\t0x401e6932,[d2,d3],20\t; ddbce0feffc014\n401f887d  call\t0x401f8bc7,[d2,d3,a2],28\t; cd4a03e01c\n401f8882  cmp\t0,d0\t; a000\n401f8884  beq\t0x401f8889\t; c805\n401f8886  ret\t[a2],8\t; df2008\n401f8889  call\t0x401f8c3a,[d2],8\t; cdb1038008\n401f888e  cmp\t0,d0\t; a000\n401f8890  bne\t0x401f88f2\t; c962\n401f8892  mov\t(a2),d0\t; 72\n401f8893  cmp\t0,d0\t; a000\n401f8895  bne\t0x401f88e4\t; c94f\n401f8897  call\t0x401f8c96,[d2,d3,a2],28\t; cdff03e01c\n401f889c  cmp\t0,d0\t; a000\n401f889e  bne\t0x401f88e4\t; c946\n401f88a0  mov\t(0x744de3b4),d0\t; fca4b4e34d74\n401f88a6  mov\td0,(0x744ddf50)\t; fc8150df4d74\n401f88ac  mov\t(0x744de3b8),d0\t; fca4b8e34d74\n401f88b2  mov\td0,(0x744ddf54)\t; fc8154df4d74\n401f88b8  mov\t(0x744de3bc),d0\t; fca4bce34d74\n401f88be  movbu\td0,(0x744ddf5b)\t; fc825bdf4d74\n401f88c4  call\t0x401f9155,[d2],8\t; cd91088008\n401f88c9  extbu\td0\t; 14\n401f88ca  cmp\t1,d0\t; a001\n401f88cc  bne\t0x401f88d6\t; c90a\n401f88ce  mov\t1,d0\t; 8001\n401f88d0  movbu\td0,(0x744ddf5b)\t; fc825bdf4d74\n401f88d6  mov\t3,d0\t; 8003\n401f88d8  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f88de  movhu\td0,(0x744de31c)\t; fc831ce34d74\n401f88e4  call\t0x401e69f0,[],4\t; dd0ce1feff0004\n401f88eb  call\t0x401e9808,[],4\t; dd1d0fffff0004\n401f88f2  ret\t[a2],8\t; df2008\n"
+      },
+      {
+        "name": "service_mode_and_pending_clear",
+        "start": "0x401f88f5",
+        "end_exclusive": "0x401f8977",
+        "body_offset": "0x1f8cf5",
+        "bytes": 130,
+        "sha256": "d4bdc3cb27c970e176d68f84c4878a7e07381d2df2b430b1854a905ce4bcbec0",
+        "instructions": 34,
+        "raw_annotations_match_source": true,
+        "disassembly": "401f88f5  mov\ta0,a2\t; 92\n401f88f6  mov\t1,d0\t; 8001\n401f88f8  clr\td1\t; 04\n401f88f9  call\t0x401e6932,[d2,d3],20\t; dd39e0feffc014\n401f8900  mov\t(4,a2),d0\t; f80204\n401f8903  mov\td0,(0x743674d8)\t; fc81d8743674\n401f8909  movhu\td0,(0x744de398)\t; fc8398e34d74\n401f890f  cmp\t1,d0\t; a001\n401f8911  beq\t0x401f8919\t; c808\n401f8913  cmp\t0,d0\t; a000\n401f8915  beq\t0x401f891c\t; c807\n401f8917  bra\t0x401f8924\t; ca0d\n401f8919  clr\td0\t; 00\n401f891a  bra\t0x401f891e\t; ca04\n401f891c  mov\t1,d0\t; 8001\n401f891e  mov\td0,(0x744de3a8)\t; fc81a8e34d74\n401f8924  mov\t3,d0\t; 8003\n401f8926  movhu\td0,(0x744ddf58)\t; fc8358df4d74\n401f892c  mov\t255,d0\t; 2cff00\n401f892f  mov\td0,(0x744ddf50)\t; fc8150df4d74\n401f8935  mov\t512,d0\t; 2c0002\n401f8938  mov\td0,(0x744ddf54)\t; fc8154df4d74\n401f893e  mov\t1,d0\t; 8001\n401f8940  mov\t2,d1\t; 8502\n401f8942  movbu\td1,(0x744dd1ed)\t; fc86edd14d74\n401f8948  clr\td1\t; 04\n401f8949  mov\td1,(0x744dd1f4)\t; fc85f4d14d74\n401f894f  movhu\td1,(0x744dd1f0)\t; fc87f0d14d74\n401f8955  movhu\td1,(0x744dd1ee)\t; fc87eed14d74\n401f895b  movbu\td1,(0x744dd1f2)\t; fc86f2d14d74\n401f8961  movhu\td0,(0x744dd9d8)\t; fc83d8d94d74\n401f8967  movhu\td0,(0x744ddf36)\t; fc8336df4d74\n401f896d  call\t0x401e9808,[],4\t; dd9b0effff0004\n401f8974  ret\t[a2],8\t; df2008\n"
+      }
+    ],
+    "calls": [
+      {
+        "address": "0x401ea25b",
+        "target": "0x401ea3ea"
+      },
+      {
+        "address": "0x401ea261",
+        "target": "0x401ea54b"
+      },
+      {
+        "address": "0x401ea5a6",
+        "target": "0x401ebbbd"
+      },
+      {
+        "address": "0x401ea5fd",
+        "target": "0x401f0741"
+      },
+      {
+        "address": "0x401f0767",
+        "target": "0x401f077a"
+      },
+      {
+        "address": "0x401f076e",
+        "target": "0x401f0927"
+      }
+    ],
+    "scsi_lookup_controls": [
+      {
+        "operation": "0x0",
+        "target": "0x401ea647"
+      },
+      {
+        "operation": "0x12",
+        "target": "0x401ea660"
+      },
+      {
+        "operation": "0xe2",
+        "target": "0x401ea592"
+      },
+      {
+        "operation": "0xe4",
+        "target": "0x401ea592"
+      },
+      {
+        "operation": "0xe5",
+        "target": "0x401ea5ed"
+      },
+      {
+        "operation": "0x70",
+        "target": null
+      },
+      {
+        "operation": "0x9b",
+        "target": null
+      },
+      {
+        "operation": "0xe6",
+        "target": null
+      }
+    ],
+    "immediate_byte_stores_to_pending_mode": [
+      {
+        "address": "0x401e6b6e",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401e76b4",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401ec10d",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401f86b4",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401f877e",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401f8849",
+        "source_register": "d0"
+      },
+      {
+        "address": "0x401f895b",
+        "source_register": "d1"
+      },
+      {
+        "address": "0x401f8f49",
+        "source_register": "d0"
+      }
+    ]
+  },
+  "scsi_table": {
+    "address": "0x407f1cf0",
+    "body_offset": "0x7f20f0",
+    "bytes": 256,
+    "sha256": "89e53754f058ce6ceec9330e19fd69fe9e10e9546934d815ed696683b849a2f2",
+    "entries": [
+      {
+        "slot": 0,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 1,
+        "stored_key": 1,
+        "operation": "0x0",
+        "target": "0x401ea647"
+      },
+      {
+        "slot": 2,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 3,
+        "stored_key": 227,
+        "operation": "0xe2",
+        "target": "0x401ea592"
+      },
+      {
+        "slot": 4,
+        "stored_key": 4,
+        "operation": "0x3",
+        "target": "0x401ea64f"
+      },
+      {
+        "slot": 5,
+        "stored_key": 229,
+        "operation": "0xe4",
+        "target": "0x401ea592"
+      },
+      {
+        "slot": 6,
+        "stored_key": 230,
+        "operation": "0xe5",
+        "target": "0x401ea5ed"
+      },
+      {
+        "slot": 7,
+        "stored_key": 5,
+        "operation": "0x4",
+        "target": "0x401ea658"
+      },
+      {
+        "slot": 8,
+        "stored_key": 36,
+        "operation": "0x23",
+        "target": "0x401ea679"
+      },
+      {
+        "slot": 9,
+        "stored_key": 38,
+        "operation": "0x25",
+        "target": "0x401ea689"
+      },
+      {
+        "slot": 10,
+        "stored_key": 41,
+        "operation": "0x28",
+        "target": "0x401ea699"
+      },
+      {
+        "slot": 11,
+        "stored_key": 169,
+        "operation": "0xa8",
+        "target": "0x401ea699"
+      },
+      {
+        "slot": 12,
+        "stored_key": 43,
+        "operation": "0x2a",
+        "target": "0x401ea6da"
+      },
+      {
+        "slot": 13,
+        "stored_key": 171,
+        "operation": "0xaa",
+        "target": "0x401ea6da"
+      },
+      {
+        "slot": 14,
+        "stored_key": 44,
+        "operation": "0x2b",
+        "target": "0x401ea704"
+      },
+      {
+        "slot": 15,
+        "stored_key": 47,
+        "operation": "0x2e",
+        "target": "0x401ea70b"
+      },
+      {
+        "slot": 16,
+        "stored_key": 48,
+        "operation": "0x2f",
+        "target": "0x401ea712"
+      },
+      {
+        "slot": 17,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 18,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 19,
+        "stored_key": 19,
+        "operation": "0x12",
+        "target": "0x401ea660"
+      },
+      {
+        "slot": 20,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 21,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 22,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 23,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 24,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 25,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 26,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 27,
+        "stored_key": 91,
+        "operation": "0x5a",
+        "target": "0x401ea719"
+      },
+      {
+        "slot": 28,
+        "stored_key": 28,
+        "operation": "0x1b",
+        "target": "0x401ea669"
+      },
+      {
+        "slot": 29,
+        "stored_key": 27,
+        "operation": "0x1a",
+        "target": "0x401ea721"
+      },
+      {
+        "slot": 30,
+        "stored_key": 0,
+        "operation": null,
+        "target": null
+      },
+      {
+        "slot": 31,
+        "stored_key": 31,
+        "operation": "0x1e",
+        "target": "0x401ea671"
+      }
+    ]
+  },
+  "manual_interpretation": {
+    "cdb": "The CBW reader copies 4+4+4+1+1+1 header bytes followed by a 16-byte CDB to 0x744dd21c. The dispatcher uses CDB byte zero as its operation.",
+    "e2_e4": "CDB opcodes 0xe2 and 0xe4 share 0x401ea592. They reach 0x401ebbbd only if saved mode 0x744dd1f2 is 2 or 4.",
+    "e5": "CDB opcode 0xe5 reaches 0x401f0741 only if saved mode is 2. That helper dispatches CDB byte two values 0x3e and 0x3d. No packet was generated or transmitted.",
+    "rejection": "The failed vendor gates reach 0x401ea61d, setting sense fields 5/0x20/0. This is a command-rejection path, not a memory read.",
+    "pending_mode": "The reviewed nonzero immediate byte store to the saved mode, 0x401e76b4, copies the current descriptor mode after 0x401e7659 requires mode 2. It then temporarily selects storage mode 1. Restore routines require the saved state before returning to maintenance phase 3.",
+    "inventory_limits": "The inventory covers exact FC 82/86/8a/8e absolute byte-store encodings in the main mapped program range. Other widths, computed destinations and aliases are not excluded; this is not a whole-program reachability proof.",
+    "protocol_layers": "Raw maintenance operations 0x70 and 0x9b do not occur as operation keys in this SCSI table. Their presence in a different dispatcher does not make them direct SCSI CDB opcodes."
+  },
+  "limits": {
+    "normal_pc_mode_memory_read_established": false,
+    "gm5_equivalence_verified": false,
+    "camera_contacted": false,
+    "firmware_executed_or_emulated": false
+  }
+}

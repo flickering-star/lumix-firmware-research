@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T03:39:21.211249+00:00",
+  "scope": "Complete GM5 32 MiB mapped NOR backup, resumed after owner-reported battery replacement",
+  "complete": true,
+  "bytes": 33554432,
+  "sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+  "physical_range": [
+    "0x40000000",
+    "0x42000000"
+  ],
+  "acquisition_runs": [
+    {
+      "capture": "captures/gm5-flash-backup-n_5fpkw_",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-flash-backup-n_5fpkw_",
+        "model": "DMC-GM5",
+        "mode": "nor-backup",
+        "complete": false,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 22449,
+        "resume_anchors_verified": 0,
+        "copied_prefix_bytes": 0,
+        "program_file": "captures/gm5-flash-backup-n_5fpkw_/result/flash32m.bin",
+        "verified_prefix_bytes": 22987776,
+        "program_sha256": "fce983814656d8cd6cf549e2b6fdb0d48a9d4e73eeaa57fe3bd2406c50eff5a1",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x415ec400",
+        "terminal_phase": "type_prepared",
+        "errors": [
+          {
+            "event": "api_result",
+            "step": "prepare_bulk_in",
+            "result": "0xe00002ed"
+          }
+        ]
+      },
+      "native_summary": {
+        "schema": 1,
+        "model": "DMC-GM5",
+        "mode": "nor-backup",
+        "exit_status": 1,
+        "interface_opened": true,
+        "control_requests_attempted": 67397,
+        "bulk_writes_attempted": 22466,
+        "validated_word_responses": 16,
+        "settings_bytes": 32,
+        "program_block_bytes": 22987776,
+        "copied_prefix_bytes": 0,
+        "resume_anchor_blocks": 0,
+        "physical_flash_bytes": 33554432,
+        "host_ram_writes": 0,
+        "host_flash_writes": 0
+      },
+      "tool_hashes_verified": {
+        "probe-source.c": "f2f93ad50f1e53139ac1c92e428b007a9fa9b26b71543f0d88540ad63ed84336",
+        "gm1_usb_probe_macos.c": "6607850f81f0215e57ba1c6c1ecf89103c4ea3ac738777b80ac8454e03442cb7",
+        "gm5-flash-backup": "19adae2072bfde97736a60010233b5033976ca4082b615c3752ea0c3968cc7cd"
+      }
+    },
+    {
+      "capture": "captures/gm5-flash-backup-9z320rtf",
+      "verification": {
+        "schema": 1,
+        "capture": "captures/gm5-flash-backup-9z320rtf",
+        "model": "DMC-GM5",
+        "mode": "resume-nor-backup",
+        "complete": true,
+        "settings_bytes_verified": 32,
+        "word_responses_verified": 16,
+        "program_block_responses_verified": 10322,
+        "resume_anchors_verified": 3,
+        "copied_prefix_bytes": 22987776,
+        "program_file": "captures/gm5-flash-backup-9z320rtf/result/flash32m.bin",
+        "verified_prefix_bytes": 33554432,
+        "program_sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+        "program_file_base": "0x40000000",
+        "program_file_offset": 0,
+        "next_program_address": "0x42000000",
+        "terminal_phase": "idle",
+        "errors": []
+      },
+      "native_summary": {
+        "schema": 1,
+        "model": "DMC-GM5",
+        "mode": "resume-nor-backup",
+        "exit_status": 0,
+        "interface_opened": true,
+        "control_requests_attempted": 31014,
+        "bulk_writes_attempted": 10338,
+        "validated_word_responses": 16,
+        "settings_bytes": 32,
+        "program_block_bytes": 10566656,
+        "copied_prefix_bytes": 22987776,
+        "resume_anchor_blocks": 3,
+        "physical_flash_bytes": 33554432,
+        "host_ram_writes": 0,
+        "host_flash_writes": 0
+      },
+      "tool_hashes_verified": {
+        "probe-source.c": "f2f93ad50f1e53139ac1c92e428b007a9fa9b26b71543f0d88540ad63ed84336",
+        "gm1_usb_probe_macos.c": "6607850f81f0215e57ba1c6c1ecf89103c4ea3ac738777b80ac8454e03442cb7",
+        "gm5-flash-backup": "19adae2072bfde97736a60010233b5033976ca4082b615c3752ea0c3968cc7cd"
+      }
+    }
+  ],
+  "analysis": {
+    "schema": 1,
+    "scope": "Complete GM5 mapped NOR readback and private emulator component extraction",
+    "capture_verification": {
+      "schema": 1,
+      "capture": "captures/gm5-flash-backup-9z320rtf",
+      "model": "DMC-GM5",
+      "mode": "resume-nor-backup",
+      "complete": true,
+      "settings_bytes_verified": 32,
+      "word_responses_verified": 16,
+      "program_block_responses_verified": 10322,
+      "resume_anchors_verified": 3,
+      "copied_prefix_bytes": 22987776,
+      "program_file": "captures/gm5-flash-backup-9z320rtf/result/flash32m.bin",
+      "verified_prefix_bytes": 33554432,
+      "program_sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+      "program_file_base": "0x40000000",
+      "program_file_offset": 0,
+      "next_program_address": "0x42000000",
+      "terminal_phase": "idle",
+      "errors": []
+    },
+    "earlier_flash_windows": [
+      {
+        "capture": "gm5-usb-window-Hqd18GAn",
+        "flash_start": "0x40000000",
+        "bytes": 8192,
+        "sha256": "d0ff829bad093b91ecb3b88decfe58df65ab35933230eb1e28fa5f130e6da156",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-updater-window-qX2cjoe6",
+        "flash_start": "0x4154e000",
+        "bytes": 16384,
+        "sha256": "cbda9861262b204427d73b61bfe22d08f385c6a52cbc4f15b355679afc53614e",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-initializer-ujPIpkWZ",
+        "flash_start": "0x40643800",
+        "bytes": 32768,
+        "sha256": "1af08947c71c7471aa4c5ec94dd6f6a0ef255346936e707d9fc42ea91b5ed25e",
+        "matches_complete_dump": true
+      },
+      {
+        "capture": "gm5-usb-update-entry-Fd6ZOqs0",
+        "flash_start": "0x4023b800",
+        "bytes": 3072,
+        "sha256": "9863d695d199c752a49df9d1b50403a2157ab51b8f7440170a4af2a7be7254f4",
+        "matches_complete_dump": true
+      }
+    ],
+    "components": [
+      {
+        "name": "program",
+        "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+        "flash_start": "0x40000000",
+        "linked_address": "0x40000000",
+        "bytes": 8388608,
+        "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+        "official_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+        "byte_identical_to_official": false,
+        "byte_differences_at_same_offsets": 13698,
+        "comparison_note": "Same-offset count includes alignment shifts; it is not a count of semantic changes."
+      },
+      {
+        "name": "program2",
+        "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+        "flash_start": "0x41400000",
+        "linked_address": "0x7bc00000",
+        "bytes": 3538944,
+        "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+        "official_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+        "byte_identical_to_official": false,
+        "byte_differences_at_same_offsets": 1520048,
+        "comparison_note": "Same-offset count includes alignment shifts; it is not a count of semantic changes."
+      }
+    ],
+    "physical_policy_source": {
+      "address": "0x406b1bdc",
+      "value": 1
+    },
+    "verifier_sha256": "c4d14c778825bd5efa7099a8f7a5d12d4d26809a596824f8bd360e9b1ed88fa8",
+    "camera_contacted": false,
+    "limits": [
+      "Sequential acquisition, with three matching anchors after the battery replacement; not an atomic snapshot.",
+      "Covers the mapped NOR range only, not every independent storage device or volatile RAM.",
+      "Private program slices are native-emulator inputs, not flashable update packages.",
+      "No tested hardware recovery programmer or firmware writer is supplied."
+    ]
+  },
+  "post_backup_ram_flag": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-runtime-control-DsJ9R9ge",
+    "model": "DMC-GM5",
+    "mode": "runtime-control",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 1,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-runtime-control-DsJ9R9ge/result/runtime-control.bin",
+    "verified_prefix_bytes": 1024,
+    "program_sha256": "4d4a3cded8de7fe88cf67ef3127ec712546eaee3e3887231d20fdb633080510f",
+    "program_file_base": "0x70a68400",
+    "program_file_offset": 0,
+    "next_program_address": "0x70a68800",
+    "terminal_phase": "idle",
+    "errors": [],
+    "flag_halfword": 1
+  },
+  "host_ram_writes": 0,
+  "host_flash_writes": 0,
+  "raw_flash_publicly_included": false,
+  "limits": [
+    "Sequential acquisition across a battery replacement; three live resume anchors matched, not an atomic snapshot.",
+    "This covers the mapped NOR range, not all independent storage or volatile RAM.",
+    "Earlier pre-update comparisons cover four retained windows, not a complete before/after-chip comparison.",
+    "A complete backup does not establish a tested recovery writer or physical programmer."
+  ]
+}

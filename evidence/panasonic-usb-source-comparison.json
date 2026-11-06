@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "scope": "Official later-generation source comparison; does not identify GM5 implementation",
+  "sources": [
+    {
+      "label": "GH5",
+      "official_listing_url": "https://ospo.panasonic.com/oss/dsc/DC-GH5.html",
+      "archive_url": "https://ospo.panasonic.com/oss/source/dsc/DC-GH5/linux-3.18.18.tar.gz",
+      "archive_path": "work/panasonic-source-gh5/linux-3.18.18.tar.gz",
+      "bytes": 127563916,
+      "sha256": "f206feb1fb21a23a36a71e1fe0fb4aa5544cfce04fffeaebcf571db23d9aa494",
+      "acquired_file_mtime_utc": "2026-11-05T15:51:21.025326+00:00",
+      "acquisition": "System curl HTTPS with normal certificate verification; no archive code built or executed",
+      "regular_file_manifest_path": "work/panasonic-source-gh5/complete-file-manifest.json",
+      "regular_file_manifest_sha256": "738c4b8a9e229062a34c30d24f2bdc0c8281e5b86d5837ee1d7ee3ab62e850ef",
+      "regular_files": 48250,
+      "pvc_mass_storage_members": [],
+      "selected_source_files": [
+        {
+          "path": "work/panasonic-source-gh5/selected/linux-3.18.18/drivers/usb/gadget/function/f_mass_storage.c",
+          "archive_member": "linux-3.18.18/drivers/usb/gadget/function/f_mass_storage.c",
+          "bytes": 99536,
+          "sha256": "237cba72396aaea9d7b8770f1a6cf55fc5b8b1bedaca98fe05a6b432e6b11f90",
+          "line_count": 3667,
+          "anchors": {
+            "static long ms_ioctl": [],
+            "void ep_normal_completion": [],
+            "case PVCUSB_GET_DATA:": [],
+            "copy_to_user((void *)arg, &StoreGetData": [],
+            "memcpy(&StoreGetData.CbwData": [],
+            "CurrentSerialNumber++": [],
+            "PVCUSB_SET_DEV_DATA": [],
+            "config USB_PVC_MASS_STORAGE": [],
+            "CONFIG_USB_PVC_MASS_STORAGE": [],
+            "static int do_scsi_command": [
+              1818
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "S5M2_Ver1",
+      "official_listing_url": "https://ospo.panasonic.com/oss/dsc/DC-S5M2.html",
+      "archive_url": "https://ospo.panasonic.com/oss/source/dsc/DC-S5M2/linux-4.19.124.tar.gz",
+      "archive_path": "work/panasonic-source-s5m2/linux-4.19.124.tar.gz",
+      "bytes": 165739116,
+      "sha256": "617c2712db38aed13cd5b6e96890d759d1b215ad20768dddd716b8ceaebc7811",
+      "acquired_file_mtime_utc": "2026-11-05T15:54:14.973342+00:00",
+      "acquisition": "System curl HTTPS with normal certificate verification; no archive code built or executed",
+      "regular_file_manifest_path": "work/panasonic-source-s5m2/complete-file-manifest.json",
+      "regular_file_manifest_sha256": "00efcc66f07af22bfff2e6f0fdfe5afbdd9664d72f26a85a7fc1fcd2121a4d06",
+      "regular_files": 61995,
+      "pvc_mass_storage_members": [
+        {
+          "name": "linux-4.19.124/drivers/usb/gadget/legacy/pvc_mass_storage_p2.c",
+          "bytes": 84764
+        },
+        {
+          "name": "linux-4.19.124/drivers/usb/gadget/legacy/pvc_mass_storage.c",
+          "bytes": 86224
+        },
+        {
+          "name": "linux-4.19.124/include/linux/pvc_mass_storage_p2.h",
+          "bytes": 5085
+        },
+        {
+          "name": "linux-4.19.124/include/linux/pvc_mass_storage.h",
+          "bytes": 5646
+        }
+      ],
+      "selected_source_files": [
+        {
+          "path": "work/panasonic-source-s5m2/selected/linux-4.19.124/drivers/usb/gadget/function/f_mass_storage.c",
+          "archive_member": "linux-4.19.124/drivers/usb/gadget/function/f_mass_storage.c",
+          "bytes": 95148,
+          "sha256": "d3fbb0c2f24d1da24a53d3937a298368d7cef01659a5199bb50ebc61fe3b8efc",
+          "line_count": 3476,
+          "anchors": {
+            "static long ms_ioctl": [],
+            "void ep_normal_completion": [],
+            "case PVCUSB_GET_DATA:": [],
+            "copy_to_user((void *)arg, &StoreGetData": [],
+            "memcpy(&StoreGetData.CbwData": [],
+            "CurrentSerialNumber++": [],
+            "PVCUSB_SET_DEV_DATA": [],
+            "config USB_PVC_MASS_STORAGE": [],
+            "CONFIG_USB_PVC_MASS_STORAGE": [],
+            "static int do_scsi_command": [
+              1796
+            ]
+          }
+        },
+        {
+          "path": "work/panasonic-source-s5m2/selected/linux-4.19.124/drivers/usb/gadget/legacy/Kconfig",
+          "archive_member": "linux-4.19.124/drivers/usb/gadget/legacy/Kconfig",
+          "bytes": 17642,
+          "sha256": "fae238d45c8548c0538a7b7383eb1c983ac407e968ab13bd9df1c0b07218a8d2",
+          "line_count": 510,
+          "anchors": {
+            "static long ms_ioctl": [],
+            "void ep_normal_completion": [],
+            "case PVCUSB_GET_DATA:": [],
+            "copy_to_user((void *)arg, &StoreGetData": [],
+            "memcpy(&StoreGetData.CbwData": [],
+            "CurrentSerialNumber++": [],
+            "PVCUSB_SET_DEV_DATA": [],
+            "config USB_PVC_MASS_STORAGE": [
+              505
+            ],
+            "CONFIG_USB_PVC_MASS_STORAGE": [],
+            "static int do_scsi_command": []
+          }
+        },
+        {
+          "path": "work/panasonic-source-s5m2/selected/linux-4.19.124/drivers/usb/gadget/legacy/Makefile",
+          "archive_member": "linux-4.19.124/drivers/usb/gadget/legacy/Makefile",
+          "bytes": 2246,
+          "sha256": "29ce640fe393e420e2722d13107860ebfe39e13589d657fbcc09323c1fd1bd8f",
+          "line_count": 62,
+          "anchors": {
+            "static long ms_ioctl": [],
+            "void ep_normal_completion": [],
+            "case PVCUSB_GET_DATA:": [],
+            "copy_to_user((void *)arg, &StoreGetData": [],
+            "memcpy(&StoreGetData.CbwData": [],
+            "CurrentSerialNumber++": [],
+            "PVCUSB_SET_DEV_DATA": [],
+            "config USB_PVC_MASS_STORAGE": [],
+            "CONFIG_USB_PVC_MASS_STORAGE": [
+              61,
+              62
+            ],
+            "static int do_scsi_command": []
+          }
+        },
+        {
+          "path": "work/panasonic-source-s5m2/selected/linux-4.19.124/drivers/usb/gadget/legacy/pvc_mass_storage.c",
+          "archive_member": "linux-4.19.124/drivers/usb/gadget/legacy/pvc_mass_storage.c",
+          "bytes": 86224,
+          "sha256": "2fbf0e897e8b32108d57522dcafefb8b74c73b039c1f1d676d34b0bd61e15309",
+          "line_count": 2922,
+          "anchors": {
+            "static long ms_ioctl": [
+              2437
+            ],
+            "void ep_normal_completion": [
+              1537
+            ],
+            "case PVCUSB_GET_DATA:": [
+              2455
+            ],
+            "copy_to_user((void *)arg, &StoreGetData": [
+              2460
+            ],
+            "memcpy(&StoreGetData.CbwData": [
+              1564
+            ],
+            "CurrentSerialNumber++": [
+              1006,
+              1553,
+              2023,
+              2601
+            ],
+            "PVCUSB_SET_DEV_DATA": [
+              2684,
+              2687,
+              2688,
+              2691,
+              2699,
+              2702
+            ],
+            "config USB_PVC_MASS_STORAGE": [],
+            "CONFIG_USB_PVC_MASS_STORAGE": [],
+            "static int do_scsi_command": []
+          }
+        },
+        {
+          "path": "work/panasonic-source-s5m2/selected/linux-4.19.124/include/linux/pvc_mass_storage.h",
+          "archive_member": "linux-4.19.124/include/linux/pvc_mass_storage.h",
+          "bytes": 5646,
+          "sha256": "2baed3de98f358f2d040c8508e0915e14106144015546e0471fb3656609ec484",
+          "line_count": 168,
+          "anchors": {
+            "static long ms_ioctl": [],
+            "void ep_normal_completion": [],
+            "case PVCUSB_GET_DATA:": [],
+            "copy_to_user((void *)arg, &StoreGetData": [],
+            "memcpy(&StoreGetData.CbwData": [],
+            "CurrentSerialNumber++": [],
+            "PVCUSB_SET_DEV_DATA": [
+              149,
+              165
+            ],
+            "config USB_PVC_MASS_STORAGE": [],
+            "CONFIG_USB_PVC_MASS_STORAGE": [],
+            "static int do_scsi_command": []
+          }
+        }
+      ]
+    }
+  ],
+  "manual_review": {
+    "gh5": "No pvc_mass_storage.c/h member in this entire official archive. The inspected f_mass_storage.c implements ordinary SCSI storage commands.",
+    "s5m2": "The custom bridge copies a received 31-byte CBW, including its 16-byte CDB, into a structure exposed to local userspace by PVCUSB_GET_DATA. Its ioctl data transfer addresses are local userspace/driver fields, not demonstrated remote address-read commands.",
+    "sequence_counter": "CurrentSerialNumber increments for a CBW and is checked on local ioctl replies. This is a transport sequence counter in the inspected driver, not evidence of camera pairing or a firmware decryption key.",
+    "runtime_identity": "Default descriptor constants may be changed through PVCUSB_SET_DEV_DATA. Source defaults and presence in a release archive do not prove runtime binding, product IDs or behavior on any connected camera.",
+    "missing_consumer": "The driver does not include the userspace consumer that assigns meaning to vendor CDBs. No arbitrary remote memory reader or GM5 command can be concluded from the forwarding interface."
+  },
+  "mirror_comparison": [
+    {
+      "url": "https://raw.githubusercontent.com/Siegfried82/lumix-s1m2-research/8f625cfabb31e8a71177b86e2b63a69c686de5e8/external_review/20261013/S5_%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AE%B1/01_%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_%E5%85%A8%E9%9B%86/01_%E5%9B%BA%E4%BB%B6AES%E7%BB%95%E8%BF%87_%E8%B0%83%E7%A0%94_20261010/06-USB-SCSI%E6%BA%90%E7%A0%81/usb-scsi-src-export/drivers/usb/gadget/legacy/pvc_mass_storage.c",
+      "bytes": 82835,
+      "sha256": "eba1a06127108584f084b499279943370463e5f628000560e4d0dae930c5488e",
+      "local": "work/reference-sources/pvc_mass_storage.mirror.c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Siegfried82/lumix-s1m2-research/8f625cfabb31e8a71177b86e2b63a69c686de5e8/external_review/20261013/S5_%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AE%B1/01_%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_%E5%85%A8%E9%9B%86/01_%E5%9B%BA%E4%BB%B6AES%E7%BB%95%E8%BF%87_%E8%B0%83%E7%A0%94_20261010/06-USB-SCSI%E6%BA%90%E7%A0%81/usb-scsi-src-export/README.md",
+      "bytes": 8301,
+      "sha256": "428c4fbca65087b6c645a602515014ce985bd6b1a54402f6156a53b469e50c35",
+      "local": "work/reference-sources/usb-scsi-mirror-README.md"
+    }
+  ],
+  "limits": {
+    "gm5_source_recovered": false,
+    "gm5_compatibility_established": false,
+    "custom_driver_active_on_physical_camera_verified": false,
+    "camera_or_lan_contacted": false,
+    "source_built_or_executed": false
+  }
+}

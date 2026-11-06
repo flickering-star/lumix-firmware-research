@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "scope": "Installed GM5 update-policy sampling and package-verification order; offline only",
+  "passed": 4,
+  "controls": [
+    {
+      "name": "installed_job_latches_0",
+      "initial_global_flag": 0,
+      "saved_flag": 0,
+      "execution": {
+        "schema": 1,
+        "name": "installed_job_latches_0",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "flag_saved",
+          "steps": 5,
+          "pc": "0x7bd4fba2",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x70030000",
+            "0x00000000",
+            "0x00000000",
+            "0x70030000",
+            "0x700efeb8",
+            "0x7bd4fba2",
+            "0x00000000",
+            "0x00100000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "86deecc79c9f906d979a27cf8788c0c6aac5c8004ccd3c7a6a412c3ba1c9bb98",
+        "trace_sha256": "105125a2e72c73c3623c1ca52ac4db131018e40532ffe03ddc7d73318ebbafed",
+        "trace_every_instructions": 1,
+        "execution_wall_seconds": 0.042826,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Installed job entry only, stopped after saving the policy flag; no hardware/file calls executed."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      }
+    },
+    {
+      "name": "installed_context_after_global_change_0",
+      "saved_flag": 0,
+      "global_flag_during_context_setup": 1,
+      "context_unsigned_allowance": 1,
+      "execution": {
+        "schema": 1,
+        "name": "installed_context_after_global_change_0",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "allowance_ready",
+          "steps": 7,
+          "pc": "0x7bd4fc30",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000001",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x700efeb8",
+            "0x7bd4fc30",
+            "0x00000000",
+            "0x00100001",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "ed64cd18c4ece860b74eecaa41be319f292fb379a4ea86ddc6b2fde4ceccf2e4",
+        "trace_sha256": "731ec2b2e84ad249400a9b1565a18ef1b5ce980c6a47b322bcd4cd0bf6b5af05",
+        "trace_every_instructions": 1,
+        "execution_wall_seconds": 0.038841,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Resume at the reviewed allowance snippet with its previously saved flag; the global byte is changed virtually. This does not simulate a CPU reset."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      }
+    },
+    {
+      "name": "installed_job_latches_1",
+      "initial_global_flag": 1,
+      "saved_flag": 1,
+      "execution": {
+        "schema": 1,
+        "name": "installed_job_latches_1",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "flag_saved",
+          "steps": 5,
+          "pc": "0x7bd4fba2",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000001",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x70030000",
+            "0x00000000",
+            "0x00000000",
+            "0x70030000",
+            "0x700efeb8",
+            "0x7bd4fba2",
+            "0x00000000",
+            "0x00100000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "fb91863d8d3c008e7e41b0717e833c9cf088f226f49e4ae795e5d1e1e1bc2457",
+        "trace_sha256": "0d3a447e29323e9717e015023286e31e30ceea3b8680ec86d2b65c2c68bfd671",
+        "trace_every_instructions": 1,
+        "execution_wall_seconds": 0.03874,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Installed job entry only, stopped after saving the policy flag; no hardware/file calls executed."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      }
+    },
+    {
+      "name": "installed_context_after_global_change_1",
+      "saved_flag": 1,
+      "global_flag_during_context_setup": 0,
+      "context_unsigned_allowance": 0,
+      "execution": {
+        "schema": 1,
+        "name": "installed_context_after_global_change_1",
+        "images": [
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+            "address": "0x40000000",
+            "bytes": 8388608,
+            "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+          },
+          {
+            "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+            "address": "0x7bc00000",
+            "bytes": 3538944,
+            "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+          }
+        ],
+        "result": {
+          "event": "result",
+          "stop": "allowance_ready",
+          "steps": 5,
+          "pc": "0x7bd4fc30",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000001",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x700efeb8",
+            "0x7bd4fc30",
+            "0x00000000",
+            "0x00100000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ]
+        },
+        "backend": {
+          "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim",
+          "sha256": "44aef926aaa4e7de4299a5e03fc44082f6287e18892bdc9a25a97c726a141172"
+        },
+        "driver_sha256": "f61891bed015ace27358c0aa273c12ee9bd5a8f8b7e91add689935097c21d274",
+        "scenario_sha256": "28b42486a0ee91e74ba2b655e2495ab368785feb5803aae27c7657cd387ec84d",
+        "trace_sha256": "8a8ff8cb277a0027f804ea61e5f4eb3ed15a08b9c7d87b8c97d19f9a4b058534",
+        "trace_every_instructions": 1,
+        "execution_wall_seconds": 0.039112,
+        "execution_mode": "fast",
+        "assumptions": [
+          "Resume at the reviewed allowance snippet with its previously saved flag; the global byte is changed virtually. This does not simulate a CPU reset."
+        ],
+        "camera_contacted": false,
+        "complete_camera_emulation": false
+      }
+    }
+  ],
+  "absolute_flag_operand_occurrences": {
+    "installed_main": [
+      "0x4023bc87",
+      "0x4023bcce",
+      "0x4023bf1d",
+      "0x4023c111"
+    ],
+    "installed_secondary": [
+      "0x7bd4fb99"
+    ]
+  },
+  "installed_addresses": {
+    "installation_bridge_job_call": "0x4023c19a",
+    "job_entry": "0x7bd4fb93",
+    "global_flag_load": "0x7bd4fb97",
+    "saved_flag_store": "0x7bd4fba0",
+    "unsigned_context_setup": "0x7bd4fc22..0x7bd4fc30",
+    "full_decoder_call": "0x7bd4fcd1",
+    "decoder_failure_to_cleanup": "0x7bd4fcdc -> 0x7bd50093",
+    "signature_call": "0x7bd4f1bb"
+  },
+  "supported_conclusions": [
+    "The reviewed installation bridge calls the installed updater as a function in the current CPU session.",
+    "The installed job saves the global policy flag near entry and uses the saved value to initialize its unsigned allowance.",
+    "Changing the global byte after sampling does not change that native context decision in these controls.",
+    "The reviewed full decoder performs package authentication/decode before the post-decode programming path."
+  ],
+  "camera_contacted": false,
+  "physical_firmware_modified": false,
+  "limits": [
+    "These controls do not emulate a CPU reset or the complete UI/update/boot sequence.",
+    "A reboot before a new update job would restore the stock flag to1 and lose its previous stack/context.",
+    "Absence of further literal flag references does not exclude computed references, boot-ROM checks or a separate boot-time authentication mechanism.",
+    "No claim that package authentication is the only possible integrity check during writing or boot."
+  ]
+}

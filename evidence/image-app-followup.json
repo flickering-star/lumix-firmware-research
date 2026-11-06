@@ -1,0 +1,343 @@
+{
+  "schema": 1,
+  "review_date": "2026-11-04",
+  "status": "Static follow-up complete for acquired material; no GM5 dump or update key recovered",
+  "source": {
+    "repository": "maiermic/panasonic-image-app",
+    "revision": "ef9bd7c2a8390204894c53b49d1e01a230141e2d",
+    "kind": "Third-party public decompilation; not an authenticated owner APK",
+    "files": [
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/view/cameraconnect/GuidanceMenuActivity.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/view/cameraconnect/GuidanceMenuActivity.java",
+        "git_blob_sha": "2fb33e173664d2671d2b09e75a4a9e021a0d518f",
+        "bytes": 331735,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/view/cameraconnect/GuidanceMenuActivity.java",
+        "sha256": "69a8f4843e931bbee4792b395917e510c077dc9f7ff6041168f8e3a934585c12"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1413a.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1413a.java",
+        "git_blob_sha": "cce135fbc26c0edc40181b357b59213d09805a6f",
+        "bytes": 5660,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1413a.java",
+        "sha256": "744566388e2a3bfec6e4eb2055c91f44f3fa71068b7b8da871188d02fe6ab07d"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1415b.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1415b.java",
+        "git_blob_sha": "95316d8b4238b22f25cb12ad61ddb5e64d7c2bf0",
+        "bytes": 1302,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1415b.java",
+        "sha256": "b88a446515f72412be65d89686c1e31acea02de273fa4fe397cb99e5dac7b549"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1417c.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1417c.java",
+        "git_blob_sha": "42900458368c1f99f445cc83e28de55538818bb1",
+        "bytes": 4504,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1417c.java",
+        "sha256": "baac411abbefa2e19ba2c8a018263fe0342fe6f5c5b718544c30e2b3a2eb4943"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1420d.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1420d.java",
+        "git_blob_sha": "f399cc2919916675d544475a079416daf3d658ad",
+        "bytes": 9031,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1420d.java",
+        "sha256": "f7098e7c0b227d1549f66ea896ca6dae6659b7d5adac7a06d4bef8caec880f67"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1423e.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1423e.java",
+        "git_blob_sha": "f0ad8cbbca53ce5212a6dfe2b81dd438916d297f",
+        "bytes": 6245,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1423e.java",
+        "sha256": "8591cb96545a0b44bc9ea9c48a320bd28d7cd383fdc12d8f6031589136cf7154"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1424f.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1424f.java",
+        "git_blob_sha": "cc60cd84a79a424e49e60de51af63583d492a633",
+        "bytes": 10242,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1424f.java",
+        "sha256": "af23eb98fe6dc494922766206e563f3ce9185b84e2bc23ffbc618f7ac4fb12de"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1431g.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1431g.java",
+        "git_blob_sha": "59b84ed06dbb031c46ff5ed4f1312283dbdb2fb6",
+        "bytes": 3188,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1431g.java",
+        "sha256": "57505ede3a89b34695a57518d258dd31b604d634424579089aea6c979afc0db6"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1433h.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1433h.java",
+        "git_blob_sha": "2a85faf2a6549ce80ad24b2248b2c30e730e72b3",
+        "bytes": 11486,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1433h.java",
+        "sha256": "1d79aa0676696fa102467734c8c3801d96465a78679247aa89ee125518e84afe"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1434i.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1434i.java",
+        "git_blob_sha": "fe4346f6dbc3fe987ceea30be927c585e7d939e7",
+        "bytes": 2188,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1434i.java",
+        "sha256": "4a2f84f02f638a17f76ee947f8ecf309802fe3841541620b59e824a1c15e7b36"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1435j.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1435j.java",
+        "git_blob_sha": "cf1c80bdbdf45d7ec8ad05a8be9f2011ac963d79",
+        "bytes": 1352,
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/core/p040a/p041a/C1435j.java",
+        "sha256": "c81a793f9caf6967017ecc7ff6f095235cadeefe0ddc2c2887069684a3e7a8c9"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/p051c/C1847f.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/model/p051c/C1847f.java",
+        "git_blob_sha": "000c6cf264771b1531be73cabeb5e2760bc086ef",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/p051c/C1847f.java",
+        "bytes": 12073,
+        "sha256": "26e70a9e1b3f6655fe310c4fc6d96c8b942d46d1709efab0871e3f6de66d71c5"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/smali/com/panasonic/avc/cng/model/c/f.smali",
+        "local_path": "work/image-app-1.10.14/smali/com/panasonic/avc/cng/model/c/f.smali",
+        "git_blob_sha": "ad3f980690f471de43b9fee4ddb358e03f303738",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/smali/com/panasonic/avc/cng/model/c/f.smali",
+        "bytes": 30643,
+        "sha256": "42306a2102bbfa9b8cbc256895fafeb5898fdfb2e8290114de2bb87fc35dc370"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/C1892f.java",
+        "local_path": "work/image-app-1.10.14/source/com/panasonic/avc/cng/model/C1892f.java",
+        "git_blob_sha": "36188982d42794d807f2106f5936da3db439b4a4",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/source/com/panasonic/avc/cng/model/C1892f.java",
+        "bytes": 6710,
+        "sha256": "5e9a45858b7f657a652448bd931171fa2d81216e097bea06c7e20846f3f8d142"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/lib/armeabi/libhttpc.so",
+        "local_path": "work/image-app-1.10.14/lib/armeabi/libhttpc.so",
+        "git_blob_sha": "f86d688594e8ada7cde864751f1bad18cedff4ba",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/lib/armeabi/libhttpc.so",
+        "bytes": 38032,
+        "sha256": "98385fd755c4790ffefa03431bcc27e658561301254e96dbed5625ed97a1e0b6"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/lib/armeabi/libisys.so",
+        "local_path": "work/image-app-1.10.14/lib/armeabi/libisys.so",
+        "git_blob_sha": "e0d84de9c13a88afc41ec9949f1215e6bb96d5fa",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/lib/armeabi/libisys.so",
+        "bytes": 51560,
+        "sha256": "fb5c41249be70f100840422550c2da71868d655c9c7f21a7d2fa22851d38d430"
+      },
+      {
+        "path": "panasonic-image-app_1.10.14/lib/armeabi/libtsuru3.so",
+        "local_path": "work/image-app-1.10.14/lib/armeabi/libtsuru3.so",
+        "git_blob_sha": "5d59b52c95dee25b75d29ad6ce95684931cd988b",
+        "url": "https://github.com/maiermic/panasonic-image-app/blob/ef9bd7c2a8390204894c53b49d1e01a230141e2d/panasonic-image-app_1.10.14/lib/armeabi/libtsuru3.so",
+        "bytes": 103844,
+        "sha256": "570f430eec9f64865c04bccd0fbd7bc40d83bbc59fd427585fd498dbc2180963"
+      }
+    ],
+    "usb_reference": {
+      "repository": "gphoto/libgphoto2",
+      "revision": "26a57b27caeb865a6b1d415aa5a80b47837c9023",
+      "files": [
+        {
+          "path": "camlibs/ptp2/ptp.h",
+          "local_path": "work/panasonic-usb-reference/ptp.h",
+          "git_blob_sha": "316ba56141148190c74b1bcf982250a7794d7551",
+          "bytes": 233914,
+          "sha256": "b0911ed8578c8cdb8804763f33b575f1fb0d1cd58af4b3199c973c5737a574cd"
+        },
+        {
+          "path": "camlibs/ptp2/cameras/panasonic-dmc-gh4.txt",
+          "local_path": "work/panasonic-usb-reference/panasonic-dmc-gh4.txt",
+          "git_blob_sha": "a9402883e03ef4f88d5c8cb3759bd8bad467dfed",
+          "bytes": 5386,
+          "sha256": "d16ff66aca04b55303339b4e052a744362ff8e179dd12f5e574edad226306889"
+        }
+      ]
+    }
+  },
+  "acquired_file_count": 19,
+  "integrity": {
+    "git_blob_sha1_checked": true,
+    "sha256_computed_locally": true,
+    "authenticates_installed_owner_apk": false
+  },
+  "findings": [
+    {
+      "id": "native-des-password-hash",
+      "classification": "strong static inference from inspected binary",
+      "library": "libisys.so",
+      "functions": [
+        {
+          "name": "isys_crypt",
+          "elf_virtual_address": "0x4798"
+        },
+        {
+          "name": "isys_pl_crypt",
+          "elf_virtual_address": "0x7290"
+        },
+        {
+          "name": "isys_pl_des_setkey",
+          "elf_virtual_address": "0x6a5c"
+        },
+        {
+          "name": "isys_pl_des_cipher",
+          "elf_virtual_address": "0x6eb0"
+        }
+      ],
+      "observations": {
+        "password_buffer_bytes": 8,
+        "character_shift_bits": 1,
+        "extended_salt_prefix": "_",
+        "legacy_salt_characters": 2,
+        "legacy_iteration_count": 25,
+        "crypt_alphabet_file_offset": "0xb60f",
+        "libhttpc_dynamically_imports_these_des_functions": false
+      },
+      "comparison_source": "https://github.com/freebsd/freebsd-src/blob/7806832f23fb31d28386d42692b221776c9f4ee4/secure/lib/libcrypt/crypt-des.c",
+      "limits": [
+        "These are Android ELF addresses, not camera addresses.",
+        "No byte-for-byte source identity is asserted.",
+        "No GM5 firmware cipher or update key was identified."
+      ]
+    },
+    {
+      "id": "settings-copy-ui-prerequisite",
+      "classification": "observed app-side control flow; GM5 server support remains unknown",
+      "evidence": [
+        {
+          "path": "source/com/panasonic/avc/cng/view/cameraconnect/GuidanceMenuActivity.java",
+          "lines": [
+            2140,
+            2151
+          ],
+          "observation": "Settings-copy availability uses a Bluetooth service and GATT UUID path or capability getter."
+        },
+        {
+          "path": "source/com/panasonic/avc/cng/model/p051c/C1847f.java",
+          "line": 480,
+          "observation": "mo4726H() returns false."
+        },
+        {
+          "path": "smali/com/panasonic/avc/cng/model/c/f.smali",
+          "line": 817,
+          "observation": "H()Z returns constant zero."
+        },
+        {
+          "path": "source/com/panasonic/avc/cng/view/camerasetting/CameraSettingActivity.java",
+          "lines": [
+            561,
+            570,
+            766
+          ],
+          "observation": "BT_Connected gates the save button; HTTP settings retrieval is still present."
+        }
+      ],
+      "conclusion": "Lower priority as a GM5 dump lead; keep optional GET as an unvalidated settings probe.",
+      "limits": [
+        "A client UI gate does not prove absence of a server handler.",
+        "A binary settings response alone would not establish executable firmware."
+      ]
+    },
+    {
+      "id": "transfer-helper-expansion",
+      "classification": "offline literal inventory",
+      "source_file_count": 62,
+      "cgi_literal_count": 136,
+      "added_literals": [
+        "cam.cgi"
+      ],
+      "review_candidate_count": 0,
+      "conclusion": "The ten extra helpers add only a base path, not another diagnostic CGI query."
+    },
+    {
+      "id": "usb-maintenance-cross-model",
+      "classification": "pinned primary-source code comments and a GH4 device report",
+      "reference_revision": "26a57b27caeb865a6b1d415aa5a80b47837c9023",
+      "opcode_comments": {
+        "0x9703": "maintenance/version",
+        "0x9704": "USB mode control",
+        "0x9606": "send-data/update",
+        "0x9607": "start-send-data/update"
+      },
+      "gm5_implementation_observed": false,
+      "vendor_requests_sent": false,
+      "limits": [
+        "The GH4 report is not a GM5 operation list.",
+        "Host-to-camera firmware transfer is not a memory dump."
+      ]
+    }
+  ],
+  "local_analysis_artifacts": [
+    {
+      "path": "work/image-app-1.10.14-core-expanded.json",
+      "bytes": 61852,
+      "sha256": "fa7a708f3a41d751fb7cf0dcd5ea665fd7449abafed0449d1f69a242fc4f56a0"
+    },
+    {
+      "path": "work/continued-research-provenance.json",
+      "bytes": 10620,
+      "sha256": "1442e883375bdc89b469c4bd7f849466ca0efb6318c43ad6cb6259dfeafb20c0"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libhttpc.so.dynsym.txt",
+      "bytes": 12202,
+      "sha256": "a0b8e52340432c418813cf400797690bbaa6daf40038ce83e0b2a7d87fb06cf7"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libhttpc.so.strings.txt",
+      "bytes": 9757,
+      "sha256": "da6f959681369e134c89f70de274e579c36783decc7aed9686a4c9ec8a2b89e1"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libisys.so.crypto-disasm.txt",
+      "bytes": 14766,
+      "sha256": "f88e75b80fddb2e69169a62fd6c3d7d71b335ef6792cc18617e3a0e6d747128a"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libisys.so.dynsym.txt",
+      "bytes": 18420,
+      "sha256": "b8419cec26373d921d83e308ecc6049375d0bf1ab98471e0425f094af2326033"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libisys.so.strings.txt",
+      "bytes": 14767,
+      "sha256": "793e587ef463ce0439710988ea5afccea31461d54831cefde34f3391a910a6ef"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libtsuru3.so.dynsym.txt",
+      "bytes": 27997,
+      "sha256": "941de2c9ccd6f2b7a8ef14de467fceee493f33052ab50ef1e4379560506ac68a"
+    },
+    {
+      "path": "work/image-app-1.10.14/lib/armeabi/libtsuru3.so.strings.txt",
+      "bytes": 19338,
+      "sha256": "46a067e8283670b8de98866894f3feeb100c75f1ec838e3b1cd0793020c74405"
+    }
+  ],
+  "reproduction": [
+    "python3 tools/image_app_inventory.py work/image-app-1.10.14/source/com/panasonic/avc/cng/core/p040a --out work/new-core-expanded-report.json",
+    "objdump --dynamic-syms work/image-app-1.10.14/lib/armeabi/libisys.so",
+    "objdump --triple=thumbv5te-linux-androideabi --disassemble-symbols=isys_crypt,isys_pl_crypt,isys_pl_setkey,isys_pl_encrypt work/image-app-1.10.14/lib/armeabi/libisys.so"
+  ],
+  "remaining_inputs": [
+    "official GM5 update archive/binary",
+    "GM5-compatible adjustment package/driver/help or an existing backup trace",
+    "stock Image App GM5 PCAP and installed APK provenance"
+  ],
+  "limitations": [
+    "Static inspection only; no native library executed.",
+    "Three of nine native libraries reviewed.",
+    "No physical-camera command was sent in this follow-up.",
+    "Published board-photo/datasheet searches did not identify IC6003’s actual part number."
+  ]
+}

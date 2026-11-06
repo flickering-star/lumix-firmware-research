@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T01:54:50.433329+00:00",
+  "stage": "Unsigned advertised-version0112 prompt-only test",
+  "source": "work/gm5-updater-prompt-0112/advertised-0112/GM5__V11.bin",
+  "destination": "/Volumes/LUMIX/GM5__V11.bin",
+  "volume_uuid": "PRIVATE_CARD_UUID",
+  "bytes": 31901184,
+  "sha256": "45a7da844d497f9c52d90a1a7db73e2b54fb18a38d3a639b602320a7df269ce3",
+  "replaced_signed_official_sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+  "readback_byte_identical": true,
+  "all_payloads_unchanged": true,
+  "firmware_flash_performed": false,
+  "safely_ejected": true
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T01:52:08.434776+00:00",
+  "scope": "Read-only SD inspection after owner reported card-full message with signed official control",
+  "owner_report": "Normal playback in both service mode and normal mode. Also message on startup: card is full",
+  "volume": {
+    "DeviceIdentifier": "disk6s1",
+    "DeviceTreePath": "IODeviceTree:/arm-io@10F00000/usb-drd0@82280000/usb-drd0-port-hs@00100000",
+    "BusProtocol": "USB",
+    "VolumeUUID": "PRIVATE_CARD_UUID",
+    "Size": 15927345152,
+    "TotalSize": 15923183616,
+    "FreeSpace": 15887171584,
+    "FilesystemType": "msdos",
+    "Writable": true,
+    "MountPoint": "/Volumes/LUMIX"
+  },
+  "firmware": {
+    "path": "/Volumes/LUMIX/GM5__V11.bin",
+    "bytes": 31901184,
+    "sha256": "d4fd5721e5a6d54efc960c3ed7bc1300f62cf1eddf8b201e74c803a5d1886243",
+    "equals_pinned_official": true
+  },
+  "verification": {
+    "command": "/usr/sbin/diskutil verifyVolume /dev/disk6s1",
+    "native_checker": "fsck_msdos -n /dev/rdisk6s1",
+    "exit_code": 0,
+    "free_clusters": 484836,
+    "free_kib": 15514752,
+    "file_count": 25,
+    "warning": "Free space in FSInfo block is unset (should be 484836)",
+    "repair_answer": "no",
+    "repair_performed": false,
+    "volume_remounted": true
+  },
+  "raw_metadata_read": {
+    "attempted": true,
+    "result": "PermissionError opening /dev/rdisk6s1; no raw bytes obtained and no privilege change attempted"
+  },
+  "limits": {
+    "fsinfo_warning_proven_cause_of_camera_message": false,
+    "card_capacity_verified_by_full_write_read": false,
+    "firmware_flash_performed": false
+  }
+}

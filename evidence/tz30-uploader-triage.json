@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "source": {
+    "parent_binary_sha256": "fbc51b27e38008b9aef0146b55d1683035c86c076d1890ed44af232c70309cb2",
+    "component": "web_uploade",
+    "PACK_member": "LUMIXUP.EXE",
+    "path": "work/transition-tz30/uploader-files/LUMIXUP.EXE",
+    "bytes": 3297664,
+    "sha256": "7eaf2842ff5bf01e4c95fd77cc7637d88ba0b929c155aace0d7ab3373a5be223"
+  },
+  "native_regions": [
+    {
+      "source": "work/transition-tz30/uploader-files/LUMIXUP.EXE",
+      "start": "0x4339f8",
+      "end_exclusive": "0x433a45",
+      "bytes": 77,
+      "native_sha256": "df2a526448f8eb948501dafc27884a80b7ab35d4cc6440ee44e7cee3f69aeb6c",
+      "instruction_count": 29,
+      "raw_annotations_match_source": true,
+      "disassembly": "\nwork/transition-tz30/uploader-files/LUMIXUP.EXE:\tfile format coff-i386\n\nDisassembly of section .text:\n\n00401000 <.text>:\n  4339f8: 0f b7 4d 08                  \tmovzx\tecx, word ptr [ebp + 8]\n  4339fc: 51                           \tpush\tecx\n  4339fd: 8d 55 f0                     \tlea\tedx, [ebp - 16]\n  433a00: 68 18 a2 60 00               \tpush\t6332952\n  433a05: 52                           \tpush\tedx\n  433a06: e8 e5 89 fd ff               \tcall\t0x40c3f0 <.text+0xb3f0>\n  433a0b: 8b 7d f0                     \tmov\tedi, dword ptr [ebp - 16]\n  433a0e: 83 c4 0c                     \tadd\tesp, 12\n  433a11: 6a 00                        \tpush\t0\n  433a13: 6a 00                        \tpush\t0\n  433a15: 6a 03                        \tpush\t3\n  433a17: 6a 00                        \tpush\t0\n  433a19: 6a 00                        \tpush\t0\n  433a1b: 6a 00                        \tpush\t0\n  433a1d: 57                           \tpush\tedi\n  433a1e: ff 15 8c a4 5d 00            \tcall\tdword ptr [6136972]\n  433a24: 8b f0                        \tmov\tesi, eax\n  433a26: 83 fe ff                     \tcmp\tesi, -1\n  433a29: 74 6e                        \tje\t0x433a99 <.text+0x32a99>\n  433a2b: 6a 00                        \tpush\t0\n  433a2d: 8d 45 08                     \tlea\teax, [ebp + 8]\n  433a30: 50                           \tpush\teax\n  433a31: 6a 00                        \tpush\t0\n  433a33: 6a 00                        \tpush\t0\n  433a35: 6a 00                        \tpush\t0\n  433a37: 6a 00                        \tpush\t0\n  433a39: 68 24 00 07 00               \tpush\t458788\n  433a3e: 56                           \tpush\tesi\n  433a3f: ff 15 0c a4 5d 00            \tcall\tdword ptr [6136844]\n"
+    }
+  ],
+  "static_import_calls": [
+    {
+      "dll": "KERNEL32.dll",
+      "name": "LoadLibraryW",
+      "iat": 6136796,
+      "calls": [
+        "0x45f30e",
+        "0x45f357",
+        "0x49903d",
+        "0x4a6078",
+        "0x58d949",
+        "0x5ae783"
+      ]
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "name": "DeviceIoControl",
+      "iat": 6136844,
+      "calls": [
+        "0x433a3f"
+      ]
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "name": "CreateFileW",
+      "iat": 6136972,
+      "calls": [
+        "0x4042e2",
+        "0x419b7c",
+        "0x41b67f",
+        "0x433a1e",
+        "0x437655",
+        "0x43b76e",
+        "0x43ca7d",
+        "0x44026d",
+        "0x441003",
+        "0x46cd70",
+        "0x46d5f9",
+        "0x470ff3",
+        "0x4732b3",
+        "0x473ff7",
+        "0x474c01",
+        "0x4758af",
+        "0x475a46",
+        "0x475af4",
+        "0x475c26",
+        "0x48ce44",
+        "0x4a48b1",
+        "0x4a59f6",
+        "0x4edcb7",
+        "0x5015d2",
+        "0x5afc9f",
+        "0x5b39dd"
+      ]
+    },
+    {
+      "dll": "ADVAPI32.dll",
+      "name": "CryptCreateHash",
+      "iat": 6135824,
+      "calls": [
+        "0x41972c"
+      ]
+    }
+  ],
+  "manual_review": {
+    "direct_DeviceIoControl": "The single FF 15 absolute import call at 0x433a3f passes control code 0x70024 and null input/output buffers. This matches IOCTL_DISK_IS_WRITABLE, a local disk query, not a Panasonic memory-read operation.",
+    "scope": "Exact absolute imported-call scan plus selected native review. Dynamically resolved functions, other encodings and the rest of the executable are not exhaustively analyzed."
+  },
+  "reference": {
+    "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-ioctl_disk_is_writable",
+    "header": "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/winioctl.h",
+    "header_sha256": "934cc5edd1bc36cfcd43daefe8413194cee1cccadf44af33f1d95927a8140066"
+  },
+  "executed_or_installed": false,
+  "camera_contacted": false
+}

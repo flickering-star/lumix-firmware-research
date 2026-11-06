@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "scope": "GM1 crypto-library identification; updater consumers/key/signatures remain untraced",
+  "source": {
+    "path": "work/gm1-main-6MiB-analysis.bin",
+    "prefix_bytes": 6291456,
+    "prefix_sha256": "7e78740681383e6b62636026683682455c486e2a281cffd80222846ce48de4d6",
+    "acquisition": "captures/gm1-usb-resume-3atwz8co"
+  },
+  "verifier": {
+    "path": "tools/gm1_crypto_verify.py",
+    "sha256": "f895c83de9ab65bdb4fcccf886df9c39a76a3a28a4b32a84954876d1850dcb8d"
+  },
+  "control": {
+    "path": "work/legacy-control/GH2__V12.body.decoded.bin",
+    "sha256": "7501269737da3fcba4b9483d9171b291b9c96bf08780eaa83b24128cffd512ea"
+  },
+  "tables": [
+    {
+      "name": "aes_sbox",
+      "address": "0x4042fad0",
+      "bytes": 256,
+      "sha256": "c2d8e5eed6cbebd8625fc18f81486a7733c04f9b0129ffbe974c68b90308b4f2",
+      "matches_gh2_control": true
+    },
+    {
+      "name": "aes_inverse_sbox",
+      "address": "0x4042fbd0",
+      "bytes": 256,
+      "sha256": "93631b0726f6fe6629daa743ee51b49f4477ed07391b68eeea0672a4a90018aa",
+      "matches_gh2_control": true
+    }
+  ],
+  "sha256_initial_values": [
+    "0x6a09e667",
+    "0xbb67ae85",
+    "0x3c6ef372",
+    "0xa54ff53a",
+    "0x510e527f",
+    "0x9b05688c",
+    "0x1f83d9ab",
+    "0x5be0cd19"
+  ],
+  "regions": [
+    {
+      "name": "aes_key_schedule",
+      "start": "0x40286dcf",
+      "end_exclusive": "0x40286ee1",
+      "native_sha256": "67e3225d5649a2d2a3062e0449dfd97ff1e5fbcb57cb2255c611389863dfc114",
+      "instruction_count": 132,
+      "raw_annotations_match_source": true,
+      "disassembly": "40286dcf  mov\ta1,(sp)\t; 4700\n40286dd1  mov\td0,(4,sp)\t; 4204\n40286dd3  inc\td1\t; 44\n40286dd4  asl2\td1\t; 55\n40286dd5  mov\td1,(8,sp)\t; 4608\n40286dd7  mov\t0,a3\t; 9f00\n40286dd9  cmp\t0,d0\t; a000\n40286ddb  ble\t0x40286e02\t; c327\n40286ddd  mov\ta1,a2\t; 96\n40286dde  setlb\t\t; db\n40286ddf  movbu\t(a0),d3\t; f04c\n40286de1  movbu\t(1,a0),d2\t; f84801\n40286de4  movbu\t(2,a0),d1\t; f84402\n40286de7  movbu\t(3,a0),d0\t; f84003\n40286dea  asl\t8,d2\t; f8c208\n40286ded  or\td2,d3\t; f21b\n40286def  asl\t16,d1\t; f8c110\n40286df2  or\td1,d3\t; f217\n40286df4  asl\t24,d0\t; f8c018\n40286df7  or\td0,d3\t; f213\n40286df9  mov\td3,(a2)\t; 6e\n40286dfa  mov\t(4,sp),d0\t; 5804\n40286dfc  inc4\ta0\t; 50\n40286dfd  inc\ta3\t; 4d\n40286dfe  inc4\ta2\t; 52\n40286dff  cmp\td0,a3\t; f1a3\n40286e01  llt\t\t; d0\n40286e02  mov\t(8,sp),d0\t; 5808\n40286e04  cmp\td0,a3\t; f1a3\n40286e06  blt\t0x40286e0b\t; c005\n40286e08  ret\t[d2,d3,a2,a3],40\t; dff028\n40286e0b  mov\t(sp),a1\t; 5d00\n40286e0d  mov\t(4,sp),d0\t; 5804\n40286e0f  mov\t(sp),d1\t; 5900\n40286e11  mov\ta3,d2\t; f1de\n40286e13  sub\td0,d2\t; f102\n40286e15  mov\ta3,d0\t; f1dc\n40286e17  asl2\td0\t; 54\n40286e18  add\td0,a1\t; f161\n40286e1a  mov\td2,d0\t; 88\n40286e1b  asl2\td0\t; 54\n40286e1c  add\td0,d1\t; e1\n40286e1d  mov\td1,(sp)\t; 4600\n40286e1f  mov\t1078131408,a2\t; fcded0fa4240\n40286e25  setlb\t\t; db\n40286e26  mov\t(-4,a1),d0\t; f801fc\n40286e29  mov\t(4,sp),d1\t; 5904\n40286e2b  mov\ta3,d3\t; f1df\n40286e2d  ext\td3\t; f2d3\n40286e2f  div\td1,d3\t; f267\n40286e31  mov\tmdr,d1\t; f2e1\n40286e33  cmp\t0,d1\t; a500\n40286e35  bne\t0x40286e93\t; c95e\n40286e37  mov\td0,d2\t; 82\n40286e38  lsr\t8,d2\t; f8c608\n40286e3b  asl\t24,d0\t; f8c018\n40286e3e  or\td0,d2\t; f212\n40286e40  mov\td2,d3\t; 8b\n40286e41  lsr\t16,d3\t; f8c710\n40286e44  and\t255,d3\t; f8e3ff\n40286e47  movbu\t(d3,a2),d3\t; f43e\n40286e49  mov\t255,d1\t; 2dff00\n40286e4c  and\td2,d1\t; f209\n40286e4e  movbu\t(d1,a2),d0\t; f406\n40286e50  mov\td2,d1\t; 89\n40286e51  lsr\t8,d1\t; f8c508\n40286e54  and\t255,d1\t; f8e1ff\n40286e57  movbu\t(d1,a2),d1\t; f416\n40286e59  mov\td3,(12,sp)\t; 4e0c\n40286e5b  lsr\t24,d2\t; f8c618\n40286e5e  movbu\t(d2,a2),d3\t; f43a\n40286e60  mov\t(4,sp),d2\t; 5a04\n40286e62  mov\td0,(16,sp)\t; 4210\n40286e64  mov\ta3,d0\t; f1dc\n40286e66  ext\td0\t; f2d0\n40286e68  div\td2,d0\t; f268\n40286e6a  mov\td0,d2\t; 82\n40286e6b  mov\t(16,sp),d0\t; 5810\n40286e6d  asl2\td2\t; 56\n40286e6e  mov\ta3,(20,sp)\t; 4f14\n40286e70  mov\t1078140112,a3\t; fcdfd01c4340\n40286e76  mov\t(d2,a3),d2\t; f32b\n40286e78  mov\td3,a0\t; f1ec\n40286e7a  mov\t(12,sp),d3\t; 5b0c\n40286e7c  mov\t(20,sp),a3\t; 5f14\n40286e7e  asl\t8,d1\t; f8c108\n40286e81  or\td1,d0\t; f214\n40286e83  asl\t16,d3\t; f8c310\n40286e86  or\td3,d0\t; f21c\n40286e88  mov\ta0,d3\t; f1d3\n40286e8a  asl\t24,d3\t; f8c318\n40286e8d  or\td3,d0\t; f21c\n40286e8f  xor\td2,d0\t; f228\n40286e91  bra\t0x40286ecb\t; ca3a\n40286e93  mov\t(4,sp),d2\t; 5a04\n40286e95  cmp\t6,d2\t; aa06\n40286e97  ble\t0x40286ecb\t; c334\n40286e99  cmp\t4,d1\t; a504\n40286e9b  bne\t0x40286ecb\t; c930\n40286e9d  mov\t255,d1\t; 2dff00\n40286ea0  and\td0,d1\t; f201\n40286ea2  movbu\t(d1,a2),d3\t; f436\n40286ea4  mov\td0,d1\t; 81\n40286ea5  lsr\t8,d1\t; f8c508\n40286ea8  and\t255,d1\t; f8e1ff\n40286eab  movbu\t(d1,a2),d2\t; f426\n40286ead  mov\td0,d1\t; 81\n40286eae  lsr\t16,d1\t; f8c510\n40286eb1  and\t255,d1\t; f8e1ff\n40286eb4  movbu\t(d1,a2),d1\t; f416\n40286eb6  lsr\t24,d0\t; f8c418\n40286eb9  movbu\t(d0,a2),d0\t; f402\n40286ebb  asl\t8,d2\t; f8c208\n40286ebe  or\td2,d3\t; f21b\n40286ec0  asl\t16,d1\t; f8c110\n40286ec3  or\td1,d3\t; f217\n40286ec5  asl\t24,d0\t; f8c018\n40286ec8  or\td0,d3\t; f213\n40286eca  mov\td3,d0\t; 8c\n40286ecb  mov\t(sp),a0\t; 5c00\n40286ecd  inc\ta3\t; 4d\n40286ece  mov\t(a0),d1\t; 74\n40286ecf  xor\td0,d1\t; f221\n40286ed1  mov\td1,(a1)\t; 65\n40286ed2  mov\t(sp),d0\t; 5800\n40286ed4  inc4\ta1\t; 51\n40286ed5  add\t4,d0\t; 2804\n40286ed7  mov\td0,(sp)\t; 4200\n40286ed9  mov\t(8,sp),d0\t; 5808\n40286edb  cmp\td0,a3\t; f1a3\n40286edd  llt\t\t; d0\n40286ede  ret\t[d2,d3,a2,a3],40\t; dff028\n"
+    },
+    {
+      "name": "aes_schedule_wrapper",
+      "start": "0x40286ee1",
+      "end_exclusive": "0x40286eea",
+      "native_sha256": "2ffa6db224b3a4e75964c1012b218577ad5c1ad520a7aca1458d01e5d3cdb3d2",
+      "instruction_count": 3,
+      "raw_annotations_match_source": true,
+      "disassembly": "40286ee1  mov\ta1,(4,sp)\t; 4704\n40286ee3  mov\td1,(8,sp)\t; 4608\n40286ee5  call\t0x40286dcf,[d2,d3,a2,a3],40\t; cdeafef028\n"
+    },
+    {
+      "name": "aes_inverse_table_load",
+      "start": "0x402871d0",
+      "end_exclusive": "0x402871d6",
+      "native_sha256": "4843849e37d0fe42b77512e79e66ff783b14478ce6c1fdc4aca2a9d36a0fc48f",
+      "instruction_count": 1,
+      "raw_annotations_match_source": true,
+      "disassembly": "402871d0  mov\t1078131664,a2\t; fcded0fb4240\n"
+    },
+    {
+      "name": "sha256_initial_state",
+      "start": "0x402885a1",
+      "end_exclusive": "0x402885f7",
+      "native_sha256": "f670e9cb07170ddabbdb6de6e6cba2d31ccb910eaa7a3faed082d2416b03b9a5",
+      "instruction_count": 22,
+      "raw_annotations_match_source": true,
+      "disassembly": "402885a1  mov\t1779033703,d0\t; fccc67e6096a\n402885a7  mov\td0,(a0)\t; 60\n402885a8  mov\t-1150833019,d0\t; fccc85ae67bb\n402885ae  mov\td0,(4,a0)\t; f81004\n402885b1  mov\t1013904242,d0\t; fccc72f36e3c\n402885b7  mov\td0,(8,a0)\t; f81008\n402885ba  mov\t-1521486534,d0\t; fccc3af54fa5\n402885c0  mov\td0,(12,a0)\t; f8100c\n402885c3  mov\t1359893119,d0\t; fccc7f520e51\n402885c9  mov\td0,(16,a0)\t; f81010\n402885cc  mov\t-1694144372,d0\t; fccc8c68059b\n402885d2  mov\td0,(20,a0)\t; f81014\n402885d5  mov\t528734635,d0\t; fcccabd9831f\n402885db  mov\td0,(24,a0)\t; f81018\n402885de  mov\t1541459225,d0\t; fccc19cde05b\n402885e4  mov\td0,(28,a0)\t; f8101c\n402885e7  clr\td0\t; 00\n402885e8  mov\td0,(96,a0)\t; f81060\n402885eb  mov\td0,(104,a0)\t; f81068\n402885ee  mov\td0,(108,a0)\t; f8106c\n402885f1  mov\td0,(100,a0)\t; f81064\n402885f4  retf\t[],0\t; de0000\n"
+    }
+  ],
+  "limits": [
+    "Library presence does not establish the algorithm selected by the GM1/GM5 updater.",
+    "No update key or public-key signature requirement is established.",
+    "The verifier reads files and runs only the host disassembler."
+  ]
+}

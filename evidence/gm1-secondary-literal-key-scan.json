@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "scope": "Offline literal 16/32-byte key search in acquired GM1 program2; AES-CBC/ECB and program ciphertext alignment only",
+  "source": "captures/gm1-usb-resume-fveg1az5/result/program2.bin",
+  "source_bytes": 3538944,
+  "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+  "plaintext_sha256_equals_official_directory_field32": true,
+  "scanner_source": "tools/gm1_literal_key_scan_macos.c",
+  "scanner_sha256": "cb37895123ae2cc91fe33b7a548587e1215c2bf18b838a34b3e630f318643264",
+  "ciphertext": "work/gm1-official-program-ciphertext64.bin",
+  "known_plaintext": "captures/gm1-usb-flash-TOsIFxZY/result/flash-prefix.bin",
+  "results": [
+    {
+      "event": "progress",
+      "offset": 1048576
+    },
+    {
+      "event": "progress",
+      "offset": 2097152
+    },
+    {
+      "event": "progress",
+      "offset": 3145728
+    },
+    {
+      "event": "summary",
+      "blob_bytes": 3538944,
+      "tested_128": 3188966,
+      "tested_256": 3197209,
+      "duplicate_128": 349963,
+      "duplicate_256": 341704,
+      "matches": 0
+    }
+  ],
+  "elapsed_seconds": 1.513901291,
+  "exit_status": 0,
+  "camera_contacted": false,
+  "limits": "Literal byte windows only; no transformed keys, other algorithms/modes or payload framing tested."
+}

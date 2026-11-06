@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T21:42:41.998017+00:00",
+  "active_request": "Confirm the installed GM5 region-language patch; owner requested no complete program readback",
+  "status": "Language patch installed in owner-reported normal mode; all three patch windows verified, English persists across reported manual off/on and ROM/RAM policy remains zero",
+  "base_main_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+  "candidate_main_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+  "candidate_patches": [
+    {
+      "offset": "0x491900",
+      "address": "0x40491900",
+      "before": 197,
+      "after": 171,
+      "region": 256,
+      "purpose": "saved-language validation/default",
+      "dispatch_entry_address": 1078532348,
+      "original_target": 1075912645,
+      "target": 1075912619
+    },
+    {
+      "offset": "0x379bf0",
+      "address": "0x40379bf0",
+      "before": 143,
+      "after": 101,
+      "region": 256,
+      "purpose": "language-menu construction",
+      "dispatch_entry_address": 1077386220,
+      "original_target": 1074431375,
+      "target": 1074431333
+    },
+    {
+      "offset": "0xaa01d",
+      "address": "0x400aa01d",
+      "before": 201,
+      "after": 202,
+      "region": 256,
+      "purpose": "preserve the Language setup-menu item instead of hiding it",
+      "original_branch": "bne0x400aa030",
+      "patched_branch": "bra0x400aa030"
+    }
+  ],
+  "initial_two_byte_artifact": "work/gm5-region-package-1/GM5__V11.bin",
+  "initial_two_byte_artifact_is_incomplete_for_menu_visibility": true,
+  "completed": [
+    "Physical language patch installed in normal mode per owner; three exact ROM windows and post-cycle English/zero-policy reads verified without host language or policy writes",
+    "Three-byte language/visibility candidate passes1756native region controls and six exact encoded-package controls",
+    "Exact encoded/programmed candidate survives native23-language navigation, ordinary settings save and fresh bounded reload",
+    "RAM observations locate exact stock reset/hide stores without changing native execution",
+    "Native bounded RTOS context/object initialization,13API/writer controls and three whole-programming controls pass without synchronization return stubs",
+    "Complete native UI-startup wrapper returns; optional coherent RAM aliases and callback calling conventions have regression controls",
+    "Checked native worker-task switches7\u219260\u219261 execute60342native instructions; uninitialized idle stack remains an explicit boundary",
+    "An isolated exact-backup ARM/Thumb backend passes38routing/reset controls; both processors agree on18service IDs/range boundaries"
+  ],
+  "camera_contacted": true,
+  "physical_flash_or_settings_commit_performed": true,
+  "package": {
+    "path": "work/gm5-region-package-2/GM5__V11.bin",
+    "bytes": 8390144,
+    "sha256": "4954b517462b8ee5f900945496b882ddfa45f97b540f0d1dad6dcdf706ea50c7"
+  },
+  "native_region_controls": 1756,
+  "exact_encoded_controls": 6,
+  "repository_tests_passed": 111,
+  "native23_language_menu_navigation_save_and_reload_passed": true,
+  "ram_change_observer_exact_stores_verified": true,
+  "physical_region_update_performed": true,
+  "readiness_record": "evidence/gm5-region-readiness.json",
+  "native_rtos_evidence": "evidence/gm5-native-rtos.json",
+  "larger_ui_boundary": {
+    "directory": "work/gm5-native-language-ready-tasks-2/native_parent_menu_entry/native_05",
+    "operation": "native_task_switch",
+    "instruction_pc": "0x7be02f19",
+    "next_task_id": 0,
+    "next_task_tcb": "0x70a01d70",
+    "next_task_saved_sp": "0x0",
+    "interrupt_delivery_modeled": false,
+    "native_task_sequence": [
+      7,
+      60,
+      61
+    ],
+    "pending_requests": 3
+  },
+  "repository_tests_log": "work/gm5-arm-state-full-tests.log",
+  "repository_tests_seconds": 124.593,
+  "cooperative_and_arm_evidence": "evidence/gm5-cooperative-arm-extension.json",
+  "native_arm_receiver_evidence": "evidence/gm5-native-arm-ipc.json",
+  "native_arm_receiver_controls_passed": 8,
+  "native_arm_runtime_evidence": "evidence/gm5-native-arm-runtime.json",
+  "native_arm_runtime_controls": {
+    "startup_stages": 3,
+    "application_work_fill_controls": 2,
+    "kernel_queue_transport_controls": 10,
+    "native_instructions_started": 729080
+  },
+  "prior_arm_kernel_read_boundary": {
+    "directory": "work/gm5-arm-mailbox-send-boundary-1",
+    "operation": "read32",
+    "address": "0x369188",
+    "instruction_pc": "0x1d731c",
+    "object_id": 11,
+    "native_initialization_required": true,
+    "resolved_by": "Native kernel/application constructors now create real queue11"
+  },
+  "arm_runtime_frontier": {
+    "application_initializer_pc": "0x6932",
+    "queue11_capacity": 5,
+    "queue11_tcb": "0x368e6c",
+    "queue11_storage": "0x571fd0",
+    "captured_requests_native_send_receive_passed": true,
+    "worker_entry": "0xbc24",
+    "worker_reply_path_executed": false,
+    "interrupt_delivery_modeled": false
+  },
+  "sd_preparation_record": "evidence/gm5-region-sd.json",
+  "sd_prepared_and_safely_ejected": true,
+  "physical_region_proof": "evidence/gm5-region-physical-proof.json",
+  "physical_region_verification_scope": "Three exact 1 KiB patch windows, ROM/RAM policy reads, English settings/UI after owner-reported manual off/on",
+  "complete_post_region_main_readback_performed": false,
+  "full_readback_stopped_at_owner_request": true,
+  "language_selection_via_camera_menu_owner_confirmed": true,
+  "english_survived_manual_off_on_owner_confirmed": true,
+  "post_update_host_policy_or_language_writes": false,
+  "normal_mode_flash_owner_confirmed": true,
+  "post_update_mode_word": 2,
+  "post_update_region_word": "0x100",
+  "post_update_live_language_entries": 26,
+  "new_targeted_physical_proof_test": {
+    "passed": 1,
+    "seconds": 1.792,
+    "command": "python3 -m unittest discover -s tests -p 'test_gm5_region_proof.py' -v",
+    "countercontrol": "Original Japanese-only dispatch byte in internally valid packet/file pair rejected"
+  }
+}

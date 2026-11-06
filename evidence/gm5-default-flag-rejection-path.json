@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T02:10:39.733127+00:00",
+  "scope": "Installed GM5 default-flag zero-marker rejection path before post-decode programming; static evidence only",
+  "source_capture": {
+    "schema": 1,
+    "capture": "captures/gm5-usb-updater-window-qX2cjoe6",
+    "model": "DMC-GM5",
+    "mode": "updater-window",
+    "complete": true,
+    "settings_bytes_verified": 32,
+    "word_responses_verified": 16,
+    "program_block_responses_verified": 16,
+    "resume_anchors_verified": 0,
+    "copied_prefix_bytes": 0,
+    "program_file": "captures/gm5-usb-updater-window-qX2cjoe6/result/updater-window.bin",
+    "verified_prefix_bytes": 16384,
+    "program_sha256": "cbda9861262b204427d73b61bfe22d08f385c6a52cbc4f15b355679afc53614e",
+    "program_file_base": "0x4154e000",
+    "program_file_offset": 0,
+    "next_program_address": "0x41552000",
+    "terminal_phase": "idle",
+    "errors": []
+  },
+  "byte_guards": [
+    {
+      "address": "0x7bd4ec69",
+      "bytes": "00857c"
+    },
+    {
+      "address": "0x7bd4fb97",
+      "bytes": "fca89084a670"
+    },
+    {
+      "address": "0x7bd4fc22",
+      "bytes": "5810a00080014234c906800142fc"
+    },
+    {
+      "address": "0x7bd4f151",
+      "bytes": "f040a000c9175c3cf80070a000c90bfccc65000080cc36fe"
+    },
+    {
+      "address": "0x7bd4fcd6",
+      "bytes": "4218a000c805ccb703"
+    },
+    {
+      "address": "0x7bd4f3dd",
+      "bytes": "5824fafe8c01dff010"
+    },
+    {
+      "address": "0x7bd500e0",
+      "bytes": "5818fafe4801dff010"
+    }
+  ],
+  "regions": [
+    {
+      "name": "context_zero_initialize",
+      "start": "0x7bd4ec69",
+      "end_exclusive": "0x7bd4ec77",
+      "instructions": 5,
+      "sha256": "eda5211acc9730f7df62782c19c85f76a82e05108f272305ac892cfb9df3c836",
+      "disassembly": "7bd4ec69  clr\td0\t; 00\n7bd4ec6a  mov\t124,d1\t; 857c\n7bd4ec6c  call\t0x7bc79020,[a2],4\t; ddb4a3f2ff2004\n7bd4ec73  clr\td0\t; 00\n7bd4ec74  ret\t[],4\t; df0004\n"
+    },
+    {
+      "name": "conditional_unsigned_allowance",
+      "start": "0x7bd4fc22",
+      "end_exclusive": "0x7bd4fc30",
+      "instructions": 7,
+      "sha256": "84a0e0f2ebc3fb0e1d1792c65688b173beb30a624bd84d976689a81f7986eb3e",
+      "disassembly": "7bd4fc22  mov\t(16,sp),d0\t; 5810\n7bd4fc24  cmp\t0,d0\t; a000\n7bd4fc26  mov\t1,d0\t; 8001\n7bd4fc28  mov\td0,(52,sp)\t; 4234\n7bd4fc2a  bne\t0x7bd4fc30\t; c906\n7bd4fc2c  mov\t1,d0\t; 8001\n7bd4fc2e  mov\td0,(252,sp)\t; 42fc\n"
+    },
+    {
+      "name": "zero_marker_gate",
+      "start": "0x7bd4f14b",
+      "end_exclusive": "0x7bd4f16c",
+      "instructions": 14,
+      "sha256": "4d62b5fd9b2ad6b9f5b91da146beb29f277345c548d9c0db2ceee7a785366d09",
+      "disassembly": "7bd4f14b  mov\t(80,sp),a0\t; 5c50\n7bd4f14d  mov\t1,d0\t; 8001\n7bd4f14f  mov\td0,(68,sp)\t; 4244\n7bd4f151  movbu\t(a0),d0\t; f040\n7bd4f153  cmp\t0,d0\t; a000\n7bd4f155  bne\t0x7bd4f16c\t; c917\n7bd4f157  mov\t(60,sp),a0\t; 5c3c\n7bd4f159  mov\t(112,a0),d0\t; f80070\n7bd4f15c  cmp\t0,d0\t; a000\n7bd4f15e  bne\t0x7bd4f169\t; c90b\n7bd4f160  mov\t-2147483547,d0\t; fccc65000080\n7bd4f166  jmp\t0x7bd4ef9c\t; cc36fe\n7bd4f169  clr\td0\t; 00\n7bd4f16a  mov\td0,(68,sp)\t; 4244\n"
+    },
+    {
+      "name": "decoder_error_exit",
+      "start": "0x7bd4ef96",
+      "end_exclusive": "0x7bd4efa1",
+      "instructions": 3,
+      "sha256": "7b3f49af62a7da3fdc7795eb0a9ef5a1a4a407bb70b8f2c13b33ada910d2d364",
+      "disassembly": "7bd4ef96  mov\t-2147483644,d0\t; fccc04000080\n7bd4ef9c  mov\td0,(36,sp)\t; 4224\n7bd4ef9e  jmp\t0x7bd4f3d4\t; cc3604\n"
+    },
+    {
+      "name": "decoder_cleanup_return",
+      "start": "0x7bd4f3d4",
+      "end_exclusive": "0x7bd4f3e6",
+      "instructions": 5,
+      "sha256": "152d45518c9061777e66bfbd5d7e6106c786c89776eb273a3811effe2b51d5eb",
+      "disassembly": "7bd4f3d4  mov\t(76,sp),a0\t; 5c4c\n7bd4f3d6  call\t0x40275cba,[],0\t; dde46852c40000\n7bd4f3dd  mov\t(36,sp),d0\t; 5824\n7bd4f3df  add\t396,sp\t; fafe8c01\n7bd4f3e3  ret\t[d2,d3,a2,a3],16\t; dff010\n"
+    },
+    {
+      "name": "job_decode_error_branch",
+      "start": "0x7bd4fccf",
+      "end_exclusive": "0x7bd4fceb",
+      "instructions": 10,
+      "sha256": "ff5652315afd8baf6b7bacffd554469c3233d75a881d201d2d1db1b97a97aba4",
+      "disassembly": "7bd4fccf  mov\t(28,sp),a0\t; 5c1c\n7bd4fcd1  call\t0x7bd4ee4e,[a2,a3],12\t; cd7df1300c\n7bd4fcd6  mov\td0,(24,sp)\t; 4218\n7bd4fcd8  cmp\t0,d0\t; a000\n7bd4fcda  beq\t0x7bd4fcdf\t; c805\n7bd4fcdc  jmp\t0x7bd50093\t; ccb703\n7bd4fcdf  mov\t(48,sp),a0\t; 5c30\n7bd4fce1  call\t0x40275566,[],4\t; dd855852c40004\n7bd4fce8  clr\td0\t; 00\n7bd4fce9  mov\td0,(44,sp)\t; 422c\n"
+    },
+    {
+      "name": "job_cleanup_return",
+      "start": "0x7bd50093",
+      "end_exclusive": "0x7bd500e9",
+      "instructions": 25,
+      "sha256": "df045957b216b5ce2de15680d1b2ea36ba9c34b06bcf2b57df84228dbb61a911",
+      "disassembly": "7bd50093  mov\t(52,sp),d0\t; 5834\n7bd50095  cmp\t0,d0\t; a000\n7bd50097  beq\t0x7bd500a3\t; c80c\n7bd50099  mov\tsp,a0\t; 3c\n7bd5009a  add\t140,a0\t; fad08c00\n7bd5009e  call\t0x7bd4ec77,[],0\t; cdd9eb0000\n7bd500a3  mov\t(44,sp),d0\t; 582c\n7bd500a5  cmp\t0,d0\t; a000\n7bd500a7  beq\t0x7bd500b2\t; c80b\n7bd500a9  mov\t(48,sp),a0\t; 5c30\n7bd500ab  call\t0x40275566,[],4\t; ddbb5452c40004\n7bd500b2  mov\t9,d0\t; 8009\n7bd500b4  call\t0x7bd4e4ea,[d2,d3,a2,a3],56\t; cd36e4f038\n7bd500b9  mov\t322961408,d0\t; fccc00004013\n7bd500bf  mov\t32768,d1\t; fccd00800000\n7bd500c5  call\t0x402784bb,[d2],8\t; ddf68352c48008\n7bd500cc  mov\t3,d0\t; 8003\n7bd500ce  clr\td1\t; 04\n7bd500cf  call\t0x7be0040f,[],4\t; dd40030b000004\n7bd500d6  clr\td0\t; 00\n7bd500d7  mov\t1,d1\t; 8501\n7bd500d9  call\t0x7be00426,[d2,d3,a2,a3],20\t; dd4d030b00f014\n7bd500e0  mov\t(24,sp),d0\t; 5818\n7bd500e2  add\t328,sp\t; fafe4801\n7bd500e6  ret\t[d2,d3,a2,a3],16\t; dff010\n"
+    }
+  ],
+  "expected_control": {
+    "runtime_flag": 1,
+    "initialized_unsigned_allowance": 0,
+    "candidate_marker_byte": 0,
+    "expected_decoder_error": "0x80000065",
+    "error_propagates_to_job_cleanup": true,
+    "post_decode_programming_path_entered": false
+  },
+  "limits": [
+    "Static native review, not target execution or a proof of every callee side effect.",
+    "Physical confirmation result not yet observed.",
+    "An unexpected update progress screen must be allowed to finish; cancellation during actual programming could damage firmware."
+  ],
+  "pre_marker_validation_progress": {
+    "start": "0x7bd4f03b",
+    "end_exclusive": "0x7bd4f14b",
+    "instructions": 125,
+    "sha256": "3c758a87acac642c5ea790322bf1a9cf667cedb04cd1d7a764b0c97c141732aa",
+    "disassembly": "7bd4f03b  clr\td0\t; 00\n7bd4f03c  mov\td0,(24,sp)\t; 4218\n7bd4f03e  mov\t(20,sp),d0\t; 5814\n7bd4f040  cmp\t0,d0\t; a000\n7bd4f042  bne\t0x7bd4f047\t; c905\n7bd4f044  jmp\t0x7bd4f12c\t; cce800\n7bd4f047  mov\t(72,sp),a0\t; 5c48\n7bd4f049  mov\t2,d0\t; 8002\n7bd4f04b  clr\td1\t; 04\n7bd4f04c  mov\t0,a1\t; 9500\n7bd4f04e  call\t0x7bd4f7e8,[d2,a2],12\t; cd9a07a00c\n7bd4f053  mov\t(20,sp),a0\t; 5c14\n7bd4f055  call\t0x40272326,[],0\t; ddd13252c40000\n7bd4f05c  mov\td0,a3\t; f1e3\n7bd4f05e  setlb\t\t; db\n7bd4f05f  mov\t(32,sp),d3\t; 5b20\n7bd4f061  mov\t1,d1\t; 8501\n7bd4f063  add\ta3,d3\t; f15f\n7bd4f065  sub\td1,d3\t; f107\n7bd4f067  clr\td1\t; 04\n7bd4f068  mov\td1,mdr\t; f2f6\n7bd4f06a  mov\ta3,d1\t; f1dd\n7bd4f06c  divu\td1,d3\t; f277\n7bd4f06e  mov\td3,(24,sp)\t; 4e18\n7bd4f070  cmp\t100,d3\t; af64\n7bd4f072  blt\t0x7bd4f077\t; c005\n7bd4f074  add\td0,a3\t; f163\n7bd4f076  lra\t\t; da\n7bd4f077  mov\t(20,sp),a0\t; 5c14\n7bd4f079  mov\t(a0),a0\t; f000\n7bd4f07b  mov\t(4,a0),a1\t; f82404\n7bd4f07e  mov\t(20,sp),a0\t; 5c14\n7bd4f080  calls\t(a1)\t; f0f1\n7bd4f082  mov\t(80,sp),d0\t; 5850\n7bd4f084  mov\td0,(12,sp)\t; 420c\n7bd4f086  mov\t(32,sp),d3\t; 5b20\n7bd4f088  clr\td0\t; 00\n7bd4f089  mov\td0,(16,sp)\t; 4210\n7bd4f08b  mov\t(24,sp),d0\t; 5818\n7bd4f08d  cmp\t0,d0\t; a000\n7bd4f08f  ble\t0x7bd4f0e7\t; c358\n7bd4f091  mov\td3,d0\t; 8c\n7bd4f092  lsr\t10,d0\t; f8c40a\n7bd4f095  mov\td0,(32,sp)\t; 4220\n7bd4f097  mov\ta3,d2\t; f1de\n7bd4f099  cmp\td3,d2\t; ae\n7bd4f09a  bls\t0x7bd4f09d\t; c703\n7bd4f09c  mov\td3,d2\t; 8e\n7bd4f09d  mov\t(20,sp),a0\t; 5c14\n7bd4f09f  mov\t(12,sp),a1\t; 5d0c\n7bd4f0a1  mov\t(a0),a0\t; f000\n7bd4f0a3  mov\td2,d0\t; 88\n7bd4f0a4  mov\t(8,a0),a2\t; f82808\n7bd4f0a7  mov\t(20,sp),a0\t; 5c14\n7bd4f0a9  sub\td2,d3\t; f10b\n7bd4f0ab  calls\t(a2)\t; f0f2\n7bd4f0ad  mov\t(12,sp),d0\t; 580c\n7bd4f0af  add\td2,d0\t; e8\n7bd4f0b0  mov\td0,(12,sp)\t; 420c\n7bd4f0b2  mov\t(32,sp),d1\t; 5920\n7bd4f0b4  mov\td3,d0\t; 8c\n7bd4f0b5  lsr\t10,d0\t; f8c40a\n7bd4f0b8  udfu01\t100,d0\t; f91464\n7bd4f0bb  mov\t(72,sp),a0\t; 5c48\n7bd4f0bd  mov\td3,(92,sp)\t; 4e5c\n7bd4f0bf  clr\td2\t; 08\n7bd4f0c0  mov\td2,mdr\t; f2fa\n7bd4f0c2  divu\td1,d0\t; f274\n7bd4f0c4  mov\t100,d2\t; 8a64\n7bd4f0c6  sub\td0,d2\t; f102\n7bd4f0c8  mov\td2,d1\t; 89\n7bd4f0c9  udf00\t50,d2\t; f90232\n7bd4f0cc  ext\td2\t; f2d2\n7bd4f0ce  mov\t2,d0\t; 8002\n7bd4f0d0  mov\t100,d3\t; 8f64\n7bd4f0d2  div\td3,d2\t; f26e\n7bd4f0d4  mov\t(92,sp),d3\t; 5b5c\n7bd4f0d6  mov\td2,a1\t; f1e9\n7bd4f0d8  call\t0x7bd4f7e8,[d2,a2],12\t; cd1007a00c\n7bd4f0dd  mov\t(16,sp),d0\t; 5810\n7bd4f0df  inc\td0\t; 40\n7bd4f0e0  mov\td0,(16,sp)\t; 4210\n7bd4f0e2  mov\t(24,sp),d1\t; 5918\n7bd4f0e4  cmp\td1,d0\t; a4\n7bd4f0e5  blt\t0x7bd4f097\t; c0b2\n7bd4f0e7  mov\t(20,sp),a0\t; 5c14\n7bd4f0e9  mov\t(a0),a1\t; f004\n7bd4f0eb  mov\t(12,a1),a1\t; f8250c\n7bd4f0ee  calls\t(a1)\t; f0f1\n7bd4f0f0  mov\t(20,sp),a0\t; 5c14\n7bd4f0f2  mov\t64,d0\t; 8040\n7bd4f0f4  mov\t(a0),a1\t; f004\n7bd4f0f6  mov\tsp,a0\t; 3c\n7bd4f0f7  mov\t(16,a1),a2\t; f82910\n7bd4f0fa  mov\ta0,d3\t; f1d3\n7bd4f0fc  mov\t(20,sp),a0\t; 5c14\n7bd4f0fe  add\t124,d3\t; 2b7c\n7bd4f100  mov\td3,a1\t; f1ed\n7bd4f102  calls\t(a2)\t; f0f2\n7bd4f104  mov\t(20,sp),a0\t; 5c14\n7bd4f106  call\t0x4027232c,[],0\t; dd263252c40000\n7bd4f10d  mov\t(20,sp),a0\t; 5c14\n7bd4f10f  mov\td0,d2\t; 82\n7bd4f110  mov\t(a0),a1\t; f004\n7bd4f112  mov\t(a1),a1\t; f005\n7bd4f114  calls\t(a1)\t; f0f1\n7bd4f116  mov\t(40,sp),a1\t; 5d28\n7bd4f118  mov\td3,a0\t; f1ec\n7bd4f11a  add\t64,a1\t; 2140\n7bd4f11c  mov\td2,d0\t; 88\n7bd4f11d  call\t0x7bc78fc0,[a2],4\t; dda39ef2ff2004\n7bd4f124  cmp\t0,d0\t; a000\n7bd4f126  bne\t0x7bd4f142\t; c91c\n7bd4f128  mov\t50,d0\t; 8032\n7bd4f12a  mov\td0,(24,sp)\t; 4218\n7bd4f12c  mov\t(80,sp),a3\t; 5f50\n7bd4f12e  mov\t(40,sp),a0\t; 5c28\n7bd4f130  add\t160,a3\t; fad3a000\n7bd4f134  mov\ta3,a1\t; 9d\n7bd4f135  mov\t64,d0\t; 8040\n7bd4f137  call\t0x7bc78fc0,[a2],4\t; dd899ef2ff2004\n7bd4f13e  cmp\t0,d0\t; a000\n7bd4f140  beq\t0x7bd4f14b\t; c80b\n7bd4f142  mov\t-2147483548,d0\t; fccc64000080\n7bd4f148  jmp\t0x7bd4ef9c\t; cc54fe\n",
+    "manual_review": "The decoder reports progress while checking the outer-body digest, before reaching the zero-marker/unsigned-allowance gate. A visible bar therefore does not establish flash programming."
+  }
+}

@@ -1,0 +1,3414 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-06T12:50:09.143202+00:00",
+  "scope": "Native RTOS synchronization, coherent RAM views, complete UI startup and virtual region installation",
+  "build": {
+    "schema": 1,
+    "scope": "GNU AM33-2 CPU core with offline GM5 execution harness",
+    "gnu_archive": {
+      "path": "work/toolchain/gdb-16.3.tar.xz",
+      "bytes": 24434444,
+      "sha256": "bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5",
+      "url": "https://ftp.gnu.org/gnu/gdb/gdb-16.3.tar.xz"
+    },
+    "build_recipe_patches": [
+      {
+        "path": "sim/Makefile.in",
+        "original_sha256": "35b052c0a7dd60eb30ca1496d447343b28c4334ade4cda7eb38da40318a28bf8",
+        "patched_sha256": "0967c8a646087071bfea0aacd6c13ec738d3eba6f912f0abb80fbe7709a88679",
+        "purpose": "BSD sed requires a separator before the closing command-group brace."
+      },
+      {
+        "path": "sim/common/local.mk",
+        "original_sha256": "d07e5a79385312cc127bb946dcf0ce3141d6ffca3958f5d87ef98f9c8de0fb0c",
+        "patched_sha256": "5490848a4619200b94ecf4ebabc73682cb38c458fd005ecf20a3e5feedb547fa",
+        "purpose": "BSD sed requires a separator before the closing command-group brace."
+      },
+      {
+        "path": "sim/mn10300/am33.igen",
+        "original_sha256": "e10def0a98dab57f36d85cda7beeb79365bd0e14d4b76ebf4cf634b3fbe07438",
+        "patched_sha256": "1e55a3f899ae94034e97366e53c1e2ab1ad16e731cc05ad7395ff623eb27c466",
+        "extension": {
+          "path": "tools/mn103_simulator/short-swaps.igen",
+          "bytes": 965,
+          "sha256": "14271fd23652c6ab1ea2a2e4279e7b3f75c42b71e036321b0f61013821d30439"
+        },
+        "purpose": "Add short swap/swaph encodings listed in GNU's opcode table, using its existing long-form semantics."
+      }
+    ],
+    "configure_command": [
+      "work/toolchain/gdb-16.3/configure",
+      "--target=mn10300-elf",
+      "--disable-gdb",
+      "--disable-gdbserver",
+      "--enable-sim",
+      "--disable-nls",
+      "--disable-werror",
+      "--without-python",
+      "--without-guile",
+      "--without-debuginfod",
+      "--without-zstd"
+    ],
+    "make_command": [
+      "make",
+      "-j2",
+      "all-sim",
+      "MAKEINFO=true"
+    ],
+    "harness_compile_command": [
+      "/usr/bin/clang",
+      "-arch",
+      "x86_64",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DPACKAGE=\"gm5-emulator\"",
+      "-DPACKAGE_VERSION=\"0.1\"",
+      "-I",
+      "work/toolchain/gdb-mn10300-build/bfd",
+      "-I",
+      "work/toolchain/gdb-16.3/include",
+      "tools/mn103_simulator/runner.c",
+      "work/toolchain/gdb-mn10300-build/gm5-engine.o",
+      "work/toolchain/gdb-mn10300-build/gm5-hooks.o",
+      "work/toolchain/gdb-mn10300-build/gm5-devices.o",
+      "work/toolchain/gdb-mn10300-build/gm5-nor-model.o",
+      "work/toolchain/gdb-mn10300-build/sim/mn10300/libsim.a",
+      "work/toolchain/gdb-mn10300-build/opcodes/.libs/libopcodes.a",
+      "work/toolchain/gdb-mn10300-build/bfd/.libs/libbfd.a",
+      "work/toolchain/gdb-mn10300-build/gnulib/import/libgnu.a",
+      "work/toolchain/gdb-mn10300-build/libiberty/libiberty.a",
+      "-lz",
+      "-lm",
+      "-liconv",
+      "-ltermcap",
+      "-o",
+      "work/toolchain/gdb-mn10300-build/gm5-mn103-sim-rtos_aliases"
+    ],
+    "host_executable_architecture": "work/toolchain/gdb-mn10300-build/sim/mn10300/run: Mach-O 64-bit executable x86_64",
+    "instrumented_engine_compile_commands": [
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "work/toolchain/gdb-mn10300-build/gm5-engine.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-engine.o"
+      ],
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "tools/mn103_simulator/hooks.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-hooks.o"
+      ],
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "tools/mn103_simulator/devices.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-devices.o"
+      ],
+      [
+        "/usr/bin/clang",
+        "-arch",
+        "x86_64",
+        "-std=gnu11",
+        "-O2",
+        "-DHAVE_CONFIG_H",
+        "-DPOLL_QUIT_INTERVAL=0x20",
+        "-DWITH_TARGET_WORD_BITSIZE=32",
+        "-DWITH_TARGET_WORD_MSB=31",
+        "-I",
+        "work/toolchain/gdb-mn10300-build",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-16.3/sim/common",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/sim/mn10300",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-16.3/gnulib/import",
+        "-I",
+        "work/toolchain/gdb-mn10300-build/bfd",
+        "-I",
+        "work/toolchain/gdb-16.3/include",
+        "-I",
+        "work/toolchain/gdb-16.3",
+        "-I",
+        "tools/mn103_simulator",
+        "-c",
+        "tools/mn103_simulator/nor_model.c",
+        "-o",
+        "work/toolchain/gdb-mn10300-build/gm5-nor-model.o"
+      ]
+    ],
+    "gnu_libraries": [
+      {
+        "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/libsim.a",
+        "bytes": 8929224,
+        "sha256": "90f6f0a8e90ea30eaf9669b2b034c4cb7696fa3c0469bc217c829170ad88fce7"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/opcodes/.libs/libopcodes.a",
+        "bytes": 548536,
+        "sha256": "05163c7d8b6d785e0c7adf13065855125c4f54066d439e54c54d9c510df4628e"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/bfd/.libs/libbfd.a",
+        "bytes": 7680032,
+        "sha256": "5ea12f4c47cd53838544f33f7a60a7a406cda6b297853304dc1380dcc58ffa7c"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/gnulib/import/libgnu.a",
+        "bytes": 455872,
+        "sha256": "62e99b5fc03e133cb432c3432edf4294c3ed5a74f2f063e711a3f50d14de5e33"
+      },
+      {
+        "path": "work/toolchain/gdb-mn10300-build/libiberty/libiberty.a",
+        "bytes": 1434816,
+        "sha256": "f6c35d9bf6dcc46937909489214b1d27c6ae5729b0f165fd1b0683fa14b517d9"
+      }
+    ],
+    "generated_modules": {
+      "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/modules.c",
+      "bytes": 579,
+      "sha256": "099cab05a829f415fd1e075cb5fbec39bb7752d14131644a6d78ee43066fb8ae"
+    },
+    "original_generated_engine": {
+      "path": "work/toolchain/gdb-mn10300-build/sim/mn10300/engine.c",
+      "bytes": 879738,
+      "sha256": "f66c290dad36e059bf77f0db3b3cb9c64accf5d4fca4598b14c8ab68a21dd53a"
+    },
+    "instrumented_engine_copy": {
+      "path": "work/toolchain/gdb-mn10300-build/gm5-engine.c",
+      "bytes": 879757,
+      "sha256": "099692cd7e23b7db4b00f8f4546bb25a78c1d8157da3158734b37317acf2564b"
+    },
+    "execution_hooks": [
+      {
+        "path": "tools/mn103_simulator/hooks.c",
+        "bytes": 887,
+        "sha256": "f66b2084d900c11c30d688ad27498091f22637b18e437eb7ba6069a0eecc0bfb"
+      },
+      {
+        "path": "tools/mn103_simulator/hooks.h",
+        "bytes": 555,
+        "sha256": "1a3fbfa0dd68b48cbee8745c29032cee83b28eb0db242259571444750c0f502a"
+      }
+    ],
+    "device_sources": [
+      {
+        "path": "tools/mn103_simulator/devices.c",
+        "bytes": 5324,
+        "sha256": "2da5b8be837268273d392902addb4c90821bba85c9aae6c7917f2b1a3b2843eb"
+      },
+      {
+        "path": "tools/mn103_simulator/devices.h",
+        "bytes": 697,
+        "sha256": "c338b4c84539a9ce41aed5f6e6c6c15aa75db1eeac891986b3d122f7e0d40f62"
+      },
+      {
+        "path": "tools/mn103_simulator/nor_model.c",
+        "bytes": 7499,
+        "sha256": "b188f0d2d523537c3b0d9cff063e1ff29e0393e2e13a3e3b9c8fa65a46e9d5d7"
+      },
+      {
+        "path": "tools/mn103_simulator/nor_model.h",
+        "bytes": 1379,
+        "sha256": "ec2d1538955029a60a020e057c5abd2738b8cb600d7d887eabe2c42cbf7deb20"
+      }
+    ],
+    "instrumentation": "GNU's instruction-prefix hook adds bounded stops/traces; generated CPU instruction semantics are unchanged.",
+    "harness_source": {
+      "path": "tools/mn103_simulator/runner.c",
+      "bytes": 15436,
+      "sha256": "c427c3f158814fe5760a5580652daa67417291206af2022d543dc91efa2e50f8"
+    },
+    "build_driver": {
+      "path": "tools/mn103_simulator/build.py",
+      "bytes": 10140,
+      "sha256": "ab5e559b26187f341860cda5e6b2d51a212de9adf1cd6f98850b5513c82104bd"
+    },
+    "executable": {
+      "path": "work/toolchain/gdb-mn10300-build/gm5-mn103-sim-rtos_aliases",
+      "bytes": 2029232,
+      "sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf"
+    },
+    "camera_contacted": false,
+    "license": "GNU core and linked harness: GPL-3.0-or-later; GNU notices retained in source tree.",
+    "variant": "rtos_aliases"
+  },
+  "retained_release": [
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5-mn103-sim",
+      "bytes": 2029232,
+      "sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/build.json",
+      "bytes": 13835,
+      "sha256": "b3bbc47ad1fefa12ad678e204b574316cf5227c296fc3f76e55a1edb6f425502"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/build.py",
+      "bytes": 10140,
+      "sha256": "ab5e559b26187f341860cda5e6b2d51a212de9adf1cd6f98850b5513c82104bd"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/devices.h",
+      "bytes": 697,
+      "sha256": "c338b4c84539a9ce41aed5f6e6c6c15aa75db1eeac891986b3d122f7e0d40f62"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/hooks.h",
+      "bytes": 555,
+      "sha256": "1a3fbfa0dd68b48cbee8745c29032cee83b28eb0db242259571444750c0f502a"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/nor_model.h",
+      "bytes": 1379,
+      "sha256": "ec2d1538955029a60a020e057c5abd2738b8cb600d7d887eabe2c42cbf7deb20"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/runner.c",
+      "bytes": 15436,
+      "sha256": "c427c3f158814fe5760a5580652daa67417291206af2022d543dc91efa2e50f8"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/README.md",
+      "bytes": 1211,
+      "sha256": "10ae5e0b75b8d35a5f2f482bb4eda075d6acc9cf4c894d35baef682dfc5777af"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/COPYING",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/devices.c",
+      "bytes": 5324,
+      "sha256": "2da5b8be837268273d392902addb4c90821bba85c9aae6c7917f2b1a3b2843eb"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/nor_model.c",
+      "bytes": 7499,
+      "sha256": "b188f0d2d523537c3b0d9cff063e1ff29e0393e2e13a3e3b9c8fa65a46e9d5d7"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/hooks.c",
+      "bytes": 887,
+      "sha256": "f66b2084d900c11c30d688ad27498091f22637b18e437eb7ba6069a0eecc0bfb"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/short-swaps.igen",
+      "bytes": 965,
+      "sha256": "14271fd23652c6ab1ea2a2e4279e7b3f75c42b71e036321b0f61013821d30439"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_emulator.py",
+      "bytes": 30681,
+      "sha256": "052fbdf6ec7fa801e94b7463c83596514ba18549e6e4e278755f0b3e588898d1"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_rtos_emulator.py",
+      "bytes": 11886,
+      "sha256": "bd10671fcaeca9379de6540f40a864a75178f71281bd70f8b108901cd5578015"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_native_rtos_controls.py",
+      "bytes": 10103,
+      "sha256": "9ef68ea446ba1c66e26154cf871493e5c7dc0237c6d46ec9e2cf7509d544d474"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_native_rtos_install.py",
+      "bytes": 7921,
+      "sha256": "1a716fbfe9794c104ba63581413f1b92550a8610723e875fdb64b85410f31bbf"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_ui_emulator.py",
+      "bytes": 4009,
+      "sha256": "8182c9f1155614449049eafa061191e66c1788e5729cd1fdb806b491e06923e5"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_native_language_flow.py",
+      "bytes": 8686,
+      "sha256": "82610a157a4f18b6b7d13485b89d220e964a56373c45a0ac6e133b4640f2473e"
+    },
+    {
+      "path": "work/gm5-native-rtos-release-2/gm5_rtos_evidence.py",
+      "bytes": 10308,
+      "sha256": "5d241578e1e5eed2f88de49d455168c42aedea8856a7db2ecc27099b4e8bd583"
+    }
+  ],
+  "cpu_engine_and_gnu_libraries_unchanged": true,
+  "native_initialization": [
+    {
+      "stage": "context",
+      "execution": {
+        "directory": "work/gm5-native-rtos-objects-6/context_prefix",
+        "result": {
+          "event": "result",
+          "stop": "before_peer_handshake",
+          "steps": 235,
+          "pc": "0x7be03103",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x0000003c",
+            "0x0000000f",
+            "0x93f0003c",
+            "0x70a01df0",
+            "0x7be410b8",
+            "0x70a01e10",
+            "0x7be41080",
+            "0x700effec",
+            "0x7be03103",
+            "0x7be03b69",
+            "0x00000001",
+            "0xf065f19d",
+            "0x7be030e3",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "e600b2746e9292683f832df1598b337ee236e2f4327409b350ced4bc2c0f61ef",
+        "trace_sha256": "db77e5233a1b202b8cc52e39b1fea704f84b04a1d56f54d29caf85a241a1e79a",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/ram.data",
+            "bytes": 16777216,
+            "sha256": "7bbb95fb05ad005444d6486c8542ec7e03e46bff93d861178163a614bae997f4"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "4d46fad4783a57ded8d18e2ee4ccd65c69bdde349bd954f0e54a3fccac9c983c"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "10e69d3417aef1b2cdf5bc0df5437bdfbfd9461605e989faeb8fba2570ad9292"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "45e46299d5956d1dd8f1c396809bb1df46e0dd7839fee1dd8fdd09d08eebf34a"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/context_prefix/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "cfe3a636ee3355407c9dd8cf42c4b307e6bb53fb76bc008951536a2f15e2eaeb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled."
+        ]
+      }
+    },
+    {
+      "stage": "owners",
+      "execution": {
+        "directory": "work/gm5-native-rtos-objects-6/lock_owners",
+        "result": {
+          "event": "result",
+          "stop": "lock_owners_initialized",
+          "steps": 187,
+          "pc": "0x7be0313d",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000002",
+            "0x00000020",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x93e00000",
+            "0x7be410b8",
+            "0x98e3cdc0",
+            "0x93e00000",
+            "0x700effec",
+            "0x7be0313d",
+            "0x7be0313d",
+            "0x00000000",
+            "0xa440526a",
+            "0x7be03134",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "8e870b1899c1b8a59eb2ecf01be994be5b38ca00000b71c4ed73cf0ac053cc32",
+        "trace_sha256": "1cfa369a66ae39cf6b033641b17d9bf0874f676d6c896c7a4084d74f3523201d",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/ram.data",
+            "bytes": 16777216,
+            "sha256": "0eb676405fd20d0827ca0e17545feb24f32414a1e2a2e4c44778c2781673f36b"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "4d46fad4783a57ded8d18e2ee4ccd65c69bdde349bd954f0e54a3fccac9c983c"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "10e69d3417aef1b2cdf5bc0df5437bdfbfd9461605e989faeb8fba2570ad9292"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "38d8d28ee194cbd04cd77c484b118d1a18a7993dfb3c1b5430ac8ee388ee61b9"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/lock_owners/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "cfe3a636ee3355407c9dd8cf42c4b307e6bb53fb76bc008951536a2f15e2eaeb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly."
+        ]
+      }
+    },
+    {
+      "stage": "peer_context",
+      "execution": {
+        "directory": "work/gm5-native-rtos-objects-6/inactive_peer_context",
+        "result": {
+          "event": "result",
+          "stop": "before_peer_handshake",
+          "steps": 235,
+          "pc": "0x7be03feb",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x0000003c",
+            "0x0000000f",
+            "0x93f0003c",
+            "0x70d08730",
+            "0x7be70d30",
+            "0x70d08750",
+            "0x7be70cf8",
+            "0x700effec",
+            "0x7be03feb",
+            "0x7be03b69",
+            "0x00000001",
+            "0xf065f19d",
+            "0x7be03fcb",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "f88a4844e068bb371b7e808339547635442eab956bb788449cfb1a11e7553da5",
+        "trace_sha256": "4433b8cb4b7aeeff38f9c7f5b8ee929a4b8e8b83db08541fd936be171b1fdef8",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/ram.data",
+            "bytes": 16777216,
+            "sha256": "efd64831a57d1a9b27565df314e4856874af37987c9f66054f095d1351c9fcf9"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "10e69d3417aef1b2cdf5bc0df5437bdfbfd9461605e989faeb8fba2570ad9292"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "38d8d28ee194cbd04cd77c484b118d1a18a7993dfb3c1b5430ac8ee388ee61b9"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_context/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "cfe3a636ee3355407c9dd8cf42c4b307e6bb53fb76bc008951536a2f15e2eaeb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly."
+        ]
+      }
+    },
+    {
+      "stage": "peer_owners",
+      "execution": {
+        "directory": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners",
+        "result": {
+          "event": "result",
+          "stop": "lock_owners_initialized",
+          "steps": 187,
+          "pc": "0x7be04025",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000002",
+            "0x00000020",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x93e00000",
+            "0x7be70d30",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700effec",
+            "0x7be04025",
+            "0x7be04025",
+            "0x00000000",
+            "0xa440526a",
+            "0x7be0401c",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "c141a84affaf680a8e459827de51dc74350c99da04479909ecbc53f04a43f9fc",
+        "trace_sha256": "184b66f0566364d90d66e3a513273d22413e31e90e29ce5b6813a0c531521274",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/ram.data",
+            "bytes": 16777216,
+            "sha256": "31e8334784dfdf729d2383bfa40edd86bb89ae2d8c4c4a12224cc90c107d5c42"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "10e69d3417aef1b2cdf5bc0df5437bdfbfd9461605e989faeb8fba2570ad9292"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "282d6511f202e2c7b035897eeb7a6a8fa2eea060e5689ea54172f0ed8062d1ba"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/inactive_peer_lock_owners/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "cfe3a636ee3355407c9dd8cf42c4b307e6bb53fb76bc008951536a2f15e2eaeb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly."
+        ]
+      }
+    },
+    {
+      "stage": "objects",
+      "execution": {
+        "directory": "work/gm5-native-rtos-objects-6/kernel_objects",
+        "result": {
+          "event": "result",
+          "stop": "kernel_objects_initialized",
+          "steps": 104443,
+          "pc": "0x70008031",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x7089fab4",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d48",
+            "0x7089fab4",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700effec",
+            "0x70008031",
+            "0x7be033c6",
+            "0x00000005",
+            "0x50605171",
+            "0x7be038ca",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "652ccd637e7ac5872056fd92d36366056eca67948ca66dfb52e383900157793f",
+        "trace_sha256": "c61c91e0b2d6068b45d5e79ce192a0efe2a937abc929e025dce881b2c0c0dd73",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/ram.data",
+            "bytes": 16777216,
+            "sha256": "e67c0b6221b099e3ad7b52796680d262496b693c3a040ddb052dfa0cbc5a6e4e"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-objects-6/kernel_objects/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute."
+        ]
+      }
+    }
+  ],
+  "native_api_controls": [
+    {
+      "name": "native_task7_activation",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_task7_activation",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 63,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x7089f9ac",
+            "0x7089f9b4",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x709f8194",
+            "0x7089f9b4",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be02b9a",
+            "0x00000006",
+            "0x50605171",
+            "0x7be038ca",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "0e1177d7a789d3e05bbfe97ff628844f71c93f9601c82a903f78d2576bcef80d",
+        "trace_sha256": "cce94e913354a99990619437630382eb3e1b97c4896a10848d8a90eb8ee006db",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/ram.data",
+            "bytes": 16777216,
+            "sha256": "fb73af9c91988c13757fe4d3eb908725f023d2f344a97b96fd107624452f14f4"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_task7_activation/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_mutex_acquire",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_mutex_acquire",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 339,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000004",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "6c6bd57c311dfa44ff2698f992995a90e02e54a5451dbabfdf30c447478a5e1c",
+        "trace_sha256": "ca21d4839c604f8afc7d3eb373c346ea24e0121425328344d93643ed6bed3022",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/ram.data",
+            "bytes": 16777216,
+            "sha256": "91c6d3e59a4936a255f14c5158ca69ef3d072d70290c60dd464aca45440c41e4"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_acquire/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_mutex_recursive_error",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 306,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffffffe4",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000004",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "6833521c9e87556a02b5835f82f356ae7ef4c82f8f28eef89ac253bb38805d1c",
+        "trace_sha256": "9c8d4281b79b67474c33a9308210cfaf2e9b9aa44f3fe278d061e1345fd40873",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/ram.data",
+            "bytes": 16777216,
+            "sha256": "91c6d3e59a4936a255f14c5158ca69ef3d072d70290c60dd464aca45440c41e4"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_recursive_error/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_mutex_acquire; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_mutex_release",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_mutex_release",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 343,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000004",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "fc8842aef1e3dbdc797f9dbf73d308a39bf57c5552edaf3bdc7ab65273e6a751",
+        "trace_sha256": "faa346e1242e138a8c6bac550369125d54edd09e03efdfcca3dc4f0b482b2ebc",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/ram.data",
+            "bytes": 16777216,
+            "sha256": "a9293dee3a476c7fe4b57a9b4c053a6f953d0c4209bffd341d2f3341d7a9664e"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_release/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_mutex_acquire; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_mutex_unowned_error",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 301,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffffffe4",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000004",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "f85e727c4192627359979f82795f646890c233b640265e034249026b336580ab",
+        "trace_sha256": "0757aa6f782efd6204072461213a4212ea05910457454e0ead6835e26cd96bda",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/ram.data",
+            "bytes": 16777216,
+            "sha256": "ffc470903e898837b08968d1843ea98f95f2ca0a5c3dcf0d3cb15c8ef0fa8556"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_unowned_error/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_semaphore_wait",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_semaphore_wait",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 296,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000001",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "8f22969b1bc826ec4643ececd82d1feae9d403e478aba9d5a4ab0bf799c24df5",
+        "trace_sha256": "0b186284955a04b0341933aa8e2dcd7a0a56f84145b9536b78d27f1e91e86bb4",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/ram.data",
+            "bytes": 16777216,
+            "sha256": "6b19bfb20ed32b7a4cd4efa1eda10328a8516c051644697a76fdbe10e23b49a4"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_wait/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_semaphore_signal",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_semaphore_signal",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 301,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000001",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "0c4897eaf8dcfd8eab1a64eb4be45dc62a25817ba55613778dfee16581b6df91",
+        "trace_sha256": "d87060aa08eec9ef8b8ceb5d01c78d7e9ae18ba7bba005195b9d30ee7f9ea8bf",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/ram.data",
+            "bytes": 16777216,
+            "sha256": "1b5b14ea5d1c9d4945fa840ba3df996ab6d29a893d1228f270de41f4643f3984"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_signal/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_semaphore_wait; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_semaphore_overflow_error",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 298,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffffffd5",
+            "0x00000004",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x70a01d4c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7be0300c",
+            "0x00000004",
+            "0xa1805030",
+            "0x7be02234",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "a10781505a218c8b50de3fe849c56b8a575c58f20635148ae61c1f83879c2aac",
+        "trace_sha256": "0dcf177449a4e2ed7957eee1fb170b5532465c03a51a4c9deecc57c668e4d1f7",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/ram.data",
+            "bytes": 16777216,
+            "sha256": "f2836df05fc0c11e123123e3e89906ea505adeafdf9f6356c8af751f428201bf"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_overflow_error/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_mutex_invalid_id",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 31,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffffffee",
+            "0x00000000",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x7be41c10",
+            "0x7089f9b4",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x70008007",
+            "0x00000006",
+            "0x50605171",
+            "0x7be038ca",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "48b8769492ea78e2f8b33042a956d2a75f9a5244665331dba76847f89a7f3c88",
+        "trace_sha256": "cda76035ccc716e0b6f0797e83ac82e52921898f55d60b5979333acc555e1713",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/ram.data",
+            "bytes": 16777216,
+            "sha256": "291873ca59dae9a1ae5c86147ffa53e58a875ac0eee0cfa751cdbe336666f2ca"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_mutex_invalid_id/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_semaphore_invalid_id",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 31,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0xffffffee",
+            "0x00000000",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x7be41c10",
+            "0x00000002",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x70008007",
+            "0x00000006",
+            "0x50605171",
+            "0x7be038ca",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 0,
+            "program_attempts": 0,
+            "erases": 0,
+            "programs": 0,
+            "reads": 0,
+            "writes": 0,
+            "erased_bytes": 0,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "f7f9855c6f31420eab8097cd1be933b0b6f5acc828b3334627cea514a0828a50",
+        "trace_sha256": "fb3bad40183eaad078a31300f7cf258fdd15faf90b935b27b498e9cd4804613b",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/ram.data",
+            "bytes": 16777216,
+            "sha256": "44116280fc9c392975a3ad0f00fbd35f281fcab66a2b7e653bcd17a452f7d39e"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_semaphore_invalid_id/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_writer_rtos_success",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_writer_rtos_success",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 472919,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000000",
+            "0x00000000",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x9c01202c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7bd4ec43",
+            "0x00000000",
+            "0x29102070",
+            "0x7bd1b3d8",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 1,
+            "program_attempts": 128,
+            "erases": 1,
+            "programs": 128,
+            "reads": 387,
+            "writes": 66191,
+            "erased_bytes": 131072,
+            "programmed_bytes": 131072,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "6a4d7d4812468812a493d51258a7ee16700ba6316596fc80f2acc667dd07d0ba",
+        "trace_sha256": "0370f418204f420547b7e08bafc5160f3f4475de75fac29f287061d3ecd68653",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/ram.data",
+            "bytes": 16777216,
+            "sha256": "f803825dcd5f1c6a672203a5c8e5aa2583435d598f460774b67d602400b01706"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_success/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_writer_rtos_program_error",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error",
+        "result": {
+          "event": "result",
+          "stop": "returned",
+          "steps": 11503,
+          "pc": "0x70008007",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x8000000c",
+            "0x00000000",
+            "0xffffffff",
+            "0x93f0003c",
+            "0x9c01202c",
+            "0x93f0003c",
+            "0x98e3dc24",
+            "0x93e00000",
+            "0x700f0000",
+            "0x70008007",
+            "0x7bd4ec43",
+            "0x00000000",
+            "0x29102070",
+            "0x7bd1b3d8",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 1,
+            "program_attempts": 1,
+            "erases": 1,
+            "programs": 0,
+            "reads": 7,
+            "writes": 532,
+            "erased_bytes": 131072,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "8a8758526d41cfa6711c7a89d9188fb7a36133a10b77ffa231669cc4944db566",
+        "trace_sha256": "6568d9a9006f36999f0e1d168d45d9b32835ed153efbfdd55e43332f3ec2d245",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/ram.data",
+            "bytes": 16777216,
+            "sha256": "70a7c8be9e477826fbd064d755f383ff858177442942984a91d8c7cc76618523"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_program_error/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    },
+    {
+      "name": "native_writer_rtos_power_cut",
+      "execution": {
+        "directory": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut",
+        "result": {
+          "event": "result",
+          "stop": "nor_power_cut",
+          "steps": 9020,
+          "pc": "0x7bd1b678",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000080",
+            "0x0000ea4d",
+            "0x0000eacd",
+            "0x0006b6be",
+            "0x81e00000",
+            "0x93f0003c",
+            "0x81e003fe",
+            "0x740003fe",
+            "0x700eff9c",
+            "0x7bd1b678",
+            "0x7bd1b639",
+            "0x00000000",
+            "0xf28866f0",
+            "0x7bd1b67c",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 1,
+            "program_attempts": 1,
+            "erases": 1,
+            "programs": 1,
+            "reads": 6,
+            "writes": 528,
+            "erased_bytes": 131072,
+            "programmed_bytes": 1024,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "3544898bb642078bb019219cd085cee92a1803d51f497ca9edd1bd5cca2cad78",
+        "trace_sha256": "8b5d8cd5ee35fbfa859a3afc73d6f705c0435db107ee1133a52d0da18171cd26",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/ram.data",
+            "bytes": 16777216,
+            "sha256": "c806a9b48516d08727c279d6107aa88a735505e51e5f0e19e0649540701693a7"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/settings.data",
+            "bytes": 262144,
+            "sha256": "294087b501c45d4d27d5b6713d58e2726432009773522ec538e57184251be940"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-controls-2/native_writer_rtos_power_cut/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+        ]
+      }
+    }
+  ],
+  "native_install_controls": [
+    {
+      "name": "native_rtos_region_install",
+      "execution": {
+        "directory": "work/gm5-native-rtos-region-install-2/native_rtos_region_install",
+        "result": {
+          "event": "result",
+          "stop": "programming_finished",
+          "steps": 30125007,
+          "pc": "0x7bd50074",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000001",
+            "0x00800000",
+            "0x00000000",
+            "0x00000001",
+            "0x9c01202c",
+            "0x93f0003c",
+            "0x00000001",
+            "0x00000001",
+            "0x700f0000",
+            "0x7bd50074",
+            "0x7bd4ec43",
+            "0x00000001",
+            "0x29102070",
+            "0x7bd1b3d8",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 64,
+            "program_attempts": 8192,
+            "erases": 64,
+            "programs": 8192,
+            "reads": 24768,
+            "writes": 4236224,
+            "erased_bytes": 8388608,
+            "programmed_bytes": 8388608,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "1a5a0b1d307910f18279ebb00e904ae6a99a8c0576eeb1893ffceebc4736d56d",
+        "trace_sha256": "17601a340bd8a5e1ed02f30dd30348979189008db3053976ae8c45184a144c4b",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/ram.data",
+            "bytes": 16777216,
+            "sha256": "9611cfa942d5491d5d2381466eaf85baaece05d45d583f9c3382bc05ef7b6e66"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/settings.data",
+            "bytes": 262144,
+            "sha256": "351593203668609a7a2abff5005f7259eddac9ee9b2043c5613f7d37205e0248"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_install/post-job-input.data",
+            "bytes": 8390144,
+            "sha256": "fdb6e6ecbf6ea548561ebc7c80f1c836fa1f65c1db8421ffe65dfbb6d6c094fb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "Uses the exact region package's prior completed native decode output/context; no decoding function is replaced.",
+          "The original policy-zero NOR is the programming source; RTOS state is restored from bounded native object/task initialization.",
+          "Native-activated task7 is selected explicitly as current; the task scheduler and task entry do not execute.",
+          "The original board/shutdown skips at0x7bd4fe14/0x7bd4ff0d remain explicit and UI callbacks stay disabled.",
+          "Every semaphore/mutex instruction is unchanged; no checked synchronization return stubs or SYNC service model is configured.",
+          "Stops after the native programming iteration, before final cleanup/restart; this is not a complete machine boot."
+        ]
+      }
+    },
+    {
+      "name": "native_rtos_region_program_error",
+      "execution": {
+        "directory": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error",
+        "result": {
+          "event": "result",
+          "stop": "programming_finished",
+          "steps": 12263,
+          "pc": "0x7bd50074",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x00000001",
+            "0x00800000",
+            "0x00000000",
+            "0x00000001",
+            "0x9c01202c",
+            "0x93f0003c",
+            "0x00000001",
+            "0x00000001",
+            "0x700f0000",
+            "0x7bd50074",
+            "0x7bd4ec43",
+            "0x00000001",
+            "0x29102070",
+            "0x7bd1b3d8",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 1,
+            "program_attempts": 1,
+            "erases": 1,
+            "programs": 0,
+            "reads": 7,
+            "writes": 532,
+            "erased_bytes": 131072,
+            "programmed_bytes": 0,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "9dc808c557dda0b1993a6854b5a5a6b6f8125007be585369527284214f040967",
+        "trace_sha256": "5f6d495328ba10c6326241c54f9c8b2e5cb7283b4dd1c7d3b8f893d4e8a2b550",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/ram.data",
+            "bytes": 16777216,
+            "sha256": "5a31f63bc2cfaab24d1bb29a6b009de2341a31e6a9d9427df13f7917a40352de"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/settings.data",
+            "bytes": 262144,
+            "sha256": "351593203668609a7a2abff5005f7259eddac9ee9b2043c5613f7d37205e0248"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_program_error/post-job-input.data",
+            "bytes": 8390144,
+            "sha256": "fdb6e6ecbf6ea548561ebc7c80f1c836fa1f65c1db8421ffe65dfbb6d6c094fb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "Uses the exact region package's prior completed native decode output/context; no decoding function is replaced.",
+          "The original policy-zero NOR is the programming source; RTOS state is restored from bounded native object/task initialization.",
+          "Native-activated task7 is selected explicitly as current; the task scheduler and task entry do not execute.",
+          "The original board/shutdown skips at0x7bd4fe14/0x7bd4ff0d remain explicit and UI callbacks stay disabled.",
+          "Every semaphore/mutex instruction is unchanged; no checked synchronization return stubs or SYNC service model is configured.",
+          "Stops after the native programming iteration, before final cleanup/restart; this is not a complete machine boot."
+        ]
+      }
+    },
+    {
+      "name": "native_rtos_region_power_cut",
+      "execution": {
+        "directory": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut",
+        "result": {
+          "event": "result",
+          "stop": "nor_power_cut",
+          "steps": 9769,
+          "pc": "0x7bd1b678",
+          "sim_reason": 3,
+          "signal": 5,
+          "registers": [
+            "0x000000a2",
+            "0x0000ff5d",
+            "0x0000ffff",
+            "0x0006b6be",
+            "0x80000000",
+            "0x93f0003c",
+            "0x800003fe",
+            "0x740009fe",
+            "0x700eff9c",
+            "0x7bd1b678",
+            "0x7bd1b639",
+            "0x00000000",
+            "0xf28866f0",
+            "0x7bd1b67c",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000",
+            "0x00000000"
+          ],
+          "nor": {
+            "bytes": 33554432,
+            "sector_bytes": 131072,
+            "buffer_bytes": 1024,
+            "erase_attempts": 1,
+            "program_attempts": 1,
+            "erases": 1,
+            "programs": 1,
+            "reads": 6,
+            "writes": 528,
+            "erased_bytes": 131072,
+            "programmed_bytes": 1024,
+            "zero_to_one_words": 0,
+            "phase": 0,
+            "pending": 0
+          },
+          "services": null
+        },
+        "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+        "scenario_sha256": "d5d4487b31432e89311892f59c7e97858e4541475f40b7adbdc83ab826eb47cb",
+        "trace_sha256": "82031b303a0ed2dd00531104051ddc9e8e24631de846d98be01deb2aa48a2c7a",
+        "output_dumps": [
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/ram.data",
+            "bytes": 16777216,
+            "sha256": "2fa04597985b48d9e93668c3f03a6370deb9ece4c6a49ad860e67e6afe64a90b"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/settings.data",
+            "bytes": 262144,
+            "sha256": "351593203668609a7a2abff5005f7259eddac9ee9b2043c5613f7d37205e0248"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/rtos-shared.data",
+            "bytes": 68,
+            "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/rtos-lock.data",
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/rtos-fixed-pools.data",
+            "bytes": 6528,
+            "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/rtos-structures.data",
+            "bytes": 7508,
+            "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/rtos-local.data",
+            "bytes": 124508,
+            "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+          },
+          {
+            "path": "work/gm5-native-rtos-region-install-2/native_rtos_region_power_cut/post-job-input.data",
+            "bytes": 8390144,
+            "sha256": "fdb6e6ecbf6ea548561ebc7c80f1c836fa1f65c1db8421ffe65dfbb6d6c094fb"
+          }
+        ],
+        "assumptions": [
+          "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+          "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+          "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+          "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+          "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+          "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+          "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+          "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+          "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+          "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+          "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+          "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+          "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+          "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-controls-2/native_task7_activation; context index0 is supplied explicitly.",
+          "Uses the exact region package's prior completed native decode output/context; no decoding function is replaced.",
+          "The original policy-zero NOR is the programming source; RTOS state is restored from bounded native object/task initialization.",
+          "Native-activated task7 is selected explicitly as current; the task scheduler and task entry do not execute.",
+          "The original board/shutdown skips at0x7bd4fe14/0x7bd4ff0d remain explicit and UI callbacks stay disabled.",
+          "Every semaphore/mutex instruction is unchanged; no checked synchronization return stubs or SYNC service model is configured.",
+          "Stops after the native programming iteration, before final cleanup/restart; this is not a complete machine boot."
+        ]
+      }
+    }
+  ],
+  "native_ui_startup": {
+    "directory": "work/gm5-ui-startup-with-native-rtos-3",
+    "result": {
+      "event": "result",
+      "stop": "ui_startup_returned",
+      "steps": 4675,
+      "pc": "0x70008007",
+      "sim_reason": 3,
+      "signal": 5,
+      "registers": [
+        "0x00000000",
+        "0x00000000",
+        "0xffffffff",
+        "0x93f0003c",
+        "0x700effe9",
+        "0x7018bb09",
+        "0x98e3dc24",
+        "0x93e00000",
+        "0x700f0000",
+        "0x70008007",
+        "0x401eee79",
+        "0x00000001",
+        "0xf04144f0",
+        "0x401c0825",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000",
+        "0x00000000"
+      ],
+      "nor": {
+        "bytes": 33554432,
+        "sector_bytes": 131072,
+        "buffer_bytes": 1024,
+        "erase_attempts": 0,
+        "program_attempts": 0,
+        "erases": 0,
+        "programs": 0,
+        "reads": 0,
+        "writes": 0,
+        "erased_bytes": 0,
+        "programmed_bytes": 0,
+        "zero_to_one_words": 0,
+        "phase": 0,
+        "pending": 0
+      },
+      "services": null
+    },
+    "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+    "scenario_sha256": "edafd84f69b888fd87ea5c5b28195412fdd10476c649fae187ab0342ab3b0535",
+    "trace_sha256": "046f9576429e01b6b8b85efd26850695e9fce59319a1000638bc49a725a0f477",
+    "output_dumps": [
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/ram.data",
+        "bytes": 16777216,
+        "sha256": "d90637544ec5a824cfa43965ea04f5aec3d1cea80eee255bfcd41eeffb5f472c"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/settings.data",
+        "bytes": 262144,
+        "sha256": "62b4fbebfbae01968b35d5c584fe8205ed7998980eb295a367f06edb67897d70"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/rtos-shared.data",
+        "bytes": 68,
+        "sha256": "98d0e443fa184982eebdd5220c1879e4b639bce1a40bf6a9bb3a616c09daf90c"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/rtos-lock.data",
+        "bytes": 4,
+        "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/rtos-fixed-pools.data",
+        "bytes": 6528,
+        "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/rtos-structures.data",
+        "bytes": 7508,
+        "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+      },
+      {
+        "path": "work/gm5-ui-startup-with-native-rtos-3/rtos-local.data",
+        "bytes": 124508,
+        "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+      }
+    ],
+    "assumptions": [
+      "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+      "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+      "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+      "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+      "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+      "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+      "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+      "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+      "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+      "The firmware's0x70/0xb0 RAM views share one backing buffer; cache timing/coherence are not modeled.",
+      "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/context_prefix; context index0 is supplied explicitly.",
+      "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/lock_owners; context index1 is supplied explicitly.",
+      "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_context; context index1 is supplied explicitly.",
+      "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/inactive_peer_lock_owners; context index0 is supplied explicitly.",
+      "This bounded subsequence omits the CPU-peer handshake, interrupt-controller setup, task auto-activation and scheduler start.",
+      "CPU1's native context/empty lock-owner initialization has run serially using context index1; the fixture then returns to index0. No concurrent CPU, peer tasks or interrupts execute.",
+      "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-rtos-objects-6/kernel_objects; context index0 is supplied explicitly.",
+      "Calls the complete nativestartup function0x40211a38; full board/task startup is not supplied."
+    ]
+  },
+  "candidate_main_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+  "package": {
+    "path": "work/gm5-region-package-2/GM5__V11.bin",
+    "bytes": 8390144,
+    "sha256": "4954b517462b8ee5f900945496b882ddfa45f97b540f0d1dad6dcdf706ea50c7"
+  },
+  "task_fixture": {
+    "id": 7,
+    "tcb": "0x709f8194",
+    "native_activation": true,
+    "current_task_selected_by_fixture": true,
+    "task_entry_or_scheduler_executed": false
+  },
+  "repository_tests": {
+    "passed": 88,
+    "log": {
+      "path": "work/gm5-native-rtos-tests.log",
+      "bytes": 9319,
+      "sha256": "4f3e2aeb278a54849f472fb56fd37240446a08e971783758d60f4136fdda4a37"
+    }
+  },
+  "ram_alias_controls": "Four repository tests cover both directions, fast/step equality, observations and independent frontend/backend guards.",
+  "callback_abi_controls": "Three repository tests cover CALLS/self-allocated frames, CALL/automatic frames and a double-frame failure control.",
+  "legacy_language_differential": {
+    "path": "work/gm5-region-memory-observation-rtos-aliases-1/summary.json",
+    "bytes": 20968,
+    "sha256": "300005c694d4084cb66e1349f5407bf0f275984e0a087b7662f125d001d948e8"
+  },
+  "unresolved_ui_boundary": {
+    "execution": {
+      "directory": "work/gm5-native-language-full-flow-6/native_parent_menu_entry",
+      "result": {
+        "event": "result",
+        "stop": "target_exception",
+        "steps": 52336,
+        "pc": "0x40000008",
+        "sim_reason": 3,
+        "signal": 11,
+        "registers": [
+          "0x00000002",
+          "0x00008000",
+          "0x0000000f",
+          "0x700eff6c",
+          "0x9c013004",
+          "0x93f0003c",
+          "0x40284d68",
+          "0xb027b890",
+          "0x700eff50",
+          "0x40000008",
+          "0x7bc7a63d",
+          "0x00000001",
+          "0xf1710821",
+          "0x7be060df",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000"
+        ],
+        "nor": {
+          "bytes": 33554432,
+          "sector_bytes": 131072,
+          "buffer_bytes": 1024,
+          "erase_attempts": 0,
+          "program_attempts": 0,
+          "erases": 0,
+          "programs": 0,
+          "reads": 0,
+          "writes": 0,
+          "erased_bytes": 0,
+          "programmed_bytes": 0,
+          "zero_to_one_words": 0,
+          "phase": 0,
+          "pending": 0
+        },
+        "services": null
+      },
+      "backend_sha256": "653620b1b0203732a087756fdfebaee69e1bfd2ba5f6550063d3ff17e8d5b0cf",
+      "scenario_sha256": "52fc544d5c24ce12812c0d9d228704012c72c801b9bf3ef8bb69f1921e167e44",
+      "trace_sha256": "9a2b8b629512ca05d61435bc60a8f4be88d0c34eff86372b2606bead059c72b9",
+      "output_dumps": [
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/ram.data",
+          "bytes": 16777216,
+          "sha256": "9d06403ad60e739971f583ef05a2f963c9bfe4ebef9273a952281c22630c41b8"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/settings.data",
+          "bytes": 262144,
+          "sha256": "62b4fbebfbae01968b35d5c584fe8205ed7998980eb295a367f06edb67897d70"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/rtos-shared.data",
+          "bytes": 68,
+          "sha256": "17e758259f55c33933ac564736dcff8fa014c9f6a8b24b13acfaa7ec54b0ad9c"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/rtos-lock.data",
+          "bytes": 4,
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/service-notification.data",
+          "bytes": 16,
+          "sha256": "63e40da33ab2efb8a6002f97668b96810924d2440f0a82edc72800abafe2a697"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/rtos-fixed-pools.data",
+          "bytes": 6528,
+          "sha256": "6163d87f18d7ac7b608eedd6ed9e8fa10d7c729ee5cef7978b97383783c6fc2a"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/rtos-structures.data",
+          "bytes": 7508,
+          "sha256": "db3b9a935be3b3fd647685d58d106c343c7ac2fa1c8e6dc97fa78c18c3092d1f"
+        },
+        {
+          "path": "work/gm5-native-language-full-flow-6/native_parent_menu_entry/rtos-local.data",
+          "bytes": 124508,
+          "sha256": "45ec0ae1f977bb18e141b47442c959ecb51ffb3cfea0285417013646536bd30d"
+        }
+      ],
+      "assumptions": [
+        "The exact encoded-and-virtually-programmed region candidate and completed native settings/language RAM snapshot are restored.",
+        "Native CPU0 RTOS entry is executed unchanged, stopping before its scheduler-start call; no RTOS return stubs remain.",
+        "The firmware reads0x8050 as a CPU-context index; this single-CPU fixture explicitly supplies0, not a measured hardware value.",
+        "The interprocessor bit-lock word0x93e00000 is a zero-initialized RAM latch with no second CPU or external contention.",
+        "The context table/shared counters and context-selected128-byte lock-owner array are modeled as ordinary storage.",
+        "ROM-selected shared task control blocks at0x98e3cdd0 and following use zero-initialized backing storage up to the next known startup-data interval0x98e3ea94.",
+        "Three ROM-selected fixed pools0x802b..0x802d each contain16blocks of128bytes plus8bytes per-block metadata, covering0x98e35f40..0x98e378c0; their backing storage starts zero.",
+        "Secondary startup initialized bytes are copied to0x98e3ea94 and0x93f00000; its documented BSS interval begins zero.",
+        "Other device addresses remain unmapped, and full camera boot, scheduling, interrupts and display output are not modeled.",
+        "Calls the complete UI-startup wrapper0x40211a38 from the completed native settings/language subsequence; full board/task startup is not supplied.",
+        "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-ui-startup-with-native-rtos-2; context index0 is supplied explicitly.",
+        "Previously unmapped service-notification storage at['0x93f01000'] starts zero in this extended fixture; no earlier accesses are inferred.",
+        "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+        "Runs native application-service context/queue setup; stops before0x7bc15b3e interrupt-controller initialization.",
+        "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-language-full-flow-6/native_service_context_prefix; context index0 is supplied explicitly.",
+        "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption.",
+        "RAM, settings, shared RTOS storage and supported registers are restored fromwork/gm5-native-language-full-flow-6/language_task_activation; context index0 is supplied explicitly.",
+        "A native-activated CPU0 task7 is selected by the fixture as current; the scheduler and actual task entry do not execute. API calls run serially without preemption."
+      ]
+    },
+    "actual_access": {
+      "bytes": "2",
+      "operation": "write",
+      "address": "0x9c013004",
+      "instruction_pc": "0x7bc7a63f"
+    },
+    "interpretation": "Native service notification follows mask registration; software-interrupt delivery remains unmodeled."
+  },
+  "complete_language_confirmation_flow_executed": false,
+  "camera_contacted": false,
+  "physical_region_patch_installed": false,
+  "limits": [
+    "Serial task-context fixture; no real preemption, interrupts or concurrent CPU behavior.",
+    "The peer context and empty owner array were initialized natively; its task runtime is inactive.",
+    "Existing deterministic NOR and cache-latch assumptions remain; full camera boot is not modeled.",
+    "The full RTOS entry still requires a peer handshake; the initializer uses bounded native subsequences.",
+    "Two existing board/shutdown skips remain in the programming job; final restart is not modeled.",
+    "No display, sensor, USB, SD-controller, real interrupts or concurrent task execution is modeled."
+  ],
+  "collector_sha256": "5d241578e1e5eed2f88de49d455168c42aedea8856a7db2ecc27099b4e8bd583"
+}

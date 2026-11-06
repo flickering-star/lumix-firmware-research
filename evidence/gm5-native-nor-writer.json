@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "scope": "Installed GM5 native NOR writer and explicit emulator boundaries",
+  "images": [
+    {
+      "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program.bin",
+      "address": "0x40000000",
+      "sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966"
+    },
+    {
+      "path": "work/gm5-emulator-installed-initializers-final/private-inputs/installed-program2.bin",
+      "address": "0x7bc00000",
+      "sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+    }
+  ],
+  "regions": [
+    {
+      "name": "post_decode_merge",
+      "start": "0x7bd4fd8a",
+      "end_exclusive": "0x7bd4fe14",
+      "sha256": "3a3532ead3b1e69e998a9b38ad39c83e40d9b69288967d8f522dfd05e28d60a6",
+      "instructions": 50,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4fd8a  inc4\ta3\t; 53\n7bd4fd8b  mov\ta3,(12,sp)\t; 4f0c\n7bd4fd8d  mov\t(a3),d0\t; 73\n7bd4fd8e  cmp\t3,d0\t; a003\n7bd4fd90  bne\t0x7bd4fd95\t; c905\n7bd4fd92  jmp\t0x7bd4fe14\t; cc8200\n7bd4fd95  mov\t(32,a2),d2\t; f80a20\n7bd4fd98  clr\td3\t; 0c\n7bd4fd99  and\t15,d2\t; f8e20f\n7bd4fd9c  mov\td2,(8,sp)\t; 4a08\n7bd4fd9e  mov\t(28,sp),a0\t; 5c1c\n7bd4fda0  call\t0x7bd4f759,[],0\t; cdb9f90000\n7bd4fda5  mov\td0,d2\t; 82\n7bd4fda6  cmp\td3,d2\t; ae\n7bd4fda7  ble\t0x7bd4fe14\t; c36d\n7bd4fda9  mov\tsp,a3\t; 3f\n7bd4fdaa  add\t272,a3\t; fad31001\n7bd4fdae  mov\t(28,sp),a0\t; 5c1c\n7bd4fdb0  mov\td3,d0\t; 8c\n7bd4fdb1  mov\ta3,a1\t; 9d\n7bd4fdb2  call\t0x7bd4f76f,[d2,a2,a3],16\t; cdbdf9b010\n7bd4fdb7  mov\t(284,sp),a2\t; fab21c01\n7bd4fdbb  mov\ta3,a0\t; 9c\n7bd4fdbc  mov\t2078451660,a1\t; fcddcca7e27b\n7bd4fdc2  call\t0x7bc79077,[],0\t; ddb592f2ff0000\n7bd4fdc9  cmp\t0,d0\t; a000\n7bd4fdcb  beq\t0x7bd4fde1\t; c816\n7bd4fdcd  mov\ta3,a0\t; 9c\n7bd4fdce  mov\t2078451669,a1\t; fcddd5a7e27b\n7bd4fdd4  call\t0x7bc79077,[],0\t; dda392f2ff0000\n7bd4fddb  mov\td0,(64,sp)\t; 4240\n7bd4fddd  cmp\t0,d0\t; a000\n7bd4fddf  bne\t0x7bd4fded\t; c90e\n7bd4fde1  mov\t(16,sp),d0\t; 5810\n7bd4fde3  mov\t(8,sp),d1\t; 5908\n7bd4fde5  mov\ta2,a0\t; 98\n7bd4fde6  call\t0x7bd4f7fb,[d2,a2,a3],16\t; cd15fab010\n7bd4fdeb  bra\t0x7bd4fe10\t; ca25\n7bd4fded  mov\ta3,a0\t; 9c\n7bd4fdee  mov\t2078451678,a1\t; fcdddea7e27b\n7bd4fdf4  call\t0x7bc79077,[],0\t; dd8392f2ff0000\n7bd4fdfb  cmp\t0,d0\t; a000\n7bd4fdfd  bne\t0x7bd4fe10\t; c913\n7bd4fdff  mov\t2080196608,a1\t; fcdd0048fd7b\n7bd4fe05  mov\t20480,d0\t; 2c0050\n7bd4fe08  mov\ta2,a0\t; 98\n7bd4fe09  call\t0x7bc78fe0,[a2,a3],8\t; ddd791f2ff3008\n7bd4fe10  inc\td3\t; 4c\n7bd4fe11  cmp\td2,d3\t; ab\n7bd4fe12  blt\t0x7bd4fdae\t; c09c\n"
+    },
+    {
+      "name": "component_selection",
+      "start": "0x7bd4fe23",
+      "end_exclusive": "0x7bd4ff0d",
+      "sha256": "1706ad4d9517fab57b4e5a12c40c2346f3953bdcf28df0efcd6a45d1900af367",
+      "instructions": 95,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4fe23  mov\t(28,sp),a0\t; 5c1c\n7bd4fe25  call\t0x7bd4f759,[],0\t; cd34f90000\n7bd4fe2a  mov\td0,(32,sp)\t; 4220\n7bd4fe2c  mov\t(12,sp),a0\t; 5c0c\n7bd4fe2e  mov\t0,a2\t; 9a00\n7bd4fe30  mov\t(a0),d1\t; 74\n7bd4fe31  clr\td3\t; 0c\n7bd4fe32  cmp\td3,d1\t; ad\n7bd4fe33  beq\t0x7bd4fe45\t; c812\n7bd4fe35  mov\t1,a2\t; 9a01\n7bd4fe37  cmp\t1,d1\t; a501\n7bd4fe39  beq\t0x7bd4fe4b\t; c812\n7bd4fe3b  cmp\t2,d1\t; a502\n7bd4fe3d  beq\t0x7bd4fe49\t; c80c\n7bd4fe3f  cmp\t3,d1\t; a503\n7bd4fe41  beq\t0x7bd4fe49\t; c808\n7bd4fe43  bra\t0x7bd4fe49\t; ca06\n7bd4fe45  mov\t1,d3\t; 8f01\n7bd4fe47  bra\t0x7bd4fe4b\t; ca04\n7bd4fe49  mov\t1,d3\t; 8f01\n7bd4fe4b  clr\td0\t; 00\n7bd4fe4c  mov\td0,(16,sp)\t; 4210\n7bd4fe4e  mov\t(32,sp),d0\t; 5820\n7bd4fe50  clr\td2\t; 08\n7bd4fe51  cmp\td2,d0\t; a8\n7bd4fe52  bgt\t0x7bd4fe57\t; c105\n7bd4fe54  jmp\t0x7bd4feeb\t; cc9700\n7bd4fe57  mov\tsp,a3\t; 3f\n7bd4fe58  add\t296,a3\t; fad32801\n7bd4fe5c  mov\t(28,sp),a0\t; 5c1c\n7bd4fe5e  mov\td2,d0\t; 88\n7bd4fe5f  mov\ta3,a1\t; 9d\n7bd4fe60  call\t0x7bd4f76f,[d2,a2,a3],16\t; cd0ff9b010\n7bd4fe65  mov\ta3,a0\t; 9c\n7bd4fe66  mov\t2078451660,a1\t; fcddcca7e27b\n7bd4fe6c  call\t0x7bc79077,[],0\t; dd0b92f2ff0000\n7bd4fe73  cmp\t0,d0\t; a000\n7bd4fe75  bne\t0x7bd4fe7b\t; c906\n7bd4fe77  cmp\t0,a2\t; ba00\n7bd4fe79  beq\t0x7bd4fee2\t; c869\n7bd4fe7b  mov\ta3,a0\t; 9c\n7bd4fe7c  mov\t2078451669,a1\t; fcddd5a7e27b\n7bd4fe82  call\t0x7bc79077,[],0\t; ddf591f2ff0000\n7bd4fe89  mov\td0,(64,sp)\t; 4240\n7bd4fe8b  cmp\t0,d0\t; a000\n7bd4fe8d  bne\t0x7bd4fe93\t; c906\n7bd4fe8f  cmp\t0,a2\t; ba00\n7bd4fe91  beq\t0x7bd4fee2\t; c851\n7bd4fe93  mov\ta3,a0\t; 9c\n7bd4fe94  mov\t2078451678,a1\t; fcdddea7e27b\n7bd4fe9a  call\t0x7bc79077,[],0\t; dddd91f2ff0000\n7bd4fea1  cmp\t0,d0\t; a000\n7bd4fea3  bne\t0x7bd4fea9\t; c906\n7bd4fea5  cmp\t0,a2\t; ba00\n7bd4fea7  beq\t0x7bd4fee2\t; c83b\n7bd4fea9  mov\ta3,a0\t; 9c\n7bd4feaa  mov\t2078451689,a1\t; fcdde9a7e27b\n7bd4feb0  call\t0x7bc79077,[],0\t; ddc791f2ff0000\n7bd4feb7  cmp\t0,d0\t; a000\n7bd4feb9  bne\t0x7bd4febf\t; c906\n7bd4febb  cmp\t0,d3\t; af00\n7bd4febd  beq\t0x7bd4fee2\t; c825\n7bd4febf  mov\ta3,a0\t; 9c\n7bd4fec0  mov\t2078451694,a1\t; fcddeea7e27b\n7bd4fec6  call\t0x7bc79077,[],0\t; ddb191f2ff0000\n7bd4fecd  cmp\t0,d0\t; a000\n7bd4fecf  bne\t0x7bd4fed5\t; c906\n7bd4fed1  cmp\t0,d3\t; af00\n7bd4fed3  beq\t0x7bd4fee2\t; c80f\n7bd4fed5  cmp\t0,d3\t; af00\n7bd4fed7  beq\t0x7bd4fee2\t; c80b\n7bd4fed9  mov\t(16,sp),d1\t; 5910\n7bd4fedb  mov\t(312,sp),d0\t; fab43801\n7bd4fedf  add\td0,d1\t; e1\n7bd4fee0  mov\td1,(16,sp)\t; 4610\n7bd4fee2  mov\t(32,sp),d0\t; 5820\n7bd4fee4  inc\td2\t; 48\n7bd4fee5  cmp\td0,d2\t; a2\n7bd4fee6  bge\t0x7bd4feeb\t; c205\n7bd4fee8  jmp\t0x7bd4fe5c\t; cc74ff\n7bd4feeb  movbu\t(60,sp),d0\t; f8b83c\n7bd4feee  mov\td0,(20,sp)\t; 4214\n7bd4fef0  cmp\t0,d0\t; a000\n7bd4fef2  beq\t0x7bd4ff00\t; c80e\n7bd4fef4  mov\t(40,sp),a0\t; 5c28\n7bd4fef6  mov\t1,d0\t; 8001\n7bd4fef8  clr\td1\t; 04\n7bd4fef9  mov\t30,a1\t; 951e\n7bd4fefb  call\t0x7bd500e9,[d2,a2],12\t; cdee01a00c\n7bd4ff00  mov\tsp,a0\t; 3c\n7bd4ff01  add\t68,a0\t; 2044\n7bd4ff03  mov\t1,d0\t; 8001\n7bd4ff05  mov\td0,(80,sp)\t; 4250\n7bd4ff07  clr\td0\t; 00\n7bd4ff08  call\t0x7bd4ead4,[],0\t; cdcceb0000\n"
+    },
+    {
+      "name": "component_programming_loop",
+      "start": "0x7bd4ff17",
+      "end_exclusive": "0x7bd50074",
+      "sha256": "7e8a6cc618f36d0cf234c8cb77471571c9ba7f31ceab8c72e7adb4e727a65ca0",
+      "instructions": 134,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4ff17  clr\td0\t; 00\n7bd4ff18  mov\td0,(12,sp)\t; 420c\n7bd4ff1a  mov\t(16,sp),d0\t; 5810\n7bd4ff1c  cmp\t0,d0\t; a000\n7bd4ff1e  bhi\t0x7bd4ff23\t; c505\n7bd4ff20  jmp\t0x7bd50074\t; cc5401\n7bd4ff23  mov\t(32,sp),d0\t; 5820\n7bd4ff25  mov\t0,a3\t; 9f00\n7bd4ff27  cmp\t0,d0\t; a000\n7bd4ff29  bgt\t0x7bd4ff2e\t; c105\n7bd4ff2b  jmp\t0x7bd50074\t; cc4901\n7bd4ff2e  mov\tsp,a0\t; 3c\n7bd4ff2f  add\t296,a0\t; fad02801\n7bd4ff33  mov\ta0,(8,sp)\t; 4308\n7bd4ff35  mov\tsp,a0\t; 3c\n7bd4ff36  add\t320,a0\t; fad04001\n7bd4ff3a  mov\ta0,(36,sp)\t; 4324\n7bd4ff3c  mov\t(28,sp),a0\t; 5c1c\n7bd4ff3e  mov\ta3,d0\t; f1dc\n7bd4ff40  mov\t(8,sp),a1\t; 5d08\n7bd4ff42  call\t0x7bd4f76f,[d2,a2,a3],16\t; cd2df8b010\n7bd4ff47  mov\t(8,sp),a0\t; 5c08\n7bd4ff49  mov\t2078451660,a1\t; fcddcca7e27b\n7bd4ff4f  call\t0x7bc79077,[],0\t; dd2891f2ff0000\n7bd4ff56  cmp\t0,d0\t; a000\n7bd4ff58  bne\t0x7bd4ff61\t; c909\n7bd4ff5a  cmp\t0,a2\t; ba00\n7bd4ff5c  bne\t0x7bd4ff61\t; c905\n7bd4ff5e  jmp\t0x7bd5006a\t; cc0c01\n7bd4ff61  mov\t(8,sp),a0\t; 5c08\n7bd4ff63  mov\t2078451669,a1\t; fcddd5a7e27b\n7bd4ff69  call\t0x7bc79077,[],0\t; dd0e91f2ff0000\n7bd4ff70  mov\td0,(64,sp)\t; 4240\n7bd4ff72  cmp\t0,d0\t; a000\n7bd4ff74  bne\t0x7bd4ff7d\t; c909\n7bd4ff76  cmp\t0,a2\t; ba00\n7bd4ff78  bne\t0x7bd4ff7d\t; c905\n7bd4ff7a  jmp\t0x7bd5006a\t; ccf000\n7bd4ff7d  mov\t(8,sp),a0\t; 5c08\n7bd4ff7f  mov\t2078451678,a1\t; fcdddea7e27b\n7bd4ff85  call\t0x7bc79077,[],0\t; ddf290f2ff0000\n7bd4ff8c  cmp\t0,d0\t; a000\n7bd4ff8e  bne\t0x7bd4ff97\t; c909\n7bd4ff90  cmp\t0,a2\t; ba00\n7bd4ff92  bne\t0x7bd4ff97\t; c905\n7bd4ff94  jmp\t0x7bd5006a\t; ccd600\n7bd4ff97  mov\t(8,sp),a0\t; 5c08\n7bd4ff99  mov\t2078451689,a1\t; fcdde9a7e27b\n7bd4ff9f  call\t0x7bc79077,[],0\t; ddd890f2ff0000\n7bd4ffa6  cmp\t0,d0\t; a000\n7bd4ffa8  bne\t0x7bd4ffb1\t; c909\n7bd4ffaa  cmp\t0,d3\t; af00\n7bd4ffac  bne\t0x7bd4ffb1\t; c905\n7bd4ffae  jmp\t0x7bd5006a\t; ccbc00\n7bd4ffb1  mov\t(8,sp),a0\t; 5c08\n7bd4ffb3  mov\t2078451694,a1\t; fcddeea7e27b\n7bd4ffb9  call\t0x7bc79077,[],0\t; ddbe90f2ff0000\n7bd4ffc0  cmp\t0,d0\t; a000\n7bd4ffc2  bne\t0x7bd4ffcb\t; c909\n7bd4ffc4  cmp\t0,d3\t; af00\n7bd4ffc6  bne\t0x7bd4ffcb\t; c905\n7bd4ffc8  jmp\t0x7bd5006a\t; cca200\n7bd4ffcb  cmp\t0,d3\t; af00\n7bd4ffcd  bne\t0x7bd4ffd2\t; c905\n7bd4ffcf  jmp\t0x7bd5006a\t; cc9b00\n7bd4ffd2  mov\t(16,sp),d1\t; 5910\n7bd4ffd4  mov\t(12,sp),d0\t; 580c\n7bd4ffd6  clr\td2\t; 08\n7bd4ffd7  udfu01\t100,d0\t; f91464\n7bd4ffda  mov\td2,mdr\t; f2fa\n7bd4ffdc  divu\td1,d0\t; f274\n7bd4ffde  mov\td0,(84,sp)\t; 4254\n7bd4ffe0  mov\t(312,sp),d0\t; fab43801\n7bd4ffe4  mov\td2,mdr\t; f2fa\n7bd4ffe6  udfu01\t100,d0\t; f91464\n7bd4ffe9  divu\td1,d0\t; f274\n7bd4ffeb  mov\td0,(88,sp)\t; 4258\n7bd4ffed  mov\t(84,sp),d0\t; 5854\n7bd4ffef  mov\t(36,sp),d2\t; 5a24\n7bd4fff1  udf00\t70,d0\t; f90046\n7bd4fff4  ext\td0\t; f2d0\n7bd4fff6  mov\t100,d1\t; 8564\n7bd4fff8  div\td1,d0\t; f264\n7bd4fffa  add\t30,d0\t; 281e\n7bd4fffc  mov\td0,(92,sp)\t; 425c\n7bd4fffe  mov\t(88,sp),d0\t; 5858\n7bd50000  udf00\t70,d0\t; f90046\n7bd50003  ext\td0\t; f2d0\n7bd50005  div\td1,d0\t; f264\n7bd50007  mov\td0,(96,sp)\t; 4260\n7bd50009  mov\t(56,sp),d0\t; 5838\n7bd5000b  mov\td0,(320,sp)\t; fa914001\n7bd5000f  mov\t(20,sp),d0\t; 5814\n7bd50011  cmp\t0,d0\t; a000\n7bd50013  mov\t2077557043,d0\t; fccc3301d57b\n7bd50019  mov\td0,(324,sp)\t; fa914401\n7bd5001d  bne\t0x7bd50020\t; c903\n7bd5001f  clr\td2\t; 08\n7bd50020  mov\t(316,sp),d0\t; fab43c01\n7bd50024  mov\t(308,sp),a1\t; fab13401\n7bd50028  mov\t(312,sp),d1\t; fab53801\n7bd5002c  mov\td2,(4,sp)\t; 4a04\n7bd5002e  mov\t(68,sp),a0\t; 5c44\n7bd50030  call\t0x7bd4eb0d,[d2,d3,a2,a3],64\t; cdddeaf040\n7bd50035  mov\t(312,sp),d0\t; fab43801\n7bd50039  mov\t(12,sp),d1\t; 590c\n7bd5003b  add\td0,d1\t; e1\n7bd5003c  mov\td1,(12,sp)\t; 460c\n7bd5003e  mov\t(20,sp),d0\t; 5814\n7bd50040  cmp\t0,d0\t; a000\n7bd50042  beq\t0x7bd5006a\t; c828\n7bd50044  mov\td1,d2\t; 86\n7bd50045  udfu01\t100,d2\t; f91664\n7bd50048  mov\t(16,sp),d0\t; 5810\n7bd5004a  clr\td1\t; 04\n7bd5004b  mov\td1,mdr\t; f2f6\n7bd5004d  divu\td0,d2\t; f272\n7bd5004f  mov\t(40,sp),a0\t; 5c28\n7bd50051  mov\t1,d0\t; 8001\n7bd50053  mov\td2,d1\t; 89\n7bd50054  udf00\t70,d2\t; f90246\n7bd50057  mov\td3,(72,sp)\t; 4e48\n7bd50059  mov\t100,d3\t; 8f64\n7bd5005b  ext\td2\t; f2d2\n7bd5005d  div\td3,d2\t; f26e\n7bd5005f  mov\t(72,sp),d3\t; 5b48\n7bd50061  mov\t30,a1\t; 951e\n7bd50063  add\td2,a1\t; f169\n7bd50065  call\t0x7bd500e9,[d2,a2],12\t; cd8400a00c\n7bd5006a  mov\t(32,sp),d0\t; 5820\n7bd5006c  inc\ta3\t; 4d\n7bd5006d  cmp\td0,a3\t; f1a3\n7bd5006f  bge\t0x7bd50074\t; c205\n7bd50071  jmp\t0x7bd4ff3c\t; cccbfe\n"
+    },
+    {
+      "name": "range_writer",
+      "start": "0x7bd4eb0d",
+      "end_exclusive": "0x7bd4ec48",
+      "sha256": "14b459f84646690a5210bcae051fd9d95b1481c2feaf9f126761c34b7718f893",
+      "instructions": 137,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4eb0d  mov\ta1,a3\t; 97\n7bd4eb0e  mov\ta0,a2\t; 92\n7bd4eb0f  mov\td1,(28,sp)\t; 461c\n7bd4eb11  mov\td0,d3\t; 83\n7bd4eb12  mov\td1,d2\t; 86\n7bd4eb13  mov\t1,d0\t; 8001\n7bd4eb15  sub\td0,d2\t; f102\n7bd4eb17  add\td3,d2\t; ee\n7bd4eb18  mov\td3,d0\t; 8c\n7bd4eb19  mov\tsp,a1\t; 3d\n7bd4eb1a  add\t32,a1\t; 2120\n7bd4eb1c  call\t0x7bd4eadf,[d2,d3,a2,a3],16\t; cdc3fff010\n7bd4eb21  cmp\t0,d0\t; a000\n7bd4eb23  bne\t0x7bd4eb33\t; c910\n7bd4eb25  mov\td2,d0\t; 88\n7bd4eb26  mov\tsp,a1\t; 3d\n7bd4eb27  add\t36,a1\t; 2124\n7bd4eb29  mov\ta2,a0\t; 98\n7bd4eb2a  call\t0x7bd4eadf,[d2,d3,a2,a3],16\t; cdb5fff010\n7bd4eb2f  cmp\t0,d0\t; a000\n7bd4eb31  beq\t0x7bd4eb3c\t; c80b\n7bd4eb33  mov\t-2147483645,d0\t; fccc03000080\n7bd4eb39  ret\t[d2,d3,a2,a3],64\t; dff040\n7bd4eb3c  mov\t(32,sp),d1\t; 5920\n7bd4eb3e  mov\t(36,sp),d0\t; 5824\n7bd4eb40  cmp\td0,d1\t; a1\n7bd4eb41  bne\t0x7bd4eb68\t; c927\n7bd4eb43  mov\t24,a0\t; 9018\n7bd4eb45  add\td1,a0\t; f164\n7bd4eb47  mov\t(a0),d0\t; 70\n7bd4eb48  mov\t1,d1\t; 8501\n7bd4eb4a  sub\td1,d0\t; f104\n7bd4eb4c  and\td3,d0\t; f20c\n7bd4eb4e  bne\t0x7bd4eb59\t; c90b\n7bd4eb50  mov\t(a0),d0\t; 70\n7bd4eb51  sub\td1,d0\t; f104\n7bd4eb53  mov\t(28,sp),d1\t; 591c\n7bd4eb55  and\td0,d1\t; f201\n7bd4eb57  beq\t0x7bd4eb62\t; c80b\n7bd4eb59  mov\t-2147483647,d0\t; fccc01000080\n7bd4eb5f  ret\t[d2,d3,a2,a3],64\t; dff040\n7bd4eb62  mov\t(28,sp),d0\t; 581c\n7bd4eb64  cmp\t0,d0\t; a000\n7bd4eb66  bne\t0x7bd4eb6c\t; c906\n7bd4eb68  clr\td0\t; 00\n7bd4eb69  ret\t[d2,d3,a2,a3],64\t; dff040\n7bd4eb6c  clr\td0\t; 00\n7bd4eb6d  mov\td0,(20,sp)\t; 4214\n7bd4eb6f  mov\t(68,sp),a0\t; 5c44\n7bd4eb71  call\t0x7bd4ec48,[],4\t; cdd7000004\n7bd4eb76  cmp\t0,d0\t; a000\n7bd4eb78  bne\t0x7bd4eb83\t; c90b\n7bd4eb7a  mov\t-2147483639,d0\t; fccc09000080\n7bd4eb80  ret\t[d2,d3,a2,a3],64\t; dff040\n7bd4eb83  clr\td0\t; 00\n7bd4eb84  call\t0x7bd1b383,[d2,d3],8\t; ddffc7fcffc008\n7bd4eb8b  mov\t(32,sp),a0\t; 5c20\n7bd4eb8d  mov\t(28,sp),a2\t; 5e1c\n7bd4eb8f  mov\t(20,a0),d0\t; f80014\n7bd4eb92  mov\ta3,(8,sp)\t; 4f08\n7bd4eb94  mov\td0,(12,sp)\t; 420c\n7bd4eb96  mov\t-2147483648,d1\t; fccd00000080\n7bd4eb9c  mov\td1,(40,sp)\t; 4628\n7bd4eb9e  mov\td1,a3\t; f1e7\n7bd4eba0  add\td3,a3\t; f16f\n7bd4eba2  mov\td0,d1\t; 81\n7bd4eba3  mov\td1,(44,sp)\t; 462c\n7bd4eba5  clr\td0\t; 00\n7bd4eba6  mov\td0,mdr\t; f2f2\n7bd4eba8  divu\td1,d3\t; f277\n7bd4ebaa  mov\td0,mdr\t; f2f2\n7bd4ebac  divu\td1,d2\t; f276\n7bd4ebae  mov\td1,d0\t; 84\n7bd4ebaf  mov\t(40,sp),d1\t; 5928\n7bd4ebb1  sub\td3,d2\t; f10e\n7bd4ebb3  inc\td2\t; 48\n7bd4ebb4  mov\td2,(16,sp)\t; 4a10\n7bd4ebb6  udf00\td0,d3\t; f603\n7bd4ebb8  add\td1,d3\t; e7\n7bd4ebb9  clr\td1\t; 04\n7bd4ebba  mov\td1,(4,sp)\t; 4604\n7bd4ebbc  cmp\t0,d2\t; aa00\n7bd4ebbe  ble\t0x7bd4ec3a\t; c37c\n7bd4ebc0  add\t-1,d0\t; 28ff\n7bd4ebc2  mov\td0,(24,sp)\t; 4218\n7bd4ebc4  mov\td3,d0\t; 8c\n7bd4ebc5  mov\t8730000,d1\t; fccd90358500\n7bd4ebcb  call\t0x7bd1b567,[d2,d3,a2,a3],24\t; dd9cc9fcfff018\n7bd4ebd2  mov\t(24,sp),d0\t; 5818\n7bd4ebd4  mov\t(12,sp),d2\t; 5a0c\n7bd4ebd6  mov\ta3,d1\t; f1dd\n7bd4ebd8  and\td1,d0\t; f204\n7bd4ebda  sub\td0,d2\t; f102\n7bd4ebdc  cmp\ta2,d2\t; f19a\n7bd4ebde  bls\t0x7bd4ebe2\t; c704\n7bd4ebe0  mov\ta2,d2\t; f1da\n7bd4ebe2  mov\t(8,sp),d0\t; 5808\n7bd4ebe4  mov\td2,a0\t; f1e8\n7bd4ebe6  mov\t440000,a1\t; fcddc0b60600\n7bd4ebec  call\t0x7bd1b610,[d2,d3,a2,a3],36\t; dd24cafcfff024\n7bd4ebf3  cmp\t0,d0\t; a000\n7bd4ebf5  beq\t0x7bd4ebff\t; c80a\n7bd4ebf7  mov\t-2147483636,d0\t; fccc0c000080\n7bd4ebfd  bra\t0x7bd4ec29\t; ca2c\n7bd4ebff  mov\t(8,sp),d0\t; 5808\n7bd4ec01  add\td2,a3\t; f16b\n7bd4ec03  add\td2,d0\t; e8\n7bd4ec04  mov\td0,(8,sp)\t; 4208\n7bd4ec06  mov\t(28,sp),d1\t; 591c\n7bd4ec08  sub\td2,a2\t; f12a\n7bd4ec0a  mov\t(68,sp),a0\t; 5c44\n7bd4ec0c  mov\ta2,d0\t; f1d8\n7bd4ec0e  udfu01\t100,d0\t; f91464\n7bd4ec11  clr\td2\t; 08\n7bd4ec12  mov\td2,mdr\t; f2fa\n7bd4ec14  divu\td1,d0\t; f274\n7bd4ec16  mov\t100,d1\t; 8564\n7bd4ec18  sub\td0,d1\t; f101\n7bd4ec1a  mov\td1,d0\t; 84\n7bd4ec1b  call\t0x7bd4ec48,[],4\t; cd2d000004\n7bd4ec20  cmp\td2,d0\t; a8\n7bd4ec21  bne\t0x7bd4ec2d\t; c90c\n7bd4ec23  mov\t-2147483639,d0\t; fccc09000080\n7bd4ec29  mov\td0,(20,sp)\t; 4214\n7bd4ec2b  bra\t0x7bd4ec3a\t; ca0f\n7bd4ec2d  mov\t(12,sp),d0\t; 580c\n7bd4ec2f  mov\t(16,sp),d1\t; 5910\n7bd4ec31  add\td0,d3\t; e3\n7bd4ec32  mov\t(4,sp),d0\t; 5804\n7bd4ec34  inc\td0\t; 40\n7bd4ec35  mov\td0,(4,sp)\t; 4204\n7bd4ec37  cmp\td1,d0\t; a4\n7bd4ec38  blt\t0x7bd4ebc4\t; c08c\n7bd4ec3a  mov\t1,d0\t; 8001\n7bd4ec3c  call\t0x7bd1b383,[d2,d3],8\t; dd47c7fcffc008\n7bd4ec43  mov\t(20,sp),d0\t; 5814\n7bd4ec45  ret\t[d2,d3,a2,a3],64\t; dff040\n"
+    },
+    {
+      "name": "erase_wrapper",
+      "start": "0x7bd1b567",
+      "end_exclusive": "0x7bd1b60b",
+      "sha256": "74f13ba686ea884afc198c27a1c1c77bf287c423234d8221086ce9d1cb2ad61e",
+      "instructions": 60,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd1b567  mov\td1,d3\t; 87\n7bd1b568  mov\td0,d2\t; 82\n7bd1b569  movhu\t(0x7be3e4a8),d0\t; fcaca8e4e37b\n7bd1b56f  exth\td0\t; 18\n7bd1b570  call\t0x7be0826e,[d2,d3,a2,a3],20\t; ddfecc0e00f014\n7bd1b577  call\t0x7bd4ea9e,[],0\t; dd273503000000\n7bd1b57e  movhu\td0,(4,sp)\t; f89304\n7bd1b581  clr\td0\t; 00\n7bd1b582  call\t0x7bd1b383,[d2,d3],8\t; cd01fec008\n7bd1b587  mov\td2,d0\t; 88\n7bd1b588  mov\td3,d1\t; 8d\n7bd1b589  mov\td0,a2\t; f1e2\n7bd1b58b  mov\t240,d3\t; 2ff000\n7bd1b58e  movhu\td3,(a2)\t; f07e\n7bd1b590  mov\t-2147480918,a2\t; fcdeaa0a0080\n7bd1b596  mov\t-2147482284,a3\t; fcdf54050080\n7bd1b59c  mov\t170,d3\t; 2faa00\n7bd1b59f  movhu\td3,(a2)\t; f07e\n7bd1b5a1  mov\t85,d3\t; 8f55\n7bd1b5a3  movhu\td3,(a3)\t; f07f\n7bd1b5a5  mov\t128,d3\t; 2f8000\n7bd1b5a8  movhu\td3,(a2)\t; f07e\n7bd1b5aa  mov\t170,d3\t; 2faa00\n7bd1b5ad  movhu\td3,(a2)\t; f07e\n7bd1b5af  mov\t85,d3\t; 8f55\n7bd1b5b1  movhu\td3,(a3)\t; f07f\n7bd1b5b3  mov\td0,a2\t; f1e2\n7bd1b5b5  mov\t48,d3\t; 8f30\n7bd1b5b7  movhu\td3,(a2)\t; f07e\n7bd1b5b9  movbu\t(a2),d3\t; f04e\n7bd1b5bb  mov\t128,d2\t; 2e8000\n7bd1b5be  and\td3,d2\t; f20e\n7bd1b5c0  bne\t0x7bd1b5d6\t; c916\n7bd1b5c2  and\t32,d3\t; f8e320\n7bd1b5c5  bne\t0x7bd1b5cf\t; c90a\n7bd1b5c7  add\t-1,d1\t; 29ff\n7bd1b5c9  bne\t0x7bd1b5b9\t; c9f0\n7bd1b5cb  mov\t4,d0\t; 8004\n7bd1b5cd  bra\t0x7bd1b5dc\t; ca0f\n7bd1b5cf  movbu\t(a2),d3\t; f04e\n7bd1b5d1  and\t128,d3\t; f8e380\n7bd1b5d4  beq\t0x7bd1b5da\t; c806\n7bd1b5d6  mov\t0,d0\t; 8000\n7bd1b5d8  bra\t0x7bd1b5dc\t; ca04\n7bd1b5da  mov\t3,d0\t; 8003\n7bd1b5dc  mov\t240,d3\t; 2ff000\n7bd1b5df  movhu\td3,(a2)\t; f07e\n7bd1b5e1  movhu\td3,(a2)\t; f07e\n7bd1b5e3  movhu\td3,(a2)\t; f07e\n7bd1b5e5  movhu\td3,(a2)\t; f07e\n7bd1b5e7  mov\td0,d2\t; 82\n7bd1b5e8  mov\t1,d0\t; 8001\n7bd1b5ea  call\t0x7bd1b383,[d2,d3],8\t; cd99fdc008\n7bd1b5ef  movhu\t(4,sp),d0\t; f8bc04\n7bd1b5f2  call\t0x7bd4eaaa,[],0\t; ddb83403000000\n7bd1b5f9  movhu\t(0x7be3e4a8),d0\t; fcaca8e4e37b\n7bd1b5ff  exth\td0\t; 18\n7bd1b600  call\t0x7be0629d,[d2,d3,a2],16\t; dd9dac0e00e010\n7bd1b607  mov\td2,d0\t; 88\n7bd1b608  ret\t[d2,d3,a2,a3],24\t; dff018\n"
+    },
+    {
+      "name": "buffer_program_wrapper",
+      "start": "0x7bd1b610",
+      "end_exclusive": "0x7bd1b6f0",
+      "sha256": "4004bd3a49f682218e5471a76f11c5bdc3d1edf46f4af6c66951fa859f8db6cc",
+      "instructions": 87,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd1b610  mov\ta1,(8,sp)\t; 4708\n7bd1b612  mov\ta0,(4,sp)\t; 4304\n7bd1b614  clr\td2\t; 08\n7bd1b615  mov\td2,(12,sp)\t; 4a0c\n7bd1b617  mov\td1,a2\t; f1e6\n7bd1b619  mov\td0,a3\t; f1e3\n7bd1b61b  movhu\t(0x7be3e4a8),d0\t; fcaca8e4e37b\n7bd1b621  exth\td0\t; 18\n7bd1b622  call\t0x7be0826e,[d2,d3,a2,a3],20\t; dd4ccc0e00f014\n7bd1b629  call\t0x7bd4ea9e,[],0\t; dd753403000000\n7bd1b630  movhu\td0,(16,sp)\t; f89310\n7bd1b633  mov\td2,d0\t; 88\n7bd1b634  call\t0x7bd1b383,[d2,d3],8\t; cd4ffdc008\n7bd1b639  mov\t(4,sp),d0\t; 5804\n7bd1b63b  cmp\td2,d0\t; a8\n7bd1b63c  bls\t0x7bd1b6b2\t; c776\n7bd1b63e  mov\t170,d0\t; 2caa00\n7bd1b641  movhu\td0,(0x80000aaa)\t; fc83aa0a0080\n7bd1b647  mov\t85,d0\t; 8055\n7bd1b649  movhu\td0,(0x80000554)\t; fc8354050080\n7bd1b64f  mov\ta2,a0\t; 98\n7bd1b650  mov\t37,d0\t; 8025\n7bd1b652  movhu\td0,(a0)\t; f070\n7bd1b654  mov\t511,d0\t; 2cff01\n7bd1b657  movhu\td0,(a0)\t; f070\n7bd1b659  movhu\t(a3),d0\t; f063\n7bd1b65b  movhu\td0,(a2)\t; f072\n7bd1b65d  clr\td0\t; 00\n7bd1b65e  setlb\t\t; db\n7bd1b65f  add\t2,a3\t; 2302\n7bd1b661  add\t2,a2\t; 2202\n7bd1b663  movhu\t(a3),d2\t; f06b\n7bd1b665  movhu\td2,(a2)\t; f07a\n7bd1b667  inc\td0\t; 40\n7bd1b668  cmp\t511,d0\t; fac8ff01\n7bd1b66c  llt\t\t; d0\n7bd1b66d  mov\t41,d0\t; 8029\n7bd1b66f  movhu\td0,(a0)\t; f070\n7bd1b671  mov\t(8,sp),d3\t; 5b08\n7bd1b673  cmp\t0,d3\t; af00\n7bd1b675  ble\t0x7bd1b691\t; c31c\n7bd1b677  setlb\t\t; db\n7bd1b678  movhu\t(a2),d1\t; f066\n7bd1b67a  mov\td2,d0\t; 88\n7bd1b67b  xor\td1,d0\t; f224\n7bd1b67d  btst\t128,d0\t; f8ec80\n7bd1b680  beq\t0x7bd1b6a1\t; c821\n7bd1b682  btst\t32,d1\t; f8ed20\n7bd1b685  bne\t0x7bd1b691\t; c90c\n7bd1b687  btst\t2,d1\t; f8ed02\n7bd1b68a  bne\t0x7bd1b691\t; c907\n7bd1b68c  add\t-1,d3\t; 2bff\n7bd1b68e  cmp\t0,d3\t; af00\n7bd1b690  lgt\t\t; d1\n7bd1b691  movhu\t(a2),d1\t; f066\n7bd1b693  exthu\td2\t; 1e\n7bd1b694  xor\td2,d1\t; f229\n7bd1b696  btst\t128,d1\t; f8ed80\n7bd1b699  beq\t0x7bd1b6a1\t; c808\n7bd1b69b  mov\t1,d0\t; 8001\n7bd1b69d  mov\td0,(12,sp)\t; 420c\n7bd1b69f  bra\t0x7bd1b6b2\t; ca13\n7bd1b6a1  add\t2,a3\t; 2302\n7bd1b6a3  add\t2,a2\t; 2202\n7bd1b6a5  mov\t(4,sp),d0\t; 5804\n7bd1b6a7  mov\t1024,d1\t; 2d0004\n7bd1b6aa  sub\td1,d0\t; f104\n7bd1b6ac  mov\td0,(4,sp)\t; 4204\n7bd1b6ae  cmp\t0,d0\t; a000\n7bd1b6b0  bhi\t0x7bd1b63e\t; c58e\n7bd1b6b2  mov\t-2147480918,a0\t; fcdcaa0a0080\n7bd1b6b8  mov\t170,d0\t; 2caa00\n7bd1b6bb  movhu\td0,(a0)\t; f070\n7bd1b6bd  mov\t85,d0\t; 8055\n7bd1b6bf  movhu\td0,(0x80000554)\t; fc8354050080\n7bd1b6c5  mov\t240,d0\t; 2cf000\n7bd1b6c8  movhu\td0,(a0)\t; f070\n7bd1b6ca  movhu\td0,(a2)\t; f072\n7bd1b6cc  mov\t1,d0\t; 8001\n7bd1b6ce  call\t0x7bd1b383,[d2,d3],8\t; cdb5fcc008\n7bd1b6d3  movhu\t(16,sp),d0\t; f8bc10\n7bd1b6d6  call\t0x7bd4eaaa,[],0\t; ddd43303000000\n7bd1b6dd  movhu\t(0x7be3e4a8),d0\t; fcaca8e4e37b\n7bd1b6e3  exth\td0\t; 18\n7bd1b6e4  call\t0x7be0629d,[d2,d3,a2],16\t; ddb9ab0e00e010\n7bd1b6eb  mov\t(12,sp),d0\t; 580c\n7bd1b6ed  ret\t[d2,d3,a2,a3],36\t; dff024\n"
+    },
+    {
+      "name": "cache_control",
+      "start": "0x7bd1b383",
+      "end_exclusive": "0x7bd1b405",
+      "sha256": "d79b90f588974f22f8458421300a7b03b24a052840ceba01754a3517b162bbb5",
+      "instructions": 57,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd1b383  mov\td0,d3\t; 83\n7bd1b384  cmp\t0,d3\t; af00\n7bd1b386  bne\t0x7bd1b396\t; c910\n7bd1b388  mov\t-1677647828,a0\t; fcdc2c20019c\n7bd1b38e  movhu\t(a0),d1\t; f064\n7bd1b390  and\t65295,d1\t; fae10fff\n7bd1b394  movhu\td1,(a0)\t; f074\n7bd1b396  mov\tpsw,d2\t; f2e6\n7bd1b398  and\t61695,psw\t; fafcfff0\n7bd1b39c  nop\t\t; cb\n7bd1b39d  nop\t\t; cb\n7bd1b39e  mov\t32880,a0\t; fcdc70800000\n7bd1b3a4  mov\t(a0),d0\t; 70\n7bd1b3a5  and\t-4,d0\t; fce0fcffffff\n7bd1b3ab  mov\td0,(a0)\t; 60\n7bd1b3ac  setlb\t\t; db\n7bd1b3ad  nop\t\t; cb\n7bd1b3ae  mov\t(a0),d0\t; 70\n7bd1b3af  btst\t12,d0\t; f8ec0c\n7bd1b3b2  lne\t\t; d9\n7bd1b3b3  nop\t\t; cb\n7bd1b3b4  nop\t\t; cb\n7bd1b3b5  nop\t\t; cb\n7bd1b3b6  mov\t681574400,a0\t; fcdc0000a028\n7bd1b3bc  mov\t0,d0\t; 8000\n7bd1b3be  mov\t128,d1\t; 2d8000\n7bd1b3c1  setlb\t\t; db\n7bd1b3c2  mov\t(a0),d0\t; 70\n7bd1b3c3  add\t16,a0\t; 2010\n7bd1b3c5  add\t-1,d1\t; 29ff\n7bd1b3c7  lne\t\t; d9\n7bd1b3c8  mov\t682098688,a0\t; fcdc0000a828\n7bd1b3ce  mov\t0,d0\t; 8000\n7bd1b3d0  mov\t128,d1\t; 2d8000\n7bd1b3d3  setlb\t\t; db\n7bd1b3d4  mov\t(a0),d0\t; 70\n7bd1b3d5  add\t16,a0\t; 2010\n7bd1b3d7  add\t-1,d1\t; 29ff\n7bd1b3d9  lne\t\t; d9\n7bd1b3da  nop\t\t; cb\n7bd1b3db  nop\t\t; cb\n7bd1b3dc  mov\t32880,a0\t; fcdc70800000\n7bd1b3e2  mov\t48,d0\t; fccc30000000\n7bd1b3e8  mov\td0,(a0)\t; 60\n7bd1b3e9  mov\t3,d0\t; 8003\n7bd1b3eb  mov\td0,(a0)\t; 60\n7bd1b3ec  nop\t\t; cb\n7bd1b3ed  mov\td2,psw\t; f2fb\n7bd1b3ef  nop\t\t; cb\n7bd1b3f0  nop\t\t; cb\n7bd1b3f1  cmp\t1,d3\t; af01\n7bd1b3f3  bne\t0x7bd1b402\t; c90f\n7bd1b3f5  mov\t-1677647828,a0\t; fcdc2c20019c\n7bd1b3fb  movhu\t(a0),d0\t; f060\n7bd1b3fd  or\t240,d0\t; f8e4f0\n7bd1b400  movhu\td0,(a0)\t; f070\n7bd1b402  ret\t[d2,d3],8\t; dfc008\n"
+    },
+    {
+      "name": "interrupt_save_restore",
+      "start": "0x7bd4ea9e",
+      "end_exclusive": "0x7bd4eab7",
+      "sha256": "e507e9c1ce9b5a561ee44c962bb7f70c52efdb63f10f9adb4be137e9cd8dceba",
+      "instructions": 11,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4ea9e  mov\tpsw,d0\t; f2e4\n7bd4eaa0  and\t63487,psw\t; fafcfff7\n7bd4eaa4  nop\t\t; cb\n7bd4eaa5  nop\t\t; cb\n7bd4eaa6  exthu\td0\t; 1c\n7bd4eaa7  ret\t[],0\t; df0000\n7bd4eaaa  exthu\td0\t; 1c\n7bd4eaab  btst\t2048,d0\t; faec0008\n7bd4eaaf  beq\t0x7bd4eab5\t; c806\n7bd4eab1  or\t2048,psw\t; fafd0008\n7bd4eab5  rets\t\t; f0fc\n"
+    },
+    {
+      "name": "hardware_handshake",
+      "start": "0x7bd4dd87",
+      "end_exclusive": "0x7bd4ddbd",
+      "sha256": "03f4433727c943e672fda8756ded18a0d1fdaabdccc75e20470a57e71fc5ac90",
+      "instructions": 17,
+      "raw_annotations_match_source": true,
+      "disassembly": "7bd4dd87  mov\t-1812987856,d0\t; fccc3000f093\n7bd4dd8d  mov\td0,(4,sp)\t; 4204\n7bd4dd8f  mov\t32787,d0\t; fccc13800000\n7bd4dd95  mov\tsp,a0\t; 3c\n7bd4dd96  inc4\ta0\t; 50\n7bd4dd97  mov\t4,d1\t; 8504\n7bd4dd99  mov\t-1,a1\t; fcddffffffff\n7bd4dd9f  call\t0x7bc15cdf,[d2,d3,a2,a3],24\t; dd407fecfff018\n7bd4dda6  clr\td1\t; 04\n7bd4dda7  setlb\t\t; db\n7bd4dda8  mov\t(0x93f00030),d0\t; fca43000f093\n7bd4ddae  cmp\t0,d0\t; a000\n7bd4ddb0  bne\t0x7bd4ddba\t; c90a\n7bd4ddb2  inc\td1\t; 44\n7bd4ddb3  cmp\t792000,d1\t; fcc9c0150c00\n7bd4ddb9  llt\t\t; d0\n7bd4ddba  ret\t[],8\t; df0008\n"
+    }
+  ],
+  "calls": [
+    {
+      "at": "0x7bd50030",
+      "target": "0x7bd4eb0d"
+    },
+    {
+      "at": "0x7bd4ebcb",
+      "target": "0x7bd1b567"
+    },
+    {
+      "at": "0x7bd4ebec",
+      "target": "0x7bd1b610"
+    },
+    {
+      "at": "0x7bd1b570",
+      "target": "0x7be0826e"
+    },
+    {
+      "at": "0x7bd1b600",
+      "target": "0x7be0629d"
+    },
+    {
+      "at": "0x7bd1b622",
+      "target": "0x7be0826e"
+    },
+    {
+      "at": "0x7bd1b6e4",
+      "target": "0x7be0629d"
+    }
+  ],
+  "geometry": {
+    "descriptor_ram": "0x70a92a74",
+    "original_words": [
+      0,
+      33554432,
+      131072,
+      1,
+      256,
+      131072,
+      2,
+      1,
+      1,
+      1890134644
+    ],
+    "device_bytes": 33554432,
+    "erase_sector_bytes": 131072,
+    "native_buffer_halfwords": 512,
+    "native_buffer_bytes": 1024,
+    "range_alignment_check_bytes": 2
+  },
+  "software_abstractions": [
+    {
+      "at": "0x7bd4fe14",
+      "resume_at": "0x7bd4fe23",
+      "kind": "explicit virtual branch",
+      "detail": "Bypasses board-control calls 0x40254702 and 0x7be00713. Their register I/O roles are not fully modeled."
+    },
+    {
+      "at": "0x7bd4ff0d",
+      "resume_at": "0x7bd4ff17",
+      "kind": "explicit virtual branch",
+      "detail": "Bypasses a request/handshake polling 0x93f00030 and interrupt-mask setup; assumes a quiescent single-thread machine."
+    },
+    {
+      "at": "0x7be0826e",
+      "kind": "virtual return stub with checked mutex model",
+      "return_bytes": "00dff014"
+    },
+    {
+      "at": "0x7be0629d",
+      "kind": "virtual return stub with checked mutex model",
+      "return_bytes": "00dfe010"
+    }
+  ],
+  "findings": [
+    "The native buffer loop always loads 512 halfwords and subtracts1024 from its remaining length; container lengths must satisfy that implicit requirement.",
+    "At0x7bd50035 the caller overwrites the range writer's D0 return immediately. The injected-error native control confirms the outer loop continues.",
+    "The80KiB after the48KiB adjustment payload in the last128KiB sector are allFF in this backup."
+  ],
+  "last_sector_unused_tail_sha256": "f9eb1e3eaad35a3b444ec214d4e4c81004c8ee621d2a88ac6d188ee3fe2a37d2",
+  "verifier_sha256": "4f535491109f853dd5b870c255b5d976f986712075350c0621991f3f1820ee0e",
+  "decoder_sha256": "5c32f2795ae86e4c56c45a0e540a8fab9208464f37d0c43669a3eb260abbfbde",
+  "camera_contacted": false,
+  "limits": [
+    "The NOR aliases and command model are software-derived, not a physical write-bus measurement.",
+    "No exact memory-part identification, hardware protection/ECC model or full boot validation."
+  ]
+}
