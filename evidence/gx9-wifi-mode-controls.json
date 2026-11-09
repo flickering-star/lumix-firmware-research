@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "scope": "Native HTTP mode decoder, not camera command execution",
+  "verifier_sha256": "49b8bea840ce07e941864880d293a4a58f8271184b87298c102eca31d5f5cb01",
+  "psm_sha256": "7cafa9b91050c613b9fa76391f12003cbdd0a8e91f4e2e46dc0b22b1a5166fbd",
+  "mode_table": "0x5dea8",
+  "native_get_mode_entry": "0x2fdcc",
+  "native_query_value_extractor": "0x2fc5c",
+  "defined_mode_count": 26,
+  "mode_definitions": [
+    {
+      "mode": "getsetting",
+      "internal_id": 0
+    },
+    {
+      "mode": "setsetting",
+      "internal_id": 1
+    },
+    {
+      "mode": "startstream",
+      "internal_id": 2
+    },
+    {
+      "mode": "stopstream",
+      "internal_id": 3
+    },
+    {
+      "mode": "getstate",
+      "internal_id": 4
+    },
+    {
+      "mode": "getinfo",
+      "internal_id": 5
+    },
+    {
+      "mode": "camcmd",
+      "internal_id": 6
+    },
+    {
+      "mode": "get_content_info",
+      "internal_id": 7
+    },
+    {
+      "mode": "getprogress",
+      "internal_id": 9
+    },
+    {
+      "mode": "startsenddata",
+      "internal_id": 10
+    },
+    {
+      "mode": "requestsenddata",
+      "internal_id": 11
+    },
+    {
+      "mode": "endsenddata",
+      "internal_id": 12
+    },
+    {
+      "mode": "abortsenddata",
+      "internal_id": 13
+    },
+    {
+      "mode": "senddata",
+      "internal_id": 14
+    },
+    {
+      "mode": "playcmd",
+      "internal_id": 15
+    },
+    {
+      "mode": "editcmd",
+      "internal_id": 16
+    },
+    {
+      "mode": "speak",
+      "internal_id": 17
+    },
+    {
+      "mode": "exclusion",
+      "internal_id": 18
+    },
+    {
+      "mode": "pantiltcmd",
+      "internal_id": 19
+    },
+    {
+      "mode": "anmastcmd",
+      "internal_id": 20
+    },
+    {
+      "mode": "camctrl",
+      "internal_id": 21
+    },
+    {
+      "mode": "wirelesstwin",
+      "internal_id": 22
+    },
+    {
+      "mode": "accctrl",
+      "internal_id": 23
+    },
+    {
+      "mode": "set_thumb_prefetch_info",
+      "internal_id": 24
+    },
+    {
+      "mode": "notify",
+      "internal_id": 25
+    },
+    {
+      "mode": "delcmd",
+      "internal_id": 26
+    }
+  ],
+  "positive_mode_controls": [
+    {
+      "query": "mode=getsetting",
+      "native_mode_result": 0,
+      "native_instructions": 166
+    },
+    {
+      "query": "mode=setsetting",
+      "native_mode_result": 1,
+      "native_instructions": 178
+    },
+    {
+      "query": "mode=startstream",
+      "native_mode_result": 2,
+      "native_instructions": 200
+    },
+    {
+      "query": "mode=stopstream",
+      "native_mode_result": 3,
+      "native_instructions": 202
+    },
+    {
+      "query": "mode=getstate",
+      "native_mode_result": 4,
+      "native_instructions": 194
+    },
+    {
+      "query": "mode=getinfo",
+      "native_mode_result": 5,
+      "native_instructions": 196
+    },
+    {
+      "query": "mode=camcmd",
+      "native_mode_result": 6,
+      "native_instructions": 198
+    },
+    {
+      "query": "mode=get_content_info",
+      "native_mode_result": 7,
+      "native_instructions": 310
+    },
+    {
+      "query": "mode=getprogress",
+      "native_mode_result": 9,
+      "native_instructions": 272
+    },
+    {
+      "query": "mode=startsenddata",
+      "native_mode_result": 10,
+      "native_instructions": 304
+    },
+    {
+      "query": "mode=requestsenddata",
+      "native_mode_result": 11,
+      "native_instructions": 336
+    },
+    {
+      "query": "mode=endsenddata",
+      "native_mode_result": 12,
+      "native_instructions": 308
+    },
+    {
+      "query": "mode=abortsenddata",
+      "native_mode_result": 13,
+      "native_instructions": 340
+    },
+    {
+      "query": "mode=senddata",
+      "native_mode_result": 14,
+      "native_instructions": 302
+    },
+    {
+      "query": "mode=playcmd",
+      "native_mode_result": 15,
+      "native_instructions": 304
+    },
+    {
+      "query": "mode=editcmd",
+      "native_mode_result": 16,
+      "native_instructions": 316
+    },
+    {
+      "query": "mode=speak",
+      "native_mode_result": 17,
+      "native_instructions": 308
+    },
+    {
+      "query": "mode=exclusion",
+      "native_mode_result": 18,
+      "native_instructions": 360
+    },
+    {
+      "query": "mode=pantiltcmd",
+      "native_mode_result": 19,
+      "native_instructions": 382
+    },
+    {
+      "query": "mode=anmastcmd",
+      "native_mode_result": 20,
+      "native_instructions": 384
+    },
+    {
+      "query": "mode=camctrl",
+      "native_mode_result": 21,
+      "native_instructions": 376
+    },
+    {
+      "query": "mode=wirelesstwin",
+      "native_mode_result": 22,
+      "native_instructions": 438
+    },
+    {
+      "query": "mode=accctrl",
+      "native_mode_result": 23,
+      "native_instructions": 400
+    },
+    {
+      "query": "mode=set_thumb_prefetch_info",
+      "native_mode_result": 24,
+      "native_instructions": 572
+    },
+    {
+      "query": "mode=notify",
+      "native_mode_result": 25,
+      "native_instructions": 414
+    },
+    {
+      "query": "mode=delcmd",
+      "native_mode_result": 26,
+      "native_instructions": 426
+    }
+  ],
+  "additional_controls": [
+    {
+      "query": "event=60&mode=getinfo",
+      "native_mode_result": 5,
+      "native_instructions": 196
+    },
+    {
+      "query": "mode=getinfo&event=60",
+      "native_mode_result": 5,
+      "native_instructions": 196
+    },
+    {
+      "query": "mode=linux_cmd",
+      "native_mode_result": 8,
+      "native_instructions": 457
+    },
+    {
+      "query": "mode=firmware",
+      "native_mode_result": 8,
+      "native_instructions": 447
+    },
+    {
+      "query": "mode=60",
+      "native_mode_result": 8,
+      "native_instructions": 387
+    },
+    {
+      "query": "type=version",
+      "native_mode_result": 8,
+      "native_instructions": 61
+    },
+    {
+      "query": "mode=xxxxxxxxxxxxxxxxxxxxxxxx",
+      "native_mode_result": 8,
+      "native_instructions": 323
+    },
+    {
+      "query": null,
+      "native_mode_result": 8,
+      "native_instructions": 16
+    }
+  ],
+  "unrecognized_or_missing_mode_sentinel": 8,
+  "native_query_decoder_and_mode_lookup_replaced": false,
+  "modeled_operations": [
+    "C string/memory operations",
+    "logging",
+    "timestamp"
+  ],
+  "camera_network_or_process_access": false,
+  "limits": [
+    "This does not execute the selected camera command or trace every subtype.",
+    "Absence of a standalone firmware mode does not rule out another update route.",
+    "The internal Linux event 60 has not been delivered from an external HTTP request.",
+    "Pairing, current Wi-Fi mode and physical request behavior are not tested."
+  ]
+}

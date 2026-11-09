@@ -133,7 +133,7 @@ inputs, changes and validation limits.
 | USB | Absolute RAM writes and the policy round trip are measured; native dispatcher reproduces all 14 saved replies; fixed bank is area `0x22` | Queued event `0x000e8202` remains to be traced to an updater or persistent-save action |
 | SD update | Native UPD parser, policy gate, preprocessing and transfer stages are available | Full board boot and physical installation of the candidate remain untested |
 | Alternate SD update / `.AHX` | Native selection of `a:\MC282.upd` / `a:\MC282e.upd` reaches the updater; decoded key predicate verified | Physical entry/buttons, media behavior and arbitrary SD code boot remain unproven |
-| Wi-Fi | An internal Linux command event and its ICC/NWA/PSM route execute in native emulation | An authenticated external request delivering that event is unproven |
+| Wi-Fi | Internal ICC/NWA/PSM command route and all 26 HTTP modes execute in native emulation; adding `event=60` leaves `getinfo` mode unchanged | External delivery of Linux event 60 and updater-related subtypes remain unproven |
 | Bluetooth | Eight service definitions / 34 characteristics extracted; named factory callbacks execute as four-byte test counters | Other callbacks, pairing and external-to-RTOS delivery remain unresolved; no system updater identified |
 
 The extracted Linux init script runs internal `/etc/init.d/S??*` entries. A
@@ -159,6 +159,12 @@ product/factory UUID tables and nine native counter controls. The named factory
 read/write functions are test counters; their names do not imply arbitrary
 memory or persistent storage access. The application's direct process calls
 reviewed so far belong to radio-test handling.
+
+The [Wi-Fi mode decoder controls](gx9-wifi-mode-decoder.md) execute the original
+PSM query extractor and table lookup. All 26 listed modes pass. `linux_cmd`,
+`firmware` and numeric `60` are unrecognized as mode names, while an added
+`event=60` parameter leaves `getinfo` selected. These are decoder controls,
+not execution of the requested command or exclusion of other subtypes.
 
 The [native USB protocol analysis](gx9-usb-native-protocol.md) now identifies
 the maintenance descriptor builder, all 256 first-dispatch routes, settings
