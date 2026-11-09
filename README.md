@@ -15,7 +15,7 @@ connection files are excluded.
 | --- | --- | --- |
 | **GM1 Japanese-market 1.1** | Service USB word/block reads; complete 9 MiB main and 3.375 MiB secondary acquired; both match official plaintext. All six update components decoded, ECDSA independently verified. | No complete physical NOR backup or modified-firmware installation demonstrated. Factory-loader analysis is static. |
 | **GM5 Japanese 1.1** | 32 MiB NOR mapping backed up; modified unsigned installation proven; persistent policy zero; three-byte language unlock installed in normal mode. English survives manual off/on. | Language installation checked with three exact ROM windows, settings/UI and policy reads. Its full main readback was stopped at the owner's request. |
-| **GX9 / Japanese DC-GX7MK3, reported 1.4** | All 35 components of 1.4/1.5 decode; ten captured components match 1.4. P-256 signatures verify. USB policy `0 → 1 → 0` and exact restoration are physically proven. Native fixed-bank preparation/transfer/reload tests support a locally rebuilt policy-one candidate. | NAND controller completions are simulated. No physical modified update or candidate boot has been tested. SD autorun, external shell delivery and additional protocol routes remain under investigation. |
+| **GX9 / Japanese DC-GX7MK3, reported 1.4** | All 35 components of 1.4/1.5 decode. The owner reports successfully installing the policy-one candidate and a working camera. Subsequent physical USB inspection verifies policy `1` at the unchanged address through both access paths, with matching code and normalized metadata guards. | Installation/boot is owner-reported; policy readback is independently verified. Full installed-image readback and an additional controlled power-cycle test have not been performed. SD autorun, external shell delivery and other protocol routes remain under investigation. |
 | **GH2** | Static service-dispatch, startup, update, signature and factory-input analysis provided controls for the later USB work. | GH2 addresses and algorithms must not be assumed for GM1/GM5 or newer models. |
 | **Emulator** | Native MN103 updater/decode/NOR tests, bounded RTOS/task execution and ARM/Thumb startup/queue transport. | No complete camera boot, display/sensor model or integrated worker/reply path. |
 
@@ -31,6 +31,7 @@ Start with the guide for your model:
 - [GX9: update signatures, emulated policy control and Windows-local USB test](docs/gx9-update-authentication.md)
 - [GX9: fixed-bank policy persistence, prepared candidate and SD/protocol research](docs/gx9-flashing-research.md)
 - [GX9: Windows helper to enable and restore the live updater policy](docs/gx9-policy-helper.md)
+- [GX9: successful installation report, verified post-flash policy and CHECK fix](docs/gx9-postflash-policy.md)
 - [GX9: alternate update filenames and native entry predicate](docs/gx9-sd-update-route.md)
 - [GX9: Bluetooth GATT definitions and factory counter callbacks](docs/gx9-bluetooth-protocol.md)
 - [GX9: native Wi-Fi HTTP mode decoder](docs/gx9-wifi-mode-decoder.md)

@@ -5,6 +5,10 @@ the verified **1.4 live RAM policy set to one** for a separate manual update
 attempt. It also supports inspection and restoration to zero. It performs no
 firmware installation, SD-card write, camera reset or flash operation.
 
+The owner has reported a successful manual installation and working camera.
+The corrected helper then passed a physical, read-only inspection with policy
+one through both access paths. See the [post-flash result](gx9-postflash-policy.md).
+
 Keep these three unchanged files together on the Windows PC:
 
 - `gx9_policy_helper_windows.py`
@@ -28,10 +32,10 @@ from the helper directory:
 Success prints `Verified live RAM policy 1 through both read paths` and
 `Policy 1 was left enabled`. The helper closes its USB interface. Keep the
 camera powered on between enabling and the intended manual update. A reboot or
-fixed-settings reload can replace this RAM value. **Retention through USB
-disconnect and entry into the SD updater has not been physically verified.**
-This helper therefore verifies the policy precondition; it does not establish
-that the complete update/boot sequence is ready or will succeed.
+fixed-settings reload can replace this RAM value with the stored bank's value.
+The owner subsequently installed the prepared two-component candidate and
+reported that the camera works; readback from the running camera confirms one.
+The helper itself only inspects or changes RAM.
 
 To put the live RAM policy back to zero:
 
@@ -47,14 +51,15 @@ candidate before opening USB. It accepts its SHA-256 regardless of filename;
 it does not copy or install the file:
 
 ```powershell
-& C:\Python315\python.exe .\gx9_policy_helper_windows.py --enable --firmware E:\GX9__V14.bin
+& C:\Python315\python.exe .\gx9_policy_helper_windows.py --enable --firmware E:\GX7M3V14.bin
 ```
 
 The candidate is 102,538,240 bytes, SHA-256
 `719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883`.
 It changes the policy in both `program` and `eep_fix`; the old program-only
 candidate is superseded. Full-file decoding and native preparation/reload tests
-pass, but physical installation and boot remain untested. See
+pass. Installation and boot are owner-reported; the subsequent USB inspection
+independently verifies policy one and the guarded blocks. See
 [candidate and persistence details](gx9-flashing-research.md).
 
 ## Checks and saved results
@@ -63,6 +68,12 @@ Before any write the helper checks the model, service interface, transport and
 DLL hashes, known buffer word, Linux code, installed updater code, and complete
 1 KiB policy block. Only the policy's two bytes are normalized when checking
 that block, allowing an already-enabled state to be inspected or restored.
+
+The buffer control accepts the two physically observed values: `f2b0` before
+installation and `0000` afterward. Its final read must equal its initial read;
+all code and complete normalized metadata guards remain unchanged. An older
+helper rejected `0000` before it reached the policy read. That failure did not
+indicate a relocated policy address.
 
 It reads the flag both as absolute address `0x83f1801a` and through the native
 fixed-bank shadow reader, `0x35`, area `0x22`, index `0xc00d`. Both must agree
@@ -86,14 +97,13 @@ Portable controls run without opening USB:
 & C:\Python315\python.exe .\gx9_policy_helper_windows.py --selftest
 ```
 
-Six state controls cover inspection, enabling, restoring and already-correct
-states. Five precondition failures cause no write. Fourteen injected post-write
-failures verify restoration, and a simulated disconnect verifies uncertain-state
-reporting. The [preflight receipt](../evidence/gx9-policy-helper-preflight.json)
-records these results. The new complete helper and its additional fixed-bank
-read have not yet been run on the physical camera.
+Twelve state controls cover inspection, enabling, restoring and already-correct
+states with both buffer values. Six precondition failures cause no write.
+Fourteen injected post-write failures and two changed-buffer controls verify
+restoration; a simulated disconnect verifies uncertain-state reporting. The
+[preflight receipt](../evidence/gx9-policy-helper-preflight.json) records these results.
 
-Four additional [native integration controls](../evidence/gx9-policy-helper-native.json)
+Eight additional [native integration controls](../evidence/gx9-policy-helper-native.json)
 feed replies produced by the camera's ARM handlers into the unchanged helper
 logic. Inspection, enabling, already-enabled handling and restoration pass.
 The USB exchange and alias coherence are modeled explicitly; the real helper
@@ -101,6 +111,9 @@ checks coherence through both physical read paths. The
 [integration verifier](../tools/gx9_policy_helper_native_verify.py) performs no
 camera access.
 
-The helper files were copied to the owner's PC, where `--selftest` passed.
-The prepared candidate was transferred separately and its complete SHA-256
-verified on that PC. Those preparation steps did not open the camera.
+The updated helper was copied to the owner's PC, where `--selftest` passed.
+Its actual `--inspect` operation also passed on the connected camera: twelve
+service reads, policy one through both paths, complete metadata/code repeats,
+and zero memory or flash writes. The existing `CHECK.cmd` uses this operation.
+The [wire verifier](../tools/gx9_postflash_policy_verify.py) independently checks
+the saved request/reply bytes and memory payloads.

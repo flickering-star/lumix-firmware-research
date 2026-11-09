@@ -3,12 +3,15 @@
 The owner's Windows-local USB test confirmed the live policy field can be
 changed and restored. Native ARM tests now trace unsigned-container acceptance,
 fixed-settings preparation, sector transfer and bank reload. A rebuilt **1.4
-research candidate** is prepared locally with policy one in both its initial
-program shadow and stored `eep_fix` component. **No physical firmware update or
-boot of that candidate has been performed.**
+research candidate** sets policy one in both its initial program shadow and
+stored `eep_fix` component. The owner has now reported successfully installing
+that candidate and a working camera. A subsequent physical USB inspection
+verified policy one at the original address through both read paths, with
+matching code and complete normalized metadata guards.
 
-The candidate remains marked `ready_to_install: false`; complete board startup
-and physical NAND programming are outside the demonstrated tests.
+The [post-flash result](gx9-postflash-policy.md) separates that installation
+report from the independently decoded USB readback. Earlier candidate evidence
+records the preparation-time state, including `ready_to_install: false`.
 
 ## Physical policy result
 
@@ -24,13 +27,14 @@ code controls match after restoration. Its ZIP SHA-256 is
 without trusting the producer's result booleans. Downloading those saved files
 did not open the disconnected camera or issue new USB requests.
 
-A separate [Windows-local helper](gx9-policy-helper.md) is now prepared for an
-owner-run enable-and-leave experiment. It checks both the absolute policy word
+A separate [Windows-local helper](gx9-policy-helper.md) supports an
+owner-run enable-and-leave operation. It checks both the absolute policy word
 and the native fixed-bank shadow, leaves one set on success, and offers a RAM
 restore command. Its portable controls pass on the PC; native integration
-controls also pass with modeled USB/alias coherence. The helper and candidate
-files are on the PC, but no new physical policy change or update was performed
-during their preparation.
+controls also pass with modeled USB/alias coherence. Saved owner-run reports
+show the original helper successfully enabling the live policy. After the
+reported installation, the corrected helper's read-only inspection passed on
+the connected camera with policy one and no memory writes.
 
 ## The policy belongs to fixed settings
 
@@ -100,8 +104,11 @@ copy/zero helpers are modeled. The scatter helpers themselves execute natively.
 
 The corrected local artifact is
 `work/gx9-policy-one-candidate-v14-20261109-2/gx9-v14-policy-one.research-upd`.
-Its nonstandard research filename distinguishes preparation from an SD-card
-installation. It has not been copied to an SD card or sent to a camera.
+It was transferred to the owner's PC, then renamed without changing its bytes
+to `GX7M3V14.bin` for the Japanese DC-GX7MK3. The owner reports that the camera
+recognized and installed it. Japanese and global official 1.5 payloads were
+independently downloaded and compared byte-for-byte before choosing this
+regional filename; see the [filename comparison](gx9-postflash-policy.md).
 
 | Property | Result |
 | --- | --- |
@@ -115,7 +122,7 @@ installation. It has not been copied to an SD card or sent to a camera.
 | Update type | Original type four retained, including its identity-preservation path |
 | Native checks | Model/version accepts; policy-one directory gate accepts |
 | Signature | Original signature intentionally fails for changed metadata; policy one would be required |
-| Installation/boot | Not physically tested |
+| Installation/boot | Owner reports successful manual installation and working camera; subsequent physical USB reads verify policy one |
 
 The first program-only candidate is superseded by the fixed-bank reload
 finding. The corrected [builder](../tools/gx9_policy_candidate.py) requires the
@@ -131,7 +138,7 @@ inputs, changes and validation limits.
 | Route | Evidence so far | Unresolved step |
 | --- | --- | --- |
 | USB | Absolute RAM writes and the policy round trip are measured; native dispatcher reproduces all 14 saved replies; fixed bank is area `0x22` | Queued event `0x000e8202` remains to be traced to an updater or persistent-save action |
-| SD update | Native UPD parser, policy gate, preprocessing and transfer stages are available | Full board boot and physical installation of the candidate remain untested |
+| SD update | Owner reports successful installation and boot; subsequent physical USB inspection verifies policy one | Full installed-image readback and an additional controlled power-cycle test have not been performed |
 | Alternate SD update / `.AHX` | Native selection of `a:\MC282.upd` / `a:\MC282e.upd` reaches the updater; decoded key predicate verified | Physical entry/buttons, media behavior and arbitrary SD code boot remain unproven |
 | Wi-Fi | Internal ICC/NWA/PSM command route and all 26 HTTP modes execute in native emulation; adding `event=60` leaves `getinfo` mode unchanged | External delivery of Linux event 60 and updater-related subtypes remain unproven |
 | Bluetooth | Eight service definitions / 34 characteristics extracted; named factory callbacks execute as four-byte test counters | Other callbacks, pairing and external-to-RTOS delivery remain unresolved; no system updater identified |
@@ -170,5 +177,6 @@ The [native USB protocol analysis](gx9-usb-native-protocol.md) now identifies
 the maintenance descriptor builder, all 256 first-dispatch routes, settings
 shadow access, stored-bank selection and several commands queued to another
 task. It reproduces the old area-`0x20` read failure and identifies `0x22` as
-the fixed-bank selector. None of the newly identified operations has been sent
-to the disconnected camera.
+the fixed-bank selector. The helper's fixed-shadow read is now physically
+verified at area `0x22`, index `0xc00d`; the post-flash inspection performed no
+write or queued updater command.

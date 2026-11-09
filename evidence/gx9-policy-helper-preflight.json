@@ -1,21 +1,29 @@
 {
+  "schema": 1,
+  "scope": "Windows-local helper portable controls, offline only",
+  "helper_sha256": "f9507f517e8eff8a2c5928fa50e8430bd29ad9f8335d1369e0703027d02e63a1",
+  "probe_dependency_sha256": "0db4a92956f5fff28e5597139394d76d0ce9d8ebed810ee69eb18966927d4b6a",
+  "transport_dependency_sha256": "64965e069477a2bade6054bfe08fae9d0cefc90c8e87eead5cb36924bb7ab0f2",
   "successful_state_controls": [
     {
       "mode": "inspect",
       "initial": 0,
       "final": 0,
+      "buffer_word": "f2b0",
       "writes": []
     },
     {
       "mode": "inspect",
       "initial": 1,
       "final": 1,
+      "buffer_word": "f2b0",
       "writes": []
     },
     {
       "mode": "enable",
       "initial": 0,
       "final": 1,
+      "buffer_word": "f2b0",
       "writes": [
         1
       ]
@@ -24,47 +32,86 @@
       "mode": "enable",
       "initial": 1,
       "final": 1,
+      "buffer_word": "f2b0",
       "writes": []
     },
     {
       "mode": "restore",
       "initial": 0,
       "final": 0,
+      "buffer_word": "f2b0",
       "writes": []
     },
     {
       "mode": "restore",
       "initial": 1,
       "final": 0,
+      "buffer_word": "f2b0",
+      "writes": [
+        0
+      ]
+    },
+    {
+      "mode": "inspect",
+      "initial": 0,
+      "final": 0,
+      "buffer_word": "0000",
+      "writes": []
+    },
+    {
+      "mode": "inspect",
+      "initial": 1,
+      "final": 1,
+      "buffer_word": "0000",
+      "writes": []
+    },
+    {
+      "mode": "enable",
+      "initial": 0,
+      "final": 1,
+      "buffer_word": "0000",
+      "writes": [
+        1
+      ]
+    },
+    {
+      "mode": "enable",
+      "initial": 1,
+      "final": 1,
+      "buffer_word": "0000",
+      "writes": []
+    },
+    {
+      "mode": "restore",
+      "initial": 0,
+      "final": 0,
+      "buffer_word": "0000",
+      "writes": []
+    },
+    {
+      "mode": "restore",
+      "initial": 1,
+      "final": 0,
+      "buffer_word": "0000",
       "writes": [
         0
       ]
     }
   ],
-  "mismatched_precondition_controls": 5,
+  "mismatched_precondition_controls": 6,
   "post_write_failure_restoration_controls": 14,
+  "changed_settings_buffer_restoration_controls": 2,
   "failed_restoration_marks_state_uncertain": true,
   "camera_or_network_access": false,
-  "schema": 1,
-  "scope": "Windows-local enable/restore helper, offline verification only",
-  "helper_sha256": "cc03b4a455e499d2fe63700c1d8f194cf11a5e0de7991f183d43ac59b3036793",
-  "probe_dependency_sha256": "0db4a92956f5fff28e5597139394d76d0ce9d8ebed810ee69eb18966927d4b6a",
-  "transport_dependency_sha256": "64965e069477a2bade6054bfe08fae9d0cefc90c8e87eead5cb36924bb7ab0f2",
   "candidate_file_check": {
     "bytes": 102538240,
     "sha256": "719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883",
     "exact_prepared_candidate": true,
     "physical_installation_or_boot_verified": false
   },
-  "new_helper_physically_executed": false,
-  "additional_fixed_bank_read_physically_tested": false,
-  "owner_PC_preparation": {
-    "helper_files_copied": true,
-    "python_selftest_exit_code": 0,
-    "python_selftest_stdout": "Inspection, enable/restore, idempotency, guards and failure-restoration controls passed offline.\n",
-    "candidate_bytes": 102538240,
-    "candidate_sha256": "719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883",
-    "camera_access": false,
-    "firmware_update_started": false
-  }
+  "owner_PC_selftest": {
+    "exit_code": 0,
+    "camera_access": false
+  },
+  "physical_results_reference": "gx9-postflash-policy.json"
 }

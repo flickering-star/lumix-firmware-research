@@ -30,10 +30,11 @@ def run(components_dir, capture, output_parent):
     memory = (capture / 'memory.bin').read_bytes()
     rows = []
     helper.verify_dependencies()
-    for mode, initial, target in (('inspect', 0, 0), ('enable', 0, 1),
-                                  ('enable', 1, 1), ('restore', 1, 0)):
+    states = (('inspect', 0, 0), ('enable', 0, 1), ('enable', 1, 1), ('restore', 1, 0))
+    for buffer_word, mode, initial, target in (
+            (word, *state) for word in helper.BUFFER_WORDS for state in states):
         machine = USBMachine(program, components)
-        machine.vm.mem_write(0x03ea4000, b'\xf2\xb0')
+        machine.vm.mem_write(0x03ea4000, buffer_word)
         for page, destination, block in ((0x80208000, 0x80208000, memory[:1024]),
                                          (0x84027000, 0x84027800, memory[1024:2048]),
                                          (0x83f18000, 0x83f18000, memory[2048:3072])):
@@ -98,6 +99,7 @@ def run(components_dir, capture, output_parent):
                 or machine.read(0x83f1801a, 2) != struct.pack('<H', target)):
             raise ValueError('Helper/native integration result differs')
         rows.append({'mode': mode, 'initial_policy': initial, 'verified_final_policy': target,
+                     'settings_buffer_word': buffer_word.hex(),
                      'native_RAM_writes': writes, 'service_requests': reader.requests,
                      'both_policy_read_paths_agree': report['absolute_and_shadow_after_agree'],
                      'complete_policy_block_verified': report['complete_expected_policy_block_verified'],
@@ -124,7 +126,7 @@ def main():
     args.out.parent.mkdir(parents=True, exist_ok=True)
     result = run(args.components, args.capture, args.out.parent)
     args.out.write_text(json.dumps(result, indent=2) + '\n')
-    print('Four helper/native integration controls passed; no camera or physical flash access.')
+    print('Eight helper/native integration controls passed; no camera or physical flash access.')
 
 
 if __name__ == '__main__':

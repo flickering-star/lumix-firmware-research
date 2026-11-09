@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "scope": "Post-flash physical USB inspection, independently decoded offline",
+  "verifier_sha256": "e21578e47a2bb09abcf6a404dbe8de6e003cd542f7df5bb218128801488fb980",
+  "helper_sha256": "f9507f517e8eff8a2c5928fa50e8430bd29ad9f8335d1369e0703027d02e63a1",
+  "events_sha256": "e543dd7ae690b40d5f5cd59bcd2af26924b7b93f784de7ab9333136d80e8cbae",
+  "memory_sha256": "06d3d502dfa08e681caf2020feb0bd207f42215f80c3e48e6e2e9fe9808f868d",
+  "service_requests": 12,
+  "memory_write_commands": 0,
+  "flash_programming_commands": 0,
+  "firmware_update_started": false,
+  "policy_service_address": "0x83f1801a",
+  "absolute_policy_reads": [
+    1,
+    1
+  ],
+  "fixed_shadow_selector": {
+    "opcode": "0x35",
+    "area": "0x22",
+    "word_index": "0xc00d"
+  },
+  "fixed_shadow_policy_reads": [
+    1,
+    1
+  ],
+  "metadata_policy": 1,
+  "settings_buffer_word": "0000",
+  "code_and_metadata_repeats_exact": true,
+  "linux_code_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe",
+  "updater_code_sha256": "92ccfc604d7dfa6b31eaff8e6371fac4cd755c1ac6a64c47534da2e4fb3cb8d2",
+  "metadata_sha256": "439f452770d70a9f6affe1f63dbc5560dafaad2fc9f6eb5fe061f042f7e0183f",
+  "normalized_metadata_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62",
+  "complete_normalized_metadata_matches_original": true,
+  "transactions": [
+    {
+      "kind": "buffer",
+      "opcode": "0x35",
+      "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+      "reply_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39"
+    },
+    {
+      "kind": "linux",
+      "opcode": "0x5c",
+      "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+      "reply_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff"
+    },
+    {
+      "kind": "updater",
+      "opcode": "0x5c",
+      "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+      "reply_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd"
+    },
+    {
+      "kind": "metadata",
+      "opcode": "0x5c",
+      "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+      "reply_sha256": "5f260f12bcc5949765958c041db5ed0d0dc93a41d5d9d4c9804b9b5d4a47414f"
+    },
+    {
+      "kind": "absolute",
+      "opcode": "0x9b",
+      "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+      "reply_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192"
+    },
+    {
+      "kind": "shadow",
+      "opcode": "0x35",
+      "request_sha256": "8db019b374125be1605b376f943a0d9b7bd6cbe1f5d7fbcb7e2d09f7ac469e96",
+      "reply_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192"
+    },
+    {
+      "kind": "absolute",
+      "opcode": "0x9b",
+      "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+      "reply_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192"
+    },
+    {
+      "kind": "shadow",
+      "opcode": "0x35",
+      "request_sha256": "8db019b374125be1605b376f943a0d9b7bd6cbe1f5d7fbcb7e2d09f7ac469e96",
+      "reply_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192"
+    },
+    {
+      "kind": "metadata",
+      "opcode": "0x5c",
+      "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+      "reply_sha256": "5f260f12bcc5949765958c041db5ed0d0dc93a41d5d9d4c9804b9b5d4a47414f"
+    },
+    {
+      "kind": "updater",
+      "opcode": "0x5c",
+      "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+      "reply_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd"
+    },
+    {
+      "kind": "linux",
+      "opcode": "0x5c",
+      "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+      "reply_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff"
+    },
+    {
+      "kind": "buffer",
+      "opcode": "0x35",
+      "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+      "reply_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39"
+    }
+  ],
+  "limits": [
+    "Readback covers the policy and three 1 KiB blocks, not the full installed firmware.",
+    "This inspection does not perform a flash write or a power-cycle test."
+  ],
+  "observed_date": "2026-11-09",
+  "camera_model": "DC-GX7MK3",
+  "owner_reported_successful_installation_and_working_camera": true,
+  "physical_policy_reads_verified": true,
+  "candidate": {
+    "filename": "GX7M3V14.bin",
+    "bytes": 102538240,
+    "sha256": "719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883",
+    "contents_unchanged_by_regional_rename": true,
+    "program_version_bytes_changed": false,
+    "advertised_UPD_revision": "0x141"
+  },
+  "official_regional_comparison": {
+    "version": "1.5",
+    "japanese_filename": "GX7M3V15.bin",
+    "global_filename": "GX9__V15.bin",
+    "bytes": 102538240,
+    "sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+    "byte_for_byte_equal": true,
+    "official_japanese_1_4_compared": false
+  },
+  "buffer_control_before_installation": "f2b0",
+  "old_check_failed_before_policy_read": true,
+  "helper_inspection_exit_code": 0,
+  "full_installed_firmware_readback_performed": false,
+  "additional_controlled_power_cycle_test_performed": false,
+  "verifier_negative_controls": [
+    {
+      "fault": "write-command",
+      "rejected": true,
+      "reason": "Unexpected request; inspection permits only reviewed reads"
+    },
+    {
+      "fault": "saved-memory-mismatch",
+      "rejected": true,
+      "reason": "Saved memory differs from decoded USB payloads"
+    },
+    {
+      "fault": "reply-checksum",
+      "rejected": true,
+      "reason": "Invalid buffer control response"
+    },
+    {
+      "fault": "extra-metadata-byte",
+      "rejected": true,
+      "reason": "Complete normalized metadata differs"
+    },
+    {
+      "fault": "changed-linux-code",
+      "rejected": true,
+      "reason": "linux code guard differs"
+    }
+  ]
+}

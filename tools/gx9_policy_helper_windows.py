@@ -27,6 +27,7 @@ PROBE_SHA = '0db4a92956f5fff28e5597139394d76d0ce9d8ebed810ee69eb18966927d4b6a'
 CANDIDATE_SHA = '719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883'
 CANDIDATE_BYTES = 102538240
 POLICY_OFFSET = 0x1a
+BUFFER_WORDS = (bytes.fromhex('f2b0'), bytes(2))
 
 
 def shadow_packet():
@@ -59,8 +60,10 @@ def canonical_metadata(data):
 def change_policy(access, report, save, mode, guards=probe.GUARDS):
     if mode not in ('inspect', 'enable', 'restore'):
         raise ValueError('Unrecognized fixed policy operation')
-    if access.buffer() != bytes.fromhex('f2b0'):
-        raise ValueError('Known settings-buffer control differs; no write')
+    buffer_before = access.buffer()
+    report['settings_buffer_word'] = buffer_before.hex()
+    if buffer_before not in BUFFER_WORDS:
+        raise ValueError('Known settings-buffer control differs (' + buffer_before.hex() + '); no write')
     linux, updater, before = (access.block(kind) for kind in ('linux', 'updater', 'metadata'))
     normalized = canonical_metadata(before)
     if any(sha(data) != guards[kind] for kind, data in (
@@ -88,7 +91,7 @@ def change_policy(access, report, save, mode, guards=probe.GUARDS):
             raise ValueError('Complete policy block does not match the one-word change')
         if access.block('updater') != updater or access.block('linux') != linux:
             raise ValueError('Code repeat control differs')
-        if access.buffer() != bytes.fromhex('f2b0'):
+        if access.buffer() != buffer_before:
             raise ValueError('Settings-buffer repeat differs')
     except (Exception, KeyboardInterrupt):
         if attempted:
@@ -141,12 +144,14 @@ def selftest():
     assert request[-2] == sum(request[1:-2]) & 255 and not request[-1]
 
     class Fake:
-        def __init__(self, initial=0, bad=None, fail=None, rollback_fails=False):
+        def __init__(self, initial=0, bad=None, fail=None, rollback_fails=False,
+                     buffer_word=BUFFER_WORDS[0]):
             self.metadata = bytearray(1024)
             self.metadata[POLICY_OFFSET:POLICY_OFFSET + 2] = initial.to_bytes(2, 'little')
             self.linux, self.updater = b'L' * 1024, b'U' * 1024
             self.bad, self.fail = bad, fail
             self.failed, self.rollback_fails, self.writes = False, rollback_fails, []
+            self.buffer_word, self.buffer_reads = buffer_word, 0
 
         def inject(self, stage):
             if self.writes and self.fail == stage and not self.failed:
@@ -155,7 +160,12 @@ def selftest():
 
         def buffer(self):
             self.inject('buffer')
-            return bytes.fromhex('f2b0')
+            self.buffer_reads += 1
+            if self.bad == 'buffer':
+                return b'\xff\xff'
+            if self.bad == 'buffer-repeat' and self.buffer_reads > 1:
+                return BUFFER_WORDS[1] if self.buffer_word == BUFFER_WORDS[0] else BUFFER_WORDS[0]
+            return self.buffer_word
 
         def block(self, kind):
             self.inject(kind)
@@ -182,17 +192,18 @@ def selftest():
 
     guards = {'linux': sha(b'L' * 1024), 'updater': sha(b'U' * 1024), 'metadata': sha(bytes(1024))}
     successful = []
-    for mode in ('inspect', 'enable', 'restore'):
-        for initial in (0, 1):
-            access, report = Fake(initial), {}
-            change_policy(access, report, lambda: None, mode, guards)
-            target = {'inspect': initial, 'enable': 1, 'restore': 0}[mode]
-            expected_writes = [] if initial == target else [target]
-            assert access.writes == expected_writes and access.word() == target
-            assert report['ok'] and report['verified_policy'] == target and not report['state_uncertain']
-            successful.append({'mode': mode, 'initial': initial, 'final': target,
-                               'writes': expected_writes})
-    for bad in ('linux', 'updater', 'metadata', 'alias'):
+    for buffer_word in BUFFER_WORDS:
+        for mode in ('inspect', 'enable', 'restore'):
+            for initial in (0, 1):
+                access, report = Fake(initial, buffer_word=buffer_word), {}
+                change_policy(access, report, lambda: None, mode, guards)
+                target = {'inspect': initial, 'enable': 1, 'restore': 0}[mode]
+                expected_writes = [] if initial == target else [target]
+                assert access.writes == expected_writes and access.word() == target
+                assert report['ok'] and report['verified_policy'] == target and not report['state_uncertain']
+                successful.append({'mode': mode, 'initial': initial, 'final': target,
+                                   'buffer_word': buffer_word.hex(), 'writes': expected_writes})
+    for bad in ('linux', 'updater', 'metadata', 'alias', 'buffer'):
         access = Fake(bad=bad)
         try:
             change_policy(access, {}, lambda: None, 'enable', guards)
@@ -219,6 +230,15 @@ def selftest():
                 assert not report.get('ok')
             else:
                 raise AssertionError('Post-write failure was not propagated: ' + stage)
+    for mode, initial in (('enable', 0), ('restore', 1)):
+        access, report = Fake(initial, bad='buffer-repeat'), {}
+        try:
+            change_policy(access, report, lambda: None, mode, guards)
+        except ValueError:
+            assert access.writes == [1 - initial, initial]
+            assert report['rollback_verified'] and not report['state_uncertain']
+        else:
+            raise AssertionError('Changed settings-buffer control was accepted')
     access, report = Fake(fail='word', rollback_fails=True), {}
     try:
         change_policy(access, report, lambda: None, 'enable', guards)
@@ -227,8 +247,9 @@ def selftest():
         assert not report.get('ok') and not report.get('rollback_verified')
     else:
         raise AssertionError('Failed restoration was not reported')
-    return {'successful_state_controls': successful, 'mismatched_precondition_controls': 5,
+    return {'successful_state_controls': successful, 'mismatched_precondition_controls': 6,
             'post_write_failure_restoration_controls': 14,
+            'changed_settings_buffer_restoration_controls': 2,
             'failed_restoration_marks_state_uncertain': True,
             'camera_or_network_access': False}
 
