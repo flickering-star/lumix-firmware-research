@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "scope": "Native fixed-settings policy persistence with simulated NAND controller completions",
+  "verifier_sha256": "b74fbe5b0159a068a490576aae48c7583bd9c3098d688649c60b708e88099e11",
+  "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "fixed_component_sha256": "a28f6659b3264b0f1525872d9571f6e6d6d5f80e7dc907aefc919dbdf525ffe0",
+  "captured_ram_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+  "camera_or_network_access": false,
+  "physical_flash_writes": 0,
+  "policy_program_offset": "0x9801a",
+  "policy_fixed_bank_offset": "0x1801a",
+  "whole_program_fixed_shadow_equals_component": true,
+  "stock_payload_preprocessing": {
+    "native_entry_subsequence": "0x04015370",
+    "stop_address": "0x040153f0",
+    "header_type": 4,
+    "copied_live_fields": [
+      {
+        "offset": "0x1c020",
+        "bytes": 16
+      },
+      {
+        "offset": "0x1c040",
+        "bytes": 6
+      },
+      {
+        "offset": "0x17e00",
+        "bytes": 512
+      },
+      {
+        "offset": "0x1fe00",
+        "bytes": 512
+      }
+    ],
+    "payload_policy_before": 0,
+    "live_policy": 1,
+    "payload_policy_after": 0,
+    "full_expected_result_matches": true,
+    "native_instructions": 39
+  },
+  "candidate_payload_preprocessing": {
+    "native_entry_subsequence": "0x04015370",
+    "stop_address": "0x040153f0",
+    "header_type": 4,
+    "copied_live_fields": [
+      {
+        "offset": "0x1c020",
+        "bytes": 16
+      },
+      {
+        "offset": "0x1c040",
+        "bytes": 6
+      },
+      {
+        "offset": "0x17e00",
+        "bytes": 512
+      },
+      {
+        "offset": "0x1fe00",
+        "bytes": 512
+      }
+    ],
+    "payload_policy_before": 1,
+    "live_policy": 1,
+    "payload_policy_after": 1,
+    "full_expected_result_matches": true,
+    "native_instructions": 39
+  },
+  "program_only_patch_after_bank_reload": {
+    "native_entry": "0x0426ad4e",
+    "bank_id": 3,
+    "flash_api": "0x041ffeca",
+    "virtual_flash_source": "0x40e00000",
+    "destination": "0x3f00000",
+    "initial_policy": 1,
+    "policy_after_reload": 0,
+    "entire_stored_bank_reloaded": true,
+    "sector_completions": 256,
+    "native_instructions": 2903
+  },
+  "native_update_fixed_bank_write": {
+    "native_subsequence": "0x0401555a",
+    "stop_address": "0x04015568",
+    "record_destination": "0x1a40000",
+    "storage_boundary": "0xc40000",
+    "logical_byte_offset": "0xe00000",
+    "first_sector": "0x7000",
+    "sector_bytes": 512,
+    "sector_completions": 256,
+    "native_result": "0x0",
+    "simulated_store_sha256": "430464ed9ab1c4d3612efcd8932c9562667c5b3a45e10e5348d6f7cf66237215",
+    "native_instructions": 2871
+  },
+  "injected_controller_failure": {
+    "native_subsequence": "0x0401555a",
+    "stop_address": "0x04015568",
+    "record_destination": "0x1a40000",
+    "storage_boundary": "0xc40000",
+    "logical_byte_offset": "0xe00000",
+    "first_sector": "0x7000",
+    "sector_bytes": 512,
+    "sector_completions": 1,
+    "native_result": "0xffffffff",
+    "simulated_store_sha256": "a62feb8aedc74095e366d15dee11012363c103dcfe0a41fcdf744bbfb03883a9",
+    "native_instructions": 64
+  },
+  "fresh_bank_reload_after_simulated_update": {
+    "native_entry": "0x0426ad4e",
+    "bank_id": 3,
+    "flash_api": "0x041ffeca",
+    "virtual_flash_source": "0x40e00000",
+    "destination": "0x3f00000",
+    "initial_policy": 0,
+    "policy_after_reload": 1,
+    "entire_stored_bank_reloaded": true,
+    "sector_completions": 256,
+    "native_instructions": 2903
+  },
+  "prepared_fixed_bank_sha256": "430464ed9ab1c4d3612efcd8932c9562667c5b3a45e10e5348d6f7cf66237215",
+  "all_owner_fixed_bank_differences_preserved_by_native_preprocessing": true,
+  "limits": [
+    "Controller, DMA completions, locks and logging are modeled; no physical NAND was programmed.",
+    "Preprocessing and record-transfer subsequences are not the entire updater.",
+    "This verifies fixed-bank reload, not the complete earlier/later boot sequence or all validation rules.",
+    "The first program-only candidate is insufficient under the demonstrated fixed-bank reload."
+  ]
+}

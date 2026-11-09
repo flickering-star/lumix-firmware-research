@@ -1,0 +1,586 @@
+{
+  "schema": 1,
+  "scope": "Offline preparation of a policy-one research candidate; not installation approval",
+  "ready_to_install": false,
+  "camera_or_network_access": false,
+  "physical_writes": 0,
+  "verifier_sha256": "3925000b532b45297a067b14e19d42ef53be86af0b5315957e4739ca3cb49ebf",
+  "codec_source_sha256": "17ca748dabbe60e0acc12e98a8df7f22065b4f1305efc9d54f8cb580839ff961",
+  "source_firmware_sha256": "e26e4b422e9d46dffb7d93eaabd061bb3e49e2d84654dffc1d892f7f25126e7a",
+  "source_program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "source_ram_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+  "key_sha256": "527bb069f7940900d77f3878a71e9c8bc9a4ac39145a505a4b6fda83c331ac9b",
+  "physical_policy_proof": {
+    "policy_values_read": [
+      0,
+      1,
+      0
+    ],
+    "complete_original_block_restored": true,
+    "event_source_sha256": "aac02c2a4a8f2ee4fe99a2b6f97b37818a239e8a1b3371f31dec14e240f12877"
+  },
+  "program_patch": {
+    "offset": "0x9801a",
+    "linked_address": "0x03f1801a",
+    "before_hex": "00",
+    "after_hex": "01",
+    "changed_plaintext_bytes": 1
+  },
+  "fixed_bank_patch": {
+    "offset": "0x1801a",
+    "before_hex": "00",
+    "after_hex": "01",
+    "changed_plaintext_bytes": 1,
+    "reason": "Native fixed-bank reload overwrites the program shadow"
+  },
+  "candidate_fixed_bank_sha256": "9ab238c884f8a72f1a32807a19736bd6b233338827cc5255bb6b987362b2a288",
+  "native_fixed_bank_persistence": {
+    "schema": 1,
+    "scope": "Native fixed-settings policy persistence with simulated NAND controller completions",
+    "verifier_sha256": "b74fbe5b0159a068a490576aae48c7583bd9c3098d688649c60b708e88099e11",
+    "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+    "fixed_component_sha256": "a28f6659b3264b0f1525872d9571f6e6d6d5f80e7dc907aefc919dbdf525ffe0",
+    "captured_ram_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+    "camera_or_network_access": false,
+    "physical_flash_writes": 0,
+    "policy_program_offset": "0x9801a",
+    "policy_fixed_bank_offset": "0x1801a",
+    "whole_program_fixed_shadow_equals_component": true,
+    "stock_payload_preprocessing": {
+      "native_entry_subsequence": "0x04015370",
+      "stop_address": "0x040153f0",
+      "header_type": 4,
+      "copied_live_fields": [
+        {
+          "offset": "0x1c020",
+          "bytes": 16
+        },
+        {
+          "offset": "0x1c040",
+          "bytes": 6
+        },
+        {
+          "offset": "0x17e00",
+          "bytes": 512
+        },
+        {
+          "offset": "0x1fe00",
+          "bytes": 512
+        }
+      ],
+      "payload_policy_before": 0,
+      "live_policy": 1,
+      "payload_policy_after": 0,
+      "full_expected_result_matches": true,
+      "native_instructions": 39
+    },
+    "candidate_payload_preprocessing": {
+      "native_entry_subsequence": "0x04015370",
+      "stop_address": "0x040153f0",
+      "header_type": 4,
+      "copied_live_fields": [
+        {
+          "offset": "0x1c020",
+          "bytes": 16
+        },
+        {
+          "offset": "0x1c040",
+          "bytes": 6
+        },
+        {
+          "offset": "0x17e00",
+          "bytes": 512
+        },
+        {
+          "offset": "0x1fe00",
+          "bytes": 512
+        }
+      ],
+      "payload_policy_before": 1,
+      "live_policy": 1,
+      "payload_policy_after": 1,
+      "full_expected_result_matches": true,
+      "native_instructions": 39
+    },
+    "program_only_patch_after_bank_reload": {
+      "native_entry": "0x0426ad4e",
+      "bank_id": 3,
+      "flash_api": "0x041ffeca",
+      "virtual_flash_source": "0x40e00000",
+      "destination": "0x3f00000",
+      "initial_policy": 1,
+      "policy_after_reload": 0,
+      "entire_stored_bank_reloaded": true,
+      "sector_completions": 256,
+      "native_instructions": 2903
+    },
+    "native_update_fixed_bank_write": {
+      "native_subsequence": "0x0401555a",
+      "stop_address": "0x04015568",
+      "record_destination": "0x1a40000",
+      "storage_boundary": "0xc40000",
+      "logical_byte_offset": "0xe00000",
+      "first_sector": "0x7000",
+      "sector_bytes": 512,
+      "sector_completions": 256,
+      "native_result": "0x0",
+      "simulated_store_sha256": "430464ed9ab1c4d3612efcd8932c9562667c5b3a45e10e5348d6f7cf66237215",
+      "native_instructions": 2871
+    },
+    "injected_controller_failure": {
+      "native_subsequence": "0x0401555a",
+      "stop_address": "0x04015568",
+      "record_destination": "0x1a40000",
+      "storage_boundary": "0xc40000",
+      "logical_byte_offset": "0xe00000",
+      "first_sector": "0x7000",
+      "sector_bytes": 512,
+      "sector_completions": 1,
+      "native_result": "0xffffffff",
+      "simulated_store_sha256": "a62feb8aedc74095e366d15dee11012363c103dcfe0a41fcdf744bbfb03883a9",
+      "native_instructions": 64
+    },
+    "fresh_bank_reload_after_simulated_update": {
+      "native_entry": "0x0426ad4e",
+      "bank_id": 3,
+      "flash_api": "0x041ffeca",
+      "virtual_flash_source": "0x40e00000",
+      "destination": "0x3f00000",
+      "initial_policy": 0,
+      "policy_after_reload": 1,
+      "entire_stored_bank_reloaded": true,
+      "sector_completions": 256,
+      "native_instructions": 2903
+    },
+    "prepared_fixed_bank_sha256": "430464ed9ab1c4d3612efcd8932c9562667c5b3a45e10e5348d6f7cf66237215",
+    "all_owner_fixed_bank_differences_preserved_by_native_preprocessing": true,
+    "limits": [
+      "Controller, DMA completions, locks and logging are modeled; no physical NAND was programmed.",
+      "Preprocessing and record-transfer subsequences are not the entire updater.",
+      "This verifies fixed-bank reload, not the complete earlier/later boot sequence or all validation rules.",
+      "The first program-only candidate is insufficient under the demonstrated fixed-bank reload."
+    ]
+  },
+  "candidate_program_sha256": "22db18d446b6983df7c2a3738df992eb3ac7c1583c57373462af07da1ae10c63",
+  "source_header_version": "0x140",
+  "candidate_header_advertised_version": "0x141",
+  "header_type_low_nibble": 4,
+  "program_version_bytes_changed": false,
+  "components": [
+    {
+      "name": "loader1",
+      "bytes": 4096,
+      "plaintext_sha256": "6240a8c8f8ecc3bb8ac60c652d0c60aee130e9c572f91320749e0d8b4ee2dc78",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "loader2",
+      "bytes": 32768,
+      "plaintext_sha256": "f9c397f1baaaba2ae0edbc6cf15dc87d8b0e6963bdca3db895516511efdb52f3",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "loader3",
+      "bytes": 40960,
+      "plaintext_sha256": "5bb1c4d827009738eaff6067a5befc1713b22ad6da3df6047f7d0d8fcd71518f",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "program",
+      "bytes": 9895936,
+      "plaintext_sha256": "22db18d446b6983df7c2a3738df992eb3ac7c1583c57373462af07da1ae10c63",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": false
+    },
+    {
+      "name": "postboot1",
+      "bytes": 4456448,
+      "plaintext_sha256": "76e071e60e1c2cec98dd8bdda49fa0a02120e218e38ece36f97da3965b3b64ca",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "postboot2",
+      "bytes": 7602176,
+      "plaintext_sha256": "65afd689cea043ccbfdf553beff784407ff6e9afec773b3753701a0641ff32fb",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "postboot3",
+      "bytes": 131072,
+      "plaintext_sha256": "16098771484d4724dd489583aa19c08c9d624596f4369781d983ba15aef8de37",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "postboot4",
+      "bytes": 131072,
+      "plaintext_sha256": "264611c5428258bd3ac46cd602ac1a024b179328a08150c7370120101c270a0b",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "postboot5",
+      "bytes": 1835008,
+      "plaintext_sha256": "ea085c958d0ff4b3bf0bf091f0a885357a65045348513d507acb75c70347f08e",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "dram_sleep",
+      "bytes": 6144,
+      "plaintext_sha256": "a4aba60e206ed41a1d4abd1a49d3706f83e4b6c4904960435491850f0c5dcfbe",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_ow_a",
+      "bytes": 131072,
+      "plaintext_sha256": "8c58aa21b619f18cb9c799df1731b1db4a386c778eb7bb73097df4d65bf3f380",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_ow_b",
+      "bytes": 131072,
+      "plaintext_sha256": "8c58aa21b619f18cb9c799df1731b1db4a386c778eb7bb73097df4d65bf3f380",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_adj",
+      "bytes": 131072,
+      "plaintext_sha256": "cedb2e701aec70dea46ed0a64df8fa55b4c9312e160995e0209a4ae94dcceeb0",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_fix",
+      "bytes": 131072,
+      "plaintext_sha256": "9ab238c884f8a72f1a32807a19736bd6b233338827cc5255bb6b987362b2a288",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": false
+    },
+    {
+      "name": "history",
+      "bytes": 262144,
+      "plaintext_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "music",
+      "bytes": 3538944,
+      "plaintext_sha256": "5dcc34ae10f9d7be2150752d7fbf4e7bae58d585ea3b3eeff93e985cf557c723",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "osdover",
+      "bytes": 8781824,
+      "plaintext_sha256": "70598f4a9bb8689ee4c7e42cfaa16cd8456bcc40ca336517940041fd931e02ed",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "osddata",
+      "bytes": 9699328,
+      "plaintext_sha256": "03734dd3f99012c9ee1a320942e07ad1547160adc0f5c31477a479f88853df84",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "fileinfo",
+      "bytes": 917504,
+      "plaintext_sha256": "03cdeacb6a286652f8b3a2e4a6d6a3f81d4952762eb12b1659338722c7ab4a5b",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "ninsho_db",
+      "bytes": 655360,
+      "plaintext_sha256": "ff6335069b6e140eb47149d847aea80bf7e2b06bd80ae9708aa382efb3ae21ee",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "koutei_kao",
+      "bytes": 114688,
+      "plaintext_sha256": "0fb19aef2e26fbb568abce93c300cb41b2754c6e309726c880fd11c2a1f7776d",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "avchd_info",
+      "bytes": 16384,
+      "plaintext_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_net_a",
+      "bytes": 131072,
+      "plaintext_sha256": "b5a41c3758763bbec72769fab4a2533bf2db0b6312d93d25a695f9e4b9e02260",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "eep_net_b",
+      "bytes": 131072,
+      "plaintext_sha256": "b5a41c3758763bbec72769fab4a2533bf2db0b6312d93d25a695f9e4b9e02260",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "wifi_info",
+      "bytes": 131072,
+      "plaintext_sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "nfc_info",
+      "bytes": 131072,
+      "plaintext_sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "zboot",
+      "bytes": 2048,
+      "plaintext_sha256": "8752e78f68770c543e73dfb599fe23e5e658e725a825004530ba9b4cabfa0100",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "dtb",
+      "bytes": 4096,
+      "plaintext_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "zimage",
+      "bytes": 2621440,
+      "plaintext_sha256": "a0bcb7cd35f038f774474cb3cb3696d77ab2b7c27d4dec9e8b448532b80178ce",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "rootfs1",
+      "bytes": 4194304,
+      "plaintext_sha256": "6a5cb5cb624e021918c2aadb1c6e43de918fe7118ca7fddb0e7e5716edbe0de1",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "rootfs2",
+      "bytes": 12582912,
+      "plaintext_sha256": "e9562dc72844e33bec4ccadfe81feecd80b8c64d4782d1fef17bdd1068c01983",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "apu_boot",
+      "bytes": 262144,
+      "plaintext_sha256": "7e483ed6772e5c27f1c814af33c35f4d912a1f56851cdf9b593b33ea57082263",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "apu_inst",
+      "bytes": 11264,
+      "plaintext_sha256": "1621dc473b3f4f86f565d22281d349df9eb5e702074e99f7fe976effecae5076",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "usbcharge",
+      "bytes": 131072,
+      "plaintext_sha256": "baa2d97b7b881f03dc43c8958f3a7ad28d207153fa0b62c81192dd0dd1a004f3",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    },
+    {
+      "name": "focus_selec",
+      "bytes": 33554432,
+      "plaintext_sha256": "063eb3d3d2417312fcde2031853dda6abe45c9a459c2973580fb87f4760738c4",
+      "complete_hash_verified": true,
+      "stored_bytes_unchanged_from_source": true
+    }
+  ],
+  "program_original_reencryption_byte_identical": true,
+  "eep_fix_original_reencryption_byte_identical": true,
+  "original_signature_invalid_for_candidate_as_expected": true,
+  "native_model_version_status": "0x0",
+  "native_policy_one_gate": {
+    "directory_authentication_passed": false,
+    "directory_gate_reached": true,
+    "policy_halfword": 1,
+    "emulated_policy_changed": true,
+    "signature_calls": 0,
+    "crc32_bytes_accelerated": 102537728,
+    "calls": [
+      {
+        "function": "0x4027170",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 6
+      },
+      {
+        "function": "0x40271aa",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 6
+      },
+      {
+        "function": "0x40271c6",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 8
+      },
+      {
+        "function": "0x402720e",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 61
+      },
+      {
+        "function": "0x40271e4",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 14
+      },
+      {
+        "function": "0x4027a9e",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 5
+      },
+      {
+        "function": "0x402ab18",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 17
+      },
+      {
+        "function": "0x402ab64",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 463
+      },
+      {
+        "function": "0x402ab70",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 20
+      },
+      {
+        "function": "0x4027a6a",
+        "result": null,
+        "stop_address": "0x4027858",
+        "native_instructions": 5087
+      }
+    ],
+    "native_instructions": 5687,
+    "payload_decryption_or_programming_executed": false,
+    "crc32_native_prefix_checked": true,
+    "payload_hash_checks_selected": false,
+    "parser_return_status": null,
+    "stop_address": "0x4027858"
+  },
+  "changed_metadata_file_offsets": [
+    "0x1c",
+    "0x40",
+    "0x41",
+    "0x42",
+    "0x43",
+    "0x2bc",
+    "0x41c",
+    "0x41d",
+    "0x41e",
+    "0x41f",
+    "0x420",
+    "0x421",
+    "0x422",
+    "0x423",
+    "0x424",
+    "0x425",
+    "0x426",
+    "0x427",
+    "0x428",
+    "0x429",
+    "0x42a",
+    "0x42b",
+    "0x42c",
+    "0x42d",
+    "0x42e",
+    "0x42f",
+    "0x430",
+    "0x431",
+    "0x432",
+    "0x433",
+    "0x434",
+    "0x435",
+    "0x436",
+    "0x437",
+    "0x438",
+    "0x439",
+    "0x43a",
+    "0x43b",
+    "0x810",
+    "0x811",
+    "0x812",
+    "0x813",
+    "0x814",
+    "0x815",
+    "0x816",
+    "0x817",
+    "0x818",
+    "0x819",
+    "0x81a",
+    "0x81b",
+    "0x81c",
+    "0x81d",
+    "0x81e",
+    "0x81f",
+    "0x820",
+    "0x821",
+    "0x822",
+    "0x823",
+    "0x824",
+    "0x825",
+    "0x826",
+    "0x827",
+    "0x828",
+    "0x829",
+    "0x82a",
+    "0x82b",
+    "0x82c",
+    "0x82d",
+    "0x82e",
+    "0x82f"
+  ],
+  "candidate_file": "gx9-v14-policy-one.research-upd",
+  "candidate_bytes": 102538240,
+  "candidate_sha256": "719fc4e4daeb17f09172e7ac59675fdc0a637376a73284e814f9a9b266aa6883",
+  "verified_nonempty_components": 35,
+  "directory_records": 36,
+  "other_nonempty_components_byte_identical": 33,
+  "preparation_complete": true,
+  "changed_nonempty_components": [
+    "program",
+    "eep_fix"
+  ],
+  "limits": [
+    "The complete flash writer and subsequent boot of this changed program remain unvalidated.",
+    "A successful physical RAM policy test is not a completed firmware update.",
+    "Default policy zero rejects this intentionally unsigned candidate; a live policy-one route would be required.",
+    "The advertised package revision changes to 0x141; the program version remains its original 1.4 bytes.",
+    "No candidate was copied to an SD card or sent to a camera."
+  ]
+}

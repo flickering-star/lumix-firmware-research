@@ -1,0 +1,497 @@
+{
+  "schema": 1,
+  "scope": "Offline native updater-stage controls with synthetic data and mocked controller",
+  "verifier_sha256": "43cf03277a6304f496c8548713fa37c684a157dfc39f5ef7e8231d71beccf5da",
+  "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "v14_sha256": "e26e4b422e9d46dffb7d93eaabd061bb3e49e2d84654dffc1d892f7f25126e7a",
+  "v15_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+  "unicorn_version": "2.1.4",
+  "camera_or_network_access": false,
+  "physical_writes": 0,
+  "installation_file_created": false,
+  "fixture_bytes": 8192,
+  "fixture_sha256": "ae2490d2c138a0f6267b15d5e26015ba0a7dc0637dc538b34c72a0fb4f3e3ca7",
+  "fixture_component_flags": 2,
+  "fixture_payload": "4096 bytes of ASCII emulator-control data, never executed",
+  "version_checks": [
+    {
+      "control": "same-version-original",
+      "emulated_current_version_parameter": "0x140",
+      "incoming_version": "0x140",
+      "header_type_low_nibble": 4,
+      "native_status": "0x80000064",
+      "calls": [
+        {
+          "function": "0x4015762",
+          "result": "0x80000064",
+          "native_instructions": 112
+        }
+      ]
+    },
+    {
+      "control": "newer-version-original",
+      "emulated_current_version_parameter": "0x140",
+      "incoming_version": "0x151",
+      "header_type_low_nibble": 4,
+      "native_status": "0x0",
+      "calls": [
+        {
+          "function": "0x4015762",
+          "result": "0x0",
+          "native_instructions": 138
+        }
+      ]
+    },
+    {
+      "control": "same-version-header-type-zero",
+      "emulated_current_version_parameter": "0x140",
+      "incoming_version": "0x140",
+      "header_type_low_nibble": 0,
+      "native_status": "0x0",
+      "calls": [
+        {
+          "function": "0x4015762",
+          "result": "0x0",
+          "native_instructions": 131
+        }
+      ]
+    },
+    {
+      "control": "different-model",
+      "emulated_current_version_parameter": "0x140",
+      "incoming_version": "0x151",
+      "header_type_low_nibble": 4,
+      "native_status": "0x80000064",
+      "calls": [
+        {
+          "function": "0x4015762",
+          "result": "0x80000064",
+          "native_instructions": 95
+        }
+      ]
+    }
+  ],
+  "parser_checks": [
+    {
+      "policy_halfword": 1,
+      "native_parser_status": "0x0",
+      "directory_records": 1,
+      "native_instructions": 60738,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x0",
+          "native_instructions": 60633
+        },
+        {
+          "function": "0x4027ab6",
+          "result": "0x1",
+          "native_instructions": 5
+        }
+      ],
+      "crc_sha_and_signature_code_replaced": false,
+      "control": "clear-component-policy-one"
+    },
+    {
+      "policy_halfword": 1,
+      "native_parser_status": "0x0",
+      "directory_records": 1,
+      "native_instructions": 60738,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x0",
+          "native_instructions": 60633
+        },
+        {
+          "function": "0x4027ab6",
+          "result": "0x1",
+          "native_instructions": 5
+        }
+      ],
+      "crc_sha_and_signature_code_replaced": false,
+      "control": "wrong-plaintext-hash-policy-one"
+    },
+    {
+      "policy_halfword": 1,
+      "native_parser_status": "0x80000064",
+      "directory_records": null,
+      "native_instructions": 60483,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x80000064",
+          "native_instructions": 60383
+        }
+      ],
+      "crc_sha_and_signature_code_replaced": false,
+      "control": "wrong-body-crc-policy-one"
+    },
+    {
+      "policy_halfword": 0,
+      "native_parser_status": "0x80000066",
+      "directory_records": null,
+      "native_instructions": 15477987,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x80000066",
+          "native_instructions": 15477887
+        }
+      ],
+      "crc_sha_and_signature_code_replaced": false,
+      "control": "same-fixture-policy-zero"
+    }
+  ],
+  "sector_wrapper": {
+    "native_entry": "0x041ffd96",
+    "native_status": "0x0",
+    "sector_bytes": 512,
+    "first_sector": "0x400",
+    "byte_offset": "0x80000",
+    "controller_completion_model": "One simulated sector completed per controller invocation",
+    "controller_and_lock_operations_mocked": true,
+    "requests": [
+      {
+        "sector": 1024,
+        "source_offset": "0x1000",
+        "bytes": 512,
+        "sha256": "bbde51beafd9c6d6b86f47b52b35167887e923ac7c177e743d9d07fabfe2e163",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1025,
+        "source_offset": "0x1200",
+        "bytes": 512,
+        "sha256": "c1902262961f7bef2f954cb14d47c475f0a8a0a46f6adc7e1475c210fe66de1c",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1026,
+        "source_offset": "0x1400",
+        "bytes": 512,
+        "sha256": "8106d31c6531e7c21b6e510ba7ee9f9ca9be06b683fcd75c1f4b130e5c93ad95",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1027,
+        "source_offset": "0x1600",
+        "bytes": 512,
+        "sha256": "a3d6b3c0e2abfc4db11595beffe257a2eb9710621c79919dace16b460170a060",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1028,
+        "source_offset": "0x1800",
+        "bytes": 512,
+        "sha256": "eea39381693dca4a039ceed3dc192cbf1a46751b937a9d56e91b334be2d16b0c",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1029,
+        "source_offset": "0x1a00",
+        "bytes": 512,
+        "sha256": "54b47e77aa2c94561898371d651ca372b261c88362ac614464b82bb8fbf4baed",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1030,
+        "source_offset": "0x1c00",
+        "bytes": 512,
+        "sha256": "d90050d0eb3f68a19087934c590a42bc89e8c64ebae15620b7142fab6772a992",
+        "completion_injected_error": false
+      },
+      {
+        "sector": 1031,
+        "source_offset": "0x1e00",
+        "bytes": 512,
+        "sha256": "d5595bce1decc69ea2de3df5035f5fd93900ceb3dfe3c3fa72deb2d88d33ffe0",
+        "completion_injected_error": false
+      }
+    ],
+    "simulated_output_sha256": "c284b0be10e0d754fc155ec1db238ab97bd515044cc25608446fc324191c8025",
+    "calls": [
+      {
+        "function": "0x41ffd96",
+        "result": "0x0",
+        "native_instructions": 136
+      }
+    ]
+  },
+  "sector_wrapper_error": {
+    "native_entry": "0x041ffd96",
+    "native_status": "0xffffffff",
+    "sector_bytes": 512,
+    "first_sector": "0x400",
+    "byte_offset": "0x80000",
+    "controller_completion_model": "One simulated sector completed per controller invocation",
+    "controller_and_lock_operations_mocked": true,
+    "requests": [
+      {
+        "sector": 1024,
+        "source_offset": "0x1000",
+        "bytes": 512,
+        "sha256": "bbde51beafd9c6d6b86f47b52b35167887e923ac7c177e743d9d07fabfe2e163",
+        "completion_injected_error": true
+      }
+    ],
+    "simulated_output_sha256": "f47a8ec3e9aff2318d896942282ad4fe37d6391c82914f54a5da8a37de1300c6",
+    "calls": [
+      {
+        "function": "0x41ffd96",
+        "result": "0xffffffff",
+        "native_instructions": 57
+      }
+    ]
+  },
+  "startup_scatter": [
+    {
+      "native_entry": "0x03e80094",
+      "stop_before_threadx": "0x04319790",
+      "checkpoint_not_function_return": true,
+      "native_instructions": 2929969,
+      "initial_policy": 0,
+      "policy_after_initialization": 0,
+      "policy_writes_observed": [],
+      "scatter_records": [
+        {
+          "source": "0x472e65c",
+          "destination": "0x5eb0000",
+          "bytes": 167292,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "8a3abc579fd62720b08e6d9c81d77e11bf875890fbf7ac3b4b5dea9cb4a58ab8"
+        },
+        {
+          "source": "0x4b4ccb4",
+          "destination": "0x7df0000",
+          "bytes": 490572,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "52b2e6403920f461d1fb0a02d9fa9306e708b0a547f3b926c08783b892a228d1"
+        },
+        {
+          "source": "0x4fb62ec",
+          "destination": "0x8030000",
+          "bytes": 3196288,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "30233f7427fa03cddea5875992a1362b5145fed1800c27c89a261ffad2ad9a19"
+        },
+        {
+          "source": "0x5431c14",
+          "destination": "0x89b4000",
+          "bytes": 18748,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "b85f011a7a01719b0867b193cf3a7181a6b7cc1062db0a759ef0c59427fbbe2b"
+        },
+        {
+          "source": "0x20000",
+          "destination": "0x20000",
+          "bytes": 2508,
+          "helper": "0x3e800e4",
+          "entire_destination_verified": true,
+          "destination_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721"
+        },
+        {
+          "source": "0x47573d8",
+          "destination": "0x5ed8d7c",
+          "bytes": 6875840,
+          "helper": "0x3e800e4",
+          "entire_destination_verified": true,
+          "destination_sha256": "79dec432d717999778dd6195cdfae7f4a7427981daec1eadca6d8f28cb9a84ae"
+        }
+      ],
+      "scope": "Main C runtime scatter initialization only; not a complete board/loader/RTOS boot"
+    },
+    {
+      "native_entry": "0x03e80094",
+      "stop_before_threadx": "0x04319790",
+      "checkpoint_not_function_return": true,
+      "native_instructions": 2929969,
+      "initial_policy": 1,
+      "policy_after_initialization": 1,
+      "policy_writes_observed": [],
+      "scatter_records": [
+        {
+          "source": "0x472e65c",
+          "destination": "0x5eb0000",
+          "bytes": 167292,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "8a3abc579fd62720b08e6d9c81d77e11bf875890fbf7ac3b4b5dea9cb4a58ab8"
+        },
+        {
+          "source": "0x4b4ccb4",
+          "destination": "0x7df0000",
+          "bytes": 490572,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "52b2e6403920f461d1fb0a02d9fa9306e708b0a547f3b926c08783b892a228d1"
+        },
+        {
+          "source": "0x4fb62ec",
+          "destination": "0x8030000",
+          "bytes": 3196288,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "30233f7427fa03cddea5875992a1362b5145fed1800c27c89a261ffad2ad9a19"
+        },
+        {
+          "source": "0x5431c14",
+          "destination": "0x89b4000",
+          "bytes": 18748,
+          "helper": "0x3e800c8",
+          "entire_destination_verified": true,
+          "destination_sha256": "b85f011a7a01719b0867b193cf3a7181a6b7cc1062db0a759ef0c59427fbbe2b"
+        },
+        {
+          "source": "0x20000",
+          "destination": "0x20000",
+          "bytes": 2508,
+          "helper": "0x3e800e4",
+          "entire_destination_verified": true,
+          "destination_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721"
+        },
+        {
+          "source": "0x47573d8",
+          "destination": "0x5ed8d7c",
+          "bytes": 6875840,
+          "helper": "0x3e800e4",
+          "entire_destination_verified": true,
+          "destination_sha256": "79dec432d717999778dd6195cdfae7f4a7427981daec1eadca6d8f28cb9a84ae"
+        }
+      ],
+      "scope": "Main C runtime scatter initialization only; not a complete board/loader/RTOS boot"
+    }
+  ],
+  "limits": [
+    "Synthetic fixture acceptance is not acceptance or installation of a modified camera program.",
+    "Model/version parameters are controlled emulator inputs, not a fresh camera query.",
+    "CRC32, SHA-256, signature and parser code execute natively; only C copy/zero helpers are modeled there.",
+    "The sector transfer wrapper runs natively; controller, completion, locks and logging are mocked.",
+    "No NAND/NOR erase/program algorithm, bad-block handling, complete updater or boot sequence is emulated.",
+    "Native scatter initialization retains policy one; earlier loader behavior and later startup remain separate work."
+  ]
+}

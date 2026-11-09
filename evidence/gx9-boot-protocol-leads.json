@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "scope": "Offline boot/protocol leads; no external protocol or camera I/O",
+  "camera_access": false,
+  "startup_files": [
+    {
+      "file": "/etc/inittab",
+      "bytes": 748,
+      "sha256": "a60343401b1aa8dee74110fb893a510e67ffef15f83d4e7d0be41d8ba5deb0dc"
+    },
+    {
+      "file": "/etc/init.d/rcS",
+      "bytes": 408,
+      "sha256": "dc1615df9f2012b20b81ffad8e07e16293039ba7fd897854ca3646d6cfea0c0f"
+    },
+    {
+      "file": "/etc/init.d/S02-mount",
+      "bytes": 1262,
+      "sha256": "2f102b72dbae66b54c5cba7087ff4b0aa5ba9ddf5c481115dbe4beb21d0743e6"
+    },
+    {
+      "file": "/etc/init.d/S03-modules",
+      "bytes": 1107,
+      "sha256": "ebc8d44f70ba81cfc0c557791be104aaf381bcb5bfa10d49fcff2a76c18ed4a4"
+    },
+    {
+      "file": "/etc/init.d/btdevstart",
+      "bytes": 186,
+      "sha256": "3325c62b778243fd784c02fe2f3e187bcf5f9fd74db1d5f4385ecc48aaef65c9"
+    },
+    {
+      "file": "/etc/init.d/btteststart",
+      "bytes": 841,
+      "sha256": "eeac5ca09568f501c0d32306ff1f8ed7743645df75131ffa1df9e43e49fe5715"
+    },
+    {
+      "file": "/etc/init.d/btteststop",
+      "bytes": 456,
+      "sha256": "c1cc96cf17c67a666ac7e5b6407c817e40fc3df974419b17fcfb82cc03e1773e"
+    }
+  ],
+  "sd_autorun_scan": {
+    "scope": "All extracted Linux regular files, ASCII literal scan for .AHX/autoexec/autorun",
+    "only_autorun_match": {
+      "file": "/usr/bin/strace",
+      "text": "RAID_AUTORUN",
+      "meaning": "Decoder name for an unrelated RAID ioctl; not SD autorun"
+    },
+    "boot_script_behavior": "Runs internal /etc/init.d/S??* entries",
+    "sd_autorun_or_AHX_loader_identified": false,
+    "absence_of_literals_is_not_absence_of_support": true
+  },
+  "bluetooth": [
+    {
+      "file": "/usr/pvc/bin/mtkbt",
+      "bytes": 1555428,
+      "sha256": "3b8abd3166923ca0c0060250342184bd80aefc035baeb25cbce11bf20935c67f"
+    },
+    {
+      "file": "/usr/pvc/bin/bt_drv",
+      "bytes": 10500,
+      "sha256": "d604b7348d4899e9b75b691fb33593e57fb10bdbb06a30e7b331b1f07ed925a1"
+    },
+    {
+      "file": "/usr/pvc/bin/bt",
+      "bytes": 88892,
+      "sha256": "71936c863d9ad0b6d28f2b7dcae4707128a2175f01fcf69628991600ef117ae4"
+    }
+  ],
+  "wifi": {
+    "internal_linux_command_event": 60,
+    "native_event_routing_verified": true,
+    "external_delivery_demonstrated": false,
+    "evidence": "gx9-linux-event-path.json"
+  },
+  "usb": {
+    "memory_policy_roundtrip_verified": true,
+    "persistent_bank_api_identified_in_native_firmware": true,
+    "external_command_invoking_that_bank_api_identified": false
+  },
+  "bluetooth_leads": {
+    "test_socket": "/tmp/hcicmd_socket",
+    "camera_app_socket": "/tmp/unix_sockstream_nwa",
+    "product_and_factory_GATT_advertisement_code_present": true,
+    "radio_patch": "/lib/firmware/mt6630_patch_e3_0_hdr.bin",
+    "main_camera_flash_service_identified": false,
+    "external_reachability_or_authentication_verified": false,
+    "basis": "Literal function and diagnostic names in recovered binaries; external call paths unverified"
+  }
+}

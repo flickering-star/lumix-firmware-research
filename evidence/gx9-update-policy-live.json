@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "scope": "Physical updater-policy RAM round trip, not a firmware update",
+  "verifier_sha256": "b005043206e4a8e447b9072d96e2ed827bcf5de58bf22c5bc214a6a43355cfef",
+  "producer_sha256": "0db4a92956f5fff28e5597139394d76d0ce9d8ebed810ee69eb18966927d4b6a",
+  "capture_id": "20261109T142756Z-gx9-owner-policy-archive",
+  "program_v14_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "policy_service_address": "0x83f1801a",
+  "policy_link_address": "0x03f1801a",
+  "policy_program_offset": "0x9801a",
+  "policy_values_read": [
+    0,
+    1,
+    0
+  ],
+  "complete_original_metadata_block_restored": true,
+  "changed_metadata_byte_offsets": [
+    "0x1a"
+  ],
+  "memory_write_requests": 2,
+  "metadata_before_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62",
+  "metadata_temporary_sha256": "439f452770d70a9f6affe1f63dbc5560dafaad2fc9f6eb5fe061f042f7e0183f",
+  "metadata_restored_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62",
+  "installed_updater_block_sha256": "92ccfc604d7dfa6b31eaff8e6371fac4cd755c1ac6a64c47534da2e4fb3cb8d2",
+  "producer_report_sha256": "3d37dee441e8df2ec211b6084ea210973bbde299e14850dfa564a18e070a60cb",
+  "camera_or_network_access_by_this_verifier": false,
+  "flash_programming_commands_sent": 0,
+  "firmware_update_started": false,
+  "wire": {
+    "capture": "20261109T142756Z-gx9-owner-policy-archive",
+    "event_source": "events.jsonl",
+    "event_source_sha256": "aac02c2a4a8f2ee4fe99a2b6f97b37818a239e8a1b3371f31dec14e240f12877",
+    "service_requests": 14,
+    "successful_words": 5,
+    "transactions": [
+      {
+        "operation": "0x35",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "successful_read": true,
+        "area": "0x10",
+        "word_index": 8192,
+        "result": "word_reply",
+        "word_hex": "f2b0"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "successful_read": true,
+        "start": "0x80208000",
+        "end_exclusive": "0x80208400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+        "response_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd",
+        "successful_read": true,
+        "start": "0x84027800",
+        "end_exclusive": "0x84027c00",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "92ccfc604d7dfa6b31eaff8e6371fac4cd755c1ac6a64c47534da2e4fb3cb8d2"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "36853004fd1842f000ead34c6147a48376bb2f446fa1eced987bde8626cea0a6",
+        "successful_read": true,
+        "start": "0x83f18000",
+        "end_exclusive": "0x83f18400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62"
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39",
+        "successful_read": true,
+        "source_address": "0x83f1801a",
+        "result": "word_reply",
+        "word_hex": "0000"
+      },
+      {
+        "operation": "0x9c",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "9d985b10bb18010f1952b9c7a00d1a6e21cd861f3316b4b6b7418bd23650a412",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "successful_read": false,
+        "destination_address": "0x83f1801a",
+        "requested_word_hex": "0100",
+        "result": "write_ack",
+        "write_acknowledged": true
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192",
+        "successful_read": true,
+        "source_address": "0x83f1801a",
+        "result": "word_reply",
+        "word_hex": "0100"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "5f260f12bcc5949765958c041db5ed0d0dc93a41d5d9d4c9804b9b5d4a47414f",
+        "successful_read": true,
+        "start": "0x83f18000",
+        "end_exclusive": "0x83f18400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "439f452770d70a9f6affe1f63dbc5560dafaad2fc9f6eb5fe061f042f7e0183f"
+      },
+      {
+        "operation": "0x9c",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "b1f7547d5f7c435e1bd1db3be6e04ad7935ef2c5a0cb4a96f8a0e982c4cc3ce9",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "successful_read": false,
+        "destination_address": "0x83f1801a",
+        "requested_word_hex": "0000",
+        "result": "write_ack",
+        "write_acknowledged": true
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39",
+        "successful_read": true,
+        "source_address": "0x83f1801a",
+        "result": "word_reply",
+        "word_hex": "0000"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "36853004fd1842f000ead34c6147a48376bb2f446fa1eced987bde8626cea0a6",
+        "successful_read": true,
+        "start": "0x83f18000",
+        "end_exclusive": "0x83f18400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+        "response_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd",
+        "successful_read": true,
+        "start": "0x84027800",
+        "end_exclusive": "0x84027c00",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "92ccfc604d7dfa6b31eaff8e6371fac4cd755c1ac6a64c47534da2e4fb3cb8d2"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "successful_read": true,
+        "start": "0x80208000",
+        "end_exclusive": "0x80208400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+      },
+      {
+        "operation": "0x35",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "successful_read": true,
+        "area": "0x10",
+        "word_index": 8192,
+        "result": "word_reply",
+        "word_hex": "f2b0"
+      }
+    ]
+  },
+  "limits": [
+    "This proves the RAM policy field is writable and restorable.",
+    "It does not demonstrate a completed update or boot of modified firmware."
+  ],
+  "capture_archive_sha256": "b0c3112f9c102f99a2fbbea31e1a41761574e4c950a8e0a8f6c77628a502249a",
+  "offline_negative_controls": [
+    {
+      "control": "extra_metadata_change",
+      "rejected": true
+    },
+    {
+      "control": "wrong_write_target",
+      "rejected": true
+    }
+  ]
+}

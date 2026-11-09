@@ -59,7 +59,10 @@ The initialized-data scatter copy moves the AES key from its image source to
 `0x05ed1c28`; the updater passes that runtime pointer. The authentication path
 also tests a halfword at `0x03f1801a`. It is zero in both the official image and
 the independently captured runtime image, selecting the verified signed path.
-No live policy field was changed.
+The owner subsequently ran the prepared local USB probe. Its saved USB log
+independently verifies policy `0 → 1 → 0`, exact restoration of the complete
+metadata block and an installed updater-code match. No update or flash command
+was started. See the [physical policy proof](../evidence/gx9-update-policy-live.json).
 
 An additional native control changes that halfword to **one inside the emulator**.
 The same altered directory that returns `0x80000066` under policy zero then
@@ -67,6 +70,9 @@ reaches the next parser stage without calling ECDSA. At that checkpoint the
 native stack flag controlling later component-hash checks is also zero. This
 is a concrete candidate for permitting modified update contents. It has not
 yet been tested by starting the connected camera's updater or programming flash.
+Later [full-parser and persistence controls](gx9-flashing-research.md) also
+identify the policy as part of the fixed-settings shadow, requiring its stored
+bank to be considered for a permanent change.
 
 ## Positive and negative controls
 
@@ -113,7 +119,7 @@ This verification performs no camera or network access. Its input-image memory
 is read-only inside the emulator, and execution stops before the parser's
 in-place component decryption.
 
-## Prepared Windows-local policy test
+## Completed Windows-local policy test
 
 [The local USB probe](../tools/gx9_update_policy_probe_windows.py) uses the
 existing WinUSB driver and pinned libusb DLL on the PC. It does not use SSH.
@@ -127,8 +133,10 @@ then restores `1 → 0` in a `finally` path. Restoration requires the complete
 original block to match. It never starts an update, changes an SD card,
 programs flash or resets the camera. It stops if the pinned 1.4 code or metadata
 differs. Its packet/ACK, inspection, restoration, injected read-failure and
-mismatched-code controls passed offline. **The actual policy round trip is
-pending the owner's Windows-local run.**
+mismatched-code controls passed offline. **The owner's physical round trip
+completed successfully**, and the saved raw transfers passed
+[independent offline replay](../tools/gx9_update_policy_capture_verify.py).
+Both writes were restored before the camera was disconnected.
 
 Keep `gx9_update_policy_probe_windows.py` and `gx9_usb_capture_windows.py` in the
 same directory. With the existing PC Python and libusb setup:
