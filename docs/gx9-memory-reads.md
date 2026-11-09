@@ -1,9 +1,14 @@
 # GX9 memory reads and firmware decoding
 
+**Later result:** [Full 1.4/1.5 decryption and ARM component acquisition](gx9-firmware-decryption.md)
+recovered the firmware key, decoded both update packages completely and added
+five exact postboot-image matches. This report preserves the initial reads and
+earlier negative key searches.
+
 The owner's DC-GX7MK3 (Japanese GX9), reported firmware 1.4, supports
 address-based **1 KiB reads through `0x5c`**, as well as indexed two-byte buffer
 reads through `0x35`. Captures contain ARM startup code. A complete GX9 CPU
-address map and a working decryption key have not been recovered.
+address map and a working decryption key had not been recovered at that stage.
 The [wire evidence](../evidence/gx9-buffer-reads.json) records the measured
 results and their limits. Raw captures remain private.
 

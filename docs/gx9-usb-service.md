@@ -2,7 +2,7 @@
 
 The owner's Japanese DC-GX7MK3/GX9, reported firmware 1.4, has a measured
 Windows WinUSB service interface. It supports indexed buffer reads, 1 KiB
-address-based reads and a tested absolute two-byte read. Around 21.3 MiB of
+address-based reads and a tested absolute two-byte read. Around 48.6 MiB of
 distinct address ranges have been acquired. No GX9 write was sent during this
 published investigation.
 
@@ -12,7 +12,8 @@ milestones and preserve their measured limits:
 
 - [Windows connection and initial service replies](gx9-windows-service-connection.md)
 - [Memory reads, acquired ranges and failed legacy address](gx9-memory-reads.md)
-- [Four recovered update components and complete filesystem contents](gx9-recovered-components.md)
+- [Full 1.4/1.5 decryption, key recovery and ARM component comparisons](gx9-firmware-decryption.md)
+- [Initial four-component recovery and complete filesystem contents](gx9-recovered-components.md)
 - [Linux runtime and 26,938 recovered kernel symbols](gx9-linux-runtime.md)
 - [Internal Linux command runner, verified with mocked native emulation](gx9-linux-command.md)
 - [Windows-local USB capture](gx9-windows-local-capture.md)
@@ -33,17 +34,21 @@ unresolved and does not supply a CPU address map.
 
 The [official GX9 1.5 archive](https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gx9.html)
 was downloaded and inventoried. The package has 36 component records, 35
-nonempty. Four plaintext components now match its complete expected hashes:
-`zboot`, `dtb`, `rootfs1` and `rootfs2`. The camera continues to report 1.4;
-these particular components were reused in the 1.5 package.
+nonempty. All 35 now decode with complete expected-hash matches, using the
+key found in captured ARM memory. An archived official 1.4 package also decodes
+fully. Five additional RAM-captured postboot images match 1.4 exactly; the
+main image's code after offset `0xd0000` also matches 1.4 exactly. The camera
+continues to report 1.4. The Linux components reused in 1.5 explain the earlier
+matches without an update.
 
 ## Current boundary
 
-The main camera program, firmware key, an externally reachable shell and an
-alternate firmware-installation path remain unrecovered. Native-code analysis
-identified an internal `NET_EVT_LINUX_CMD` command/output path, but no external
-USB or Wi-Fi request has reached it. The reversible RAM-padding write control
-was interrupted before a write was sent.
+An externally reachable shell and an alternate firmware-installation path
+remain unverified. Native-code analysis identified an internal
+`NET_EVT_LINUX_CMD` command/output path and its ICC-to-local-socket event route,
+but no external USB or Wi-Fi request has reached it. The reversible RAM-padding
+write control was interrupted before a write was sent. Complete decoded
+firmware now enables direct analysis of the remaining USB and update handlers.
 
 The old-model program address `0x40000000` froze this GX9 when tested through
 the block reader. The owner reconnected it, and known RAM controls passed

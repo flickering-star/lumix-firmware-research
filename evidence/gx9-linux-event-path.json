@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "scope": "Captured ARM event routing with mocked ICC, sockets and HTTP environment",
+  "unicorn_version": "2.1.4",
+  "verifier_sha256": "d991a1cf0ae3b01da8db5fca1f71b9a6585cab1cd6db24d4dc37c87f34a4be2e",
+  "inputs": {
+    "psm": {
+      "bytes": 407276,
+      "sha256": "7cafa9b91050c613b9fa76391f12003cbdd0a8e91f4e2e46dc0b22b1a5166fbd"
+    },
+    "nwa": {
+      "bytes": 14028,
+      "sha256": "21b904a78c80c5b6e505af5f2cfdbfde6365558fd1169675685363d012782a77"
+    },
+    "cam.fcgi": {
+      "bytes": 10384,
+      "sha256": "81d5439c888fc5b78e042e649c968cbd6c05093b213ba0cf2c46b0e0e65edc6f"
+    }
+  },
+  "native_words_checked": {
+    "psm": {
+      "0x721a0": "0x6fb4c",
+      "0x721a8": "0x4e93c",
+      "0x721b8": "0x4e80c",
+      "0x4e9e4": "0xea0002eb",
+      "0x4f5d4": "0x6fc34",
+      "0x3329c": "0xe353003c",
+      "0x335c0": "0xea001a33"
+    },
+    "nwa": {
+      "0x119c0": "0x12318",
+      "0x12224": "0x123a0",
+      "0x112ec": "0xe5d00010",
+      "0x1130c": "0xebfffedc"
+    },
+    "cam.fcgi": {
+      "0x11bc4": "0xe3a03a06",
+      "0x11bf0": "0xa000030",
+      "0x11bfc": "0xe35000bf"
+    }
+  },
+  "internal_event_id": "0x3c",
+  "internal_message_bytes": 488,
+  "nwa_subscription": {
+    "socket_calls": [
+      {
+        "family": 1,
+        "type": 1,
+        "protocol": 0
+      }
+    ],
+    "connect_calls": [
+      {
+        "path": "/tmp/unix_sockstream_nwa",
+        "address_bytes": 26
+      }
+    ],
+    "filter_writes": [
+      [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "native_instructions": 117,
+    "selector": 1,
+    "event_group_shift": 12,
+    "linux_command_group_enabled": true,
+    "socket_io_mocked": true
+  },
+  "icc_event_routing": {
+    "icc_reads": 1,
+    "messages_sent": [
+      {
+        "bytes": 488,
+        "sha256": "8eca1fdf449a1d63b9a08090d0803bfdb405f7dc11eb9b8f42bb68e58030f5dd"
+      }
+    ],
+    "native_instructions": 98,
+    "shared_memory_and_icc_mocked": true
+  },
+  "excluded_filter_control": {
+    "icc_reads": 1,
+    "messages_sent": [],
+    "native_instructions": 93,
+    "shared_memory_and_icc_mocked": true
+  },
+  "psm_receive_and_dispatch": {
+    "recv_calls": 1,
+    "command_dispatcher_reached": true,
+    "native_instructions": 153
+  },
+  "socket_not_ready_control": {
+    "recv_calls": 0,
+    "command_dispatcher_reached": false,
+    "native_instructions": 25
+  },
+  "fastcgi_constructor_cases": [
+    {
+      "query_bytes": 13,
+      "status": "0x0",
+      "native_instructions": 199,
+      "event_id": "0x6000",
+      "message_bytes": 488,
+      "message_sha256": "b11c6024a6b3323af252eb1327b59f3e4814a5b0be9d3b8daf662bacc94591b7"
+    },
+    {
+      "query_bytes": 34,
+      "status": "0x0",
+      "native_instructions": 451,
+      "event_id": "0x6000",
+      "message_bytes": 488,
+      "message_sha256": "6d82728ebaa89edbeca7cf5f224f5bb63e091a16603b1304983a6ac922560a12"
+    },
+    {
+      "query_bytes": 22,
+      "status": "0x0",
+      "native_instructions": 307,
+      "event_id": "0x6000",
+      "message_bytes": 488,
+      "message_sha256": "5e54e2685c27905bb4789382be05aecf9dee742e506bc0a9e7dd2545282677e4"
+    },
+    {
+      "query_bytes": 28,
+      "status": "0x0",
+      "native_instructions": 359,
+      "event_id": "0x6000",
+      "message_bytes": 488,
+      "message_sha256": "4bf73fe821f733ca29349403640deae1dbc4a404f55d9f36b22325bacc452438"
+    },
+    {
+      "query_bytes": 191,
+      "status": "0x0",
+      "native_instructions": 2335,
+      "event_id": "0x6000",
+      "message_bytes": 488,
+      "message_sha256": "e5baa94a29f10dfa4b53a52d37265b86fdb54f369d73d682686d9633c400bc45"
+    },
+    {
+      "query_bytes": 192,
+      "status": "0xffffffff",
+      "native_instructions": 39
+    }
+  ],
+  "all_controls_passed": true,
+  "host_socket_operations": 0,
+  "host_shell_commands_executed": 0,
+  "camera_requests": 0,
+  "external_usb_or_wifi_entry_demonstrated": false,
+  "limits": [
+    "The event payload and ICC shared-memory descriptor were supplied by the emulator.",
+    "The route proves internal native control flow, not that USB or Wi-Fi can create event 60.",
+    "The HTTP constructor emits event 0x6000; downstream query interpretation is a separate path.",
+    "No command worker was executed here; its separate verifier mocks system and file operations."
+  ]
+}

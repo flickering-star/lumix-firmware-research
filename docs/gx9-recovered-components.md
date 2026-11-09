@@ -1,5 +1,10 @@
 # GX9 components recovered from RAM
 
+**Later result:** [Full 1.4/1.5 decryption and ARM component acquisition](gx9-firmware-decryption.md)
+recovered the key, decoded all 35 nonempty components of both packages, and
+verified five more RAM-captured postboot images against 1.4. The four-component
+report below preserves the earlier recovery method and its evidence.
+
 Four plaintext components now match the **complete expected SHA-256 values**
 in the official GX9 1.5 package: `zboot`, `dtb`, `rootfs1` and `rootfs2`.
 The source camera still reports firmware 1.4 according to its owner. These

@@ -1,0 +1,506 @@
+{
+  "schema": 1,
+  "scope": "Camera RAM component acquisition, key recovery and official package comparisons",
+  "camera_version_owner_reported": "1.4",
+  "main": {
+    "scope": "ARM image candidate, not yet an identified update component",
+    "start": "0x83e80000",
+    "end_exclusive": "0x847f0000",
+    "memory_writes": 0,
+    "flash_writes": 0,
+    "chunks": [
+      {
+        "capture": "20261109T090706Z-gx9-main-arm-1",
+        "start": "0x83e80000",
+        "end_exclusive": "0x84080000",
+        "bytes": 2097152,
+        "sha256": "a21e685986bc238208a557fcdac4ef95ef34eb40dba7d3372a3bdbd4f8c0bdef",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T090743Z-gx9-main-arm-2",
+        "start": "0x84080000",
+        "end_exclusive": "0x84280000",
+        "bytes": 2097152,
+        "sha256": "b50b7417fce234eb0db8ba5cd96eccddb3ec8363436a43d51d23d97e228f7394",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T090827Z-gx9-main-arm-3",
+        "start": "0x84280000",
+        "end_exclusive": "0x84480000",
+        "bytes": 2097152,
+        "sha256": "bc0038f749dcc493e2a2189e4eb8fe552a11f432a3e3d29b82c47880590eab75",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T090905Z-gx9-main-arm-4",
+        "start": "0x84480000",
+        "end_exclusive": "0x84680000",
+        "bytes": 2097152,
+        "sha256": "6aa7179a8ee3958d897018ff5717b952d62f6f14e6485ab231455a460d60fc77",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T090944Z-gx9-main-arm-5",
+        "start": "0x84680000",
+        "end_exclusive": "0x847f0000",
+        "bytes": 1507328,
+        "sha256": "aea4321705ba5699df7898056f00af1e977a8009f30c0dde5f1ba9e1dcdc2e7c",
+        "service_requests": 1476,
+        "wire_revalidated": true
+      }
+    ],
+    "complete": true,
+    "bytes": 9895936,
+    "sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07"
+  },
+  "postboots": {
+    "scope": "Postboot candidates, runtime layout inferred from ARM scatter sources and update sizes",
+    "start": "0x847f0000",
+    "end_exclusive": "0x85570000",
+    "memory_writes": 0,
+    "flash_writes": 0,
+    "chunks": [
+      {
+        "capture": "20261109T091129Z-gx9-postboot-arm-1",
+        "start": "0x85370000",
+        "end_exclusive": "0x853b0000",
+        "bytes": 262144,
+        "sha256": "0e3ec6ce484e1e616e31b41820ac36d25d260c617e98a9234d68ca86f94bfb2b",
+        "service_requests": 260,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091135Z-gx9-postboot-arm-2",
+        "start": "0x847f0000",
+        "end_exclusive": "0x849f0000",
+        "bytes": 2097152,
+        "sha256": "fc364546a82567e1f95cf2c3c6da25cd369ca44f70a7a8064d9c1d7babe52cdd",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091214Z-gx9-postboot-arm-3",
+        "start": "0x849f0000",
+        "end_exclusive": "0x84bf0000",
+        "bytes": 2097152,
+        "sha256": "d10ae7fa4b929ab78910863c84e7c8b395f5a6223ae21aba127aa57661ca814b",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091252Z-gx9-postboot-arm-4",
+        "start": "0x84bf0000",
+        "end_exclusive": "0x84c30000",
+        "bytes": 262144,
+        "sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+        "service_requests": 260,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091258Z-gx9-postboot-arm-5",
+        "start": "0x84c30000",
+        "end_exclusive": "0x84e30000",
+        "bytes": 2097152,
+        "sha256": "441d733bdff8e3379391f056927e95827cd0de67c6a69c79875b428fa71670b9",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091331Z-gx9-postboot-arm-6",
+        "start": "0x84e30000",
+        "end_exclusive": "0x85030000",
+        "bytes": 2097152,
+        "sha256": "eff18d3db2e09bfc2b5ebbd66ebc24d247faad40df40fc123c925f19b49af0a5",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091403Z-gx9-postboot-arm-7",
+        "start": "0x85030000",
+        "end_exclusive": "0x85230000",
+        "bytes": 2097152,
+        "sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+        "service_requests": 2052,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091435Z-gx9-postboot-arm-8",
+        "start": "0x85230000",
+        "end_exclusive": "0x85370000",
+        "bytes": 1310720,
+        "sha256": "850ac4072798afe534a1e3476efc0a288326f19c51fece20ce024649e9e2bd29",
+        "service_requests": 1284,
+        "wire_revalidated": true
+      },
+      {
+        "capture": "20261109T091457Z-gx9-postboot-arm-9",
+        "start": "0x853b0000",
+        "end_exclusive": "0x85570000",
+        "bytes": 1835008,
+        "sha256": "ea085c958d0ff4b3bf0bf091f0a885357a65045348513d507acb75c70347f08e",
+        "service_requests": 1796,
+        "wire_revalidated": true
+      }
+    ],
+    "complete": true,
+    "bytes": 14155776
+  },
+  "runtime_v14_comparison": {
+    "schema": 1,
+    "runtime_program_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+    "v14_program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+    "program_different_bytes": 211636,
+    "postboots": [
+      {
+        "component": "postboot1",
+        "bytes": 4456448,
+        "matches_v14": true,
+        "runtime_sha256": "76e071e60e1c2cec98dd8bdda49fa0a02120e218e38ece36f97da3965b3b64ca",
+        "v14_sha256": "76e071e60e1c2cec98dd8bdda49fa0a02120e218e38ece36f97da3965b3b64ca"
+      },
+      {
+        "component": "postboot2",
+        "bytes": 7602176,
+        "matches_v14": true,
+        "runtime_sha256": "65afd689cea043ccbfdf553beff784407ff6e9afec773b3753701a0641ff32fb",
+        "v14_sha256": "65afd689cea043ccbfdf553beff784407ff6e9afec773b3753701a0641ff32fb"
+      },
+      {
+        "component": "postboot3",
+        "bytes": 131072,
+        "matches_v14": true,
+        "runtime_sha256": "16098771484d4724dd489583aa19c08c9d624596f4369781d983ba15aef8de37",
+        "v14_sha256": "16098771484d4724dd489583aa19c08c9d624596f4369781d983ba15aef8de37"
+      },
+      {
+        "component": "postboot4",
+        "bytes": 131072,
+        "matches_v14": true,
+        "runtime_sha256": "264611c5428258bd3ac46cd602ac1a024b179328a08150c7370120101c270a0b",
+        "v14_sha256": "264611c5428258bd3ac46cd602ac1a024b179328a08150c7370120101c270a0b"
+      },
+      {
+        "component": "postboot5",
+        "bytes": 1835008,
+        "matches_v14": true,
+        "runtime_sha256": "ea085c958d0ff4b3bf0bf091f0a885357a65045348513d507acb75c70347f08e",
+        "v14_sha256": "ea085c958d0ff4b3bf0bf091f0a885357a65045348513d507acb75c70347f08e"
+      }
+    ],
+    "program_different_range_count": 4651,
+    "program_different_ranges_sha256": "237f4384f48812194204c5e6bf07a17125b3cc03adc801ca822384ee619284b0",
+    "program_differences_per_64k": {
+      "0x0": 17,
+      "0x20000": 1706,
+      "0x30000": 2679,
+      "0x40000": 1705,
+      "0x50000": 2680,
+      "0x60000": 1636,
+      "0x70000": 6298,
+      "0x90000": 7,
+      "0xa0000": 64432,
+      "0xb0000": 65211,
+      "0xc0000": 65265
+    },
+    "program_exact_tail_offset": "0xd0000",
+    "program_exact_tail_bytes": 9043968,
+    "program_exact_tail_sha256": "4aacd59547aba659a535e810e074f233e471f971f56ba14eda51b6ae71c711b8"
+  },
+  "v14_v15_comparison": {
+    "schema": 1,
+    "v14_sha256": "e26e4b422e9d46dffb7d93eaabd061bb3e49e2d84654dffc1d892f7f25126e7a",
+    "v15_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+    "components": [
+      {
+        "component": "loader1",
+        "bytes_v14": 4096,
+        "bytes_v15": 4096,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "loader2",
+        "bytes_v14": 32768,
+        "bytes_v15": 32768,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "loader3",
+        "bytes_v14": 40960,
+        "bytes_v15": 40960,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "program",
+        "bytes_v14": 9895936,
+        "bytes_v15": 9895936,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "storage",
+        "bytes_v14": 0,
+        "bytes_v15": 0,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "postboot1",
+        "bytes_v14": 4456448,
+        "bytes_v15": 4456448,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "postboot2",
+        "bytes_v14": 7602176,
+        "bytes_v15": 7602176,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "postboot3",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "postboot4",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "postboot5",
+        "bytes_v14": 1835008,
+        "bytes_v15": 1835008,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "dram_sleep",
+        "bytes_v14": 6144,
+        "bytes_v15": 6144,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_ow_a",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_ow_b",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_adj",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_fix",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "history",
+        "bytes_v14": 262144,
+        "bytes_v15": 262144,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "music",
+        "bytes_v14": 3538944,
+        "bytes_v15": 3538944,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "osdover",
+        "bytes_v14": 8781824,
+        "bytes_v15": 8781824,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "osddata",
+        "bytes_v14": 9699328,
+        "bytes_v15": 9699328,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "fileinfo",
+        "bytes_v14": 917504,
+        "bytes_v15": 917504,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "ninsho_db",
+        "bytes_v14": 655360,
+        "bytes_v15": 655360,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "koutei_kao",
+        "bytes_v14": 114688,
+        "bytes_v15": 114688,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "avchd_info",
+        "bytes_v14": 16384,
+        "bytes_v15": 16384,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_net_a",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "eep_net_b",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "wifi_info",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "nfc_info",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "zboot",
+        "bytes_v14": 2048,
+        "bytes_v15": 2048,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "dtb",
+        "bytes_v14": 4096,
+        "bytes_v15": 4096,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "zimage",
+        "bytes_v14": 2621440,
+        "bytes_v15": 2621440,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "rootfs1",
+        "bytes_v14": 4194304,
+        "bytes_v15": 4194304,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "rootfs2",
+        "bytes_v14": 12582912,
+        "bytes_v15": 12582912,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "apu_boot",
+        "bytes_v14": 262144,
+        "bytes_v15": 262144,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "apu_inst",
+        "bytes_v14": 11264,
+        "bytes_v15": 11264,
+        "same_plaintext_sha256": true
+      },
+      {
+        "component": "usbcharge",
+        "bytes_v14": 131072,
+        "bytes_v15": 131072,
+        "same_plaintext_sha256": false
+      },
+      {
+        "component": "focus_selec",
+        "bytes_v14": 33554432,
+        "bytes_v15": 33554432,
+        "same_plaintext_sha256": true
+      }
+    ]
+  },
+  "key_recovery": {
+    "source_image_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+    "candidate_positions": 9895921,
+    "algorithm": "five-round AES-128-CBC",
+    "key_sha256": "527bb069f7940900d77f3878a71e9c8bc9a4ac39145a505a4b6fda83c331ac9b",
+    "image_offset": "0x8d0284",
+    "service_address": "0x84750284",
+    "unique_verified_keys": 1,
+    "complete_component_checks": [
+      {
+        "byte_offset": 9241220,
+        "rounds": 5,
+        "probe_index": 0,
+        "component": "dtb",
+        "plaintext_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495",
+        "complete_digest_matches": true
+      },
+      {
+        "byte_offset": 9241220,
+        "rounds": 5,
+        "probe_index": 1,
+        "component": "rootfs1",
+        "plaintext_sha256": "6a5cb5cb624e021918c2aadb1c6e43de918fe7118ca7fddb0e7e5716edbe0de1",
+        "complete_digest_matches": true
+      },
+      {
+        "byte_offset": 9241220,
+        "rounds": 5,
+        "probe_index": 2,
+        "component": "rootfs2",
+        "plaintext_sha256": "e9562dc72844e33bec4ccadfe81feecd80b8c64d4782d1fef17bdd1068c01983",
+        "complete_digest_matches": true
+      },
+      {
+        "byte_offset": 9241220,
+        "rounds": 5,
+        "probe_index": 3,
+        "component": "zboot",
+        "plaintext_sha256": "8752e78f68770c543e73dfb599fe23e5e658e725a825004530ba9b4cabfa0100",
+        "complete_digest_matches": true
+      }
+    ]
+  },
+  "v14_source": {
+    "schema": 1,
+    "version": "1.4",
+    "original_filename": "GX9__V14.zip",
+    "source_listing": "https://www.touslesdrivers.com/index.php?v_code=61860&v_langue=en&v_page=23",
+    "download_url": "https://fichiers.touslesdrivers.com/61860/GX9__V14.zip",
+    "download_source_kind": "Archive mirror of Panasonic firmware; historical Panasonic URL returns HTTP 404",
+    "archive_bytes": 100196757,
+    "archive_sha256": "45274de529765e818988b598b356c49b858159328db2a32bb743c4a16b05f7a0",
+    "zip_crc_valid": true,
+    "bin_bytes": 102538240,
+    "bin_sha256": "e26e4b422e9d46dffb7d93eaabd061bb3e49e2d84654dffc1d892f7f25126e7a",
+    "model_id": "MC282",
+    "directory_records": 36,
+    "camera_update_performed": false
+  },
+  "memory_writes": 0,
+  "flash_writes": 0,
+  "firmware_update_performed": false,
+  "external_shell_demonstrated": false,
+  "limits": [
+    "Main RAM acquisition differs from the 1.4 update in initialized working storage; its complete raw hash is not a component match.",
+    "RAM acquisition spans sequential reads and is not an instantaneous snapshot.",
+    "The 1.4 package was retrieved from a mirror and cross-checked against independently captured camera components."
+  ]
+}

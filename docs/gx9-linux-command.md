@@ -63,6 +63,72 @@ call instructions and ELF dynamic relocation names. The
 [recorded evidence](../evidence/gx9-linux-command.json) includes input/tool hashes,
 message headers and control results.
 
+## Internal event delivery
+
+The recovered `nwa` executable receives an event through the interprocessor
+communication (ICC) interface, obtains its shared-memory payload and forwards
+the 488-byte message to subscribed local Unix sockets. `psm` connects to
+`/tmp/unix_sockstream_nwa` and selects filter row **1**. That row enables event
+group zero, which includes event `0x3c`. NWA chooses the filter group by
+shifting the event ID right by 12 bits.
+
+The native PSM socket receiver then calls its general event dispatcher, which
+routes event IDs 58 through 60 to the ELC dispatcher. The command case remains
+event 60. The following path is now checked in native ARM emulation:
+
+```mermaid
+flowchart LR
+    A[ICC event and shared memory] --> B[nwa subscription filter]
+    B --> C[Local Unix socket]
+    C --> D[psm socket receiver]
+    D --> E[General event dispatcher]
+    E --> F[ELC dispatcher: event 60]
+```
+
+| ELF virtual address | Verified role |
+| --- | --- |
+| `nwa:0x111bc` | ICC receive and shared-memory forwarding loop |
+| `nwa:0x112ec` | Reads the recipient's filter byte for `event >> 12` |
+| `psm:0x72194` | Connection record for the NWA local socket |
+| `psm:0x4e93c` | Connects the client and selects its subscription |
+| `psm:0x4f598` | Sends the selected 18-byte filter row |
+| `psm:0x4e80c` | Receives a message on a ready socket |
+| `psm:0x3306c` | General event dispatcher |
+| `psm:0x335c0` | Branches to the ELC dispatcher |
+
+These are ELF virtual addresses, with no established translation into USB
+service addresses. They are not live camera patch targets.
+
+The [event-path verifier](../tools/gx9_linux_event_path_verify.py) executes the
+socket setup, actual filter selection, NWA forwarding, PSM receive and general
+dispatch instructions. ICC descriptors, shared memory, sockets, clocks and
+diagnostic output are mocked. The supplied message reaches the command
+dispatcher unchanged. Clearing the group-zero filter bit suppresses forwarding;
+a socket without the readiness flag does not receive or dispatch a message.
+The checker stops before thread creation, leaving the command worker to the
+separate verifier described above.
+
+The recovered `cam.fcgi` HTTP bridge follows a different initial path. Its
+message constructor at `0x11b8c` sets event **`0x6000`**, stores the request's
+remote address at offset 16 and decodes the query into offset 184. Native
+controls using ordinary queries and a query containing `event=60` all retain
+event `0x6000`. A 191-byte unescaped query passes; 192 bytes is rejected. This
+checks the wrapper only; downstream query interpretation still needs analysis.
+
+[Event-path evidence](../evidence/gx9-linux-event-path.json) records the pinned
+executables, native instruction checks and control results. Reproduce it with:
+
+```sh
+python3 tools/gx9_linux_event_path_verify.py \
+  --psm work/gx9-filesystems/rootfs2-files/usr/pvc/bin/psm \
+  --nwa work/gx9-filesystems/rootfs1-files/usr/pvc/bin/nwa \
+  --cgi work/gx9-filesystems/rootfs1-files/etc/www/cam.fcgi \
+  --out work/gx9-linux-event-path-check.json
+```
+
+Creating an ICC message from an external request remains unresolved. The
+emulated event source does not demonstrate USB or Wi-Fi shell access.
+
 With the recovered executable and Unicorn installed:
 
 ```sh
@@ -77,7 +143,11 @@ Trace a usable external request path to this internal event. Its presence alone
 does not establish that a service-menu toggle, `cam.cgi` request, PTP operation
 or USB service command exposes it. Reachability and authentication are unresolved.
 
+The [later ARM-image acquisition recovered the firmware key](gx9-firmware-decryption.md)
+and decoded both official update versions completely. That provides the main
+camera code needed to continue tracing the event source.
+
 The proposed reversible RAM-padding write test was interrupted before any
-write was sent. No GX9 RAM writer, live shell, firmware key or alternate firmware
-installation has been demonstrated. No firmware update or camera write was
-performed during the findings documented here.
+write was sent. No GX9 RAM writer, live shell or alternate firmware installation
+has been demonstrated. No firmware update or camera write was performed during
+the findings documented here.
