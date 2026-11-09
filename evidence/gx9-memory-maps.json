@@ -1,0 +1,611 @@
+{
+  "schema": 1,
+  "scope": "Pinned GX9 RAM map evidence; offline only",
+  "inputs": [
+    {
+      "label": "linux-prefix",
+      "bytes": 98304,
+      "sha256": "70ee773d7d4065d594d12d31e060f390abba5f0984c7a77fcae79b06e8a516b0"
+    },
+    {
+      "label": "early-arm-prefix",
+      "bytes": 986112,
+      "sha256": "3fcd46e425cdc5eeaa9053decb99cda821b09017a97906de3cd4b12d1a44802c"
+    },
+    {
+      "label": "early-tables-and-entry",
+      "bytes": 81920,
+      "sha256": "11087f892ac73608bf922cd2ce90866aecd268b79fe1540ded5182d5b280a97f"
+    }
+  ],
+  "linux_table_candidate": {
+    "candidate_service_address": "0x80204000",
+    "table_bytes": 16384,
+    "table_sha256": "ae0607a071015b234fd08ee18ccc304670271d88785bda5c6032ee9c327e7427",
+    "format": "ARMv7 short-descriptor first-level translation table",
+    "fault_entries": 4025,
+    "section_entries": 47,
+    "section_ranges": [
+      {
+        "virtual_start": "0xc0000000",
+        "virtual_end_exclusive": "0xc0500000",
+        "physical_start": "0x90200000",
+        "physical_end_exclusive": "0x90700000",
+        "attributes": "0x1140e"
+      },
+      {
+        "virtual_start": "0xc0500000",
+        "virtual_end_exclusive": "0xc2f00000",
+        "physical_start": "0x90700000",
+        "physical_end_exclusive": "0x93100000",
+        "attributes": "0x1141e"
+      }
+    ],
+    "coarse_table_entries": [
+      {
+        "virtual_start": "0xbf000000",
+        "table_physical": "0x92bd6800",
+        "descriptor": "0x92bd6811"
+      },
+      {
+        "virtual_start": "0xbf100000",
+        "table_physical": "0x92bd6c00",
+        "descriptor": "0x92bd6c11"
+      },
+      {
+        "virtual_start": "0xc3000000",
+        "table_physical": "0x92801800",
+        "descriptor": "0x92801811"
+      },
+      {
+        "virtual_start": "0xc3100000",
+        "table_physical": "0x92801c00",
+        "descriptor": "0x92801c11"
+      },
+      {
+        "virtual_start": "0xc3800000",
+        "table_physical": "0x92ab8800",
+        "descriptor": "0x92ab8811"
+      },
+      {
+        "virtual_start": "0xc3900000",
+        "table_physical": "0x92ab8c00",
+        "descriptor": "0x92ab8c11"
+      },
+      {
+        "virtual_start": "0xc3a00000",
+        "table_physical": "0x92ab9800",
+        "descriptor": "0x92ab9811"
+      },
+      {
+        "virtual_start": "0xc3b00000",
+        "table_physical": "0x92ab9c00",
+        "descriptor": "0x92ab9c11"
+      },
+      {
+        "virtual_start": "0xc4000000",
+        "table_physical": "0x92ac8800",
+        "descriptor": "0x92ac8811"
+      },
+      {
+        "virtual_start": "0xc4100000",
+        "table_physical": "0x92ac8c00",
+        "descriptor": "0x92ac8c11"
+      },
+      {
+        "virtual_start": "0xc4200000",
+        "table_physical": "0x92ac9800",
+        "descriptor": "0x92ac9811"
+      },
+      {
+        "virtual_start": "0xc4300000",
+        "table_physical": "0x92ac9c00",
+        "descriptor": "0x92ac9c11"
+      },
+      {
+        "virtual_start": "0xc4400000",
+        "table_physical": "0x92aca800",
+        "descriptor": "0x92aca811"
+      },
+      {
+        "virtual_start": "0xc4500000",
+        "table_physical": "0x92acac00",
+        "descriptor": "0x92acac11"
+      },
+      {
+        "virtual_start": "0xc4600000",
+        "table_physical": "0x92acb800",
+        "descriptor": "0x92acb811"
+      },
+      {
+        "virtual_start": "0xc4700000",
+        "table_physical": "0x92acbc00",
+        "descriptor": "0x92acbc11"
+      },
+      {
+        "virtual_start": "0xc4800000",
+        "table_physical": "0x92acc800",
+        "descriptor": "0x92acc811"
+      },
+      {
+        "virtual_start": "0xc4900000",
+        "table_physical": "0x92accc00",
+        "descriptor": "0x92accc11"
+      },
+      {
+        "virtual_start": "0xfe000000",
+        "table_physical": "0x92ffb800",
+        "descriptor": "0x92ffb841"
+      },
+      {
+        "virtual_start": "0xfe100000",
+        "table_physical": "0x92ffbc00",
+        "descriptor": "0x92ffbc41"
+      },
+      {
+        "virtual_start": "0xfee00000",
+        "table_physical": "0x92ffa800",
+        "descriptor": "0x92ffa841"
+      },
+      {
+        "virtual_start": "0xfef00000",
+        "table_physical": "0x92ffac00",
+        "descriptor": "0x92ffac41"
+      },
+      {
+        "virtual_start": "0xffe00000",
+        "table_physical": "0x92ffd800",
+        "descriptor": "0x92ffd821"
+      },
+      {
+        "virtual_start": "0xfff00000",
+        "table_physical": "0x92ffdc00",
+        "descriptor": "0x92ffdc21"
+      }
+    ],
+    "active_ttbr_register_observed": false,
+    "physical_to_usb_address_translation_verified": false,
+    "exhaustive_hardware_map": false
+  },
+  "early_arm_table_builder": {
+    "tables": [
+      {
+        "core_index": 0,
+        "table_address_literal": "0x83e70000",
+        "code_service_address": "0x80000514",
+        "code_bytes": 768,
+        "code_sha256": "a50f62ad33ca890f2242d5a7f0e16641ab1c6ce047cc9e9c4a72f334509b3c84",
+        "identity_mapped_bytes": 4294967296,
+        "regions": [
+          {
+            "virtual_start": "0x0",
+            "virtual_end_exclusive": "0x10000000",
+            "physical_start": "0x0",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x10000000",
+            "virtual_end_exclusive": "0x20000000",
+            "physical_start": "0x10000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x20000000",
+            "virtual_end_exclusive": "0x30000000",
+            "physical_start": "0x20000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x30000000",
+            "virtual_end_exclusive": "0x40000000",
+            "physical_start": "0x30000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x40000000",
+            "virtual_end_exclusive": "0x50000000",
+            "physical_start": "0x40000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x50000000",
+            "virtual_end_exclusive": "0x60000000",
+            "physical_start": "0x50000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x60000000",
+            "virtual_end_exclusive": "0x70000000",
+            "physical_start": "0x60000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x70000000",
+            "virtual_end_exclusive": "0x80000000",
+            "physical_start": "0x70000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x80000000",
+            "virtual_end_exclusive": "0x90000000",
+            "physical_start": "0x80000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x90000000",
+            "virtual_end_exclusive": "0xa0000000",
+            "physical_start": "0x90000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xa0000000",
+            "virtual_end_exclusive": "0xb0000000",
+            "physical_start": "0xa0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xb0000000",
+            "virtual_end_exclusive": "0xc0000000",
+            "physical_start": "0xb0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xc0000000",
+            "virtual_end_exclusive": "0xd0000000",
+            "physical_start": "0xc0000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0xd0000000",
+            "virtual_end_exclusive": "0xe0000000",
+            "physical_start": "0xd0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xe0000000",
+            "virtual_end_exclusive": "0xf0000000",
+            "physical_start": "0xe0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xf0000000",
+            "virtual_end_exclusive": "0x100000000",
+            "physical_start": "0xf0000000",
+            "attributes": "0x2"
+          }
+        ],
+        "acquired_table_sha256": "8f6889e19734b06457760ff6298978946ab319cfa8fd76d8ebaa8586d18a911d",
+        "all_4096_entries_match_builder": true
+      },
+      {
+        "core_index": 1,
+        "table_address_literal": "0x83e74000",
+        "code_service_address": "0x80000814",
+        "code_bytes": 768,
+        "code_sha256": "bc1db66bccaa1dd132e817b554cb97542092580c0db51fd23d6f072a1277eace",
+        "identity_mapped_bytes": 4294967296,
+        "regions": [
+          {
+            "virtual_start": "0x0",
+            "virtual_end_exclusive": "0x10000000",
+            "physical_start": "0x0",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x10000000",
+            "virtual_end_exclusive": "0x20000000",
+            "physical_start": "0x10000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x20000000",
+            "virtual_end_exclusive": "0x30000000",
+            "physical_start": "0x20000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x30000000",
+            "virtual_end_exclusive": "0x40000000",
+            "physical_start": "0x30000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x40000000",
+            "virtual_end_exclusive": "0x50000000",
+            "physical_start": "0x40000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x50000000",
+            "virtual_end_exclusive": "0x60000000",
+            "physical_start": "0x50000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x60000000",
+            "virtual_end_exclusive": "0x70000000",
+            "physical_start": "0x60000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x70000000",
+            "virtual_end_exclusive": "0x80000000",
+            "physical_start": "0x70000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x80000000",
+            "virtual_end_exclusive": "0x90000000",
+            "physical_start": "0x80000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x90000000",
+            "virtual_end_exclusive": "0xa0000000",
+            "physical_start": "0x90000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xa0000000",
+            "virtual_end_exclusive": "0xb0000000",
+            "physical_start": "0xa0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xb0000000",
+            "virtual_end_exclusive": "0xc0000000",
+            "physical_start": "0xb0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xc0000000",
+            "virtual_end_exclusive": "0xd0000000",
+            "physical_start": "0xc0000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0xd0000000",
+            "virtual_end_exclusive": "0xe0000000",
+            "physical_start": "0xd0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xe0000000",
+            "virtual_end_exclusive": "0xf0000000",
+            "physical_start": "0xe0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xf0000000",
+            "virtual_end_exclusive": "0x100000000",
+            "physical_start": "0xf0000000",
+            "attributes": "0x2"
+          }
+        ],
+        "acquired_table_sha256": "8f6889e19734b06457760ff6298978946ab319cfa8fd76d8ebaa8586d18a911d",
+        "all_4096_entries_match_builder": true
+      },
+      {
+        "core_index": 2,
+        "table_address_literal": "0x83e78000",
+        "code_service_address": "0x80000b14",
+        "code_bytes": 768,
+        "code_sha256": "1caddcc10627ead654f09ad4b54cb009c902000d9a60f366228960cd0e672e6d",
+        "identity_mapped_bytes": 4294967296,
+        "regions": [
+          {
+            "virtual_start": "0x0",
+            "virtual_end_exclusive": "0x10000000",
+            "physical_start": "0x0",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x10000000",
+            "virtual_end_exclusive": "0x20000000",
+            "physical_start": "0x10000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x20000000",
+            "virtual_end_exclusive": "0x30000000",
+            "physical_start": "0x20000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x30000000",
+            "virtual_end_exclusive": "0x40000000",
+            "physical_start": "0x30000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x40000000",
+            "virtual_end_exclusive": "0x50000000",
+            "physical_start": "0x40000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x50000000",
+            "virtual_end_exclusive": "0x60000000",
+            "physical_start": "0x50000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x60000000",
+            "virtual_end_exclusive": "0x70000000",
+            "physical_start": "0x60000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x70000000",
+            "virtual_end_exclusive": "0x80000000",
+            "physical_start": "0x70000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x80000000",
+            "virtual_end_exclusive": "0x90000000",
+            "physical_start": "0x80000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x90000000",
+            "virtual_end_exclusive": "0xa0000000",
+            "physical_start": "0x90000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xa0000000",
+            "virtual_end_exclusive": "0xb0000000",
+            "physical_start": "0xa0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xb0000000",
+            "virtual_end_exclusive": "0xc0000000",
+            "physical_start": "0xb0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xc0000000",
+            "virtual_end_exclusive": "0xd0000000",
+            "physical_start": "0xc0000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0xd0000000",
+            "virtual_end_exclusive": "0xe0000000",
+            "physical_start": "0xd0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xe0000000",
+            "virtual_end_exclusive": "0xf0000000",
+            "physical_start": "0xe0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xf0000000",
+            "virtual_end_exclusive": "0x100000000",
+            "physical_start": "0xf0000000",
+            "attributes": "0x2"
+          }
+        ],
+        "acquired_table_sha256": "8f6889e19734b06457760ff6298978946ab319cfa8fd76d8ebaa8586d18a911d",
+        "all_4096_entries_match_builder": true
+      },
+      {
+        "core_index": 3,
+        "table_address_literal": "0x83e7c000",
+        "code_service_address": "0x80000e14",
+        "code_bytes": 768,
+        "code_sha256": "3b9dbb227c4dced8dc86e69739b31f93a2297f57fac41688a9abe4a2e95bd04d",
+        "identity_mapped_bytes": 4294967296,
+        "regions": [
+          {
+            "virtual_start": "0x0",
+            "virtual_end_exclusive": "0x10000000",
+            "physical_start": "0x0",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x10000000",
+            "virtual_end_exclusive": "0x20000000",
+            "physical_start": "0x10000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x20000000",
+            "virtual_end_exclusive": "0x30000000",
+            "physical_start": "0x20000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x30000000",
+            "virtual_end_exclusive": "0x40000000",
+            "physical_start": "0x30000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0x40000000",
+            "virtual_end_exclusive": "0x50000000",
+            "physical_start": "0x40000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x50000000",
+            "virtual_end_exclusive": "0x60000000",
+            "physical_start": "0x50000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x60000000",
+            "virtual_end_exclusive": "0x70000000",
+            "physical_start": "0x60000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x70000000",
+            "virtual_end_exclusive": "0x80000000",
+            "physical_start": "0x70000000",
+            "attributes": "0x2002"
+          },
+          {
+            "virtual_start": "0x80000000",
+            "virtual_end_exclusive": "0x90000000",
+            "physical_start": "0x80000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0x90000000",
+            "virtual_end_exclusive": "0xa0000000",
+            "physical_start": "0x90000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xa0000000",
+            "virtual_end_exclusive": "0xb0000000",
+            "physical_start": "0xa0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xb0000000",
+            "virtual_end_exclusive": "0xc0000000",
+            "physical_start": "0xb0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xc0000000",
+            "virtual_end_exclusive": "0xd0000000",
+            "physical_start": "0xc0000000",
+            "attributes": "0x15c06"
+          },
+          {
+            "virtual_start": "0xd0000000",
+            "virtual_end_exclusive": "0xe0000000",
+            "physical_start": "0xd0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xe0000000",
+            "virtual_end_exclusive": "0xf0000000",
+            "physical_start": "0xe0000000",
+            "attributes": "0x11c02"
+          },
+          {
+            "virtual_start": "0xf0000000",
+            "virtual_end_exclusive": "0x100000000",
+            "physical_start": "0xf0000000",
+            "attributes": "0x2"
+          }
+        ],
+        "acquired_table_sha256": "8f6889e19734b06457760ff6298978946ab319cfa8fd76d8ebaa8586d18a911d",
+        "all_4096_entries_match_builder": true
+      }
+    ],
+    "ttbr0_store_service_address": "0x80000504",
+    "mapped_descriptor_does_not_establish_backing_memory": true,
+    "current_tables_read": true,
+    "usb_handler_cpu_mapping_identified": false
+  },
+  "camera_or_network_access": false
+}

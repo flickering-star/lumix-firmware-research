@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "scope": "Observed GX9 firmware 1.4 RAM strings, independently of the downloaded 1.5 package",
+  "source_capture": "20261109T003658Z-gx9-saved-linux-data-window",
+  "captured_range_start": "0x80600000",
+  "captured_range_end_exclusive": "0x80800000",
+  "capture_bytes": 2097152,
+  "capture_sha256": "89a5ec0d06afede761bb324c7b7edf5f399d1bd1c498811c3093f533ecfcce9f",
+  "kernel_version": "3.18.18",
+  "compiler_version": "GCC 4.8.5",
+  "toolchain_buildroot_version": "2017.02-svn196358",
+  "kernel_build_timestamp": "2018-02-21 11:12:43 JST",
+  "smp": true,
+  "markers": {
+    "kernel_banner": {
+      "service_address": "0x80676b30",
+      "string_sha256": "eae8d8b61a82e82eb62147fe70d51ca6ce2ac0264782ab517862f94ebbfdedcc",
+      "text": "Linux version 3.18.18; GCC 4.8.5; Buildroot 2017.02-svn196358; #1 SMP; Wed Feb 21 11:12:43 JST 2018"
+    },
+    "kernel_command_line": {
+      "service_address": "0x80676f0c",
+      "string_sha256": "a5a68556ef60f0b51cdbb081feab655bb3f7565567404b60ce5cc28b24396900",
+      "text": "Kernel command line: root=/dev/mtdblock0 slram=slram0,0x93100000,+0x00400000,slram1,0x93500000,+0x00900000 console=ttyAMA,115200 lpj=6213632"
+    },
+    "memory_report": {
+      "service_address": "0x80677118",
+      "string_sha256": "522bd22189210b23aead707a3bce06724b93bec01b66d0c1b1f1e664cbd5c652",
+      "text": "Memory: 41876K/47104K available (3335K kernel code, 198K rwdata, 860K rodata, 128K init, 84K bss, 5228K reserved)"
+    },
+    "root_mount": {
+      "service_address": "0x806784e4",
+      "string_sha256": "4e97c7d044e4fed14fbb0d57aca0b6f5c1b46a714348f8fccb238bcb66ebdf59",
+      "text": "VFS: Mounted root (squashfs filesystem) readonly on device 31:0."
+    },
+    "machine_model": {
+      "service_address": "0x80676c70",
+      "string_sha256": "24aae9c66ee56f0e8d0e8a044b05d7d98eb6f6fde6bf3ba5b7be1a201150bada",
+      "text": "Machine model: panasonic,pvc02v-brb"
+    },
+    "serial_getty_error": {
+      "service_address": "0x807bbeb8",
+      "string_sha256": "15d4c8b32803ba4cfe784e6dcef1d80630b0eede009894bb6b1441ef69f7c514",
+      "text": "/dev/ttyAMA: cannot open as standard input: No such device or address"
+    }
+  },
+  "source_copy_service_command": "0x5c",
+  "camera_firmware_modified": false,
+  "camera_shell_access_demonstrated": false,
+  "stock_distribution_compatibility_established": false,
+  "filesystem_regions": [
+    {
+      "label": "slram0",
+      "linux_physical_start": "0x93100000",
+      "mapped_bytes": 4194304,
+      "candidate_service_start": "0x83100000",
+      "head_magic": "68737173",
+      "squashfs_version": "4.0",
+      "compression_id": 3,
+      "bytes_used": 3619394
+    },
+    {
+      "label": "slram1",
+      "linux_physical_start": "0x93500000",
+      "mapped_bytes": 9437184,
+      "candidate_service_start": "0x83500000",
+      "head_magic": "68737173",
+      "squashfs_version": "4.0",
+      "compression_id": 3,
+      "bytes_used": 8364421
+    }
+  ],
+  "rootfs_image_acquisition_complete": true,
+  "filesystem_inventory": "evidence/gx9-filesystem-inventory.json",
+  "userspace_elf_properties": [
+    {
+      "path": "bin/bash",
+      "bytes": 649984,
+      "sha256": "e318cbeb5a33349d7c024b57c559f6afcb542fd86ab7abdc5288ea34a617300f",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000200"
+    },
+    {
+      "path": "usr/pvc/bin/nwa",
+      "bytes": 14028,
+      "sha256": "21b904a78c80c5b6e505af5f2cfdbfde6365558fd1169675685363d012782a77",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000200"
+    },
+    {
+      "path": "usr/pvc/lib/libicc.so",
+      "bytes": 7160,
+      "sha256": "ffe3e5f368ed5c0b515ed45984dd08fc96756cb8d47484239f37adf138201adf",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000200"
+    },
+    {
+      "path": "usr/pvc/lib/libicsm.so",
+      "bytes": 7388,
+      "sha256": "e2491fae5022c9a796a18a432a570e2f6379f85ebaa541f752762e705b445d11",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000200"
+    },
+    {
+      "path": "lib/modules/3.18.18/extra/iccdrv.ko",
+      "bytes": 16476,
+      "sha256": "4465d0d45e5bac81375a0f5a946641b91145475069076bc7cd17c8c5c3fcad9f",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000000",
+      "module_tags": [
+        "license=Proprietary",
+        "vermagic=3.18.18 SMP mod_unload ARMv7 "
+      ]
+    },
+    {
+      "path": "lib/modules/3.18.18/extra/icsmdrv.ko",
+      "bytes": 7156,
+      "sha256": "baa87500b37c7f5be722f28ffe08e09dea1f97b6d4d7a32cbbb3ee203335a2ea",
+      "elf_class": 1,
+      "elf_data": 1,
+      "elf_machine": 40,
+      "elf_flags": "0x5000000",
+      "module_tags": [
+        "license=Proprietary",
+        "vermagic=3.18.18 SMP mod_unload ARMv7 "
+      ]
+    }
+  ]
+}

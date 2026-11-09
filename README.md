@@ -15,6 +15,7 @@ connection files are excluded.
 | --- | --- | --- |
 | **GM1 Japanese-market 1.1** | Service USB word/block reads; complete 9 MiB main and 3.375 MiB secondary acquired; both match official plaintext. All six update components decoded, ECDSA independently verified. | No complete physical NOR backup or modified-firmware installation demonstrated. Factory-loader analysis is static. |
 | **GM5 Japanese 1.1** | 32 MiB NOR mapping backed up; modified unsigned installation proven; persistent policy zero; three-byte language unlock installed in normal mode. English survives manual off/on. | Language installation checked with three exact ROM windows, settings/UI and policy reads. Its full main readback was stopped at the owner's request. |
+| **GX9 / Japanese DC-GX7MK3, reported 1.4** | About 21.3 MiB of distinct RAM acquired; both Linux filesystems recovered; four components match the complete official 1.5 plaintext hashes after documented padding reconstruction. 26,938 kernel symbols recovered. Indexed, 1 KiB absolute and two-byte absolute service reads demonstrated. | Main camera program, firmware key, externally reachable shell and GX9 writes remain unverified. An internal Linux command runner is verified only through native-code analysis and mocked emulation. |
 | **GH2** | Static service-dispatch, startup, update, signature and factory-input analysis provided controls for the later USB work. | GH2 addresses and algorithms must not be assumed for GM1/GM5 or newer models. |
 | **Emulator** | Native MN103 updater/decode/NOR tests, bounded RTOS/task execution and ARM/Thumb startup/queue transport. | No complete camera boot, display/sensor model or integrated worker/reply path. |
 
@@ -26,6 +27,8 @@ Start with the guide for your model:
 
 - [GM1: USB acquisition, complete decoding and signature verification](docs/gm1-reproduction.md)
 - [GM5: reproduce the exact tested policy/language patch and package](docs/gm5-reproduction.md)
+- [GX9: recovered components and complete filesystem contents](docs/gx9-recovered-components.md)
+- [GX9: measured USB memory reads](docs/gx9-memory-reads.md), [Linux runtime](docs/gx9-linux-runtime.md), [internal command-handler analysis](docs/gx9-linux-command.md)
 - [Other models: protocol and updater investigation method](docs/porting-to-other-models.md)
 - [Public inputs, evidence and reproducibility](docs/reproducibility.md)
 - [Native emulator](docs/gm5-emulator.md), [RTOS](docs/gm5-native-rtos.md), [ARM backend](docs/gm5-arm-emulator.md)
@@ -33,8 +36,11 @@ Start with the guide for your model:
 ## Offline setup
 
 Run from the checkout root, using Python 3.10+ and a C compiler for the native
-controls. Physical USB tools currently use macOS IOKit; decoding and ordinary
-Python analysis do not require a connected camera.
+controls. Physical USB tools include macOS IOKit readers and the
+[Windows GX9 WinUSB/libusb capture workflow](docs/gx9-windows-local-capture.md).
+Decoding and ordinary Python analysis do not require a connected camera. The
+optional GX9 native command-handler verifier uses Unicorn 2.1.4 and mocks all
+process, file and IPC operations.
 
 ```sh
 git clone https://github.com/flickering-star/lumix-firmware-research.git

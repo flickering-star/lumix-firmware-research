@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "input_sha256": "7cafa9b91050c613b9fa76391f12003cbdd0a8e91f4e2e46dc0b22b1a5166fbd",
+  "input_bytes": 407276,
+  "unicorn_version": "2.1.4",
+  "verifier_sha256": "405de037df2cf6da9ef0ce894e9f1fc70f298dd551957915e411eaad80f60564",
+  "scope": "Captured native ARM dispatcher and command worker with mocked libc and IPC",
+  "event_name": "NET_EVT_LINUX_CMD",
+  "event_id": 60,
+  "internal_message_bytes": 488,
+  "command_offset": 24,
+  "output_length_offset": 20,
+  "output_chunk_maximum": 175,
+  "acknowledgement_type": 1,
+  "output_type": 2,
+  "dispatcher_virtual_address": "0x39e94",
+  "worker_virtual_address": "0x398d8",
+  "native_words_checked": {
+    "0x2aa68": "0xe350003c",
+    "0x2aa6c": "0xa000208",
+    "0x2b294": "0xe59f02dc",
+    "0x2b578": "0x58f20",
+    "0x39eb0": "0xe353003c",
+    "0x39eb4": "0xa000028",
+    "0x39fdc": "0xe59f231c",
+    "0x3a300": "0x398d8",
+    "0x39fe4": "0xebff613a",
+    "0x39998": "0xebff623d",
+    "0x399dc": "0xebff622c",
+    "0x39a00": "0xe3a020af"
+  },
+  "cases": [
+    {
+      "entry": "0x398d8",
+      "command": "printf GX9_CONSOLE_OK",
+      "host_commands_executed": false,
+      "native_instructions": 115,
+      "system_arguments": [
+        "printf GX9_CONSOLE_OK > /tmp/printf"
+      ],
+      "messages": [
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            14
+          ],
+          "data_bytes": 14,
+          "data_sha256": "08dac3354248f6ce564faeda5cddaaefdc3bb8b164babf9a2327e21991f4201b"
+        },
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "data_bytes": 2,
+          "data_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+        }
+      ],
+      "threads": [],
+      "fopen_arguments": [
+        "/tmp/printf",
+        "rb"
+      ],
+      "returned_bytes": 16,
+      "returned_sha256": "ecf408e10f0cef5818f4b957c89806158d5cf9238d873a002b31ba30e8b069bb"
+    },
+    {
+      "entry": "0x398d8",
+      "command": "printf GX9_CONSOLE_OK",
+      "host_commands_executed": false,
+      "native_instructions": 163,
+      "system_arguments": [
+        "printf GX9_CONSOLE_OK > /tmp/printf"
+      ],
+      "messages": [
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            175
+          ],
+          "data_bytes": 175,
+          "data_sha256": "3cac501bae67e58abac8f0dc9b2f1f4da2c020eca375554ace5aa92f40d557a4"
+        },
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            175
+          ],
+          "data_bytes": 175,
+          "data_sha256": "3cac501bae67e58abac8f0dc9b2f1f4da2c020eca375554ace5aa92f40d557a4"
+        },
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            50
+          ],
+          "data_bytes": 50,
+          "data_sha256": "509ddb85fdf92f197d32570c005cdcb6dffa398f088bd1a013459f6fb1f730ef"
+        },
+        {
+          "header": [
+            60,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "data_bytes": 2,
+          "data_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+        }
+      ],
+      "threads": [],
+      "fopen_arguments": [
+        "/tmp/printf",
+        "rb"
+      ],
+      "returned_bytes": 402,
+      "returned_sha256": "d08387769da2849c59a7df0a5e2605782cb4a345f2497661afb88584b7abf73b"
+    },
+    {
+      "entry": "0x398d8",
+      "command": "printf GX9_CONSOLE_OK > /tmp/gx9-proof",
+      "host_commands_executed": false,
+      "native_instructions": 65,
+      "system_arguments": [
+        "printf GX9_CONSOLE_OK > /tmp/gx9-proof"
+      ],
+      "messages": [],
+      "threads": [],
+      "returned_bytes": 0,
+      "returned_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "entry": "0x39e94",
+      "command": "printf GX9_CONSOLE_OK",
+      "host_commands_executed": false,
+      "native_instructions": 61,
+      "system_arguments": [],
+      "messages": [
+        {
+          "header": [
+            60,
+            1,
+            0,
+            0,
+            0,
+            21
+          ],
+          "data_bytes": 21,
+          "data_sha256": "8ab98ad42338aa6d17dede33cf43f1259457f0145b06ce749530a50770105560"
+        }
+      ],
+      "threads": [
+        {
+          "function": "0x398d8",
+          "argument": "0x30001000",
+          "message_bytes": 488,
+          "message_sha256": "f73b4f8a699f3f04d35df9dfbbfc68710aa6ca789afd8159609aeab97e12f284"
+        }
+      ],
+      "returned_bytes": 21,
+      "returned_sha256": "8ab98ad42338aa6d17dede33cf43f1259457f0145b06ce749530a50770105560"
+    }
+  ],
+  "all_controls_passed": true,
+  "camera_requests": 0,
+  "host_shell_commands_executed": 0,
+  "external_usb_or_wifi_entry_demonstrated": false,
+  "limits": [
+    "Libc process/file operations and internal IPC were simulated, not executed on Linux.",
+    "An internal 488-byte message is not a USB packet or an exposed Wi-Fi protocol.",
+    "No firmware key, main-camera program or live camera shell was recovered by this verifier."
+  ]
+}

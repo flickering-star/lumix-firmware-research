@@ -1,0 +1,4889 @@
+{
+  "schema": 1,
+  "scope": "File inventory of two GX9 firmware1.4 SquashFS images recovered through USB reads; no file contents or credentials included",
+  "total_entries": 947,
+  "images": [
+    {
+      "image": "rootfs1",
+      "mounted_at": "/",
+      "captured_bytes": 4194304,
+      "sha256": "ac96cc0624e6a377a35eb48b1409f7303be565992d725aa286086cec1cf95e7c",
+      "squashfs_bytes_used": 3619394,
+      "version": "4.0",
+      "compression": "LZO",
+      "entry_count": 599,
+      "entry_types": {
+        "d": 80,
+        "l": 257,
+        "-": 225,
+        "c": 33,
+        "b": 4
+      },
+      "integrity_test_passed": true,
+      "entries": [
+        {
+          "path": "/bin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/bin/bash",
+          "mode": "-rwxr-xr-x",
+          "bytes": 649984
+        },
+        {
+          "path": "/bin/cat",
+          "mode": "-rwxr-xr-x",
+          "bytes": 17896
+        },
+        {
+          "path": "/bin/chmod",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/clockdiff",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/bin/cp",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/bin/date",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/dmesg",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/echo",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14932
+        },
+        {
+          "path": "/bin/free",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/hostname",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/bin/login",
+          "mode": "-rwxr-xr-x",
+          "bytes": 26920
+        },
+        {
+          "path": "/bin/ls",
+          "mode": "-rwxr-xr-x",
+          "bytes": 73344
+        },
+        {
+          "path": "/bin/mkdir",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19024
+        },
+        {
+          "path": "/bin/more",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/mount",
+          "mode": "-rwxr-xr-x",
+          "bytes": 32600
+        },
+        {
+          "path": "/bin/mv",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/bin/netstat",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/bin/pgrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/ping",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/pkill",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/pmap",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/ps",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/bin/pwdx",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/bin/rm",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/bin/rmdir",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/run-parts",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/bin/sh",
+          "mode": "lrwxrwxrwx",
+          "bytes": 9
+        },
+        {
+          "path": "/bin/slabtop",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/bin/tar",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/bin/tload",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/bin/top",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/bin/tracepath",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/bin/traceroute6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/bin/umount",
+          "mode": "-rwxr-xr-x",
+          "bytes": 23048
+        },
+        {
+          "path": "/bin/vmstat",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/bin/w",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/bin/watch",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/dev",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/dev/console",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc0",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc1",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc10",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc11",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc12",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc13",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc14",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc15",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc2",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc3",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc4",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc5",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc6",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc7",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc8",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icc9",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/icsm",
+          "mode": "crw-r--r--",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/log",
+          "mode": "lrwxrwxrwx",
+          "bytes": 10
+        },
+        {
+          "path": "/dev/mem",
+          "mode": "crw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtd0",
+          "mode": "crw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtd1",
+          "mode": "crw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtd2",
+          "mode": "crw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtd3",
+          "mode": "crw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtdblock0",
+          "mode": "brw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtdblock1",
+          "mode": "brw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtdblock2",
+          "mode": "brw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/mtdblock3",
+          "mode": "brw-r-----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/null",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/ptmx",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/pts",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/dev/random",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/shm",
+          "mode": "drwxrwxrwx",
+          "bytes": null
+        },
+        {
+          "path": "/dev/smt",
+          "mode": "crw-rw----",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/stpbt",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/stpwmt",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/ttyAMA",
+          "mode": "crw-------",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/urandom",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/wmtWifi",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/dev/zero",
+          "mode": "crw-rw-rw-",
+          "bytes": 0
+        },
+        {
+          "path": "/etc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/dhcp",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/dhcp/dhclient.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1566
+        },
+        {
+          "path": "/etc/dhcp/dhcpd.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 3551
+        },
+        {
+          "path": "/etc/dhcpcd.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1376
+        },
+        {
+          "path": "/etc/fstab",
+          "mode": "-rw-rw-r--",
+          "bytes": 189
+        },
+        {
+          "path": "/etc/group",
+          "mode": "-rw-r--r--",
+          "bytes": 307
+        },
+        {
+          "path": "/etc/hostname",
+          "mode": "-rw-r--r--",
+          "bytes": 10
+        },
+        {
+          "path": "/etc/hosts",
+          "mode": "-rw-r--r--",
+          "bytes": 40
+        },
+        {
+          "path": "/etc/init.d",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/init.d/S02-mount",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1262
+        },
+        {
+          "path": "/etc/init.d/S03-modules",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1107
+        },
+        {
+          "path": "/etc/init.d/S10-ifup",
+          "mode": "-rwxrwxr-x",
+          "bytes": 135
+        },
+        {
+          "path": "/etc/init.d/S20urandom",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1321
+        },
+        {
+          "path": "/etc/init.d/btdevstart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 186
+        },
+        {
+          "path": "/etc/init.d/btdevstop",
+          "mode": "-rwxrwxr-x",
+          "bytes": 644
+        },
+        {
+          "path": "/etc/init.d/btteststart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 841
+        },
+        {
+          "path": "/etc/init.d/btteststop",
+          "mode": "-rwxrwxr-x",
+          "bytes": 456
+        },
+        {
+          "path": "/etc/init.d/ifup",
+          "mode": "-rwxrwxr-x",
+          "bytes": 564
+        },
+        {
+          "path": "/etc/init.d/lighttpd",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1625
+        },
+        {
+          "path": "/etc/init.d/mount",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1186
+        },
+        {
+          "path": "/etc/init.d/netdevstart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 733
+        },
+        {
+          "path": "/etc/init.d/netdevstop",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1287
+        },
+        {
+          "path": "/etc/init.d/netstart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 222
+        },
+        {
+          "path": "/etc/init.d/rcK",
+          "mode": "-rwxr-xr-x",
+          "bytes": 423
+        },
+        {
+          "path": "/etc/init.d/rcS",
+          "mode": "-rwxr-xr-x",
+          "bytes": 408
+        },
+        {
+          "path": "/etc/init.d/wait_if_down",
+          "mode": "-rwxrwxr-x",
+          "bytes": 372
+        },
+        {
+          "path": "/etc/init.d/wait_if_up",
+          "mode": "-rwxrwxr-x",
+          "bytes": 366
+        },
+        {
+          "path": "/etc/init.d/wait_supp_start",
+          "mode": "-rwxrwxr-x",
+          "bytes": 799
+        },
+        {
+          "path": "/etc/init.d/wait_supp_stop",
+          "mode": "-rwxrwxr-x",
+          "bytes": 323
+        },
+        {
+          "path": "/etc/init.d/wifidevrestart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1476
+        },
+        {
+          "path": "/etc/init.d/wifidevstart",
+          "mode": "-rwxrwxr-x",
+          "bytes": 481
+        },
+        {
+          "path": "/etc/init.d/wifidevstop",
+          "mode": "-rwxrwxr-x",
+          "bytes": 546
+        },
+        {
+          "path": "/etc/inittab",
+          "mode": "-rw-r--r--",
+          "bytes": 748
+        },
+        {
+          "path": "/etc/iproute2",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/issue",
+          "mode": "-rw-r--r--",
+          "bytes": 21
+        },
+        {
+          "path": "/etc/libnl",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/libnl/classid",
+          "mode": "-rw-r--r--",
+          "bytes": 1130
+        },
+        {
+          "path": "/etc/libnl/pktloc",
+          "mode": "-rw-r--r--",
+          "bytes": 1532
+        },
+        {
+          "path": "/etc/lighttpd",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/lighttpd.conf",
+          "mode": "-rw-rw-r--",
+          "bytes": 11746
+        },
+        {
+          "path": "/etc/lighttpd/conf.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/lighttpd/conf.d/access_log.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 742
+        },
+        {
+          "path": "/etc/lighttpd/conf.d/debug.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1043
+        },
+        {
+          "path": "/etc/lighttpd/conf.d/dirlisting.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1398
+        },
+        {
+          "path": "/etc/lighttpd/conf.d/mime.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 21589
+        },
+        {
+          "path": "/etc/lighttpd/lighttpd.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 13431
+        },
+        {
+          "path": "/etc/lighttpd/modules.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 3305
+        },
+        {
+          "path": "/etc/menuxml",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/menuxml/MC282_allmenu.xml",
+          "mode": "-rwxrw-r--",
+          "bytes": 195122
+        },
+        {
+          "path": "/etc/modules",
+          "mode": "-rw-rw-r--",
+          "bytes": 15
+        },
+        {
+          "path": "/etc/mtab",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/etc/network",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/network/if-down.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/network/if-post-down.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/network/if-pre-up.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/network/if-pre-up.d/wait_iface",
+          "mode": "-rwxr-xr-x",
+          "bytes": 576
+        },
+        {
+          "path": "/etc/network/if-up.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/network/interfaces",
+          "mode": "-rw-r--r--",
+          "bytes": 77
+        },
+        {
+          "path": "/etc/network/run",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/etc/nsswitch.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 230
+        },
+        {
+          "path": "/etc/pam.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/pam.d/login",
+          "mode": "-rw-r--r--",
+          "bytes": 307
+        },
+        {
+          "path": "/etc/pam.d/other",
+          "mode": "-rw-r--r--",
+          "bytes": 120
+        },
+        {
+          "path": "/etc/pam.d/su",
+          "mode": "-rw-r--r--",
+          "bytes": 400
+        },
+        {
+          "path": "/etc/pam.d/su-l",
+          "mode": "-rw-r--r--",
+          "bytes": 400
+        },
+        {
+          "path": "/etc/passwd",
+          "mode": "-rw-r--r--",
+          "bytes": 340
+        },
+        {
+          "path": "/etc/profile",
+          "mode": "-rw-r--r--",
+          "bytes": 324
+        },
+        {
+          "path": "/etc/profile.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/profile.d/umask.sh",
+          "mode": "-rw-r--r--",
+          "bytes": 10
+        },
+        {
+          "path": "/etc/rc3.d",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/resolv.conf",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/etc/security",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/security/access.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 4620
+        },
+        {
+          "path": "/etc/security/group.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 3635
+        },
+        {
+          "path": "/etc/security/limits.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1835
+        },
+        {
+          "path": "/etc/security/limits.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/security/namespace.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 1440
+        },
+        {
+          "path": "/etc/security/namespace.d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/security/namespace.init",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1016
+        },
+        {
+          "path": "/etc/security/pam_env.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 2972
+        },
+        {
+          "path": "/etc/security/time.conf",
+          "mode": "-rw-r--r--",
+          "bytes": 2179
+        },
+        {
+          "path": "/etc/shadow",
+          "mode": "-rw-------",
+          "bytes": 243
+        },
+        {
+          "path": "/etc/ssl",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/certs",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/man",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/man/man1",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/man/man3",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/man/man5",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/man/man7",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/misc",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/ssl/misc/CA.sh",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5175
+        },
+        {
+          "path": "/etc/ssl/misc/c_hash",
+          "mode": "-rwxr-xr-x",
+          "bytes": 119
+        },
+        {
+          "path": "/etc/ssl/misc/c_info",
+          "mode": "-rwxr-xr-x",
+          "bytes": 152
+        },
+        {
+          "path": "/etc/ssl/misc/c_issuer",
+          "mode": "-rwxr-xr-x",
+          "bytes": 112
+        },
+        {
+          "path": "/etc/ssl/misc/c_name",
+          "mode": "-rwxr-xr-x",
+          "bytes": 110
+        },
+        {
+          "path": "/etc/ssl/openssl.cnf",
+          "mode": "-rw-r--r--",
+          "bytes": 10835
+        },
+        {
+          "path": "/etc/ssl/private",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/wpa_supplicant",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/wpa_supplicant/hostapd.conf",
+          "mode": "-rw-rw-r--",
+          "bytes": 74203
+        },
+        {
+          "path": "/etc/wpa_supplicant/wpa_supplicant.conf",
+          "mode": "-rw-rw-r--",
+          "bytes": 81
+        },
+        {
+          "path": "/etc/www",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/etc/www/cam.fcgi",
+          "mode": "-rwxrwxr-x",
+          "bytes": 10384
+        },
+        {
+          "path": "/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/dhcpcd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/lib/firmware",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/firmware/WIFI",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/lib/firmware/WIFI_RAM_CODE_MT6630",
+          "mode": "lrwxrwxrwx",
+          "bytes": 43
+        },
+        {
+          "path": "/lib/firmware/WIFI_org",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/lib/firmware/WMT.cfg",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/lib/firmware/entropy.bin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/lib/firmware/mt6630_patch_e3_0_hdr.bin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 48
+        },
+        {
+          "path": "/lib/firmware/mt6630_patch_e3_1_hdr.bin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 48
+        },
+        {
+          "path": "/lib/firmware/wifi.cfg",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/lib/ifupdown",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/lib/ld-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 135416
+        },
+        {
+          "path": "/lib/ld-linux.so.3",
+          "mode": "lrwxrwxrwx",
+          "bytes": 10
+        },
+        {
+          "path": "/lib/libatomic.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/lib/libblkid.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/lib/libblkid.so.1.1.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 216032
+        },
+        {
+          "path": "/lib/libc-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1246968
+        },
+        {
+          "path": "/lib/libc.so.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 12
+        },
+        {
+          "path": "/lib/libcrypt-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 31636
+        },
+        {
+          "path": "/lib/libcrypt.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/lib/libdl-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 11112
+        },
+        {
+          "path": "/lib/libdl.so.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 13
+        },
+        {
+          "path": "/lib/libgcc_s.so",
+          "mode": "-rw-r--r--",
+          "bytes": 132
+        },
+        {
+          "path": "/lib/libgcc_s.so.1",
+          "mode": "-rw-r--r--",
+          "bytes": 129612
+        },
+        {
+          "path": "/lib/libm-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 662440
+        },
+        {
+          "path": "/lib/libm.so.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 12
+        },
+        {
+          "path": "/lib/libmount.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/lib/libmount.so.1.1.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 237076
+        },
+        {
+          "path": "/lib/libnsl-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 72996
+        },
+        {
+          "path": "/lib/libnsl.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 14
+        },
+        {
+          "path": "/lib/libnss_dns-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 17852
+        },
+        {
+          "path": "/lib/libnss_dns.so.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/lib/libnss_files-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 38388
+        },
+        {
+          "path": "/lib/libnss_files.so.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/lib/libpam.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/lib/libpam.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/lib/libpam.so.0.84.2",
+          "mode": "-rwxr-xr-x",
+          "bytes": 45404
+        },
+        {
+          "path": "/lib/libpam_misc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/lib/libpam_misc.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/lib/libpam_misc.so.0.82.1",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9336
+        },
+        {
+          "path": "/lib/libpamc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/lib/libpamc.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/lib/libpamc.so.0.82.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/lib/libpthread-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 94832
+        },
+        {
+          "path": "/lib/libpthread.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/lib/libresolv-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 73592
+        },
+        {
+          "path": "/lib/libresolv.so.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/lib/librt-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 28244
+        },
+        {
+          "path": "/lib/librt.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 13
+        },
+        {
+          "path": "/lib/libutil-2.23.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9668
+        },
+        {
+          "path": "/lib/libutil.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/lib/libuuid.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/lib/libuuid.so.1.3.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14836
+        },
+        {
+          "path": "/lib/modules",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo/mtk_hif_sdio.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 45740
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo/mtk_stp_bt.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 10844
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo/mtk_stp_sdio.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 46964
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo/mtk_stp_wmt.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 282428
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/common/combo/mtk_wmt_wifi.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 9464
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/iccdrv.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 16476
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/icsmdrv.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 7156
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/wlan",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/wlan/gen3",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/extra/wlan/gen3/wlan_gen3.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 910808
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/crypto",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/crypto/deflate.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4372
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/drivers",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/drivers/mmc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/drivers/mmc/host",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/drivers/mmc/host/pvc_sdio.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 10996
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib/ts_bm.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4008
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib/ts_fsm.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 5188
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib/ts_kmp.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3828
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib/zlib_deflate",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/lib/zlib_deflate/zlib_deflate.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 18480
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/ipt_CLUSTERIP.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 10804
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/ipt_ECN.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4260
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/ipt_REJECT.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3816
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/iptable_mangle.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4152
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/iptable_raw.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3844
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/ipv4/netfilter/nf_reject_ipv4.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4020
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/nf_conntrack_netlink.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 29256
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/nfnetlink.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 8540
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/nfnetlink_log.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 13088
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/nfnetlink_queue.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 14172
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_CLASSIFY.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3128
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_DSCP.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4400
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_HL.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4280
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_NFLOG.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3324
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_NFQUEUE.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4684
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_RATEEST.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 5308
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_TCPMSS.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 5012
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_TCPOPTSTRIP.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3668
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_cluster.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4164
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_comment.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3020
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_connbytes.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4184
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_connlimit.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 8488
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_connmark.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4360
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_conntrack.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 5336
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_dccp.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4544
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_dscp.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3928
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_esp.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3420
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_hashlimit.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 11012
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_helper.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3748
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_hl.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3524
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_iprange.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3708
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_length.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3300
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_limit.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4208
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_mac.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3116
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_mark.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3396
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_multiport.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3976
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_osf.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 6368
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_owner.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3284
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_pkttype.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3124
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_quota.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3544
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_rateest.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4056
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_realm.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3016
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_recent.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 12356
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_state.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3624
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_statistic.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3792
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_string.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3476
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_tcpmss.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3572
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_time.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 4848
+        },
+        {
+          "path": "/lib/modules/3.18.18/kernel/net/netfilter/xt_u32.ko",
+          "mode": "-rw-rw-r--",
+          "bytes": 3480
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.alias",
+          "mode": "-rw-r--r--",
+          "bytes": 3319
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.alias.bin",
+          "mode": "-rw-r--r--",
+          "bytes": 5113
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.builtin",
+          "mode": "-rw-rw-r--",
+          "bytes": 2488
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.builtin.bin",
+          "mode": "-rw-r--r--",
+          "bytes": 3902
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.dep",
+          "mode": "-rw-r--r--",
+          "bytes": 3063
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.dep.bin",
+          "mode": "-rw-r--r--",
+          "bytes": 5450
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.devname",
+          "mode": "-rw-r--r--",
+          "bytes": 52
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.order",
+          "mode": "-rw-rw-r--",
+          "bytes": 1893
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.softdep",
+          "mode": "-rw-r--r--",
+          "bytes": 131
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.symbols",
+          "mode": "-rw-r--r--",
+          "bytes": 3332
+        },
+        {
+          "path": "/lib/modules/3.18.18/modules.symbols.bin",
+          "mode": "-rw-r--r--",
+          "bytes": 3690
+        },
+        {
+          "path": "/lib/security",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/security/pam_access.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10832
+        },
+        {
+          "path": "/lib/security/pam_debug.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4788
+        },
+        {
+          "path": "/lib/security/pam_deny.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2960
+        },
+        {
+          "path": "/lib/security/pam_echo.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5004
+        },
+        {
+          "path": "/lib/security/pam_env.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10256
+        },
+        {
+          "path": "/lib/security/pam_exec.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10260
+        },
+        {
+          "path": "/lib/security/pam_faildelay.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4784
+        },
+        {
+          "path": "/lib/security/pam_filter",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/lib/security/pam_filter.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10040
+        },
+        {
+          "path": "/lib/security/pam_filter/upperLOWER",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5220
+        },
+        {
+          "path": "/lib/security/pam_ftp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4536
+        },
+        {
+          "path": "/lib/security/pam_group.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9892
+        },
+        {
+          "path": "/lib/security/pam_issue.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6708
+        },
+        {
+          "path": "/lib/security/pam_keyinit.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5608
+        },
+        {
+          "path": "/lib/security/pam_lastlog.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10556
+        },
+        {
+          "path": "/lib/security/pam_limits.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14060
+        },
+        {
+          "path": "/lib/security/pam_listfile.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7064
+        },
+        {
+          "path": "/lib/security/pam_localuser.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4348
+        },
+        {
+          "path": "/lib/security/pam_loginuid.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4584
+        },
+        {
+          "path": "/lib/security/pam_mail.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7648
+        },
+        {
+          "path": "/lib/security/pam_mkhomedir.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5620
+        },
+        {
+          "path": "/lib/security/pam_motd.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3900
+        },
+        {
+          "path": "/lib/security/pam_namespace.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 25628
+        },
+        {
+          "path": "/lib/security/pam_nologin.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4576
+        },
+        {
+          "path": "/lib/security/pam_permit.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3244
+        },
+        {
+          "path": "/lib/security/pam_pwhistory.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10220
+        },
+        {
+          "path": "/lib/security/pam_rhosts.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4328
+        },
+        {
+          "path": "/lib/security/pam_rootok.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3480
+        },
+        {
+          "path": "/lib/security/pam_securetty.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5660
+        },
+        {
+          "path": "/lib/security/pam_shells.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4048
+        },
+        {
+          "path": "/lib/security/pam_stress.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9156
+        },
+        {
+          "path": "/lib/security/pam_succeed_if.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8648
+        },
+        {
+          "path": "/lib/security/pam_tally.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9764
+        },
+        {
+          "path": "/lib/security/pam_tally2.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9768
+        },
+        {
+          "path": "/lib/security/pam_time.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8408
+        },
+        {
+          "path": "/lib/security/pam_timestamp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 13404
+        },
+        {
+          "path": "/lib/security/pam_umask.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6172
+        },
+        {
+          "path": "/lib/security/pam_unix.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 36196
+        },
+        {
+          "path": "/lib/security/pam_warn.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3872
+        },
+        {
+          "path": "/lib/security/pam_wheel.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5168
+        },
+        {
+          "path": "/lib/security/pam_xauth.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 13200
+        },
+        {
+          "path": "/libexec",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/media",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/mnt",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/CamShare",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/opt",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/proc",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/root",
+          "mode": "drwx------",
+          "bytes": null
+        },
+        {
+          "path": "/run",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/sbin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/sbin/agetty",
+          "mode": "-rwxr-xr-x",
+          "bytes": 46004
+        },
+        {
+          "path": "/sbin/arping",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/sbin/depmod",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/dhclient",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/sbin/dhclient-script",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/sbin/dhcpcd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/sbin/getty",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/sbin/ifconfig",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/sbin/ifdown",
+          "mode": "lrwxrwxrwx",
+          "bytes": 10
+        },
+        {
+          "path": "/sbin/ifquery",
+          "mode": "lrwxrwxrwx",
+          "bytes": 10
+        },
+        {
+          "path": "/sbin/ifup",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/sbin/init",
+          "mode": "-rwxr-xr-x",
+          "bytes": 29996
+        },
+        {
+          "path": "/sbin/insmod",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/iwconfig",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/sbin/iwgetid",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/sbin/iwlist",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/sbin/iwpriv",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/sbin/iwspy",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/sbin/killall5",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14648
+        },
+        {
+          "path": "/sbin/lsmod",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/modinfo",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/modprobe",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/rdisc",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/sbin/rmmod",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/sbin/route",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/sbin/sulogin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/sbin/sysctl",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/sys",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/tmp",
+          "mode": "drwxrwxrwt",
+          "bytes": null
+        },
+        {
+          "path": "/usr",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/bin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/bin/bunzip2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/bin/bzcat",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/bzcmp",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/usr/bin/bzdiff",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/bin/bzegrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/usr/bin/bzfgrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/usr/bin/bzgrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/bin/bzip2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/bzip2recover",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/usr/bin/bzless",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/usr/bin/bzmore",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/bin/cgi-fcgi",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/bin/curl",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/bin/egrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/fgrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/grep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 88980
+        },
+        {
+          "path": "/usr/bin/id",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16412
+        },
+        {
+          "path": "/usr/bin/iperf",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/iptables-xml",
+          "mode": "lrwxrwxrwx",
+          "bytes": 23
+        },
+        {
+          "path": "/usr/bin/kill",
+          "mode": "-rwxr-xr-x",
+          "bytes": 17428
+        },
+        {
+          "path": "/usr/bin/kmod",
+          "mode": "-rwxr-xr-x",
+          "bytes": 101212
+        },
+        {
+          "path": "/usr/bin/less",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/bin/openssl",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/bin/pcregrep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/bin/pcretest",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/bin/strace",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/bin/strace-log-merge",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/bin/time",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/bin/uptime",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/lib/engines",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/lib/libblkid.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 27
+        },
+        {
+          "path": "/usr/lib/libbz2.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libbz2.so.1.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libbz2.so.1.0.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/lib/libcrypto.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/lib/libcrypto.so.1.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 36
+        },
+        {
+          "path": "/usr/lib/libcurl.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libcurl.so.4",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libcurl.so.4.4.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/lib/libcurses.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libexpat.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libexpat.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libexpat.so.1.6.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 35
+        },
+        {
+          "path": "/usr/lib/libfcgi++.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/lib/libfcgi++.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/lib/libfcgi++.so.0.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 36
+        },
+        {
+          "path": "/usr/lib/libfcgi.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libfcgi.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libfcgi.so.0.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/lib/libffi.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libffi.so.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libffi.so.6.0.4",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/lib/libip4tc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libip4tc.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libip4tc.so.0.1.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 35
+        },
+        {
+          "path": "/usr/lib/libip6tc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libip6tc.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libip6tc.so.0.1.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 35
+        },
+        {
+          "path": "/usr/lib/libiptc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libiptc.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libiptc.so.0.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/lib/libkmod.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libkmod.so.2",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libkmod.so.2.3.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/lib/libmount.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 27
+        },
+        {
+          "path": "/usr/lib/libncurses.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libncurses.so.5",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/libncurses.so.5.9",
+          "mode": "-rwxr-xr-x",
+          "bytes": 183724
+        },
+        {
+          "path": "/usr/lib/libnl-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libnl-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libnl-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 37
+        },
+        {
+          "path": "/usr/lib/libnl-genl-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/lib/libnl-genl-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/lib/libnl-genl-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 42
+        },
+        {
+          "path": "/usr/lib/libnl-idiag-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/lib/libnl-idiag-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/lib/libnl-idiag-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 43
+        },
+        {
+          "path": "/usr/lib/libnl-nf-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/lib/libnl-nf-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/lib/libnl-nf-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 40
+        },
+        {
+          "path": "/usr/lib/libnl-route-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/lib/libnl-route-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/lib/libnl-route-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 43
+        },
+        {
+          "path": "/usr/lib/libnl-xfrm-3.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/lib/libnl-xfrm-3.so.200",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/lib/libnl-xfrm-3.so.200.22.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 42
+        },
+        {
+          "path": "/usr/lib/libpcre.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libpcre.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 16
+        },
+        {
+          "path": "/usr/lib/libpcre.so.1.2.8",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/lib/libpcrecpp.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libpcrecpp.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libpcrecpp.so.0.0.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 37
+        },
+        {
+          "path": "/usr/lib/libpcreposix.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/usr/lib/libpcreposix.so.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 21
+        },
+        {
+          "path": "/usr/lib/libpcreposix.so.0.0.4",
+          "mode": "lrwxrwxrwx",
+          "bytes": 39
+        },
+        {
+          "path": "/usr/lib/libpng.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 11
+        },
+        {
+          "path": "/usr/lib/libpng16.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libpng16.so.16",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libpng16.so.16.28.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 37
+        },
+        {
+          "path": "/usr/lib/libprocps.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/lib/libprocps.so.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/lib/libprocps.so.6.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 36
+        },
+        {
+          "path": "/usr/lib/libssl.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 15
+        },
+        {
+          "path": "/usr/lib/libssl.so.1.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/lib/libstdc++.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6.0.19",
+          "mode": "-rwxr-xr-x",
+          "bytes": 666844
+        },
+        {
+          "path": "/usr/lib/libuuid.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/lib/libxtables.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/usr/lib/libxtables.so.12",
+          "mode": "lrwxrwxrwx",
+          "bytes": 20
+        },
+        {
+          "path": "/usr/lib/libxtables.so.12.0.0",
+          "mode": "lrwxrwxrwx",
+          "bytes": 38
+        },
+        {
+          "path": "/usr/lib/libz.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 14
+        },
+        {
+          "path": "/usr/lib/libz.so.1",
+          "mode": "lrwxrwxrwx",
+          "bytes": 14
+        },
+        {
+          "path": "/usr/lib/libz.so.1.2.11",
+          "mode": "-rwxr-xr-x",
+          "bytes": 75852
+        },
+        {
+          "path": "/usr/lib/lighttpd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/lib/tc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/lib/tc/experimental.dist",
+          "mode": "lrwxrwxrwx",
+          "bytes": 38
+        },
+        {
+          "path": "/usr/lib/tc/m_ipt.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 7
+        },
+        {
+          "path": "/usr/lib/tc/m_xt.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 28
+        },
+        {
+          "path": "/usr/lib/tc/normal.dist",
+          "mode": "lrwxrwxrwx",
+          "bytes": 32
+        },
+        {
+          "path": "/usr/lib/tc/pareto.dist",
+          "mode": "lrwxrwxrwx",
+          "bytes": 32
+        },
+        {
+          "path": "/usr/lib/tc/paretonormal.dist",
+          "mode": "lrwxrwxrwx",
+          "bytes": 38
+        },
+        {
+          "path": "/usr/lib/terminfo",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/usr/lib/xtables",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/local",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/usr/pvc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/pvc/bin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/pvc/bin/bt",
+          "mode": "lrwxrwxrwx",
+          "bytes": 24
+        },
+        {
+          "path": "/usr/pvc/bin/bt_drv",
+          "mode": "lrwxrwxrwx",
+          "bytes": 28
+        },
+        {
+          "path": "/usr/pvc/bin/dlna",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/pvc/bin/get_noise",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/usr/pvc/bin/hci_cmd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 29
+        },
+        {
+          "path": "/usr/pvc/bin/hostapd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 29
+        },
+        {
+          "path": "/usr/pvc/bin/hostapd_cli",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/pvc/bin/ipdiagDup",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/usr/pvc/bin/link",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/pvc/bin/lvdp",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/pvc/bin/mtkbt",
+          "mode": "lrwxrwxrwx",
+          "bytes": 27
+        },
+        {
+          "path": "/usr/pvc/bin/myMsleep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/usr/pvc/bin/mySleep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 29
+        },
+        {
+          "path": "/usr/pvc/bin/myTouch",
+          "mode": "lrwxrwxrwx",
+          "bytes": 29
+        },
+        {
+          "path": "/usr/pvc/bin/net",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/pvc/bin/nwa",
+          "mode": "-rwxrwxr-x",
+          "bytes": 14028
+        },
+        {
+          "path": "/usr/pvc/bin/nws",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/pvc/bin/picm",
+          "mode": "lrwxrwxrwx",
+          "bytes": 26
+        },
+        {
+          "path": "/usr/pvc/bin/psm",
+          "mode": "lrwxrwxrwx",
+          "bytes": 25
+        },
+        {
+          "path": "/usr/pvc/bin/ptpip",
+          "mode": "lrwxrwxrwx",
+          "bytes": 27
+        },
+        {
+          "path": "/usr/pvc/bin/usleep",
+          "mode": "lrwxrwxrwx",
+          "bytes": 28
+        },
+        {
+          "path": "/usr/pvc/bin/wifitest",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/usr/pvc/bin/wmt_launcher_sdio",
+          "mode": "lrwxrwxrwx",
+          "bytes": 39
+        },
+        {
+          "path": "/usr/pvc/bin/wmt_tool",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/usr/pvc/bin/wpa_cli",
+          "mode": "lrwxrwxrwx",
+          "bytes": 29
+        },
+        {
+          "path": "/usr/pvc/bin/wpa_supplicant",
+          "mode": "lrwxrwxrwx",
+          "bytes": 36
+        },
+        {
+          "path": "/usr/pvc/etc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/pvc/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/pvc/lib/libbluetooth.blueangel.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 47
+        },
+        {
+          "path": "/usr/pvc/lib/libbtcust.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 34
+        },
+        {
+          "path": "/usr/pvc/lib/libbtcust_tab.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 38
+        },
+        {
+          "path": "/usr/pvc/lib/libbtdrv.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/pvc/lib/libbtstd.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/pvc/lib/libicc.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7160
+        },
+        {
+          "path": "/usr/pvc/lib/libicsm.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7388
+        },
+        {
+          "path": "/usr/pvc/lib/libipsearch.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 36
+        },
+        {
+          "path": "/usr/pvc/lib/libnetutil.so",
+          "mode": "-rwxrwxr-x",
+          "bytes": 27944
+        },
+        {
+          "path": "/usr/pvc/lib/libnfs.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 31
+        },
+        {
+          "path": "/usr/pvc/lib/libpcurl.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 33
+        },
+        {
+          "path": "/usr/pvc/lib/libpvc.a",
+          "mode": "lrwxrwxrwx",
+          "bytes": 30
+        },
+        {
+          "path": "/usr/pvc/lib/libsbc_dec.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 35
+        },
+        {
+          "path": "/usr/pvc/lib/libsbc_enc.so",
+          "mode": "lrwxrwxrwx",
+          "bytes": 35
+        },
+        {
+          "path": "/usr/pvc/sbin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 22
+        },
+        {
+          "path": "/usr/pvc/tmp",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/usr/sbin",
+          "mode": "lrwxrwxrwx",
+          "bytes": 18
+        },
+        {
+          "path": "/usr/share",
+          "mode": "lrwxrwxrwx",
+          "bytes": 19
+        },
+        {
+          "path": "/var",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/var/cache",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/db",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/var/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/var/lib/arpd",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/var/lib/dhcp",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/var/lib/lighttpd",
+          "mode": "lrwxrwxrwx",
+          "bytes": 8
+        },
+        {
+          "path": "/var/lib/misc",
+          "mode": "lrwxrwxrwx",
+          "bytes": 9
+        },
+        {
+          "path": "/var/lock",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/log",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/run",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/spool",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/tmp",
+          "mode": "lrwxrwxrwx",
+          "bytes": 6
+        },
+        {
+          "path": "/var/www",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        }
+      ]
+    },
+    {
+      "image": "rootfs2",
+      "mounted_at": "/mnt/rfs2",
+      "captured_bytes": 9437184,
+      "sha256": "bffcef5640aca392689c27f00efbee14b4e68b34ece3e71b797a06e71c476c7b",
+      "squashfs_bytes_used": 8364421,
+      "version": "4.0",
+      "compression": "LZO",
+      "entry_count": 348,
+      "entry_types": {
+        "d": 34,
+        "-": 313,
+        "l": 1
+      },
+      "integrity_test_passed": true,
+      "entries": [
+        {
+          "path": "/mnt/rfs2/bin",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/bin/chmod",
+          "mode": "-rwxr-xr-x",
+          "bytes": 37072
+        },
+        {
+          "path": "/mnt/rfs2/bin/clockdiff",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12052
+        },
+        {
+          "path": "/mnt/rfs2/bin/cp",
+          "mode": "-rwxr-xr-x",
+          "bytes": 54352
+        },
+        {
+          "path": "/mnt/rfs2/bin/date",
+          "mode": "-rwxr-xr-x",
+          "bytes": 42384
+        },
+        {
+          "path": "/mnt/rfs2/bin/dmesg",
+          "mode": "-rwxr-xr-x",
+          "bytes": 59592
+        },
+        {
+          "path": "/mnt/rfs2/bin/free",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16960
+        },
+        {
+          "path": "/mnt/rfs2/bin/hostname",
+          "mode": "-rwxr-xr-x",
+          "bytes": 11004
+        },
+        {
+          "path": "/mnt/rfs2/bin/more",
+          "mode": "-rwxr-xr-x",
+          "bytes": 30696
+        },
+        {
+          "path": "/mnt/rfs2/bin/mv",
+          "mode": "-rwxr-xr-x",
+          "bytes": 60020
+        },
+        {
+          "path": "/mnt/rfs2/bin/netstat",
+          "mode": "-rwxr-xr-x",
+          "bytes": 100024
+        },
+        {
+          "path": "/mnt/rfs2/bin/pgrep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19548
+        },
+        {
+          "path": "/mnt/rfs2/bin/ping",
+          "mode": "-rwxr-xr-x",
+          "bytes": 50112
+        },
+        {
+          "path": "/mnt/rfs2/bin/pkill",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19548
+        },
+        {
+          "path": "/mnt/rfs2/bin/pmap",
+          "mode": "-rwxr-xr-x",
+          "bytes": 23872
+        },
+        {
+          "path": "/mnt/rfs2/bin/ps",
+          "mode": "-rwxr-xr-x",
+          "bytes": 73984
+        },
+        {
+          "path": "/mnt/rfs2/bin/pwdx",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8392
+        },
+        {
+          "path": "/mnt/rfs2/bin/rm",
+          "mode": "-rwxr-xr-x",
+          "bytes": 36168
+        },
+        {
+          "path": "/mnt/rfs2/bin/rmdir",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14320
+        },
+        {
+          "path": "/mnt/rfs2/bin/run-parts",
+          "mode": "-rwxr-xr-x",
+          "bytes": 13984
+        },
+        {
+          "path": "/mnt/rfs2/bin/slabtop",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16944
+        },
+        {
+          "path": "/mnt/rfs2/bin/tar",
+          "mode": "-rwxr-xr-x",
+          "bytes": 266696
+        },
+        {
+          "path": "/mnt/rfs2/bin/tload",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14084
+        },
+        {
+          "path": "/mnt/rfs2/bin/top",
+          "mode": "-rwxr-xr-x",
+          "bytes": 86028
+        },
+        {
+          "path": "/mnt/rfs2/bin/tracepath",
+          "mode": "-rwxr-xr-x",
+          "bytes": 11448
+        },
+        {
+          "path": "/mnt/rfs2/bin/traceroute6",
+          "mode": "-rwxr-xr-x",
+          "bytes": 15244
+        },
+        {
+          "path": "/mnt/rfs2/bin/vmstat",
+          "mode": "-rwxr-xr-x",
+          "bytes": 29332
+        },
+        {
+          "path": "/mnt/rfs2/bin/w",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19032
+        },
+        {
+          "path": "/mnt/rfs2/bin/watch",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20008
+        },
+        {
+          "path": "/mnt/rfs2/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks/01-test",
+          "mode": "-r--r--r--",
+          "bytes": 283
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks/02-dump",
+          "mode": "-r--r--r--",
+          "bytes": 120
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks/20-resolv.conf",
+          "mode": "-r--r--r--",
+          "bytes": 5588
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks/30-hostname",
+          "mode": "-r--r--r--",
+          "bytes": 3503
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-hooks/50-ntp.conf",
+          "mode": "-r--r--r--",
+          "bytes": 3482
+        },
+        {
+          "path": "/mnt/rfs2/lib/dhcpcd/dhcpcd-run-hooks",
+          "mode": "-r-xr-xr-x",
+          "bytes": 8654
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/WIFI_RAM_CODE_MT6630",
+          "mode": "-rw-rw-r--",
+          "bytes": 237424
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/WIFI_org",
+          "mode": "-rw-rw-r--",
+          "bytes": 514
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/WMT.cfg",
+          "mode": "-rw-rw-r--",
+          "bytes": 87
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/entropy.bin",
+          "mode": "-rw-rw-r--",
+          "bytes": 21
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/mt6630_patch_e3_0_hdr.bin",
+          "mode": "-rw-rw-r--",
+          "bytes": 36264
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/mt6630_patch_e3_1_hdr.bin",
+          "mode": "-rw-rw-r--",
+          "bytes": 63880
+        },
+        {
+          "path": "/mnt/rfs2/lib/firmware/wifi.cfg",
+          "mode": "-rw-rw-r--",
+          "bytes": 0
+        },
+        {
+          "path": "/mnt/rfs2/lib/ifupdown",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/lib/ifupdown/settle-dad.sh",
+          "mode": "-rwxr-xr-x",
+          "bytes": 666
+        },
+        {
+          "path": "/mnt/rfs2/lib/libpamc.so.0.82.1",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8072
+        },
+        {
+          "path": "/mnt/rfs2/libexec",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/libexec/rmt",
+          "mode": "-rwxr-xr-x",
+          "bytes": 22296
+        },
+        {
+          "path": "/mnt/rfs2/media",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/sbin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/sbin/arping",
+          "mode": "-rwxr-xr-x",
+          "bytes": 15844
+        },
+        {
+          "path": "/mnt/rfs2/sbin/dhclient",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1366772
+        },
+        {
+          "path": "/mnt/rfs2/sbin/dhclient-script",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8097
+        },
+        {
+          "path": "/mnt/rfs2/sbin/dhcpcd",
+          "mode": "-r-xr-xr-x",
+          "bytes": 218408
+        },
+        {
+          "path": "/mnt/rfs2/sbin/ifconfig",
+          "mode": "-rwxr-xr-x",
+          "bytes": 54840
+        },
+        {
+          "path": "/mnt/rfs2/sbin/ifup",
+          "mode": "-rwxr-xr-x",
+          "bytes": 68968
+        },
+        {
+          "path": "/mnt/rfs2/sbin/iwconfig",
+          "mode": "-rwxr-xr-x",
+          "bytes": 66588
+        },
+        {
+          "path": "/mnt/rfs2/sbin/rdisc",
+          "mode": "-rwxr-xr-x",
+          "bytes": 15924
+        },
+        {
+          "path": "/mnt/rfs2/sbin/route",
+          "mode": "-rwxr-xr-x",
+          "bytes": 43880
+        },
+        {
+          "path": "/mnt/rfs2/sbin/sulogin",
+          "mode": "-rwxr-xr-x",
+          "bytes": 37640
+        },
+        {
+          "path": "/mnt/rfs2/sbin/sysctl",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16440
+        },
+        {
+          "path": "/mnt/rfs2/usr",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bunzip2",
+          "mode": "-rwxr-xr-x",
+          "bytes": 76020
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzcat",
+          "mode": "-rwxr-xr-x",
+          "bytes": 76020
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzdiff",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2128
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzgrep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1677
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzip2",
+          "mode": "-rwxr-xr-x",
+          "bytes": 76020
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzip2recover",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9116
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/bzmore",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1259
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/cgi-fcgi",
+          "mode": "-rwxr-xr-x",
+          "bytes": 13848
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/curl",
+          "mode": "-rwxr-xr-x",
+          "bytes": 99540
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/egrep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 33
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/fgrep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 33
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/iperf",
+          "mode": "-rwxr-xr-x",
+          "bytes": 63212
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/less",
+          "mode": "-rwxr-xr-x",
+          "bytes": 105352
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/openssl",
+          "mode": "-rwxr-xr-x",
+          "bytes": 497912
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/pcregrep",
+          "mode": "-rwxr-xr-x",
+          "bytes": 29064
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/pcretest",
+          "mode": "-rwxr-xr-x",
+          "bytes": 56616
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/strace",
+          "mode": "-rwxr-xr-x",
+          "bytes": 378364
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/strace-log-merge",
+          "mode": "-rwxr-xr-x",
+          "bytes": 944
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/time",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12284
+        },
+        {
+          "path": "/mnt/rfs2/usr/bin/uptime",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16944
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/lib4758cca.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12336
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libaep.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10876
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libatalla.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10188
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libcapi.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2876
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libchil.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16344
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libcswift.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14388
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libgmp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2876
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libgost.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 70588
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libnuron.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7820
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libpadlock.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2880
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libsureware.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16280
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/engines/libubsec.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12716
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libbz2.so.1.0.6",
+          "mode": "-rwxr-xr-x",
+          "bytes": 58056
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libcrypto.so.1.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1353924
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libcurl.so.4.4.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 323756
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libexpat.so.1.6.2",
+          "mode": "-rwxr-xr-x",
+          "bytes": 111636
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libfcgi++.so.0.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12128
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libfcgi.so.0.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 30328
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libffi.so.6.0.4",
+          "mode": "-rwxr-xr-x",
+          "bytes": 23884
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libip4tc.so.0.1.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20924
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libip6tc.so.0.1.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 21436
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libiptc.so.0.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 2872
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libkmod.so.2.3.1",
+          "mode": "-rwxr-xr-x",
+          "bytes": 59776
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 100384
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-genl-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 16896
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-idiag-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 23744
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-nf-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 66716
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-route-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 291052
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libnl-xfrm-3.so.200.22.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 53948
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libpcre.so.1.2.8",
+          "mode": "-rwxr-xr-x",
+          "bytes": 231872
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libpcrecpp.so.0.0.1",
+          "mode": "-rwxr-xr-x",
+          "bytes": 22688
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libpcreposix.so.0.0.4",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7080
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libpng16.so.16.28.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 155008
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libprocps.so.6.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 53436
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libssl.so.1.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 317204
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/libxtables.so.12.0.0",
+          "mode": "-rwxr-xr-x",
+          "bytes": 44736
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_access.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5180
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_accesslog.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 18112
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_alias.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5160
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_auth.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 15628
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_authn_file.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10220
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_cgi.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20100
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_compress.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7888
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_deflate.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6520
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_dirlisting.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19344
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_evasive.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5104
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_evhost.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7216
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_expire.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8056
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_extforward.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8240
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_fastcgi.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 42016
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_flv_streaming.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6104
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_indexfile.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5944
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_proxy.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19412
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_redirect.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4692
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_rewrite.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4036
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_rrdtool.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 11704
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_scgi.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 33392
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_secdownload.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7196
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_setenv.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5144
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_simple_vhost.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6236
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_ssi.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 24540
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_staticfile.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5648
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_status.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 21556
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_uploadprogress.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6900
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_userdir.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6648
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_usertrack.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6764
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/lighttpd/mod_webdav.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 19124
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc/experimental.dist",
+          "mode": "-rw-r--r--",
+          "bytes": 23077
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc/m_xt.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7544
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc/normal.dist",
+          "mode": "-rw-r--r--",
+          "bytes": 23573
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc/pareto.dist",
+          "mode": "-rw-r--r--",
+          "bytes": 23729
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/tc/paretonormal.dist",
+          "mode": "-rw-r--r--",
+          "bytes": 23447
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/terminfo",
+          "mode": "lrwxrwxrwx",
+          "bytes": 17
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libebt_802_3.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4576
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libebt_ip.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7064
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libebt_log.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5908
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libebt_mark_m.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4112
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_DNAT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6824
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_DNPT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4156
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_HL.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4240
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_LOG.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6316
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_MASQUERADE.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4976
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_NETMAP.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4056
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_REDIRECT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5076
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_REJECT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5976
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_SNAT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7060
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_SNPT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4156
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_ah.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5052
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_dst.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5848
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_eui64.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3060
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_frag.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5988
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_hbh.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5852
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_hl.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4452
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_icmp6.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6796
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_ipv6header.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6000
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_mh.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5948
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libip6t_rt.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7120
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_CLUSTERIP.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6000
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_DNAT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6876
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_ECN.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4520
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_LOG.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6320
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_MASQUERADE.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4996
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_NETMAP.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3968
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_REDIRECT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5096
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_REJECT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6032
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_SNAT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7112
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_TTL.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4252
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_ULOG.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4844
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_ah.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4360
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_icmp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6976
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_realm.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5828
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libipt_ttl.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4604
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_AUDIT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4088
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_CHECKSUM.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3692
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_CLASSIFY.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4408
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_CONNMARK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7752
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_CONNSECMARK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4192
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_CT.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9124
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_DSCP.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6124
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_HMARK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9324
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_IDLETIMER.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3816
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_LED.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4964
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_MARK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6536
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_NFLOG.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5284
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_NFQUEUE.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7392
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_NOTRACK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9124
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_RATEEST.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8088
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_SECMARK.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3888
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_SET.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 12312
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_SYNPROXY.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4584
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TCPMSS.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4412
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TCPOPTSTRIP.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5228
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TEE.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4864
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TOS.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6148
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TPROXY.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5224
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_TRACE.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3228
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_addrtype.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6748
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_bpf.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6180
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_cgroup.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4980
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_cluster.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4936
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_comment.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3932
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_connbytes.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5884
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_connlimit.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6252
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_connmark.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4660
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_conntrack.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20924
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_cpu.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3856
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_dccp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7356
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_devgroup.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6064
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_dscp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6116
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_ecn.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4856
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_esp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4268
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_hashlimit.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20068
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_helper.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4056
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_ipcomp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4396
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_iprange.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8188
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_ipvs.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7220
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_length.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4168
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_limit.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5912
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_mac.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4064
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_mangle.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7444
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_mark.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4572
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_multiport.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9240
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_nfacct.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3968
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_osf.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4744
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_owner.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10632
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_physdev.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5280
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_pkttype.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4804
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_policy.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 9160
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_quota.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3860
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_rateest.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 11596
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_recent.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8800
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_rpfilter.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 4660
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_sctp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10176
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_set.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 14676
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_socket.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6364
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_standard.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3272
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_state.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 20924
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_statistic.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 7416
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_string.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6960
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_tcp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 8648
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_tcpmss.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 3920
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_time.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 10328
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_tos.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5088
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_u32.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6296
+        },
+        {
+          "path": "/mnt/rfs2/usr/lib/xtables/libxt_udp.so",
+          "mode": "-rwxr-xr-x",
+          "bytes": 5916
+        },
+        {
+          "path": "/mnt/rfs2/usr/local",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/local/sbin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/bt",
+          "mode": "-rwxrwxr-x",
+          "bytes": 88892
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/bt_drv",
+          "mode": "-rwxrwxr-x",
+          "bytes": 10500
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/dlna",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1054548
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/get_noise",
+          "mode": "-rwxrwxr-x",
+          "bytes": 368
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/hci_cmd",
+          "mode": "-rwxrwxr-x",
+          "bytes": 14000
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/hostapd",
+          "mode": "-rwxrwxr-x",
+          "bytes": 575148
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/hostapd_cli",
+          "mode": "-rwxrwxr-x",
+          "bytes": 44528
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/ipdiagDup",
+          "mode": "-rwxrwxr-x",
+          "bytes": 9648
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/link",
+          "mode": "-rwxrwxr-x",
+          "bytes": 122464
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/lvdp",
+          "mode": "-rwxrwxr-x",
+          "bytes": 41760
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/mtkbt",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1555428
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/myMsleep",
+          "mode": "-rwxrwxr-x",
+          "bytes": 4800
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/mySleep",
+          "mode": "-rwxrwxr-x",
+          "bytes": 4768
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/myTouch",
+          "mode": "-rwxrwxr-x",
+          "bytes": 4784
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/net",
+          "mode": "-rwxrwxr-x",
+          "bytes": 5516
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/nws",
+          "mode": "-rwxrwxr-x",
+          "bytes": 13220
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/picm",
+          "mode": "-rwxrwxr-x",
+          "bytes": 59344
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/psm",
+          "mode": "-rwxrwxr-x",
+          "bytes": 407276
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/ptpip",
+          "mode": "-rwxrwxr-x",
+          "bytes": 42724
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/usleep",
+          "mode": "-rwxrwxr-x",
+          "bytes": 5556
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/wifitest",
+          "mode": "-rwxrwxr-x",
+          "bytes": 38472
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/wmt_launcher_sdio",
+          "mode": "-rwxrwxr-x",
+          "bytes": 27252
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/wmt_tool",
+          "mode": "-rwxrwxr-x",
+          "bytes": 6804
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/wpa_cli",
+          "mode": "-rwxrwxr-x",
+          "bytes": 74596
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/bin/wpa_supplicant",
+          "mode": "-rwxrwxr-x",
+          "bytes": 1121728
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libbluetooth.blueangel.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 694172
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libbtcust.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 7644
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libbtcust_tab.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 6652
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libbtdrv.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 33276
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libbtstd.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 594424
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libipsearch.so",
+          "mode": "-rwxrwxr-x",
+          "bytes": 79924
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libnfs.so",
+          "mode": "-rwxrwxr-x",
+          "bytes": 33392
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libpcurl.so",
+          "mode": "-rwxrwxr-x",
+          "bytes": 7180
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libpvc.a",
+          "mode": "-rw-rw-r--",
+          "bytes": 5618
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libsbc_dec.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 20692
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/lib/libsbc_enc.so",
+          "mode": "-rw-rw-r--",
+          "bytes": 18288
+        },
+        {
+          "path": "/mnt/rfs2/usr/pvc/sbin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/sbin",
+          "mode": "drwxrwxr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/sbin/dhcpd",
+          "mode": "-rwxr-xr-x",
+          "bytes": 1562092
+        },
+        {
+          "path": "/mnt/rfs2/usr/sbin/lighttpd",
+          "mode": "-rwxr-xr-x",
+          "bytes": 176120
+        },
+        {
+          "path": "/mnt/rfs2/usr/sbin/lighttpd-angel",
+          "mode": "-rwxr-xr-x",
+          "bytes": 6520
+        },
+        {
+          "path": "/mnt/rfs2/usr/sbin/xtables-multi",
+          "mode": "-rwxr-xr-x",
+          "bytes": 73236
+        },
+        {
+          "path": "/mnt/rfs2/usr/share",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/dhcpcd",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/dhcpcd/hooks",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/dhcpcd/hooks/10-wpa_supplicant",
+          "mode": "-r--r--r--",
+          "bytes": 2866
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/dhcpcd/hooks/15-timezone",
+          "mode": "-r--r--r--",
+          "bytes": 885
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/dhcpcd/hooks/29-lookup-hostname",
+          "mode": "-r--r--r--",
+          "bytes": 811
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/a",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/a/ansi",
+          "mode": "-rw-r--r--",
+          "bytes": 1481
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/d",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/d/dumb",
+          "mode": "-rw-r--r--",
+          "bytes": 308
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/l",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/l/linux",
+          "mode": "-rw-r--r--",
+          "bytes": 1790
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/p",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/s",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/s/screen",
+          "mode": "-rw-r--r--",
+          "bytes": 1564
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/v",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/v/vt100",
+          "mode": "-rw-r--r--",
+          "bytes": 1194
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/v/vt102",
+          "mode": "-rw-r--r--",
+          "bytes": 1188
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/v/vt200",
+          "mode": "-rw-r--r--",
+          "bytes": 1279
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/v/vt220",
+          "mode": "-rw-r--r--",
+          "bytes": 1279
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/x",
+          "mode": "drwxr-xr-x",
+          "bytes": null
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/x/xterm",
+          "mode": "-rw-r--r--",
+          "bytes": 3270
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/x/xterm-color",
+          "mode": "-rw-r--r--",
+          "bytes": 1551
+        },
+        {
+          "path": "/mnt/rfs2/usr/share/terminfo/x/xterm-xfree86",
+          "mode": "-rw-r--r--",
+          "bytes": 2247
+        }
+      ]
+    }
+  ],
+  "integrity_tool": {
+    "name": "7-Zip 26.05",
+    "path": "work/toolchain/sevenzip/7zz",
+    "sha256": "8e495531e1b2b8cb169ca583493922d4ab386007756418c15b95f07f642c35fb"
+  },
+  "shell_daemon_filenames_found": [],
+  "camera_firmware_modified": false,
+  "acquisition_chunks": [
+    {
+      "capture": "20261109T004005Z-gx9-rootfs1-a",
+      "start": "0x83100000",
+      "end_exclusive": "0x83300000",
+      "bytes": 2097152,
+      "sha256": "ebe7d7418ca4b9adb4d7af3ed2ba8731e00732216129df1328f0fa90553b9f52",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "36aa9763310675bd9325c47925374bcad95c0a688d3980338836f8323f87b0a7",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004125Z-gx9-rootfs1-b",
+      "start": "0x83300000",
+      "end_exclusive": "0x83500000",
+      "bytes": 2097152,
+      "sha256": "a5f462a5e8124532a4380688f789559dbd760570c8a092d5d2db3236bc4b56c5",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "bf93fe657bad0d55b57696dad69f5c9ce8809b21aebbfb235caf0a9aebec9ec1",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004207Z-gx9-rootfs2-a",
+      "start": "0x83500000",
+      "end_exclusive": "0x83700000",
+      "bytes": 2097152,
+      "sha256": "5e8522765a812d6754e6df016d0a52e67b9e0e721b8740e48e2c9db55830a53a",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "b044c4ca2b913e50661117223bf247bbed9fba2d46d2ac778c65dcc85990988e",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004257Z-gx9-rootfs2-b",
+      "start": "0x83700000",
+      "end_exclusive": "0x83900000",
+      "bytes": 2097152,
+      "sha256": "f8aa88f01f2c0a6d972e1f86a7bad3871c8d00ef7b7022720b24362b4f121b92",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "4b1ab79ebb39787af5cc1131672b84a4f1b47b5febbd15c3abbf3023b26af382",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004352Z-gx9-rootfs2-c",
+      "start": "0x83900000",
+      "end_exclusive": "0x83b00000",
+      "bytes": 2097152,
+      "sha256": "14a01fabe2d9579ec383a6c359bcdfce28df875d0548ae855d5b52b2c03d280c",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "f5ed9e885c67bab43789252122933a118f0747494769bed0d47f439335215853",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004430Z-gx9-rootfs2-d",
+      "start": "0x83b00000",
+      "end_exclusive": "0x83d00000",
+      "bytes": 2097152,
+      "sha256": "5c603093d2748edfc82749dafea80ce92e5ebd609ea2a8c19bf1aaff76fa7340",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "f078b51db493c7dd7d86c3cb65fff4e70e8b3cdb02c394565704ab4224edd371",
+      "service_requests": 2052,
+      "successful_words": 2,
+      "block_replies": 2050
+    },
+    {
+      "capture": "20261109T004551Z-gx9-rootfs2-e",
+      "start": "0x83d00000",
+      "end_exclusive": "0x83e00000",
+      "bytes": 1048576,
+      "sha256": "20380418693dd05b50342d033e160fa8e76b695cab35c10d634da2ad2ea693ec",
+      "source_bytes_verified_against_wire": true,
+      "code_block_repeat_exact": true,
+      "events_sha256": "912aa6c0309254b787240e9a4a0c6112b3fe6db32b472000236af9f8b94e8022",
+      "service_requests": 1028,
+      "successful_words": 2,
+      "block_replies": 1026
+    }
+  ],
+  "regular_file_extraction": {
+    "files": 538,
+    "decompressed_bytes": 26068454,
+    "all_listed_lengths_match": true,
+    "case_collisions_saved_as_distinct_regular_files": true,
+    "symlinks_or_device_nodes_created": false,
+    "extracted_programs_executed": false
+  },
+  "official_plaintext_component_matches": "evidence/gx9-recovered-components.json"
+}

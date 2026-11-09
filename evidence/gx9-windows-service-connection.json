@@ -1,0 +1,385 @@
+{
+  "schema": 1,
+  "observed_utc": "2026-11-08T22:20:00.990707+00:00",
+  "scope": "Initial owner-authorized GX9 service USB connection on Windows; interface and packet exchange confirmed, memory read not yet confirmed at this stage",
+  "windows_device": {
+    "name": "DC-GX7MK3",
+    "status": "OK",
+    "class": "USBDevice",
+    "service": "WinUSB",
+    "problem_code": 0,
+    "driver_inf": "oem128.inf",
+    "compatible_ids": [
+      "USB\\COMPAT_VID_04DA&Class_FF&SubClass_A0&Prot_B0",
+      "USB\\COMPAT_VID_04DA&Class_FF&SubClass_A0",
+      "USB\\COMPAT_VID_04DA&Class_FF",
+      "USB\\Class_FF&SubClass_A0&Prot_B0",
+      "USB\\Class_FF&SubClass_A0",
+      "USB\\Class_FF"
+    ],
+    "bus_name": "DC-GX7MK3"
+  },
+  "usb_descriptor": {
+    "vid": 1242,
+    "pid": 9072,
+    "device_descriptor_hex": "1201000200000040da047023000101020001",
+    "bus": 2,
+    "address": 6,
+    "configurations": 1,
+    "configuration_status": "LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED",
+    "total_length": 39,
+    "configuration": 1,
+    "interfaces": [
+      {
+        "number": 0,
+        "alternate": 0,
+        "class": 255,
+        "subclass": 160,
+        "protocol": 176,
+        "endpoints": [
+          {
+            "address": 1,
+            "type": 2,
+            "packet_bytes": 512,
+            "interval": 0
+          },
+          {
+            "address": 130,
+            "type": 2,
+            "packet_bytes": 512,
+            "interval": 0
+          },
+          {
+            "address": 131,
+            "type": 3,
+            "packet_bytes": 64,
+            "interval": 16
+          }
+        ]
+      }
+    ],
+    "open_status": "LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED"
+  },
+  "library_sha256": "7cbf37e76dae9c840c7e8dbf7348ee8897dcc86c8ba45e46ada60b89411569f7",
+  "interface_claim_succeeded": true,
+  "service_requests": 2,
+  "validated_words": 0,
+  "writes": {
+    "camera_memory_write_commands": 0,
+    "camera_flash_write_commands": 0,
+    "configuration_changes": 0,
+    "resets": 0,
+    "driver_changes": 0
+  },
+  "source_captures": [
+    {
+      "path": "work/private-captures/20261108T221647Z-camera-driver-inspection/stdout.bin",
+      "bytes": 714,
+      "sha256": "ef23ac81c9bc6384e4bca6ab259f53a00ded5bbea9741bb38d5a884fe36f5a08"
+    },
+    {
+      "path": "work/private-captures/20261108T221722Z-gx9-current-descriptors/stdout.bin",
+      "bytes": 817,
+      "sha256": "21fda37bfe9807fb8a4a54e869d04ce882456d895443deace906e3bf43b43296"
+    },
+    {
+      "path": "work/private-captures/20261108T221758Z-gx9-service-word-check/stdout.bin",
+      "bytes": 1829,
+      "sha256": "ba8aaff7a60213ffcbf5b96b9449436b4bd8df69fee7a9cb265d2a3a9ae0a5bf"
+    },
+    {
+      "path": "work/private-captures/20261108T222049Z-gx9-service-zero-index-check/stdout.bin",
+      "bytes": 1680,
+      "sha256": "9252ae72c91a0a41e02e71e3510b9ffea12c34d1b97ccc125423ba5c02575072"
+    }
+  ],
+  "probe_source_hashes": {
+    "usb_descriptors.py": "10416c4b247ee4dc61e218ded7c614951a71565242bb3af4f49ae9083a0a2764",
+    "word_probe.py": "2dd28a080f2ad8531046af9a3affb934086c49e9796cfadd57a7c723592cf8e2"
+  },
+  "limits": [
+    "No valid GX9 settings or program-memory data obtained.",
+    "Each one-request run closed the interface after the error; there was no automatic retry loop.",
+    "The independently checked indices 0x3f80 and 0x0 returned the same error. This does not identify the status meaning or establish accepted GX9 read parameters.",
+    "No program-relative, absolute-memory or write request was sent.",
+    "Service identity and packet exchange do not establish compatibility of all legacy commands."
+  ],
+  "read_probes": [
+    {
+      "request": {
+        "operation": "0x38",
+        "candidate_area": "0x20",
+        "candidate_word_index": "0x3f80",
+        "frame_hex": "0800ff38803f20000000000000001600",
+        "meaning": "Inherited fixed-area word-read hypothesis, not yet established for GX9"
+      },
+      "response": {
+        "type_byte_hex": "08",
+        "frame_hex": "0800ff01030000000000000000000300",
+        "checksum_valid": true,
+        "reply_operation": "0x01",
+        "status_byte": "0x03",
+        "interpretation": "Structured camera error reply; status meaning remains unverified"
+      },
+      "control_and_bulk_transcript": [
+        {
+          "event": "api",
+          "step": "init",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "enumerate",
+          "status": 5
+        },
+        {
+          "event": "api",
+          "step": "get_configuration_descriptor",
+          "status": 0
+        },
+        {
+          "event": "descriptor_profile",
+          "configuration": 1,
+          "endpoints": [
+            [
+              1,
+              2,
+              512
+            ],
+            [
+              130,
+              2,
+              512
+            ],
+            [
+              131,
+              3,
+              64
+            ]
+          ]
+        },
+        {
+          "event": "api",
+          "step": "open",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "read_product_string",
+          "status": 9
+        },
+        {
+          "event": "api",
+          "step": "get_active_configuration",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "claim_interface",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000000000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 1,
+          "status": 0,
+          "bytes": 16,
+          "hex": "0800ff38803f20000000000000001600"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000001000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 130,
+          "status": 0,
+          "bytes": 1,
+          "hex": "08"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000001000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 130,
+          "status": 0,
+          "bytes": 16,
+          "hex": "0800ff01030000000000000000000300"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        }
+      ]
+    },
+    {
+      "request": {
+        "operation": "0x38",
+        "candidate_area": "0x20",
+        "candidate_word_index": "0x0",
+        "frame_hex": "0800ff38000020000000000000005700",
+        "meaning": "One independent minimum-index check in the same candidate fixed area"
+      },
+      "response": {
+        "type_byte_hex": "08",
+        "frame_hex": "0800ff01030000000000000000000300",
+        "checksum_valid": true,
+        "reply_operation": "0x01",
+        "status_byte": "0x03",
+        "interpretation": "Same structured error as the end-of-area check; meaning unverified"
+      },
+      "control_and_bulk_transcript": [
+        {
+          "event": "api",
+          "step": "init",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "enumerate",
+          "status": 5
+        },
+        {
+          "event": "api",
+          "step": "get_configuration_descriptor",
+          "status": 0
+        },
+        {
+          "event": "descriptor_profile",
+          "configuration": 1,
+          "endpoints": [
+            [
+              1,
+              2,
+              512
+            ],
+            [
+              130,
+              2,
+              512
+            ],
+            [
+              131,
+              3,
+              64
+            ]
+          ]
+        },
+        {
+          "event": "api",
+          "step": "open",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "read_product_string",
+          "status": 9
+        },
+        {
+          "event": "api",
+          "step": "get_active_configuration",
+          "status": 0
+        },
+        {
+          "event": "api",
+          "step": "claim_interface",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000000000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 1,
+          "status": 0,
+          "bytes": 16,
+          "hex": "0800ff38000020000000000000005700"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000001000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 130,
+          "status": 0,
+          "bytes": 1,
+          "hex": "08"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        },
+        {
+          "event": "prepare",
+          "setup_hex": "4000000001000000"
+        },
+        {
+          "event": "api",
+          "step": "prepare",
+          "status": 0
+        },
+        {
+          "event": "bulk",
+          "endpoint": 130,
+          "status": 0,
+          "bytes": 16,
+          "hex": "0800ff01030000000000000000000300"
+        },
+        {
+          "event": "api",
+          "step": "bulk",
+          "status": 0
+        }
+      ]
+    }
+  ]
+}

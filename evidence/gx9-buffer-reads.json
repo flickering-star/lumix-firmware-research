@@ -1,0 +1,844 @@
+{
+  "schema": 1,
+  "date": "2026-11-08",
+  "camera": {
+    "usb_product": "DC-GX7MK3",
+    "family": "GX9",
+    "firmware_owner_reported": "1.4",
+    "vid": "04da",
+    "pid": "2370"
+  },
+  "scope": "Indexed buffer reads and address-based 1 KiB source copies demonstrated in the captured ranges; full CPU map and GX9 key remain unverified",
+  "verification": {
+    "tool": "tools/gx9_capture_verify.py",
+    "tool_sha256": "51c88fcf97190d34100bea9a7c2a1b00529ab344dcacb3805ceb65a93cc7fea0",
+    "captures": [
+      {
+        "capture": "20261108T222958Z-gx9-settings-repeat-and-program-word",
+        "service_requests": 33,
+        "successful_words": 32,
+        "event_source_sha256": "d70a7a679649e980bbcd0da74517d7b7ba5669353611c19066054ac7d98b800d",
+        "reply_counts": {
+          "word_reply": 32,
+          "transport_failure": 1
+        }
+      },
+      {
+        "capture": "20261108T223419Z-gx9-fixed-buffer-after-recovery",
+        "service_requests": 5,
+        "successful_words": 4,
+        "event_source_sha256": "ca647c4c0c1c7e148f8f0b169198732b1db212360449da234cfb63e29c57d658",
+        "reply_counts": {
+          "word_reply": 4,
+          "error_reply": 1
+        }
+      },
+      {
+        "capture": "20261108T223602Z-gx9-buffer-boundaries",
+        "service_requests": 81,
+        "successful_words": 70,
+        "event_source_sha256": "aa8bddbf488d5b7228b436026c20e5146636d9a2a33bf52808fd7e3764be9fd4",
+        "reply_counts": {
+          "word_reply": 70,
+          "error_reply": 11
+        }
+      },
+      {
+        "capture": "20261108T224557Z-gx9-buffer-window-samples",
+        "service_requests": 124,
+        "successful_words": 124,
+        "event_source_sha256": "249cb9ef4def2bc5663b7bc45395286fdd20bcdb3ff6968ff979fd3efd578b7d",
+        "reply_counts": {
+          "word_reply": 124
+        }
+      },
+      {
+        "capture": "20261108T224702Z-gx9-buffer-nonzero-window",
+        "service_requests": 256,
+        "successful_words": 256,
+        "event_source_sha256": "7bf348c9f23d6d1be652a6fd43f7d8d2acc314d89c098c2bf59326fbd36661b6",
+        "reply_counts": {
+          "word_reply": 256
+        }
+      },
+      {
+        "capture": "20261108T224837Z-gx9-buffer-timing-boundary",
+        "service_requests": 18,
+        "successful_words": 18,
+        "event_source_sha256": "ffe67879a653415b7ded60e30e9e1ed2f38ea752574a194d4bbf3e9303c76da2",
+        "reply_counts": {
+          "word_reply": 18
+        }
+      },
+      {
+        "capture": "20261108T225034Z-gx9-buffer-bulk-class",
+        "service_requests": 3,
+        "successful_words": 2,
+        "event_source_sha256": "3b1af41ba2966b69c69a01cb80b4d6a8a1d472e95bbf6f3b73d3b3ab4e650581",
+        "reply_counts": {
+          "word_reply": 2,
+          "request_echo": 1
+        }
+      },
+      {
+        "capture": "20261108T225144Z-gx9-buffer-bulk-frames",
+        "service_requests": 5,
+        "successful_words": 3,
+        "event_source_sha256": "352c8a95499544ad164fd21f144736ad66f8e279ab962480894f94e9a89d145b",
+        "reply_counts": {
+          "word_reply": 3,
+          "request_echo": 2
+        }
+      },
+      {
+        "capture": "20261108T230040Z-gx9-buffer-pnp-model-control",
+        "service_requests": 1,
+        "successful_words": 1,
+        "event_source_sha256": "3570ff5e3a8cca8cb813d9737655deb978e1e445680bbfa87f87969b8586b042",
+        "reply_counts": {
+          "word_reply": 1
+        }
+      },
+      {
+        "capture": "20261108T230122Z-gx9-buffer-acquisition-pnp",
+        "service_requests": 19529,
+        "successful_words": 19529,
+        "event_source_sha256": "0215eb3265e8119cc7405bf48a065cd27f142b42ee13d8388c50eb65480a7be2",
+        "reply_counts": {
+          "word_reply": 19529
+        }
+      },
+      {
+        "capture": "20261108T230956Z-gx9-empty-block-read",
+        "service_requests": 3,
+        "successful_words": 2,
+        "event_source_sha256": "1200dd73c7468de044e9d72b4bfbc4c00175c1440baf3c6df811513fc3eb7bb5",
+        "reply_counts": {
+          "word_reply": 2,
+          "empty_range_reply": 1
+        }
+      },
+      {
+        "capture": "20261108T231225Z-gx9-two-byte-ram-candidate",
+        "service_requests": 3,
+        "successful_words": 2,
+        "event_source_sha256": "e1be3b682f1bc3b145e849bf5d37f127243365243213a8e0c3cb458045fed500",
+        "reply_counts": {
+          "word_reply": 2,
+          "unchanged_requested_bytes": 1
+        }
+      },
+      {
+        "capture": "20261108T231357Z-gx9-one-kib-ram-candidate",
+        "service_requests": 3,
+        "successful_words": 2,
+        "event_source_sha256": "d1ff7a46f4020bd5abd047479b93f4c60c5157ef6277be734e604ef4c127a374",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 1
+        }
+      },
+      {
+        "capture": "20261108T231653Z-gx9-linux-boot-area",
+        "service_requests": 100,
+        "successful_words": 2,
+        "event_source_sha256": "01365f49a0b6d6481e84a4be5e036f4db7e0c7c2ef7a24d2b07cd2f1929215b7",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 98
+        }
+      },
+      {
+        "capture": "20261108T231910Z-gx9-before-linux-ram",
+        "service_requests": 966,
+        "successful_words": 1,
+        "event_source_sha256": "95db52925b435ce38fdd5ea2afe10db479e754c3c0da093ecb828797b97668cd",
+        "reply_counts": {
+          "word_reply": 1,
+          "bulk_reply": 964,
+          "transport_failure": 1
+        }
+      },
+      {
+        "capture": "20261109T001754Z-gx9-after-pc-restart",
+        "service_requests": 5,
+        "successful_words": 2,
+        "event_source_sha256": "c3d49ca68b44f6bb3ba4f9207a580f32f60d14cbfc4bf691bad5edf02cffdc15",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 3
+        }
+      },
+      {
+        "capture": "20261109T001820Z-gx9-prelinux-range-resume",
+        "service_requests": 1088,
+        "successful_words": 2,
+        "event_source_sha256": "9b2b9a9072ac80b5ca55b8fab5e7c1b7dadff98928bb296be35cad8cc3406925",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 1086
+        }
+      },
+      {
+        "capture": "20261109T001959Z-gx9-linux-prefix-2m",
+        "service_requests": 1956,
+        "successful_words": 2,
+        "event_source_sha256": "ac179ee35731e1ef7362a41e8e15b82ca414fb4587d4a87046388fd3675e05c1",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 1954
+        }
+      },
+      {
+        "capture": "20261109T002108Z-gx9-early-arm-tables",
+        "service_requests": 84,
+        "successful_words": 2,
+        "event_source_sha256": "2c4dbd5812cb3aab31d45fbab0ac6ce378166ddd73232eb2a4702ce37179a22f",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 82
+        }
+      },
+      {
+        "capture": "20261109T003658Z-gx9-saved-linux-data-window",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "770684cc64d0b721e178023075646372d658076d4bce6db096d72477cbc7c21c",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T003812Z-gx9-filesystem-heads",
+        "service_requests": 6,
+        "successful_words": 2,
+        "event_source_sha256": "b8b082bc63a8a8d5dc3df3c8a9d249864fb1cc787f8951b542d6b9c3aa0ee645",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 4
+        }
+      },
+      {
+        "capture": "20261109T005525Z-gx9-bootstrap-control-memory",
+        "service_requests": 5,
+        "successful_words": 2,
+        "event_source_sha256": "ef9b9ba3539148ea20325b0399caa94849e9c10249efac8f91a7913ec54734f1",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 3
+        }
+      },
+      {
+        "capture": "20261109T004005Z-gx9-rootfs1-a",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "36aa9763310675bd9325c47925374bcad95c0a688d3980338836f8323f87b0a7",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004125Z-gx9-rootfs1-b",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "bf93fe657bad0d55b57696dad69f5c9ce8809b21aebbfb235caf0a9aebec9ec1",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004207Z-gx9-rootfs2-a",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "b044c4ca2b913e50661117223bf247bbed9fba2d46d2ac778c65dcc85990988e",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004257Z-gx9-rootfs2-b",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "4b1ab79ebb39787af5cc1131672b84a4f1b47b5febbd15c3abbf3023b26af382",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004352Z-gx9-rootfs2-c",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "f5ed9e885c67bab43789252122933a118f0747494769bed0d47f439335215853",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004430Z-gx9-rootfs2-d",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "f078b51db493c7dd7d86c3cb65fff4e70e8b3cdb02c394565704ab4224edd371",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T004551Z-gx9-rootfs2-e",
+        "service_requests": 1028,
+        "successful_words": 2,
+        "event_source_sha256": "912aa6c0309254b787240e9a4a0c6112b3fe6db32b472000236af9f8b94e8022",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 1026
+        }
+      },
+      {
+        "capture": "20261109T005946Z-gx9-bootstrap-shared-bank",
+        "service_requests": 102,
+        "successful_words": 2,
+        "event_source_sha256": "2e2fca6512222ea5589ca9b472b409fa0d5d70bd0a015d8c1dfcd0f210a4fdc4",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 100
+        }
+      },
+      {
+        "capture": "20261109T010745Z-gx9-linux-kernel-middle",
+        "service_requests": 2052,
+        "successful_words": 2,
+        "event_source_sha256": "b9db100ab154111103792938dcd9364d988023a2a610304a4ba8520da2a0c0dc",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 2050
+        }
+      },
+      {
+        "capture": "20261109T010959Z-gx9-arm-entry-extension",
+        "service_requests": 116,
+        "successful_words": 2,
+        "event_source_sha256": "5bb17bd52df23b407d517d29761f3dfcdd631b201a6d4708f7b7807ebbffae1d",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 114
+        }
+      },
+      {
+        "capture": "20261109T012731Z-gx9-linux-boot-handoff-heads",
+        "service_requests": 9,
+        "successful_words": 2,
+        "event_source_sha256": "e5d274aa311fed4e0a52a10b485cc05c3bbd6e0ecd637304e9cac7dfce9c797a",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 7
+        }
+      },
+      {
+        "capture": "20261109T012936Z-gx9-legacy-ram-address-candidate",
+        "service_requests": 5,
+        "successful_words": 2,
+        "event_source_sha256": "ff3e951879e684a6a0545ec10c71ee5366206b13b22565c487d72cfe71ccdda0",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 3
+        }
+      },
+      {
+        "capture": "20261109T013135Z-gx9-legacy-program-base-candidate",
+        "service_requests": 3,
+        "successful_words": 1,
+        "event_source_sha256": "26de1ccf0e6093fdd3d64b68c4cce57416a0e240de5b30120e8f82f4421b629d",
+        "reply_counts": {
+          "word_reply": 1,
+          "bulk_reply": 1,
+          "transport_failure": 1
+        }
+      },
+      {
+        "capture": "20261109T074521Z-gx9-reconnected-dtb-control",
+        "service_requests": 8,
+        "successful_words": 2,
+        "event_source_sha256": "c581cf0b962d48b272dbb9defca40be7359afc8314217d137bf73ec117ea101a",
+        "reply_counts": {
+          "word_reply": 2,
+          "bulk_reply": 6
+        }
+      },
+      {
+        "capture": "20261109T080136Z-gx9-absolute-word-control",
+        "service_requests": 3,
+        "successful_words": 3,
+        "event_source_sha256": "758e868055b2d7264b7dffc5abfadb8ba9c3dbc941f159c995c25eea7ee34310",
+        "reply_counts": {
+          "word_reply": 3
+        }
+      }
+    ],
+    "successful_word_replies": 20092,
+    "successful_block_replies": 21852
+  },
+  "banks": [
+    {
+      "area": "0x10",
+      "word_replies": 381,
+      "distinct_sampled_word_indices": 175,
+      "lowest_sampled_valid_word_index": "0x0",
+      "highest_sampled_valid_word_index": "0x4000",
+      "rejected_word_indices": [],
+      "complete_extent_established": false
+    },
+    {
+      "area": "0x20",
+      "word_replies": 129,
+      "distinct_sampled_word_indices": 99,
+      "lowest_sampled_valid_word_index": "0x0",
+      "highest_sampled_valid_word_index": "0xbff",
+      "rejected_word_indices": [
+        "0x1fc0",
+        "0x3f80",
+        "0xc00",
+        "0xc01",
+        "0xc03",
+        "0xc07",
+        "0xc27",
+        "0xc67",
+        "0xce6",
+        "0xde4",
+        "0xfe0"
+      ],
+      "complete_extent_established": false
+    }
+  ],
+  "area_20_boundary": {
+    "accepted_word_index": "0xbff",
+    "rejected_word_index": "0xc00",
+    "candidate_contiguous_capacity_bytes": 6144,
+    "basis": "Every word 0..0xbff acquired successfully; 0xc00 and other sampled larger indices rejected",
+    "index_zero_changes_between_reads": true,
+    "buffer_role": "unidentified on GX9"
+  },
+  "stable_nonzero_sample": {
+    "area": "0x10",
+    "first_word_index": "0x2000",
+    "word_count": 64,
+    "sha256": "41cba333d92521d01a80faf0e700d8cc1084921b95d6794b218494a74e30bc0a",
+    "repeat_exact": true
+  },
+  "timing_control": {
+    "area": "0x10",
+    "first_word_index": "0x2000",
+    "requests": 16,
+    "delay_seconds": 0.01,
+    "elapsed_seconds": 0.1946536999998898,
+    "forward_reverse_match": true,
+    "scope": "Short control measurement; not sustained full-dump throughput"
+  },
+  "bulk_candidate": {
+    "operation": "0x3e",
+    "selector": 2,
+    "results": [
+      {
+        "request_class": 8,
+        "frame_bytes": 16,
+        "result": "exact request echo",
+        "memory_read_demonstrated": false
+      },
+      {
+        "request_class": 1,
+        "frame_bytes": 1030,
+        "result": "exact request echo",
+        "memory_read_demonstrated": false
+      },
+      {
+        "request_class": 3,
+        "frame_bytes": 8198,
+        "result": "exact request echo",
+        "memory_read_demonstrated": false
+      }
+    ],
+    "word_controls_before_after": "0x35 area0x10 word0x2000 remained f2b0"
+  },
+  "legacy_program_read": {
+    "operation": "0x70",
+    "word_index": 0,
+    "request_hex": "0800ff70000000000000000000006f00",
+    "out_bytes": 16,
+    "in_type_result": "timeout, libusb -7, zero bytes",
+    "requests_sent": 1,
+    "owner_reported_frozen": true,
+    "owner_recovered_and_reconnected": true,
+    "repeated_after_freeze": false,
+    "cause_identified": false
+  },
+  "descriptor_access": {
+    "fresh_standard_descriptor_reads": "product ASCII read failed -1; subsequent explicit standard device/language requests returned zero bytes and an explicit en-US product request stalled",
+    "owner_reported_camera": "Working normally",
+    "continued_model_guard": "Current Windows bus-reported DC-GX7MK3 plus pinned private USB instance ID, status OK, WinUSB and problem code zero, then exact endpoint profile",
+    "known_word_read_after_guard_change": true,
+    "usb_reset_or_driver_change_performed": false
+  },
+  "camera_memory_writes_sent": 0,
+  "flash_writes_sent": 0,
+  "arbitrary_address_read_demonstrated": true,
+  "key_recovered": false,
+  "platform_comparisons": [
+    {
+      "model": "GH5",
+      "official_url": "https://ospo.panasonic.com/oss/source/dsc/DC-GH5/linux-3.18.18.tar.gz",
+      "archive_bytes": 127563916,
+      "archive_sha256": "f206feb1fb21a23a36a71e1fe0fb4aa5544cfce04fffeaebcf571db23d9aa494",
+      "device_tree": "arch/arm/boot/dts/pvc03v-dsc.dts",
+      "linux_memory_base": "0x80200000",
+      "linux_memory_bytes": "0x02f00000",
+      "gx9_service_cpu_mapping_verified": false
+    },
+    {
+      "model": "Leica D-Lux 8",
+      "official_url": "https://leica-camera.com/sites/default/files/pm-14937-Leica-DLUX_8-OSS-SourceCode.zip",
+      "archive_bytes": 116237550,
+      "archive_sha256": "8292fa37a3ef46c67090aeed1d43c6927b6e0744f4a680c87e863688da7e08b7",
+      "zip_crc_valid": true,
+      "kernel_member": "Leica-DLUX_8-OSS-SourceCode/linux-3.18.48.tar.xz",
+      "kernel_sha256": "78376aa79bda1a6a8cb8a4d580407e05bfdd752b19934dcf5634c69657f5a41c",
+      "panasonic_pvc_platform_files_found": false
+    }
+  ],
+  "manual_flash_labels": {
+    "document": "DSC1803005CE",
+    "part": "IP6001",
+    "overall_page_66": "NOR FLASH ROM/1G-bit",
+    "detailed_page_68": "NAND FLASH ROM/1G-bit",
+    "capacity_bytes": 134217728,
+    "flash_type_conflict_resolved": false,
+    "cpu_address_map_established": false
+  },
+  "arbitrary_address_read_scope": "Actual source copies established only for acquired ranges; not a claim that arbitrary addresses are readable",
+  "buffer_acquisition": {
+    "capture": "20261108T230122Z-gx9-buffer-acquisition-pnp",
+    "service_requests": 19529,
+    "validated_words": 19529,
+    "elapsed_seconds": 270.17313509999985,
+    "banks": [
+      {
+        "area": "0x20",
+        "first_word": 0,
+        "end_word_exclusive": 3072,
+        "words_acquired": 3072,
+        "complete": true,
+        "bytes": 6144,
+        "sha256": "f29a53e431d58e91567b2f78ba7b78319c5ce5c67b91ff186bb38c16d4f92eea"
+      },
+      {
+        "area": "0x10",
+        "first_word": 0,
+        "end_word_exclusive": 16385,
+        "words_acquired": 16385,
+        "complete": true,
+        "bytes": 32770,
+        "sha256": "ababb12ba563f1c023c2dc5aa3eb3e5ebe559fadd3ced34260066de694d3abec"
+      }
+    ],
+    "repeat_controls": [
+      {
+        "area": "0x20",
+        "start_word": 32,
+        "word_count": 8,
+        "matches": true,
+        "changed_word_count": 0
+      },
+      {
+        "area": "0x10",
+        "start_word": 8192,
+        "word_count": 64,
+        "matches": true,
+        "changed_word_count": 0
+      }
+    ],
+    "wire_bytes_match_saved_banks": true,
+    "simultaneous_snapshot": false
+  },
+  "block_reader": {
+    "operation": "0x5c",
+    "request_class": 1,
+    "frame_bytes": 1030,
+    "start_field": "bytes 4..7, little-endian byte address",
+    "end_field": "bytes 8..11, little-endian exclusive byte address",
+    "required_tested_source_length": 1024,
+    "response_class": 1,
+    "response_operation": "0x05",
+    "payload_bytes": 1024,
+    "empty_range_reply": "Proper header/checksum; no source copy requested",
+    "two_byte_trial": "Header changed to success form, but requested bytes and all remaining payload stayed unchanged; no read claim",
+    "canonical_block": {
+      "start": "0x80208000",
+      "end_exclusive": "0x80208400",
+      "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe",
+      "prefix_hex": "fe2b00eb00900fe11a9029e21f0019e3",
+      "host_disassembly": "ARMv7 Cortex-A7 startup instructions, including hypervisor register setup"
+    },
+    "acquired_ranges": [
+      {
+        "start": "0x80200000",
+        "end_exclusive": "0x80218000",
+        "bytes": 98304,
+        "sha256": "70ee773d7d4065d594d12d31e060f390abba5f0984c7a77fcae79b06e8a516b0",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x80000000",
+        "end_exclusive": "0x800f0c00",
+        "bytes": 986112,
+        "sha256": "3fcd46e425cdc5eeaa9053decb99cda821b09017a97906de3cd4b12d1a44802c",
+        "capture_partial": true,
+        "host_delay_seconds": 0.001
+      },
+      {
+        "start": "0x800f1000",
+        "end_exclusive": "0x80200000",
+        "bytes": 1110016,
+        "sha256": "c08fb5f0e354f84c7afa9c9c25f208dd2aa925f4816c4ae1559aa11e0e82c3bd",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x80218000",
+        "end_exclusive": "0x80400000",
+        "bytes": 1998848,
+        "sha256": "d9a0498d2b548ff0ab53076a26cf2a96c6db415f0a5d1c9db409fe4acba3b602",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x83e70000",
+        "end_exclusive": "0x83e84000",
+        "bytes": 81920,
+        "sha256": "11087f892ac73608bf922cd2ce90866aecd268b79fe1540ded5182d5b280a97f",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x80600000",
+        "end_exclusive": "0x80800000",
+        "bytes": 2097152,
+        "sha256": "89a5ec0d06afede761bb324c7b7edf5f399d1bd1c498811c3093f533ecfcce9f",
+        "code_block_repeat_exact": true,
+        "retrieved_after_windows_wake": true
+      },
+      {
+        "start": "0x83100000",
+        "end_exclusive": "0x83500000",
+        "bytes": 4194304,
+        "sha256": "ac96cc0624e6a377a35eb48b1409f7303be565992d725aa286086cec1cf95e7c",
+        "content": "Complete mapped rootfs1 region; SquashFS integrity passed"
+      },
+      {
+        "start": "0x83500000",
+        "end_exclusive": "0x83e00000",
+        "bytes": 9437184,
+        "sha256": "bffcef5640aca392689c27f00efbee14b4e68b34ece3e71b797a06e71c476c7b",
+        "content": "Complete mapped rootfs2 region; SquashFS integrity passed"
+      },
+      {
+        "start": "0x70002000",
+        "end_exclusive": "0x70002400",
+        "bytes": 1024,
+        "sha256": "002cb900ce59ce38be321676017cf59445910c815ff4ab50d2fea979f19be889",
+        "address_basis": "Native GX9 ARM bootstrap writes 1 and f0 to the first two words; read matches those values"
+      },
+      {
+        "start": "0x70001c00",
+        "end_exclusive": "0x7001a400",
+        "bytes": 100352,
+        "sha256": "b734167796b3886f7db0f318ee65a60bd25763db0d9ba48ac9588081d09693d9",
+        "address_basis": "GX9 bootstrap per-core control storage at 0x70001f00/0x70002000 plus core-index times 0x8000; first data block previously verified",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x80400000",
+        "end_exclusive": "0x80600000",
+        "bytes": 2097152,
+        "sha256": "8f86c6ab9ab8bf3878be5dc78e7f0a61d907c7bc3023c9b6696b609653b16bff",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x83e84000",
+        "end_exclusive": "0x83ea0000",
+        "bytes": 114688,
+        "sha256": "5d4747785a6c9bdfba475ed1f5a217249bef39a489d0fe07c9121d4aff3d96c8",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01
+      },
+      {
+        "start": "0x822ff000",
+        "end_exclusive": "0x82300400",
+        "bytes": 5120,
+        "sha256": "7a8f9c7d216428708a9c15e310568d7f94b892d7da5b32419ff6491b7a20f768",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01,
+        "content": "Complete official-hash-matching DTB plus first KiB at native Linux boot entry"
+      },
+      {
+        "start": "0xb4000000",
+        "end_exclusive": "0xb4000400",
+        "bytes": 1024,
+        "sha256": "1c1a4d810dcc39f2fe436fe9f48afc7b610572989962774df9b9399e3d590018",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.01,
+        "content": "JPEG/Exif image-buffer header; no media content published"
+      },
+      {
+        "start": "0x800f0c00",
+        "end_exclusive": "0x800f1000",
+        "bytes": 1024,
+        "sha256": "c9a5f9353f64fd3e6616d9bf257278e4177d82779205eaa0ba2de80f110827e7",
+        "code_block_repeat_exact": true,
+        "host_delay_seconds": 0.1,
+        "source": "Successful reconnected read at previously timed-out address"
+      }
+    ],
+    "larger_acquisition_stop": {
+      "request_start": "0x800f0c00",
+      "request_end_exclusive": "0x800f1000",
+      "result": "IN type-byte timeout, libusb -7",
+      "retried": false,
+      "ram_boundary_established": false,
+      "cause": "unidentified; shorter delay and a different source range both changed in this run",
+      "subsequent_address_read_succeeded": true
+    },
+    "post_reconnection": {
+      "owner_actions": "Camera reconnected and Windows PC restarted",
+      "failed_block_address_read_successfully": true,
+      "range_start": "0x800f0c00",
+      "range_end_exclusive": "0x800f1000",
+      "sha256": "c9a5f9353f64fd3e6616d9bf257278e4177d82779205eaa0ba2de80f110827e7",
+      "host_delay_seconds": 0.1,
+      "code_and_buffer_repeat_controls": true
+    },
+    "combined_prelinux": {
+      "start": "0x80000000",
+      "end_exclusive": "0x80200000",
+      "bytes": 2097152,
+      "sha256": "2c858e77ed23ca2a97f57e55a116388391e3e5b6485260c974ec4986c11efa59",
+      "spans_camera_reconnection_and_pc_restart": true,
+      "simultaneous_snapshot": false
+    },
+    "failed_program_base_trial": {
+      "operation": "0x5c",
+      "start": "0x40000000",
+      "end_exclusive": "0x40000400",
+      "frame_bytes": 1030,
+      "source_bytes_saved": 0,
+      "preceding_code_and_buffer_controls_passed": true,
+      "usb_result": "LIBUSB_ERROR_TIMEOUT (-7) while reading response class",
+      "owner_reported_frozen": true,
+      "owner_reconnected_afterward": true,
+      "repeated_after_freeze": false,
+      "cause_identified": false,
+      "memory_writes": 0,
+      "flash_writes": 0,
+      "post_reconnection_known_controls_passed": true,
+      "post_reconnection_dtb_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495"
+    },
+    "unique_acquired_address_bytes": 22323200,
+    "simultaneous_snapshot": false
+  },
+  "key_candidate_checks": [
+    {
+      "schema": 1,
+      "scope": "Contiguous raw 16-byte candidates only; no byte-order transformations or key derivation",
+      "codec_source_sha256": "17ca748dabbe60e0acc12e98a8df7f22065b4f1305efc9d54f8cb580839ff961",
+      "windows": [
+        {
+          "name": "bank-10.bin",
+          "bytes": 32770,
+          "sha256": "ababb12ba563f1c023c2dc5aa3eb3e5ebe559fadd3ced34260066de694d3abec"
+        },
+        {
+          "name": "bank-20.bin",
+          "bytes": 6144,
+          "sha256": "f29a53e431d58e91567b2f78ba7b78319c5ce5c67b91ff186bb38c16d4f92eea"
+        }
+      ],
+      "candidate_positions": 38884,
+      "distinct_candidate_keys": 2389,
+      "ciphertext_bytes": 4096,
+      "ciphertext_sha256": "01c8da47f05121999b230f4cb2aa62d4a42d848b3f0709c8c2dbce1938154bbf",
+      "iv_hex": "98776d10295776cac2d3def67ac9d35b",
+      "expected_plaintext_sha256": "6240a8c8f8ecc3bb8ac60c652d0c60aee130e9c572f91320749e0d8b4ee2dc78",
+      "aes128_round_counts": [
+        5,
+        10
+      ],
+      "key_matches": [],
+      "camera_or_network_access": false,
+      "report_file": "buffer-key-candidates.json",
+      "checker": "tools/panasonic_buffer_key_check.py",
+      "checker_sha256": "78b1d03da84bc3addfe041c97ef05b2ad975a6acc3dfbe1f8789cfd10bd9d0df"
+    },
+    {
+      "schema": 1,
+      "scope": "Contiguous raw 16-byte candidates only; no byte-order transformations or key derivation",
+      "codec_source_sha256": "17ca748dabbe60e0acc12e98a8df7f22065b4f1305efc9d54f8cb580839ff961",
+      "windows": [
+        {
+          "name": "reserved-area.bin",
+          "bytes": 986112,
+          "sha256": "3fcd46e425cdc5eeaa9053decb99cda821b09017a97906de3cd4b12d1a44802c"
+        },
+        {
+          "name": "boot-area.bin",
+          "bytes": 98304,
+          "sha256": "70ee773d7d4065d594d12d31e060f390abba5f0984c7a77fcae79b06e8a516b0"
+        },
+        {
+          "name": "known-gm1-key.bin",
+          "bytes": 16,
+          "sha256": "555c3fdaafe1cda9d5eb941792bd9c3fac2153e1da17e1203c7c107f533344f5"
+        },
+        {
+          "name": "known-gm5-key.bin",
+          "bytes": 16,
+          "sha256": "8c5c9a63324a7b65ec589672f479961f11523f393d846fab05d8fc66b61b94e5"
+        }
+      ],
+      "candidate_positions": 1084388,
+      "distinct_candidate_keys": 944701,
+      "ciphertext_bytes": 4096,
+      "ciphertext_sha256": "01c8da47f05121999b230f4cb2aa62d4a42d848b3f0709c8c2dbce1938154bbf",
+      "iv_hex": "98776d10295776cac2d3def67ac9d35b",
+      "expected_plaintext_sha256": "6240a8c8f8ecc3bb8ac60c652d0c60aee130e9c572f91320749e0d8b4ee2dc78",
+      "aes128_round_counts": [
+        5,
+        10
+      ],
+      "key_matches": [],
+      "camera_or_network_access": false,
+      "report_file": "ram-key-candidates.json",
+      "checker": "tools/panasonic_buffer_key_check.py",
+      "checker_sha256": "78b1d03da84bc3addfe041c97ef05b2ad975a6acc3dfbe1f8789cfd10bd9d0df"
+    }
+  ],
+  "key_search_limit": "Rejects only contiguous raw 16-byte keys in the recorded inputs with AES-128 CBC at 5/10 rounds, the record IV and direct loader1 SHA256; does not exclude a derived key, key schedule, different cipher or another RAM region",
+  "memory_map_evidence": "evidence/gx9-memory-maps.json",
+  "manual_ram_capacity": {
+    "label": "LP-DDR2 MOBILE RAM /8G-bit",
+    "capacity_bytes": 1073741824,
+    "address_space_bytes": 4294967296,
+    "capacity_and_address_space_are_distinct": true
+  },
+  "linux_runtime_evidence": "evidence/gx9-linux-runtime.json",
+  "filesystem_evidence": "evidence/gx9-filesystem-inventory.json",
+  "kernel_symbol_evidence": "evidence/gx9-kernel-symbols.json",
+  "recovered_component_evidence": "evidence/gx9-recovered-components.json",
+  "absolute_word_evidence": "evidence/gx9-absolute-word.json",
+  "linux_command_evidence": "evidence/gx9-linux-command.json"
+}

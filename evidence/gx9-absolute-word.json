@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "camera": "DC-GX7MK3 / GX9",
+  "firmware_owner_reported": "1.4",
+  "operation": "0x9b",
+  "source_address": "0x80208000",
+  "request_bytes": 16,
+  "request_hex": "0800ff9b00802080000000000000ba00",
+  "response_hex": "0800ff36fe2b00000000000000005e00",
+  "word_hex": "fe2b",
+  "matches_previously_captured_block_prefix": true,
+  "matching_block_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe",
+  "buffer_controls_before_and_after": "f2b0",
+  "service_requests": 3,
+  "memory_writes": 0,
+  "flash_writes": 0,
+  "capture": "20261109T080136Z-gx9-absolute-word-control",
+  "event_source_sha256": "758e868055b2d7264b7dffc5abfadb8ba9c3dbc941f159c995c25eea7ee34310",
+  "verifier_sha256": "51c88fcf97190d34100bea9a7c2a1b00529ab344dcacb3805ceb65a93cc7fea0",
+  "limits": [
+    "One established source address tested; the command does not identify mapped ranges.",
+    "The corresponding legacy writer was not sent or verified on GX9."
+  ]
+}

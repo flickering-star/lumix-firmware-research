@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "input_bytes": 6291456,
+  "input_sha256": "3d84fc929a16f46a190170d2f3ac1d8d9a4b0e19365137aba3a7ddcb71403b78",
+  "service_start": "0x80200000",
+  "service_end_exclusive": "0x80800000",
+  "virtual_base_for_this_capture": "0xc0000000",
+  "simultaneous_snapshot": false,
+  "camera_or_network_access": false,
+  "native_lookup_literals": [
+    {
+      "table": "count",
+      "instruction_virtual_address": "0xc00721f4",
+      "instruction_word": "0xe59f3060",
+      "literal_virtual_address": "0xc007225c",
+      "table_virtual_address": "0xc036b410"
+    },
+    {
+      "table": "addresses",
+      "instruction_virtual_address": "0xc0072238",
+      "instruction_word": "0x59f3020",
+      "literal_virtual_address": "0xc0072260",
+      "table_virtual_address": "0xc0350f20"
+    },
+    {
+      "table": "names",
+      "instruction_virtual_address": "0xc00720e8",
+      "instruction_word": "0xe59f207c",
+      "literal_virtual_address": "0xc007216c",
+      "table_virtual_address": "0xc036b420"
+    },
+    {
+      "table": "token_index",
+      "instruction_virtual_address": "0xc0072100",
+      "instruction_word": "0xe59f7068",
+      "literal_virtual_address": "0xc0072170",
+      "table_virtual_address": "0xc03b6190"
+    },
+    {
+      "table": "token_table",
+      "instruction_virtual_address": "0xc0072108",
+      "instruction_word": "0xe59f8064",
+      "literal_virtual_address": "0xc0072174",
+      "table_virtual_address": "0xc03b5e10"
+    }
+  ],
+  "symbols": 26938,
+  "symbol_types": {
+    "T": 8802,
+    "t": 7511,
+    "W": 130,
+    "r": 5694,
+    "R": 4801
+  },
+  "name_stream_end_virtual_address": "0xc03b5c59",
+  "marker_table_virtual_address": "0xc03b5c60",
+  "marker_entries_checked": 106,
+  "all_markers_match": true,
+  "export_comparison": {
+    "entries": 4585,
+    "matching_symbols": 4357,
+    "address_disagreements": 0,
+    "data_exports_absent_from_text_rodata_symbols": 228
+  },
+  "selected_symbols": [
+    {
+      "virtual_address": "0xc0008180",
+      "type": "T",
+      "name": "_stext"
+    },
+    {
+      "virtual_address": "0xc002a5a4",
+      "type": "T",
+      "name": "call_usermodehelper"
+    },
+    {
+      "virtual_address": "0xc00720e8",
+      "type": "t",
+      "name": "kallsyms_expand_symbol.constprop.3"
+    },
+    {
+      "virtual_address": "0xc00721f4",
+      "type": "T",
+      "name": "kallsyms_lookup_name"
+    },
+    {
+      "virtual_address": "0xc01c7eac",
+      "type": "T",
+      "name": "get_mtd_device"
+    },
+    {
+      "virtual_address": "0xc01c8188",
+      "type": "T",
+      "name": "mtd_read"
+    },
+    {
+      "virtual_address": "0xc01cf2b8",
+      "type": "t",
+      "name": "slram_read"
+    },
+    {
+      "virtual_address": "0xc0428068",
+      "type": "t",
+      "name": "pvc_map_io"
+    },
+    {
+      "virtual_address": "0xc0435a4c",
+      "type": "t",
+      "name": "init_slram"
+    },
+    {
+      "virtual_address": "0xc043ad8c",
+      "type": "T",
+      "name": "_einittext"
+    }
+  ],
+  "symbol_name_search": {
+    "uart": 0,
+    "pl011": 0,
+    "8250": 0,
+    "kgdb": 0,
+    "kdb_": 0,
+    "usb_gadget": 0,
+    "g_serial": 0,
+    "ttyGS": 0,
+    "nand_scan": 0,
+    "nand_read": 0,
+    "spi_nor": 0,
+    "physmap": 0,
+    "slram": 7
+  },
+  "limits": [
+    "Core kernel text/rodata/init symbols only; writable data and separately loaded modules are not an exhaustive part of this table.",
+    "A driver-like symbol does not establish that hardware was registered or probed.",
+    "An absent symbol-name substring is not an exhaustive hardware capability test.",
+    "No kernel function was executed and no shell or flash read was enabled."
+  ],
+  "decoder_sha256": "bbb6be2b76646ee16aeeec3b6e7342f33e66032a970353187ed57ac70aff2b03"
+}

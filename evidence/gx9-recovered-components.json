@@ -1,0 +1,717 @@
+{
+  "schema": 1,
+  "firmware_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+  "firmware_version": "1.5",
+  "camera_version_owner_reported": "1.4",
+  "camera_or_network_access": false,
+  "key_recovered": false,
+  "raw_captures_modified": false,
+  "components": [
+    {
+      "component": "zboot",
+      "service_start": "0x80120000",
+      "bytes": 2048,
+      "plaintext_sha256": "8752e78f68770c543e73dfb599fe23e5e658e725a825004530ba9b4cabfa0100",
+      "official_plaintext_sha256": "8752e78f68770c543e73dfb599fe23e5e658e725a825004530ba9b4cabfa0100",
+      "complete_digest_matches": true,
+      "reconstruction": "Exact RAM slice; no byte changes",
+      "stored_update_sha256": "0cf37b5226b9189747a188f7cdbed44b0de74acf4d9608570d531f27f9ed8a8b",
+      "update_bytes_equal_plaintext": false
+    },
+    {
+      "component": "rootfs1",
+      "captured_bytes": 4194304,
+      "captured_sha256": "ac96cc0624e6a377a35eb48b1409f7303be565992d725aa286086cec1cf95e7c",
+      "squashfs_bytes_used": 3619394,
+      "captured_prefix_kept_bytes": 3620864,
+      "official_component_bytes": 4194304,
+      "reconstruction": "Preserve SquashFS through its 4-KiB boundary; restore remaining update padding to ff",
+      "changed_captured_byte_offsets": [
+        "0x3ffffc",
+        "0x3ffffd",
+        "0x3ffffe",
+        "0x3fffff"
+      ],
+      "original_mapped_footer_hex": "40010000",
+      "appended_padding_bytes": 0,
+      "plaintext_sha256": "6a5cb5cb624e021918c2aadb1c6e43de918fe7118ca7fddb0e7e5716edbe0de1",
+      "official_plaintext_sha256": "6a5cb5cb624e021918c2aadb1c6e43de918fe7118ca7fddb0e7e5716edbe0de1",
+      "complete_digest_matches": true
+    },
+    {
+      "component": "rootfs2",
+      "captured_bytes": 9437184,
+      "captured_sha256": "bffcef5640aca392689c27f00efbee14b4e68b34ece3e71b797a06e71c476c7b",
+      "squashfs_bytes_used": 8364421,
+      "captured_prefix_kept_bytes": 8368128,
+      "official_component_bytes": 12582912,
+      "reconstruction": "Preserve SquashFS through its 4-KiB boundary; restore remaining update padding to ff",
+      "changed_captured_byte_offsets": [
+        "0x8ffffc",
+        "0x8ffffd",
+        "0x8ffffe",
+        "0x8fffff"
+      ],
+      "original_mapped_footer_hex": "40010000",
+      "appended_padding_bytes": 3145728,
+      "plaintext_sha256": "e9562dc72844e33bec4ccadfe81feecd80b8c64d4782d1fef17bdd1068c01983",
+      "official_plaintext_sha256": "e9562dc72844e33bec4ccadfe81feecd80b8c64d4782d1fef17bdd1068c01983",
+      "complete_digest_matches": true
+    },
+    {
+      "component": "dtb",
+      "service_start": "0x822ff000",
+      "bytes": 4096,
+      "plaintext_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495",
+      "official_plaintext_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495",
+      "complete_digest_matches": true,
+      "reconstruction": "Exact RAM slice; no byte changes"
+    }
+  ],
+  "zboot_handoff": {
+    "inferred_execution_base": "0x90120000",
+    "base_evidence": "Adjacent shared control at service 0x80128000 contains pointer 0x90120000; native stub and DTB layout agree",
+    "core_three_entry_physical_address": "0x92300000",
+    "core_three_r2_physical_address": "0x922ff000",
+    "hypothesis": "Linux boot image and device-tree handoff addresses, based on native register setup",
+    "candidate_service_entry": "0x82300000",
+    "candidate_service_r2": "0x822ff000",
+    "these_service_addresses_read_in_this_report": true,
+    "native_words_checked": {
+      "0x58": "0xe59f2100",
+      "0x68": "0xe59f20f4",
+      "0x6c": "0xe59f30f4",
+      "0x70": "0xe1a0f003",
+      "0x160": "0x90200000",
+      "0x164": "0x922ff000",
+      "0x168": "0x92300000"
+    },
+    "entry_sample_bytes": 1024,
+    "entry_sample_sha256": "3595edb3c800836ad873656bacbebd3308bda9c6a9e431e8a03e04442b7d1591",
+    "entry_sample_has_standard_arm_zimage_magic": false
+  },
+  "device_tree": {
+    "total_size": 2726,
+    "version": 17,
+    "nodes": [
+      "/",
+      "/interrupt-controller@70001000",
+      "/timer@7f02a000",
+      "/uart@7f050000",
+      "/uart@7f051000",
+      "/uart@7f052000",
+      "/uart@7f053000",
+      "/sdio@7c300000",
+      "/sdio@7c310000",
+      "/sdio@7c320000",
+      "/sdio@7c330000",
+      "/clocks",
+      "/clocks/pclk",
+      "/clocks/timclk",
+      "/cpus",
+      "/cpus/cpu@3",
+      "/chosen",
+      "/memory@90200000"
+    ],
+    "properties": [
+      {
+        "node": "/",
+        "property": "compatible",
+        "bytes": 21,
+        "value_hex": "70616e61736f6e69632c7076633032762d62726200",
+        "strings": [
+          "panasonic,pvc02v-brb"
+        ]
+      },
+      {
+        "node": "/",
+        "property": "#address-cells",
+        "bytes": 4,
+        "value_hex": "00000002"
+      },
+      {
+        "node": "/",
+        "property": "#size-cells",
+        "bytes": 4,
+        "value_hex": "00000002"
+      },
+      {
+        "node": "/",
+        "property": "interrupt-parent",
+        "bytes": 4,
+        "value_hex": "00000001"
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "compatible",
+        "bytes": 18,
+        "value_hex": "61726d2c636f727465782d61372d67696300",
+        "strings": [
+          "arm,cortex-a7-gic"
+        ]
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "interrupt-controller",
+        "bytes": 0,
+        "value_hex": ""
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "#interrupt-cells",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "cpu-offset",
+        "bytes": 4,
+        "value_hex": "00008000"
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "reg",
+        "bytes": 32,
+        "value_hex": "0000000070001000000000000001900000000000700020000000000000019000"
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "linux,phandle",
+        "bytes": 4,
+        "value_hex": "00000001"
+      },
+      {
+        "node": "/interrupt-controller@70001000",
+        "property": "phandle",
+        "bytes": 4,
+        "value_hex": "00000001"
+      },
+      {
+        "node": "/timer@7f02a000",
+        "property": "compatible",
+        "bytes": 24,
+        "value_hex": "61726d2c73703830340061726d2c7072696d6563656c6c00",
+        "strings": [
+          "arm,sp804",
+          "arm,primecell"
+        ]
+      },
+      {
+        "node": "/timer@7f02a000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007f02a0000000000000001000"
+      },
+      {
+        "node": "/timer@7f02a000",
+        "property": "interrupts",
+        "bytes": 24,
+        "value_hex": "000000000000001800000004000000000000001900000004"
+      },
+      {
+        "node": "/timer@7f02a000",
+        "property": "clocks",
+        "bytes": 12,
+        "value_hex": "000000020000000200000003"
+      },
+      {
+        "node": "/timer@7f02a000",
+        "property": "clock-names",
+        "bytes": 25,
+        "value_hex": "74696d5f636c6b0074696d5f636c6b006170625f70636c6b00",
+        "strings": [
+          "tim_clk",
+          "tim_clk",
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "compatible",
+        "bytes": 24,
+        "value_hex": "61726d2c706c3031310061726d2c7072696d6563656c6c00",
+        "strings": [
+          "arm,pl011",
+          "arm,primecell"
+        ]
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007f0500000000000000001000"
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "interrupts",
+        "bytes": 12,
+        "value_hex": "000000000000003500000004"
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "clocks",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "clock-names",
+        "bytes": 9,
+        "value_hex": "6170625f70636c6b00",
+        "strings": [
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/uart@7f050000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "compatible",
+        "bytes": 24,
+        "value_hex": "61726d2c706c3031310061726d2c7072696d6563656c6c00",
+        "strings": [
+          "arm,pl011",
+          "arm,primecell"
+        ]
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007f0510000000000000001000"
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "interrupts",
+        "bytes": 12,
+        "value_hex": "000000000000003600000004"
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "clocks",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "clock-names",
+        "bytes": 9,
+        "value_hex": "6170625f70636c6b00",
+        "strings": [
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/uart@7f051000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "compatible",
+        "bytes": 24,
+        "value_hex": "61726d2c706c3031310061726d2c7072696d6563656c6c00",
+        "strings": [
+          "arm,pl011",
+          "arm,primecell"
+        ]
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007f0520000000000000001000"
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "interrupts",
+        "bytes": 12,
+        "value_hex": "000000000000010800000004"
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "clocks",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "clock-names",
+        "bytes": 9,
+        "value_hex": "6170625f70636c6b00",
+        "strings": [
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/uart@7f052000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "compatible",
+        "bytes": 24,
+        "value_hex": "61726d2c706c3031310061726d2c7072696d6563656c6c00",
+        "strings": [
+          "arm,pl011",
+          "arm,primecell"
+        ]
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007f0530000000000000001000"
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "interrupts",
+        "bytes": 12,
+        "value_hex": "000000000000010900000004"
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "clocks",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "clock-names",
+        "bytes": 9,
+        "value_hex": "6170625f70636c6b00",
+        "strings": [
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/uart@7f053000",
+        "property": "status",
+        "bytes": 5,
+        "value_hex": "6f6b617900",
+        "strings": [
+          "okay"
+        ]
+      },
+      {
+        "node": "/sdio@7c300000",
+        "property": "compatible",
+        "bytes": 16,
+        "value_hex": "70616e61736f6e69632c736468636900",
+        "strings": [
+          "panasonic,sdhci"
+        ]
+      },
+      {
+        "node": "/sdio@7c300000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007c3000000000000000001000"
+      },
+      {
+        "node": "/sdio@7c300000",
+        "property": "interrupts",
+        "bytes": 24,
+        "value_hex": "000000000000003700000004000000000000003800000004"
+      },
+      {
+        "node": "/sdio@7c300000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/sdio@7c310000",
+        "property": "compatible",
+        "bytes": 16,
+        "value_hex": "70616e61736f6e69632c736468636900",
+        "strings": [
+          "panasonic,sdhci"
+        ]
+      },
+      {
+        "node": "/sdio@7c310000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007c3100000000000000001000"
+      },
+      {
+        "node": "/sdio@7c310000",
+        "property": "interrupts",
+        "bytes": 24,
+        "value_hex": "000000000000003900000004000000000000003a00000004"
+      },
+      {
+        "node": "/sdio@7c310000",
+        "property": "max-frequency",
+        "bytes": 4,
+        "value_hex": "02f34f60"
+      },
+      {
+        "node": "/sdio@7c310000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/sdio@7c320000",
+        "property": "compatible",
+        "bytes": 16,
+        "value_hex": "70616e61736f6e69632c736468636900",
+        "strings": [
+          "panasonic,sdhci"
+        ]
+      },
+      {
+        "node": "/sdio@7c320000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007c3200000000000000001000"
+      },
+      {
+        "node": "/sdio@7c320000",
+        "property": "interrupts",
+        "bytes": 24,
+        "value_hex": "000000000000003b00000004000000000000003c00000004"
+      },
+      {
+        "node": "/sdio@7c320000",
+        "property": "max-frequency",
+        "bytes": 4,
+        "value_hex": "02f34f60"
+      },
+      {
+        "node": "/sdio@7c320000",
+        "property": "status",
+        "bytes": 5,
+        "value_hex": "6f6b617900",
+        "strings": [
+          "okay"
+        ]
+      },
+      {
+        "node": "/sdio@7c330000",
+        "property": "compatible",
+        "bytes": 16,
+        "value_hex": "70616e61736f6e69632c736468636900",
+        "strings": [
+          "panasonic,sdhci"
+        ]
+      },
+      {
+        "node": "/sdio@7c330000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "000000007c3300000000000000001000"
+      },
+      {
+        "node": "/sdio@7c330000",
+        "property": "interrupts",
+        "bytes": 24,
+        "value_hex": "000000000000003d00000004000000000000003e00000004"
+      },
+      {
+        "node": "/sdio@7c330000",
+        "property": "max-frequency",
+        "bytes": 4,
+        "value_hex": "02f34f60"
+      },
+      {
+        "node": "/sdio@7c330000",
+        "property": "status",
+        "bytes": 9,
+        "value_hex": "64697361626c656400",
+        "strings": [
+          "disabled"
+        ]
+      },
+      {
+        "node": "/clocks",
+        "property": "#address-cells",
+        "bytes": 4,
+        "value_hex": "00000001"
+      },
+      {
+        "node": "/clocks",
+        "property": "#size-cells",
+        "bytes": 4,
+        "value_hex": "00000000"
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "compatible",
+        "bytes": 12,
+        "value_hex": "66697865642d636c6f636b00",
+        "strings": [
+          "fixed-clock"
+        ]
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "clock-frequency",
+        "bytes": 4,
+        "value_hex": "00cdfe60"
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "#clock-cells",
+        "bytes": 4,
+        "value_hex": "00000000"
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "clock-output-names",
+        "bytes": 9,
+        "value_hex": "6170625f70636c6b00",
+        "strings": [
+          "apb_pclk"
+        ]
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "linux,phandle",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/clocks/pclk",
+        "property": "phandle",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "compatible",
+        "bytes": 12,
+        "value_hex": "66697865642d636c6f636b00",
+        "strings": [
+          "fixed-clock"
+        ]
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "clock-frequency",
+        "bytes": 4,
+        "value_hex": "019bfcc0"
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "#clock-cells",
+        "bytes": 4,
+        "value_hex": "00000000"
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "clock-output-names",
+        "bytes": 8,
+        "value_hex": "74696d5f636c6b00",
+        "strings": [
+          "tim_clk"
+        ]
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "linux,phandle",
+        "bytes": 4,
+        "value_hex": "00000002"
+      },
+      {
+        "node": "/clocks/timclk",
+        "property": "phandle",
+        "bytes": 4,
+        "value_hex": "00000002"
+      },
+      {
+        "node": "/cpus",
+        "property": "#address-cells",
+        "bytes": 4,
+        "value_hex": "00000001"
+      },
+      {
+        "node": "/cpus",
+        "property": "#size-cells",
+        "bytes": 4,
+        "value_hex": "00000000"
+      },
+      {
+        "node": "/cpus/cpu@3",
+        "property": "device_type",
+        "bytes": 4,
+        "value_hex": "63707500",
+        "strings": [
+          "cpu"
+        ]
+      },
+      {
+        "node": "/cpus/cpu@3",
+        "property": "compatible",
+        "bytes": 14,
+        "value_hex": "61726d2c636f727465782d613700",
+        "strings": [
+          "arm,cortex-a7"
+        ]
+      },
+      {
+        "node": "/cpus/cpu@3",
+        "property": "reg",
+        "bytes": 4,
+        "value_hex": "00000003"
+      },
+      {
+        "node": "/chosen",
+        "property": "bootargs",
+        "bytes": 120,
+        "value_hex": "726f6f743d2f6465762f6d7464626c6f636b3020736c72616d3d736c72616d302c307839333130303030302c2b307830303430303030302c736c72616d312c307839333530303030302c2b3078303039303030303020636f6e736f6c653d747479414d412c313135323030206c706a3d3632313336333200",
+        "strings": [
+          "root=/dev/mtdblock0 slram=slram0,0x93100000,+0x00400000,slram1,0x93500000,+0x00900000 console=ttyAMA,115200 lpj=6213632"
+        ]
+      },
+      {
+        "node": "/memory@90200000",
+        "property": "device_type",
+        "bytes": 7,
+        "value_hex": "6d656d6f727900",
+        "strings": [
+          "memory"
+        ]
+      },
+      {
+        "node": "/memory@90200000",
+        "property": "reg",
+        "bytes": 16,
+        "value_hex": "00000000902000000000000002f00000"
+      }
+    ],
+    "structure_parsed_to_end": true
+  },
+  "limits": [
+    "These matches recover selected plaintext components, not the GX9 encryption key or complete flash contents.",
+    "Rootfs2 includes three MiB of reconstructed ff padding beyond its captured nine-MiB mapping; its entire twelve-MiB official digest matches.",
+    "The captures came from the owner-reported 1.4 camera; these particular components match the official 1.5 records.",
+    "A boot handoff address does not guarantee that its original bytes survive in live RAM after boot.",
+    "No firmware or camera memory was written."
+  ],
+  "verifier_sha256": "cb62fbc223719b97b9235f59852c21852f3e67bae6210e775192081a3ed0603e"
+}

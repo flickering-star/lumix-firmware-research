@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "scope": "Offline replay of original hardware transfer captures through standalone packet constructors and reply checks",
+  "standalone_source_sha256": "64965e069477a2bade6054bfe08fae9d0cefc90c8e87eead5cb36924bb7ab0f2",
+  "pairs_verified": 3220,
+  "captures": [
+    {
+      "capture": "20261108T231653Z-gx9-linux-boot-area",
+      "profile": "linux-prefix",
+      "request_and_response_pairs_replayed": 98,
+      "events_sha256": "01365f49a0b6d6481e84a4be5e036f4db7e0c7c2ef7a24d2b07cd2f1929215b7"
+    },
+    {
+      "capture": "20261109T001959Z-gx9-linux-prefix-2m",
+      "profile": "linux-prefix",
+      "request_and_response_pairs_replayed": 1954,
+      "events_sha256": "ac179ee35731e1ef7362a41e8e15b82ca414fb4587d4a87046388fd3675e05c1"
+    },
+    {
+      "capture": "20261109T001820Z-gx9-prelinux-range-resume",
+      "profile": "pre-linux",
+      "request_and_response_pairs_replayed": 1086,
+      "events_sha256": "9b2b9a9072ac80b5ca55b8fab5e7c1b7dadff98928bb296be35cad8cc3406925"
+    },
+    {
+      "capture": "20261109T002108Z-gx9-early-arm-tables",
+      "profile": "early-tables",
+      "request_and_response_pairs_replayed": 82,
+      "events_sha256": "2c4dbd5812cb3aab31d45fbab0ac6ce378166ddd73232eb2a4702ce37179a22f"
+    }
+  ],
+  "new_usb_requests": 0,
+  "windows_keep_awake_executed": true,
+  "repair_script_executed": false,
+  "windows_live_validation": {
+    "capture": "20261109T003910Z-gx9-local-wrapper-corrected-live-check",
+    "selftest_passed": true,
+    "profile": "early-tables",
+    "bytes_captured": 81920,
+    "service_requests": 84,
+    "camera_memory_writes": 0,
+    "flash_writes": 0,
+    "sha256": "11087f892ac73608bf922cd2ce90866aecd268b79fe1540ded5182d5b280a97f",
+    "matches_previous_capture_exactly": true,
+    "temporary_job_power_request_used": true
+  }
+}

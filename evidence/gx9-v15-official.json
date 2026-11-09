@@ -1,0 +1,256 @@
+{
+  "official_page": "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gx9.html",
+  "zip_url": "https://av.jpn.support.panasonic.com/support/share2/eww/com/dsc/fts/zip/GX9__V15.zip",
+  "archive_bytes": 100196752,
+  "archive_sha256": "6e26fb0086a2be3f5e5c36e91fdec3794f50585dcecf618f8977312f0a367ee6",
+  "zip_crc_valid": true,
+  "bin_bytes": 102538240,
+  "bin_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+  "model_id": "MC282",
+  "body_crc32": "0xaf368de2",
+  "candidate_key_checks": [
+    {
+      "source_model": "GM1",
+      "component": "loader1",
+      "algorithm": "five-round AES-128-CBC",
+      "candidate_sha256": "fd83f338fa2c670f10bf5e506d1bfc806b1a621f22f48a529da8ac02f53d4bec",
+      "matches_expected_sha256": false
+    },
+    {
+      "source_model": "GM5",
+      "component": "loader1",
+      "algorithm": "five-round AES-128-CBC",
+      "candidate_sha256": "b02f1b1342c5c747b52781803aae3afff783a3e62a7a3f2115a8fabb455e1436",
+      "matches_expected_sha256": false
+    }
+  ],
+  "schema": 1,
+  "scope": "Official GX9 1.5 analyzed offline; owner camera remains on reported 1.4",
+  "directory_record_count": 36,
+  "fully_decoded": false,
+  "camera_update_performed": false,
+  "entries": [
+    {
+      "name": "loader1",
+      "bytes": 4096,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "loader2",
+      "bytes": 32768,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "loader3",
+      "bytes": 40960,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "program",
+      "bytes": 9895936,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "storage",
+      "bytes": 0,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "postboot1",
+      "bytes": 4456448,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "postboot2",
+      "bytes": 7602176,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "postboot3",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "postboot4",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "postboot5",
+      "bytes": 1835008,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "dram_sleep",
+      "bytes": 6144,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "eep_ow_a",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "eep_ow_b",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "eep_adj",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "eep_fix",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "history",
+      "bytes": 262144,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "music",
+      "bytes": 3538944,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "osdover",
+      "bytes": 8781824,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "osddata",
+      "bytes": 9699328,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "fileinfo",
+      "bytes": 917504,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "ninsho_db",
+      "bytes": 655360,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "koutei_kao",
+      "bytes": 114688,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "avchd_info",
+      "bytes": 16384,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "eep_net_a",
+      "bytes": 131072,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "eep_net_b",
+      "bytes": 131072,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "wifi_info",
+      "bytes": 131072,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "nfc_info",
+      "bytes": 131072,
+      "flags": 2,
+      "stored_sha256_matches": true
+    },
+    {
+      "name": "zboot",
+      "bytes": 2048,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "dtb",
+      "bytes": 4096,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "zimage",
+      "bytes": 2621440,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "rootfs1",
+      "bytes": 4194304,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "rootfs2",
+      "bytes": 12582912,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "apu_boot",
+      "bytes": 262144,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "apu_inst",
+      "bytes": 11264,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "usbcharge",
+      "bytes": 131072,
+      "flags": 3,
+      "stored_sha256_matches": false
+    },
+    {
+      "name": "focus_selec",
+      "bytes": 33554432,
+      "flags": 3,
+      "stored_sha256_matches": false
+    }
+  ],
+  "interpretation": {
+    "flags_2": "All nine records match their stored SHA256; their payloads are empty or constant 00/FF fills, not executable code",
+    "flags_3": "Stored bytes do not match the expected component digest; executable plaintext remains unrecovered",
+    "candidate_key_checks": "Negative loader1 tests reject only the known GM1/GM5 keys with five-round AES-128-CBC and the per-record IV; they do not establish the GX9 cipher",
+    "directory_destinations": "Container destination candidates are not verified CPU addresses"
+  }
+}

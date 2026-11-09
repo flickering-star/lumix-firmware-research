@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "scope": "Raw contiguous 16-byte candidates, AES-128-CBC at five/ten rounds only",
+  "firmware_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+  "probe_components": [
+    {
+      "name": "dtb",
+      "bytes": 4096,
+      "magic_hex": "d00dfeed",
+      "iv_hex": "d0472e1dc0f6c142c9b3837e29a9177c",
+      "expected_plaintext_sha256": "0ef2e8149f9e2ea7e71c14ec5a4eb46ec273f250b2b2c383a57cb4789ba87495"
+    },
+    {
+      "name": "rootfs1",
+      "bytes": 4194304,
+      "magic_hex": "68737173",
+      "iv_hex": "30271511aa5d7d074ec83368a3e6cd80",
+      "expected_plaintext_sha256": "6a5cb5cb624e021918c2aadb1c6e43de918fe7118ca7fddb0e7e5716edbe0de1"
+    },
+    {
+      "name": "rootfs2",
+      "bytes": 12582912,
+      "magic_hex": "68737173",
+      "iv_hex": "105ba65773d223aac5dc63de0d31b3f1",
+      "expected_plaintext_sha256": "e9562dc72844e33bec4ccadfe81feecd80b8c64d4782d1fef17bdd1068c01983"
+    },
+    {
+      "name": "zboot",
+      "bytes": 2048,
+      "magic_hex": "c0000cf1",
+      "iv_hex": "7751f402d503d41f9c8e84a11baf4cfb",
+      "expected_plaintext_sha256": "8752e78f68770c543e73dfb599fe23e5e658e725a825004530ba9b4cabfa0100"
+    }
+  ],
+  "windows": [
+    {
+      "path": "gx9-prelinux-2m.combined.bin",
+      "bytes": 2097152,
+      "sha256": "2c858e77ed23ca2a97f57e55a116388391e3e5b6485260c974ec4986c11efa59",
+      "candidate_positions": 2097137,
+      "elapsed_seconds": 3.141780917,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "gx9-linux-6m.combined.bin",
+      "bytes": 6291456,
+      "sha256": "3d84fc929a16f46a190170d2f3ac1d8d9a4b0e19365137aba3a7ddcb71403b78",
+      "candidate_positions": 6291441,
+      "elapsed_seconds": 9.133453167,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "early-maps-and-entry.bin",
+      "bytes": 81920,
+      "sha256": "11087f892ac73608bf922cd2ce90866aecd268b79fe1540ded5182d5b280a97f",
+      "candidate_positions": 81905,
+      "elapsed_seconds": 0.09977062499999789,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "gx9-arm-entry-128k.bin",
+      "bytes": 131072,
+      "sha256": "dc82c0153609b413b91825939ecf1a22270297fab4ab77ea4fa5254d684b4422",
+      "candidate_positions": 131057,
+      "elapsed_seconds": 0.0007843339999986654,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "bootstrap-shared-bank.bin",
+      "bytes": 100352,
+      "sha256": "b734167796b3886f7db0f318ee65a60bd25763db0d9ba48ac9588081d09693d9",
+      "candidate_positions": 100337,
+      "elapsed_seconds": 0.005304416000001311,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "libicc.so",
+      "bytes": 7160,
+      "sha256": "ffe3e5f368ed5c0b515ed45984dd08fc96756cb8d47484239f37adf138201adf",
+      "candidate_positions": 7145,
+      "elapsed_seconds": 0.010720542000001387,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "libicsm.so",
+      "bytes": 7388,
+      "sha256": "e2491fae5022c9a796a18a432a570e2f6379f85ebaa541f752762e705b445d11",
+      "candidate_positions": 7373,
+      "elapsed_seconds": 0.011021666000001318,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "libnetutil.so",
+      "bytes": 27944,
+      "sha256": "4f128d8a7ae1ea20ad21d9b6797c496a5b60a9adf96aa101ea63d44bf2139bb3",
+      "candidate_positions": 27929,
+      "elapsed_seconds": 0.04095741700000133,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "nwa",
+      "bytes": 14028,
+      "sha256": "21b904a78c80c5b6e505af5f2cfdbfde6365558fd1169675685363d012782a77",
+      "candidate_positions": 14013,
+      "elapsed_seconds": 0.019991665999999242,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "psm",
+      "bytes": 407276,
+      "sha256": "7cafa9b91050c613b9fa76391f12003cbdd0a8e91f4e2e46dc0b22b1a5166fbd",
+      "candidate_positions": 407261,
+      "elapsed_seconds": 0.6121024170000027,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "libpvc.a",
+      "bytes": 5618,
+      "sha256": "d6d88a4271399d87e8dc20cb5cc11cf57662502202e0e936627b1b5f4af2d598",
+      "candidate_positions": 5603,
+      "elapsed_seconds": 0.008372999999998854,
+      "header_candidate_count": 0
+    },
+    {
+      "path": "libbluetooth.blueangel.so",
+      "bytes": 694172,
+      "sha256": "2492afbbaada9de6778257d34e689ea3581caaaf725b38bd9f414b9d18d5cc17",
+      "candidate_positions": 694157,
+      "elapsed_seconds": 1.0472522499999997,
+      "header_candidate_count": 0
+    }
+  ],
+  "header_candidates": [],
+  "verified_keys": [],
+  "adjacent_identical_candidates_skipped": true,
+  "camera_or_network_access": false,
+  "driver_sha256": "2a0e425da4b315507a07a026f1bec78c6d4dca7cf90c51f090eff1b4e774891b",
+  "elapsed_seconds": 25.94598175,
+  "candidate_positions": 9865358,
+  "limits": [
+    "No derived, byte-reordered or expanded-schedule keys are tested.",
+    "Assumes direct DTB/SquashFS prefixes and the independently verified zboot prefix.",
+    "A negative result does not identify the GX9 cipher or exclude other memory regions."
+  ],
+  "codec_helper_sha256": "3088ae6178d14851ec89bb2910e077a29fde12b07588b40ae35e3feaf795f637",
+  "codec_source_sha256": "17ca748dabbe60e0acc12e98a8df7f22065b4f1305efc9d54f8cb580839ff961"
+}
