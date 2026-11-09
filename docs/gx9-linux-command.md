@@ -26,9 +26,6 @@ verified padding reconstruction. The camera owner reports firmware 1.4.
 | `0x398d8` | Command-worker entry |
 | `0x39998`, `0x399dc` | Calls to the imported libc `system` function |
 
-These are ELF virtual addresses, not established USB service addresses for
-the live process.
-
 The observed internal message is **488 bytes**. Its event ID is a little-endian
 32-bit value at offset zero; the command string begins at offset **24**.
 The worker's output length field is at offset **20**. These fields describe an
@@ -147,7 +144,7 @@ The [later ARM-image acquisition recovered the firmware key](gx9-firmware-decryp
 and decoded both official update versions completely. That provides the main
 camera code needed to continue tracing the event source.
 
-The proposed reversible RAM-padding write test was interrupted before any
-write was sent. No GX9 RAM writer, live shell or alternate firmware installation
-has been demonstrated. No firmware update or camera write was performed during
-the findings documented here.
+The initially interrupted RAM-padding experiment was later completed: the
+[fixed-address `0x9c` write/restore proof](gx9-ram-write.md) verifies a two-byte
+change and exact restoration. That does not yet deliver this Linux event or
+demonstrate an external shell or modified firmware installation.

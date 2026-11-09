@@ -4,7 +4,9 @@ Both the official GX9 **1.4 and 1.5 packages now decode completely**. All **35
 nonempty components** in each package match their complete plaintext SHA-256
 values from the UPD directory. The directory also contains one empty record.
 This supersedes the earlier four-component recovery and negative key searches.
-No camera update or camera memory write was performed.
+The decoding/acquisition work performed no camera update or memory write.
+A subsequent [RAM-padding write/restore experiment](gx9-ram-write.md) verified
+one fixed-address writer separately.
 
 ## Key recovery from the main ARM image
 
@@ -50,9 +52,16 @@ UPD bounds, body CRC and all decrypted component hashes pass.
 
 The 1.4 file was retrieved from an archive mirror rather than Panasonic's live
 server. The independently acquired camera bytes provide additional comparison
-controls; a valid package CRC alone is not an authenticity signature.
+controls. A later [authentication check](gx9-update-authentication.md) verified
+both packages' P-256 signatures using the public point in the camera's 1.4
+program, independently with OpenSSL and in native ARM emulation.
 
 ## Camera RAM compared with 1.4
+
+The earlier boot-area capture also contains the complete 1.4 `loader3` at
+service address `0x80000000`: all 40,960 bytes match, SHA-256
+`5bb1c4d827009738eaff6067a5befc1713b22ad6da3df6047f7d0d8fcd71518f`.
+The 1.5 loader differs at just one byte, offset `0x157e`.
 
 All five postboot images were acquired from the contiguous ARM image layout:
 
@@ -64,10 +73,12 @@ All five postboot images were acquired from the contiguous ARM image layout:
 | `postboot4` | `0x85390000` | 131,072 | Yes | Yes |
 | `postboot5` | `0x853b0000` | 1,835,008 | Yes | No |
 
-Together with `zboot`, `dtb`, `rootfs1` and `rootfs2`, there are **nine
+Together with `loader3`, `zboot`, `rootfs1`, `rootfs2` and `dtb`, there are **ten
 independently captured components matching 1.4**. The filesystem comparisons
 include the previously documented padding reconstruction. Only six of these
-nine components are unchanged in 1.5.
+ten components are unchanged in 1.5. `postboot3` and `postboot4` each consist
+of a small `LOAD` header with only 28 bytes differing from their `ff` padding;
+their full hashes match, but they do not represent large additional code images.
 
 The main RAM image is also consistent with the 1.4 program. It differs from
 the decoded 1.4 image in **211,636 bytes**, all before offset `0xd0000`.

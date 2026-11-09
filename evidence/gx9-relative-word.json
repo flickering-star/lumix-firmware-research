@@ -1,0 +1,351 @@
+{
+  "schema": 1,
+  "scope": "Measured GX9 word reads; addressing formula checked at nine points only",
+  "camera_model": "DC-GX7MK3 / GX9",
+  "camera_version_owner_reported": "1.4",
+  "verifier_sha256": "f373463140d34bb7cc578004ce0fd97f3cb5634d3fc734dcdcf87c107582c11c",
+  "operation": "0x75",
+  "request_class": 8,
+  "word_index": "Little-endian 32-bit integer at bytes 4..7",
+  "request_reserved_bytes_8_to_13_zero": true,
+  "measured_formula": "0x80000000 + 2 * word_index",
+  "reply_operation": "0x36",
+  "word_reply_bytes": [
+    4,
+    5
+  ],
+  "comparisons": [
+    {
+      "word_index": 0,
+      "candidate_service_address": "0x80000000",
+      "returned_bytes": "1b00",
+      "independent_bytes": "1b00",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 1,
+      "candidate_service_address": "0x80000002",
+      "returned_bytes": "00ea",
+      "independent_bytes": "00ea",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 2,
+      "candidate_service_address": "0x80000004",
+      "returned_bytes": "0500",
+      "independent_bytes": "0500",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 3,
+      "candidate_service_address": "0x80000006",
+      "returned_bytes": "00ea",
+      "independent_bytes": "00ea",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 4,
+      "candidate_service_address": "0x80000008",
+      "returned_bytes": "0400",
+      "independent_bytes": "0400",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 5,
+      "candidate_service_address": "0x8000000a",
+      "returned_bytes": "00ea",
+      "independent_bytes": "00ea",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 6,
+      "candidate_service_address": "0x8000000c",
+      "returned_bytes": "0900",
+      "independent_bytes": "0900",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 7,
+      "candidate_service_address": "0x8000000e",
+      "returned_bytes": "00ea",
+      "independent_bytes": "00ea",
+      "matches": true,
+      "comparison": "Earlier boot-area capture, now exact 1.4 loader3"
+    },
+    {
+      "word_index": 1064960,
+      "candidate_service_address": "0x80208000",
+      "returned_bytes": "fe2b",
+      "independent_bytes": "fe2b",
+      "matches": true,
+      "comparison": "Known 0x5c code block and subsequent absolute 0x9b control"
+    }
+  ],
+  "captures": [
+    {
+      "capture": "20261109T094208Z-gx9-reconnected-ram-relative-word-control",
+      "event_source": "events.jsonl",
+      "event_source_sha256": "0a0b988641b98ad81d4c82615cafabbf306520cda2cb2f5fa1a5645afabc2399",
+      "service_requests": 7,
+      "successful_words": 5,
+      "transactions": [
+        {
+          "operation": "0x35",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+          "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+          "successful_read": true,
+          "area": "0x10",
+          "word_index": 8192,
+          "result": "word_reply",
+          "word_hex": "f2b0"
+        },
+        {
+          "operation": "0x5c",
+          "request_class": 1,
+          "response_class": 1,
+          "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+          "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+          "successful_read": true,
+          "start": "0x80208000",
+          "end_exclusive": "0x80208400",
+          "requested_source_bytes": 1024,
+          "result": "bulk_reply",
+          "payload_bytes": 1024,
+          "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+        },
+        {
+          "operation": "0x5c",
+          "request_class": 1,
+          "response_class": 1,
+          "request_sha256": "586ccf1703f5aac3bf9de6f311277faa2925b2129ef6b393ff2ec5b1e552df05",
+          "response_sha256": "1ccf905dcf4de6f48d8e0a38e8b58babf4645f297af4f9cb39480fc01c8a447b",
+          "successful_read": true,
+          "start": "0xb4000000",
+          "end_exclusive": "0xb4000400",
+          "requested_source_bytes": 1024,
+          "result": "bulk_reply",
+          "payload_bytes": 1024,
+          "payload_sha256": "cfbe45e2c12c122bf3dffba3f3e334e16ab7120fc0648b7c983ca51a5b194b91"
+        },
+        {
+          "operation": "0x9b",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "ac20932b5c8bce72816cab2409453fc457bf93790c65d26d96a95704de40232a",
+          "response_sha256": "5b6742b11f638f9448639b6ea21aa158b4af7dd39274544ee97a70e8a4844570",
+          "successful_read": true,
+          "source_address": "0xb4000000",
+          "result": "word_reply",
+          "word_hex": "ffd8"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "f76c92a820ddb39361f8b849a6efd309e3689b51d64538705ddc9b4841a72434",
+          "response_sha256": "9162011ac521b347cd7df0f88d8412f96a7bd55ee372554df1f43c9f5cd2f57e",
+          "successful_read": true,
+          "word_index": 0,
+          "result": "word_reply",
+          "word_hex": "1b00"
+        },
+        {
+          "operation": "0x9b",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1c80a00412278801eabd0d33291d576d6403885e2fbfe2337aef5338d7ad69b7",
+          "response_sha256": "aad83fa3877d31af2540bd38d24ddc768a7a6cf12c596af449778ea2a7ce7580",
+          "successful_read": true,
+          "source_address": "0x80208000",
+          "result": "word_reply",
+          "word_hex": "fe2b"
+        },
+        {
+          "operation": "0x35",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+          "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+          "successful_read": true,
+          "area": "0x10",
+          "word_index": 8192,
+          "result": "word_reply",
+          "word_hex": "f2b0"
+        }
+      ]
+    },
+    {
+      "capture": "20261109T094325Z-gx9-ram-relative-mapping",
+      "event_source": "events.jsonl",
+      "event_source_sha256": "72062cc3541199415f561aafdef80f5e8464c2ee1067de49f55cd9df503900b5",
+      "service_requests": 13,
+      "successful_words": 12,
+      "transactions": [
+        {
+          "operation": "0x35",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+          "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+          "successful_read": true,
+          "area": "0x10",
+          "word_index": 8192,
+          "result": "word_reply",
+          "word_hex": "f2b0"
+        },
+        {
+          "operation": "0x5c",
+          "request_class": 1,
+          "response_class": 1,
+          "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+          "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+          "successful_read": true,
+          "start": "0x80208000",
+          "end_exclusive": "0x80208400",
+          "requested_source_bytes": 1024,
+          "result": "bulk_reply",
+          "payload_bytes": 1024,
+          "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "f76c92a820ddb39361f8b849a6efd309e3689b51d64538705ddc9b4841a72434",
+          "response_sha256": "9162011ac521b347cd7df0f88d8412f96a7bd55ee372554df1f43c9f5cd2f57e",
+          "successful_read": true,
+          "word_index": 0,
+          "result": "word_reply",
+          "word_hex": "1b00"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "2005a87693d50bc9a39de3ff78d4419473d6f8891553c0328603eab58d6b0908",
+          "response_sha256": "39005cefd6bd63ba683587313e6d6a5d82d7d2b393444db85003442db0d285c1",
+          "successful_read": true,
+          "word_index": 1,
+          "result": "word_reply",
+          "word_hex": "00ea"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "570cdf4522e7001d57e6f48573d5dce7455bda370a1c2ac1c1ffd470c94c2ba2",
+          "response_sha256": "ed67d157cc6e370350aad45ce1fedf807a9c8ccd2f516648362eb5885abb72e8",
+          "successful_read": true,
+          "word_index": 2,
+          "result": "word_reply",
+          "word_hex": "0500"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "ca7763e7fe208a369085dd774f8abaed2b8c066762afdc1f0eba53fa660e282f",
+          "response_sha256": "39005cefd6bd63ba683587313e6d6a5d82d7d2b393444db85003442db0d285c1",
+          "successful_read": true,
+          "word_index": 3,
+          "result": "word_reply",
+          "word_hex": "00ea"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "aa4b369bc37f7198d690b39288e162cb83b594cfbf18c501676062855a1b7e5c",
+          "response_sha256": "9f493b011cee24ffd877a1af113b3414e109ebc9aee35bbf0f735cc0cf9c4169",
+          "successful_read": true,
+          "word_index": 4,
+          "result": "word_reply",
+          "word_hex": "0400"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "382c973827d6d3c4d375fdb2dfb24776ac91791c941d72524da6dc8fc9ed3667",
+          "response_sha256": "39005cefd6bd63ba683587313e6d6a5d82d7d2b393444db85003442db0d285c1",
+          "successful_read": true,
+          "word_index": 5,
+          "result": "word_reply",
+          "word_hex": "00ea"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "3ff1f3844eba963abc320a21556daa3246a920cb5acbe30e127b35fed22ba248",
+          "response_sha256": "d49a02a68e372a33e03b4e51d5d88a75dfb7885201d2a7d89b5536a0e1a397db",
+          "successful_read": true,
+          "word_index": 6,
+          "result": "word_reply",
+          "word_hex": "0900"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "6382a2c96a327bb3e10a8b4a5faf2ab0663a1f46a2102e513d9343eb96df7c23",
+          "response_sha256": "39005cefd6bd63ba683587313e6d6a5d82d7d2b393444db85003442db0d285c1",
+          "successful_read": true,
+          "word_index": 7,
+          "result": "word_reply",
+          "word_hex": "00ea"
+        },
+        {
+          "operation": "0x75",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "7bfdd9665e27c1475eaad0c062a85e2d57c0d2a3e23c911cd3ecabc53207995e",
+          "response_sha256": "aad83fa3877d31af2540bd38d24ddc768a7a6cf12c596af449778ea2a7ce7580",
+          "successful_read": true,
+          "word_index": 1064960,
+          "result": "word_reply",
+          "word_hex": "fe2b"
+        },
+        {
+          "operation": "0x9b",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1c80a00412278801eabd0d33291d576d6403885e2fbfe2337aef5338d7ad69b7",
+          "response_sha256": "aad83fa3877d31af2540bd38d24ddc768a7a6cf12c596af449778ea2a7ce7580",
+          "successful_read": true,
+          "source_address": "0x80208000",
+          "result": "word_reply",
+          "word_hex": "fe2b"
+        },
+        {
+          "operation": "0x35",
+          "request_class": 8,
+          "response_class": 8,
+          "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+          "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+          "successful_read": true,
+          "area": "0x10",
+          "word_index": 8192,
+          "result": "word_reply",
+          "word_hex": "f2b0"
+        }
+      ]
+    }
+  ],
+  "memory_writes": 0,
+  "flash_writes": 0,
+  "limits": [
+    "The formula is supported at the sampled words; no complete readable map, bounds or wraparound behavior established.",
+    "The corresponding writer remains untested.",
+    "An initial attempt while the camera was absent stopped at identification before sending any USB request."
+  ]
+}

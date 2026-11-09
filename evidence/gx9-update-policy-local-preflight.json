@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "scope": "Prepared Windows-local GX9 updater-policy probe; physical run pending",
+  "probe": "tools/gx9_update_policy_probe_windows.py",
+  "probe_sha256": "0db4a92956f5fff28e5597139394d76d0ce9d8ebed810ee69eb18966927d4b6a",
+  "transport_sha256": "64965e069477a2bade6054bfe08fae9d0cefc90c8e87eead5cb36924bb7ab0f2",
+  "program_v14_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "captured_main_ram_sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07",
+  "policy_halfword_link_address": "0x03f1801a",
+  "candidate_service_address": "0x83f1801a",
+  "policy_halfword_in_component": 0,
+  "policy_halfword_in_saved_ram": 0,
+  "complete_metadata_block_sha256": "a89c186b1a0d9eabea5d38b06cd9095dc19d75a2d0e935812bf398630491bf62",
+  "saved_ram_metadata_block_matches_component": true,
+  "native_updater_code_block_sha256": "92ccfc604d7dfa6b31eaff8e6371fac4cd755c1ac6a64c47534da2e4fb3cb8d2",
+  "selftest_controls_passed": [
+    "Fixed-address packet and ACK checks",
+    "Read-only inspection sends no writes",
+    "Successful temporary policy round trip restores original block",
+    "Injected post-write read failure still restores original block",
+    "Mismatched updater code prevents all writes"
+  ],
+  "physical_policy_probe_executed": false,
+  "physical_policy_writes": 0,
+  "camera_update_started": false,
+  "flash_programming_commands": 0,
+  "pending": "Owner runs the prepared local USB probe on the camera-connected Windows PC"
+}

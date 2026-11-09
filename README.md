@@ -15,7 +15,7 @@ connection files are excluded.
 | --- | --- | --- |
 | **GM1 Japanese-market 1.1** | Service USB word/block reads; complete 9 MiB main and 3.375 MiB secondary acquired; both match official plaintext. All six update components decoded, ECDSA independently verified. | No complete physical NOR backup or modified-firmware installation demonstrated. Factory-loader analysis is static. |
 | **GM5 Japanese 1.1** | 32 MiB NOR mapping backed up; modified unsigned installation proven; persistent policy zero; three-byte language unlock installed in normal mode. English survives manual off/on. | Language installation checked with three exact ROM windows, settings/UI and policy reads. Its full main readback was stopped at the owner's request. |
-| **GX9 / Japanese DC-GX7MK3, reported 1.4** | About 48.6 MiB of distinct RAM acquired, including the main ARM image. Firmware key recovered; all 35 nonempty components of official 1.4 and 1.5 decode with complete hash checks. Nine RAM-captured components match 1.4. Both Linux filesystems and 26,938 kernel symbols recovered. | External shell delivery, additional USB operations and modified-firmware installation remain under investigation. Internal Linux command handling and event routing are verified through native code with mocked I/O. No camera write was sent. |
+| **GX9 / Japanese DC-GX7MK3, reported 1.4** | About 48.6 MiB of distinct RAM acquired. All 35 nonempty components of 1.4 and 1.5 decode; ten captured components match 1.4. Both packages' P-256 signatures verify independently and in native ARM emulation. A fixed USB RAM write and exact restoration are proven. | An emulated policy-one change bypasses the signature gate; its Windows-local physical test is prepared. No camera update or flash programming has been performed. External shell delivery and modified installation remain unresolved. |
 | **GH2** | Static service-dispatch, startup, update, signature and factory-input analysis provided controls for the later USB work. | GH2 addresses and algorithms must not be assumed for GM1/GM5 or newer models. |
 | **Emulator** | Native MN103 updater/decode/NOR tests, bounded RTOS/task execution and ARM/Thumb startup/queue transport. | No complete camera boot, display/sensor model or integrated worker/reply path. |
 
@@ -28,6 +28,8 @@ Start with the guide for your model:
 - [GM1: USB acquisition, complete decoding and signature verification](docs/gm1-reproduction.md)
 - [GM5: reproduce the exact tested policy/language patch and package](docs/gm5-reproduction.md)
 - [GX9: full firmware decryption, key recovery and 1.4/1.5 comparison](docs/gx9-firmware-decryption.md)
+- [GX9: update signatures, emulated policy control and Windows-local USB test](docs/gx9-update-authentication.md)
+- [GX9: measured RAM write and exact restoration](docs/gx9-ram-write.md)
 - [GX9: recovered components and complete filesystem contents](docs/gx9-recovered-components.md)
 - [GX9: measured USB memory reads](docs/gx9-memory-reads.md), [Linux runtime](docs/gx9-linux-runtime.md), [internal command-handler analysis](docs/gx9-linux-command.md)
 - [Other models: protocol and updater investigation method](docs/porting-to-other-models.md)

@@ -1,0 +1,509 @@
+{
+  "schema": 1,
+  "scope": "Offline GX9 signed-directory authentication; no flashing",
+  "verifier_sha256": "e4826213d26a79622d190355f45bbb917f3866796b999511992bf31a2d215298",
+  "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "public_point_sha256": "9f1c0f68e2bad2b265fae5b36d625bf9bc0a9e6c49302542fa4a1815730829d1",
+  "public_point_address": "0x4622b6a",
+  "validation_reference_address": "0x4622bac",
+  "public_point_on_p256": true,
+  "algorithm": "ECDSA over NIST P-256",
+  "digest": "SHA-256; native verifier interprets its 32 bytes as a little-endian integer",
+  "public_coordinates_and_signature_integers": "little-endian, 32 bytes each",
+  "openssl": "LibreSSL 3.3.6",
+  "camera_or_network_access": false,
+  "camera_writes": 0,
+  "packages": [
+    {
+      "version": "1.4",
+      "firmware_sha256": "e26e4b422e9d46dffb7d93eaabd061bb3e49e2d84654dffc1d892f7f25126e7a",
+      "directory_records": 36,
+      "signed_file_start": "0x2a0",
+      "signed_file_end_exclusive": "0xfdc",
+      "signed_bytes": 3388,
+      "signed_sha256": "5f12c256d087fad30ea7b9b3cfd7cbbf1faec365b20e0d44804663a7bfc5faf5",
+      "signature_file_start": "0x220",
+      "signature_bytes": 64,
+      "signature_verified": true,
+      "signed_component_plaintext_hashes": 36,
+      "controls": {
+        "changed_directory_with_correct_body_crc_rejected": true,
+        "changed_signature_rejected": true,
+        "unreversed_digest_rejected": true
+      },
+      "native": {
+        "directory_authentication_passed": true,
+        "directory_gate_reached": true,
+        "policy_halfword": 0,
+        "emulated_policy_changed": false,
+        "signature_calls": 1,
+        "crc32_bytes_accelerated": 102537728,
+        "calls": [
+          {
+            "function": "0x4027170",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 6
+          },
+          {
+            "function": "0x40271aa",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 6
+          },
+          {
+            "function": "0x40271c6",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 8
+          },
+          {
+            "function": "0x402720e",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 61
+          },
+          {
+            "function": "0x40271e4",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 14
+          },
+          {
+            "function": "0x4027a9e",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 5
+          },
+          {
+            "function": "0x402ab18",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 17
+          },
+          {
+            "function": "0x402ab64",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 463
+          },
+          {
+            "function": "0x402ab70",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 20
+          },
+          {
+            "function": "0x4027a6a",
+            "result": null,
+            "stop_address": "0x4027858",
+            "native_instructions": 15366696
+          }
+        ],
+        "native_instructions": 15367296,
+        "payload_decryption_or_programming_executed": false,
+        "crc32_native_prefix_checked": true,
+        "native_sha256_matches_host": true,
+        "payload_hash_checks_selected": true,
+        "parser_return_status": null,
+        "stop_address": "0x4027858"
+      }
+    },
+    {
+      "version": "1.5",
+      "firmware_sha256": "c08354c91d083d74b274c4884ab4f06d3f72e47ea289ea80c9685f2292f5b801",
+      "directory_records": 36,
+      "signed_file_start": "0x2a0",
+      "signed_file_end_exclusive": "0xfdc",
+      "signed_bytes": 3388,
+      "signed_sha256": "7862f96f377432bc84b1d0aec3686ced7556a6939e15afdf6495a711fb009079",
+      "signature_file_start": "0x220",
+      "signature_bytes": 64,
+      "signature_verified": true,
+      "signed_component_plaintext_hashes": 36,
+      "controls": {
+        "changed_directory_with_correct_body_crc_rejected": true,
+        "changed_signature_rejected": true,
+        "unreversed_digest_rejected": true
+      },
+      "native": {
+        "directory_authentication_passed": true,
+        "directory_gate_reached": true,
+        "policy_halfword": 0,
+        "emulated_policy_changed": false,
+        "signature_calls": 1,
+        "crc32_bytes_accelerated": 102537728,
+        "calls": [
+          {
+            "function": "0x4027170",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 6
+          },
+          {
+            "function": "0x40271aa",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 6
+          },
+          {
+            "function": "0x40271c6",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 8
+          },
+          {
+            "function": "0x402720e",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 61
+          },
+          {
+            "function": "0x40271e4",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 14
+          },
+          {
+            "function": "0x4027a9e",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 5
+          },
+          {
+            "function": "0x402ab18",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 17
+          },
+          {
+            "function": "0x402ab64",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 463
+          },
+          {
+            "function": "0x402ab70",
+            "result": "0x0",
+            "stop_address": "0x20000000",
+            "native_instructions": 20
+          },
+          {
+            "function": "0x4027a6a",
+            "result": null,
+            "stop_address": "0x4027858",
+            "native_instructions": 15433079
+          }
+        ],
+        "native_instructions": 15433679,
+        "payload_decryption_or_programming_executed": false,
+        "crc32_native_prefix_checked": true,
+        "native_sha256_matches_host": true,
+        "payload_hash_checks_selected": true,
+        "parser_return_status": null,
+        "stop_address": "0x4027858"
+      }
+    }
+  ],
+  "native_negative_controls": {
+    "changed_directory_correct_crc": {
+      "directory_authentication_passed": false,
+      "directory_gate_reached": false,
+      "policy_halfword": 0,
+      "emulated_policy_changed": false,
+      "signature_calls": 1,
+      "crc32_bytes_accelerated": 102537728,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x402ab18",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 17
+        },
+        {
+          "function": "0x402ab64",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 463
+        },
+        {
+          "function": "0x402ab70",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 20
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x80000066",
+          "stop_address": "0x20000000",
+          "native_instructions": 15377653
+        }
+      ],
+      "native_instructions": 15378253,
+      "payload_decryption_or_programming_executed": false,
+      "crc32_native_prefix_checked": true,
+      "native_sha256_matches_host": true,
+      "parser_return_status": "0x80000066",
+      "stop_address": "0x20000000"
+    },
+    "missing_public_reference": {
+      "directory_authentication_passed": false,
+      "directory_gate_reached": false,
+      "policy_halfword": 0,
+      "emulated_policy_changed": false,
+      "signature_calls": 0,
+      "crc32_bytes_accelerated": 102537728,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x402ab18",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 17
+        },
+        {
+          "function": "0x402ab64",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 463
+        },
+        {
+          "function": "0x402ab70",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 20
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x80000005",
+          "stop_address": "0x20000000",
+          "native_instructions": 5102
+        }
+      ],
+      "native_instructions": 5697,
+      "payload_decryption_or_programming_executed": false,
+      "crc32_native_prefix_checked": true,
+      "parser_return_status": "0x80000005",
+      "stop_address": "0x20000000"
+    },
+    "changed_body_incorrect_crc": {
+      "directory_authentication_passed": false,
+      "directory_gate_reached": false,
+      "policy_halfword": 0,
+      "emulated_policy_changed": false,
+      "signature_calls": 0,
+      "crc32_bytes_accelerated": 102537728,
+      "calls": [
+        {
+          "function": "0x4027170",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271aa",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 6
+        },
+        {
+          "function": "0x40271c6",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 8
+        },
+        {
+          "function": "0x402720e",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 61
+        },
+        {
+          "function": "0x40271e4",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 14
+        },
+        {
+          "function": "0x4027a9e",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 5
+        },
+        {
+          "function": "0x402ab18",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 17
+        },
+        {
+          "function": "0x402ab64",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 463
+        },
+        {
+          "function": "0x402ab70",
+          "result": "0x0",
+          "stop_address": "0x20000000",
+          "native_instructions": 20
+        },
+        {
+          "function": "0x4027a6a",
+          "result": "0x80000064",
+          "stop_address": "0x20000000",
+          "native_instructions": 4962
+        }
+      ],
+      "native_instructions": 5562,
+      "payload_decryption_or_programming_executed": false,
+      "crc32_native_prefix_checked": true,
+      "parser_return_status": "0x80000064",
+      "stop_address": "0x20000000"
+    }
+  },
+  "limits": [
+    "Directory authentication is not the full updater model/version check or flash writer.",
+    "Native execution stops before payload decryption and programming.",
+    "C memcpy/zero-fill and long CRC32/progress loops are host modeled; SHA-256 and ECDSA execute natively.",
+    "No alternate boot path, service writer or modified camera installation is demonstrated."
+  ],
+  "emulated_policy_one_control": {
+    "directory_authentication_passed": false,
+    "directory_gate_reached": true,
+    "policy_halfword": 1,
+    "emulated_policy_changed": true,
+    "signature_calls": 0,
+    "crc32_bytes_accelerated": 102537728,
+    "calls": [
+      {
+        "function": "0x4027170",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 6
+      },
+      {
+        "function": "0x40271aa",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 6
+      },
+      {
+        "function": "0x40271c6",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 8
+      },
+      {
+        "function": "0x402720e",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 61
+      },
+      {
+        "function": "0x40271e4",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 14
+      },
+      {
+        "function": "0x402ab18",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 17
+      },
+      {
+        "function": "0x402ab64",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 463
+      },
+      {
+        "function": "0x402ab70",
+        "result": "0x0",
+        "stop_address": "0x20000000",
+        "native_instructions": 20
+      },
+      {
+        "function": "0x4027a6a",
+        "result": null,
+        "stop_address": "0x4027858",
+        "native_instructions": 5087
+      }
+    ],
+    "native_instructions": 5682,
+    "payload_decryption_or_programming_executed": false,
+    "crc32_native_prefix_checked": true,
+    "payload_hash_checks_selected": false,
+    "parser_return_status": null,
+    "stop_address": "0x4027858"
+  },
+  "policy_halfword_link_address": "0x3f1801a",
+  "policy_control_live_camera_writes": 0,
+  "unicorn_version": "2.1.4"
+}

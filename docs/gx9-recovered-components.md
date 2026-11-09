@@ -2,8 +2,9 @@
 
 **Later result:** [Full 1.4/1.5 decryption and ARM component acquisition](gx9-firmware-decryption.md)
 recovered the key, decoded all 35 nonempty components of both packages, and
-verified five more RAM-captured postboot images against 1.4. The four-component
-report below preserves the earlier recovery method and its evidence.
+verified five RAM-captured postboot images plus `loader3` against 1.4. There
+are now ten captured component matches. The four-component report below
+preserves the earlier recovery method and its evidence.
 
 Four plaintext components now match the **complete expected SHA-256 values**
 in the official GX9 1.5 package: `zboot`, `dtb`, `rootfs1` and `rootfs2`.
@@ -14,7 +15,8 @@ the camera was upgraded or that its main camera program has been recovered.
 The UPD directory contains 36 records, including one empty record. The
 [official-package evidence](../evidence/gx9-v15-official.json) describes the
 container and the [recovery evidence](../evidence/gx9-recovered-components.json)
-records the full component comparisons. The encryption key remains unknown.
+records the original four full component comparisons. The key was unknown at
+that stage and has since been recovered.
 
 | Component | USB service address | Captured bytes used | Official component bytes | Comparison |
 | --- | --- | --- | --- | --- |
@@ -90,10 +92,11 @@ python3 tools/gx9_component_ram_verify.py \
   --prelinux work/gx9-protocol-analysis/gx9-prelinux-2m.combined.bin \
   --rootfs1 work/gx9-filesystems/rootfs1.squashfs \
   --rootfs2 work/gx9-filesystems/rootfs2.squashfs \
-  --handoff-heads work/private-captures/20261109T012731Z-gx9-linux-boot-handoff-heads/memory.bin \
+  --handoff-heads PRIVATE_HANDOFF_CAPTURE/memory.bin \
   --out work/gx9-component-check.json \
   --components work/gx9-components
 ```
 
-These are selected component recoveries. The complete flash, main camera
-program, firmware key, working shell and alternate boot path remain unresolved.
+The initial recovery covered selected components. The subsequent linked
+report supersedes its main-program and key limits. The complete flash dump,
+working external shell and alternate boot path remain unresolved.

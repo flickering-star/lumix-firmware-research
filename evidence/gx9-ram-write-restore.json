@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "scope": "One fixed GX9 RAM word changed and restored; no setting change or flash programming",
+  "capture": "20261109T101635Z-gx9-fixed-ram-write-restore",
+  "verifier_sha256": "d65bad209a6385deba9bea659b3e7fc32adf346b92531be0c5c1a43f72d13dde",
+  "wire_verifier_sha256": "f373463140d34bb7cc578004ce0fd97f3cb5634d3fc734dcdcf87c107582c11c",
+  "component": "postboot3",
+  "component_bytes": 131072,
+  "component_sha256": "16098771484d4724dd489583aa19c08c9d624596f4369781d983ba15aef8de37",
+  "empty_LOAD_header_verified": true,
+  "service_block_start": "0x85370000",
+  "write_operation": "0x9c",
+  "write_service_address": "0x85370020",
+  "original_word_hex": "ffff",
+  "test_word_hex": "a55a",
+  "before_block_sha256": "1d9f0f5e299efe4b23c30e4316757bef6fc283acf8282dedf3acbacdf541f26f",
+  "tagged_block_sha256": "4ef2bbcb01aecb24037f625f4f1bec3548d608a4819d70378c121daad8159b59",
+  "restored_block_sha256": "1d9f0f5e299efe4b23c30e4316757bef6fc283acf8282dedf3acbacdf541f26f",
+  "captured_blocks_sha256": "99a789b6ef46a2071528b487a2d49e927f7f6c01f9c2c01ff6ba0de1d0f8036c",
+  "changed_byte_offsets_in_block": [
+    "0x20",
+    "0x21"
+  ],
+  "changed_bytes": 2,
+  "word_and_block_readbacks_match": true,
+  "complete_block_restored": true,
+  "code_and_buffer_controls_unchanged": true,
+  "memory_write_requests_sent": 3,
+  "flash_programming_commands_sent": 0,
+  "user_setting_changed": false,
+  "wire": {
+    "capture": "20261109T101635Z-gx9-fixed-ram-write-restore",
+    "event_source": "events.jsonl",
+    "event_source_sha256": "6256798d5d9d1f7ab91593e4d8a0685f6052892dfe6d129dea99e8656ae755ca",
+    "service_requests": 14,
+    "successful_words": 6,
+    "transactions": [
+      {
+        "operation": "0x35",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "successful_read": true,
+        "area": "0x10",
+        "word_index": 8192,
+        "result": "word_reply",
+        "word_hex": "f2b0"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "successful_read": true,
+        "start": "0x80208000",
+        "end_exclusive": "0x80208400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "30c694670e32887450be4c98f05c2b44f9882f3b17bc92a96ba5965f8316deac",
+        "response_sha256": "a185248df9428657626dd55d04e29835be5a826d049db1193ac8c788f95513e6",
+        "successful_read": true,
+        "start": "0x85370000",
+        "end_exclusive": "0x85370400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "1d9f0f5e299efe4b23c30e4316757bef6fc283acf8282dedf3acbacdf541f26f"
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "5dddd812309050744ceea017c8f3c63749857a446a95b805008b61fc58876925",
+        "response_sha256": "e9d0bcbb5e3d85553a8e689df1dbe093fa783d51d5c7d3d4f87ebd5f1a5b4944",
+        "successful_read": true,
+        "source_address": "0x85370020",
+        "result": "word_reply",
+        "word_hex": "ffff"
+      },
+      {
+        "operation": "0x9c",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "29f8708f7f382932fdbd0d6b4e76b2355e68c8faa6beb2644be941c7b621bc5b",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "successful_read": false,
+        "destination_address": "0x85370020",
+        "requested_word_hex": "ffff",
+        "result": "write_ack",
+        "write_acknowledged": true
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "5dddd812309050744ceea017c8f3c63749857a446a95b805008b61fc58876925",
+        "response_sha256": "e9d0bcbb5e3d85553a8e689df1dbe093fa783d51d5c7d3d4f87ebd5f1a5b4944",
+        "successful_read": true,
+        "source_address": "0x85370020",
+        "result": "word_reply",
+        "word_hex": "ffff"
+      },
+      {
+        "operation": "0x9c",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "76c42143d2cf7724a9b813ed2515775a437f3d878722bea8f7cb533c9ca6e24b",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "successful_read": false,
+        "destination_address": "0x85370020",
+        "requested_word_hex": "a55a",
+        "result": "write_ack",
+        "write_acknowledged": true
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "5dddd812309050744ceea017c8f3c63749857a446a95b805008b61fc58876925",
+        "response_sha256": "98733b4241d0b374a9cbc6b6fe4c0244580fdbb62fe189b198ba966ea0034dec",
+        "successful_read": true,
+        "source_address": "0x85370020",
+        "result": "word_reply",
+        "word_hex": "a55a"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "30c694670e32887450be4c98f05c2b44f9882f3b17bc92a96ba5965f8316deac",
+        "response_sha256": "b5bfcc7d2981ceb1ca67bdc25d69f1f815ae56198271a830901a3d4432306b10",
+        "successful_read": true,
+        "start": "0x85370000",
+        "end_exclusive": "0x85370400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "4ef2bbcb01aecb24037f625f4f1bec3548d608a4819d70378c121daad8159b59"
+      },
+      {
+        "operation": "0x9c",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "29f8708f7f382932fdbd0d6b4e76b2355e68c8faa6beb2644be941c7b621bc5b",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "successful_read": false,
+        "destination_address": "0x85370020",
+        "requested_word_hex": "ffff",
+        "result": "write_ack",
+        "write_acknowledged": true
+      },
+      {
+        "operation": "0x9b",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "5dddd812309050744ceea017c8f3c63749857a446a95b805008b61fc58876925",
+        "response_sha256": "e9d0bcbb5e3d85553a8e689df1dbe093fa783d51d5c7d3d4f87ebd5f1a5b4944",
+        "successful_read": true,
+        "source_address": "0x85370020",
+        "result": "word_reply",
+        "word_hex": "ffff"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "30c694670e32887450be4c98f05c2b44f9882f3b17bc92a96ba5965f8316deac",
+        "response_sha256": "a185248df9428657626dd55d04e29835be5a826d049db1193ac8c788f95513e6",
+        "successful_read": true,
+        "start": "0x85370000",
+        "end_exclusive": "0x85370400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "1d9f0f5e299efe4b23c30e4316757bef6fc283acf8282dedf3acbacdf541f26f"
+      },
+      {
+        "operation": "0x5c",
+        "request_class": 1,
+        "response_class": 1,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "successful_read": true,
+        "start": "0x80208000",
+        "end_exclusive": "0x80208400",
+        "requested_source_bytes": 1024,
+        "result": "bulk_reply",
+        "payload_bytes": 1024,
+        "payload_sha256": "d982dd856084fcd5dfbfc9cc40f02922e2b610287ede1ddd1f347d90bfe1ddbe"
+      },
+      {
+        "operation": "0x35",
+        "request_class": 8,
+        "response_class": 8,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "successful_read": true,
+        "area": "0x10",
+        "word_index": 8192,
+        "result": "word_reply",
+        "word_hex": "f2b0"
+      }
+    ]
+  },
+  "limits": [
+    "Only this fixed padding address and two word values were tested.",
+    "This does not establish arbitrary-address write permissions or any persistent flash writer.",
+    "USB writer reachability does not establish an accepted modified update or external shell."
+  ],
+  "offline_negative_controls": [
+    {
+      "control": "extra_changed_byte",
+      "rejected": true
+    },
+    {
+      "control": "restoration_corruption",
+      "rejected": true
+    }
+  ]
+}

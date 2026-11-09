@@ -3,7 +3,7 @@
   "scope": "Camera RAM component acquisition, key recovery and official package comparisons",
   "camera_version_owner_reported": "1.4",
   "main": {
-    "scope": "ARM image candidate, not yet an identified update component",
+    "scope": "Main ARM runtime image; 1.4 comparison and independently verified key source",
     "start": "0x83e80000",
     "end_exclusive": "0x847f0000",
     "memory_writes": 0,
@@ -60,7 +60,7 @@
     "sha256": "f6bbc883c4b845bbed2622aa386f09b0bc03f5ed20377851305bd0ccc56d5e07"
   },
   "postboots": {
-    "scope": "Postboot candidates, runtime layout inferred from ARM scatter sources and update sizes",
+    "scope": "Postboot images; full SHA-256 matches against decoded 1.4 components",
     "start": "0x847f0000",
     "end_exclusive": "0x85570000",
     "memory_writes": 0,
@@ -502,5 +502,53 @@
     "Main RAM acquisition differs from the 1.4 update in initialized working storage; its complete raw hash is not a component match.",
     "RAM acquisition spans sequential reads and is not an instantaneous snapshot.",
     "The 1.4 package was retrieved from a mirror and cross-checked against independently captured camera components."
-  ]
+  ],
+  "loader3_v14_comparison": {
+    "service_start": "0x80000000",
+    "bytes": 40960,
+    "source_capture_bytes": 2097152,
+    "source_capture_sha256": "2c858e77ed23ca2a97f57e55a116388391e3e5b6485260c974ec4986c11efa59",
+    "runtime_slice_sha256": "5bb1c4d827009738eaff6067a5befc1713b22ad6da3df6047f7d0d8fcd71518f",
+    "v14_plaintext_sha256": "5bb1c4d827009738eaff6067a5befc1713b22ad6da3df6047f7d0d8fcd71518f",
+    "matches_complete_v14_component": true,
+    "v15_plaintext_sha256": "19afdcf1148fa6eee34a471a9cae9dfed3a0daf9e2c90ba19d836c654ec25be2",
+    "v15_differing_bytes": 1,
+    "v15_differing_offsets": [
+      "0x157e"
+    ]
+  },
+  "independently_matched_ram_components_v14": 10,
+  "matched_ram_component_names_v14": [
+    "loader3",
+    "zboot",
+    "dtb",
+    "rootfs1",
+    "rootfs2",
+    "postboot1",
+    "postboot2",
+    "postboot3",
+    "postboot4",
+    "postboot5"
+  ],
+  "small_postboot_headers": [
+    {
+      "component": "postboot3",
+      "bytes": 131072,
+      "bytes_differing_from_ff": 28,
+      "starts_with_LOAD": true
+    },
+    {
+      "component": "postboot4",
+      "bytes": 131072,
+      "bytes_differing_from_ff": 28,
+      "starts_with_LOAD": true
+    }
+  ],
+  "update_policy_halfword": {
+    "link_address": "0x03f1801a",
+    "service_alias_candidate": "0x83f1801a",
+    "main_image_offset": "0x9801a",
+    "saved_runtime_value": 0,
+    "official_component_value": 0
+  }
 }

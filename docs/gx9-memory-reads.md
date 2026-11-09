@@ -1,14 +1,11 @@
 # GX9 memory reads and firmware decoding
 
-**Later result:** [Full 1.4/1.5 decryption and ARM component acquisition](gx9-firmware-decryption.md)
-recovered the firmware key, decoded both update packages completely and added
-five exact postboot-image matches. This report preserves the initial reads and
-earlier negative key searches.
-
 The owner's DC-GX7MK3 (Japanese GX9), reported firmware 1.4, supports
-address-based **1 KiB reads through `0x5c`**, as well as indexed two-byte buffer
-reads through `0x35`. Captures contain ARM startup code. A complete GX9 CPU
-address map and a working decryption key had not been recovered at that stage.
+address-based **1 KiB reads through `0x5c`**, indexed two-byte buffer reads
+through `0x35`, absolute word reads through `0x9b`, and RAM-relative word reads
+through `0x75`. Captures contain ARM startup and main-program code. The
+[recovered key decodes all 35 nonempty components of both 1.4 and 1.5](gx9-firmware-decryption.md).
+A complete GX9 CPU address map remains unresolved.
 The [wire evidence](../evidence/gx9-buffer-reads.json) records the measured
 results and their limits. Raw captures remain private.
 
@@ -24,8 +21,9 @@ which initially established only error replies from `0x38`.
 | `0x3e`, selector `2`, frame classes `8`, `1`, `3` | Exact request echoes, including 1,030- and 8,198-byte frames | No bulk memory read demonstrated |
 | `0x70`, index zero | One request timed out; owner reported a frozen camera and recovered it physically | This legacy program-reader trial failed; it has not been repeated |
 | `0x5c`, class `1`, source interval exactly 1 KiB | `0x05` reply with data, ARM code, matching repeat controls | Address-based block reads work in the acquired ranges |
-| `0x9b`, absolute byte address `0x80208000` | Checksum-valid `0x36` reply, data `fe 2b`, matching the block reader | Absolute two-byte reads work at this tested address |
-| `0x75` | No GX9 trial in this investigation | Its presence and addressing remain unverified |
+| `0x9b`, absolute byte addresses `0x80208000` and `0xb4000000` | Checksum-valid `0x36` replies matching fresh block reads | Absolute two-byte reads work at these tested addresses |
+| `0x75`, word indices `0..7` and `0x104000` | Checksum-valid `0x36` replies matching independently captured words | Supports `0x80000000 + 2 × index` at nine checked locations |
+| `0x9c`, fixed RAM padding word `0x85370020` | Success ACK, changed word/block readback and exact restoration | A RAM word writer works at this tested location; no flash writer established |
 
 In decoded GH2 firmware, these additional operations include a 1 KiB absolute
 reader, a RAM-relative word reader and an absolute word reader. Those are
@@ -85,19 +83,21 @@ not a fixed boundary at that address; its exact cause remains unestablished.
 The remaining interval through `0x80200000` and the next Linux-prefix interval
 through `0x80400000` then completed with 10 ms host delays.
 
-A later acquisition at `0x80600000..0x80800000` finished on the Windows PC
-in about 31 seconds. Transfer of its saved archive to the analysis machine was
-interrupted and completed later. All saved USB exchanges were then validated;
-the camera acquisition did not need repeating. The
-[Windows-local USB capture workflow](gx9-windows-local-capture.md) saves partial
-and completed data before transfer.
+A later acquisition at `0x80600000..0x80800000` exceeded its SSH connection's
+55-second deadline. After Windows woke, its completed archive was retrieved
+with SFTP and all saved USB exchanges were validated. The camera acquisition
+had finished in about 31 seconds; it did not need repeating. Windows event logs
+identified repeated idle-triggered Modern Standby entry while SSH startup and
+the firewall rule were correct. A bounded system-awake task and locally saved
+captures have kept subsequent transfers usable. See the
+[Windows capture notes](gx9-windows-local-capture.md).
 
 A single canonical block request at the legacy program-base hypothesis
 `0x40000000` later timed out. Its preceding known buffer and ARM-code controls
 had passed. No source bytes were saved for that address and no further live USB
-request was sent after the timeout. The Windows PC still reported the camera
-through cached PnP identification afterward. The owner then confirmed the camera
-had frozen and reconnected it. A fresh DTB acquisition and both known
+request was sent after the timeout. The Windows SSH connection and cached PnP
+camera identification still worked afterward. The owner then confirmed the
+camera had frozen and reconnected it. A fresh DTB acquisition and both known
 controls passed afterward. The failed program address has not been repeated;
 its exact failure cause remains unidentified.
 
@@ -176,7 +176,7 @@ instance, bus-reported DC-GX7MK3 model, working WinUSB driver and endpoint layou
 Using those checks for model identification allowed another exact known-word
 read. No driver change, USB reset or camera configuration change was used.
 
-## Official firmware and key target
+## Official firmware and earlier key searches
 
 The [official GX9 1.5 archive](https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gx9.html)
 has been downloaded and checked offline. Its ZIP CRC passes; the binary is
@@ -186,10 +186,11 @@ Its UPD model ID is `MC282`. The
 [firmware inventory](../evidence/gx9-v15-official.json) records the source,
 archive hash, component sizes and negative decoding controls.
 
-The clear records contain empty or constant-fill data. They do not supply the
+Before the main ARM acquisition, the clear records supplied empty or constant-fill
+data. They did not supply the
 USB command table or executable loader. The known GM1 and GM5 keys, tested with
 five-round AES-128-CBC against GX9 `loader1`, did not reproduce its expected
-digest. These tests do not identify GX9's cipher or establish that its key is
+digest. Those negative tests did not identify GX9's cipher or establish that its key was
 present in either readable buffer. An exhaustive contiguous-candidate check of
 the two captured buffers tested 2,389 distinct 16-byte values using both
 five-round and standard ten-round AES-128-CBC. A second check of the captured
@@ -205,19 +206,15 @@ six-MiB kernel prefix and bootstrap control-storage capture, with no matching
 four-byte prefix. A prefix match would still require
 the complete component's expected digest before accepting a key. The
 [structured-search evidence](../evidence/gx9-structured-key-search.json) records
-the exact input hashes and assumptions. The result does not establish GX9's
+the exact input hashes and assumptions. That negative result did not establish GX9's
 cipher or rule out other key representations and memory locations.
 
-Four complete plaintext components now match the official update hashes through
-RAM recovery and verified padding reconstruction. See the
-[component recovery report](gx9-recovered-components.md). This does not recover
-the encryption key or the main camera program.
-
-If GX9 shares the AES-128 design, the key is only 16 bytes: eight word reads
-once accessible. The unresolved steps are locating the key, establishing access
-to that address and validating the decoding procedure against component hashes.
-Reading an arbitrary 16-byte candidate without a successful decode is not key
-recovery. No update to the owner's camera has been performed.
+The subsequent main ARM acquisition recovered a 16-byte key at service address
+`0x84750284`. Five-round AES-128-CBC with that key reproduces every nonempty
+component hash in both packages. The [decryption report](gx9-firmware-decryption.md)
+records that positive result and the ten independently captured component matches.
+The earlier negative searches above remain useful evidence of which regions
+were insufficient. No update to the owner's camera has been performed.
 
 ## Absolute two-byte read
 
@@ -230,8 +227,30 @@ frame with the little-endian byte address in bytes 4–7. The reply uses operati
 request and response bytes and capture hash.
 
 This establishes a second address-based reader; it does not find new mapped
-ranges. The corresponding legacy writer remains untested on GX9. The planned
-RAM-padding write control was interrupted before any write request was sent.
+ranges. The corresponding `0x9c` writer was subsequently tested at one fixed
+padding word. Its [write/restore proof](gx9-ram-write.md) records the exact
+two-byte change, independent word/block readback and complete restoration.
+
+## RAM-relative two-byte read
+
+The GX9 `0x75` request is a 16-byte class-eight frame. Bytes 4–7 contain a
+little-endian 32-bit **word index**; bytes 8–13 are zero. The usual sequence
+complement, checksum and terminator apply. A request for index zero is
+`0800ff75000000000000000000007400`. Successful `0x36` replies return two bytes
+at offsets 4–5.
+
+Indices zero through seven returned the exact first 16 bytes previously read
+at service address `0x80000000`. Index `0x104000` returned `fe 2b`, matching
+both the known block and an absolute-word control at `0x80208000`. These nine
+points support `address = 0x80000000 + 2 × index`; they do not establish bounds,
+wraparound behavior or readability of every intervening address.
+
+A fresh block and absolute-word control at the legacy GH2 RAM-base hypothesis
+`0xb4000000` instead returned `ff d8`. Thus the observed GX9 index-zero result
+does not reproduce the GH2 base. Known buffer/code controls passed before and
+after the successful GX9 trials. The [relative-word evidence](../evidence/gx9-relative-word.json)
+preserves the independently validated transactions and comparisons.
+No corresponding write command has been sent or verified.
 
 ## Platform sources and the flash-label conflict
 
@@ -264,7 +283,7 @@ It has no USB or network access:
 
 ```sh
 python3 tools/gx9_capture_verify.py --selftest
-python3 tools/gx9_capture_verify.py work/private-captures/CAPTURE --out work/verified.json
+python3 tools/gx9_capture_verify.py PRIVATE_CAPTURE_DIRECTORY --out work/verified.json
 ```
 
 `tools/panasonic_buffer_key_check.py` checks raw 16-byte candidates against a

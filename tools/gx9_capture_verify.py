@@ -40,12 +40,19 @@ def decode_exchange(request: bytes, reply: bytes) -> dict:
     }
     if request[3] in (0x35, 0x38):
         result.update(area=hex(request[6]), word_index=int.from_bytes(request[4:6], "little"))
-    elif request[3] == 0x70:
+    elif request[3] in (0x70, 0x75):
+        if request[0] != 8 or any(request[8:14]):
+            raise ValueError('Relative-word request geometry differs')
         result["word_index"] = int.from_bytes(request[4:8], "little")
     elif request[3] == 0x9B:
         if request[0] != 8 or any(request[8:14]):
             raise ValueError("Absolute-word request geometry differs")
         result["source_address"] = hex(int.from_bytes(request[4:8], "little"))
+    elif request[3] == 0x9C:
+        if request[0] != 8 or any(request[10:14]):
+            raise ValueError("Absolute-word write geometry differs")
+        result.update(destination_address=hex(int.from_bytes(request[4:8], "little")),
+                      requested_word_hex=request[8:10].hex())
     elif request[3] == 0x5C:
         start = int.from_bytes(request[4:8], "little")
         end = int.from_bytes(request[8:12], "little")
@@ -54,9 +61,12 @@ def decode_exchange(request: bytes, reply: bytes) -> dict:
         result.update(start=hex(start), end_exclusive=hex(end), requested_source_bytes=end-start)
     if reply == request:
         result["result"] = "request_echo"
+    elif request[3] == 0x9C and reply == bytes.fromhex("0800ff01000000000000000000000000"):
+        # An ACK alone does not establish that the addressed memory changed.
+        result.update(result="write_ack", write_acknowledged=True)
     elif reply[0] == 8 and reply[3] == 1 and not any(reply[5:14]):
         result.update(result="error_reply", status=reply[4])
-    elif (request[3] in (0x35, 0x38, 0x70, 0x9B)
+    elif (request[3] in (0x35, 0x38, 0x70, 0x75, 0x9B)
           and reply[0] == 8 and reply[3] == 0x36 and not any(reply[6:14])):
         result.update(result="word_reply", successful_read=True, word_hex=reply[4:6].hex())
     elif request[3] in (0x3E, 0x5C) and reply[0] in (1, 3) and reply[3] == 5:
