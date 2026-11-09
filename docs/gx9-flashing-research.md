@@ -132,7 +132,7 @@ inputs, changes and validation limits.
 | --- | --- | --- |
 | USB | Absolute RAM writes and the policy round trip are measured; native dispatcher reproduces all 14 saved replies; fixed bank is area `0x22` | Queued event `0x000e8202` remains to be traced to an updater or persistent-save action |
 | SD update | Native UPD parser, policy gate, preprocessing and transfer stages are available | Full board boot and physical installation of the candidate remain untested |
-| SD autorun / `.AHX` | No consumed filename/autorun hook identified in the inspected loaders or Linux startup scripts | Mask-ROM behavior, unexamined paths and filename construction remain open |
+| Alternate SD update / `.AHX` | Native selection of `a:\MC282.upd` / `a:\MC282e.upd` reaches the updater; decoded key predicate verified | Physical entry/buttons, media behavior and arbitrary SD code boot remain unproven |
 | Wi-Fi | An internal Linux command event and its ICC/NWA/PSM route execute in native emulation | An authenticated external request delivering that event is unproven |
 | Bluetooth | MediaTek GATT stack, camera BT application and local radio-test scripts are recovered | No camera-system flash/update service has been identified |
 
@@ -140,6 +140,12 @@ The extracted Linux init script runs internal `/etc/init.d/S??*` entries. A
 literal scan of all extracted regular files found only `RAID_AUTORUN` in
 `strace` for the autorun term; that is not an SD execution hook. Absence of a
 literal filename does not rule out other boot paths.
+
+Subsequent [alternate update-path controls](gx9-sd-update-route.md) execute the
+model-tag construction, filename formatting and `e`-file preference in native
+ARM code. They stop before the updater and preserve an initially enabled policy
+within that routine. This is an update-file route, not a demonstrated arbitrary
+SD boot mechanism or a verified USB-to-SD handoff.
 
 Bluetooth startup loads `mtk_stp_bt` and `mtkbt`. The separate `btteststart`
 script loads the MT6630 radio patch from `/lib/firmware` and starts `bt_drv`;

@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "scope": "Native alternate SD updater selection, not SD code boot or installation",
+  "verifier_sha256": "48a3a05f7bbe105f124e7532e0d19ddcc6b92d56d41e5038794f41822ff6d8b9",
+  "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "native_model_tag": "MC282",
+  "entry": "0x3f7bf94",
+  "updater_checkpoint": "0x4014f80",
+  "selection_controls": [
+    {
+      "present_files": [],
+      "filename_checks_in_order": [
+        "a:\\MC282e.upd",
+        "a:\\MC282.upd"
+      ],
+      "checkpoint": {
+        "stage": "before-cleanup-no-file"
+      },
+      "checkpoint_is_not_function_return": true,
+      "initial_and_final_policy": 0,
+      "policy_writes": [],
+      "task_control_requests": 235,
+      "task_ID_range": [
+        "0x2",
+        "0xec"
+      ],
+      "accelerated_idle_loops": 63,
+      "native_instructions": 4004,
+      "native_model_tag_and_sprintf_executed": true,
+      "updater_executed": false
+    },
+    {
+      "present_files": [
+        "a:\\MC282.upd"
+      ],
+      "filename_checks_in_order": [
+        "a:\\MC282e.upd",
+        "a:\\MC282.upd"
+      ],
+      "checkpoint": {
+        "stage": "before-updater",
+        "path": "a:\\MC282.upd",
+        "caller_kind_parameter": 2,
+        "caller_words_0x10_0x14": [
+          1,
+          1
+        ]
+      },
+      "checkpoint_is_not_function_return": true,
+      "initial_and_final_policy": 0,
+      "policy_writes": [],
+      "task_control_requests": 235,
+      "task_ID_range": [
+        "0x2",
+        "0xec"
+      ],
+      "accelerated_idle_loops": 63,
+      "native_instructions": 4020,
+      "native_model_tag_and_sprintf_executed": true,
+      "updater_executed": false
+    },
+    {
+      "present_files": [
+        "a:\\MC282e.upd"
+      ],
+      "filename_checks_in_order": [
+        "a:\\MC282e.upd"
+      ],
+      "checkpoint": {
+        "stage": "before-updater",
+        "path": "a:\\MC282e.upd",
+        "caller_kind_parameter": 3,
+        "caller_words_0x10_0x14": [
+          1,
+          1
+        ]
+      },
+      "checkpoint_is_not_function_return": true,
+      "initial_and_final_policy": 0,
+      "policy_writes": [],
+      "task_control_requests": 235,
+      "task_ID_range": [
+        "0x2",
+        "0xec"
+      ],
+      "accelerated_idle_loops": 63,
+      "native_instructions": 4017,
+      "native_model_tag_and_sprintf_executed": true,
+      "updater_executed": false
+    },
+    {
+      "present_files": [
+        "a:\\MC282.upd",
+        "a:\\MC282e.upd"
+      ],
+      "filename_checks_in_order": [
+        "a:\\MC282e.upd"
+      ],
+      "checkpoint": {
+        "stage": "before-updater",
+        "path": "a:\\MC282e.upd",
+        "caller_kind_parameter": 3,
+        "caller_words_0x10_0x14": [
+          1,
+          1
+        ]
+      },
+      "checkpoint_is_not_function_return": true,
+      "initial_and_final_policy": 1,
+      "policy_writes": [],
+      "task_control_requests": 235,
+      "task_ID_range": [
+        "0x2",
+        "0xec"
+      ],
+      "accelerated_idle_loops": 63,
+      "native_instructions": 4017,
+      "native_model_tag_and_sprintf_executed": true,
+      "updater_executed": false
+    }
+  ],
+  "decoded_key_gate_entry": "0x041b5de2",
+  "decoded_key_required_bits": "0x508",
+  "key_gate_controls": [
+    {
+      "decoded_masks": [
+        "0x500",
+        "0x8",
+        "0x0"
+      ],
+      "modeled_media_predicate": 1,
+      "native_result": 1,
+      "native_instructions": 23,
+      "modeled_inputs_queried": [
+        "converter-0x041b60f4",
+        "converter-0x041b579e",
+        "converter-0x041b582c",
+        "media/GPIO-predicate-0x041e7e3c"
+      ]
+    },
+    {
+      "decoded_masks": [
+        "0x500",
+        "0x0",
+        "0x0"
+      ],
+      "modeled_media_predicate": 1,
+      "native_result": 0,
+      "native_instructions": 20,
+      "modeled_inputs_queried": [
+        "converter-0x041b60f4",
+        "converter-0x041b579e",
+        "converter-0x041b582c"
+      ]
+    },
+    {
+      "decoded_masks": [
+        "0x508",
+        "0x0",
+        "0x0"
+      ],
+      "modeled_media_predicate": 0,
+      "native_result": 0,
+      "native_instructions": 24,
+      "modeled_inputs_queried": [
+        "converter-0x041b60f4",
+        "converter-0x041b579e",
+        "converter-0x041b582c",
+        "media/GPIO-predicate-0x041e7e3c"
+      ]
+    },
+    {
+      "decoded_masks": [
+        "0x508",
+        "0x1000",
+        "0x0"
+      ],
+      "modeled_media_predicate": 1,
+      "native_result": 1,
+      "native_instructions": 23,
+      "modeled_inputs_queried": [
+        "converter-0x041b60f4",
+        "converter-0x041b579e",
+        "converter-0x041b582c",
+        "media/GPIO-predicate-0x041e7e3c"
+      ]
+    }
+  ],
+  "raw_ADC_gate_controls": [
+    {
+      "raw_ADC_halfwords_at_0x0621935a": [
+        "0x0",
+        "0x183",
+        "0xb8"
+      ],
+      "missing_channel": null,
+      "modeled_media_predicate": 1,
+      "native_result": 1,
+      "key_converters_replaced": false,
+      "native_instructions": 51
+    },
+    {
+      "raw_ADC_halfwords_at_0x0621935a": [
+        "0xffff",
+        "0x183",
+        "0xb8"
+      ],
+      "missing_channel": 0,
+      "modeled_media_predicate": 1,
+      "native_result": 0,
+      "key_converters_replaced": false,
+      "native_instructions": 60
+    },
+    {
+      "raw_ADC_halfwords_at_0x0621935a": [
+        "0x0",
+        "0xffff",
+        "0xb8"
+      ],
+      "missing_channel": 1,
+      "modeled_media_predicate": 1,
+      "native_result": 0,
+      "key_converters_replaced": false,
+      "native_instructions": 47
+    },
+    {
+      "raw_ADC_halfwords_at_0x0621935a": [
+        "0x0",
+        "0x183",
+        "0xffff"
+      ],
+      "missing_channel": 2,
+      "modeled_media_predicate": 1,
+      "native_result": 0,
+      "key_converters_replaced": false,
+      "native_instructions": 62
+    },
+    {
+      "raw_ADC_halfwords_at_0x0621935a": [
+        "0x0",
+        "0x183",
+        "0xb8"
+      ],
+      "missing_channel": null,
+      "modeled_media_predicate": 0,
+      "native_result": 0,
+      "key_converters_replaced": false,
+      "native_instructions": 52
+    }
+  ],
+  "outer_gate": {
+    "caller": "0x03f7901e",
+    "call_to_selection": "0x03f7905e",
+    "additional_predicate": "bit 5 clear at MMIO halfword 0x7f093080 and media predicate true",
+    "full_outer_gate_not_executed": true
+  },
+  "modeled_operations": [
+    "task-control calls",
+    "LED I/O",
+    "media preparation",
+    "file existence",
+    "key converters/media predicate in key-gate controls"
+  ],
+  "idle_loop_count_accelerated": true,
+  "C_copy_zero_helpers_modeled": true,
+  "camera_or_network_access": false,
+  "physical_SD_or_flash_operations": 0,
+  "limits": [
+    "No physical button combination has been established from decoded mask 0x508.",
+    "The actual card, filesystem, boot entry, updater and programming are not executed.",
+    "No bank reload occurs within this selection routine; USB disconnect/normal SD entry are separate.",
+    "This is a firmware-update route; it does not prove arbitrary code launch from SD."
+  ]
+}
