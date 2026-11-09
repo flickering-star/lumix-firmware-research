@@ -24,6 +24,14 @@ code controls match after restoration. Its ZIP SHA-256 is
 without trusting the producer's result booleans. Downloading those saved files
 did not open the disconnected camera or issue new USB requests.
 
+A separate [Windows-local helper](gx9-policy-helper.md) is now prepared for an
+owner-run enable-and-leave experiment. It checks both the absolute policy word
+and the native fixed-bank shadow, leaves one set on success, and offers a RAM
+restore command. Its portable controls pass on the PC; native integration
+controls also pass with modeled USB/alias coherence. The helper and candidate
+files are on the PC, but no new physical policy change or update was performed
+during their preparation.
+
 ## The policy belongs to fixed settings
 
 The decoded main image contains complete default copies of the EEPROM banks:
