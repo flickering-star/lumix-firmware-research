@@ -134,7 +134,7 @@ inputs, changes and validation limits.
 | SD update | Native UPD parser, policy gate, preprocessing and transfer stages are available | Full board boot and physical installation of the candidate remain untested |
 | Alternate SD update / `.AHX` | Native selection of `a:\MC282.upd` / `a:\MC282e.upd` reaches the updater; decoded key predicate verified | Physical entry/buttons, media behavior and arbitrary SD code boot remain unproven |
 | Wi-Fi | An internal Linux command event and its ICC/NWA/PSM route execute in native emulation | An authenticated external request delivering that event is unproven |
-| Bluetooth | MediaTek GATT stack, camera BT application and local radio-test scripts are recovered | No camera-system flash/update service has been identified |
+| Bluetooth | Eight service definitions / 34 characteristics extracted; named factory callbacks execute as four-byte test counters | Other callbacks, pairing and external-to-RTOS delivery remain unresolved; no system updater identified |
 
 The extracted Linux init script runs internal `/etc/init.d/S??*` entries. A
 literal scan of all extracted regular files found only `RAID_AUTORUN` in
@@ -153,6 +153,12 @@ that patch concerns the radio, not the camera's main firmware. The test driver
 contains `/tmp/hcicmd_socket`; the camera BT application contains GATT
 product/factory-advertising paths and `/tmp/unix_sockstream_nwa`. These are
 internal protocol leads, not a demonstrated remotely reachable shell or flasher.
+
+The [Bluetooth protocol analysis](gx9-bluetooth-protocol.md) now records the
+product/factory UUID tables and nine native counter controls. The named factory
+read/write functions are test counters; their names do not imply arbitrary
+memory or persistent storage access. The application's direct process calls
+reviewed so far belong to radio-test handling.
 
 The [native USB protocol analysis](gx9-usb-native-protocol.md) now identifies
 the maintenance descriptor builder, all 256 first-dispatch routes, settings

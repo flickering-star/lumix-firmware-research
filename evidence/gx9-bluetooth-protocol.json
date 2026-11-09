@@ -1,0 +1,366 @@
+{
+  "schema": 1,
+  "scope": "Recovered GATT definitions and native factory counter controls",
+  "verifier_sha256": "6c5758c34f6580c39bd6731b5f40c7fd1a363b0031fbfed748af9fd2487bb4bb",
+  "bt_sha256": "71936c863d9ad0b6d28f2b7dcae4707128a2175f01fcf69628991600ef117ae4",
+  "bt_bytes": 88892,
+  "service_table": "0x34590",
+  "service_count": 8,
+  "characteristics_referenced_by_services": 34,
+  "services": [
+    {
+      "index": 0,
+      "uuid": "054ac620-3214-11e6-ac0d-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "03e23a31-a54c-40fa-a668-de9acdc910bb",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x0"
+        },
+        {
+          "uuid": "8d08a420-3213-11e6-8aca-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x1"
+        },
+        {
+          "uuid": "cd7a71a0-3213-11e6-8f56-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x2"
+        },
+        {
+          "uuid": "69e4d998-54b7-40f5-a5f8-4cc236cd2347",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x3"
+        },
+        {
+          "uuid": "e182ec40-3213-11e6-ab07-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x4"
+        },
+        {
+          "uuid": "e182ec41-3213-11e6-ab07-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x5"
+        },
+        {
+          "uuid": "e182ec42-3213-11e6-ab07-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x6"
+        },
+        {
+          "uuid": "e206a5c0-3214-11e6-afe4-0002a5d5c51b",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x7"
+        },
+        {
+          "uuid": "a09fad60-3215-11e6-bdc0-0002a5d5c51b",
+          "property_field": "0x2",
+          "permission_field": "0x2",
+          "internal_characteristic_id": "0x8"
+        },
+        {
+          "uuid": "c97cf1a5-3c03-4290-8c1b-9e74b9500f54",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x9"
+        },
+        {
+          "uuid": "e182ec43-3213-11e6-ab07-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0xa"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "uuid": "1d74afe0-3214-11e6-8ab4-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "daff1bc0-3216-11e6-91c8-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0xb"
+        },
+        {
+          "uuid": "37701b80-32a7-11e6-bb83-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0xc"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "uuid": "34738720-3214-11e6-b66b-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "ead55e60-3216-11e6-a42e-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0xd"
+        },
+        {
+          "uuid": "4cf487c0-32a7-11e6-a50d-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0xe"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "uuid": "5ae57260-3214-11e6-979e-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "0d6f1880-3217-11e6-a4cb-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0xf"
+        },
+        {
+          "uuid": "18345be1-3217-11e6-b56c-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x10"
+        },
+        {
+          "uuid": "18345be0-3217-11e6-b56c-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x11"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "uuid": "6b005f20-3214-11e6-a5ac-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "48669da0-3217-11e6-b08d-0002a5d5c51b",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x12"
+        },
+        {
+          "uuid": "da989c59-2c9c-44a4-9cf0-0fd005a8973f",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x13"
+        },
+        {
+          "uuid": "e1392720-3215-11e6-a035-0002a5d5c51b",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x14"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "uuid": "7ddc40a0-3214-11e6-b4d0-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "76a2dbc0-3217-11e6-9cd7-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x20",
+          "internal_characteristic_id": "0x15"
+        },
+        {
+          "uuid": "f90c0fe0-3218-11e6-a3f3-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x20",
+          "internal_characteristic_id": "0x16"
+        },
+        {
+          "uuid": "0aad9ca0-3219-11e6-8222-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x20",
+          "internal_characteristic_id": "0x17"
+        },
+        {
+          "uuid": "20f5fffc-fa4d-43b6-be55-321b3df3687c",
+          "property_field": "0x2",
+          "permission_field": "0x2",
+          "internal_characteristic_id": "0x18"
+        },
+        {
+          "uuid": "36d3228b-188c-474f-a262-e0f01c5a367d",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x19"
+        },
+        {
+          "uuid": "1b7ff948-8e4d-43d7-8659-737e9540e231",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x1a"
+        },
+        {
+          "uuid": "7beca6bb-58fc-4b27-80c0-6ffc7f6ba4c8",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x1b"
+        },
+        {
+          "uuid": "3d22c6be-baa6-451b-aa2c-f96c50005910",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x1c"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "uuid": "7be5faae-475b-11e7-a919-92ebcb67fe33",
+      "characteristics": [
+        {
+          "uuid": "7be5fd56-475b-11e7-a919-92ebcb67fe33",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x2a"
+        },
+        {
+          "uuid": "7be5fe6e-475b-11e7-a919-92ebcb67fe33",
+          "property_field": "0x10",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x2b"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "uuid": "054ac620-3214-21e6-ac0d-0002a5d5c51b",
+      "characteristics": [
+        {
+          "uuid": "00000001-3215-11e7-ac0d-0002a5d5c51b",
+          "property_field": "0x2",
+          "permission_field": "0x1",
+          "internal_characteristic_id": "0x27"
+        },
+        {
+          "uuid": "00000002-3215-11e7-ac0d-0002a5d5c51b",
+          "property_field": "0x8",
+          "permission_field": "0x10",
+          "internal_characteristic_id": "0x28"
+        },
+        {
+          "uuid": "00000003-3215-11e7-ac0d-0002a5d5c51b",
+          "property_field": "0xa",
+          "permission_field": "0x11",
+          "internal_characteristic_id": "0x29"
+        }
+      ]
+    }
+  ],
+  "factory_counter_controls": {
+    "read_entry": "0x13784",
+    "write_entry": "0x137f0",
+    "read_counter": "0x34ed8",
+    "write_counter": "0x34edc",
+    "controls": [
+      {
+        "operation": "factory-read",
+        "initial_counter": 0,
+        "output_hex": "00000000",
+        "output_bytes": 4,
+        "tail_sentinel_unchanged": true,
+        "native_instructions": 28
+      },
+      {
+        "operation": "factory-read",
+        "initial_counter": 1,
+        "output_hex": "01010101",
+        "output_bytes": 4,
+        "tail_sentinel_unchanged": true,
+        "native_instructions": 28
+      },
+      {
+        "operation": "factory-read",
+        "initial_counter": 254,
+        "output_hex": "fefefefe",
+        "output_bytes": 4,
+        "tail_sentinel_unchanged": true,
+        "native_instructions": 28
+      },
+      {
+        "operation": "factory-read",
+        "initial_counter": 255,
+        "output_hex": "ffffffff",
+        "output_bytes": 4,
+        "tail_sentinel_unchanged": true,
+        "native_instructions": 28
+      },
+      {
+        "operation": "factory-read",
+        "initial_counter": 256,
+        "output_hex": "00000000",
+        "output_bytes": 4,
+        "tail_sentinel_unchanged": true,
+        "native_instructions": 28
+      },
+      {
+        "operation": "factory-write",
+        "input_bytes": 3,
+        "counter_before": 0,
+        "counter_after": 0,
+        "native_instructions": 26
+      },
+      {
+        "operation": "factory-write",
+        "input_bytes": 4,
+        "counter_before": 0,
+        "counter_after": 1,
+        "native_instructions": 22
+      },
+      {
+        "operation": "factory-write",
+        "input_bytes": 8,
+        "counter_before": 1,
+        "counter_after": 1,
+        "native_instructions": 26
+      },
+      {
+        "operation": "factory-write",
+        "input_bytes": 4,
+        "counter_before": 1,
+        "counter_after": 2,
+        "native_instructions": 22
+      }
+    ],
+    "modeled_operations": [
+      "timestamp",
+      "printf",
+      "memset"
+    ],
+    "process_socket_or_file_imports_executed": false,
+    "scope": "Named factory read/write callbacks; not the full Bluetooth receive path"
+  },
+  "process_call_review": {
+    "PLT": "0x10ff0",
+    "direct_ARM_branch_sites": [
+      "0x12f40",
+      "0x12fe8",
+      "0x13054",
+      "0x131b0"
+    ],
+    "reviewed_call_context": "Radio-test helper formats fixed hci_cmd paths with numeric fields; btteststart script",
+    "arbitrary_shell_request_or_external_delivery_established": false,
+    "scope": "Static direct-branch references; not a complete process/data-flow proof"
+  },
+  "camera_or_network_access": false,
+  "limits": [
+    "Defined services are not proof that a service is advertised or accessible in the current camera mode.",
+    "Pairing, permissions and external-to-ICC delivery have not been verified.",
+    "The named factory counter callbacks do not establish a memory reader, flash writer or shell.",
+    "Other Bluetooth callbacks and RTOS event consumers remain to be traced."
+  ]
+}

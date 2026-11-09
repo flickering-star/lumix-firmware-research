@@ -32,6 +32,7 @@ Start with the guide for your model:
 - [GX9: fixed-bank policy persistence, prepared candidate and SD/protocol research](docs/gx9-flashing-research.md)
 - [GX9: Windows helper to enable and restore the live updater policy](docs/gx9-policy-helper.md)
 - [GX9: alternate update filenames and native entry predicate](docs/gx9-sd-update-route.md)
+- [GX9: Bluetooth GATT definitions and factory counter callbacks](docs/gx9-bluetooth-protocol.md)
 - [GX9: native USB dispatcher, saved-wire replay and settings-bank selectors](docs/gx9-usb-native-protocol.md)
 - [GX9: measured RAM write and exact restoration](docs/gx9-ram-write.md)
 - [GX9: recovered components and complete filesystem contents](docs/gx9-recovered-components.md)
