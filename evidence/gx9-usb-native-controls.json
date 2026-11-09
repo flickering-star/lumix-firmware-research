@@ -1,0 +1,799 @@
+{
+  "schema": 1,
+  "scope": "Native offline GX9 1.4 USB dispatcher and saved-wire replay",
+  "verifier_sha256": "dd49fb7688006c30db83ba9e5c9dc0f2e617f173a3986d6ff86e05eb434b06af",
+  "program_sha256": "1ea24a84e5bbc1fa24beef59628a8c0fc13d8de042efbe187730031dc4f263d5",
+  "component_sha256": {
+    "postboot1": "76e071e60e1c2cec98dd8bdda49fa0a02120e218e38ece36f97da3965b3b64ca",
+    "postboot5": "ea085c958d0ff4b3bf0bf091f0a885357a65045348513d507acb75c70347f08e"
+  },
+  "observed_usb_evidence_sha256": "f83a0d55ef57db9c8aab416b698746238e471be4ed3efae3fe093cd470952016",
+  "descriptors": [
+    {
+      "speed": "high",
+      "native_entry": "0x054015a0",
+      "total_descriptor_bytes": 210,
+      "device_descriptor_hex": "1201000200000040da047023000101020001",
+      "configuration_descriptor_hex": "09022700010100c0010904000003ffa0b000070501020002000705820200020007058303400010",
+      "matches_physical_high_speed_profile": true,
+      "native_instructions": 1834
+    },
+    {
+      "speed": "full",
+      "native_entry": "0x054015a0",
+      "total_descriptor_bytes": 210,
+      "device_descriptor_hex": "1201000200000040da047023000101020001",
+      "configuration_descriptor_hex": "09022700010100c0010904000003ffa0b000070501024000000705820240000007058303400010",
+      "matches_physical_high_speed_profile": false,
+      "native_instructions": 1834
+    }
+  ],
+  "dispatcher": {
+    "native_entry": "0x53fbd16",
+    "opcodes_executed": 256,
+    "execution_stopped_before_each_handler": true,
+    "initial_fixed_word_0x03f1c404": 1,
+    "groups": {
+      "0x53fbeec": [
+        "0x00",
+        "0x01",
+        "0x3d",
+        "0x5b",
+        "0x67",
+        "0x69",
+        "0x6b",
+        "0x6c",
+        "0x6d",
+        "0x6e"
+      ],
+      "0x53fa66c": [
+        "0x02",
+        "0x1f",
+        "0x2a",
+        "0x2c",
+        "0x2d",
+        "0x30",
+        "0x31",
+        "0x32",
+        "0x33",
+        "0x37",
+        "0x39",
+        "0x40",
+        "0x41",
+        "0x42",
+        "0x44",
+        "0x45",
+        "0x4c",
+        "0x4d",
+        "0x53",
+        "0x54",
+        "0x55",
+        "0x56",
+        "0x57",
+        "0x58",
+        "0x61",
+        "0x62",
+        "0x63",
+        "0x64",
+        "0x65",
+        "0x6a",
+        "0x7b",
+        "0x7f",
+        "0x83",
+        "0x8b",
+        "0x95",
+        "0xa0",
+        "0xa1",
+        "0xa9"
+      ],
+      "0x53fa660": [
+        "0x03",
+        "0x04",
+        "0x05",
+        "0x07",
+        "0x09",
+        "0x0a",
+        "0x0b",
+        "0x0c",
+        "0x0d",
+        "0x0e",
+        "0x0f",
+        "0x11",
+        "0x12",
+        "0x13",
+        "0x14",
+        "0x16",
+        "0x17",
+        "0x18",
+        "0x19",
+        "0x1a",
+        "0x1b",
+        "0x1c",
+        "0x1d",
+        "0x1e",
+        "0x20",
+        "0x21",
+        "0x22",
+        "0x23",
+        "0x24",
+        "0x25",
+        "0x26",
+        "0x27",
+        "0x29",
+        "0x36",
+        "0x3b",
+        "0x3c",
+        "0x3f",
+        "0x43",
+        "0x49",
+        "0x4e",
+        "0x4f",
+        "0x50",
+        "0x51",
+        "0x52",
+        "0x59",
+        "0x5d",
+        "0x5f",
+        "0x60",
+        "0x6f",
+        "0x74",
+        "0x79",
+        "0x7a",
+        "0x81",
+        "0x82",
+        "0x84",
+        "0x85",
+        "0x86",
+        "0x87",
+        "0x88",
+        "0x89",
+        "0x8a",
+        "0x8c",
+        "0x8d",
+        "0x8f",
+        "0x90",
+        "0x91",
+        "0x93",
+        "0x97",
+        "0x98",
+        "0x99",
+        "0x9a",
+        "0x9d",
+        "0x9e",
+        "0x9f",
+        "0xa3",
+        "0xa4",
+        "0xa5",
+        "0xa6",
+        "0xa7",
+        "0xa8",
+        "0xaa",
+        "0xab",
+        "0xac",
+        "0xad",
+        "0xae",
+        "0xaf",
+        "0xb1",
+        "0xb3",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9",
+        "0xba",
+        "0xbb",
+        "0xbc",
+        "0xbd",
+        "0xbe",
+        "0xbf",
+        "0xc1",
+        "0xc3",
+        "0xc4",
+        "0xc5",
+        "0xc6",
+        "0xc7",
+        "0xc8",
+        "0xc9",
+        "0xca",
+        "0xcb",
+        "0xcc",
+        "0xcd",
+        "0xce",
+        "0xcf",
+        "0xd4",
+        "0xd5",
+        "0xd6",
+        "0xd7",
+        "0xd8",
+        "0xd9",
+        "0xda",
+        "0xdb",
+        "0xdc",
+        "0xdd",
+        "0xde",
+        "0xdf",
+        "0xe0",
+        "0xe1",
+        "0xe2",
+        "0xe3",
+        "0xe4",
+        "0xe5",
+        "0xe6",
+        "0xe7",
+        "0xe8",
+        "0xe9",
+        "0xea",
+        "0xeb",
+        "0xec",
+        "0xed",
+        "0xee",
+        "0xef",
+        "0xf0",
+        "0xf1",
+        "0xf2",
+        "0xf3",
+        "0xf4",
+        "0xf5",
+        "0xf6",
+        "0xf7",
+        "0xf8",
+        "0xf9",
+        "0xfa",
+        "0xfb",
+        "0xfc",
+        "0xfd",
+        "0xfe",
+        "0xff"
+      ],
+      "0x53fbcd2": [
+        "0x06"
+      ],
+      "0x53fb10c": [
+        "0x08"
+      ],
+      "0x53fbcc8": [
+        "0x10"
+      ],
+      "0x53fb030": [
+        "0x15"
+      ],
+      "0x53fbc24": [
+        "0x28"
+      ],
+      "0x53fbb80": [
+        "0x2b"
+      ],
+      "0x53fb6c8": [
+        "0x2e"
+      ],
+      "0x53fb6a6": [
+        "0x2f"
+      ],
+      "0x53fbaf4": [
+        "0x34"
+      ],
+      "0x53fb9b6": [
+        "0x35"
+      ],
+      "0x53fba3e": [
+        "0x38"
+      ],
+      "0x53fa8d0": [
+        "0x3a"
+      ],
+      "0x53fb906": [
+        "0x3e"
+      ],
+      "0x53fb7f6": [
+        "0x46"
+      ],
+      "0x53fb79e": [
+        "0x47"
+      ],
+      "0x53faa50": [
+        "0x48"
+      ],
+      "0x53fa9e4": [
+        "0x4a"
+      ],
+      "0x53fab00": [
+        "0x4b"
+      ],
+      "0x53fb76c": [
+        "0x5a"
+      ],
+      "0x53fb2f2": [
+        "0x5c"
+      ],
+      "0x53fb67c": [
+        "0x5e"
+      ],
+      "0x53fb6fe": [
+        "0x66",
+        "0x68"
+      ],
+      "0x53fb5bc": [
+        "0x70"
+      ],
+      "0x53fb644": [
+        "0x71"
+      ],
+      "0x53fb63a": [
+        "0x72"
+      ],
+      "0x53fb606": [
+        "0x73"
+      ],
+      "0x53fb56a": [
+        "0x75"
+      ],
+      "0x53fb532": [
+        "0x76"
+      ],
+      "0x53fb4a4": [
+        "0x77"
+      ],
+      "0x53fb438": [
+        "0x78"
+      ],
+      "0x53fb0ec": [
+        "0x7c"
+      ],
+      "0x53fb0dc": [
+        "0x7d"
+      ],
+      "0x53fb0cc": [
+        "0x7e"
+      ],
+      "0x53fb3c0": [
+        "0x80"
+      ],
+      "0x53faf7e": [
+        "0x8e"
+      ],
+      "0x53fb3e8": [
+        "0x92"
+      ],
+      "0x53fb214": [
+        "0x94"
+      ],
+      "0x53fb12c": [
+        "0x96"
+      ],
+      "0x53fb4e0": [
+        "0x9b"
+      ],
+      "0x53fb4ae": [
+        "0x9c"
+      ],
+      "0x53fabe8": [
+        "0xa2"
+      ],
+      "0x53facd6": [
+        "0xb0",
+        "0xb2"
+      ],
+      "0x53fb06e": [
+        "0xb4"
+      ],
+      "0x53faf2c": [
+        "0xc0",
+        "0xc2"
+      ],
+      "0x53fabd2": [
+        "0xd0"
+      ],
+      "0x53fabb8": [
+        "0xd1"
+      ],
+      "0x53fab9e": [
+        "0xd2"
+      ],
+      "0x53fab84": [
+        "0xd3"
+      ]
+    },
+    "conditional_0x3e": {
+      "fixed_word": 0,
+      "handler": "0x53fb844"
+    },
+    "scope": "First dispatcher only; queued commands need their downstream consumers traced"
+  },
+  "physical_transcript_replay": {
+    "capture_id": "20261109T142756Z-gx9-owner-policy-archive",
+    "source_capture_verified_independently": true,
+    "all_14_complete_responses_match": true,
+    "service_word_and_block_read_handlers_replaced": false,
+    "initial_RAM_seeded_from_capture": [
+      "A-bank control word at 0x03ea4000",
+      "Linux, updater-code and initial policy blocks"
+    ],
+    "complete_original_simulated_policy_block_restored": true,
+    "C_copy_and_zero_helpers_modeled": true,
+    "transactions": [
+      {
+        "transaction": 1,
+        "opcode": "0x35",
+        "reply_bytes": 16,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 299
+      },
+      {
+        "transaction": 2,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 3,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+        "response_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 4,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "36853004fd1842f000ead34c6147a48376bb2f446fa1eced987bde8626cea0a6",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 5,
+        "opcode": "0x9b",
+        "reply_bytes": 16,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 264
+      },
+      {
+        "transaction": 6,
+        "opcode": "0x9c",
+        "reply_bytes": 16,
+        "request_sha256": "9d985b10bb18010f1952b9c7a00d1a6e21cd861f3316b4b6b7418bd23650a412",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 267
+      },
+      {
+        "transaction": 7,
+        "opcode": "0x9b",
+        "reply_bytes": 16,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "972111456995f698a58c087d45f0100ac0c2d8731e4afaab2a885a8321c3a192",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 264
+      },
+      {
+        "transaction": 8,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "5f260f12bcc5949765958c041db5ed0d0dc93a41d5d9d4c9804b9b5d4a47414f",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 9,
+        "opcode": "0x9c",
+        "reply_bytes": 16,
+        "request_sha256": "b1f7547d5f7c435e1bd1db3be6e04ad7935ef2c5a0cb4a96f8a0e982c4cc3ce9",
+        "response_sha256": "139f2ad305a43fd59466c2c514d61288c00210a00c5f54933bf6060bce93dc31",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 267
+      },
+      {
+        "transaction": 10,
+        "opcode": "0x9b",
+        "reply_bytes": 16,
+        "request_sha256": "e151ffe7cc15d3aa3bb7a0c799c08dec2310e8afa866fcc3956e796dfa7b3325",
+        "response_sha256": "c9c74be8e620fa46b5b9b6201483bc7fc3a59e5e17e763383d6cd799bdffcf39",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 264
+      },
+      {
+        "transaction": 11,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "0457ce417d620a21d38bc65ab0148ba6e369f41585744ffa477a1c450b2e9ed6",
+        "response_sha256": "36853004fd1842f000ead34c6147a48376bb2f446fa1eced987bde8626cea0a6",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 12,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "2257f1b18f65928f04bcd355502d3d1d8a2339fd0d5ac57c0d14d062fa246847",
+        "response_sha256": "7b7e34b8a773a77efb94ece3266be40992ba013ff73bb394e887cb48544ce2cd",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 13,
+        "opcode": "0x5c",
+        "reply_bytes": 1030,
+        "request_sha256": "0826cc0ef0b0f96ebce4d2b0dc7a9f2f553ed09c547ba68c49eb8943b889d7c9",
+        "response_sha256": "e6f51f6b1e0a3a983fc72456338eef4fb253de6b6afc274b14041a7e20d3b5ff",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 8587
+      },
+      {
+        "transaction": 14,
+        "opcode": "0x35",
+        "reply_bytes": 16,
+        "request_sha256": "1ba1d180c7d343720297379c7cfa07ef8bb6f480e2b231eaec4e92bcf20042b2",
+        "response_sha256": "cde59687e6e60a8e2a6ef45defb14eef208ce130fce97ceed3f75b7b65389ee6",
+        "complete_reply_matches_capture": true,
+        "native_instructions": 299
+      }
+    ]
+  },
+  "settings_bank_controls": {
+    "fixed_bank_area": "0x22",
+    "policy_word_index": "0xc00d",
+    "shadow_read_opcode": "0x35",
+    "shadow_write_opcode": "0x34",
+    "native_bank_size_api_executed": true,
+    "shadow_values": [
+      {
+        "value": 0,
+        "reply_hex": "0800ff36000000000000000000003500"
+      },
+      {
+        "value": 1,
+        "reply_hex": "0800ff36010000000000000000003600"
+      },
+      {
+        "value": 0,
+        "reply_hex": "0800ff36000000000000000000003500"
+      }
+    ],
+    "shadow_writes": [
+      {
+        "address": "0x3f1801a",
+        "bytes": 2,
+        "value": 1
+      },
+      {
+        "address": "0x3f1801a",
+        "bytes": 2,
+        "value": 0
+      }
+    ],
+    "flash_word_read_opcode": "0x38",
+    "area_0x20_error_matches_previous_physical_capture": "0800ff01030000000000000000000300",
+    "area_0x20_zero_length_native_read": [
+      {
+        "virtual_flash_address": "0x40de0000",
+        "bytes": 0
+      }
+    ],
+    "area_0x22_reply_hex": "0800ff36000000000000000000003500",
+    "flash_read_calls": [
+      {
+        "virtual_flash_address": "0x40e00000",
+        "buffer": "0x193d6800",
+        "bytes": 131072
+      }
+    ],
+    "flash_byte_reader_modeled": true,
+    "persistent_write_demonstrated": false,
+    "limits": [
+      "0x34 changes a RAM shadow; no persistent save has been established.",
+      "0x38 area 0x22 has been checked in emulation only. It has not been sent to the camera."
+    ]
+  },
+  "memory_width_controls": {
+    "scratch_RAM_only": true,
+    "native_handler_0x48": "0x053faa50",
+    "native_handler_0x4a": "0x053fa9e4",
+    "controls": [
+      {
+        "control": "read-halfword",
+        "opcode": "0x48",
+        "reply_hex": "0800ff49007856000000000000001600"
+      },
+      {
+        "control": "read-word",
+        "opcode": "0x48",
+        "reply_hex": "0800ff49017856341200000000005d00"
+      },
+      {
+        "control": "write-word-and-read-back",
+        "opcode": "0x48",
+        "reply_hex": "0800ff4901efcdab8900000000003900"
+      },
+      {
+        "control": "write-halfword-with-ack",
+        "opcode": "0x4a",
+        "reply_hex": "0800ff01000000000000000000000000"
+      }
+    ],
+    "nonzero_service_flag_blocks_0x48_without_changing_RAM": true,
+    "limits": [
+      "These word-access variants have not been sent to the camera.",
+      "No usable physical address range or flash operation follows from this scratch-RAM test."
+    ]
+  },
+  "framing_and_area_metadata": {
+    "native_size_lookup": "0x053fbf22",
+    "frame_classes": [
+      {
+        "frame_class": "0x8",
+        "frame_bytes": 16
+      },
+      {
+        "frame_class": "0x1",
+        "frame_bytes": 1030
+      },
+      {
+        "frame_class": "0x2",
+        "frame_bytes": 32774
+      },
+      {
+        "frame_class": "0x3",
+        "frame_bytes": 8198
+      },
+      {
+        "frame_class": "0x4",
+        "frame_bytes": 4102
+      },
+      {
+        "frame_class": "0x5",
+        "frame_bytes": 106
+      },
+      {
+        "frame_class": "0x10",
+        "frame_bytes": 262
+      }
+    ],
+    "area_metadata_opcode": "0x3a",
+    "reply_opcode": "0x3b",
+    "native_metadata_reply_bytes": 262,
+    "useful_area_entries": [
+      {
+        "area": "0x10",
+        "word_count": 65536
+      },
+      {
+        "area": "0x11",
+        "word_count": 65536
+      },
+      {
+        "area": "0x21",
+        "word_count": 65536
+      },
+      {
+        "area": "0x22",
+        "word_count": 65536
+      },
+      {
+        "area": "0x30",
+        "word_count": 3072
+      }
+    ],
+    "other_entries": "0xff area placeholders; not evidence for additional readable banks",
+    "limits": [
+      "Frame-size lookup does not establish which operations accept each frame class.",
+      "Physical larger-frame tests previously failed; no larger-frame request was sent here."
+    ]
+  },
+  "queued_command_controls": {
+    "receive_entry": "0x053f8076",
+    "main_callback": "0x0425ffcc",
+    "callback_registration_executed_natively": true,
+    "controls": [
+      {
+        "opcode": "0x28",
+        "message_tag": "USBMNT",
+        "message_class": 1,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 239
+      },
+      {
+        "opcode": "0x2b",
+        "message_tag": "USBMNT",
+        "message_class": 1,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 237
+      },
+      {
+        "opcode": "0x30",
+        "message_tag": "USBMNT",
+        "message_class": 2,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 302
+      },
+      {
+        "opcode": "0x31",
+        "message_tag": "USBMNT",
+        "message_class": 1,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 303
+      },
+      {
+        "opcode": "0x32",
+        "message_tag": "USBMNT",
+        "message_class": 2,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 302
+      },
+      {
+        "opcode": "0x33",
+        "message_tag": "USBMNT",
+        "message_class": 2,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 302
+      },
+      {
+        "opcode": "0x37",
+        "message_tag": "USBMNT",
+        "message_class": 1,
+        "queued_event": {
+          "destination_task": "0xc1",
+          "source_task": "0x76",
+          "source_module": "0x6b",
+          "event": "0xe8202"
+        },
+        "native_instructions": 287
+      }
+    ],
+    "modeled_operations": [
+      "message pool allocation",
+      "registration state query",
+      "system queue send",
+      "C copy/zero helpers"
+    ],
+    "system_queue_send_modeled_without_running_consumer": true,
+    "downstream_event_0x000e8202_consumer_executed": false,
+    "persistent_write_or_updater_activation_proven": false
+  },
+  "camera_or_network_access": false,
+  "physical_flash_operations": 0,
+  "limits": [
+    "Controller, enumeration, cache/MMU and hardware timing are not emulated.",
+    "First-dispatch routing alone does not identify queued-command effects.",
+    "No external updater activation or SD autorun is established by these controls."
+  ]
+}

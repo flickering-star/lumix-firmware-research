@@ -30,6 +30,7 @@ Start with the guide for your model:
 - [GX9: full firmware decryption, key recovery and 1.4/1.5 comparison](docs/gx9-firmware-decryption.md)
 - [GX9: update signatures, emulated policy control and Windows-local USB test](docs/gx9-update-authentication.md)
 - [GX9: fixed-bank policy persistence, prepared candidate and SD/protocol research](docs/gx9-flashing-research.md)
+- [GX9: native USB dispatcher, saved-wire replay and settings-bank selectors](docs/gx9-usb-native-protocol.md)
 - [GX9: measured RAM write and exact restoration](docs/gx9-ram-write.md)
 - [GX9: recovered components and complete filesystem contents](docs/gx9-recovered-components.md)
 - [GX9: measured USB memory reads](docs/gx9-memory-reads.md), [Linux runtime](docs/gx9-linux-runtime.md), [internal command-handler analysis](docs/gx9-linux-command.md)

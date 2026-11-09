@@ -122,7 +122,7 @@ inputs, changes and validation limits.
 
 | Route | Evidence so far | Unresolved step |
 | --- | --- | --- |
-| USB | Absolute RAM writes and the policy round trip are measured; native flash APIs are identified | An external USB command that invokes the updater or persistent bank writer has not been identified |
+| USB | Absolute RAM writes and the policy round trip are measured; native dispatcher reproduces all 14 saved replies; fixed bank is area `0x22` | Queued event `0x000e8202` remains to be traced to an updater or persistent-save action |
 | SD update | Native UPD parser, policy gate, preprocessing and transfer stages are available | Full board boot and physical installation of the candidate remain untested |
 | SD autorun / `.AHX` | No consumed filename/autorun hook identified in the inspected loaders or Linux startup scripts | Mask-ROM behavior, unexamined paths and filename construction remain open |
 | Wi-Fi | An internal Linux command event and its ICC/NWA/PSM route execute in native emulation | An authenticated external request delivering that event is unproven |
@@ -139,3 +139,10 @@ that patch concerns the radio, not the camera's main firmware. The test driver
 contains `/tmp/hcicmd_socket`; the camera BT application contains GATT
 product/factory-advertising paths and `/tmp/unix_sockstream_nwa`. These are
 internal protocol leads, not a demonstrated remotely reachable shell or flasher.
+
+The [native USB protocol analysis](gx9-usb-native-protocol.md) now identifies
+the maintenance descriptor builder, all 256 first-dispatch routes, settings
+shadow access, stored-bank selection and several commands queued to another
+task. It reproduces the old area-`0x20` read failure and identifies `0x22` as
+the fixed-bank selector. None of the newly identified operations has been sent
+to the disconnected camera.
