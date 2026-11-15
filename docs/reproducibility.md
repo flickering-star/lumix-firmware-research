@@ -15,6 +15,14 @@ two hash-pinned main baselines, patch recipes and exact accepted package.
 The [model-porting guide](porting-to-other-models.md) documents how to establish
 a different model's transport, crypto, address map and updater policy.
 
+The [experimental GM5 LUT guide](gm5-luts.md) adds a separate guarded byte
+recipe and offline package reproducer. It requires the owner's exact reviewed
+factory components from a private NOR backup and the official update template.
+The text recipe contains only bounded replacements, not full firmware; review
+assembly is included under `research/gm5-luts`. Its output must match the exact
+owner-tested package hash. The desktop updater and its builds are a separate
+deliverable and are not part of this LUT-only commit.
+
 The new `lumix_patch.py` and `gm5_public_package.py` take explicit local inputs.
 They regenerate the tested main/package without the original camera's unique
 NOR/settings backup or card UUID. Their output is offline: making a file does

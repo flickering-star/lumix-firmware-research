@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "model": "DMC-GM5",
+  "profile": "Japanese factory 1.1 / internal 0111",
+  "package_sha256": "fa17315ef8527dfad4bd72444caac786fe0a2e96d85e4802e26c68995989597d",
+  "main_sha256": "e7943266812081eb13b8672eac47c7287d132cacfdeb671b853986504b8f2528",
+  "secondary_sha256": "54c437bb37f856e8aaef6478f9ef54cc51618769c3fb19b2b72c478efc24061b",
+  "guires_sha256": "a80c013855c7806c5c8aa9cd53aead7c06edfbb607563baba73cdc5b47d639a8",
+  "independent_restore_audit": {
+    "validated_cells": 10,
+    "native_stages": 5,
+    "instructions": 10142701,
+    "no_sd_access_or_nor_write": true
+  },
+  "original_ui_task": {
+    "stages": 101,
+    "instructions": 10141446,
+    "native_stack_restores": 48,
+    "all_ten_native_tables_verified": true,
+    "dynamic_native_pool_ownership_verified": true
+  },
+  "recording_memory_plan_controls": [
+    {
+      "mode": 10,
+      "area_id": 96,
+      "movie_area": [
+        96,
+        322961408,
+        58720256
+      ],
+      "complete_128k_lut_bytes_and_25_native_children_unchanged": true,
+      "native_general_manager_still_owns_root": true
+    },
+    {
+      "mode": 23,
+      "area_id": 107,
+      "movie_area": [
+        107,
+        322961408,
+        58720256
+      ],
+      "complete_128k_lut_bytes_and_25_native_children_unchanged": true,
+      "native_general_manager_still_owns_root": true
+    },
+    {
+      "mode": 24,
+      "area_id": 134,
+      "movie_area": [
+        134,
+        325058560,
+        58720256
+      ],
+      "complete_128k_lut_bytes_and_25_native_children_unchanged": true,
+      "native_general_manager_still_owns_root": true
+    }
+  ],
+  "recording_api_uses_explicit_audited_standard_logical_manager_input": true,
+  "lifetime_controls": [
+    {
+      "name": "shared_reference_and_repeated_release",
+      "instructions": 49725,
+      "before": 2,
+      "after": 2
+    },
+    {
+      "name": "native_child_pool_exhaustion",
+      "instructions": 302439,
+      "before": 2,
+      "after": 2
+    },
+    {
+      "name": "native_backing_exhaustion_and_recovery",
+      "instructions": 132713,
+      "before": 2,
+      "after": 2
+    }
+  ],
+  "installer_controls": 12,
+  "candidate_and_rollback_full_32mib_compared": true,
+  "private_proof_summary_sha256": {
+    "gm5-lut-adjacent-manager-boot-audit-1": "e7aacc2b4c6404fb7394c3079a41ba8765f5d34216bde9e149b10651047d595b",
+    "gm5-lut-adjacent-video-native-3": "388a692b230223207e2a5b58046da07cf25aaa58ef17686438a83d72465c2a99",
+    "gm5-lut-adjacent-lifetime-native-1": "edee872284562a55be8c1fef303019dace8bef2ed1092912c7f809f8ed48ee5b",
+    "gm5-lut-adjacent-cleanup-1": "2adff8b98bfa05feb09b6679d21fff3f70ee74178341fc8b6284cb1d69fff792",
+    "gm5-lut-adjacent-manager-package-native-1": "8d21c3682f0d17a2f87c48bfc3f4ca7fe3af47e4abf0874c1eb0edd0f37d8d02"
+  },
+  "raw_camera_and_firmware_fixtures_distributed": false,
+  "physical_video_translation_dma_or_complete_cold_boot_proved": false,
+  "independent_recovery_proved": false,
+  "owner_result": "gm5-lut-adjacent-manager-camera-result.json",
+  "all_original_project_code_written_by_chatbot": true,
+  "public_offline_reproduction": {
+    "exact_owner_tested_package_reproduced": true,
+    "package_sha256": "fa17315ef8527dfad4bd72444caac786fe0a2e96d85e4802e26c68995989597d",
+    "bytes": 24118784,
+    "three_main_baselines": [
+      {
+        "main_input_sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+        "same_three_patched_components": true
+      },
+      {
+        "main_input_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+        "same_three_patched_components": true
+      },
+      {
+        "main_input_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+        "same_three_patched_components": true
+      }
+    ],
+    "unknown_component_refusals": [
+      {
+        "offset": 256,
+        "refused": true
+      },
+      {
+        "offset": 8388864,
+        "refused": true
+      },
+      {
+        "offset": 20971776,
+        "refused": true
+      }
+    ],
+    "codec_source": "tools/panasonic_aes5.c",
+    "public_tool_source_sha256": "64d2e8551edebe5bfdc439616ad48647db0646dc0bfe0736793e33150809c4fe",
+    "recipe_sha256": "be4bbaa27c89073b2a99bd43902333e98e9f52d0cc7cca4c7e8157f96cfba28e",
+    "uses_private_research_build_chain": false,
+    "uses_owner_supplied_firmware_and_backup": true,
+    "camera_contacted": false
+  },
+  "public_checkout_tests": {
+    "discovered": 115,
+    "executed": 65,
+    "skipped_for_private_inputs_or_backends": 50,
+    "failures": 0,
+    "command": "python3 -m unittest discover -s tests -v",
+    "complete_camera_emulation_proven": false
+  }
+}

@@ -6,7 +6,7 @@ from pathlib import PurePosixPath
 import re
 import subprocess
 
-TEXT_SUFFIXES = {".md", ".py", ".c", ".m", ".h", ".sh", ".json", ".txt", ".igen", ".yml", ".yaml"}
+TEXT_SUFFIXES = {".md", ".py", ".c", ".m", ".h", ".sh", ".S", ".json", ".txt", ".igen", ".yml", ".yaml"}
 TEXT_NAMES = {".gitignore", ".gitattributes", "COPYING", "LICENSE", "NOTICE", "Makefile"}
 PRIVATE_ROOTS = {"work", "captures", "firmware", ".ssh", ".env"}
 PATTERNS = (

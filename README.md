@@ -1,5 +1,9 @@
 # Lumix Firmware Research
 
+**All original project code was written by a chatbot. Flashing Panasonic
+cameras is risky because recovery options are limited. No independent GM5
+recovery procedure is validated here; a bad update can leave a camera unusable.**
+
 An unmaintained reference archive of Panasonic Lumix firmware research, USB
 service protocols, update authentication, native-code emulation and a tested
 GM5 Japanese-language unlock. **No contributions, pull requests or support
@@ -18,15 +22,17 @@ connection files are excluded.
 | **GX9 / Japanese DC-GX7MK3, reported 1.4** | All 35 components of 1.4/1.5 decode. The owner reports successfully installing the policy-one candidate and a working camera. Subsequent physical USB inspection verifies policy `1` at the unchanged address through both access paths, with matching code and normalized metadata guards. | Installation/boot is owner-reported; policy readback is independently verified. Full installed-image readback and an additional controlled power-cycle test have not been performed. SD autorun, external shell delivery and other protocol routes remain under investigation. |
 | **GH2** | Static service-dispatch, startup, update, signature and factory-input analysis provided controls for the later USB work. | GH2 addresses and algorithms must not be assumed for GM1/GM5 or newer models. |
 | **Emulator** | Native MN103 updater/decode/NOR tests, bounded RTOS/task execution and ARM/Thumb startup/queue transport. | No complete camera boot, display/sensor model or integrated worker/reply path. |
+| **GM5 experimental LUTs** | Ten-cell SD import, native Photo Style/Quick Menu selection, opacity and internal storage. The owner confirms LUT video and Library/Playback afterward on `fa17315e…`. | Exact reviewed GM5 build only; recording-format and long-session coverage is incomplete. No independent recovery. |
 
 The public snapshot covers reproduced firmware-access, update-authentication,
-flashing and language-patch results. Ongoing feature research and unvalidated
-model ports are kept outside this archive.
+flashing, language-patch and the tested experimental GM5 LUT results. Ongoing
+feature research and unvalidated model ports are kept outside this archive.
 
 Start with the guide for your model:
 
 - [GM1: USB acquisition, complete decoding and signature verification](docs/gm1-reproduction.md)
 - [GM5: reproduce the exact tested policy/language patch and package](docs/gm5-reproduction.md)
+- [GM5: experimental real-time LUT patch, reproducible package and limitations](docs/gm5-luts.md)
 - [GX9: full firmware decryption, key recovery and 1.4/1.5 comparison](docs/gx9-firmware-decryption.md)
 - [GX9: update signatures, emulated policy control and Windows-local USB test](docs/gx9-update-authentication.md)
 - [GX9: fixed-bank policy persistence, prepared candidate and SD/protocol research](docs/gx9-flashing-research.md)

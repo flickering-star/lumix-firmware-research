@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-15T17:18:56.597382+00:00",
+  "model": "DMC-GM5",
+  "candidate_sha256": "fa17315ef8527dfad4bd72444caac786fe0a2e96d85e4802e26c68995989597d",
+  "observation_source": "owner_report",
+  "owner_report": "GM5 firmware: LUT video works, and Library/Playback work afterward",
+  "lut_video_recording_reported_working": true,
+  "library_and_playback_after_recording_reported_working": true,
+  "current_build_full_rom_readback_performed": false,
+  "recording_format_specified": false,
+  "long_session_coverage_established": false,
+  "independent_physical_memory_translation_proven": false
+}
