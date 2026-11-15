@@ -1,0 +1,4 @@
+# Build in a private Python >=3.11 environment on each target operating system.
+certifi>=2026.10.19
+libusb-package>=1.0.26.3
+pyinstaller>=6.16,<7

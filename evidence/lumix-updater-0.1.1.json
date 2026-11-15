@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "version": "0.1.1",
+  "release_tag": "updater-v0.1.1",
+  "supported_camera_profiles": [
+    "gm5-official-0110",
+    "gm5-factory-0111"
+  ],
+  "desktop_assets": [
+    {
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "platform": "macOS Apple Silicon",
+      "bytes": 17842571,
+      "sha256": "762be27dedd01436dfe0b9396b672620d86fb3bbb66d60673a6db957785039d0"
+    },
+    {
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "platform": "Windows x64",
+      "bytes": 16956145,
+      "sha256": "b2c4427c2d441f0734b8b8542eeb49e574944544e743a81f80ec9de2c05c831d"
+    }
+  ],
+  "app_source_sha256": {
+    "firmware.py": "7283e276d5fd19a70f4a95064c001c4caa8acb53a6ccac3da53595e659bba099",
+    "protocol.py": "16a2b99e9ddb1533abe3749e10e858918c6a5c6ba463c86f3a2cada1df27a8f3",
+    "download.py": "6296a9cf71569e566c4833ff5b75967947c9795415a2cbe83674a4b509db74f4",
+    "__init__.py": "4e47f79fa2f8fd4742c56c4509fc16f17c1152a6e8e4daef8289e4d006967ec9",
+    "camera.py": "e9e821556090f60615a95c72cd679ed20ce8a6eb060b9d8391c9acbceef03482",
+    "workflow.py": "a54f1962be7a92e615cc65c5b7dcefc63f12a6d825a3e6144834f6345649a7b0",
+    "codec.py": "a7173fbdb9d9ccc58ff19536f84460225f911fc5813384951e85264dd53309cf",
+    "usb.py": "5133b998a9424704fe369030848b5ad8c43375fe5a251dd3345d8f7902358d73",
+    "gui.py": "6f98b355306f0100dc1559b735b5c6a8a12abf12be4ce9e4ec162041a491444d",
+    "__main__.py": "49a564efea31a6ebec2cad9f970c47ef24d11be89b70dd59a5642bc08f2486d6"
+  },
+  "patch_catalog_sha256": "838493bf3d20d6ce29c4777695c0ed8b7aae0fc57896ea62c14e37c3cf3b8f9c",
+  "offline_validation": {
+    "native_desktop_builds": [
+      "macOS arm64",
+      "Windows x64"
+    ],
+    "frozen_codec_libusb_tls_patch_checks_passed": true,
+    "real_desktop_layout_checks_passed": true,
+    "complete_workflows_per_os": 6,
+    "profile_and_framing_controls_per_os": 52,
+    "windows_and_mac_firmware_outputs_identical": true,
+    "independent_component_decoder_verified": true,
+    "official_0110_native_initializer_controls": 3,
+    "official_0110_native_header_and_decoder_controls": 12,
+    "saved_camera_pages_and_wire_replay_passed": true,
+    "host_workflow_and_archive_tests": 19
+  },
+  "owner_report": {
+    "date": "2026-11-15",
+    "successful_updates": true,
+    "desktop_platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "gm5_regions": [
+      "Japanese",
+      "global"
+    ],
+    "source": "Owner reports testing both desktop updaters and successfully updating Japanese and global GM5 models.",
+    "firmware_choice_per_run": "Not specified in the report",
+    "independent_full_installed_image_readback": false
+  },
+  "firmware_outputs": [
+    {
+      "profile": "gm5-factory-0111",
+      "workflows": [
+        {
+          "choice": "stable",
+          "sha256": "a36ea2847198ac99e58449e3b64604062e106541f0b38aac9f96987a9655b196",
+          "prepared_restore_sha256": "21ec8efba8cc5f25d703d77855da959f59de980d23ff04e4ee3d70053b17059e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": true,
+            "already_enabled": false,
+            "rom_policy": 1,
+            "ram_policy": 0,
+            "complete_ram_page_readback_verified": true
+          }
+        },
+        {
+          "choice": "luts",
+          "sha256": "fa17315ef8527dfad4bd72444caac786fe0a2e96d85e4802e26c68995989597d",
+          "prepared_restore_sha256": "21ec8efba8cc5f25d703d77855da959f59de980d23ff04e4ee3d70053b17059e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": false,
+            "already_enabled": true,
+            "rom_policy": 0
+          }
+        },
+        {
+          "choice": "restore",
+          "sha256": "21ec8efba8cc5f25d703d77855da959f59de980d23ff04e4ee3d70053b17059e",
+          "prepared_restore_sha256": "21ec8efba8cc5f25d703d77855da959f59de980d23ff04e4ee3d70053b17059e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": false,
+            "already_enabled": true,
+            "rom_policy": 0
+          }
+        }
+      ]
+    },
+    {
+      "profile": "gm5-official-0110",
+      "workflows": [
+        {
+          "choice": "stable",
+          "sha256": "a36ea2847198ac99e58449e3b64604062e106541f0b38aac9f96987a9655b196",
+          "prepared_restore_sha256": "9edf5b03aa4bb2b02ad25ae4702a65dceba94770d7f8b424783775050d9fd15e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": true,
+            "already_enabled": false,
+            "rom_policy": 1,
+            "ram_policy": 0,
+            "complete_ram_page_readback_verified": true
+          }
+        },
+        {
+          "choice": "luts",
+          "sha256": "fa17315ef8527dfad4bd72444caac786fe0a2e96d85e4802e26c68995989597d",
+          "prepared_restore_sha256": "9edf5b03aa4bb2b02ad25ae4702a65dceba94770d7f8b424783775050d9fd15e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": false,
+            "already_enabled": true,
+            "rom_policy": 0
+          }
+        },
+        {
+          "choice": "restore",
+          "sha256": "9edf5b03aa4bb2b02ad25ae4702a65dceba94770d7f8b424783775050d9fd15e",
+          "prepared_restore_sha256": "9edf5b03aa4bb2b02ad25ae4702a65dceba94770d7f8b424783775050d9fd15e",
+          "preparation_read_only": true,
+          "explicit_enable": {
+            "wrote_ram": false,
+            "already_enabled": true,
+            "rom_policy": 0
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Only the two exact reviewed GM5 internal builds and compatible patches are supported.",
+    "Owner testing does not establish all recording formats, long sessions or recovery after an interrupted flash.",
+    "The updater relies on the normal camera updater; independent recovery remains unproven."
+  ],
+  "full_firmware_or_camera_keys_included": false
+}

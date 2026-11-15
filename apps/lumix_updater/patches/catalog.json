@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "model": "DMC-GM5",
+  "profile": "gm5-factory-0111",
+  "supported_camera_profiles": [
+    "gm5-official-0110",
+    "gm5-factory-0111"
+  ],
+  "restore_components_by_profile": {
+    "gm5-official-0110": {
+      "program": {
+        "source_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+        "target_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+        "write_bytes": 8388608,
+        "file": null,
+        "patch_sha256": null
+      },
+      "guires": {
+        "source_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+        "target_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+        "write_bytes": 12582912,
+        "file": null,
+        "patch_sha256": null
+      },
+      "program2": {
+        "source_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+        "target_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+        "write_bytes": 3538944,
+        "file": null,
+        "patch_sha256": null
+      }
+    }
+  },
+  "time_utc": "2026-11-15T18:13:40.944223+00:00",
+  "choices": {
+    "stable": {
+      "label": "Language unlock + update access",
+      "description": "Existing languages on Japanese GM5 cameras, plus permanent custom-update access.",
+      "limitations": [
+        "Only the reviewed DMC-GM5 official 0110 and factory 0111 builds of firmware 1.1, and compatible research patches, are supported.",
+        "Camera settings and body calibration are excluded. This is not an independent recovery loader.",
+        "Unlocks existing language choices; regional video standards and camera identity stay unchanged.",
+        "The camera will also accept unsigned custom updates. Saved experimental LUT cells are cleared."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+          "target_sha256": "5364cde77a78a40fce270bf1c24642a9fbd2e6d7d3501bb38d8b806548a48d67",
+          "write_bytes": 8388608,
+          "file": "stable-program.lxdp",
+          "patch_sha256": "513b86e93cf9ad92754df80ef42d8c49130a79783e2fa80a8095c68b04775c1b"
+        },
+        "guires": {
+          "source_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "target_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "write_bytes": 12582912,
+          "file": null,
+          "patch_sha256": null
+        },
+        "program2": {
+          "source_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+          "target_sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+          "write_bytes": 3538944,
+          "file": "stable-program2.lxdp",
+          "patch_sha256": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d"
+        }
+      }
+    },
+    "luts": {
+      "label": "Experimental LUTs",
+      "description": "Ten imported LUT cells, opacity and internal storage; includes language unlock and update access.",
+      "limitations": [
+        "Only the reviewed DMC-GM5 official 0110 and factory 0111 builds of firmware 1.1, and compatible research patches, are supported.",
+        "Camera settings and body calibration are excluded. This is not an independent recovery loader.",
+        "Experimental build fa17315e: the owner confirmed LUT video recording and Library/Playback operation afterward on this revision.",
+        "Recording-format and long-session coverage is incomplete. Previous builds lost LUTs during recording and sometimes froze Playback.",
+        "The processing table is reduced to 9x9x9 with 6-bit values. Import supports bounded VLT/CUBE files, not every LUT.",
+        "Existing saved LUT banks are preserved by this update."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+          "target_sha256": "e7943266812081eb13b8672eac47c7287d132cacfdeb671b853986504b8f2528",
+          "write_bytes": 7995392,
+          "file": "luts-program.lxdp",
+          "patch_sha256": "7b1eeeeb22d5ac79554ade8ac6da9d5193f78f1190a563c72f16f3c3011dc6bd"
+        },
+        "guires": {
+          "source_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "target_sha256": "a80c013855c7806c5c8aa9cd53aead7c06edfbb607563baba73cdc5b47d639a8",
+          "write_bytes": 12582912,
+          "file": "luts-guires.lxdp",
+          "patch_sha256": "cc66f9de3424884b1b27d29dff7552ec33350d1203ae9b8262a18785100adccf"
+        },
+        "program2": {
+          "source_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+          "target_sha256": "54c437bb37f856e8aaef6478f9ef54cc51618769c3fb19b2b72c478efc24061b",
+          "write_bytes": 3538944,
+          "file": "luts-program2.lxdp",
+          "patch_sha256": "6a225b86d6676546fe988de78c55e8c846a434eb861127d23e844ed2b7baa3cd"
+        }
+      }
+    },
+    "restore": {
+      "label": "Stock program restore",
+      "description": "Original GM5 program components matching the detected build, without the research patches.",
+      "limitations": [
+        "Only the reviewed DMC-GM5 official 0110 and factory 0111 builds of firmware 1.1, and compatible research patches, are supported.",
+        "Camera settings and body calibration are excluded. This is not an independent recovery loader.",
+        "Restores the reviewed original program, menu graphics and processor component for the detected camera profile.",
+        "The language lock and signed-update policy return. Saved experimental LUT cells are cleared."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+          "target_sha256": "5316a6ff14152126a88ce02125e85d713e710c8dd1159dee2ab890e4ff345966",
+          "write_bytes": 8388608,
+          "file": "restore-program.lxdp",
+          "patch_sha256": "67d4c1a96a3d0a844172eaf2c75ce26391cf9f80842e412e48cddf3ea2b32165"
+        },
+        "guires": {
+          "source_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "target_sha256": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
+          "write_bytes": 12582912,
+          "file": null,
+          "patch_sha256": null
+        },
+        "program2": {
+          "source_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5",
+          "target_sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7",
+          "write_bytes": 3538944,
+          "file": "restore-program2.lxdp",
+          "patch_sha256": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d"
+        }
+      }
+    }
+  },
+  "lut_build_sha256": "ebd20505b8aaeac2a11d8f0e5aff17a2f1d5bf9970c4d574d5e1fbff7b75249e",
+  "lut_ready_receipt_sha256": "264eeefad8f4d624b2ca48c154294cc563139a69f0ab2043642c7ca6abdb08ff",
+  "firmware_binaries_included": false,
+  "encryption_key_included": false
+}

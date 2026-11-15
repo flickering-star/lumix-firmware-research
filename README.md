@@ -13,7 +13,27 @@ requests are accepted.** Reproduce or extend the work in your own fork; see
 The repository contains source, patch recipes, documentation and summarized
 evidence. Obtain firmware and device backups yourself. Firmware binaries,
 patched update files, raw USB/memory captures, compiled tools and private
-connection files are excluded.
+connection files are excluded from Git history.
+
+## GM5 desktop updater
+
+The owner-tested **v0.1.1** updater prepares language/update-access patches,
+experimental LUTs and a matching stock-program restore. It supports the exact
+reviewed GM5 1.1 internal builds `0110` and `0111`; other builds/models are
+refused. The owner reports successful updates using both desktop versions on
+Japanese and global GM5 bodies.
+
+- [Download for macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-darwin-arm64.zip)
+- [Download for Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Instructions, build source and limitations](apps/README.md)
+- [Release notes and checksums](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.1.1)
+
+The apps contain patch deltas and recover the required key from the connected
+service camera. They download or accept only the hash-checked official input.
+The camera performs installation from SD after manual confirmation. Windows
+requires WinUSB on the exact GM5 service interface; no driver is installed by
+the app. Compiled desktop apps are distributed as release assets, while full
+Panasonic firmware, backups and keys remain excluded.
 
 | Model / area | Demonstrated result | Boundary |
 | --- | --- | --- |
