@@ -4,10 +4,17 @@
 cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated; a bad update can leave a camera unusable.**
 
-Desktop application for preparing an SD firmware update. The published 0.1.1
-release supports the reviewed GM5 profiles described below.
+Desktop application for preparing an SD firmware update. The previous0.2.4
+apps are published with a GM1 opacity performance warning. The new0.2.5 apps
+remain local candidates until the owner tests them.
 
-## Development version 0.2.4
+## Development version 0.2.5
+
+GM1 LUTs now always apply at100% with no adjustment rows. All opacity-only
+hooks, settings handlers, numeric/scale drawing and blending are removed.
+The owner found the no-opacity firmware usable, though slightly slower than
+native styles. The new build also prevents button/touch navigation into an
+invisible adjustment row. GM5 keeps its existing opacity control.
 
 **Enable this update** remains available after each attempt. If the camera
 sleeps, restarts or disconnects before installation, reconnect service USB and
@@ -32,14 +39,17 @@ physical long-recording/file-segmentation testing is outstanding.
 GM1's language patch exposes its existing 16-language list. Both LUT targets
 restore their internal saved cells at startup without scanning the SD card.
 Both LUT updates stop before their saved-bank sectors, preserving imported
-cells and opacity. GM1 uses the native pool10 backing and the corrected
+cells and GM5 opacity. GM1 ignores the former saved opacity bytes and applies
+full-strength tables. GM1 uses the native pool10 backing and the corrected
 dispatcher/producer stack frames. GM5 retains its owner-tested adjacent-manager
 build. Neither model changes settings/calibration components or installs an
 independent recovery loader. The unfinished 65:24 work is excluded.
 
-These desktop packages are local test candidates, separate from the published
-0.1.1 release linked below. The owner reports the latest GM1 LUT firmware
-working, with transient colored vertical lines after Import/No LUT remaining
+The0.2.5 desktop packages remain local test candidates. The published0.2.4
+apps retain the GM1 opacity path with severe reported menu/control delays;
+see its performance warning before using that older release. The owner found
+the new no-opacity GM1 firmware usable, with slightly lower performance than
+native styles. Transient colored vertical lines after Import/No LUT remain
 an unresolved limitation. The GM5 LUT target was tested with video recording
 and subsequent Library/Playback operation. Long-session and complete recording
 format coverage remain incomplete. Use `GM1__V11.bin` for GM1 or `GM5__V11.bin`
@@ -55,7 +65,15 @@ Windows packages have not yet been launched on Windows. The original 0.1.1 owner
 test does not validate new code. Nothing in this development section is a new
 public GitHub release.
 
-## Download version 0.1.1
+## Previous release0.2.4 — GM1 performance warning
+
+- [Mac and Windows archives, checksums and warning](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4)
+
+This previous release includes GM1 Opacity. The owner reports severe delays
+with that path. The upcoming0.2.5 removes opacity for GM1 and will be released
+only after owner testing. GM5 retains opacity and its tested firmware target.
+
+## Original GM5-only version 0.1.1
 
 - [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-darwin-arm64.zip)
 - [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-win32-x86_64.zip)

@@ -6,11 +6,24 @@ update can leave the camera unusable. Stock restore requires a working
 ordinary updater and is not independent recovery.**
 
 The reviewed DMC-GM1 firmware 1.1/internal 0110 port adds ten saved LUT cells,
-Setup → LUT Library, native Photo Style/Quick Menu selection, row touch and
-Opacity 0–10. It includes language unlock and persistent custom-update access.
-The owner reports the latest test working except for transient colored vertical
-lines after Import/No LUT. That issue remains unresolved. Complete recording
-format, long-session and all-body compatibility coverage is not established.
+Setup → LUT Library, native Photo Style/Quick Menu selection and row touch.
+LUTs now always apply at100%; their Photo Style tabs have no adjustment rows.
+It includes language unlock and persistent custom-update access. The owner
+reports usable performance without opacity, slightly slower than native styles.
+Brief colored vertical lines after Import/No LUT remain unresolved. Complete
+recording-format, long-session and all-body compatibility coverage is not established.
+
+The previous0.2.4 apps include the Opacity slider and blending path, with severe
+reported GM1 menu/control and power-off delays. Their release notes contain
+that warning. Development0.2.5 removes the entire opacity path: settings
+getters/setters, editor transactions, numeric/scale rendering, assets, exclusive
+guards and per-frame strength/blending work. At an attempted LUT adjustment
+entry it calls the original native
+row-selectability predicate, using the same row flags as the hidden native
+fifth row. Native profiles keep their original entry path, including kind2
+internal enums. No polling or new preview/capture checks are added. The
+processing path is unchanged from the owner's no-opacity camera test. The
+new desktop apps await owner testing before release.
 
 Use a FAT32 card and short ASCII 8.3 filenames in its root. The importer accepts
 compatible VLT/CUBE files and resamples them to a 9×9×9 hardware table with 6-bit
@@ -18,15 +31,16 @@ values. The exFAT importer is withdrawn. There is no separate EIR style or
 65:24 feature in this package. The native image processor consumes the table;
 this is not a software RGB pixel filter.
 
-Saved LUTs and opacity restore from internal banks at startup. No LUT files
-are scanned from SD at boot or on card insertion. The GM1 programming prefix
+Saved LUTs restore from internal banks at startup; old opacity bytes are ignored.
+No LUT files are scanned from SD at boot or on card insertion. The GM1 programming prefix
 ends at 0x880000, before the two saved-bank sectors. Updates made by the app
 preserve those sectors. Settings, calibration and ARM components are excluded.
 
 ## Memory and queue corrections
 
-The GM1 port reuses GM5 algorithms and native list/slider behavior with explicit
-GM1 addresses and calling conventions. Retained tables, controller and frame
+The GM1 port reuses GM5 conversion, storage and native list behavior with explicit
+GM1 addresses and calling conventions. GM5 retains its existing opacity control;
+GM1 uses full-strength tables. Retained tables, controller and frame
 copies use an actual 128 KiB child of native pool10, whose 13000000..13200000
 arena is separate from native movie pool1 at 13200000..18600000. Original
 allocator, SD worker, reset and video-buffer sizing instructions are unchanged.

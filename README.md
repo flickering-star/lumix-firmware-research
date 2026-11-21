@@ -15,31 +15,33 @@ evidence. Obtain firmware and device backups yourself. Firmware binaries,
 patched update files, raw USB/memory captures, compiled tools and private
 connection files are excluded from Git history.
 
-## GM5 desktop updater
+## GM1/GM5 desktop updater
 
-The owner-tested **v0.1.1** updater prepares language/update-access patches,
-experimental LUTs and a matching stock-program restore. It supports the exact
-reviewed GM5 1.1 internal builds `0110` and `0111`; other builds/models are
-refused. The owner reports successful updates using both desktop versions on
-Japanese and global GM5 bodies.
+The previous **v0.2.4** apps support the reviewed GM1 firmware1.1/internal0110
+and GM5 internal0110/0111 profiles. **Their GM1 LUT patch includes Opacity and
+has severe reported menu/control and power-off delays.** Read the performance
+warning before using this older release. GM5 retains its tested LUT target.
 
-- [Download for macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-darwin-arm64.zip)
-- [Download for Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.1.1/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Previous apps, checksums and GM1 performance warning](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4)
 - [Instructions, build source and limitations](apps/README.md)
-- [Release notes and checksums](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.1.1)
+
+Development **v0.2.5** removes the entire GM1 opacity path and blocks navigation
+into invisible LUT adjustment rows. The owner found the no-opacity firmware
+usable, though slightly slower than native profiles. New Mac/Windows apps stay
+local until owner testing; no0.2.5 release assets are published yet. GM1's brief
+colored lines after Import/No LUT remain unresolved. See
+[GM1 LUT instructions and limitations](docs/gm1-luts.md).
 
 The apps contain patch deltas and recover the required key from the connected
 service camera. They download or accept only the hash-checked official input.
-The camera performs installation from SD after manual confirmation. Windows
-requires WinUSB on the exact GM5 service interface; no driver is installed by
-the app. Compiled desktop apps are distributed as release assets, while full
-Panasonic firmware, backups and keys remain excluded.
+The camera installs from SD after manual confirmation. Windows requires WinUSB
+on the exact model's service interface; the app does not install a driver.
+Before returning to stock firmware, reset settings while the patch is running.
+A working ordinary updater is required; stock restore is not independent recovery.
+Compiled apps are release assets; full firmware, captures and keys stay outside Git.
 
-The current development source also supports **GM1 firmware 1.1/internal 0110**
-and the latest tested GM1 LUT port. Updated Mac/Windows binaries will be
-published after owner testing. The existing download links above remain the
-published 0.1.1 GM5 release. GM1 has a known transient colored-line issue after
-LUT import/clearing; see [GM1 LUT instructions and limitations](docs/gm1-luts.md).
+The original [v0.1.1 GM5-only release](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.1.1)
+was owner-tested on Japanese and global GM5 bodies with both desktop versions.
 
 | Model / area | Demonstrated result | Boundary |
 | --- | --- | --- |

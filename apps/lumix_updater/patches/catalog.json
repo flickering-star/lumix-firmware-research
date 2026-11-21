@@ -5,7 +5,7 @@
     "gm5-official-0110",
     "gm5-factory-0111"
   ],
-  "time_utc": "2026-11-21T13:08:42.159840+00:00",
+  "time_utc": "2026-11-21T23:12:56.197122+00:00",
   "choices": {
     "stable": {
       "label": "Language unlock + update access",
@@ -191,6 +191,6 @@
     "DMC-GM1": "gm1"
   },
   "model_catalog_sha256": {
-    "DMC-GM1": "198b8952a9522993d482dab1b8d0ccc3a1e443feb4d6613558287ae57488734d"
+    "DMC-GM1": "399cdac27bbc244ae703b359c06e7c778732c6b211e5368d7b06182050922e41"
   }
 }

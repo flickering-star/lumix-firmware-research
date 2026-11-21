@@ -5,14 +5,14 @@
  * clear(A0CTRL,D0cell) releases that cell. Both force native Standard before
  * mutation when a LUT style is selected. No file/boot/producer entry hook.
  * begin(A0CTRL,D0preview0/capture1,D1ring index)->D0status,D1slot/0.
- * The source gate spans Claim, source copy/Opacity, and Publish. Queued jobs
+ * The source gate spans Claim, source copy, and Publish. Queued jobs
  * own independent tables; callers must Finish only after the last consumer.
  * Cell64: LIL1[0..31],32CPU view,36generation,40..59reserved,60ready1.
  */
         .text
         .am33_2
-        .global lut_gm1_cell_adopt,lut_gm1_cell_clear,lut_gm1_request_begin
-        .global lut_gm1_cell_requests_end
+        .global lut_gm1_packed_cell_adopt,lut_gm1_packed_cell_clear,lut_gm1_packed_request_begin
+        .global lut_gm1_packed_cell_requests_end
         .extern lut_gm1_control_get,lut_image_view,lut_image_lease_close,lut_ram_span
         .extern lut_gm1_record_check_table,lut_gm1_job_capture
         .extern lut_gm1_request_claim,lut_gm1_request_publish,lut_gm1_request_finish
@@ -167,11 +167,7 @@
         clr d3
 .Lsource_job:
         mov d3,d0
-        asl 5,d0
-        mov d3,d1
-        lsr 1,d1
-        asl 6,d1
-        add d1,d0
+        asl 7,d0
         mov (4,sp),a0
         add 96,a0
         add d0,a0
@@ -187,7 +183,7 @@
         cmp 0,d0
         bne .Lsource_bad
         inc d3
-        cmp 26,d3
+        cmp 13,d3
         bcs .Lsource_job
         clr d3
 .Lsource_cell:
@@ -231,7 +227,7 @@
 .Lstandard_return:
         ret [d2,d3,a2,a3],20
 
-lut_gm1_cell_adopt:
+lut_gm1_packed_cell_adopt:
         add -28,sp
         mov a0,a3
         mov d0,(4,sp)
@@ -343,7 +339,7 @@ lut_gm1_cell_adopt:
         mov -1,d0
         bra .Ladopt_return
 
-lut_gm1_cell_clear:
+lut_gm1_packed_cell_clear:
         add -16,sp
         mov a0,a3
         mov d0,(4,sp)
@@ -397,7 +393,7 @@ lut_gm1_cell_clear:
         mov -1,d0
         bra .Lclear_return
 
-lut_gm1_request_begin:
+lut_gm1_packed_request_begin:
         add -24,sp
         mov a0,a3
         mov d0,(4,sp)
@@ -432,7 +428,9 @@ lut_gm1_request_begin:
         beq .Lbegin_invalid
         mov a2,a0
         mov (16,sp),d0
-        mov (116,a2),d1
+        clr d1
+        nop
+        nop
         mov (100,a2),d3
         call lut_gm1_job_capture,[d2,d3,a2,a3],20
         cmp 0,d0
@@ -472,4 +470,4 @@ lut_gm1_request_begin:
         mov (20,sp),d0
         mov a2,d1
         ret [d2,d3,a2,a3],44
-lut_gm1_cell_requests_end:
+lut_gm1_packed_cell_requests_end:

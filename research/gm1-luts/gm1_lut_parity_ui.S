@@ -1,4 +1,4 @@
-/* GM1 adapters for the final GM5 table/resource and one-row UI contracts.
+/* GM1 adapters for the final GM5 table/resource and title-only UI contracts.
  * No boot/card/filesystem/allocator or flash-writer hooks. Original native
  * CALL frames and leaf resource ABI remain model-specific.
  */
@@ -16,121 +16,19 @@
         .extern native_parameter_mode,native_style_mode,native_row_state
         .extern native_parameters_continue,native_widgets_continue
         .extern selected_metadata_continue,effective_metadata_continue
-        .extern lut_gm1_opacity_read,lut_library_texts
+        .extern lut_library_texts
         .extern native_values_continue
         .equ OWNER,0x708f47a4
         .equ SELECTED,0x70101252
 
-/* Match the loaded normal UI style without entering an allocator/lock. */
-.Lloaded:
-        movbu (SELECTED),d0
-        call lut_gm1_opacity_read,[d2,d3,a2,a3],20
-        cmp -1,d0
-        beq .Lnot_loaded
-        mov (0x700fcec8),d0
-        cmp 2,d0
-        beq .Lnot_loaded
-        mov 1,d0
-        ret [d2,d3,a2,a3],20
-.Lnot_loaded:
-        clr d0
-        ret [d2,d3,a2,a3],20
-
-/* Preserve original inputs for the stock branch. For LUTs, final GM5 first
- * runs Standard capability work, then hides every extra row and widget.
- * Generic native navigation therefore visits the same visible rows it draws.
- */
+.org 36,0xff
 lut_gm1_parity_parameters:
-        movm [other],(sp)
-        add -8,sp
-        mov psw,d0
-        mov d0,(4,sp)
-        call .Lloaded,[d2,d3,a2,a3],20
-        cmp 0,d0
-        beq .Lparameters_stock
-        mov (4,sp),d0
-        mov d0,psw
-        add 8,sp
-        movm (sp),[other]
-        clr d1
-        call .Loriginal_parameters,[d2,a2,a3],16
-        mov (OWNER),a2
-        movbu (162,a2),d2
-        add 160,a2
-        .irp ident,0,1,2,3,4
-        mov a2,a0
-        mov \ident,d0
-        mov 1,d1
-        call native_row_state,[d2,d3],8
-        .endr
-        mov a2,a0
-        clr d0
-        mov d2,d1
-        call native_row_state,[d2,d3],8
-        ret [d2,a2,a3],16
-.Lparameters_stock:
-        mov (4,sp),d0
-        mov d0,psw
-        add 8,sp
-        movm (sp),[other]
-.Loriginal_parameters:
-        mov d1,d2
-        call native_parameter_mode,[d2],8
-        jmp native_parameters_continue
-
+        jmp lut_gm1_fixed_parameters
+.org 178,0xff
 lut_gm1_parity_widgets:
-        movm [other],(sp)
-        add -8,sp
-        mov psw,d0
-        mov d0,(4,sp)
-        call .Lloaded,[d2,d3,a2,a3],20
-        cmp 0,d0
-        beq .Lwidgets_stock
-        mov (4,sp),d0
-        mov d0,psw
-        add 8,sp
-        movm (sp),[other]
-        clr d0
-        call .Loriginal_widgets,[d2,a2,a3],16
-        mov (OWNER),a0
-        movbu (162,a0),d2
-        mov 0x708f8810,a2
-        mov 0x708f8878,a3
-        .irp ident,0x1604,0x1605,0x1606,0x1607,0x160f,0x1610,0x1609
-        mov a2,a0
-        mov \ident,d0
-        mov 1,d1
-        call native_row_state,[d2,d3],8
-        mov a3,a0
-        mov \ident,d0
-        mov 1,d1
-        call native_row_state,[d2,d3],8
-        .endr
-        movbu (0x708f475a),d0
-        cmp 4,d0
-        beq .Lshow_opacity
-        mov 1,d2
-.Lshow_opacity:
-        mov a2,a0
-        mov 0x1604,d0
-        mov d2,d1
-        call native_row_state,[d2,d3],8
-        mov a3,a0
-        mov 0x1604,d0
-        mov d2,d1
-        call native_row_state,[d2,d3],8
-        ret [d2,a2,a3],16
-.Lwidgets_stock:
-        mov (4,sp),d0
-        mov d0,psw
-        add 8,sp
-        movm (sp),[other]
-.Loriginal_widgets:
-        mov d0,d2
-        call native_style_mode,[d2],8
-        jmp native_widgets_continue
-
+        jmp lut_gm1_fixed_widgets
 /* Two appended vector images; all earlier variant paths are untouched. */
+.org 479,0xff
 lut_gm1_parity_variant:
         mov d0,d2
         exthu d2
@@ -142,7 +40,7 @@ lut_gm1_parity_variant:
         cmp 0,d1
         bne .Lvariant_zero
         sub 7120,d2
-        add 7273,d2
+        add 7261,d2
         mov d2,d0
         retf [d2],4
 .Lvariant_zero:
@@ -151,6 +49,7 @@ lut_gm1_parity_variant:
         retf [d2],4
 .Lvariant_previous:
         jmp previous_variant
+.org 522,0xff
 lut_gm1_parity_class:
         exthu d0
         cmp 7120,d0
@@ -164,6 +63,7 @@ lut_gm1_parity_class:
         jmp previous_class
 
 /* The same native message row means waiting until phase6 marks an error. */
+.org 544,0xff
 lut_gm1_parity_text:
         mov d0,d1
         exthu d1
@@ -180,52 +80,14 @@ lut_gm1_parity_text:
 /* Like final GM5, a loaded LUT passed to the parameter getter is a LUT even
  * while another style is active. Keep GM1 kind2's internal enums native. */
 .global lut_gm1_parity_values
+.org 576,0xff
 lut_gm1_parity_values:
-        mov d0,d3
-        mov a0,a2
-        mov d1,d2
-        extbu d2
-        cmp 7,d2
-        bcs .Lvalues_native
-        cmp 16,d2
-        bhi .Lvalues_native
-        mov (0x700fcec8),d0
-        cmp 2,d0
-        beq .Lvalues_native
-        add -16,sp
-        mov a1,(4,sp)
-        mov mdr,d0
-        mov d0,(8,sp)
-        mov d1,(12,sp)
-        mov d2,d0
-        call lut_gm1_opacity_read,[d2,d3,a2,a3],20
-        mov (4,sp),a1
-        mov (8,sp),d1
-        mov d1,mdr
-        mov (12,sp),d1
-        add 16,sp
-        cmp -1,d0
-        beq .Lvalues_standard
-        mov 5,d0
-        .irp offset,0,1,2,3
-        movbu d0,(\offset,a2)
-        .endr
-        clr d0
-        movbu d0,(4,a2)
-        mov 5,d0
-        ret [d2,d3,a2],16
-.Lvalues_standard:
-        clr d2
-.Lvalues_native:
-        mov a2,a0
-        mov d3,d0
-        cmp 19,d2
-        jmp native_values_continue
-
+        jmp lut_gm1_fixed_values
 /* Final GM5 normalizes UI-only LUT enums before original processing/encoder
  * metadata. GM1's offsets differ (46 and146). Keep override kind2 native.
  * PSW and other volatile inputs survive these inline relays.
  */
+.org 665,0xff
 lut_gm1_parity_selected_metadata:
         add -12,sp
         mov d1,(4,sp)
@@ -248,6 +110,7 @@ lut_gm1_parity_selected_metadata:
         mov 31,a2
         movbu d0,(30,a0)
         jmp selected_metadata_continue
+.org 715,0xff
 lut_gm1_parity_effective_metadata:
         add -8,sp
         mov psw,d1
@@ -268,4 +131,138 @@ lut_gm1_parity_effective_metadata:
         mov -4,d1
         movbu d0,(37,a0)
         jmp effective_metadata_continue
+.org 762,0xff
 lut_gm1_parity_code_end:
+
+.balign 4
+.global lut_gm1_parity_names
+.org 764,0xff
+lut_gm1_parity_names:
+.hword 0,907
+.hword 1,908
+.hword 2,909
+.hword 3,910
+.hword 4,911
+.hword 5,912
+.hword 6,913
+.hword 7,7040
+.hword 8,7041
+.hword 9,7042
+.hword 10,7043
+.hword 11,7044
+.hword 12,7045
+.hword 13,7046
+.hword 14,7047
+.hword 15,7048
+.hword 16,7049
+.hword 65535,0
+.balign 4
+.global lut_gm1_parity_icons
+.org 836,0xff
+lut_gm1_parity_icons:
+.hword 0,2250
+.hword 1,2252
+.hword 2,5145
+.hword 3,5144
+.hword 4,2251
+.hword 5,5146
+.hword 6,2249
+.hword 7,7120
+.hword 8,7120
+.hword 9,7120
+.hword 10,7120
+.hword 11,7120
+.hword 12,7120
+.hword 13,7120
+.hword 14,7120
+.hword 15,7120
+.hword 16,7120
+.hword 65535,0
+.balign 4
+.global lut_gm1_parity_small
+.org 908,0xff
+lut_gm1_parity_small:
+.hword 0,2254
+.hword 1,2256
+.hword 2,5149
+.hword 3,5148
+.hword 4,2255
+.hword 5,5150
+.hword 6,2253
+.hword 7,7121
+.hword 8,7121
+.hword 9,7121
+.hword 10,7121
+.hword 11,7121
+.hword 12,7121
+.hword 13,7121
+.hword 14,7121
+.hword 15,7121
+.hword 16,7121
+.hword 65535,0
+.balign 4
+.global lut_gm1_parity_quick
+.org 980,0xff
+lut_gm1_parity_quick:
+.hword 0,2254
+.hword 1,2256
+.hword 2,5149
+.hword 3,5148
+.hword 4,2255
+.hword 5,5150
+.hword 6,2253
+.hword 7,7121
+.hword 8,7121
+.hword 9,7121
+.hword 10,7121
+.hword 11,7121
+.hword 12,7121
+.hword 13,7121
+.hword 14,7121
+.hword 15,7121
+.hword 16,7121
+.hword 65535,0
+.balign 4
+.global lut_gm1_parity_quick_status
+.org 1052,0xff
+lut_gm1_parity_quick_status:
+.hword 0,2254
+.hword 1,2256
+.hword 2,5149
+.hword 3,5148
+.hword 4,2255
+.hword 5,5150
+.hword 6,2253
+.hword 7,7121
+.hword 8,7121
+.hword 9,7121
+.hword 10,7121
+.hword 11,7121
+.hword 12,7121
+.hword 13,7121
+.hword 14,7121
+.hword 15,7121
+.hword 16,7121
+.hword 65535,0
+.balign 4
+.global lut_gm1_parity_quick_names
+.org 1124,0xff
+lut_gm1_parity_quick_names:
+.hword 0,907
+.hword 1,908
+.hword 2,909
+.hword 3,910
+.hword 4,911
+.hword 5,912
+.hword 6,913
+.hword 7,7040
+.hword 8,7041
+.hword 9,7042
+.hword 10,7043
+.hword 11,7044
+.hword 12,7045
+.hword 13,7046
+.hword 14,7047
+.hword 15,7048
+.hword 16,7049
+.hword 65535,0

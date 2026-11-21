@@ -1,0 +1,28 @@
+{
+  "released_tag": "updater-v0.2.4",
+  "source_commit": "a61824f69dfc9970d93d76a5ae3b480784ad0a33",
+  "url": "https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4",
+  "previous_apps_only": true,
+  "gm1_opacity_performance_warning_included": true,
+  "new_no_opacity_apps_published": false,
+  "assets": [
+    {
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "size": 17924089,
+      "digest": "sha256:04236e5d8a21a22d4ae950d61ecd81d0228a779910d9fd95254c43e94cbbf64b",
+      "download": "https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.4/Lumix-Firmware-Updater-darwin-arm64.zip"
+    },
+    {
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "size": 17034496,
+      "digest": "sha256:145dff9bccdd9d0f8ea1a7909d901a2592cd82096a4d2912b399ce108cfa5226",
+      "download": "https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.4/Lumix-Firmware-Updater-win32-x86_64.zip"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 212,
+      "digest": "sha256:4668a9e1f94150aa6d6fad5c3fa0f81bbc75a8fc6723cae77484020375bf8cb1",
+      "download": "https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.4/SHA256SUMS"
+    }
+  ]
+}

@@ -1,23 +1,23 @@
 /* GM1 explicit owned processing snapshots. All public entries CALL F0/20.
- * Caller owns96B metadata: table LIL1[0..31], scratch LIL1[32..63],
+ * Caller owns96B metadata: single frame LIL1[0..31], reserved zero[32..63],
  * +64GMJ1,+68phase1ready/2captured/3capture/4close/5apply/6retire,
- * +72cell,+76tick0..10,+80generation,+84key0,+88key1,+92request token.
+ * +72cell,+76reserved0,+80generation,+84key0,+88key1,+92request token.
  * open(A0fresh96B), close(A0job): serialized worker-only allocation APIs.
- * capture(A0job,A1live source lease,D0cell,D1tick,D2generation,D3token).
+ * capture(A0job,A1live source lease,D0cell,D1unused,D2generation,D3token).
  * apply(A0job,A1complete original Standard parent,D0token).
  * retire(A0job,D0token): caller invokes only after the final consumer.
  * Capture/Apply/Retire allocate nothing. No UI/registry/queue/boot hook.
- * Native retained children use2348B table/4568B scratch requests; these
- * select the existing adjacent pool. Source may close after Capture.
+ * One4568B child uses the same32prefix/4504body/32suffix as GM5.
+ * Body table+32/2284B, scratch+2316/2188B. Source may close after Capture.
  * CPU0 masked phase changes are short; no call/loop/copy runs masked.
  */
         .text
         .am33_2
-        .global lut_gm1_job_open,lut_gm1_job_close,lut_gm1_job_capture
-        .global lut_gm1_job_apply,lut_gm1_job_retire,lut_gm1_job_end
+        .global lut_gm1_packed_job_open,lut_gm1_packed_job_close,lut_gm1_packed_job_capture
+        .global lut_gm1_packed_job_apply,lut_gm1_packed_job_retire,lut_gm1_packed_job_end
         .extern lut_ram_span,lut_image_lease_open,lut_image_lease_close,lut_image_view
         .extern lut_gm1_record_check_table,lut_gm1_record_apply
-        .extern lut_strength_generate,native_memcpy,native_context
+        .extern native_memcpy,native_context
         .equ JOB_MAGIC,0x314a4d47
 
 .Lrecord:
@@ -85,41 +85,28 @@
         mov (64,a3),d0
         cmp JOB_MAGIC,d0
         bne .Lview_bad
-        mov (24,a3),d0
-        cmp 2348,d0
-        bne .Lview_bad
-        mov (56,a3),d0
-        cmp 4568,d0
-        bne .Lview_bad
-        mov a3,a0
-        call lut_image_view,[d2,d3,a2,a3],20
-        cmp 0,d0
-        beq .Lview_bad
-        mov d0,(4,sp)
         mov a3,a0
         add 32,a0
-        call lut_image_view,[d2,d3,a2,a3],20
+        mov 8,d1
+.Lreserved_zero:
+        mov (a0),d0
+        cmp 0,d0
+        bne .Lview_bad
+        inc4 a0
+        sub 1,d1
+        bne .Lreserved_zero
+        mov a3,a0
+        call lut_gm1_packed_frame_view,[d2,d3,a2,a3],20
         cmp 0,d0
         beq .Lview_bad
+        add 32,d0
+        mov d0,(4,sp)
+        add 2284,d0
         mov d0,(8,sp)
         mov a3,a0
         mov (4,sp),a1
         mov 96,d0
         mov 2284,d1
-        call .Ldisjoint,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lview_bad
-        mov a3,a0
-        mov (8,sp),a1
-        mov 96,d0
-        mov 2188,d1
-        call .Ldisjoint,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lview_bad
-        mov (4,sp),a0
-        mov (8,sp),a1
-        mov 2284,d0
-        mov 2188,d1
         call .Ldisjoint,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lview_bad
@@ -131,7 +118,8 @@
         clr d1
         ret [d2,d3,a2,a3],32
 
-lut_gm1_job_open:
+.org 240,0xff
+lut_gm1_packed_job_open:
         mov a0,a3
         call .Lrecord,[d2,d3,a2,a3],20
         cmp 0,d0
@@ -149,16 +137,37 @@ lut_gm1_job_open:
         sub 1,d1
         bne .Lfresh
         mov a3,a0
-        mov 2348,d0
-        call lut_image_lease_open,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lopen_cleanup
-        mov a3,a0
-        add 32,a0
         mov 4568,d0
         call lut_image_lease_open,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lopen_cleanup
+        mov a3,a0
+        call lut_gm1_packed_child_view,[d2,d3,a2,a3],20
+        cmp 0,d0
+        beq .Lopen_view_bad
+        mov d0,a0
+        add -32,a0
+        mov 8,d1
+        mov 0x4c465047,d0
+.Lopen_prefix:
+        mov d0,(a0)
+        inc4 a0
+        sub 1,d1
+        bne .Lopen_prefix
+        mov 1126,d1
+        clr d0
+.Lopen_body:
+        mov d0,(a0)
+        inc4 a0
+        sub 1,d1
+        bne .Lopen_body
+        mov 8,d1
+        mov 0x4c465047,d0
+.Lopen_suffix:
+        mov d0,(a0)
+        inc4 a0
+        sub 1,d1
+        bne .Lopen_suffix
         mov 1,d0
         mov d0,(68,a3)
         mov JOB_MAGIC,d0
@@ -166,10 +175,12 @@ lut_gm1_job_open:
         clr d0
 .Lopen_return:
         ret [d2,d3,a2,a3],20
+.Lopen_view_bad:
+        mov -18,d0
 .Lopen_cleanup:
         mov d0,d2
         mov a3,a0
-        call lut_gm1_job_close,[d2,d3,a2,a3],20
+        call lut_gm1_packed_job_close,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lopen_return
         mov d2,d0
@@ -178,7 +189,8 @@ lut_gm1_job_open:
         mov -2,d0
         ret [d2,d3,a2,a3],20
 
-lut_gm1_job_close:
+.org 395,0xff
+lut_gm1_packed_job_close:
         mov a0,a3
         call .Lrecord,[d2,d3,a2,a3],20
         cmp 0,d0
@@ -205,17 +217,8 @@ lut_gm1_job_close:
 .Lclose_children:
         mov (a3),d0
         cmp 0,d0
-        beq .Lclose_scratch
-        mov a3,a0
-        call lut_image_lease_close,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lclose_return
-.Lclose_scratch:
-        mov (32,a3),d0
-        cmp 0,d0
         beq .Lclose_zero
         mov a3,a0
-        add 32,a0
         call lut_image_lease_close,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lclose_return
@@ -238,18 +241,16 @@ lut_gm1_job_close:
         mov -1,d0
         ret [d2,d3,a2,a3],20
 
-lut_gm1_job_capture:
+.org 499,0xff
+lut_gm1_packed_job_capture:
         add -48,sp
         mov a0,a3
         mov a1,(4,sp)
         mov d0,(8,sp)
-        mov d1,(12,sp)
         mov d2,(16,sp)
         mov d3,(20,sp)
         cmp 10,d0
         bcc .Lcapture_bad
-        cmp 10,d1
-        bhi .Lcapture_bad
         cmp 0,d3
         beq .Lcapture_bad
         call .Lviews,[d2,d3,a2,a3],20
@@ -260,9 +261,6 @@ lut_gm1_job_capture:
         mov (68,a3),d0
         cmp 1,d0
         bne .Lcapture_busy
-        mov (12,sp),d0
-        cmp 0,d0
-        beq .Lcapture_claim
         mov (16,sp),d0
         cmp 0,d0
         beq .Lcapture_bad
@@ -277,7 +275,7 @@ lut_gm1_job_capture:
         call lut_gm1_record_check_table,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lcapture_bad
-        /* The source lease itself must survive scratch/table writes too. */
+        /* The source lease must survive the table copy. */
         mov (4,sp),a0
         mov a3,a1
         mov 32,d0
@@ -292,24 +290,10 @@ lut_gm1_job_capture:
         call .Ldisjoint,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lcapture_bad
-        mov (4,sp),a0
-        mov (28,sp),a1
-        mov 32,d0
-        mov 2188,d1
-        call .Ldisjoint,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lcapture_bad
         mov (32,sp),a0
         mov (24,sp),a1
         mov 2284,d0
         mov 2284,d1
-        call .Ldisjoint,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lcapture_bad
-        mov (32,sp),a0
-        mov (28,sp),a1
-        mov 2284,d0
-        mov 2188,d1
         call .Ldisjoint,[d2,d3,a2,a3],20
         cmp 0,d0
         bne .Lcapture_bad
@@ -329,9 +313,6 @@ lut_gm1_job_capture:
         mov 3,d0
         mov d0,(68,a3)
         mov d3,psw
-        mov (12,sp),d0
-        cmp 0,d0
-        beq .Lpublish_bypass
         mov (24,sp),a0
         mov (32,sp),a1
         mov 2284,d0
@@ -350,44 +331,18 @@ lut_gm1_job_capture:
         add 12,a2
         sub 1,d2
         bne .Lrelocate
-        mov (12,sp),d0
-        cmp 10,d0
-        beq .Lpublish_table
-        mov 10,d1
-        mul d1,d0
-        mov (28,sp),a0
-        mov (24,sp),a1
-        add 96,a1
-        call lut_strength_generate,[d2,d3,a2,a3],20
-        cmp 0,d0
-        bne .Lcapture_abort
-        mov (24,sp),a0
-        add 96,a0
-        mov (28,sp),a1
-        mov 2188,d0
-        call native_memcpy,[a2,a3],8
 .Lpublish_table:
         mov (16,sp),d0
         mov d0,(80,a3)
         mov d0,(88,a3)
-        mov (12,sp),d0
-        mov 10,d1
-        mul d1,d0
-        asl 16,d0
-        or 0x4c000000,d0
+        mov 0x4c640000,d0
         mov (8,sp),d1
         or d1,d0
         mov d0,(84,a3)
-        bra .Lpublish_common
-.Lpublish_bypass:
-        clr d0
-        mov d0,(80,a3)
-        mov d0,(84,a3)
-        mov d0,(88,a3)
 .Lpublish_common:
         mov (8,sp),d0
         mov d0,(72,a3)
-        mov (12,sp),d0
+        clr d0
         mov d0,(76,a3)
         mov (20,sp),d1
         mov d1,(92,a3)
@@ -395,9 +350,6 @@ lut_gm1_job_capture:
         mov d0,(68,a3)
         clr d0
         ret [d2,d3,a2,a3],68
-.Lcapture_abort:
-        mov 1,d0
-        mov d0,(68,a3)
 .Lcapture_bad:
         mov -1,d0
         clr d1
@@ -409,7 +361,8 @@ lut_gm1_job_capture:
         clr d1
         ret [d2,d3,a2,a3],68
 
-lut_gm1_job_apply:
+.org 960,0xff
+lut_gm1_packed_job_apply:
         add -16,sp
         mov a0,a3
         mov a1,a2
@@ -427,7 +380,14 @@ lut_gm1_job_apply:
         bhi .Lapply_bad
         movbu (2728,a2),d0
         cmp 0,d0
+        beq .Lfixed_parent_mode
+        cmp 5,d0
+        beq .Lfixed_parent_mode
+        cmp 7,d0
+        beq .Lfixed_parent_mode
+        cmp 15,d0
         bne .Lapply_bad
+.Lfixed_parent_mode:
         mov (2696,a2),d0
         cmp 1,d0
         bhi .Lapply_bad
@@ -436,7 +396,10 @@ lut_gm1_job_apply:
         bne .Lapply_bad
         movhu (2700,a2),d0
         cmp 128,d0
+        beq .Lfixed_parent_flags
+        cmp 131,d0
         bne .Lapply_bad
+.Lfixed_parent_flags:
         mov a3,a0
         mov a2,a1
         mov 96,d0
@@ -447,15 +410,7 @@ lut_gm1_job_apply:
         mov (72,a3),d2
         cmp 10,d2
         bcc .Lapply_bad
-        mov (76,a3),d0
-        cmp 10,d0
-        bhi .Lapply_bad
-        cmp 0,d0
-        beq .Lapply_zero_key
-        mov 10,d1
-        mul d1,d0
-        asl 16,d0
-        or 0x4c000000,d0
+        mov 0x4c640000,d0
         or d2,d0
         mov (84,a3),d1
         cmp d1,d0
@@ -465,15 +420,6 @@ lut_gm1_job_apply:
         beq .Lapply_bad
         mov (88,a3),d1
         cmp d1,d0
-        bne .Lapply_bad
-        bra .Lapply_claim
-.Lapply_zero_key:
-        mov (80,a3),d0
-        mov (84,a3),d1
-        or d1,d0
-        mov (88,a3),d1
-        or d1,d0
-        cmp 0,d0
         bne .Lapply_bad
 .Lapply_claim:
         mov psw,d3
@@ -490,9 +436,6 @@ lut_gm1_job_apply:
         mov 5,d0
         mov d0,(68,a3)
         mov d3,psw
-        mov (76,a3),d0
-        cmp 0,d0
-        beq .Lapply_done
         mov a2,a0
         mov a3,a1
         mov (84,a3),d0
@@ -510,7 +453,8 @@ lut_gm1_job_apply:
         mov -1,d0
         ret [d2,d3,a2,a3],36
 
-lut_gm1_job_retire:
+.org 1228,0xff
+lut_gm1_packed_job_retire:
         mov a0,a3
         mov d0,d2
         call .Lviews,[d2,d3,a2,a3],20
@@ -544,4 +488,85 @@ lut_gm1_job_retire:
 .Lretire_bad:
         mov -1,d0
         ret [d2,d3,a2,a3],20
-lut_gm1_job_end:
+.org 1309,0xff
+lut_gm1_packed_job_end:
+
+
+        .global lut_gm1_packed_child_view,lut_gm1_packed_frame_view
+        .global lut_gm1_packed_table_view,lut_gm1_packed_module_end
+.org 1309,0xff
+lut_gm1_packed_child_view:
+        mov a0,a3
+        call lut_image_view,[d2,d3,a2,a3],20
+        cmp 0,d0
+        beq .Lpacked_child_bad
+        cmp 4568,d1
+        bcs .Lpacked_child_bad
+        mov (24,a3),d2
+        cmp 4568,d2
+        bne .Lpacked_child_bad
+        add 32,d0
+        ret [d2,d3,a2,a3],20
+.Lpacked_child_bad:
+        clr d0
+        clr d1
+        ret [d2,d3,a2,a3],20
+
+
+/* Validate the same LFPG prefix/suffix used by GM5's frame pool. */
+.org 1346,0xff
+lut_gm1_packed_frame_view:
+        call lut_gm1_packed_child_view,[d2,d3,a2,a3],20
+        cmp 0,d0
+        beq .Lpacked_child_bad
+        mov d0,a2
+        mov d0,a0
+        add -32,a0
+        call .Lpacked_guard,[d2,d3,a2,a3],20
+        cmp 0,d0
+        bne .Lpacked_child_bad
+        mov a2,a0
+        add 4504,a0
+        call .Lpacked_guard,[d2,d3,a2,a3],20
+        cmp 0,d0
+        bne .Lpacked_child_bad
+        mov a2,d0
+        mov 4504,d1
+        ret [d2,d3,a2,a3],20
+.Lpacked_guard:
+        mov 8,d1
+.Lpacked_guard_word:
+        mov (a0),d0
+        cmp 0x4c465047,d0
+        bne .Lpacked_guard_bad
+        inc4 a0
+        sub 1,d1
+        bne .Lpacked_guard_word
+        clr d0
+        ret [d2,d3,a2,a3],20
+.Lpacked_guard_bad:
+        mov -18,d0
+        ret [d2,d3,a2,a3],20
+
+/* Record upload still accepts ordinary2348B cell leases. A packed frame
+ * supplies its table subrange from the same retained4568B owner as GM5. */
+.org 1421,0xff
+lut_gm1_packed_table_view:
+        mov a0,a3
+        call lut_image_view,[d2,d3,a2,a3],20
+        cmp 0,d0
+        beq .Lpacked_child_bad
+        mov (24,a3),d2
+        cmp 4568,d2
+        bne .Lpacked_plain_table
+        mov a3,a0
+        call lut_gm1_packed_frame_view,[d2,d3,a2,a3],20
+        cmp 0,d0
+        beq .Lpacked_child_bad
+        add 32,d0
+        mov 2284,d1
+        ret [d2,d3,a2,a3],20
+.Lpacked_plain_table:
+        ret [d2,d3,a2,a3],20
+.org 1463,0xff
+lut_gm1_packed_module_end:

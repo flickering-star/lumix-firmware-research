@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "version": "0.2.5",
+  "status": "local-owner-test-pending",
+  "owner_no_opacity_test_report": "Usable, slightly slower than native styles; invisible row was still selectable.",
+  "owner_tested_firmware_sha256": "21baa1b919de830c5793d883c66c4ddd5909acbc2e2850acc29db28ac06f3fa3",
+  "current_gm1_main_sha256": "ce5d4f16eab721a851e70a5bab2243efa3f0adb2627b5e95b445a9df3aca0e1f",
+  "current_gm1_gui_sha256": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321",
+  "current_gm1_secondary_sha256": "21b5cdae4fd4ee66892028a611f345a7eab985f56c4ac30f27cd39c643479cbc",
+  "gm1_opacity_removed_entirely": true,
+  "gm1_lut_strength_fixed_percent": 100,
+  "gm1_lut_adjustment_rows": [],
+  "current_hidden_row_fix_native_cases": 18,
+  "title_keys_and_touch_keep_title": true,
+  "native_stock_editor_prefix_all32_registers_equal": true,
+  "physically_tested_hidden_row_fix": false,
+  "physical_general_lag_entirely_fixed": false,
+  "host_protocol_and_workflow_tests_passed": 27,
+  "prepared_variants": 15,
+  "host_profile_controls": 42,
+  "independently_decoded_complete_variants": true,
+  "mac_frozen_selftest": {
+    "version": "0.2.5",
+    "codec_selftest": true,
+    "usb_library_loaded": true,
+    "bundled_tls_roots_loaded": true,
+    "supported_models": [
+      "DMC-GM5",
+      "DMC-GM1"
+    ],
+    "supported_camera_profiles": [
+      "gm5-official-0110",
+      "gm5-factory-0111",
+      "gm1-official-0110"
+    ],
+    "patch_files_verified": 11,
+    "choices": [
+      "stable",
+      "luts",
+      "restore"
+    ],
+    "camera_contacted": false
+  },
+  "mac_gui_smoke_passed": true,
+  "windows_independent_audit": {
+    "application_modules": 14,
+    "preserved_library_modules": 134,
+    "preserved_runtime_members": 1007
+  },
+  "windows_execution_verified": false,
+  "gm5_firmware_target_unchanged": true,
+  "archives": [
+    {
+      "platform": "darwin",
+      "bytes": 17918433,
+      "sha256": "401149a23981998264ec8ac066075f0908c216b31c159b66cc16491036898d11"
+    },
+    {
+      "platform": "win32",
+      "bytes": 17028359,
+      "sha256": "c2e25377275530f6156f3cf4793eb7a4d45354eedaaae018978e8985caf444cc"
+    }
+  ],
+  "new_release_assets_published": false,
+  "previous_release_tag": "updater-v0.2.4",
+  "previous_release_has_gm1_opacity_performance_warning": true,
+  "firmware_memory_settings_keys_or_personal_paths_included": false,
+  "recipe_reproduced_from_exact_local_official_components": true,
+  "limitations": [
+    "GM1 may still show brief colored lines after Import/No LUT.",
+    "FAT32 import only; exFAT import and65:24 excluded.",
+    "Full LCD/ISP/cold boot/recovery emulation and long recording coverage are not established.",
+    "Reset settings before stock restore; ordinary updater must remain functional."
+  ],
+  "native_stock_profiles_compared": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "native_row_predicate": "4014d879; actual parameter list; state4 selectable/state1 hidden",
+  "row_guard_scope": "Attempted entry only in LUT IDs7..16; native/kind2 entries replay original prefix.",
+  "background_or_per_frame_checks_added": false,
+  "public_checkout_tests": 142,
+  "public_checkout_skipped": 50,
+  "public_checkout_tests_passed": 92
+}

@@ -4,7 +4,7 @@
   "supported_camera_profiles": [
     "gm1-official-0110"
   ],
-  "time_utc": "2026-11-21T13:08:32.434248+00:00",
+  "time_utc": "2026-11-21T23:12:46.391326+00:00",
   "choices": {
     "stable": {
       "label": "Language unlock + update access",
@@ -49,29 +49,29 @@
     },
     "luts": {
       "label": "Experimental LUTs",
-      "description": "Ten imported LUT cells, opacity and internal storage; includes language unlock and update access.",
+      "description": "Ten saved LUT cells at full strength, without adjustment rows; includes language unlock and update access.",
       "limitations": [
         "All patch code was written by a chatbot. Flashing Panasonic cameras is risky because independent recovery options are unproven.",
         "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
         "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
         "LUT import requires a FAT32 card. exFAT import is unavailable. Put compatible VLT/CUBE files with short ASCII names in the card root.",
         "LUTs are reduced to a 9 \u00d7 9 \u00d7 9 hardware table with 6-bit values. The update preserves existing saved LUT banks.",
-        "GM1 live view may show vertical colored lines for a few seconds after Import or No LUT. This known issue remains unresolved."
+        "GM1 has no Opacity slider: LUTs always apply at 100%. The owner reports usable controls with slightly lower performance than native styles. Brief colored lines after Import or No LUT remain unresolved."
       ],
       "components": {
         "program": {
           "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
-          "target_sha256": "2698d38dd1411361f81bddfb658296b4baf9f4ca5ef851a305229d850b70611e",
+          "target_sha256": "ce5d4f16eab721a851e70a5bab2243efa3f0adb2627b5e95b445a9df3aca0e1f",
           "write_bytes": 8912896,
           "file": "luts-program.lxdp",
-          "patch_sha256": "489ec4b6f0b547a2c3c8cd531bcaae0c419d4b954a39dc05311c471c9dfdaf54"
+          "patch_sha256": "90a11fb3c41cb6457463ee20ca0775f7c77ad680a1d0dd9be2b8c9815cf21f9d"
         },
         "guires": {
           "source_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
-          "target_sha256": "60be5b5cff9c0f1f8f0bfc1be139c961fb00831500f3e767ea7f029315c35465",
+          "target_sha256": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321",
           "write_bytes": 11534336,
           "file": "luts-guires.lxdp",
-          "patch_sha256": "95f68034409da9897f4a7daf4fa1098d5d56f34db86b9bd274a39ba86490e78c"
+          "patch_sha256": "2fbd12f329b194443fb550cd120aefde9ddb6a2f6f7f494ff5c45dc04e72173a"
         },
         "program2": {
           "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
@@ -81,11 +81,11 @@
           "patch_sha256": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359"
         }
       },
-      "duration_target_sha256": "cbeffd5827b8e27c9bfb015e27140d99ca3bf466bb9112756423ece61e6c7e5c",
+      "duration_target_sha256": "9aae482d2f5821ddc1e6e7fe3a7247c3ed7b05689019b82ad61034b82131175b",
       "duration_variant": "regional-and-format-v2",
       "duration_component_sha256": {
-        "program": "cbeffd5827b8e27c9bfb015e27140d99ca3bf466bb9112756423ece61e6c7e5c",
-        "guires": "60be5b5cff9c0f1f8f0bfc1be139c961fb00831500f3e767ea7f029315c35465",
+        "program": "9aae482d2f5821ddc1e6e7fe3a7247c3ed7b05689019b82ad61034b82131175b",
+        "guires": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321",
         "program2": "b6172bc136103a8b61a3d20e58b12bb2270c40b3c08897ce811d49ffdb37390c"
       }
     },
@@ -123,7 +123,7 @@
       }
     }
   },
-  "lut_build_sha256": "c52589118de4f7da2d8c6c4dabb01ceecae8a50264043be440faa4cdb9febf50",
+  "lut_build_sha256": "e01e54990601856ab33b1ce606f1d98c4fec4c3cba27f4e8232ac2fba224017e",
   "native_receipts": [
     {
       "path": "/Volumes/X9 Pro/lumix-firmware-research/private/gm1-fat32-recovery-readback-audit-1/summary.json",
