@@ -1,5 +1,5 @@
 # Lumix Firmware Research
-
+***GM1 LUTs patch is faulty(heavy UI lag), don't flash it to the camera until it fixed***
 **All original project code was written by a chatbot. Flashing Panasonic
 cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated here; a bad update can leave a camera unusable.**
