@@ -8,6 +8,7 @@ from pathlib import Path
 import ssl
 import urllib.request
 import zipfile
+from .models import model_spec
 
 OFFICIAL_PAGE = "https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/dl/gm5.html"
 OFFICIAL_URL = "https://av.jpn.support.panasonic.com/support/share/eww/en/dsc/fts/mac/GM5__V11.zip"
@@ -20,33 +21,35 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def checked_firmware(data):
-    if len(data) == BIN_SIZE and sha(data) == BIN_SHA:
+def checked_firmware(data,model='DMC-GM5'):
+    spec=model_spec(model)
+    if len(data) == spec['bin_size'] and sha(data) == spec['bin_sha']:
         return data
     if data[:4] == b"PK\x03\x04":
         if len(data) > 40 * 1024 * 1024:
             raise ValueError("The firmware archive is larger than the supported download")
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             files = [i for i in archive.infolist() if not i.is_dir()]
-            if (len(files) != 1 or files[0].filename != "GM5__V11.bin"
-                    or files[0].file_size != BIN_SIZE or files[0].flag_bits & 1):
-                raise ValueError("Expected the official ZIP containing only GM5__V11.bin")
+            if (len(files) != 1 or files[0].filename != spec['filename']
+                    or files[0].file_size != spec['bin_size'] or files[0].flag_bits & 1):
+                raise ValueError("Expected the official ZIP containing only "+spec['filename'])
             # Read exactly one named member; never extract paths from a ZIP.
             raw = archive.read(files[0])
-            if sha(raw) == BIN_SHA:
+            if sha(raw) == spec['bin_sha']:
                 return raw
-    raise ValueError("This is not the supported official GM5 1.1 firmware (SHA-256 differs)")
+    raise ValueError("This is not the supported official "+spec['token']+" 1.1 firmware (SHA-256 differs)")
 
 
-def load_local(path):
+def load_local(path,model='DMC-GM5'):
     path = Path(path)
     if not path.is_file() or path.stat().st_size > 40 * 1024 * 1024:
-        raise ValueError("Select a supported GM5 firmware BIN or ZIP")
-    return checked_firmware(path.read_bytes())
+        raise ValueError("Select a supported "+model_spec(model)['token']+" firmware BIN or ZIP")
+    return checked_firmware(path.read_bytes(),model)
 
 
-def download(progress=lambda *_: None):
-    request = urllib.request.Request(OFFICIAL_URL, headers={"Referer": OFFICIAL_PAGE,
+def download(progress=lambda *_: None,model='DMC-GM5'):
+    spec=model_spec(model)
+    request = urllib.request.Request(spec['official_url'], headers={"Referer": spec['official_page'],
         "User-Agent": "LumixFirmwareUpdater/0.1"})
     # Frozen Python must not depend on the build machine's certificate path.
     context=ssl.create_default_context(cafile=certifi.where())
@@ -59,9 +62,9 @@ def download(progress=lambda *_: None):
             if not block:
                 break
             output.extend(block)
-            if len(output) > ZIP_SIZE:
+            if len(output) > spec['zip_size']:
                 raise ValueError("The official archive size changed; select a verified local BIN/ZIP")
-            progress(len(output), ZIP_SIZE)
-    if len(output) != ZIP_SIZE or sha(output) != ZIP_SHA:
+            progress(len(output), spec['zip_size'])
+    if len(output) != spec['zip_size'] or sha(output) != spec['zip_sha']:
         raise ValueError("The official download hash differs; select a verified local BIN/ZIP")
-    return checked_firmware(output)
+    return checked_firmware(output,model)

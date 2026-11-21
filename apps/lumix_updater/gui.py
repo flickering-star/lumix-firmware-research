@@ -13,8 +13,9 @@ import webbrowser
 
 from . import __version__
 from .download import OFFICIAL_PAGE
-from .firmware import catalog
+from .firmware import STOCK_RESTORE_RESET,catalog
 from .workflow import Workflow
+from .models import model_spec
 
 
 class App:
@@ -30,25 +31,30 @@ class App:
         self.tabs=ttk.Notebook(outer);self.tabs.pack(fill='both',expand=True)
         self.pages=[ttk.Frame(self.tabs,padding=18) for _ in range(3)]
         for page,label in zip(self.pages,('1  Camera','2  Firmware','3  Install')):self.tabs.add(page,text=label)
-        self.camera_text=tk.StringVar(value='Connect an awake GM5 in service mode, then read its firmware.')
+        self.camera_text=tk.StringVar(value='Connect an awake GM1 or GM5 in service mode, then read its firmware.')
         page=self.pages[0]
         ttk.Label(page,text='Read the connected camera',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
         ttk.Label(page,textvariable=self.camera_text,wraplength=670,justify='left').pack(anchor='w',pady=(12,18))
         self.read_button=ttk.Button(page,text='Read camera',command=self.on_inspect);self.read_button.pack(anchor='w')
         ttk.Button(page,text='USB connection help',command=self.connection_help).pack(anchor='w',pady=(12,0))
-        ttk.Label(page,text='Supports the reviewed GM5 1.1 official (0110) and factory (0111) builds, plus compatible research patches. Other builds are checked and refused.',
+        ttk.Label(page,text='Supports reviewed GM1 1.1 (0110) and GM5 1.1 (0110/0111) builds, plus compatible research patches. Other builds are checked and refused.',
             wraplength=660).pack(anchor='w',pady=(24,0))
         page=self.pages[1]
         ttk.Label(page,text='Choose the firmware',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
         self.choice=tk.StringVar(value='stable')
         self.choice_buttons=[]
+        self.choice_descriptions=[]
         for key in ('stable','luts','restore'):
             item=self.catalog['choices'][key]
             b=ttk.Radiobutton(page,text=item['label'],variable=self.choice,value=key);b.pack(anchor='w',pady=(13,0));self.choice_buttons.append(b)
-            ttk.Label(page,text=item['description'],wraplength=620).pack(anchor='w',padx=23,pady=(2,0))
+            label=ttk.Label(page,text=item['description'],wraplength=620)
+            label.pack(anchor='w',padx=23,pady=(2,0));self.choice_descriptions.append(label)
+        self.remove_limit=tk.BooleanVar(value=False)
+        ttk.Checkbutton(page,text='Extend recording duration limits (experimental)',variable=self.remove_limit).pack(anchor='w',pady=(12,0))
         ttk.Separator(page).pack(fill='x',pady=18)
         self.source=tk.StringVar(value='download');self.local=tk.StringVar()
-        ttk.Radiobutton(page,text='Download the official GM5 1.1 firmware',variable=self.source,value='download').pack(anchor='w')
+        self.download_text=tk.StringVar(value='Download the official firmware for the detected camera')
+        ttk.Radiobutton(page,textvariable=self.download_text,variable=self.source,value='download').pack(anchor='w')
         row=ttk.Frame(page);row.pack(fill='x',pady=(8,0))
         ttk.Radiobutton(row,text='Use an official BIN or ZIP:',variable=self.source,value='local').pack(side='left')
         ttk.Entry(row,textvariable=self.local).pack(side='left',fill='x',expand=True,padx=7)
@@ -66,7 +72,7 @@ class App:
         row=ttk.Frame(page);row.pack(fill='x',pady=(12,6))
         self.open_button=ttk.Button(row,text='Open prepared folder',command=self.open_folder,state='disabled');self.open_button.pack(side='left')
         self.card=tk.BooleanVar(value=False)
-        self.card_check=ttk.Checkbutton(page,text='I copied the update and inserted the card with the GM5 switched off.',variable=self.card)
+        self.card_check=ttk.Checkbutton(page,text='I copied the update and inserted the card with the camera switched off.',variable=self.card)
         self.card_check.pack(anchor='w',pady=(8,4))
         self.enable_button=ttk.Button(page,text='Enable this update',command=self.on_enable,state='disabled');self.enable_button.pack(anchor='w',pady=(5,0))
         limits=ttk.Frame(page);limits.pack(fill='x',pady=(14,0))
@@ -124,10 +130,15 @@ class App:
                     self.status.set('Stopped: '+result)
                     if action=='prepare' and self.source.get()=='download':
                         self.source.set('local')
-                        result+='\n\nIf the download is unavailable, choose the official GM5 1.1 BIN or ZIP. Its hash must match.'
+                        result+='\n\nIf the download is unavailable, choose the official 1.1 BIN or ZIP for the detected model. Its hash must match.'
                     messagebox.showerror('Could not complete this step',result,parent=self.root)
                 elif action=='inspect':
                     enabled=result['modified_updates_enabled']
+                    _,self.catalog=catalog(self.assets,model=result['model'])
+                    for i,key in enumerate(('stable','luts','restore')):
+                        self.choice_buttons[i].configure(text=self.catalog['choices'][key]['label'])
+                        self.choice_descriptions[i].configure(text=self.catalog['choices'][key]['description'])
+                    self.download_text.set('Download the official '+model_spec(result['model'])['token']+' 1.1 firmware')
                     self.camera_text.set(result['model']+' — firmware '+result['firmware']+' (internal '+result['internal_revision']+')\n\n'+
                         ('This camera already accepts custom updates. No temporary USB change is needed.' if enabled else
                          'The update policy is stock. After preparing the card, reconnect service USB to enable this update.'))
@@ -140,14 +151,14 @@ class App:
                     self.open_button.configure(state='normal')
                     self.enable_button.configure(state='normal' if result['temporary_flag_needed'] else 'disabled')
                     self.card_check.configure(state='normal' if result['temporary_flag_needed'] else 'disabled')
-                    self.status.set('Verified files saved. Copy GM5__V11.bin to the SD card.');self.tabs.select(2)
+                    self.status.set('Verified files saved. Copy '+result['update_filename']+' to the SD card.');self.tabs.select(2)
                 elif action=='enable':
                     self.open_button.configure(state='normal')
                     self.enable_button.configure(state='disabled')
                     self.status.set('Update access verified. Keep the camera awake and powered on.')
-                    self.set_steps('Update access is verified.\n\nUnplug USB without switching the GM5 off or letting it sleep. '
+                    self.set_steps('Update access is verified.\n\nUnplug USB without switching the camera off or letting it sleep. '
                         'Press Playback, then follow the update confirmation on the camera. Keep power stable until it finishes.\n\n'
-                        'After restart, check the selected patches. The stock restore file is in the prepared folder.')
+                        'After restart, verify the installed firmware.\n\n'+STOCK_RESTORE_RESET)
                 self.bar.configure(value=0)
         except queue.Empty:pass
         self.root.after(80,self.poll)
@@ -155,7 +166,7 @@ class App:
     def on_inspect(self):self.start('inspect',lambda p:self.workflow.inspect(p))
 
     def choose_file(self):
-        path=filedialog.askopenfilename(parent=self.root,title='Official GM5 firmware',
+        path=filedialog.askopenfilename(parent=self.root,title='Official camera firmware',
             filetypes=[('Firmware BIN or ZIP','*.bin *.BIN *.zip *.ZIP'),('All files','*')])
         if path:self.local.set(path);self.source.set('local')
 
@@ -165,9 +176,11 @@ class App:
         parent=filedialog.askdirectory(parent=self.root,title='Choose where to save the prepared firmware')
         if not parent:return
         choice=self.choice.get();local=self.local.get() if self.source.get()=='local' else None
-        destination=Path(parent)/('GM5-'+choice+'-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
+        model=self.workflow.inspection.model
+        remove_limit=bool(self.remove_limit.get()) and choice!='restore'
+        destination=Path(parent)/(model_spec(model)['token']+'-'+choice+('-duration' if remove_limit else '')+'-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
         self.open_button.configure(state='disabled');self.enable_button.configure(state='disabled')
-        self.start('prepare',lambda p:self.workflow.prepare(choice,destination,local_firmware=local,progress=p))
+        self.start('prepare',lambda p:self.workflow.prepare(choice,destination,local_firmware=local,progress=p,remove_limit=remove_limit))
 
     def on_enable(self):
         if not self.card.get():
@@ -184,8 +197,8 @@ class App:
 
     def connection_help(self):
         messagebox.showinfo('Connect service USB',
-            'Use an awake GM5 in service mode. Close other camera applications, and reconnect the cable if it has slept.\n\n'
-            'Windows: the DMC-GM5 service interface must use WinUSB. Install it for the exact camera entry (USB ID04DA:2370), then retry. '
+            'Use an awake GM1 or GM5 in service mode. Close other camera applications, and reconnect the cable if it has slept.\n\n'
+            'Windows: the camera service interface must use WinUSB. Install it for the exact camera entry (USB ID04DA:2370), then retry. '
             'The updater does not install or change drivers.\n\n'
             'The initial camera check only reads firmware. A temporary RAM flag can be changed after the update is built and the card is prepared.',parent=self.root)
 

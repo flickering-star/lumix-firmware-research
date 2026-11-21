@@ -35,17 +35,34 @@ def archive_catalog(path,expected_digest):
             raise ValueError('Unexpected shipped patch catalog')
         parent=PurePosixPath(catalogs[0]).parent
         expected={'catalog.json'};patches={}
-        for choice in catalog['choices'].values():
-            for part in choice['components'].values():
-                name=part['file']
-                if not name:continue
-                if PurePosixPath(name).name!=name or not name.endswith('.lxdp'):
-                    raise ValueError('Invalid patch filename')
-                shipped=str(parent/name)
-                if shipped not in names or sha(archive.read(shipped))!=part['patch_sha256']:
-                    raise ValueError('Shipped delta differs: '+name)
-                expected.add(name);patches[name]=part['patch_sha256']
-        actual={PurePosixPath(n).name for n in names if PurePosixPath(n).parent==parent and not n.endswith('/')}
+        models=catalog.get('models',{'DMC-GM5':'.'})
+        if not models or any(m not in ('DMC-GM1','DMC-GM5') for m in models):
+            raise ValueError('Unexpected shipped model inventory')
+        for model,directory in models.items():
+            current=catalog;prefix=PurePosixPath('.')
+            if model!='DMC-GM5':
+                if not isinstance(directory,str) or PurePosixPath(directory).name!=directory or directory in ('.','..'):
+                    raise ValueError('Invalid model patch directory')
+                prefix=PurePosixPath(directory);relative=str(prefix/'catalog.json');expected.add(relative)
+                child=archive.read(str(parent/relative))
+                if sha(child)!=catalog.get('model_catalog_sha256',{}).get(model):
+                    raise ValueError('Shipped model catalog differs')
+                current=json.loads(child)
+            elif directory!='.':raise ValueError('GM5 patch directory must remain the catalog root')
+            if current.get('schema')!=1 or current.get('model')!=model or set(current['choices'])!={'stable','luts','restore'}:
+                raise ValueError('Unexpected shipped model catalog')
+            for choice in current['choices'].values():
+                for part in choice['components'].values():
+                    name=part['file']
+                    if not name:continue
+                    if PurePosixPath(name).name!=name or not name.endswith('.lxdp'):
+                        raise ValueError('Invalid patch filename')
+                    relative=str(prefix/name);shipped=str(parent/relative)
+                    if shipped not in names or sha(archive.read(shipped))!=part['patch_sha256']:
+                        raise ValueError('Shipped delta differs: '+relative)
+                    expected.add(relative);patches[relative]=part['patch_sha256']
+        actual={str(PurePosixPath(n).relative_to(parent)) for n in names
+                if n.startswith(str(parent)+'/') and not n.endswith('/')}
         if actual!=expected:raise ValueError('Undeclared data in shipped patch directory')
         if any(n.lower().endswith(('.bin','.fw','.ahx')) for n in names):
             raise ValueError('Firmware-like binary found in desktop archive')

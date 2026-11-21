@@ -1,7 +1,7 @@
 # Lumix Firmware Research
 
 **All original project code was written by a chatbot. Flashing Panasonic
-cameras is risky because recovery options are limited. No independent GM5
+cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated here; a bad update can leave a camera unusable.**
 
 An unmaintained reference archive of Panasonic Lumix firmware research, USB
@@ -35,9 +35,15 @@ requires WinUSB on the exact GM5 service interface; no driver is installed by
 the app. Compiled desktop apps are distributed as release assets, while full
 Panasonic firmware, backups and keys remain excluded.
 
+The current development source also supports **GM1 firmware 1.1/internal 0110**
+and the latest tested GM1 LUT port. Updated Mac/Windows binaries will be
+published after owner testing. The existing download links above remain the
+published 0.1.1 GM5 release. GM1 has a known transient colored-line issue after
+LUT import/clearing; see [GM1 LUT instructions and limitations](docs/gm1-luts.md).
+
 | Model / area | Demonstrated result | Boundary |
 | --- | --- | --- |
-| **GM1 Japanese-market 1.1** | Service USB word/block reads; complete 9 MiB main and 3.375 MiB secondary acquired; both match official plaintext. All six update components decoded, ECDSA independently verified. | No complete physical NOR backup or modified-firmware installation demonstrated. Factory-loader analysis is static. |
+| **GM1 Japanese-market 1.1** | Service USB word/block reads; complete 9 MiB main and 3.375 MiB secondary match official plaintext. All six update components decoded, ECDSA independently verified. The owner reports the language/LUT patch installed and working. | Transient colored lines remain after Import/No LUT. Full recording-format coverage and independent recovery are unproven. |
 | **GM5 Japanese 1.1** | 32 MiB NOR mapping backed up; modified unsigned installation proven; persistent policy zero; three-byte language unlock installed in normal mode. English survives manual off/on. | Language installation checked with three exact ROM windows, settings/UI and policy reads. Its full main readback was stopped at the owner's request. |
 | **GX9 / Japanese DC-GX7MK3, reported 1.4** | All 35 components of 1.4/1.5 decode. The owner reports successfully installing the policy-one candidate and a working camera. Subsequent physical USB inspection verifies policy `1` at the unchanged address through both access paths, with matching code and normalized metadata guards. | Installation/boot is owner-reported; policy readback is independently verified. Full installed-image readback and an additional controlled power-cycle test have not been performed. SD autorun, external shell delivery and other protocol routes remain under investigation. |
 | **GH2** | Static service-dispatch, startup, update, signature and factory-input analysis provided controls for the later USB work. | GH2 addresses and algorithms must not be assumed for GM1/GM5 or newer models. |
@@ -47,10 +53,12 @@ Panasonic firmware, backups and keys remain excluded.
 The public snapshot covers reproduced firmware-access, update-authentication,
 flashing, language-patch and the tested experimental GM5 LUT results. Ongoing
 feature research and unvalidated model ports are kept outside this archive.
+The tested GM1 LUT port is now included, with its remaining limitation stated.
 
 Start with the guide for your model:
 
 - [GM1: USB acquisition, complete decoding and signature verification](docs/gm1-reproduction.md)
+- [GM1: experimental LUT port, reproducible components and limitations](docs/gm1-luts.md)
 - [GM5: reproduce the exact tested policy/language patch and package](docs/gm5-reproduction.md)
 - [GM5: experimental real-time LUT patch, reproducible package and limitations](docs/gm5-luts.md)
 - [GX9: full firmware decryption, key recovery and 1.4/1.5 comparison](docs/gx9-firmware-decryption.md)

@@ -1,11 +1,12 @@
 """Checked service framing shared by both desktop platforms.
 
-The sole write constructor targets the reviewed GM5 updater-policy halfword.
+The sole write constructor targets the selected model's updater-policy halfword.
 The app never exposes an arbitrary USB command, address or value editor.
 """
 from __future__ import annotations
 
 import struct
+from .models import model_spec
 
 
 class ProtocolError(ValueError):
@@ -37,12 +38,13 @@ def read_reply(data: bytes) -> bytes:
     return data[4:-2]
 
 
-def policy_packet(value: int) -> bytes:
+def policy_packet(value: int, model='DMC-GM5') -> bytes:
     if type(value) is not int or value not in (0, 1):
-        raise ProtocolError("Only the reviewed GM5 policy values are supported")
+        raise ProtocolError("Only the reviewed policy values are supported")
+    spec=model_spec(model)
     result = bytearray(16)
     result[:4] = b"\x08\0\xff\x9c"
-    struct.pack_into("<IH", result, 4, 0x70A68490, value)
+    struct.pack_into("<IH", result, 4, spec['policy_ram']+spec['policy_ram_offset'], value)
     result[-2] = checksum(result)
     return bytes(result)
 
@@ -56,9 +58,11 @@ def policy_ack(data: bytes) -> None:
 class Service:
     """A transport plus an explicit model-profile read allowlist."""
 
-    def __init__(self, transport, allowed_pages):
+    def __init__(self, transport, allowed_pages, *, model='DMC-GM5'):
         self.transport = transport
         self.allowed_pages = frozenset(allowed_pages)
+        model_spec(model)
+        self.model=model
 
     def read(self, address):
         if address not in self.allowed_pages:
@@ -70,4 +74,4 @@ class Service:
         return payload
 
     def set_policy(self, value):
-        policy_ack(self.transport.exchange(policy_packet(value), 8, 16))
+        policy_ack(self.transport.exchange(policy_packet(value,self.model), 8, 16))

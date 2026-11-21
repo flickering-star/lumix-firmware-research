@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "model": "DMC-GM1",
+  "internal_revision": "0110",
+  "owner_report": "Latest test reported working apart from transient colored vertical lines; that issue is explicitly deferred.",
+  "owner_report_covers_every_recording_mode": false,
+  "component_sha256": {
+    "main": "2698d38dd1411361f81bddfb658296b4baf9f4ca5ef851a305229d850b70611e",
+    "gui": "60be5b5cff9c0f1f8f0bfc1be139c961fb00831500f3e767ea7f029315c35465",
+    "secondary": "21b5cdae4fd4ee66892028a611f345a7eab985f56c4ac30f27cd39c643479cbc"
+  },
+  "camera_test_package_sha256": "1192e7b5594cd0b0990981b05dc64d00efbb5a3d4bec3e0de885d182e4c9a211",
+  "native_producer_cases": [
+    {
+      "mode": 0,
+      "interrupt": false,
+      "bank_bits_remaining": 0,
+      "inflight": 1,
+      "posted_status": 0,
+      "unlock_calls": 1,
+      "steps": 713
+    },
+    {
+      "mode": 0,
+      "interrupt": true,
+      "bank_bits_remaining": 0,
+      "inflight": 1,
+      "posted_status": 0,
+      "unlock_calls": 1,
+      "steps": 718
+    },
+    {
+      "mode": 1,
+      "interrupt": false,
+      "bank_bits_remaining": 0,
+      "inflight": 1,
+      "posted_status": 0,
+      "unlock_calls": 1,
+      "steps": 713
+    },
+    {
+      "mode": 1,
+      "interrupt": true,
+      "bank_bits_remaining": 0,
+      "inflight": 1,
+      "posted_status": 0,
+      "unlock_calls": 1,
+      "steps": 718
+    }
+  ],
+  "native_producer_receipt_sha256": "5bfd4fb9b79bca33dc9f8a6f6d2e47ba7661abfa631e710608d46a7f3a937c51",
+  "native_tests_are_bounded_cpu_models": true,
+  "physical_dma_or_all_timing_proven": false,
+  "saved_banks_excluded": true,
+  "exfat_import_available": false,
+  "xpan_included": false,
+  "independent_recovery_validated": false,
+  "known_issues": [
+    "Transient colored vertical lines after Import/No LUT."
+  ],
+  "reproduction_recipe": "recipes/gm1-v11-luts.json",
+  "firmware_memory_payloads_or_keys_included": false,
+  "public_component_recipe_reproduced": true,
+  "component_recipe_sha256": "36880ae856b4ed0228e22731f1711d5adb2dcfe81d2ae0bc6f6db7c39da71e78"
+}

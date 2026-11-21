@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "model": "DMC-GM1",
+  "supported_camera_profiles": [
+    "gm1-official-0110"
+  ],
+  "time_utc": "2026-11-21T13:08:32.434248+00:00",
+  "choices": {
+    "stable": {
+      "label": "Language unlock + update access",
+      "description": "Unlock existing menu languages and permanent custom-update access.",
+      "limitations": [
+        "All patch code was written by a chatbot. Flashing Panasonic cameras is risky because independent recovery options are unproven.",
+        "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
+        "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
+        "Existing language choices are exposed; the camera region and video standards are unchanged.",
+        "The camera will accept unsigned custom updates. Saved experimental LUT cells are cleared."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+          "target_sha256": "d2bec4689b014408a204e06095c65978eb36c67c81f9250059612678a28a4a25",
+          "write_bytes": 9437184,
+          "file": "stable-program.lxdp",
+          "patch_sha256": "c82a82a3c6da00583a8e0614db6c86ee53c6731941d3cee303665812bc8886ed"
+        },
+        "guires": {
+          "source_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+          "target_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+          "write_bytes": 11534336,
+          "file": null,
+          "patch_sha256": null
+        },
+        "program2": {
+          "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+          "target_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+          "write_bytes": 3538944,
+          "file": null,
+          "patch_sha256": null
+        }
+      },
+      "duration_target_sha256": "413337671d7c4723372a1fa47d91121ada9c5a6c6b84c8cc04fadc04184ed481",
+      "duration_variant": "regional-and-format-v2",
+      "duration_component_sha256": {
+        "program": "413337671d7c4723372a1fa47d91121ada9c5a6c6b84c8cc04fadc04184ed481",
+        "guires": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+        "program2": "21ab043d94cf8f49cd544de621d94976f5fd6bb6ae1d07785348589b16986c0c"
+      }
+    },
+    "luts": {
+      "label": "Experimental LUTs",
+      "description": "Ten imported LUT cells, opacity and internal storage; includes language unlock and update access.",
+      "limitations": [
+        "All patch code was written by a chatbot. Flashing Panasonic cameras is risky because independent recovery options are unproven.",
+        "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
+        "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
+        "LUT import requires a FAT32 card. exFAT import is unavailable. Put compatible VLT/CUBE files with short ASCII names in the card root.",
+        "LUTs are reduced to a 9 \u00d7 9 \u00d7 9 hardware table with 6-bit values. The update preserves existing saved LUT banks.",
+        "GM1 live view may show vertical colored lines for a few seconds after Import or No LUT. This known issue remains unresolved."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+          "target_sha256": "2698d38dd1411361f81bddfb658296b4baf9f4ca5ef851a305229d850b70611e",
+          "write_bytes": 8912896,
+          "file": "luts-program.lxdp",
+          "patch_sha256": "489ec4b6f0b547a2c3c8cd531bcaae0c419d4b954a39dc05311c471c9dfdaf54"
+        },
+        "guires": {
+          "source_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+          "target_sha256": "60be5b5cff9c0f1f8f0bfc1be139c961fb00831500f3e767ea7f029315c35465",
+          "write_bytes": 11534336,
+          "file": "luts-guires.lxdp",
+          "patch_sha256": "95f68034409da9897f4a7daf4fa1098d5d56f34db86b9bd274a39ba86490e78c"
+        },
+        "program2": {
+          "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+          "target_sha256": "21b5cdae4fd4ee66892028a611f345a7eab985f56c4ac30f27cd39c643479cbc",
+          "write_bytes": 3538944,
+          "file": "luts-program2.lxdp",
+          "patch_sha256": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359"
+        }
+      },
+      "duration_target_sha256": "cbeffd5827b8e27c9bfb015e27140d99ca3bf466bb9112756423ece61e6c7e5c",
+      "duration_variant": "regional-and-format-v2",
+      "duration_component_sha256": {
+        "program": "cbeffd5827b8e27c9bfb015e27140d99ca3bf466bb9112756423ece61e6c7e5c",
+        "guires": "60be5b5cff9c0f1f8f0bfc1be139c961fb00831500f3e767ea7f029315c35465",
+        "program2": "b6172bc136103a8b61a3d20e58b12bb2270c40b3c08897ce811d49ffdb37390c"
+      }
+    },
+    "restore": {
+      "label": "Stock program restore",
+      "description": "Original model-specific program, graphics and processor components.",
+      "limitations": [
+        "All patch code was written by a chatbot. Flashing Panasonic cameras is risky because independent recovery options are unproven.",
+        "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
+        "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
+        "The original language lock and signed-update policy return. Saved experimental LUT cells are cleared."
+      ],
+      "components": {
+        "program": {
+          "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+          "target_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+          "write_bytes": 9437184,
+          "file": null,
+          "patch_sha256": null
+        },
+        "guires": {
+          "source_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+          "target_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+          "write_bytes": 11534336,
+          "file": null,
+          "patch_sha256": null
+        },
+        "program2": {
+          "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+          "target_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+          "write_bytes": 3538944,
+          "file": null,
+          "patch_sha256": null
+        }
+      }
+    }
+  },
+  "lut_build_sha256": "c52589118de4f7da2d8c6c4dabb01ceecae8a50264043be440faa4cdb9febf50",
+  "native_receipts": [
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/gm1-fat32-recovery-readback-audit-1/summary.json",
+      "sha256": "665a3062d6df579fce7f154360aea1de695f8375ad83bb5baa4c48ad5cc18dbc"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/lumix-recording-limit-native-2/summary.json",
+      "sha256": "435c48dac0d2139e8469673a785118fc9e55c3e4daf71c1e9c7702750257a7b8"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/gm1-release-language-native-4/summary.json",
+      "sha256": "ebce4a33c80c7e27c97951b7dd24fd46959e8c0961cc8d5ef7a5e2e8e649678f"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/lumix-recording-format-native-1/summary.json",
+      "sha256": "62814b25c453b8aafdeb0b76775e61e77064fc4ca3d2f0fd0b2bdbc414ca70a5"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/lumix-recording-consumer-native-1/summary.json",
+      "sha256": "cbb3e288a2407d9b0268ae8a59d19b72fd6f88181de8866e7e353b76bc9f365f"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/gm1-lut-dispatch-stack-repair-native-3/summary.json",
+      "sha256": "f2967800c30805c38fe6279c1e9217f0447cef530275be500cd7aaffc9446d41"
+    },
+    {
+      "path": "/Volumes/X9 Pro/lumix-firmware-research/private/gm1-lut-producer-stack-repair-native-2/summary.json",
+      "sha256": "5bfd4fb9b79bca33dc9f8a6f6d2e47ba7661abfa631e710608d46a7f3a937c51"
+    }
+  ],
+  "optional_recording_limit_patch": true,
+  "firmware_binaries_included": false,
+  "encryption_key_included": false,
+  "exfat_overlay_withdrawn": true,
+  "native_startup_edits_forbidden": true,
+  "xpan_overlay_included": false
+}

@@ -57,18 +57,9 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 def pack(output,assets):
     import sys
     sys.path.insert(0,str(REPO))
-    from apps.lumix_updater.firmware import catalog
+    from apps.lumix_updater.firmware import catalog,catalog_assets
     assets=assets.resolve();_,manifest=catalog(assets)
-    expected={'catalog.json'}
-    for choice in manifest['choices'].values():
-        for part in choice['components'].values():
-            name=part['file']
-            if name:
-                if Path(name).name!=name or sha((assets/name).read_bytes())!=part['patch_sha256']:
-                    raise ValueError('Patch file is missing or changed')
-                expected.add(name)
-    if {p.name for p in assets.iterdir()}!=expected:
-        raise ValueError('Undeclared files in patch directory')
+    expected,profiles=catalog_assets(assets)
     output.mkdir(mode=0o700,parents=True,exist_ok=False)
     kit=output/'Lumix-Updater-Windows-Build'
     files=[Path('apps/__init__.py'),Path('apps/lumix_updater_launcher.py'),
@@ -82,7 +73,7 @@ def pack(output,assets):
         target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(source,target)
     for name in sorted(expected):
-        target=kit/'patches'/name;target.parent.mkdir(exist_ok=True)
+        target=kit/'patches'/name;target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(assets/name,target)
     (kit/'BUILD-WINDOWS.ps1').write_text(BUILD_SCRIPT,encoding='utf-8')
     (kit/'README.txt').write_text(

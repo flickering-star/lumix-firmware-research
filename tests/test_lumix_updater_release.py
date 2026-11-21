@@ -50,5 +50,18 @@ class DesktopArchiveTests(unittest.TestCase):
             with self.subTest(name=name),self.assertRaises(ValueError):
                 archive_catalog(self.archive(extra=[(name,b'test')]),self.digest)
 
+    def test_nested_model_catalog_and_deltas_are_pinned(self):
+        child=json.loads(self.catalog);child['model']='DMC-GM1'
+        child=json.dumps(child).encode();parent=json.loads(self.catalog)
+        parent.update(models={'DMC-GM5':'.','DMC-GM1':'gm1'},
+            model_catalog_sha256={'DMC-GM1':hashlib.sha256(child).hexdigest()})
+        raw=json.dumps(parent).encode();digest=hashlib.sha256(raw).hexdigest()
+        extra=[(self.prefix+'gm1/catalog.json',child),(self.prefix+'gm1/test.lxdp',self.patch)]
+        result=archive_catalog(self.archive(catalog=raw,extra=extra),digest)
+        self.assertIn('gm1/test.lxdp',result['patch_files'])
+        extra[0]=(self.prefix+'gm1/catalog.json',child+b' ')
+        with self.assertRaisesRegex(ValueError,'model catalog differs'):
+            archive_catalog(self.archive(catalog=raw,extra=extra),digest)
+
 
 if __name__=='__main__':unittest.main()

@@ -15,7 +15,7 @@ def main():
     args=parser.parse_args()
     if args.self_test or args.self_test_report:
         from .codec import Codec
-        from .firmware import catalog
+        from .firmware import catalog,catalog_assets
         from .download import sha
         from .usb import Transport
         import certifi
@@ -28,20 +28,15 @@ def main():
         usb=Transport()
         for symbol in ('libusb_init','libusb_get_device_list','libusb_control_transfer','libusb_bulk_transfer'):
             getattr(usb.lib,symbol)
-        patches=0
-        for choice in manifest['choices'].values():
-            for part in choice['components'].values():
-                filename=part['file']
-                if filename:
-                    if Path(filename).name!=filename or sha((root/filename).read_bytes())!=part['patch_sha256']:
-                        raise ValueError('Bundled patch hash differs')
-                    patches+=1
+        files,profiles=catalog_assets(root)
+        patches=sum(name.endswith('.lxdp') for name in files)
         tls=ssl.create_default_context(cafile=certifi.where())
         if tls.verify_mode!=ssl.CERT_REQUIRED or not tls.check_hostname:
             raise ValueError('The bundled TLS verification is not enabled')
         report=dict(version=__version__,codec_selftest=True,usb_library_loaded=True,
             bundled_tls_roots_loaded=True,
-            supported_camera_profiles=manifest['supported_camera_profiles'],
+            supported_models=list(profiles),
+            supported_camera_profiles=[p for values in profiles.values() for p in values],
             patch_files_verified=patches,choices=list(manifest['choices']),camera_contacted=False)
         if args.self_test_report:
             with args.self_test_report.open('x',encoding='utf-8') as stream:

@@ -1,13 +1,52 @@
 # Lumix Firmware Updater
 
 **All original project code was written by a chatbot. Flashing Panasonic
-cameras is risky because recovery options are limited. No independent GM5
+cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated; a bad update can leave a camera unusable.**
 
-Desktop application for preparing an SD firmware update for the reviewed
-**DMC-GM5 firmware 1.1: official internal 0110 and factory internal 0111 builds**,
-and compatible research patches.
-Other camera models or firmware builds are refused.
+Desktop application for preparing an SD firmware update. The published 0.1.1
+release supports the reviewed GM5 profiles described below.
+
+## Development version 0.2.3
+
+The new source adds **DMC-GM1 firmware 1.1/internal 0110**, alongside GM5
+official 0110/factory 0111, with separate complete-page guards, encryption-key
+locations, RAM policy addresses, component geometry and output filenames.
+An identical USB product ID never establishes model compatibility.
+
+Both model catalogs include language/update-access patches, experimental
+LUTs with FAT32 import, and a stock-component restore. The exFAT overlays are
+withdrawn. A separate
+experimental option removes the reviewed regional 1,799-second recording policy
+and selects the original longer fallback for a separate format-dependent cap.
+It does not remove card-capacity, filesystem, encoder or thermal safeguards;
+physical long-recording/file-segmentation testing is outstanding.
+
+GM1's language patch exposes its existing 16-language list. Both LUT targets
+restore their internal saved cells at startup without scanning the SD card.
+Both LUT updates stop before their saved-bank sectors, preserving imported
+cells and opacity. GM1 uses the native pool10 backing and the corrected
+dispatcher/producer stack frames. GM5 retains its owner-tested adjacent-manager
+build. Neither model changes settings/calibration components or installs an
+independent recovery loader. The unfinished 65:24 work is excluded.
+
+These desktop packages are local test candidates, separate from the published
+0.1.1 release linked below. The owner reports the latest GM1 LUT firmware
+working, with transient colored vertical lines after Import/No LUT remaining
+an unresolved limitation. The GM5 LUT target was tested with video recording
+and subsequent Library/Playback operation. Long-session and complete recording
+format coverage remain incomplete. Use `GM1__V11.bin` for GM1 or `GM5__V11.bin`
+for GM5, as selected by the app. Official BIN/ZIP input is model-specific and
+hash checked; when download fails, select the matching official local file.
+
+The Mac build runs frozen codec/library/TLS/catalog and GUI checks.
+The Windows EXE candidate uses the owner-tested 0.1.1 Windows
+bootloader, Python 3.12.3 runtime and native libraries, with matching 3.12.3
+application bytecode and the same patch catalogs as Mac. Its independent
+archive/PE/source audit is separate from Windows runtime testing; these new
+Windows packages have not yet been launched on Windows. The original 0.1.1 owner
+test does not validate new code. Nothing in this development section is a new
+public GitHub release.
 
 ## Download version 0.1.1
 
@@ -55,7 +94,9 @@ temporary change. The app does not select Yes or program camera flash over USB.
 
 Stock restore reinstates the original language lock and signed-update policy
 and clears saved experimental LUTs. It preserves camera settings/calibration
-components. It requires the ordinary updater and is not independent recovery.
+components. Reset the camera settings while patched firmware is still running,
+before installing the stock restore. It requires the ordinary updater and is
+not independent recovery.
 
 ## Desktop packages
 
@@ -64,7 +105,7 @@ standalone application folder in a ZIP; extract the entire folder before
 running its EXE. End users need neither Python nor a compiler.
 
 Use an awake camera in service mode. Windows requires WinUSB on the exact
-GM5 service interface (`04DA:2370`); the app does not change drivers. The first
+camera service interface (`04DA:2370`); the app does not change drivers. The first
 inspection only reads camera memory. A camera profile is rechecked after
 reconnection before the temporary policy change.
 
@@ -73,12 +114,12 @@ reconnection before the temporary policy change.
 1. Extract the Mac app or the entire Windows application folder, then open it.
    Keep the Windows `_internal` directory beside the EXE. End users do not need
    Python or a compiler.
-2. Connect an awake GM5 through service USB and choose **Read camera**. Select
+2. Connect an awake supported GM1/GM5 through service USB and choose **Read camera**. Select
    the stable language/update-access patch, experimental LUTs, or stock restore.
 3. Prepare the update in a new folder. The app downloads the pinned official
-   firmware; if unavailable, supply the official GM5 1.1 BIN/ZIP. Other hashes
+   firmware; if unavailable, supply the matching official GM1/GM5 1.1 BIN/ZIP. Other hashes
    are refused. Keep the prepared folder and its separate `stock-restore` copy.
-4. Copy `GM5__V11.bin` to the root of a camera-formatted SD card. Select Standard
+4. Copy the model-specific `GM1__V11.bin` or `GM5__V11.bin` to the root of a camera-formatted SD card. Select Standard
    on the camera, switch it **off**, and insert the card. Use a fully charged
    battery.
 5. Follow the app's instructions. A stock camera needs service USB and

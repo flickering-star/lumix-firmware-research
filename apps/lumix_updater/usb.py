@@ -40,7 +40,10 @@ class Configuration(C.Structure):
 
 
 class Transport:
-    def __init__(self,library=None):
+    def __init__(self,library=None,*,expected_model='DMC-GM5'):
+        if expected_model not in (None,'DMC-GM5','DMC-GM1'):
+            raise USBError('Unsupported service camera profile')
+        self.expected_model=expected_model
         if library is None:
             filename='libusb-1.0.dll' if sys.platform=='win32' else 'libusb-1.0.dylib'
             bundled=Path(__file__).parent/'native'/filename
@@ -104,7 +107,8 @@ class Transport:
             finally:self.function('libusb_free_config_descriptor',None,[C.POINTER(Configuration)])(cfg)
             self.check('Open USB',self.function('libusb_open',C.c_int,[C.c_void_p,C.POINTER(C.c_void_p)])(device,C.byref(self.handle)))
             product=self.string(d.product)
-            if product!='DMC-GM5':raise USBError('Detected '+product+'. Only the validated DMC-GM5 profile is currently supported.')
+            if product not in ('DMC-GM1','DMC-GM5') or self.expected_model and product!=self.expected_model:
+                raise USBError('Detected '+product+'. This operation requires '+(self.expected_model or 'DMC-GM1 or DMC-GM5')+'.')
             self.identity=dict(model=product,serial=self.string(d.serial),usb_release=d.release)
             active=C.c_int()
             self.check('Read active USB configuration',self.function('libusb_get_configuration',C.c_int,

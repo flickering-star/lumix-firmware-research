@@ -14,7 +14,7 @@ import sys
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO))
 from apps.lumix_updater.download import sha
-from apps.lumix_updater.firmware import catalog
+from apps.lumix_updater.firmware import catalog,catalog_assets
 
 
 def run(args,log,*,env=None):
@@ -31,16 +31,7 @@ def bundle(output,assets,*,architecture=None,cc=None):
     import tkinter
     import PyInstaller
     assets=assets.resolve();_,manifest=catalog(assets)
-    allowed_files={'catalog.json'}
-    for choice in manifest['choices'].values():
-        for component in choice['components'].values():
-            filename=component['file']
-            if filename and (Path(filename).name!=filename
-                    or sha((assets/filename).read_bytes())!=component['patch_sha256']):
-                raise ValueError('Patch file is missing or changed')
-            if filename:allowed_files.add(filename)
-    if {path.name for path in assets.iterdir()}!=allowed_files:
-        raise ValueError('The patch directory contains undeclared files')
+    allowed_files,profiles=catalog_assets(assets)
     usb=Path(libusb_package.find_library('libusb-1.0')).resolve()
     if not usb.is_file():raise ValueError('Install the native libusb-package for this architecture')
     output=output.absolute();output.mkdir(mode=0o700,parents=True,exist_ok=False)
@@ -99,6 +90,7 @@ def bundle(output,assets,*,architecture=None,cc=None):
     else:shutil.make_archive(str(archive.with_suffix('')),'zip',root_dir=app.parent,base_dir=app.name)
     result=dict(schema=1,time_utc=datetime.now(timezone.utc).isoformat(),
         status='experimental-desktop-test',platform=sys.platform,architecture=target,
+        supported_models=list(profiles),
         python=sys.version,pyinstaller=PyInstaller.__version__,app=str(app),executable=str(executable),
         archive=dict(path=str(archive),bytes=archive.stat().st_size,sha256=sha(archive.read_bytes())),
         source_sha256={p.name:sha(p.read_bytes()) for p in (REPO/'apps/lumix_updater').glob('*.py')},

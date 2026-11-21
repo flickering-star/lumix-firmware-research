@@ -1,4 +1,4 @@
-"""The reviewed GM5 1.1 profiles and their sole temporary RAM change."""
+"""Reviewed GM1/GM5 profiles and their sole model-specific RAM change."""
 from __future__ import annotations
 
 from dataclasses import dataclass,field
@@ -7,6 +7,7 @@ import struct
 
 from .protocol import Service
 from .usb import Transport
+from .models import MODELS,model_spec
 
 MODEL='DMC-GM5'
 POLICY_ROM,POLICY_RAM,MODE=0x406B1800,0x70A68400,0x702FF800
@@ -29,6 +30,36 @@ OFFICIAL_GUARDS={
 PROFILE_GUARDS={0x0110:OFFICIAL_GUARDS,0x0111:GUARDS}
 PROFILE_NAMES={0x0110:'gm5-official-0110',0x0111:'gm5-factory-0111'}
 PAGES=frozenset(GUARDS)|{POLICY_RAM,MODE}
+GM1_GUARDS={
+    0x40000400:'a03443c440d607fa2f36fe706688f0a896273ee449c6f6bd197615f96e065423',
+    0x405AB400:'ff1483b11bb21194465236afbc19308b7fc6cef72c6019ca1ec9b8c056a1e366',
+    0x4057B800:'3ee288991ff95d27dc29566abf25ff65664e716047d4d28b8168c2212870837c',
+    0x4036A000:'e8951cfe66681a18fc749a71826237539e264e5972523b42aca12313f322b1e8',
+    0x4036B000:'6fd3d81781b08a0ce039e871a4b84287575510f1cc63e95ab68799ea923de86c',
+    0x405C5800:'01c5765071c40cb898dca585b99c172520cda42a253a37b404ac545270996b37'}
+
+
+def profile_guards(model):
+    model_spec(model)
+    return PROFILE_GUARDS if model=='DMC-GM5' else {0x0110:GM1_GUARDS}
+
+
+def profile_pages(model):
+    spec=model_spec(model)
+    guards=next(iter(profile_guards(model).values()))
+    return frozenset(guards)|{spec['policy_ram'],spec['mode']}
+
+
+def selected_service(transport):
+    model=transport.identity.get('model')
+    if model not in MODELS:raise CameraError('Only the reviewed DMC-GM1 and DMC-GM5 profiles are supported')
+    return Service(transport,profile_pages(model),model=model)
+
+
+def updater_transport():
+    # USB product identity chooses one of two exact allowlisted profiles.
+    # The raw Transport default stays GM5 for existing model-specific tools.
+    return Transport(expected_model=None)
 
 
 class CameraError(ValueError):
@@ -49,7 +80,7 @@ class Inspection:
     def modified_updates_enabled(self):return self.rom_policy==0
 
     @property
-    def profile(self):return PROFILE_NAMES[self.version]
+    def profile(self):return model_spec(self.model)['profiles'][self.version]
 
     def report(self):
         return dict(model=self.model,firmware='1.1',profile=self.profile,
@@ -60,48 +91,54 @@ class Inspection:
 
 
 def inspect_service(service,identity,progress=lambda *_:None):
-    if identity.get('model')!=MODEL:raise CameraError('Only the reviewed DMC-GM5 profile is supported')
+    model=identity.get('model')
+    if model not in MODELS:raise CameraError('Only the reviewed DMC-GM1 and DMC-GM5 profiles are supported')
+    spec=model_spec(model)
+    versions=profile_guards(model);allowed=profile_pages(model)
     pages={};guards=None;version=None
-    for i,address in enumerate(sorted(PAGES)):
-        progress('Checking camera firmware',i,len(PAGES))
+    for i,address in enumerate(sorted(allowed)):
+        progress('Checking camera firmware',i,len(allowed))
         raw=service.read(address)
         if len(raw)!=1024:raise CameraError('Camera memory reply is incomplete')
         pages[address]=raw
         if address==0x40000400:
             version=struct.unpack_from('<2H',raw,0x2A0)
-            if version[0]!=version[1] or version[0] not in PROFILE_GUARDS:
-                raise CameraError('Unsupported GM5 firmware revision. No camera change was made.')
-            guards=PROFILE_GUARDS[version[0]]
-        if address in GUARDS:
+            if version[0]!=version[1] or version[0] not in versions:
+                raise CameraError('Unsupported '+spec['token']+' firmware revision. No camera change was made.')
+            guards=versions[version[0]]
+        if guards is not None and address in guards:
             if guards is None:raise CameraError('Camera header must be checked first')
             checked=bytearray(raw)
-            if address==POLICY_ROM:
-                value=struct.unpack_from('<H',checked,0x3DC)[0]
+            if address==spec['policy_rom']:
+                offset=spec['policy_rom_offset']
+                value=struct.unpack_from('<H',checked,offset)[0]
                 if value not in (0,1):raise CameraError('The update policy is not in a reviewed state')
-                checked[0x3DC:0x3DE]=b'\x01\0'
+                checked[offset:offset+2]=b'\x01\0'
             if hashlib.sha256(checked).hexdigest()!=guards[address]:
-                raise CameraError('The firmware build differs from the reviewed GM5 profile. No camera change was made.')
-    key=pages[KEY_PAGE][KEY_OFFSET:KEY_OFFSET+16]
-    if hashlib.sha256(key).hexdigest()!=KEY_SHA:raise CameraError('The firmware encryption-key record differs')
-    rom=struct.unpack_from('<H',pages[POLICY_ROM],0x3DC)[0]
-    ram=struct.unpack_from('<H',pages[POLICY_RAM],0x90)[0]
+                raise CameraError('The firmware build differs from the reviewed '+spec['token']+' profile. No camera change was made.')
+    key=pages[spec['key_page']][spec['key_offset']:spec['key_offset']+16]
+    if hashlib.sha256(key).hexdigest()!=spec['key_sha']:raise CameraError('The firmware encryption-key record differs')
+    rom=struct.unpack_from('<H',pages[spec['policy_rom']],spec['policy_rom_offset'])[0]
+    ram=struct.unpack_from('<H',pages[spec['policy_ram']],spec['policy_ram_offset'])[0]
     if ram not in (0,1):raise CameraError('The temporary update policy is not in a reviewed state')
     if rom==0 and ram!=0:
         raise CameraError('The current update state differs from the installed patch. '
             'Switch the camera off normally, reconnect in service mode and read it again.')
-    if pages[MODE][0x5D]!=0:raise CameraError('Reconnect the camera in the standard service USB state')
-    return Inspection(MODEL,identity.get('serial',''),identity.get('usb_release',0),version[0],rom,ram,key)
+    if pages[spec['mode']][spec['mode_offset']]!=0:raise CameraError('Reconnect the camera in the standard service USB state')
+    return Inspection(model,identity.get('serial',''),identity.get('usb_release',0),version[0],rom,ram,key)
 
 
-def inspect_camera(transport_factory=Transport,progress=lambda *_:None):
-    with transport_factory() as transport:
-        return inspect_service(Service(transport,PAGES),transport.identity,progress)
+def inspect_camera(transport_factory=None,progress=lambda *_:None):
+    with (transport_factory or updater_transport)() as transport:
+        return inspect_service(selected_service(transport),transport.identity,progress)
 
 
-def enable_update(previous,transport_factory=Transport,progress=lambda *_:None):
+def enable_update(previous,transport_factory=None,progress=lambda *_:None):
     """Recheck the entire profile in this connection before a fixed write."""
-    with transport_factory() as transport:
-        service=Service(transport,PAGES)
+    with (transport_factory or updater_transport)() as transport:
+        if transport.identity.get('model')!=previous.model:
+            raise CameraError('The connected camera model changed after preparation. Read it again.')
+        service=selected_service(transport);spec=model_spec(previous.model)
         current=inspect_service(service,transport.identity,progress)
         if (previous.serial and current.serial!=previous.serial or current.key!=previous.key
                 or current.version!=previous.version or current.usb_release!=previous.usb_release
@@ -110,12 +147,12 @@ def enable_update(previous,transport_factory=Transport,progress=lambda *_:None):
         if current.rom_policy==0 or current.ram_policy==0:
             return dict(wrote_ram=False,already_enabled=True,rom_policy=current.rom_policy)
         # Recheck the addressing mode immediately before the single store.
-        if service.read(MODE)[0x5D]!=0:raise CameraError('Camera service state changed; no write sent')
-        page=service.read(POLICY_RAM)
-        if struct.unpack_from('<H',page,0x90)[0]!=1:raise CameraError('Camera policy changed; read the camera again')
+        if service.read(spec['mode'])[spec['mode_offset']]!=0:raise CameraError('Camera service state changed; no write sent')
+        page=service.read(spec['policy_ram']);offset=spec['policy_ram_offset']
+        if struct.unpack_from('<H',page,offset)[0]!=1:raise CameraError('Camera policy changed; read the camera again')
         service.set_policy(0)
-        wanted=bytearray(page);wanted[0x90:0x92]=bytes(2)
-        if service.read(POLICY_RAM)!=wanted:
+        wanted=bytearray(page);wanted[offset:offset+2]=bytes(2)
+        if service.read(spec['policy_ram'])!=wanted:
             raise CameraError('The temporary flag write could not be verified. Reconnect and read the camera before proceeding.')
         page_for_rom(current,service)
         return dict(wrote_ram=True,already_enabled=False,rom_policy=1,ram_policy=0,
@@ -124,10 +161,11 @@ def enable_update(previous,transport_factory=Transport,progress=lambda *_:None):
 
 def page_for_rom(current,service):
     # Independent post-write ROM validation; the host never sends NOR writes.
-    raw=service.read(POLICY_ROM);checked=bytearray(raw)
-    if struct.unpack_from('<H',raw,0x3DC)[0]!=current.rom_policy:
+    spec=model_spec(current.model);offset=spec['policy_rom_offset']
+    raw=service.read(spec['policy_rom']);checked=bytearray(raw)
+    if struct.unpack_from('<H',raw,offset)[0]!=current.rom_policy:
         raise CameraError('The ROM update policy changed unexpectedly')
-    checked[0x3DC:0x3DE]=b'\x01\0'
-    if hashlib.sha256(checked).hexdigest()!=PROFILE_GUARDS[current.version][POLICY_ROM]:
+    checked[offset:offset+2]=b'\x01\0'
+    if hashlib.sha256(checked).hexdigest()!=profile_guards(current.model)[current.version][spec['policy_rom']]:
         raise CameraError('The ROM policy initializer differs')
     return raw
