@@ -100,7 +100,7 @@ class App:
         self.busy=action;self.status.set('Working…')
         for button in (self.read_button,self.build_button,self.enable_button,self.open_button):button.configure(state='disabled')
         self.card_check.configure(state='disabled')
-        self.card.set(False)
+        if action in ('inspect','prepare'):self.card.set(False)
         def progress(label,done,total):self.events.put(('progress',(label,done,total)))
         def worker():
             try:self.events.put(('done',(action,operation(progress))))
@@ -117,6 +117,11 @@ class App:
                     continue
                 action,result=payload;self.busy=None;self.read_button.configure(state='normal')
                 self.build_button.configure(state='normal' if self.workflow.inspection else 'disabled')
+                if action=='enable':
+                    ready=bool(self.workflow.inspection and self.workflow.output and self.workflow.manifest
+                        and self.workflow.manifest['temporary_flag_needed'])
+                    self.enable_button.configure(state='normal' if ready else 'disabled')
+                    self.card_check.configure(state='normal' if ready else 'disabled')
                 if kind=='error':
                     # Backend readiness is invalidated before a fresh read or
                     # replacement build. Do not leave the former instructions
@@ -154,10 +159,11 @@ class App:
                     self.status.set('Verified files saved. Copy '+result['update_filename']+' to the SD card.');self.tabs.select(2)
                 elif action=='enable':
                     self.open_button.configure(state='normal')
-                    self.enable_button.configure(state='disabled')
                     self.status.set('Update access verified. Keep the camera awake and powered on.')
                     self.set_steps('Update access is verified.\n\nUnplug USB without switching the camera off or letting it sleep. '
                         'Press Playback, then follow the update confirmation on the camera. Keep power stable until it finishes.\n\n'
+                        'If the camera sleeps or restarts before installation, reconnect service USB and click Enable this update again. '
+                        'The prepared firmware does not need to be rebuilt.\n\n'
                         'After restart, verify the installed firmware.\n\n'+STOCK_RESTORE_RESET)
                 self.bar.configure(value=0)
         except queue.Empty:pass

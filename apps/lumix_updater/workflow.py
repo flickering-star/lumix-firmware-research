@@ -96,6 +96,7 @@ class Workflow:
         return path
 
     def enable(self,*,card_inserted_with_power_off,progress=lambda *_:None):
+        self.enabled=False
         self.verify_output()
         if not card_inserted_with_power_off:
             raise ValueError('Insert the prepared card with the camera switched off, then reconnect service USB')

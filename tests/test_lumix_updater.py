@@ -216,5 +216,30 @@ class WorkflowTests(unittest.TestCase):
         self.assertTrue(result['wrote_ram']);self.assertTrue(self.workflow.enabled)
         self.assertIs(enable.call_args.args[0],self.workflow.inspection)
 
+    def test_repeated_enable_rechecks_without_repreparing(self):
+        self.prepare();output=self.workflow.output;manifest=self.workflow.manifest
+        with patch('apps.lumix_updater.workflow.enable_update',return_value={'wrote_ram':True}) as enable:
+            for _ in range(2):self.workflow.enable(card_inserted_with_power_off=True)
+        self.assertEqual(enable.call_count,2)
+        self.assertTrue(all(c.args[0] is self.workflow.inspection for c in enable.call_args_list))
+        self.assertIs(self.workflow.output,output);self.assertIs(self.workflow.manifest,manifest)
+        (output/'GM5__V11.bin').write_bytes(b'changed-after-enable')
+        with patch('apps.lumix_updater.workflow.enable_update') as enable:
+            with self.assertRaisesRegex(ValueError,'changed or is missing'):
+                self.workflow.enable(card_inserted_with_power_off=True)
+        enable.assert_not_called();self.assertFalse(self.workflow.enabled)
+
+    def test_failed_reenable_can_retry_with_prepared_files(self):
+        self.prepare();output=self.workflow.output
+        with patch('apps.lumix_updater.workflow.enable_update',
+                   side_effect=[{'wrote_ram':True},RuntimeError('disconnected'),{'wrote_ram':True}]) as enable:
+            self.workflow.enable(card_inserted_with_power_off=True)
+            with self.assertRaisesRegex(RuntimeError,'disconnected'):
+                self.workflow.enable(card_inserted_with_power_off=True)
+            self.assertFalse(self.workflow.enabled)
+            self.assertIs(self.workflow.output,output)
+            self.workflow.enable(card_inserted_with_power_off=True)
+        self.assertEqual(enable.call_count,3);self.assertTrue(self.workflow.enabled)
+
 
 if __name__=='__main__':unittest.main()

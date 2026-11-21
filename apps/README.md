@@ -7,7 +7,14 @@ recovery procedure is validated; a bad update can leave a camera unusable.**
 Desktop application for preparing an SD firmware update. The published 0.1.1
 release supports the reviewed GM5 profiles described below.
 
-## Development version 0.2.3
+## Development version 0.2.4
+
+**Enable this update** remains available after each attempt. If the camera
+sleeps, restarts or disconnects before installation, reconnect service USB and
+use the same button again. The prepared firmware stays available; each attempt
+rechecks the saved file and connected camera before any flag write. The button
+is disabled while an operation is running. Disconnect USB before pressing
+Playback to check for the update on the camera.
 
 The new source adds **DMC-GM1 firmware 1.1/internal 0110**, alongside GM5
 official 0110/factory 0111, with separate complete-page guards, encryption-key
