@@ -4,11 +4,15 @@
 cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated; a bad update can leave a camera unusable.**
 
-Desktop application for preparing an SD firmware update. The previous0.2.4
-apps are published with a GM1 opacity performance warning. The new0.2.5 apps
-remain local candidates until the owner tests them.
+Desktop application for preparing an SD firmware update. The owner has tested
+the Mac and Windows v0.2.5 apps and authorized this release. GM1S remains
+unsupported and is rejected; the GM1 and GM5 firmware guards are model-specific.
 
-## Development version 0.2.5
+## Release 0.2.5
+
+- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-darwin-arm64.zip)
+- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)
 
 GM1 LUTs now always apply at100% with no adjustment rows. All opacity-only
 hooks, settings handlers, numeric/scale drawing and blending are removed.
@@ -45,7 +49,7 @@ dispatcher/producer stack frames. GM5 retains its owner-tested adjacent-manager
 build. Neither model changes settings/calibration components or installs an
 independent recovery loader. The unfinished 65:24 work is excluded.
 
-The0.2.5 desktop packages remain local test candidates. The published0.2.4
+These are the exact v0.2.5 archives supplied for the owner's tests. The0.2.4
 apps retain the GM1 opacity path with severe reported menu/control delays;
 see its performance warning before using that older release. The owner found
 the new no-opacity GM1 firmware usable, with slightly lower performance than
@@ -56,22 +60,23 @@ format coverage remain incomplete. Use `GM1__V11.bin` for GM1 or `GM5__V11.bin`
 for GM5, as selected by the app. Official BIN/ZIP input is model-specific and
 hash checked; when download fails, select the matching official local file.
 
-The Mac build runs frozen codec/library/TLS/catalog and GUI checks.
-The Windows EXE candidate uses the owner-tested 0.1.1 Windows
+The Mac build passed frozen codec/library/TLS/catalog and GUI checks.
+The Windows EXE uses the owner-tested 0.1.1 Windows
 bootloader, Python 3.12.3 runtime and native libraries, with matching 3.12.3
 application bytecode and the same patch catalogs as Mac. Its independent
-archive/PE/source audit is separate from Windows runtime testing; these new
-Windows packages have not yet been launched on Windows. The original 0.1.1 owner
-test does not validate new code. Nothing in this development section is a new
-public GitHub release.
+archive/PE/source audit is separate from physical app testing. The owner now
+reports that both new desktop versions work, one camera was flashed through
+the apps, and the patch was tested on three additional cameras whose policy
+was already unlocked. Exact body identities and recording-mode coverage were
+not recorded. See the [release test record](../evidence/lumix-updater-0.2.5.json).
 
 ## Previous release0.2.4 — GM1 performance warning
 
 - [Mac and Windows archives, checksums and warning](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4)
 
 This previous release includes GM1 Opacity. The owner reports severe delays
-with that path. The upcoming0.2.5 removes opacity for GM1 and will be released
-only after owner testing. GM5 retains opacity and its tested firmware target.
+with that path. Version0.2.5 removes opacity for GM1 and supersedes these apps.
+GM5 retains opacity and its tested firmware target.
 
 ## Original GM5-only version 0.1.1
 

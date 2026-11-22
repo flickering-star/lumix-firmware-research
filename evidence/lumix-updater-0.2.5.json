@@ -1,9 +1,7 @@
 {
   "schema": 1,
   "version": "0.2.5",
-  "status": "local-owner-test-pending",
-  "owner_no_opacity_test_report": "Usable, slightly slower than native styles; invisible row was still selectable.",
-  "owner_tested_firmware_sha256": "21baa1b919de830c5793d883c66c4ddd5909acbc2e2850acc29db28ac06f3fa3",
+  "status": "owner-tested",
   "current_gm1_main_sha256": "ce5d4f16eab721a851e70a5bab2243efa3f0adb2627b5e95b445a9df3aca0e1f",
   "current_gm1_gui_sha256": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321",
   "current_gm1_secondary_sha256": "21b5cdae4fd4ee66892028a611f345a7eab985f56c4ac30f27cd39c643479cbc",
@@ -47,7 +45,6 @@
     "preserved_library_modules": 134,
     "preserved_runtime_members": 1007
   },
-  "windows_execution_verified": false,
   "gm5_firmware_target_unchanged": true,
   "archives": [
     {
@@ -61,7 +58,6 @@
       "sha256": "c2e25377275530f6156f3cf4793eb7a4d45354eedaaae018978e8985caf444cc"
     }
   ],
-  "new_release_assets_published": false,
   "previous_release_tag": "updater-v0.2.4",
   "previous_release_has_gm1_opacity_performance_warning": true,
   "firmware_memory_settings_keys_or_personal_paths_included": false,
@@ -86,5 +82,47 @@
   "background_or_per_frame_checks_added": false,
   "public_checkout_tests": 142,
   "public_checkout_skipped": 50,
-  "public_checkout_tests_passed": 92
+  "public_checkout_tests_passed": 92,
+  "earlier_owner_no_opacity_test_report": "Usable, slightly slower than native styles; invisible row was still selectable.",
+  "earlier_no_opacity_test_firmware_sha256": "21baa1b919de830c5793d883c66c4ddd5909acbc2e2850acc29db28ac06f3fa3",
+  "windows_execution_verified_by_agent": false,
+  "compiled_app_source_commit": "bf0966dd7c0d32f69e61531d93619d234ba51124",
+  "owner_reports_mac_and_windows_apps_work": true,
+  "cameras_reported_flashed_through_apps": 1,
+  "additional_already_unlocked_cameras_reported_patch_tested": 3,
+  "exact_camera_identities_or_all_mode_coverage_recorded": false,
+  "gm1s_supported": false,
+  "gm1s_rejection_expected": true,
+  "gm1_lut_strength_percent": 100,
+  "gm1_opacity_removed": true,
+  "gm5_lut_target_unchanged": true,
+  "release_assets": [
+    {
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "platform": "macOS Apple Silicon",
+      "bytes": 17918433,
+      "sha256": "401149a23981998264ec8ac066075f0908c216b31c159b66cc16491036898d11"
+    },
+    {
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "platform": "Windows x64",
+      "bytes": 17028359,
+      "sha256": "c2e25377275530f6156f3cf4793eb7a4d45354eedaaae018978e8985caf444cc"
+    }
+  ],
+  "known_limitations": [
+    "FAT32 LUT import only; withdrawn exFAT overlays are excluded.",
+    "Brief GM1 colored sensor-output lines after Import/No LUT remain unresolved.",
+    "GM1 can remain slightly slower than native Photo Styles.",
+    "65:24 is not included in these apps.",
+    "Complete long-session and recording-format coverage is not established.",
+    "Reset settings before stock restore while patched firmware is still running.",
+    "Independent physical recovery remains unproven."
+  ],
+  "owner_report_is_not_independent_full_image_or_hardware_validation": true,
+  "published_archives_match_owner_test_files": true,
+  "firmware_images_or_camera_keys_bundled": false,
+  "owner_report_recorded_date": "2026-11-22",
+  "windows_execution_owner_reported": true,
+  "release_tag": "updater-v0.2.5"
 }

@@ -15,7 +15,7 @@ recording-format, long-session and all-body compatibility coverage is not establ
 
 The previous0.2.4 apps include the Opacity slider and blending path, with severe
 reported GM1 menu/control and power-off delays. Their release notes contain
-that warning. Development0.2.5 removes the entire opacity path: settings
+that warning. Version0.2.5 removes the entire opacity path: settings
 getters/setters, editor transactions, numeric/scale rendering, assets, exclusive
 guards and per-frame strength/blending work. At an attempted LUT adjustment
 entry it calls the original native
@@ -23,7 +23,7 @@ row-selectability predicate, using the same row flags as the hidden native
 fifth row. Native profiles keep their original entry path, including kind2
 internal enums. No polling or new preview/capture checks are added. The
 processing path is unchanged from the owner's no-opacity camera test. The
-new desktop apps await owner testing before release.
+owner has tested both desktop apps and authorized their release.
 
 Use a FAT32 card and short ASCII 8.3 filenames in its root. The importer accepts
 compatible VLT/CUBE files and resamples them to a 9×9×9 hardware table with 6-bit
@@ -57,7 +57,7 @@ physical timing.
 
 ## Reproduction and installation
 
-The development desktop source in `apps/lumix_updater` supports the reviewed
+The desktop source in `apps/lumix_updater` supports the reviewed
 GM1 and GM5 profiles. Read`apps/README.md` for dependencies and launching from
 source. Connect the awake camera through service USB and choose Experimental
 LUTs. The app validates the exact model, revision, code pages, key and policy;
@@ -89,6 +89,7 @@ patched firmware is still running. Keep the app's matching stock-restore file.
 The stock restore returns the original language lock and signed-update policy
 and clears saved LUTs.
 
-The new desktop binaries will be published separately after owner testing.
+The tested [v0.2.5 desktop apps and checksums](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)
+support the guarded GM1/GM5 builds. GM1S is not supported.
 This remains an unmaintained reference archive; contributions, pull requests
 and support requests are not accepted.
