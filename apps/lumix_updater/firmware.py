@@ -14,6 +14,7 @@ import zlib
 from .download import checked_firmware, sha
 from .models import model_spec
 from .duration import apply_duration
+from .languages import apply_languages
 from .preservation import check_preserved
 
 START, DIRECTORY, ENTRY = 0x600, 0x2EC, 92
@@ -161,6 +162,7 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     templates={e['name']:e for e in entries(raw,model=model)}
     parts=[]
     preservation={}
+    language_catalog=None
     target_revision=0x0110 if model=='DMC-GM1' or choice=='restore' and camera_profile=='gm5-official-0110' else 0x0111
     for name in components:
         if name not in destinations:raise ValueError('Patch requests an unreviewed component')
@@ -186,6 +188,8 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
                     or plain[length:]!=b'\xff'*(len(plain)-length)):
                 raise ValueError('LUT update would overwrite or omit undeclared flash data')
         if remove_limit:plain=apply_duration(plain,name,model,plan)
+        if name=='program' and choice!='restore':
+            plain,language_catalog=apply_languages(plain,model)
         preservation[name]=check_preserved(plain,name,model,target_revision)
         parts.append((name,destinations[name],plain[:length]))
     if not parts or parts[0][0]!='program':raise ValueError('Program must be the first update component')
@@ -216,6 +220,9 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
             raise ValueError('Final package directory does not match the reviewed payload')
     source_revision=next(v for v,p in spec['profiles'].items() if p==camera_profile)
     limitations=list(plan['limitations'])
+    if language_catalog is not None:
+        limitations.append('All '+str(len(language_catalog['language_ids']))+
+            ' native firmware languages are available through the Language menu in every camera region.')
     if choice=='restore':
         limitations.insert(0, STOCK_RESTORE_RESET)
     if remove_limit:
@@ -233,5 +240,6 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
         displayed_version_preserved=True,source_internal_revision=f'{source_revision:04x}',
         target_internal_revision=f'{target_revision:04x}',
         native_preservation=preservation,
+        language_catalog=language_catalog,
         settings_and_body_calibration_excluded=True,limitations=limitations)
     return bytes(output),report

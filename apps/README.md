@@ -10,6 +10,13 @@ unsupported and is rejected; the GM1 and GM5 firmware guards are model-specific.
 
 ## Release 0.2.5
 
+Source version **0.2.6** adds the complete native 26-language catalog to both
+the standalone language unlock and LUT choices for GM1 and GM5. It derives
+the IDs and ordering from the firmware, including Korean and Middle East
+languages in the same list. Camera tests of the new candidates are pending.
+The downloads below are the tested 0.2.5 release and retain their earlier
+language restrictions. See [implementation and validation](../docs/lumix-all-languages.md).
+
 - [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-darwin-arm64.zip)
 - [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-win32-x86_64.zip)
 - [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)

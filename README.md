@@ -19,6 +19,12 @@ connection files are excluded from Git history.
 
 ## GM1/GM5 desktop updater
 
+The **0.2.6 source candidate** exposes all 26 native firmware languages in every
+region on both models. It applies to the standalone language/update-access
+option and the LUT option. Native and host checks pass; physical camera tests
+are pending. The current 0.2.5 downloads retain their earlier language subsets.
+See [complete-language findings](docs/lumix-all-languages.md).
+
 The tested **v0.2.5** apps support the reviewed GM1 firmware1.1/internal0110
 and GM5 internal0110/0111 profiles. **GM1S is not supported**: its firmware
 layout differs, and the apps reject it.
