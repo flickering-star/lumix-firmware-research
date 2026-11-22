@@ -1,0 +1,4 @@
+# Patch data and catalog hashes require identical bytes on every build host.
+*.lxdp -text
+apps/lumix_updater/patches/*.json text eol=lf
+apps/lumix_updater/patches/**/*.json text eol=lf
