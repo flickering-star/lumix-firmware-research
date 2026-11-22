@@ -6,23 +6,25 @@
 cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated; a bad update can leave a camera unusable.**
 
-Desktop application for preparing an SD firmware update. The owner reports
-that the current Mac and Windows apps work and has authorized publication.
+Desktop application for preparing an SD firmware update. The owner requested
+removal of the faulty recording-limit option and publication of the replacements.
 GM1S is unsupported and is rejected by the model-specific firmware guards.
 
-## Release 0.2.7
+## Release 0.2.8
 
-The release provides the exact owner-accepted Mac app **0.2.6** and Windows
-app **0.2.7**. Both were freshly compiled from source on their target systems.
-Windows uses the exact native USB library from the tested0.2.5 release. The
-camera-read, preparation, USB-enable and retry workflow is the0.2.5 workflow.
-Both choices expose all26 native firmware languages on GM1 and GM5, with IDs
-and ordering derived from the firmware. See
+Both apps are version0.2.8 and were compiled from source on their target
+systems. The recording-limit checkbox, implementation and catalog variants
+are removed. Newly prepared firmware preserves native recording limits.
+Windows uses the exact USB library from the tested0.2.5 release. Camera read,
+USB enable and retry behavior follows the0.2.5 workflow.
+
+Both patch choices expose all26 native firmware languages on GM1 and GM5.
+IDs and ordering come from the firmware. See
 [implementation and validation](../docs/lumix-all-languages.md).
 
-- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.7/Lumix-Firmware-Updater-darwin-arm64.zip)
-- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.7/Lumix-Firmware-Updater-win32-x86_64.zip)
-- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.7)
+- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.8/Lumix-Firmware-Updater-darwin-arm64.zip)
+- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.8/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.8)
 
 GM1 LUTs now always apply at100% with no adjustment rows. All opacity-only
 hooks, settings handlers, numeric/scale drawing and blending are removed.
@@ -60,7 +62,8 @@ dispatcher/producer stack frames. GM5 retains its owner-tested adjacent-manager
 build. Neither model changes settings/calibration components or installs an
 independent recovery loader. The unfinished 65:24 work is excluded.
 
-These are the exact archives approved by the owner. The0.2.4 apps retain the
+The owner requested direct publication after withdrawing the recording-limit
+option. The0.2.4 apps retain the
 GM1 opacity path with severe reported menu/control delays. Current GM1 firmware
 uses fixed100% strength and may still show brief colored vertical lines after
 Import/No LUT. GM5 retains the tested LUT implementation. Long-session and
@@ -70,10 +73,17 @@ download fails, select the matching official local file.
 
 Runtime self-tests and GUI checks for these fresh source archives were skipped
 at the owner's request. The source language patch has its separate native and
-independent-decoder validation. Physical acceptance of the current app archives
-is owner-reported. Exact body identities and detailed per-language font/reboot
-coverage were not supplied. See the
-[release record](../evidence/lumix-updater-0.2.7.json).
+independent-decoder validation. The preceding Mac0.2.6 and Windows0.2.7 archives were accepted by the owner.
+These replacement0.2.8 archives have no new reported camera test. Exact body
+identities and detailed per-language font/reboot coverage were not supplied.
+See the [release record](../evidence/lumix-updater-0.2.8.json).
+
+## Previous release0.2.7
+
+- [Previous apps with recording-limit withdrawal warning](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.7)
+
+Its recording-limit option is withdrawn after the corrupted-video report.
+Use a newly prepared0.2.8 update to restore native limits on affected cameras.
 
 ## Previous release0.2.5
 

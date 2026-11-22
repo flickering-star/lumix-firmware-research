@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "release_version": "0.2.8",
+  "status": "publication-authorized-after-build",
+  "owner_requested_direct_publication": true,
+  "archives": [
+    {
+      "platform": "macOS Apple Silicon",
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "bytes": 15673798,
+      "sha256": "1a177c67a78832d8310d90254e264a84dda230ff848aaef5279fa06adf4ff26b",
+      "source_commit": "079ec177b8625928e346d4c25263f468246e0304"
+    },
+    {
+      "platform": "Windows x64",
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "bytes": 17397885,
+      "sha256": "e2bba57f95f66363f53d759be8d4dd86ca86d981cabb477a4bff23df6b300214",
+      "source_commit": "d6a009e6f7da9e8b3dbbb985d183205eb35fddaa"
+    }
+  ],
+  "recording_limit_option_removed": true,
+  "recording_limit_patch_implementation_removed": true,
+  "optional_recording_catalog_variants_removed": true,
+  "native_recording_limits_preserved": true,
+  "already_installed_limit_patch_requires_new_firmware_install": true,
+  "language_count_by_model": {
+    "DMC-GM1": 26,
+    "DMC-GM5": 26
+  },
+  "language_catalog_ids_derived_from_firmware": true,
+  "native_source_builds": true,
+  "new_archive_runtime_tests_skipped_at_owner_request": true,
+  "new_archives_physically_tested_by_agent": false,
+  "new_owner_camera_test_not_reported": true,
+  "windows_usb_library_sha256": "698752cd7f4634c36a7e5dd18006ef27b839fd851db571b3991c750351d8bf55",
+  "windows_native_build_url": "https://github.com/flickering-star/lumix-firmware-research/actions/runs/45054639933",
+  "first_windows_attempt_failed_due_to_catalog_line_ending_conversion": true,
+  "catalog_line_endings_pinned_to_lf": true,
+  "limitations": [
+    "FAT32 LUT import only.",
+    "GM1 transient colored lines after Import/No LUT remain unresolved.",
+    "GM1S unsupported.",
+    "65:24 work excluded.",
+    "Reset settings before stock restore; independent recovery unproven."
+  ]
+}

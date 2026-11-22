@@ -21,19 +21,25 @@ connection files are excluded from Git history.
 
 ## GM1/GM5 desktop updater
 
-The current **v0.2.7 release** exposes all 26 native firmware languages on both
-models, including Korean and Middle East languages in the same catalog. The
-standalone language/update-access option and the LUT option use that catalog.
-The owner reports that the apps work and has approved publication.
-See [complete-language findings](docs/lumix-all-languages.md).
+The current **v0.2.8 release** removes the recording-limit option after the
+owner reported broken SD video files beyond30 minutes. Both apps preserve
+native recording limits. Installing a newly prepared language or LUT update
+restores those checks if the older limit-removal patch is already installed.
+Old prepared firmware files retain their contents and should be replaced.
 
-The release contains the exact accepted Mac app **0.2.6** and Windows app
-**0.2.7** archives. Both were compiled from source on their target systems and
-use the tested 0.2.5 workflow. Windows bundles its tested USB library. Runtime
-checks for these source builds were skipped at the owner's request.
+Both apps include all26 native firmware languages on GM1 and GM5, including
+Korean and Middle East languages in the same catalog. The language-only and
+LUT options use this catalog. See
+[complete-language findings](docs/lumix-all-languages.md).
 
-- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.7)
+Both0.2.8 apps were compiled from source on their target systems. The camera
+read, USB enable and retry behavior continues from0.2.5, and Windows uses its
+exact tested USB library. Runtime checks were skipped at the owner's request;
+the owner requested direct publication of these replacement builds.
+
+- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.8)
 - [Instructions, build source and limitations](apps/README.md)
+- [Recording-limit withdrawal](evidence/lumix-recording-limit-withdrawal.json)
 
 Supported profiles are GM1 firmware1.1/internal0110 and GM5 internal0110/0111.
 **GM1S is unsupported** and is rejected. GM1 uses fixed100% LUT strength and
