@@ -22,18 +22,20 @@ def run(args,log,*,env=None):
         subprocess.run([str(arg) for arg in args],check=True,stdout=stream,stderr=subprocess.STDOUT,env=env)
 
 
-def bundle(output,assets,*,architecture=None,cc=None,skip_checks=False):
+def bundle(output,assets,*,architecture=None,cc=None,skip_checks=False,usb_library=None):
     if sys.platform not in ('darwin','win32'):
         raise ValueError('Build the Mac app on macOS or the Windows app on Windows')
     if sys.version_info<(3,11):raise ValueError('Use a supported Python 3.11 or newer build environment')
-    import libusb_package
     import certifi
     import tkinter
     import PyInstaller
     assets=assets.resolve();_,manifest=catalog(assets)
     allowed_files,profiles=catalog_assets(assets)
-    usb=Path(libusb_package.find_library('libusb-1.0')).resolve()
-    if not usb.is_file():raise ValueError('Install the native libusb-package for this architecture')
+    if usb_library is None:
+        import libusb_package
+        usb=Path(libusb_package.find_library('libusb-1.0')).resolve()
+    else:usb=usb_library.resolve()
+    if not usb.is_file():raise ValueError('The native USB library is missing')
     output=output.absolute();output.mkdir(mode=0o700,parents=True,exist_ok=False)
     (output/'builder-source.py').write_bytes(Path(__file__).read_bytes())
     log=output/'build.log';native=output/'native';native.mkdir()
@@ -100,6 +102,7 @@ def bundle(output,assets,*,architecture=None,cc=None,skip_checks=False):
         dependencies={name:importlib.metadata.version(name) for name in
                       ('certifi','libusb-package','pyinstaller')},selftest=checked,gui_smoke=gui,
         runtime_checks_skipped=skip_checks,
+        usb_library=dict(path=str(usb),sha256=sha(usb.read_bytes()),explicit=usb_library is not None),
         firmware_binaries_or_camera_keys_bundled=False,camera_contacted=False,
         actual_camera_usb_workflow_verified=False,published=False)
     (output/'bundle.json').write_text(json.dumps(result,indent=2)+'\n')
@@ -113,6 +116,7 @@ if __name__=='__main__':
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--arch',choices=('arm64','x86_64','universal2'))
     parser.add_argument('--cc',help='C compiler executable')
+    parser.add_argument('--usb-library',type=Path,help='Use this native USB library in the app bundle')
     parser.add_argument('--skip-checks',action='store_true',help='Package without running the app self-test or GUI check')
-    args=parser.parse_args();result=bundle(args.out,args.assets,architecture=args.arch,cc=args.cc,skip_checks=args.skip_checks)
+    args=parser.parse_args();result=bundle(args.out,args.assets,architecture=args.arch,cc=args.cc,skip_checks=args.skip_checks,usb_library=args.usb_library)
     print(json.dumps(dict(status=result['status'],archive=result['archive'],selftest=result['selftest'])))
