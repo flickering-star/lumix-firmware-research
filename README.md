@@ -1,5 +1,5 @@
 # Lumix Firmware Research
-**GM1: use v0.2.5. Earlier LUT builds with Opacity can cause severe UI lag.
+**GM1: use the current desktop release. Earlier LUT builds with Opacity can cause severe UI lag.
 The current GM1 patch uses fixed 100% LUT strength; brief colored lines after
 Import/No LUT remain unresolved.**
 **All original project code was written by a chatbot. Flashing Panasonic
@@ -19,27 +19,30 @@ connection files are excluded from Git history.
 
 ## GM1/GM5 desktop updater
 
-The **0.2.6 source candidate** exposes all 26 native firmware languages in every
-region on both models. It applies to the standalone language/update-access
-option and the LUT option. Native and host checks pass; physical camera tests
-are pending. The current 0.2.5 downloads retain their earlier language subsets.
+The current **v0.2.7 release** exposes all 26 native firmware languages on both
+models, including Korean and Middle East languages in the same catalog. The
+standalone language/update-access option and the LUT option use that catalog.
+The owner reports that the apps work and has approved publication.
 See [complete-language findings](docs/lumix-all-languages.md).
 
-The tested **v0.2.5** apps support the reviewed GM1 firmware1.1/internal0110
-and GM5 internal0110/0111 profiles. **GM1S is not supported**: its firmware
-layout differs, and the apps reject it.
+The release contains the exact accepted Mac app **0.2.6** and Windows app
+**0.2.7** archives. Both were compiled from source on their target systems and
+use the tested 0.2.5 workflow. Windows bundles its tested USB library. Runtime
+checks for these source builds were skipped at the owner's request.
 
-- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)
+- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.7)
 - [Instructions, build source and limitations](apps/README.md)
 
-Version **v0.2.5** removes the entire GM1 opacity path and blocks navigation
-into invisible LUT adjustment rows. The owner found the no-opacity firmware
-usable, though slightly slower than native profiles, and now reports successful
-Mac/Windows app tests, one camera flashed through the apps and patch tests on
-three additional already-unlocked cameras. GM5 retains its tested LUT target.
+Supported profiles are GM1 firmware1.1/internal0110 and GM5 internal0110/0111.
+**GM1S is unsupported** and is rejected. GM1 uses fixed100% LUT strength and
+blocks invisible adjustment rows. GM5 retains Opacity. GM1 can remain slightly
+slower than native styles and may show brief colored lines after Import/No LUT.
 The [previous v0.2.4 release](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4)
-still includes GM1 Opacity and its severe-delay warning. See
+includes GM1 Opacity and its severe-delay warning. See
 [GM1 LUT instructions and limitations](docs/gm1-luts.md).
+
+**Disconnect USB before pressing Playback** to obtain the camera's update
+prompt. Insert the prepared card with the camera switched off.
 
 The apps contain patch deltas and recover the required key from the connected
 service camera. They download or accept only the hash-checked official input.

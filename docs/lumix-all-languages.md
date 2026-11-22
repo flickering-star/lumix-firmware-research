@@ -2,9 +2,9 @@
 
 The 0.2.6 updater source exposes all 26 native language choices on both reviewed
 models. The standalone **Language unlock + update access** option and the
-experimental LUT option both apply this change. The released 0.2.5 applications
-retain their previous regional language restrictions. Camera testing of the
-new packages is pending.
+experimental LUT option both apply this change. The current desktop release includes this change. The owner reports that
+the apps work and has authorized publication. The older0.2.5 applications
+retain their previous regional language restrictions.
 
 The previous GM1 Japanese unlock selected an existing 16-language regional
 list. It excluded Korean even though the firmware contains Korean text and
@@ -80,5 +80,6 @@ The summarized evidence is in
 On a test body, confirm that Korean and Arabic or Persian appear in the same
 Language list. Select each through the menu and check persistence after a
 normal off/on. Test the standalone and LUT options on the appropriate model.
-Physical selection, font rendering and reboot behavior remain pending for
-these candidates.
+Detailed per-language font rendering and reboot coverage has not been
+reported for the current archives. App acceptance is recorded in
+[lumix-updater-0.2.7.json](../evidence/lumix-updater-0.2.7.json).

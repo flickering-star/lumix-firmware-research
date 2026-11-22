@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "release_version": "0.2.7",
+  "status": "owner-tested",
+  "owner_reports_apps_work": true,
+  "owner_authorized_publication": true,
+  "archives": [
+    {
+      "platform": "macOS Apple Silicon",
+      "app_version": "0.2.6",
+      "source_commit": "a907ee937d0d125b7f896d2bc8005c0e6c1602b2",
+      "sha256": "e9f4bd7d5fdeece3aa6c5be5ca1ad2ee69fb3892dfe7f991659ce542e944244a",
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "bytes": 15677527
+    },
+    {
+      "platform": "Windows x64",
+      "app_version": "0.2.7",
+      "source_commit": "a3af1ef077664bc7ba6903072a7683b5b3653b8d",
+      "sha256": "414bb62ca6df628623b12ec33857848e41921213becc71bbceb55859826cd00b",
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "bytes": 17399969
+    }
+  ],
+  "workflow_baseline": "0.2.5",
+  "native_source_builds": true,
+  "runtime_tests_skipped_at_owner_request": true,
+  "agent_physical_usb_verification_of_new_archives": false,
+  "language_count_by_model": {
+    "DMC-GM1": 26,
+    "DMC-GM5": 26
+  },
+  "language_catalog_ids_derived_from_firmware": true,
+  "language_patch_choices": [
+    "stable",
+    "luts"
+  ],
+  "previous_language_native_cases": 3060,
+  "previous_independently_decoded_workflow_variants": 15,
+  "windows_usb_library_sha256": "698752cd7f4634c36a7e5dd18006ef27b839fd851db571b3991c750351d8bf55",
+  "windows_usb_library_matches_tested_0_2_5": true,
+  "windows_native_build_url": "https://github.com/flickering-star/lumix-firmware-research/actions/runs/45033461527",
+  "owner_notes_missing_update_prompt_may_have_involved_connected_usb": true,
+  "usb_dependency_causality_proven": false,
+  "exact_body_and_per_language_font_reboot_coverage_not_supplied": true,
+  "limitations": [
+    "FAT32 LUT import only; exFAT import unsupported.",
+    "GM1 transient colored lines after Import/No LUT remain unresolved.",
+    "GM1 LUT strength is fixed at100%; GM5 retains Opacity.",
+    "GM1S is unsupported.",
+    "65:24 work is excluded.",
+    "Reset settings before stock restore; independent recovery is unproven."
+  ]
+}

@@ -4,22 +4,23 @@
 cameras is risky because recovery options are limited. No independent GM1/GM5
 recovery procedure is validated; a bad update can leave a camera unusable.**
 
-Desktop application for preparing an SD firmware update. The owner has tested
-the Mac and Windows v0.2.5 apps and authorized this release. GM1S remains
-unsupported and is rejected; the GM1 and GM5 firmware guards are model-specific.
+Desktop application for preparing an SD firmware update. The owner reports
+that the current Mac and Windows apps work and has authorized publication.
+GM1S is unsupported and is rejected by the model-specific firmware guards.
 
-## Release 0.2.5
+## Release 0.2.7
 
-Source version **0.2.6** adds the complete native 26-language catalog to both
-the standalone language unlock and LUT choices for GM1 and GM5. It derives
-the IDs and ordering from the firmware, including Korean and Middle East
-languages in the same list. Camera tests of the new candidates are pending.
-The downloads below are the tested 0.2.5 release and retain their earlier
-language restrictions. See [implementation and validation](../docs/lumix-all-languages.md).
+The release provides the exact owner-accepted Mac app **0.2.6** and Windows
+app **0.2.7**. Both were freshly compiled from source on their target systems.
+Windows uses the exact native USB library from the tested0.2.5 release. The
+camera-read, preparation, USB-enable and retry workflow is the0.2.5 workflow.
+Both choices expose all26 native firmware languages on GM1 and GM5, with IDs
+and ordering derived from the firmware. See
+[implementation and validation](../docs/lumix-all-languages.md).
 
-- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-darwin-arm64.zip)
-- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-win32-x86_64.zip)
-- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)
+- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.7/Lumix-Firmware-Updater-darwin-arm64.zip)
+- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.7/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.7)
 
 GM1 LUTs now always apply at100% with no adjustment rows. All opacity-only
 hooks, settings handlers, numeric/scale drawing and blending are removed.
@@ -47,7 +48,7 @@ and selects the original longer fallback for a separate format-dependent cap.
 It does not remove card-capacity, filesystem, encoder or thermal safeguards;
 physical long-recording/file-segmentation testing is outstanding.
 
-GM1's language patch exposes its existing 16-language list. Both LUT targets
+Both models expose their complete existing26-language catalogs. Both LUT targets
 restore their internal saved cells at startup without scanning the SD card.
 Both LUT updates stop before their saved-bank sectors, preserving imported
 cells and GM5 opacity. GM1 ignores the former saved opacity bytes and applies
@@ -56,26 +57,28 @@ dispatcher/producer stack frames. GM5 retains its owner-tested adjacent-manager
 build. Neither model changes settings/calibration components or installs an
 independent recovery loader. The unfinished 65:24 work is excluded.
 
-These are the exact v0.2.5 archives supplied for the owner's tests. The0.2.4
-apps retain the GM1 opacity path with severe reported menu/control delays;
-see its performance warning before using that older release. The owner found
-the new no-opacity GM1 firmware usable, with slightly lower performance than
-native styles. Transient colored vertical lines after Import/No LUT remain
-an unresolved limitation. The GM5 LUT target was tested with video recording
-and subsequent Library/Playback operation. Long-session and complete recording
-format coverage remain incomplete. Use `GM1__V11.bin` for GM1 or `GM5__V11.bin`
-for GM5, as selected by the app. Official BIN/ZIP input is model-specific and
-hash checked; when download fails, select the matching official local file.
+These are the exact archives approved by the owner. The0.2.4 apps retain the
+GM1 opacity path with severe reported menu/control delays. Current GM1 firmware
+uses fixed100% strength and may still show brief colored vertical lines after
+Import/No LUT. GM5 retains the tested LUT implementation. Long-session and
+complete recording-format coverage remain incomplete. Use the model-specific
+filename selected by the app. Official BIN/ZIP inputs are hash checked; if the
+download fails, select the matching official local file.
 
-The Mac build passed frozen codec/library/TLS/catalog and GUI checks.
-The Windows EXE uses the owner-tested 0.1.1 Windows
-bootloader, Python 3.12.3 runtime and native libraries, with matching 3.12.3
-application bytecode and the same patch catalogs as Mac. Its independent
-archive/PE/source audit is separate from physical app testing. The owner now
-reports that both new desktop versions work, one camera was flashed through
-the apps, and the patch was tested on three additional cameras whose policy
-was already unlocked. Exact body identities and recording-mode coverage were
-not recorded. See the [release test record](../evidence/lumix-updater-0.2.5.json).
+Runtime self-tests and GUI checks for these fresh source archives were skipped
+at the owner's request. The source language patch has its separate native and
+independent-decoder validation. Physical acceptance of the current app archives
+is owner-reported. Exact body identities and detailed per-language font/reboot
+coverage were not supplied. See the
+[release record](../evidence/lumix-updater-0.2.7.json).
+
+## Previous release0.2.5
+
+- [Previous app archives and test record](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.5)
+
+This release introduced fixed100% GM1 LUT strength and retains the earlier
+regional language subsets. The current release uses the complete26-language
+catalog on both models.
 
 ## Previous release0.2.4 — GM1 performance warning
 
