@@ -1,0 +1,66 @@
+name: Build Windows updater from source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12.3'
+          architecture: x64
+      - name: Install build dependencies
+        shell: pwsh
+        run: python -m pip install pyinstaller==6.16.0 libusb-package==1.0.26.3 certifi
+      - name: Obtain the released patch catalog
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $archive = Join-Path $env:RUNNER_TEMP 'updater-0.2.5-assets.zip'
+          $url = 'https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.5/Lumix-Firmware-Updater-win32-x86_64.zip'
+          Invoke-WebRequest -Uri $url -OutFile $archive
+          $expected = 'c2e25377275530f6156f3cf4793eb7a4d45354eedaaae018978e8985caf444cc'
+          if ((Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected) {
+            throw 'Released build-input archive differs'
+          }
+          $unpacked = Join-Path $env:RUNNER_TEMP 'released-build-inputs'
+          Expand-Archive -LiteralPath $archive -DestinationPath $unpacked
+          $patches = Join-Path $unpacked 'Lumix Firmware Updater\_internal\apps\lumix_updater\patches'
+          Copy-Item -LiteralPath $patches -Destination 'build-assets' -Recurse
+      - name: Build the native Windows app
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+          $visualStudio = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $visualStudio) { throw 'MSVC x64 compiler was not found' }
+          $setup = Join-Path $visualStudio 'Common7\Tools\VsDevCmd.bat'
+          $batch = Join-Path $env:RUNNER_TEMP 'build-lumix-updater.cmd'
+          @(
+            '@echo off'
+            ('call "' + $setup + '" -no_logo -arch=x64 -host_arch=x64')
+            'if errorlevel 1 exit /b %errorlevel%'
+            'python tools\lumix_updater_bundle.py --assets build-assets --out desktop-build --arch x86_64 --cc cl --skip-checks'
+            'exit /b %errorlevel%'
+          ) | Set-Content -LiteralPath $batch -Encoding ascii
+          & cmd.exe /d /c $batch
+          if ($LASTEXITCODE -ne 0) { throw 'Windows source build failed' }
+          Set-Content -LiteralPath 'desktop-build\SOURCE-COMMIT.txt' -Value $env:GITHUB_SHA -Encoding ascii
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: lumix-updater-windows-source-build
+          path: |
+            desktop-build/Lumix-Firmware-Updater-win32-x86_64.zip
+            desktop-build/bundle.json
+            desktop-build/build.log
+            desktop-build/SHA256SUMS
+            desktop-build/SOURCE-COMMIT.txt
+          compression-level: 0
+          retention-days: 14

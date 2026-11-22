@@ -22,7 +22,7 @@ def run(args,log,*,env=None):
         subprocess.run([str(arg) for arg in args],check=True,stdout=stream,stderr=subprocess.STDOUT,env=env)
 
 
-def bundle(output,assets,*,architecture=None,cc=None):
+def bundle(output,assets,*,architecture=None,cc=None,skip_checks=False):
     if sys.platform not in ('darwin','win32'):
         raise ValueError('Build the Mac app on macOS or the Windows app on Windows')
     if sys.version_info<(3,11):raise ValueError('Use a supported Python 3.11 or newer build environment')
@@ -70,19 +70,21 @@ def bundle(output,assets,*,architecture=None,cc=None):
     command+=[REPO/'apps/lumix_updater_launcher.py'];run(command,log)
     app=output/'dist'/(name+'.app' if sys.platform=='darwin' else name)
     executable=app/('Contents/MacOS/'+name if sys.platform=='darwin' else name+'.exe')
-    report=output/'bundle-selftest.json'
-    # Tests must work without the private build interpreter or its library paths.
-    clean_env={key:value for key,value in os.environ.items() if key not in
-        ('PYTHONHOME','PYTHONPATH','DYLD_FRAMEWORK_PATH','DYLD_LIBRARY_PATH','SSL_CERT_FILE','SSL_CERT_DIR')}
-    run([executable,'--self-test-report',report],log,env=clean_env)
-    checked=json.loads(report.read_text())
-    if (not checked['codec_selftest'] or not checked['usb_library_loaded']
-            or not checked['bundled_tls_roots_loaded'] or checked['camera_contacted']):
-        raise ValueError('Frozen application self-test failed')
-    gui_report=output/'gui-smoke.json'
-    run([executable,'--gui-smoke-report',gui_report],log,env=clean_env)
-    gui=json.loads(gui_report.read_text())
-    if not gui['passed'] or gui['camera_contacted']:raise ValueError('Frozen desktop UI check failed')
+    checked=None;gui=None
+    if not skip_checks:
+        report=output/'bundle-selftest.json'
+        # Tests must work without the private build interpreter or its library paths.
+        clean_env={key:value for key,value in os.environ.items() if key not in
+            ('PYTHONHOME','PYTHONPATH','DYLD_FRAMEWORK_PATH','DYLD_LIBRARY_PATH','SSL_CERT_FILE','SSL_CERT_DIR')}
+        run([executable,'--self-test-report',report],log,env=clean_env)
+        checked=json.loads(report.read_text())
+        if (not checked['codec_selftest'] or not checked['usb_library_loaded']
+                or not checked['bundled_tls_roots_loaded'] or checked['camera_contacted']):
+            raise ValueError('Frozen application self-test failed')
+        gui_report=output/'gui-smoke.json'
+        run([executable,'--gui-smoke-report',gui_report],log,env=clean_env)
+        gui=json.loads(gui_report.read_text())
+        if not gui['passed'] or gui['camera_contacted']:raise ValueError('Frozen desktop UI check failed')
     # Preserve a relocatable archive with application symlinks intact.
     archive=output/(name.replace(' ','-')+'-'+sys.platform+'-'+target+'.zip')
     if sys.platform=='darwin':
@@ -97,6 +99,7 @@ def bundle(output,assets,*,architecture=None,cc=None):
         patch_catalog_sha256=sha((assets/'catalog.json').read_bytes()),
         dependencies={name:importlib.metadata.version(name) for name in
                       ('certifi','libusb-package','pyinstaller')},selftest=checked,gui_smoke=gui,
+        runtime_checks_skipped=skip_checks,
         firmware_binaries_or_camera_keys_bundled=False,camera_contacted=False,
         actual_camera_usb_workflow_verified=False,published=False)
     (output/'bundle.json').write_text(json.dumps(result,indent=2)+'\n')
@@ -110,5 +113,6 @@ if __name__=='__main__':
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--arch',choices=('arm64','x86_64','universal2'))
     parser.add_argument('--cc',help='C compiler executable')
-    args=parser.parse_args();result=bundle(args.out,args.assets,architecture=args.arch,cc=args.cc)
+    parser.add_argument('--skip-checks',action='store_true',help='Package without running the app self-test or GUI check')
+    args=parser.parse_args();result=bundle(args.out,args.assets,architecture=args.arch,cc=args.cc,skip_checks=args.skip_checks)
     print(json.dumps(dict(status=result['status'],archive=result['archive'],selftest=result['selftest'])))
