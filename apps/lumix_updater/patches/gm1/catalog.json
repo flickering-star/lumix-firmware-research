@@ -14,7 +14,8 @@
         "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
         "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
         "Existing language choices are exposed; the camera region and video standards are unchanged.",
-        "The camera will accept unsigned custom updates. Saved experimental LUT cells are cleared."
+        "The camera will accept unsigned custom updates. Saved experimental LUT cells are cleared.",
+        "Native recording limits are preserved. The withdrawn limit-removal patch can corrupt video files beyond30 minutes; install a newly prepared update to restore native limits if it was previously used."
       ],
       "components": {
         "program": {
@@ -38,13 +39,6 @@
           "file": null,
           "patch_sha256": null
         }
-      },
-      "duration_target_sha256": "413337671d7c4723372a1fa47d91121ada9c5a6c6b84c8cc04fadc04184ed481",
-      "duration_variant": "regional-and-format-v2",
-      "duration_component_sha256": {
-        "program": "413337671d7c4723372a1fa47d91121ada9c5a6c6b84c8cc04fadc04184ed481",
-        "guires": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
-        "program2": "21ab043d94cf8f49cd544de621d94976f5fd6bb6ae1d07785348589b16986c0c"
       }
     },
     "luts": {
@@ -56,7 +50,8 @@
         "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
         "LUT import requires a FAT32 card. exFAT import is unavailable. Put compatible VLT/CUBE files with short ASCII names in the card root.",
         "LUTs are reduced to a 9 \u00d7 9 \u00d7 9 hardware table with 6-bit values. The update preserves existing saved LUT banks.",
-        "GM1 has no Opacity slider: LUTs always apply at 100%. The owner reports usable controls with slightly lower performance than native styles. Brief colored lines after Import or No LUT remain unresolved."
+        "GM1 has no Opacity slider: LUTs always apply at 100%. The owner reports usable controls with slightly lower performance than native styles. Brief colored lines after Import or No LUT remain unresolved.",
+        "Native recording limits are preserved. The withdrawn limit-removal patch can corrupt video files beyond30 minutes; install a newly prepared update to restore native limits if it was previously used."
       ],
       "components": {
         "program": {
@@ -80,13 +75,6 @@
           "file": "luts-program2.lxdp",
           "patch_sha256": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359"
         }
-      },
-      "duration_target_sha256": "9aae482d2f5821ddc1e6e7fe3a7247c3ed7b05689019b82ad61034b82131175b",
-      "duration_variant": "regional-and-format-v2",
-      "duration_component_sha256": {
-        "program": "9aae482d2f5821ddc1e6e7fe3a7247c3ed7b05689019b82ad61034b82131175b",
-        "guires": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321",
-        "program2": "b6172bc136103a8b61a3d20e58b12bb2270c40b3c08897ce811d49ffdb37390c"
       }
     },
     "restore": {
@@ -154,10 +142,11 @@
       "sha256": "5bfd4fb9b79bca33dc9f8a6f6d2e47ba7661abfa631e710608d46a7f3a937c51"
     }
   ],
-  "optional_recording_limit_patch": true,
+  "optional_recording_limit_patch": false,
   "firmware_binaries_included": false,
   "encryption_key_included": false,
   "exfat_overlay_withdrawn": true,
   "native_startup_edits_forbidden": true,
-  "xpan_overlay_included": false
+  "xpan_overlay_included": false,
+  "recording_limit_patch_withdrawn": true
 }

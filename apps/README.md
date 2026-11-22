@@ -1,4 +1,6 @@
 # Lumix Firmware Updater
+**Recording-limit removal is withdrawn.** The owner reports corrupt SD video files after recording beyond30 minutes. Rebuild and install firmware with native recording limits to remove an already installed limit patch.
+
 
 **All original project code was written by a chatbot. Flashing Panasonic
 cameras is risky because recovery options are limited. No independent GM1/GM5
@@ -42,11 +44,12 @@ An identical USB product ID never establishes model compatibility.
 
 Both model catalogs include language/update-access patches, experimental
 LUTs with FAT32 import, and a stock-component restore. The exFAT overlays are
-withdrawn. A separate
-experimental option removes the reviewed regional 1,799-second recording policy
-and selects the original longer fallback for a separate format-dependent cap.
-It does not remove card-capacity, filesystem, encoder or thermal safeguards;
-physical long-recording/file-segmentation testing is outstanding.
+withdrawn. The recording-limit removal option has been withdrawn after the owner reported
+corrupted video files beyond30 minutes. Version0.2.8 source removes its checkbox,
+patch implementation and catalog variants. Newly prepared firmware preserves the
+native recording limits. If the older patch is installed, prepare and install a
+new language or LUT update to restore those native checks. Previously prepared
+files keep their old contents and should be replaced.
 
 Both models expose their complete existing26-language catalogs. Both LUT targets
 restore their internal saved cells at startup without scanning the SD card.

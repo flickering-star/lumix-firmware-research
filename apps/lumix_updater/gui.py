@@ -49,8 +49,6 @@ class App:
             b=ttk.Radiobutton(page,text=item['label'],variable=self.choice,value=key);b.pack(anchor='w',pady=(13,0));self.choice_buttons.append(b)
             label=ttk.Label(page,text=item['description'],wraplength=620)
             label.pack(anchor='w',padx=23,pady=(2,0));self.choice_descriptions.append(label)
-        self.remove_limit=tk.BooleanVar(value=False)
-        ttk.Checkbutton(page,text='Extend recording duration limits (experimental)',variable=self.remove_limit).pack(anchor='w',pady=(12,0))
         ttk.Separator(page).pack(fill='x',pady=18)
         self.source=tk.StringVar(value='download');self.local=tk.StringVar()
         self.download_text=tk.StringVar(value='Download the official firmware for the detected camera')
@@ -183,10 +181,9 @@ class App:
         if not parent:return
         choice=self.choice.get();local=self.local.get() if self.source.get()=='local' else None
         model=self.workflow.inspection.model
-        remove_limit=bool(self.remove_limit.get()) and choice!='restore'
-        destination=Path(parent)/(model_spec(model)['token']+'-'+choice+('-duration' if remove_limit else '')+'-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
+        destination=Path(parent)/(model_spec(model)['token']+'-'+choice+'-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
         self.open_button.configure(state='disabled');self.enable_button.configure(state='disabled')
-        self.start('prepare',lambda p:self.workflow.prepare(choice,destination,local_firmware=local,progress=p,remove_limit=remove_limit))
+        self.start('prepare',lambda p:self.workflow.prepare(choice,destination,local_firmware=local,progress=p))
 
     def on_enable(self):
         if not self.card.get():

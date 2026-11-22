@@ -13,7 +13,6 @@ import zlib
 
 from .download import checked_firmware, sha
 from .models import model_spec
-from .duration import apply_duration
 from .languages import apply_languages
 from .preservation import check_preserved
 
@@ -142,7 +141,7 @@ def catalog_assets(root=None):
 
 
 def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camera_profile='gm5-factory-0111',
-          model='DMC-GM5',remove_limit=False):
+          model='DMC-GM5'):
     spec=model_spec(model);destinations=spec['destinations']
     raw=checked_firmware(raw,model)
     root,manifest=catalog(assets,model=model)
@@ -150,8 +149,6 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     plan=manifest['choices'][choice]
     if camera_profile not in spec['profiles'].values():
         raise ValueError('Unsupported camera profile for firmware preparation')
-    if type(remove_limit) is not bool:raise ValueError('Invalid recording-limit option')
-    remove_limit=remove_limit and choice!='restore'
     components=plan['components']
     if choice=='restore' and camera_profile=='gm5-official-0110':
         components=manifest.get('restore_components_by_profile',{}).get(camera_profile)
@@ -187,9 +184,13 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
             if choice=='luts' and (length!=spec['lut_program_bytes']
                     or plain[length:]!=b'\xff'*(len(plain)-length)):
                 raise ValueError('LUT update would overwrite or omit undeclared flash data')
-        if remove_limit:plain=apply_duration(plain,name,model,plan)
         if name=='program' and choice!='restore':
             plain,language_catalog=apply_languages(plain,model)
+        if choice!='restore' and name in ('program','program2'):
+            offset=spec['duration_offset'] if name=='program' else spec['format_duration_offset']
+            expected=bytes.fromhex(spec['duration_before'] if name=='program' else spec['format_duration_before'])
+            if plain[offset:offset+len(expected)]!=expected:
+                raise ValueError('Recording-limit removal is withdrawn. Firmware must preserve native recording limits.')
         preservation[name]=check_preserved(plain,name,model,target_revision)
         parts.append((name,destinations[name],plain[:length]))
     if not parts or parts[0][0]!='program':raise ValueError('Program must be the first update component')
@@ -225,18 +226,13 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
             ' native firmware languages are available through the Language menu in every camera region.')
     if choice=='restore':
         limitations.insert(0, STOCK_RESTORE_RESET)
-    if remove_limit:
-        limitations.append('Experimental recording-duration patch: removes the reviewed regional 1,799-second policy.'+
-            (' Also selects the existing longer-duration fallback for the mapped format cap; native rate scaling still applies.'
-             if plan.get('duration_variant')=='regional-and-format-v2' else '')+
-            ' Card capacity, file-size, encoder and thermal paths remain. Uninterrupted long recordings and file segmentation still need camera testing.')
     if source_revision!=target_revision:
         limitations.append('The camera still displays firmware 1.1; its internal program revision changes from 0110 to the reviewed factory revision 0111. Stock restore returns the original official 0110 components.')
     report=dict(model=model,choice=choice,bytes=len(output),sha256=sha(output),camera_profile=camera_profile,
         components=[dict(name=n,destination=d,bytes=len(p),sha256=sha(p)) for n,d,p in parts],
         advertised_version='1.1f' if model=='DMC-GM5' else '1.1 (header 0111)',installed_version_preserved=source_revision==target_revision,
-        duration_policy_removed=remove_limit,
-        duration_scope=plan.get('duration_variant','regional-only-v1') if remove_limit else None,
+        duration_policy_removed=False,recording_limits_preserved=True,
+        duration_scope=None,
         displayed_version_preserved=True,source_internal_revision=f'{source_revision:04x}',
         target_internal_revision=f'{target_revision:04x}',
         native_preservation=preservation,

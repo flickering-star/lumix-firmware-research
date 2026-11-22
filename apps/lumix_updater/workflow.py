@@ -26,7 +26,7 @@ class Workflow:
         self.inspection=inspection;self.output=None;self.manifest=None;self.enabled=False
         return inspection.report()
 
-    def prepare(self,choice,destination,*,local_firmware=None,progress=lambda *_:None,remove_limit=False):
+    def prepare(self,choice,destination,*,local_firmware=None,progress=lambda *_:None):
         if self.inspection is None:raise ValueError('Read the connected camera first')
         # Invalidate old readiness before any attempted replacement build.
         self.output=None;self.manifest=None;self.enabled=False
@@ -35,7 +35,7 @@ class Workflow:
             lambda done,total:progress('Downloading official firmware',done,total),model)
         codec=self.codec_factory()
         candidate,report=build(raw,self.inspection.key,codec,choice,assets=self.assets,progress=progress,
-            camera_profile=self.inspection.profile,model=model,remove_limit=remove_limit)
+            camera_profile=self.inspection.profile,model=model)
         restore,restore_report=(candidate,report) if choice=='restore' else build(
             raw,self.inspection.key,codec,'restore',assets=self.assets,progress=progress,
             camera_profile=self.inspection.profile,model=model)

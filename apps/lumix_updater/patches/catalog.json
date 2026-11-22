@@ -15,7 +15,8 @@
         "Only the exact reviewed model/revision and compatible research patches are supported. Settings/body calibration are excluded.",
         "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
         "Existing language choices are exposed; the camera region and video standards are unchanged.",
-        "The camera will accept unsigned custom updates. Saved experimental LUT cells are cleared."
+        "The camera will accept unsigned custom updates. Saved experimental LUT cells are cleared.",
+        "Native recording limits are preserved. The withdrawn limit-removal patch can corrupt video files beyond30 minutes; install a newly prepared update to restore native limits if it was previously used."
       ],
       "components": {
         "program": {
@@ -39,13 +40,6 @@
           "file": "stable-program2.lxdp",
           "patch_sha256": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d"
         }
-      },
-      "duration_target_sha256": "d0b1f7cc61f64cc5ad8557a29a0ec24f9833863bdf1a333b50fed8d9f4f00257",
-      "duration_variant": "regional-and-format-v2",
-      "duration_component_sha256": {
-        "program": "d0b1f7cc61f64cc5ad8557a29a0ec24f9833863bdf1a333b50fed8d9f4f00257",
-        "guires": "5e59a45117179101881b5be459056faa86759524a3a60f570787d138b35305c2",
-        "program2": "86643df2a9829ba66498ab8a16ec745c2aeed344dd8919c979e20e23a252e169"
       }
     },
     "luts": {
@@ -57,7 +51,8 @@
         "The app prepares SD updates. It never flashes the camera over USB or installs a recovery loader.",
         "LUT import requires a FAT32 card. exFAT import is unavailable. Put compatible VLT/CUBE files with short ASCII names in the card root.",
         "LUTs are reduced to a 9 \u00d7 9 \u00d7 9 hardware table with 6-bit values. The update preserves existing saved LUT banks.",
-        "GM5 LUT video, Library and Playback operation were tested on the camera."
+        "GM5 LUT video, Library and Playback operation were tested on the camera.",
+        "Native recording limits are preserved. The withdrawn limit-removal patch can corrupt video files beyond30 minutes; install a newly prepared update to restore native limits if it was previously used."
       ],
       "components": {
         "program": {
@@ -81,13 +76,6 @@
           "file": "luts-program2.lxdp",
           "patch_sha256": "6a225b86d6676546fe988de78c55e8c846a434eb861127d23e844ed2b7baa3cd"
         }
-      },
-      "duration_target_sha256": "cc01cc7fb11a24b75bb0452fb5a7db769752911150a3696ccb37090286f4d489",
-      "duration_variant": "regional-and-format-v2",
-      "duration_component_sha256": {
-        "program": "cc01cc7fb11a24b75bb0452fb5a7db769752911150a3696ccb37090286f4d489",
-        "guires": "a80c013855c7806c5c8aa9cd53aead7c06edfbb607563baba73cdc5b47d639a8",
-        "program2": "42c4fd5bf82d65bf94a481e2906a755a3ac5e1f722c817977a92ce3dc7edb280"
       }
     },
     "restore": {
@@ -155,7 +143,7 @@
       "sha256": "5bfd4fb9b79bca33dc9f8a6f6d2e47ba7661abfa631e710608d46a7f3a937c51"
     }
   ],
-  "optional_recording_limit_patch": true,
+  "optional_recording_limit_patch": false,
   "firmware_binaries_included": false,
   "encryption_key_included": false,
   "exfat_overlay_withdrawn": true,
@@ -191,6 +179,7 @@
     "DMC-GM1": "gm1"
   },
   "model_catalog_sha256": {
-    "DMC-GM1": "399cdac27bbc244ae703b359c06e7c778732c6b211e5368d7b06182050922e41"
-  }
+    "DMC-GM1": "8c318716b64c0a664da56a82d8b376556afc829f18868d918eebd941e61251b4"
+  },
+  "recording_limit_patch_withdrawn": true
 }

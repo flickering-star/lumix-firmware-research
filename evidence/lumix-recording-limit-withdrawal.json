@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "status": "withdrawn",
+  "owner_report": "Recording beyond30 minutes with the limit-removal patch produces a broken video file on the SD card.",
+  "affected_models_not_individually_supplied": true,
+  "owner_requested_removal_from_both_desktop_apps": true,
+  "removed_in_source_version": "0.2.8",
+  "checkbox_removed": true,
+  "patch_implementation_removed": true,
+  "optional_catalog_variants_removed": true,
+  "native_recording_limits_preserved": true,
+  "already_installed_patch_requires_new_firmware_install": true,
+  "corrupted_file_repair_or_underlying_muxer_cause_not_established": true
+}

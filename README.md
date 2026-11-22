@@ -1,4 +1,6 @@
 # Lumix Firmware Research
+**Recording-limit removal is withdrawn.** The owner reports corrupt SD video files after recording beyond30 minutes. Rebuild and install firmware with native recording limits to remove an already installed limit patch.
+
 **GM1: use the current desktop release. Earlier LUT builds with Opacity can cause severe UI lag.
 The current GM1 patch uses fixed 100% LUT strength; brief colored lines after
 Import/No LUT remain unresolved.**

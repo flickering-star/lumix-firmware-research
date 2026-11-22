@@ -11,7 +11,6 @@ from apps.lumix_updater.download import checked_firmware, sha
 from apps.lumix_updater.protocol import (ProtocolError, Service, checksum,
                                          policy_packet, read_packet, read_reply)
 from apps.lumix_updater.workflow import Workflow
-from apps.lumix_updater.duration import apply_duration
 from apps.lumix_updater.models import model_spec
 
 
@@ -59,41 +58,6 @@ class ProtocolTests(unittest.TestCase):
         for raw in (b'',b'UPD\0'+bytes(2048),b'PK\x03\x04'):
             with self.subTest(length=len(raw)), self.assertRaises((ValueError,BadZipFile)):
                 checked_firmware(raw)
-
-
-class DurationVariantTests(unittest.TestCase):
-    def fixture(self,model,component):
-        spec=model_spec(model)
-        prefix=bytes.fromhex(spec['duration_before'] if component=='program' else spec['format_duration_before'])
-        at=spec['duration_offset'] if component=='program' else spec['format_duration_offset']
-        source=bytes(at)+prefix+bytes(16)
-        target=bytearray(source)
-        if component=='program':target[at:at+4]=bytes.fromhex('00df0004')
-        else:target[at+3]=0xCA
-        plan=dict(duration_variant='regional-and-format-v2',duration_component_sha256={component:sha(target)})
-        return source,bytes(target),plan
-
-    def test_reviewed_components_match_their_independent_target_hash(self):
-        for model in ('DMC-GM1','DMC-GM5'):
-            for component in ('program','program2'):
-                with self.subTest(model=model,component=component):
-                    source,target,plan=self.fixture(model,component)
-                    self.assertEqual(apply_duration(source,component,model,plan),target)
-
-    def test_other_model_preimages_are_refused(self):
-        for model,other in (('DMC-GM1','DMC-GM5'),('DMC-GM5','DMC-GM1')):
-            source,_,plan=self.fixture(model,'program2')
-            with self.subTest(model=model),self.assertRaisesRegex(ValueError,'selector differs'):
-                apply_duration(source,'program2',other,plan)
-
-    def test_changed_target_hash_or_variant_is_refused(self):
-        source,_,plan=self.fixture('DMC-GM1','program2')
-        plan['duration_component_sha256']['program2']='0'*64
-        with self.assertRaisesRegex(ValueError,'reviewed target'):
-            apply_duration(source,'program2','DMC-GM1',plan)
-        plan['duration_variant']='unknown'
-        with self.assertRaisesRegex(ValueError,'unsupported'):
-            apply_duration(source,'program2','DMC-GM1',plan)
 
 
 class WorkflowTests(unittest.TestCase):
@@ -152,12 +116,12 @@ class WorkflowTests(unittest.TestCase):
         self.workflow.inspection=Inspection('DMC-GM1','offline-test',0x100,0x0110,1,1,bytes(range(16)))
         with patch('apps.lumix_updater.workflow.load_local',return_value=b'official-input') as loader, \
              patch('apps.lumix_updater.workflow.build',side_effect=self.fake_build) as builder:
-            report=self.workflow.prepare('luts',self.root/'gm1',local_firmware='GM1__V11.bin',remove_limit=True)
+            report=self.workflow.prepare('luts',self.root/'gm1',local_firmware='GM1__V11.bin')
         self.assertEqual(loader.call_args.args,('GM1__V11.bin','DMC-GM1'))
         self.assertEqual(self.workflow.verify_output().name,'GM1__V11.bin')
         self.assertEqual((self.workflow.output/'stock-restore/GM1__V11.bin').read_bytes(),self.data['restore'])
         self.assertFalse((self.workflow.output/'GM5__V11.bin').exists())
-        self.assertTrue(builder.call_args_list[0].kwargs['remove_limit'])
+        self.assertNotIn('remove_limit',builder.call_args_list[0].kwargs)
         self.assertNotIn('remove_limit',builder.call_args_list[1].kwargs)
         self.assertTrue(all(c.kwargs['model']=='DMC-GM1' for c in builder.call_args_list))
         self.assertEqual(report['camera']['profile'],'gm1-official-0110')
@@ -168,6 +132,12 @@ class WorkflowTests(unittest.TestCase):
         self.assertFalse(report['temporary_flag_needed'])
         self.assertIn('USB is not required',self.workflow.instructions(report))
         self.assertNotIn('Enable this update',self.workflow.instructions(report))
+
+    def test_withdrawn_recording_limit_option_is_rejected_before_preparation(self):
+        with self.assertRaises(TypeError):
+            self.workflow.prepare('luts',self.root/'withdrawn',remove_limit=True)
+        self.assertIsNone(self.workflow.output)
+        self.assertFalse((self.root/'withdrawn').exists())
 
     def test_changed_or_removed_candidate_cannot_enable(self):
         self.prepare();file=self.workflow.output/'GM5__V11.bin'
