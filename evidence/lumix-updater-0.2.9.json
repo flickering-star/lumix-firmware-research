@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "release_version": "0.2.9",
+  "status": "publication-authorized-after-build",
+  "owner_requested_publication": true,
+  "archives": [
+    {
+      "platform": "macOS Apple Silicon",
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "bytes": 15678927,
+      "sha256": "5c5d5bcd0a92e5796c57fe0808f442f1d0553f53499911f07fff8e2cecfe6ed9",
+      "source_commit": "9101047036ac720864a10f766181b48a816f4afd"
+    },
+    {
+      "platform": "Windows x64",
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "bytes": 17401545,
+      "sha256": "dbfc44613fc08c20e76a7514a5bcb772067e40166d706343e9bb906c14b1332c",
+      "source_commit": "9101047036ac720864a10f766181b48a816f4afd"
+    }
+  ],
+  "detected_revision_in_unsupported_errors": true,
+  "mismatched_header_revision_fields_displayed": true,
+  "guard_mismatch_error_reports_actual_revision": true,
+  "retry_requires_unsupported_revision_error": true,
+  "revision_override_requires_five_second_mouse_hold": true,
+  "short_click_retains_normal_check": true,
+  "release_or_leave_cancels_pending_hold": true,
+  "override_normalizes_only_two_header_revision_halfwords": true,
+  "header_revision_fields_must_agree": true,
+  "unique_reviewed_header_layout_required": true,
+  "existing_code_key_policy_mode_and_model_guards_retained": true,
+  "enable_update_rechecks_actual_revision_and_reviewed_layout": true,
+  "preparation_report_records_actual_and_reviewed_revisions": true,
+  "prepared_update_installs_reviewed_revision": true,
+  "native_source_builds": true,
+  "runtime_checks_skipped_at_owner_request": true,
+  "physical_hold_and_override_test_not_recorded": true,
+  "windows_native_build_url": "https://github.com/flickering-star/lumix-firmware-research/actions/runs/45374513297",
+  "recording_limit_removal_withdrawn": true,
+  "native_recording_limits_preserved": true,
+  "language_count_by_model": {
+    "DMC-GM1": 26,
+    "DMC-GM5": 26
+  },
+  "limitations": [
+    "GM1S remains unsupported.",
+    "FAT32 LUT import only.",
+    "GM1 colored lines after Import/No LUT remain unresolved.",
+    "65:24 work excluded.",
+    "Independent recovery remains unproven."
+  ]
+}
