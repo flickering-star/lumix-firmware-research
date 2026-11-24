@@ -41,8 +41,9 @@ class Workflow:
             camera_profile=self.inspection.profile,model=model)
         if self.inspection.revision_check_skipped:
             report['limitations'].append(
-                f'Camera internal revision 0x{self.inspection.version:04x} was accepted by explicit revision override '
-                f'after matching reviewed layout 0x{self.inspection.layout_revision:04x}. '
+                f'Camera internal revision 0x{self.inspection.version:04x} was accepted by layout compatibility only. '
+                'The exact installed build was not identified. '
+                f'The prepared files use reviewed profile {self.inspection.profile}. '
                 'This update installs internal revision 0x'+report['target_internal_revision']+'.')
         root=Path(destination).expanduser().absolute()
         if root.exists():raise FileExistsError('Choose a new folder for the prepared firmware')

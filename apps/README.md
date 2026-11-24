@@ -10,9 +10,9 @@ Desktop application for preparing an SD firmware update. The owner requested
 removal of the faulty recording-limit option and publication of the replacements.
 GM1S is unsupported and is rejected by the model-specific firmware guards.
 
-## Release 0.2.9
+## Release 0.2.10
 
-Both apps are version0.2.9 and were compiled from source on their target
+Both apps are version0.2.10 and were compiled from source on their target
 systems. The recording-limit checkbox, implementation and catalog variants
 are removed. Newly prepared firmware preserves native recording limits.
 Windows uses the exact USB library from the tested0.2.5 release. Camera read,
@@ -22,22 +22,33 @@ Both patch choices expose all26 native firmware languages on GM1 and GM5.
 IDs and ordering come from the firmware. See
 [implementation and validation](../docs/lumix-all-languages.md).
 
-- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.9/Lumix-Firmware-Updater-darwin-arm64.zip)
-- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.9/Lumix-Firmware-Updater-win32-x86_64.zip)
-- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.9)
+- [macOS Apple Silicon](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.10/Lumix-Firmware-Updater-darwin-arm64.zip)
+- [Windows x64](https://github.com/flickering-star/lumix-firmware-research/releases/download/updater-v0.2.10/Lumix-Firmware-Updater-win32-x86_64.zip)
+- [Checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.10)
 
-Unsupported-firmware errors show the detected internal revision and supported
-revisions. After an unsupported revision error, press and hold **Read camera**
-for five seconds to retry with the revision-number restriction skipped. A short
-click repeats the normal check. Releasing early or moving the pointer off the
-button cancels the hold.
+After an unrecognized revision or build error, press and hold **Read camera**
+for five seconds to check layout compatibility instead of matching the installed
+build. A short click repeats the normal exact-build check. Releasing early or
+moving the pointer off the button cancels the hold.
 
-The retry must match one reviewed header layout after normalizing only its two
-revision fields. Both fields must agree. Code-page, encryption-key, policy,
-service-mode and model checks still apply, including the fresh checks before
-update access is enabled. The app records the actual revision, matched layout
-and override in its preparation report. The prepared update uses the matching
-reviewed firmware profile, which can change the installed internal revision.
+The retry ignores header metadata and unrelated bytes on firmware pages. It
+checks the service dispatcher, the read/write dispatch entries, the memory-read
+handler and the direct halfword-write path, including its addressing-mode
+reference. It also checks the actual ROM-to-RAM policy mapping and the updater's
+use of that policy. A small function shift in the reviewed GM5 updater window
+is accepted without requiring a revision-specific header fingerprint.
+
+Model, encryption-key record, policy values and service state are still checked.
+Enable repeats layout validation before its one fixed RAM halfword write and
+checks the complete RAM page and the actual ROM page afterward. It does not
+compare the ROM page to a reviewed build when using this override.
+
+The report records layout-only verification separately from an identified
+build, both actual revision words and the reviewed source profile used for
+preparation. The update and stock restore use that reviewed source; stock restore
+does not reconstruct an unknown installed build. Offline controls cover109 cases
+across three real private firmware inputs; no physical override result is
+claimed. See the [compatibility evidence](../evidence/lumix-updater-layout-compatibility.json).
 
 GM1 LUTs now always apply at100% with no adjustment rows. All opacity-only
 hooks, settings handlers, numeric/scale drawing and blending are removed.
@@ -87,9 +98,9 @@ download fails, select the matching official local file.
 Runtime self-tests and GUI checks for these fresh source archives were skipped
 at the owner's request. The source language patch has its separate native and
 independent-decoder validation. The preceding Mac0.2.6 and Windows0.2.7 archives were accepted by the owner.
-These0.2.9 archives have no new reported camera test. Exact body
+These0.2.10 archives have no new reported camera test. Exact body
 identities and detailed per-language font/reboot coverage were not supplied.
-See the [release record](../evidence/lumix-updater-0.2.9.json).
+See the [release record](../evidence/lumix-updater-0.2.10.json).
 
 ## Previous release0.2.7
 

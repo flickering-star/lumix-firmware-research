@@ -12,7 +12,7 @@ from tkinter import filedialog,messagebox,ttk
 import webbrowser
 
 from . import __version__
-from .camera import UnsupportedRevisionError
+from .camera import UnreviewedFirmwareError
 from .download import OFFICIAL_PAGE
 from .firmware import STOCK_RESTORE_RESET,catalog
 from .workflow import Workflow
@@ -43,7 +43,7 @@ class App:
         self.read_button.bind('<Leave>',self.cancel_read_hold)
         self.read_button.bind('<FocusOut>',self.cancel_read_hold)
         ttk.Button(page,text='USB connection help',command=self.connection_help).pack(anchor='w',pady=(12,0))
-        ttk.Label(page,text='Supports reviewed GM1 1.1 (0110) and GM5 1.1 (0110/0111) builds, plus compatible research patches. Other builds are checked and refused.',
+        ttk.Label(page,text='Supports GM1 and GM5. Unrecognized builds can be retried with a layout compatibility check by holding Read camera for 5 seconds after the error.',
             wraplength=660).pack(anchor='w',pady=(24,0))
         page=self.pages[1]
         ttk.Label(page,text='Choose the firmware',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
@@ -138,10 +138,10 @@ class App:
                         self.set_limitations([])
                     if action=='inspect':
                         self.camera_text.set('Camera check did not complete. Reconnect an awake service camera and read it again.')
-                        if isinstance(error,UnsupportedRevisionError):
+                        if isinstance(error,UnreviewedFirmwareError):
                             self.revision_retry_allowed=True
                             self.read_button.configure(text='Read camera (hold 5s to retry)')
-                            result+='\n\nHold Read camera for 5 seconds to skip the revision-number check. All other firmware checks still apply.'
+                            result+='\n\nHold Read camera for 5 seconds to skip exact revision/build matching and check layout compatibility instead.'
                             self.camera_text.set(result)
                     if action=='enable' and self.workflow.output:
                         self.open_button.configure(state='normal')
@@ -160,8 +160,8 @@ class App:
                     self.camera_text.set(result['model']+' — firmware '+result['firmware']+' (internal '+result['internal_revision']+')\n\n'+
                         ('This camera already accepts custom updates. No temporary USB change is needed.' if enabled else
                          'The update policy is stock. After preparing the card, reconnect service USB to enable this update.')+
-                        ('\n\nRevision-number check skipped. Reviewed layout 0x'+result['reviewed_internal_revision']+
-                         ' matched the remaining firmware checks.' if result.get('revision_check_skipped') else ''))
+                        ('\n\nExact revision/build matching skipped. The update layout is compatible.'
+                         if result.get('revision_check_skipped') else ''))
                     self.open_button.configure(state='disabled');self.enable_button.configure(state='disabled')
                     self.card.set(False);self.set_steps('Choose a patch and prepare the firmware files.');self.set_limitations([])
                     self.status.set('Camera firmware checked');self.tabs.select(1)
@@ -191,7 +191,7 @@ class App:
     def on_read_press(self,event):
         self.cancel_read_hold();self.read_hold_fired=False
         if self.revision_retry_allowed and not self.busy and not self.read_button.instate(['disabled']):
-            self.status.set('Keep holding Read camera for 5 seconds to skip the revision-number check.')
+            self.status.set('Keep holding Read camera for 5 seconds to check layout compatibility.')
             self.read_hold_timer=self.root.after(5000,self.on_read_hold)
 
     def on_read_release(self,event):

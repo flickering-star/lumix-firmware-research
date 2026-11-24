@@ -1,0 +1,1739 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-24T21:55:16.483697+00:00",
+  "passed": true,
+  "cases": [
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unchanged_exact_build",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "1.1",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": false,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": true,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "exact-reviewed-build"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unchanged_layout_override",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unlisted_revision_and_other_header_metadata",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "different_revision_halfwords",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0111",
+          "0112"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unlisted_revision_without_override",
+      "accepted": false,
+      "error": "Unsupported GM1 firmware revision 0x0111. Supported internal revisions: 0x0110. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "known_revision_metadata_without_override",
+      "accepted": false,
+      "error": "The firmware build differs from the reviewed GM1 profile (detected internal revision 0x0110). No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x40000400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x40003000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x40369c00",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036a000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036b000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036b400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4057b800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x405ab400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x405c5800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4154a000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "initializer_extent_changed_without_moving_policy",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM1",
+        "firmware": "unreviewed",
+        "profile": "gm1-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_service dispatcher",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: service dispatcher at 0x40369f7c differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_memory-read dispatch",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: memory-read dispatch at 0x4036a19c differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_halfword-write dispatch",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: halfword-write dispatch at 0x4036a164 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_memory-read handler",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: memory-read handler at 0x4036b711 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_direct halfword-write handler",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: direct halfword-write handler at 0x4036b379 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_halfword-write acknowledgment",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: halfword-write acknowledgment at 0x4036b3df differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "moved_dispatch_0x5c",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: service command 0x5c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "moved_dispatch_0x9c",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: service command 0x9c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "moved_policy_RAM_mapping",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "policy_outside_initializer_copy",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "changed_initializer_loop",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: the policy initializer copy routine differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "missing_policy_consumer",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: the updater no longer reads the expected policy flag. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "key_record_moved_or_changed",
+      "accepted": false,
+      "error": "The firmware encryption-key record differs",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "nonabsolute_write_mode",
+      "accepted": false,
+      "error": "Reconnect the camera in the standard service USB state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "invalid_ROM_policy_neighbor",
+      "accepted": false,
+      "error": "The update policy is not in a supported state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "invalid_RAM_policy_neighbor",
+      "accepted": false,
+      "error": "The temporary update policy is not in a reviewed state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "layout_moved_after_preparation",
+      "accepted": false,
+      "error": "The GM1 update layout is incompatible: direct halfword-write handler at 0x4036b379 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "revision_changed_after_preparation",
+      "accepted": false,
+      "error": "The camera changed after preparation. Read it again before continuing.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "name": "ROM_changed_during_RAM_write",
+      "accepted": false,
+      "error": "The ROM policy page changed during the RAM operation",
+      "fixed_writes": 1
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unchanged_exact_build",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "1.1",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": false,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": true,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "exact-reviewed-build"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unchanged_layout_override",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unlisted_revision_and_other_header_metadata",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0112",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0112",
+          "0112"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "different_revision_halfwords",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0112"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unlisted_revision_without_override",
+      "accepted": false,
+      "error": "Unsupported GM5 firmware revision 0x0112. Supported internal revisions: 0x0110, 0x0111. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "known_revision_metadata_without_override",
+      "accepted": false,
+      "error": "The firmware build differs from the reviewed GM5 profile (detected internal revision 0x0110). No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x40000400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x40003000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036cc00",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036e000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4036e400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4061e400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4064b400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x406b1800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4154f800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "unrelated_page_byte_0x4154fc00",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "initializer_extent_changed_without_moving_policy",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0110",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0110",
+          "0110"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_service dispatcher",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service dispatcher at 0x4036cc89 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_memory-read dispatch",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: memory-read dispatch at 0x4036cea9 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_halfword-write dispatch",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: halfword-write dispatch at 0x4036ce71 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_memory-read handler",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: memory-read handler at 0x4036e41e differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_direct halfword-write handler",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: direct halfword-write handler at 0x4036e086 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_halfword-write acknowledgment",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: halfword-write acknowledgment at 0x4036e0ec differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "moved_dispatch_0x5c",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service command 0x5c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "moved_dispatch_0x9c",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service command 0x9c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "moved_policy_RAM_mapping",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "policy_outside_initializer_copy",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "changed_initializer_loop",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the policy initializer copy routine differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "missing_policy_consumer",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the updater no longer reads the expected policy flag. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "key_record_moved_or_changed",
+      "accepted": false,
+      "error": "The firmware encryption-key record differs",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "nonabsolute_write_mode",
+      "accepted": false,
+      "error": "Reconnect the camera in the standard service USB state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "invalid_ROM_policy_neighbor",
+      "accepted": false,
+      "error": "The update policy is not in a supported state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "invalid_RAM_policy_neighbor",
+      "accepted": false,
+      "error": "The temporary update policy is not in a reviewed state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "layout_moved_after_preparation",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: direct halfword-write handler at 0x4036e086 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "revision_changed_after_preparation",
+      "accepted": false,
+      "error": "The camera changed after preparation. Read it again before continuing.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "name": "ROM_changed_during_RAM_write",
+      "accepted": false,
+      "error": "The ROM policy page changed during the RAM operation",
+      "fixed_writes": 1
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unchanged_exact_build",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "1.1",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": false,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": true,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "exact-reviewed-build"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unchanged_layout_override",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unlisted_revision_and_other_header_metadata",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0112",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0112",
+          "0112"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "different_revision_halfwords",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0112"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unlisted_revision_without_override",
+      "accepted": false,
+      "error": "Unsupported GM5 firmware revision 0x0112. Supported internal revisions: 0x0110, 0x0111. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "known_revision_metadata_without_override",
+      "accepted": false,
+      "error": "The firmware build differs from the reviewed GM5 profile (detected internal revision 0x0111). No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x40000400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x40003000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4036cc00",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4036e000",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4036e400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4061e400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4064b400",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x406b1800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4154f800",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "unrelated_page_byte_0x4154fc00",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "initializer_extent_changed_without_moving_policy",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-factory-0111",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0111",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_service dispatcher",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service dispatcher at 0x4036cc89 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_memory-read dispatch",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: memory-read dispatch at 0x4036cea9 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_halfword-write dispatch",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: halfword-write dispatch at 0x4036ce71 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_memory-read handler",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: memory-read handler at 0x4036e41e differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_direct halfword-write handler",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: direct halfword-write handler at 0x4036e086 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_halfword-write acknowledgment",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: halfword-write acknowledgment at 0x4036e0ec differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "moved_dispatch_0x5c",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service command 0x5c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "moved_dispatch_0x9c",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: service command 0x9c has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "moved_policy_RAM_mapping",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "policy_outside_initializer_copy",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the update-policy ROM/RAM mapping has moved. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "changed_initializer_loop",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the policy initializer copy routine differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "missing_policy_consumer",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: the updater no longer reads the expected policy flag. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "key_record_moved_or_changed",
+      "accepted": false,
+      "error": "The firmware encryption-key record differs",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "nonabsolute_write_mode",
+      "accepted": false,
+      "error": "Reconnect the camera in the standard service USB state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "invalid_ROM_policy_neighbor",
+      "accepted": false,
+      "error": "The update policy is not in a supported state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "invalid_RAM_policy_neighbor",
+      "accepted": false,
+      "error": "The temporary update policy is not in a reviewed state",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "layout_moved_after_preparation",
+      "accepted": false,
+      "error": "The GM5 update layout is incompatible: direct halfword-write handler at 0x4036e086 differs. No camera change was made.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "revision_changed_after_preparation",
+      "accepted": false,
+      "error": "The camera changed after preparation. Read it again before continuing.",
+      "fixed_writes": 0
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "ROM_changed_during_RAM_write",
+      "accepted": false,
+      "error": "The ROM policy page changed during the RAM operation",
+      "fixed_writes": 1
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "name": "factory_0111_without_its_exact_build_profile",
+      "accepted": true,
+      "fixed_write_and_full_page_readback_verified": true,
+      "report": {
+        "model": "DMC-GM5",
+        "firmware": "unreviewed",
+        "profile": "gm5-official-0110",
+        "internal_revision": "0111",
+        "reviewed_internal_revision": "0110",
+        "internal_revision_fields": [
+          "0111",
+          "0111"
+        ],
+        "revision_check_skipped": true,
+        "rom_policy": 1,
+        "ram_policy": 1,
+        "modified_updates_enabled": false,
+        "encryption_key_recovered": true,
+        "profile_guards_verified": false,
+        "layout_compatibility_verified": true,
+        "firmware_verification": "layout-compatibility"
+      }
+    }
+  ],
+  "case_count": 109,
+  "real_private_firmware_profiles": 3,
+  "camera_contacted": false,
+  "native_firmware_execution": false,
+  "scope": "Host compatibility checks, wire framing, refusal before writes, fixed RAM write and readback over explicit offline page peers",
+  "source_sha256": {
+    "camera.py": "e02d4ac98efdbbb1f3bda7188ee315fd3ec547f8b796d874ac16d2f26cdae636",
+    "layout.py": "4283973df0e27e045ef1cbdc0c266d76b397e2cad2cc3223868871f26e644f3a",
+    "gui.py": "539b1d06339502cabace3bf0b0743798565fed67a397f4d0dc88f149cb341e49",
+    "workflow.py": "b69e54cdeeae094d3c72c13e69b0dbed9b870f938eae942b24a59331440bec96"
+  },
+  "probe_sha256": "989ab1b078bb549f925f248a5ab3a2ba373e6bc01fd8052ad5bf5b2717113e09",
+  "inputs": [
+    {
+      "model": "DMC-GM1",
+      "revision": "0x110",
+      "main_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+      "secondary_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968"
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x110",
+      "main_sha256": "e6ce3a0764fd56e0f255d4412d30b1f9f73b5282b333c0fe80f16dc11833078c",
+      "secondary_sha256": "90dd3e4a19c6008571f1623e4d849f245b279473f43e3b13f8b763e6c94a53a5"
+    },
+    {
+      "model": "DMC-GM5",
+      "revision": "0x111",
+      "main_sha256": "c918553771018e171605ecb1f177a4d64bc94b221fe5304b8ff419f4509d208d",
+      "secondary_sha256": "d3953f29553723e7375c537f2cf8e673ade4924e6c0de161243cf106575a74e7"
+    }
+  ]
+}
