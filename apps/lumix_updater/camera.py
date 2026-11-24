@@ -104,7 +104,12 @@ def inspect_service(service,identity,progress=lambda *_:None):
         if address==0x40000400:
             version=struct.unpack_from('<2H',raw,0x2A0)
             if version[0]!=version[1] or version[0] not in versions:
-                raise CameraError('Unsupported '+spec['token']+' firmware revision. No camera change was made.')
+                detected=f'0x{version[0]:04x}'
+                if version[0]!=version[1]:
+                    detected+=f' / 0x{version[1]:04x} (header fields differ)'
+                supported=', '.join(f'0x{value:04x}' for value in sorted(versions))
+                raise CameraError('Unsupported '+spec['token']+' firmware revision '+detected+
+                    '. Supported internal revisions: '+supported+'. No camera change was made.')
             guards=versions[version[0]]
         if guards is not None and address in guards:
             if guards is None:raise CameraError('Camera header must be checked first')
@@ -115,7 +120,8 @@ def inspect_service(service,identity,progress=lambda *_:None):
                 if value not in (0,1):raise CameraError('The update policy is not in a reviewed state')
                 checked[offset:offset+2]=b'\x01\0'
             if hashlib.sha256(checked).hexdigest()!=guards[address]:
-                raise CameraError('The firmware build differs from the reviewed '+spec['token']+' profile. No camera change was made.')
+                raise CameraError('The firmware build differs from the reviewed '+spec['token']+
+                    f' profile (detected internal revision 0x{version[0]:04x}). No camera change was made.')
     key=pages[spec['key_page']][spec['key_offset']:spec['key_offset']+16]
     if hashlib.sha256(key).hexdigest()!=spec['key_sha']:raise CameraError('The firmware encryption-key record differs')
     rom=struct.unpack_from('<H',pages[spec['policy_rom']],spec['policy_rom_offset'])[0]
