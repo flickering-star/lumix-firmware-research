@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "version": "0.2.10",
+  "time_utc": "2026-11-24T22:03:45.798310+00:00",
+  "passed": true,
+  "application_source_commit": "aca501ab4c49d3db8a492cfd1969bda6dccb3706",
+  "source_sha256": {
+    "models.py": "c499e53fc67e718bf886af1142472693172715ab83fa5b9e3e7f4a17a8d490f9",
+    "firmware.py": "ae480dd6a4bf658f58524ebb140065145df142fdbc4112bb344c295e2fbfd1ca",
+    "layout.py": "4283973df0e27e045ef1cbdc0c266d76b397e2cad2cc3223868871f26e644f3a",
+    "protocol.py": "588b850956ba06a73b02b76ab08e51a1a9ec0907304b9cdaf45f3c6a40f41d4e",
+    "download.py": "f7982a3ec489db2b198d219a9a34d7acb704fc7a14979f25cbd8b21a01b9b997",
+    "preservation.py": "59aa3131b3743ea768ef4940d8f8ade6d14776d362cad57bf491d299797380f8",
+    "__init__.py": "268d116f1bc92c4eb63173f8ea620ba021b60e83409a59967685f4f4627a2f42",
+    "camera.py": "e02d4ac98efdbbb1f3bda7188ee315fd3ec547f8b796d874ac16d2f26cdae636",
+    "workflow.py": "b69e54cdeeae094d3c72c13e69b0dbed9b870f938eae942b24a59331440bec96",
+    "codec.py": "a7173fbdb9d9ccc58ff19536f84460225f911fc5813384951e85264dd53309cf",
+    "usb.py": "95ae11ea1ebdd4c3e40a99990a70d494638adda889e6b8bd1a5f38cc46fb0295",
+    "languages.py": "1e93ffdce007a0edf493599a1e9f37381a08bbf3905d46967a448220b8f9200e",
+    "gui.py": "539b1d06339502cabace3bf0b0743798565fed67a397f4d0dc88f149cb341e49",
+    "__main__.py": "9c38b37c0150e1b418a2ed052a232038c2c5fabe4de80cf33ab8f9497dcf2213"
+  },
+  "catalog_sha256": "159ae0fd8dbb6b2e688034b25cc066ba22e461527925f8b4046070952a5186dd",
+  "packages": [
+    {
+      "platform": "macOS Apple Silicon",
+      "archive": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "bytes": 15684466,
+      "sha256": "886f223ec6d45af5e995bcd2fa7deef59ffca7b554979e82f52fa1fb49d4277e",
+      "shipped": {
+        "catalog_sha256": "159ae0fd8dbb6b2e688034b25cc066ba22e461527925f8b4046070952a5186dd",
+        "patch_files": {
+          "stable-program.lxdp": "513b86e93cf9ad92754df80ef42d8c49130a79783e2fa80a8095c68b04775c1b",
+          "stable-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+          "luts-program.lxdp": "7b1eeeeb22d5ac79554ade8ac6da9d5193f78f1190a563c72f16f3c3011dc6bd",
+          "luts-guires.lxdp": "cc66f9de3424884b1b27d29dff7552ec33350d1203ae9b8262a18785100adccf",
+          "luts-program2.lxdp": "6a225b86d6676546fe988de78c55e8c846a434eb861127d23e844ed2b7baa3cd",
+          "restore-program.lxdp": "67d4c1a96a3d0a844172eaf2c75ce26391cf9f80842e412e48cddf3ea2b32165",
+          "restore-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+          "gm1/stable-program.lxdp": "c82a82a3c6da00583a8e0614db6c86ee53c6731941d3cee303665812bc8886ed",
+          "gm1/luts-program.lxdp": "90a11fb3c41cb6457463ee20ca0775f7c77ad680a1d0dd9be2b8c9815cf21f9d",
+          "gm1/luts-guires.lxdp": "2fbd12f329b194443fb550cd120aefde9ddb6a2f6f7f494ff5c45dc04e72173a",
+          "gm1/luts-program2.lxdp": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359"
+        },
+        "archive_entries": 433
+      },
+      "compiled_application_modules": [
+        "apps.lumix_updater",
+        "apps.lumix_updater.__main__",
+        "apps.lumix_updater.camera",
+        "apps.lumix_updater.codec",
+        "apps.lumix_updater.download",
+        "apps.lumix_updater.firmware",
+        "apps.lumix_updater.gui",
+        "apps.lumix_updater.languages",
+        "apps.lumix_updater.layout",
+        "apps.lumix_updater.models",
+        "apps.lumix_updater.preservation",
+        "apps.lumix_updater.protocol",
+        "apps.lumix_updater.usb",
+        "apps.lumix_updater.workflow"
+      ],
+      "GUI_runtime_present": true,
+      "application_code_matches_source": true,
+      "source_checkout_line_endings": "LF",
+      "usb_library_sha256": "84d8fb6c55b3c4ed821c751fa5b90bd1bdbbbe0cb58fcde563dc6d829cfb3cf5"
+    },
+    {
+      "platform": "Windows x64",
+      "archive": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "bytes": 17405984,
+      "sha256": "c7fdb9cd577e36cdd1e4227cc47ca47e8d8e3fc0d29b0ac3d2554b6b0b149856",
+      "shipped": {
+        "catalog_sha256": "159ae0fd8dbb6b2e688034b25cc066ba22e461527925f8b4046070952a5186dd",
+        "patch_files": {
+          "stable-program.lxdp": "513b86e93cf9ad92754df80ef42d8c49130a79783e2fa80a8095c68b04775c1b",
+          "stable-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+          "luts-program.lxdp": "7b1eeeeb22d5ac79554ade8ac6da9d5193f78f1190a563c72f16f3c3011dc6bd",
+          "luts-guires.lxdp": "cc66f9de3424884b1b27d29dff7552ec33350d1203ae9b8262a18785100adccf",
+          "luts-program2.lxdp": "6a225b86d6676546fe988de78c55e8c846a434eb861127d23e844ed2b7baa3cd",
+          "restore-program.lxdp": "67d4c1a96a3d0a844172eaf2c75ce26391cf9f80842e412e48cddf3ea2b32165",
+          "restore-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+          "gm1/stable-program.lxdp": "c82a82a3c6da00583a8e0614db6c86ee53c6731941d3cee303665812bc8886ed",
+          "gm1/luts-program.lxdp": "90a11fb3c41cb6457463ee20ca0775f7c77ad680a1d0dd9be2b8c9815cf21f9d",
+          "gm1/luts-guires.lxdp": "2fbd12f329b194443fb550cd120aefde9ddb6a2f6f7f494ff5c45dc04e72173a",
+          "gm1/luts-program2.lxdp": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359"
+        },
+        "archive_entries": 1045
+      },
+      "compiled_application_modules": [
+        "apps.lumix_updater",
+        "apps.lumix_updater.__main__",
+        "apps.lumix_updater.camera",
+        "apps.lumix_updater.codec",
+        "apps.lumix_updater.download",
+        "apps.lumix_updater.firmware",
+        "apps.lumix_updater.gui",
+        "apps.lumix_updater.languages",
+        "apps.lumix_updater.layout",
+        "apps.lumix_updater.models",
+        "apps.lumix_updater.preservation",
+        "apps.lumix_updater.protocol",
+        "apps.lumix_updater.usb",
+        "apps.lumix_updater.workflow"
+      ],
+      "GUI_runtime_present": true,
+      "application_code_matches_source": true,
+      "source_checkout_line_endings": "CRLF",
+      "usb_library_sha256": "698752cd7f4634c36a7e5dd18006ef27b839fd851db571b3991c750351d8bf55"
+    }
+  ],
+  "windows_workflow_run": 45496484414,
+  "host_compatibility_cases": 109,
+  "updater_unit_tests": 25,
+  "runtime_checks_skipped": true,
+  "camera_contacted": false,
+  "physical_override_tested": false
+}
