@@ -66,6 +66,10 @@ class CameraError(ValueError):
     pass
 
 
+class UnsupportedRevisionError(CameraError):
+    """The revision number is unreviewed; a guarded retry may be requested."""
+
+
 @dataclass(frozen=True)
 class Inspection:
     model:str
@@ -75,27 +79,37 @@ class Inspection:
     rom_policy:int
     ram_policy:int
     key:bytes=field(repr=False)
+    reviewed_revision:int|None=None
 
     @property
     def modified_updates_enabled(self):return self.rom_policy==0
 
     @property
-    def profile(self):return model_spec(self.model)['profiles'][self.version]
+    def layout_revision(self):
+        return self.version if self.reviewed_revision is None else self.reviewed_revision
+
+    @property
+    def revision_check_skipped(self):return self.reviewed_revision is not None
+
+    @property
+    def profile(self):return model_spec(self.model)['profiles'][self.layout_revision]
 
     def report(self):
-        return dict(model=self.model,firmware='1.1',profile=self.profile,
+        return dict(model=self.model,firmware='unreviewed' if self.revision_check_skipped else '1.1',profile=self.profile,
             internal_revision=f'{self.version:04x}',
+            reviewed_internal_revision=f'{self.layout_revision:04x}',
+            revision_check_skipped=self.revision_check_skipped,
             rom_policy=self.rom_policy,ram_policy=self.ram_policy,
             modified_updates_enabled=self.modified_updates_enabled,
             encryption_key_recovered=True,profile_guards_verified=True)
 
 
-def inspect_service(service,identity,progress=lambda *_:None):
+def inspect_service(service,identity,progress=lambda *_:None,*,skip_revision_check=False):
     model=identity.get('model')
     if model not in MODELS:raise CameraError('Only the reviewed DMC-GM1 and DMC-GM5 profiles are supported')
     spec=model_spec(model)
     versions=profile_guards(model);allowed=profile_pages(model)
-    pages={};guards=None;version=None
+    pages={};guards=None;version=None;reviewed_revision=None
     for i,address in enumerate(sorted(allowed)):
         progress('Checking camera firmware',i,len(allowed))
         raw=service.read(address)
@@ -103,17 +117,33 @@ def inspect_service(service,identity,progress=lambda *_:None):
         pages[address]=raw
         if address==0x40000400:
             version=struct.unpack_from('<2H',raw,0x2A0)
-            if version[0]!=version[1] or version[0] not in versions:
+            if version[0]!=version[1] or (version[0] not in versions and not skip_revision_check):
                 detected=f'0x{version[0]:04x}'
                 if version[0]!=version[1]:
                     detected+=f' / 0x{version[1]:04x} (header fields differ)'
                 supported=', '.join(f'0x{value:04x}' for value in sorted(versions))
-                raise CameraError('Unsupported '+spec['token']+' firmware revision '+detected+
+                error=UnsupportedRevisionError if version[0]==version[1] else CameraError
+                raise error('Unsupported '+spec['token']+' firmware revision '+detected+
                     '. Supported internal revisions: '+supported+'. No camera change was made.')
-            guards=versions[version[0]]
+            if version[0] in versions:
+                guards=versions[version[0]]
+            else:
+                # Normalize only the two revision halfwords. Every other header
+                # byte must identify one existing reviewed layout exactly.
+                matches=[]
+                for revision,candidate in versions.items():
+                    checked=bytearray(raw)
+                    struct.pack_into('<2H',checked,0x2A0,revision,revision)
+                    if hashlib.sha256(checked).hexdigest()==candidate[address]:matches.append(revision)
+                if len(matches)!=1:
+                    raise CameraError(f'The {spec["token"]} header for internal revision 0x{version[0]:04x} '
+                        'does not identify a unique reviewed firmware layout. No camera change was made.')
+                reviewed_revision=matches[0];guards=versions[reviewed_revision]
         if guards is not None and address in guards:
             if guards is None:raise CameraError('Camera header must be checked first')
             checked=bytearray(raw)
+            if address==0x40000400 and reviewed_revision is not None:
+                struct.pack_into('<2H',checked,0x2A0,reviewed_revision,reviewed_revision)
             if address==spec['policy_rom']:
                 offset=spec['policy_rom_offset']
                 value=struct.unpack_from('<H',checked,offset)[0]
@@ -131,12 +161,14 @@ def inspect_service(service,identity,progress=lambda *_:None):
         raise CameraError('The current update state differs from the installed patch. '
             'Switch the camera off normally, reconnect in service mode and read it again.')
     if pages[spec['mode']][spec['mode_offset']]!=0:raise CameraError('Reconnect the camera in the standard service USB state')
-    return Inspection(model,identity.get('serial',''),identity.get('usb_release',0),version[0],rom,ram,key)
+    return Inspection(model,identity.get('serial',''),identity.get('usb_release',0),version[0],rom,ram,key,
+                      reviewed_revision=reviewed_revision)
 
 
-def inspect_camera(transport_factory=None,progress=lambda *_:None):
+def inspect_camera(transport_factory=None,progress=lambda *_:None,*,skip_revision_check=False):
     with (transport_factory or updater_transport)() as transport:
-        return inspect_service(selected_service(transport),transport.identity,progress)
+        return inspect_service(selected_service(transport),transport.identity,progress,
+                               skip_revision_check=skip_revision_check)
 
 
 def enable_update(previous,transport_factory=None,progress=lambda *_:None):
@@ -145,10 +177,11 @@ def enable_update(previous,transport_factory=None,progress=lambda *_:None):
         if transport.identity.get('model')!=previous.model:
             raise CameraError('The connected camera model changed after preparation. Read it again.')
         service=selected_service(transport);spec=model_spec(previous.model)
-        current=inspect_service(service,transport.identity,progress)
+        current=inspect_service(service,transport.identity,progress,
+                                skip_revision_check=previous.revision_check_skipped)
         if (previous.serial and current.serial!=previous.serial or current.key!=previous.key
                 or current.version!=previous.version or current.usb_release!=previous.usb_release
-                or current.rom_policy!=previous.rom_policy):
+                or current.rom_policy!=previous.rom_policy or current.reviewed_revision!=previous.reviewed_revision):
             raise CameraError('The camera changed after preparation. Read it again before continuing.')
         if current.rom_policy==0 or current.ram_policy==0:
             return dict(wrote_ram=False,already_enabled=True,rom_policy=current.rom_policy)
@@ -172,6 +205,6 @@ def page_for_rom(current,service):
     if struct.unpack_from('<H',raw,offset)[0]!=current.rom_policy:
         raise CameraError('The ROM update policy changed unexpectedly')
     checked[offset:offset+2]=b'\x01\0'
-    if hashlib.sha256(checked).hexdigest()!=profile_guards(current.model)[current.version][spec['policy_rom']]:
+    if hashlib.sha256(checked).hexdigest()!=profile_guards(current.model)[current.layout_revision][spec['policy_rom']]:
         raise CameraError('The ROM policy initializer differs')
     return raw

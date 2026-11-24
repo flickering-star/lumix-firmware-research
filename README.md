@@ -21,23 +21,28 @@ connection files are excluded from Git history.
 
 ## GM1/GM5 desktop updater
 
-The current **v0.2.8 release** removes the recording-limit option after the
-owner reported broken SD video files beyond30 minutes. Both apps preserve
-native recording limits. Installing a newly prepared language or LUT update
+The current **v0.2.9 release** adds detected-revision errors and a guarded
+five-second retry. Both apps preserve native recording limits following the
+withdrawal of limit removal after corrupted-video reports. A newly prepared update
 restores those checks if the older limit-removal patch is already installed.
 Old prepared firmware files retain their contents and should be replaced.
+
+Unsupported-firmware errors include the detected revision. After that error,
+hold **Read camera** for five seconds to retry with the revision-number check
+skipped. Header layout, code pages, key and policy checks still apply. The
+preparation report records the actual revision and matched reviewed profile.
 
 Both apps include all26 native firmware languages on GM1 and GM5, including
 Korean and Middle East languages in the same catalog. The language-only and
 LUT options use this catalog. See
 [complete-language findings](docs/lumix-all-languages.md).
 
-Both0.2.8 apps were compiled from source on their target systems. The camera
+Both0.2.9 apps were compiled from source on their target systems. The camera
 read, USB enable and retry behavior continues from0.2.5, and Windows uses its
 exact tested USB library. Runtime checks were skipped at the owner's request;
 the owner requested direct publication of these replacement builds.
 
-- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.8)
+- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.9)
 - [Instructions, build source and limitations](apps/README.md)
 - [Recording-limit withdrawal](evidence/lumix-recording-limit-withdrawal.json)
 

@@ -12,6 +12,7 @@ from tkinter import filedialog,messagebox,ttk
 import webbrowser
 
 from . import __version__
+from .camera import UnsupportedRevisionError
 from .download import OFFICIAL_PAGE
 from .firmware import STOCK_RESTORE_RESET,catalog
 from .workflow import Workflow
@@ -22,6 +23,7 @@ class App:
     def __init__(self,root,*,assets=None,workflow=None):
         self.root=root;self.workflow=workflow or Workflow(assets=assets)
         self.assets=assets;self.events=queue.Queue();self.busy=None
+        self.revision_retry_allowed=False;self.read_hold_timer=None;self.read_hold_fired=False
         _,self.catalog=catalog(assets)
         root.title('Lumix Firmware Updater');root.geometry('840x740');root.minsize(800,690)
         root.protocol('WM_DELETE_WINDOW',self.close)
@@ -36,6 +38,10 @@ class App:
         ttk.Label(page,text='Read the connected camera',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
         ttk.Label(page,textvariable=self.camera_text,wraplength=670,justify='left').pack(anchor='w',pady=(12,18))
         self.read_button=ttk.Button(page,text='Read camera',command=self.on_inspect);self.read_button.pack(anchor='w')
+        self.read_button.bind('<ButtonPress-1>',self.on_read_press)
+        self.read_button.bind('<ButtonRelease-1>',self.on_read_release)
+        self.read_button.bind('<Leave>',self.cancel_read_hold)
+        self.read_button.bind('<FocusOut>',self.cancel_read_hold)
         ttk.Button(page,text='USB connection help',command=self.connection_help).pack(anchor='w',pady=(12,0))
         ttk.Label(page,text='Supports reviewed GM1 1.1 (0110) and GM5 1.1 (0110/0111) builds, plus compatible research patches. Other builds are checked and refused.',
             wraplength=660).pack(anchor='w',pady=(24,0))
@@ -95,6 +101,8 @@ class App:
 
     def start(self,action,operation):
         if self.busy:return
+        self.cancel_read_hold();self.revision_retry_allowed=False
+        self.read_button.configure(text='Read camera')
         self.busy=action;self.status.set('Working…')
         for button in (self.read_button,self.build_button,self.enable_button,self.open_button):button.configure(state='disabled')
         self.card_check.configure(state='disabled')
@@ -102,7 +110,7 @@ class App:
         def progress(label,done,total):self.events.put(('progress',(label,done,total)))
         def worker():
             try:self.events.put(('done',(action,operation(progress))))
-            except Exception as error:self.events.put(('error',(action,str(error))))
+            except Exception as error:self.events.put(('error',(action,error)))
         threading.Thread(target=worker,name='LumixUpdater-'+action,daemon=True).start()
 
     def poll(self):
@@ -121,13 +129,20 @@ class App:
                     self.enable_button.configure(state='normal' if ready else 'disabled')
                     self.card_check.configure(state='normal' if ready else 'disabled')
                 if kind=='error':
+                    error=result;result=str(error)
                     # Backend readiness is invalidated before a fresh read or
                     # replacement build. Do not leave the former instructions
                     # or controls looking ready after that operation fails.
                     if action in ('inspect','prepare'):
                         self.set_steps('Read the camera and prepare a verified update before installation.')
                         self.set_limitations([])
-                    if action=='inspect':self.camera_text.set('Camera check did not complete. Reconnect an awake service camera and read it again.')
+                    if action=='inspect':
+                        self.camera_text.set('Camera check did not complete. Reconnect an awake service camera and read it again.')
+                        if isinstance(error,UnsupportedRevisionError):
+                            self.revision_retry_allowed=True
+                            self.read_button.configure(text='Read camera (hold 5s to retry)')
+                            result+='\n\nHold Read camera for 5 seconds to skip the revision-number check. All other firmware checks still apply.'
+                            self.camera_text.set(result)
                     if action=='enable' and self.workflow.output:
                         self.open_button.configure(state='normal')
                     self.status.set('Stopped: '+result)
@@ -144,7 +159,9 @@ class App:
                     self.download_text.set('Download the official '+model_spec(result['model'])['token']+' 1.1 firmware')
                     self.camera_text.set(result['model']+' — firmware '+result['firmware']+' (internal '+result['internal_revision']+')\n\n'+
                         ('This camera already accepts custom updates. No temporary USB change is needed.' if enabled else
-                         'The update policy is stock. After preparing the card, reconnect service USB to enable this update.'))
+                         'The update policy is stock. After preparing the card, reconnect service USB to enable this update.')+
+                        ('\n\nRevision-number check skipped. Reviewed layout 0x'+result['reviewed_internal_revision']+
+                         ' matched the remaining firmware checks.' if result.get('revision_check_skipped') else ''))
                     self.open_button.configure(state='disabled');self.enable_button.configure(state='disabled')
                     self.card.set(False);self.set_steps('Choose a patch and prepare the firmware files.');self.set_limitations([])
                     self.status.set('Camera firmware checked');self.tabs.select(1)
@@ -167,7 +184,30 @@ class App:
         except queue.Empty:pass
         self.root.after(80,self.poll)
 
-    def on_inspect(self):self.start('inspect',lambda p:self.workflow.inspect(p))
+    def cancel_read_hold(self,event=None):
+        if self.read_hold_timer is not None:
+            self.root.after_cancel(self.read_hold_timer);self.read_hold_timer=None
+
+    def on_read_press(self,event):
+        self.cancel_read_hold();self.read_hold_fired=False
+        if self.revision_retry_allowed and not self.busy and not self.read_button.instate(['disabled']):
+            self.status.set('Keep holding Read camera for 5 seconds to skip the revision-number check.')
+            self.read_hold_timer=self.root.after(5000,self.on_read_hold)
+
+    def on_read_release(self,event):
+        self.cancel_read_hold()
+        if self.read_hold_fired:
+            self.read_button.state(['!pressed'])
+            return 'break'
+
+    def on_read_hold(self):
+        self.read_hold_timer=None
+        if self.revision_retry_allowed and not self.busy:
+            self.read_hold_fired=True
+            self.on_inspect(skip_revision_check=True)
+
+    def on_inspect(self,*,skip_revision_check=False):
+        self.start('inspect',lambda p:self.workflow.inspect(p,skip_revision_check=skip_revision_check))
 
     def choose_file(self):
         path=filedialog.askopenfilename(parent=self.root,title='Official camera firmware',
@@ -206,6 +246,7 @@ class App:
             'The initial camera check only reads firmware. A temporary RAM flag can be changed after the update is built and the card is prepared.',parent=self.root)
 
     def close(self):
+        self.cancel_read_hold()
         if self.busy=='enable':
             self.status.set('Finishing the camera flag check; keep USB connected.');return
         self.root.destroy()
