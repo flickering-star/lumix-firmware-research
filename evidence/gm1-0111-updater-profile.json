@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "passed": true,
+  "static_layout_review": true,
+  "camera_contacted": false,
+  "physical_update_tested": false,
+  "time_utc": "2026-11-25T21:37:36.843873+00:00",
+  "model": "DMC-GM1",
+  "profile": "gm1-factory-0111",
+  "backup_bytes": 33554432,
+  "backup_sha256": "1e1a5de4055d8ae12d97db5ca3298329d40422272711d4eb78e943e56ee69c86",
+  "verified_backup_blocks": 32768,
+  "components": {
+    "program": {
+      "bytes": 9437184,
+      "sha256": "d678b9a9a225e70f1b1144564cb5c15c01340b2877c80a47e76a256ee51b7ef3"
+    },
+    "guires": {
+      "bytes": 11534336,
+      "sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d"
+    },
+    "program2": {
+      "bytes": 3538944,
+      "sha256": "3c6c9ddd4665f102f6d6e66631f1271120ba829deb1c88bc834d774f839b1ea8"
+    }
+  },
+  "service_code": [
+    {
+      "role": "read-dispatch",
+      "official_address": 1077322140,
+      "factory_address": 1077322136,
+      "bytes": 8,
+      "sha256": "9a09f25f26e3625e4201a2e704fd0a52a08a02b4d79ae23f9dfb412ecc24a546"
+    },
+    {
+      "role": "write-dispatch",
+      "official_address": 1077322084,
+      "factory_address": 1077322080,
+      "bytes": 8,
+      "sha256": "39b129169dcf2e1494637ffbed53cf7173f904d077ffc2733042492f6a078087"
+    },
+    {
+      "role": "read-handler",
+      "official_address": 1077327633,
+      "factory_address": 1077327629,
+      "bytes": 141,
+      "sha256": "0db882980307581c7283eb751b590747e5cdb39b51e1f34f546b550fb39102cc"
+    },
+    {
+      "role": "write-handler",
+      "official_address": 1077326713,
+      "factory_address": 1077326709,
+      "bytes": 86,
+      "sha256": "aca4323b23f0b35f71e6c0c181187d114f89b976c09a64f3f42286fe9d20d3f7"
+    },
+    {
+      "role": "write-ACK",
+      "official_address": 1077326815,
+      "factory_address": 1077326811,
+      "bytes": 11,
+      "sha256": "ca358e63779f5ad3f53d8b50e6ac7d7e136d8f12c716a22f7afd9230a0c98826"
+    }
+  ],
+  "dispatcher": {
+    "official": 1077321596,
+    "factory": 1077321592,
+    "table": 1079490980,
+    "only_prologue_difference": "relocated jump-table pointer"
+  },
+  "policy": {
+    "ROM": 1079794520,
+    "RAM": 1888499732,
+    "initializer_source": 1079686500,
+    "initializer_end": 1079979396,
+    "initializer_destination": 1888391712
+  },
+  "encryption_key_record": {
+    "address": 1079686264,
+    "sha256": "555c3fdaafe1cda9d5eb941792bd9c3fac2153e1da17e1203c7c107f533344f5",
+    "matches_official": true,
+    "key_bytes_in_report": false
+  },
+  "updater": {
+    "official_entry": 1096065620,
+    "factory_entry": 1096065670,
+    "saved_policy_and_allowance_templates_identical": true
+  },
+  "exact_ROM_guard_pages": {
+    "1073742848": "9b346d941aae256b0d283499ecbf57dd9e77dde48afa7fd7819349c4e9cfe04b",
+    "1079686144": "c2c81534a7d5c9f0e5f0e1276958b363298b67b20b8a592367bdaf9c8c0bedf5",
+    "1079490560": "5e1138076349b73db97a972c808a749f1c331e7b90bc9ee81ee8e250bbe4cf46",
+    "1077321728": "71989f3e9d92694e801c4a4089ea0e4d3f06dde09341e1386dc1b00e335d412b",
+    "1077325824": "09387a12478688ae176074abb418bc70c62c48a7b64759a4d6c9293eeddc6b03",
+    "1079793664": "3d4da31df7621421f3da0e70ca598dc89ed59feecd3809898e103bd713194745"
+  },
+  "restores_detected_factory_revision": true,
+  "existing_stable_and_LUT_patch_base": "gm1-official-0110",
+  "native_startup_or_SD_patch_added": false,
+  "assets": {
+    "catalog.json": "c529897b960465b77d28ca99184800cdb712b1ba0ba8d3e13b50385554d05845",
+    "stable-program.lxdp": "513b86e93cf9ad92754df80ef42d8c49130a79783e2fa80a8095c68b04775c1b",
+    "stable-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+    "luts-program.lxdp": "7b1eeeeb22d5ac79554ade8ac6da9d5193f78f1190a563c72f16f3c3011dc6bd",
+    "luts-guires.lxdp": "cc66f9de3424884b1b27d29dff7552ec33350d1203ae9b8262a18785100adccf",
+    "luts-program2.lxdp": "6a225b86d6676546fe988de78c55e8c846a434eb861127d23e844ed2b7baa3cd",
+    "restore-program.lxdp": "67d4c1a96a3d0a844172eaf2c75ce26391cf9f80842e412e48cddf3ea2b32165",
+    "restore-program2.lxdp": "89c2c572ffc470f85abd00bf8c5297ce064729c4dbf5816b413909020325fd6d",
+    "gm1/catalog.json": "ebacbc4a137ef822ce5e542e84702b0a9ea3981e9a67eb83cc62e7ba9656b301",
+    "gm1/stable-program.lxdp": "c82a82a3c6da00583a8e0614db6c86ee53c6731941d3cee303665812bc8886ed",
+    "gm1/luts-program.lxdp": "90a11fb3c41cb6457463ee20ca0775f7c77ad680a1d0dd9be2b8c9815cf21f9d",
+    "gm1/luts-guires.lxdp": "2fbd12f329b194443fb550cd120aefde9ddb6a2f6f7f494ff5c45dc04e72173a",
+    "gm1/luts-program2.lxdp": "f547951db5cd2043e1b26d50341f104b27358833302fc7e72ba1b4ba335c3359",
+    "gm1/restore-0111-program.lxdp": "315b8e5d4274dfdd98a51e27f3aa0fdb28781198a85e6a4d1013ff9ec5e9ba94",
+    "gm1/restore-0111-program2.lxdp": "0c23b76bd4eab71ea6a66585d382c813c682b2f073aeab946e6c980a862c8b04"
+  },
+  "profiles": {
+    "DMC-GM5": [
+      "gm5-official-0110",
+      "gm5-factory-0111"
+    ],
+    "DMC-GM1": [
+      "gm1-official-0110",
+      "gm1-factory-0111"
+    ]
+  },
+  "source_sha256": "580265c3a55878a79cfe005f95e86208d39ffdc150ef0ed40586d25ed0a5a863",
+  "scope": "Review the owner's complete GM1 0111 backup and make bounded restore deltas.\n\nInput dumps, per-body metadata and original instruction bytes stay private.\nThe byte-free report pins exact inputs, relocations and policy ABI. No camera,\nUSB write, modified native startup or physical update is performed.\n"
+}

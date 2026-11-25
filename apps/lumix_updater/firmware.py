@@ -128,8 +128,10 @@ def catalog_assets(root=None):
         prefix=directory.relative_to(root)
         expected[str(prefix/'catalog.json')]=sha((directory/'catalog.json').read_bytes())
         profiles[model]=manifest['supported_camera_profiles']
-        for choice in manifest['choices'].values():
-            for part in choice['components'].values():
+        component_sets=[choice['components'] for choice in manifest['choices'].values()]
+        component_sets.extend(manifest.get('restore_components_by_profile',{}).values())
+        for components in component_sets:
+            for part in components.values():
                 name=part['file']
                 if name:
                     if Path(name).name!=name or not name.endswith('.lxdp') or sha((directory/name).read_bytes())!=part['patch_sha256']:
@@ -147,12 +149,15 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     root,manifest=catalog(assets,model=model)
     if choice not in manifest['choices']:raise ValueError('Choose a supported patch or stock restore')
     plan=manifest['choices'][choice]
-    if camera_profile not in spec['profiles'].values():
+    if camera_profile not in spec['profiles'].values() or camera_profile not in manifest['supported_camera_profiles']:
         raise ValueError('Unsupported camera profile for firmware preparation')
+    source_revision=next(v for v,p in spec['profiles'].items() if p==camera_profile)
     components=plan['components']
-    if choice=='restore' and camera_profile=='gm5-official-0110':
-        components=manifest.get('restore_components_by_profile',{}).get(camera_profile)
-        if components is None:raise ValueError('The bundled patches do not include this camera’s stock restore')
+    if choice=='restore':
+        matching=manifest.get('restore_components_by_profile',{}).get(camera_profile)
+        if matching is not None:components=matching
+        elif camera_profile=='gm5-official-0110' or camera_profile=='gm1-factory-0111':
+            raise ValueError('The bundled patches do not include this camera’s stock restore')
     if list(components)!=['program','guires','program2']:
         raise ValueError('The selected patch must contain exactly the three reviewed program components')
     decoded=decode_original(raw,key,codec,progress,model=model)
@@ -160,7 +165,8 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     parts=[]
     preservation={}
     language_catalog=None
-    target_revision=0x0110 if model=='DMC-GM1' or choice=='restore' and camera_profile=='gm5-official-0110' else 0x0111
+    target_revision=source_revision if choice=='restore' else 0x0110 if model=='DMC-GM1' else 0x0111
+    target_spec=model_spec(model,target_revision)
     for name in components:
         if name not in destinations:raise ValueError('Patch requests an unreviewed component')
         patch=components[name]
@@ -178,7 +184,7 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
         if name=='program':
             if struct.unpack_from('<2H',plain,0x6A0)!=(target_revision,target_revision):
                 raise ValueError('Reconstructed firmware differs from the selected internal revision')
-            policy=spec['policy_rom']-0x40000000+spec['policy_rom_offset']
+            policy=target_spec['policy_rom']-0x40000000+target_spec['policy_rom_offset']
             if plain[policy:policy+2]!=(1 if choice=='restore' else 0).to_bytes(2,'little'):
                 raise ValueError('Reconstructed update policy differs from the selected patch')
             if choice=='luts' and (length!=spec['lut_program_bytes']
@@ -219,7 +225,6 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     for entry,(name,destination,plain) in zip(checked,parts):
         if (entry['name'],entry['destination'],entry['digest'],entry['size'])!=(name,destination,sha(plain),len(plain)):
             raise ValueError('Final package directory does not match the reviewed payload')
-    source_revision=next(v for v,p in spec['profiles'].items() if p==camera_profile)
     limitations=list(plan['limitations'])
     if language_catalog is not None:
         limitations.append('All '+str(len(language_catalog['language_ids']))+
@@ -227,7 +232,9 @@ def build(raw, key, codec, choice, *, assets=None, progress=lambda *_:None,camer
     if choice=='restore':
         limitations.insert(0, STOCK_RESTORE_RESET)
     if source_revision!=target_revision:
-        limitations.append('The camera still displays firmware 1.1; its internal program revision changes from 0110 to the reviewed factory revision 0111. Stock restore returns the original official 0110 components.')
+        limitations.append('The camera still displays firmware 1.1; its internal program revision changes from '
+            f'{source_revision:04x} to the reviewed {target_revision:04x} patch base. '
+            'The separately prepared stock restore matches the detected starting profile.')
     report=dict(model=model,choice=choice,bytes=len(output),sha256=sha(output),camera_profile=camera_profile,
         components=[dict(name=n,destination=d,bytes=len(p),sha256=sha(p)) for n,d,p in parts],
         advertised_version='1.1f' if model=='DMC-GM5' else '1.1 (header 0111)',installed_version_preserved=source_revision==target_revision,

@@ -67,5 +67,17 @@ class DesktopArchiveTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'model catalog differs'):
             archive_catalog(self.archive(catalog=raw,extra=extra),digest)
 
+    def test_profile_specific_restore_delta_is_checked_and_required(self):
+        catalog=json.loads(self.catalog);restore=b'profile-specific-restore'
+        catalog['restore_components_by_profile']={'gm5-official-0110':{
+            'program':dict(file='factory-restore.lxdp',patch_sha256=hashlib.sha256(restore).hexdigest())}}
+        raw=json.dumps(catalog).encode();digest=hashlib.sha256(raw).hexdigest()
+        result=archive_catalog(self.archive(catalog=raw,extra=[(self.prefix+'factory-restore.lxdp',restore)]),digest)
+        self.assertEqual(result['patch_files']['factory-restore.lxdp'],hashlib.sha256(restore).hexdigest())
+        with self.assertRaisesRegex(ValueError,'Shipped delta differs'):
+            archive_catalog(self.archive(catalog=raw,extra=[(self.prefix+'factory-restore.lxdp',restore+b'changed')]),digest)
+        with self.assertRaisesRegex(ValueError,'Shipped delta differs'):
+            archive_catalog(self.archive(catalog=raw),digest)
+
 
 if __name__=='__main__':unittest.main()

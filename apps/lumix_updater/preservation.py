@@ -1,6 +1,6 @@
 """Pinned native startup and shared SD ranges: firmware edits are forbidden.
 
-Hashes come from the reviewed original GM1 0110 and GM5 0110/0111 components.
+Hashes come from the reviewed original GM1 and GM5 0110/0111 components.
 They are independent of patch catalogs. They cover known bootstrap, kernel,
 filesystem-worker, file-API and dispatcher ranges, not a complete boot model.
 The owner's prohibition applies to every native startup path, including paths
@@ -31,6 +31,14 @@ RANGES = {
             ('native SD dispatcher tables', 0x237000, 0x238000))}}
 
 HASHES = {
+    'gm1-factory-0111': {
+        'program': (
+            'b07bf2f02fac39335dad471a2c809f795a67e6a6819517d9c6043b5c99eb6a48',
+            'fec3ff4b75f97ba8b75fc2465b68ec734d1951d9dc07be21957e3ece5770953f',
+            'b58750a458c5895aab07b48ce1a285d5a3c65b92349dfe418256ffbea15c4d41'),
+        'program2': (
+            '9f9deac8e73a4556f291be575cc9a488d01077ae129e36ccfe2acbe29cad2ce9',
+            '3e242dea76fd5b280641add371034a37aeca5d7ae1cbe7363f1a64a7a5bdc30f')},
     'gm1-official-0110': {
         'program': (
             'f253bea2874b152adf372b19e178dce076ac767b59ab1bfb739a7d420f3c92b7',

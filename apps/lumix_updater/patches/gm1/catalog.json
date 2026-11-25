@@ -2,9 +2,10 @@
   "schema": 1,
   "model": "DMC-GM1",
   "supported_camera_profiles": [
-    "gm1-official-0110"
+    "gm1-official-0110",
+    "gm1-factory-0111"
   ],
-  "time_utc": "2026-11-21T23:12:46.391326+00:00",
+  "time_utc": "2026-11-25T21:37:36.812733+00:00",
   "choices": {
     "stable": {
       "label": "Language unlock + update access",
@@ -148,5 +149,35 @@
   "exfat_overlay_withdrawn": true,
   "native_startup_edits_forbidden": true,
   "xpan_overlay_included": false,
-  "recording_limit_patch_withdrawn": true
+  "recording_limit_patch_withdrawn": true,
+  "restore_components_by_profile": {
+    "gm1-factory-0111": {
+      "program": {
+        "source_sha256": "a96fb6da618b33207db0d357ac5e2513583aaa71dd01df44bed498e63992fabe",
+        "target_sha256": "d678b9a9a225e70f1b1144564cb5c15c01340b2877c80a47e76a256ee51b7ef3",
+        "write_bytes": 9437184,
+        "file": "restore-0111-program.lxdp",
+        "patch_sha256": "315b8e5d4274dfdd98a51e27f3aa0fdb28781198a85e6a4d1013ff9ec5e9ba94"
+      },
+      "guires": {
+        "source_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+        "target_sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+        "write_bytes": 11534336,
+        "file": null,
+        "patch_sha256": null
+      },
+      "program2": {
+        "source_sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968",
+        "target_sha256": "3c6c9ddd4665f102f6d6e66631f1271120ba829deb1c88bc834d774f839b1ea8",
+        "write_bytes": 3538944,
+        "file": "restore-0111-program2.lxdp",
+        "patch_sha256": "0c23b76bd4eab71ea6a66585d382c813c682b2f073aeab946e6c980a862c8b04"
+      }
+    }
+  },
+  "reviewed_factory_0111_components": {
+    "program": "d678b9a9a225e70f1b1144564cb5c15c01340b2877c80a47e76a256ee51b7ef3",
+    "guires": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d",
+    "program2": "3c6c9ddd4665f102f6d6e66631f1271120ba829deb1c88bc834d774f839b1ea8"
+  }
 }

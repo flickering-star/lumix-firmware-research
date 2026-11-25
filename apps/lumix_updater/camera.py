@@ -37,11 +37,18 @@ GM1_GUARDS={
     0x4036A000:'e8951cfe66681a18fc749a71826237539e264e5972523b42aca12313f322b1e8',
     0x4036B000:'6fd3d81781b08a0ce039e871a4b84287575510f1cc63e95ab68799ea923de86c',
     0x405C5800:'01c5765071c40cb898dca585b99c172520cda42a253a37b404ac545270996b37'}
+GM1_FACTORY_GUARDS={
+    0x40000400:'9b346d941aae256b0d283499ecbf57dd9e77dde48afa7fd7819349c4e9cfe04b',
+    0x405AB400:'c2c81534a7d5c9f0e5f0e1276958b363298b67b20b8a592367bdaf9c8c0bedf5',
+    0x4057B800:'5e1138076349b73db97a972c808a749f1c331e7b90bc9ee81ee8e250bbe4cf46',
+    0x4036A000:'71989f3e9d92694e801c4a4089ea0e4d3f06dde09341e1386dc1b00e335d412b',
+    0x4036B000:'09387a12478688ae176074abb418bc70c62c48a7b64759a4d6c9293eeddc6b03',
+    0x405C5800:'3d4da31df7621421f3da0e70ca598dc89ed59feecd3809898e103bd713194745'}
 
 
 def profile_guards(model):
     model_spec(model)
-    return PROFILE_GUARDS if model=='DMC-GM5' else {0x0110:GM1_GUARDS}
+    return PROFILE_GUARDS if model=='DMC-GM5' else {0x0110:GM1_GUARDS,0x0111:GM1_FACTORY_GUARDS}
 
 
 def profile_pages(model):
@@ -128,6 +135,7 @@ def inspect_service(service,identity,progress=lambda *_:None):
                     '. Supported internal revisions: '+supported+'. No camera change was made. '
                     'Use Data backup to save a complete recovery backup of this camera.')
             guards=versions[version[0]]
+            spec=model_spec(model,version[0])
         if guards is not None and address in guards:
             checked=bytearray(raw)
             if address==spec['policy_rom']:
@@ -143,7 +151,7 @@ def inspect_service(service,identity,progress=lambda *_:None):
 
 
 def finish_inspection(pages,identity,version):
-    model=identity['model'];spec=model_spec(model)
+    model=identity['model'];spec=model_spec(model,version[0])
     key=pages[spec['key_page']][spec['key_offset']:spec['key_offset']+16]
     if hashlib.sha256(key).hexdigest()!=spec['key_sha']:raise CameraError('The firmware encryption-key record differs')
     rom=struct.unpack_from('<H',pages[spec['policy_rom']],spec['policy_rom_offset'])[0]
@@ -168,7 +176,7 @@ def enable_update(previous,transport_factory=None,progress=lambda *_:None):
     with (transport_factory or updater_transport)() as transport:
         if transport.identity.get('model')!=previous.model:
             raise CameraError('The connected camera model changed after preparation. Read it again.')
-        service=selected_service(transport);spec=model_spec(previous.model)
+        service=selected_service(transport);spec=model_spec(previous.model,previous.version)
         current=inspect_service(service,transport.identity,progress)
         if (previous.serial and current.serial!=previous.serial or current.key!=previous.key
                 or current.revision_words!=previous.revision_words or current.usb_release!=previous.usb_release
@@ -191,7 +199,7 @@ def enable_update(previous,transport_factory=None,progress=lambda *_:None):
 
 def page_for_rom(current,service):
     # Independent post-write ROM validation; the host never sends NOR writes.
-    spec=model_spec(current.model);offset=spec['policy_rom_offset']
+    spec=model_spec(current.model,current.version);offset=spec['policy_rom_offset']
     raw=service.read(spec['policy_rom']);checked=bytearray(raw)
     if struct.unpack_from('<H',raw,offset)[0]!=current.rom_policy:
         raise CameraError('The ROM update policy changed unexpectedly')

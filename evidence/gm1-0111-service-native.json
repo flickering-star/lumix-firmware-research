@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "passed": true,
+  "model": "DMC-GM1",
+  "revision": "0111",
+  "cases": [
+    {
+      "name": "read-40000400",
+      "opcode": 92,
+      "dispatcher": 1077321592,
+      "branch": 1077322136,
+      "handler": 1077327629,
+      "original_instruction_observations": 13485,
+      "report_sha256": "f0dc9298147b23db3b6ed42fdc0df014f8d2abe1295bf97d26245751b9603b40",
+      "trace_sha256": "78b9725abc9a8c9613c4ce5e1450a38f87180b40b01f9c7d479ef2999993ef42",
+      "policy_page_sha256": "592000f3801e9be039c41ec4abb87343823d6bcd018ef304c7688eeb039ac623",
+      "stop": "after_original_handler_return"
+    },
+    {
+      "name": "read-405ab400",
+      "opcode": 92,
+      "dispatcher": 1077321592,
+      "branch": 1077322136,
+      "handler": 1077327629,
+      "original_instruction_observations": 13485,
+      "report_sha256": "a2914c152dcb6fff2ce2f9580ccb2647a26489a369966a44e68b2324ededaa2e",
+      "trace_sha256": "1c4d05dcc28df03608b2494ca220fae8f8819dcda2a960d58cca3d4d22de9cfe",
+      "policy_page_sha256": "592000f3801e9be039c41ec4abb87343823d6bcd018ef304c7688eeb039ac623",
+      "stop": "after_original_handler_return"
+    },
+    {
+      "name": "read-405c5800",
+      "opcode": 92,
+      "dispatcher": 1077321592,
+      "branch": 1077322136,
+      "handler": 1077327629,
+      "original_instruction_observations": 13485,
+      "report_sha256": "54303aef1b7cae34c4d6435ef1f224714f3c0fedaad2dac8240b317547b2b8e7",
+      "trace_sha256": "231bb1ce3abbbbe7933c07c82bd7d0f2db39963bcc70799d479b8e8ca1389418",
+      "policy_page_sha256": "592000f3801e9be039c41ec4abb87343823d6bcd018ef304c7688eeb039ac623",
+      "stop": "after_original_handler_return"
+    },
+    {
+      "name": "enable-policy-zero",
+      "opcode": 156,
+      "dispatcher": 1077321592,
+      "branch": 1077322080,
+      "handler": 1077326709,
+      "original_instruction_observations": 317,
+      "report_sha256": "bd87a02c9356d9d6d963ae2fd512146f0196a7fa67368155e989c52ed0cfcd3e",
+      "trace_sha256": "5016d15fbd2c24eb889222b5c2b4c28db384c506e8c79de956ede4a8180f5350",
+      "policy_page_sha256": "90a89f420d33992eb3005ec1544d0e8e6c58719cffa1d1b9454da33e5bc6fc27",
+      "stop": "after_original_handler_return"
+    },
+    {
+      "name": "restore-policy-one",
+      "opcode": 156,
+      "dispatcher": 1077321592,
+      "branch": 1077322080,
+      "handler": 1077326709,
+      "original_instruction_observations": 317,
+      "report_sha256": "bdb1dd6602c2ed3e4b0fc9548d1da473edfaa6ba42644990be340ee6830f7ffc",
+      "trace_sha256": "da7c260c77df5448556cb8988d21d12816fbcfc70a561b61885ae0ec015e769b",
+      "policy_page_sha256": "592000f3801e9be039c41ec4abb87343823d6bcd018ef304c7688eeb039ac623",
+      "stop": "after_original_handler_return"
+    }
+  ],
+  "native_cases": 5,
+  "observations": 41089,
+  "original_program_sha256": "d678b9a9a225e70f1b1144564cb5c15c01340b2877c80a47e76a256ee51b7ef3",
+  "original_program2_sha256": "3c6c9ddd4665f102f6d6e66631f1271120ba829deb1c88bc834d774f839b1ea8",
+  "native_cpu_sha256": "c5734de55b8cd666f6ddc6b69f6a0288a3a4ea02abae7af4ce2ee19793c245d8",
+  "source_sha256": "92b9aabe524359fe59876a955db4ae49113ea7ba6000fccff612f62be9b46c47",
+  "actual_original_dispatcher_read_store_ACK_executed": true,
+  "full_policy_page_restored": true,
+  "camera_contacted": false,
+  "native_startup_executed": false,
+  "physical_installation_verified": false,
+  "device_or_API_return_supplied": false,
+  "physical_flash_operations": 0,
+  "scope": "Execute the owner's original GM1 0111 service read/store/ACK paths offline.\n\nOriginal executable components and their original initialized-data bytes are\nused with explicit API/frame/RAM inputs. No USB, device, scheduler or external\nAPI return is supplied. Only a declared RAM policy halfword is stored.\n"
+}

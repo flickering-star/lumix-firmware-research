@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "passed": true,
+  "model": "DMC-GM1",
+  "installed_profile": "gm1-factory-0111",
+  "cases": [
+    {
+      "choice": "stable",
+      "package_bytes": 24512000,
+      "package_sha256": "6ea79b39b7fca66ec52328ca96f2990235853dd61dc8dedf2bd50953c2fafecf",
+      "source_internal_revision": "0111",
+      "target_internal_revision": "0110",
+      "complete_decrypted_components_verified": true,
+      "existing_patch_payload_unchanged": true,
+      "exact_original_0111_restore": false,
+      "installed_exact_profile_reinspection": true,
+      "components": [
+        {
+          "name": "program",
+          "destination": 0,
+          "bytes": 9437184,
+          "sha256": "3f07b72a53c818e2929eeaa0012dbf082f7b0369d419011f427001a4e9df19a3"
+        },
+        {
+          "name": "guires",
+          "destination": 9437184,
+          "bytes": 11534336,
+          "sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d"
+        },
+        {
+          "name": "program2",
+          "destination": 20971520,
+          "bytes": 3538944,
+          "sha256": "7e8c7d96a95a505d5500fafbd076a56e95f27267708c1f02deb2606fcd304968"
+        }
+      ],
+      "native_preservation": {
+        "program": [
+          {
+            "name": "native reset and early startup",
+            "offset": 0,
+            "bytes": 131072,
+            "sha256": "f253bea2874b152adf372b19e178dce076ac767b59ab1bfb739a7d420f3c92b7"
+          },
+          {
+            "name": "native main startup",
+            "offset": 323584,
+            "bytes": 12288,
+            "sha256": "5678cb1af7b2519d4346179d2f446e9e39d3fa2916bde4762c97e15768a3bf50"
+          },
+          {
+            "name": "native file API",
+            "offset": 2387456,
+            "bytes": 512,
+            "sha256": "f9041e36539ae966a1eef4e689c5b14fa03c21340b14ef4a9817a517b6b42407"
+          }
+        ],
+        "guires": [],
+        "program2": [
+          {
+            "name": "native filesystem and kernel startup",
+            "offset": 1757184,
+            "bytes": 294912,
+            "sha256": "f1915d24b5718bce47507f4de13f4e87d11dc646a83c6946d3127e7349f11de2"
+          },
+          {
+            "name": "native SD dispatcher tables",
+            "offset": 2240512,
+            "bytes": 4096,
+            "sha256": "7b99f17c755cc83ecb7dc903403e8893c6d5d6342f67b9459ac511a2be277d69"
+          }
+        ]
+      },
+      "recording_limits_preserved": true
+    },
+    {
+      "choice": "luts",
+      "package_bytes": 23987712,
+      "package_sha256": "4c34eaf367451313775ffed5688eb9c8a9f25dabb5ddeffb4dcaefba305f1fa2",
+      "source_internal_revision": "0111",
+      "target_internal_revision": "0110",
+      "complete_decrypted_components_verified": true,
+      "existing_patch_payload_unchanged": true,
+      "exact_original_0111_restore": false,
+      "installed_exact_profile_reinspection": true,
+      "components": [
+        {
+          "name": "program",
+          "destination": 0,
+          "bytes": 8912896,
+          "sha256": "0dce652908a235fae60d1588b4b81642414dc732495fc9cfd89f5a9956b0984c"
+        },
+        {
+          "name": "guires",
+          "destination": 9437184,
+          "bytes": 11534336,
+          "sha256": "9fa9f03ca4a2cc665d32d56537ed03cabd9094e623e8a978177be5fad594e321"
+        },
+        {
+          "name": "program2",
+          "destination": 20971520,
+          "bytes": 3538944,
+          "sha256": "21b5cdae4fd4ee66892028a611f345a7eab985f56c4ac30f27cd39c643479cbc"
+        }
+      ],
+      "native_preservation": {
+        "program": [
+          {
+            "name": "native reset and early startup",
+            "offset": 0,
+            "bytes": 131072,
+            "sha256": "f253bea2874b152adf372b19e178dce076ac767b59ab1bfb739a7d420f3c92b7"
+          },
+          {
+            "name": "native main startup",
+            "offset": 323584,
+            "bytes": 12288,
+            "sha256": "5678cb1af7b2519d4346179d2f446e9e39d3fa2916bde4762c97e15768a3bf50"
+          },
+          {
+            "name": "native file API",
+            "offset": 2387456,
+            "bytes": 512,
+            "sha256": "f9041e36539ae966a1eef4e689c5b14fa03c21340b14ef4a9817a517b6b42407"
+          }
+        ],
+        "guires": [],
+        "program2": [
+          {
+            "name": "native filesystem and kernel startup",
+            "offset": 1757184,
+            "bytes": 294912,
+            "sha256": "f1915d24b5718bce47507f4de13f4e87d11dc646a83c6946d3127e7349f11de2"
+          },
+          {
+            "name": "native SD dispatcher tables",
+            "offset": 2240512,
+            "bytes": 4096,
+            "sha256": "7b99f17c755cc83ecb7dc903403e8893c6d5d6342f67b9459ac511a2be277d69"
+          }
+        ]
+      },
+      "recording_limits_preserved": true
+    },
+    {
+      "choice": "restore",
+      "package_bytes": 24512000,
+      "package_sha256": "9dfb447abd3ca8542dbdbbab5cd5f38ad3be81ebdcae2a2e382c985fae764598",
+      "source_internal_revision": "0111",
+      "target_internal_revision": "0111",
+      "complete_decrypted_components_verified": true,
+      "existing_patch_payload_unchanged": false,
+      "exact_original_0111_restore": true,
+      "installed_exact_profile_reinspection": true,
+      "components": [
+        {
+          "name": "program",
+          "destination": 0,
+          "bytes": 9437184,
+          "sha256": "d678b9a9a225e70f1b1144564cb5c15c01340b2877c80a47e76a256ee51b7ef3"
+        },
+        {
+          "name": "guires",
+          "destination": 9437184,
+          "bytes": 11534336,
+          "sha256": "e8e364a8d6593d60941df82ebe7552b6eb4a200ccd115c8b92d081341a6fc48d"
+        },
+        {
+          "name": "program2",
+          "destination": 20971520,
+          "bytes": 3538944,
+          "sha256": "3c6c9ddd4665f102f6d6e66631f1271120ba829deb1c88bc834d774f839b1ea8"
+        }
+      ],
+      "native_preservation": {
+        "program": [
+          {
+            "name": "native reset and early startup",
+            "offset": 0,
+            "bytes": 131072,
+            "sha256": "b07bf2f02fac39335dad471a2c809f795a67e6a6819517d9c6043b5c99eb6a48"
+          },
+          {
+            "name": "native main startup",
+            "offset": 323584,
+            "bytes": 12288,
+            "sha256": "fec3ff4b75f97ba8b75fc2465b68ec734d1951d9dc07be21957e3ece5770953f"
+          },
+          {
+            "name": "native file API",
+            "offset": 2387456,
+            "bytes": 512,
+            "sha256": "b58750a458c5895aab07b48ce1a285d5a3c65b92349dfe418256ffbea15c4d41"
+          }
+        ],
+        "guires": [],
+        "program2": [
+          {
+            "name": "native filesystem and kernel startup",
+            "offset": 1757184,
+            "bytes": 294912,
+            "sha256": "9f9deac8e73a4556f291be575cc9a488d01077ae129e36ccfe2acbe29cad2ce9"
+          },
+          {
+            "name": "native SD dispatcher tables",
+            "offset": 2240512,
+            "bytes": 4096,
+            "sha256": "3e242dea76fd5b280641add371034a37aeca5d7ae1cbe7363f1a64a7a5bdc30f"
+          }
+        ]
+      },
+      "recording_limits_preserved": true
+    }
+  ],
+  "host_exact_profile_and_sole_RAM_store_checked": true,
+  "original_BIN_sha256": "3e8b4aab23f79db160cd016af0e466011f047add07bb7441c642f6b70df30d90",
+  "source_sha256": "0eb48f22720304456c103effe61c8934f6ee166d8553f1fff52462d2468f5097",
+  "application_source_sha256": {
+    "backup.py": "0d39cbb85239636b2b71d45d6e4bd38c627eb7b8ffffe16b18a86fa2a9c89588",
+    "models.py": "4f2e5ec28531a64dc0bc2cf1447f20f4db7c58fae03b3099a89be42206280052",
+    "firmware.py": "bfebf9a19441930ce634ad014f712f277e35488d71ab41ad6d78b0d31c0cd1bd",
+    "protocol.py": "588b850956ba06a73b02b76ab08e51a1a9ec0907304b9cdaf45f3c6a40f41d4e",
+    "download.py": "f7982a3ec489db2b198d219a9a34d7acb704fc7a14979f25cbd8b21a01b9b997",
+    "preservation.py": "053a1d9cf396b11d9a4a562e70f8adf058a1ecab8ec59b0268cf4dcb6074ff6d",
+    "__init__.py": "8504cbf40fa6370d898bde6ca32d1b13eb33a1b3f01268674ad63ae00df256e0",
+    "camera.py": "e2280f2b0631b88733516755b48dc62739398ce3c80ce322d1f271d19d87bf69",
+    "workflow.py": "a6975373b4aa45438a786a51172686a4438f209042f8f0ac81424fc2982b48e8",
+    "codec.py": "a7173fbdb9d9ccc58ff19536f84460225f911fc5813384951e85264dd53309cf",
+    "usb.py": "95ae11ea1ebdd4c3e40a99990a70d494638adda889e6b8bd1a5f38cc46fb0295",
+    "languages.py": "1e93ffdce007a0edf493599a1e9f37381a08bbf3905d46967a448220b8f9200e",
+    "gui.py": "74455c2fe9272ec44a600a66d19ba75c2415caf448cd524376af80f670060a63",
+    "__main__.py": "9c38b37c0150e1b418a2ed052a232038c2c5fabe4de80cf33ab8f9497dcf2213"
+  },
+  "camera_contacted": false,
+  "physical_installation_verified": false,
+  "firmware_functions_or_API_returns_supplied": false,
+  "scope": "Build existing GM1 patches and exact 0111 restore from the official BIN.\n\nThe original installed 0111 input only supplies exact profile/control/key\nevidence. Patches still operate on the pinned official 0110 download. No USB\ndevice is opened. Actual encoding/decoding, hashes and installed profiles are\nchecked with private originals and an explicit memory-framing peer.\n"
+}

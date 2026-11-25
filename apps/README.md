@@ -10,14 +10,36 @@ Desktop application for preparing an SD firmware update. The owner requested
 removal of the faulty recording-limit option and publication of the replacements.
 GM1S is unsupported and is rejected by the model-specific firmware guards.
 
+## 0.2.13 — reviewed GM1 internal 0111 profile
+
+GM1 internal `0111` is now recognized using the owner's complete32MiB backup.
+Its service code and ROM data have small relocations: the dispatcher is at
+`40369f78`, the key record at `405ab478`, and the ROM-policy initializer at
+`405c5b58`. The one temporary RAM-policy address remains `70903814`. The app
+uses separate complete-page fingerprints and revision-specific ROM/key offsets;
+the revision/build bypass remains removed.
+
+**Existing stable and LUT patch payloads are unchanged.** The app still reads
+the same official GM1 1.1 BIN, constructs the reviewed `0110`-based components
+and installs those as an SD update. It does not apply `0110` patch offsets to
+the relocated installed `0111` image. Displayed firmware remains1.1; this path
+changes the internal program revision from `0111` to `0110`. Stock Program
+Restore separately reproduces the reviewed `0111` program components for a
+camera initially detected with that profile. Settings/calibration are excluded.
+
+Validation includes all32,768 backup block hashes, exact host profile/refusal
+checks, original `0111` service-code read/store/ACK execution and complete
+package encode/decode comparisons. Physical installation on this body has not
+been tested. See the [GM1 profile review](../docs/gm1-0111-updater-profile.md).
+
 ## 0.2.12 — strict profiles and recovery backups
 
 The revision/build skip has been removed. Patching requires the exact reviewed
-GM1 internal `0110` or GM5 internal `0110`/`0111` profile. Displayed firmware
+GM1 internal `0110`/`0111` or GM5 internal `0110`/`0111` profile. Displayed firmware
 "1.1" is not an internal build identifier. A dispatcher mismatch means required
 code was not recognized at its expected address; it does not identify the cause
 or establish that every possible patch is incompatible. The retained GM5 `0111`
-reference passes the exact profile checks. The owner's GM1 `0111` is unreviewed.
+reference passes the exact profile checks. GM1 `0111` support was added in0.2.13.
 
 **Data backup / Resume** saves a complete camera backup for later recovery if
 something goes wrong. It is available on the Camera tab even if firmware
@@ -43,8 +65,8 @@ mapped-flash copy. Its intended recovery route is conversion to the camera's
 AHX format; conversion and physical restoration have not yet been validated.
 The raw backup is not directly installable as an update BIN or AHX file. It can
 include camera-specific settings, calibration and identity data; keep it private.
-Full-window hardware backup on the owner's unreviewed GM1 build is still to be
-tested. The app's firmware patch choices are unchanged.
+The owner's GM1 `0111` backup is complete and all32,768 saved block hashes have
+been checked. The app's firmware patch choices are unchanged.
 
 ## Previous release 0.2.10
 

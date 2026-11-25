@@ -40,6 +40,15 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(raw[-2],checksum(raw))
         with self.assertRaises(ValueError):policy_packet(0,'DC-GX9')
 
+    def test_gm1_factory_offsets_are_selected_only_for_its_exact_revision(self):
+        official=model_spec('DMC-GM1',0x0110);factory=model_spec('DMC-GM1',0x0111)
+        self.assertEqual((official['key_offset'],official['policy_rom_offset']),(0x60,0x340))
+        self.assertEqual((factory['key_offset'],factory['policy_rom_offset']),(0x78,0x358))
+        self.assertEqual(factory['policy_ram']+factory['policy_ram_offset'],0x70903814)
+        self.assertEqual(official['policy_ram']+official['policy_ram_offset'],0x70903814)
+        with self.assertRaises(ValueError):model_spec('DMC-GM1',0x0112)
+        self.assertEqual(model_spec('DMC-GM1')['key_offset'],0x60)
+
     def test_truncated_corrupt_and_echo_memory_replies_are_refused(self):
         request=read_packet(0x40000000)
         reply=bytearray(request);reply[:4]=bytes.fromhex('0100ff05');reply[-2]=checksum(reply)
@@ -125,6 +134,16 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn('remove_limit',builder.call_args_list[1].kwargs)
         self.assertTrue(all(c.kwargs['model']=='DMC-GM1' for c in builder.call_args_list))
         self.assertEqual(report['camera']['profile'],'gm1-official-0110')
+
+    def test_gm1_factory_profile_is_kept_for_candidate_and_matching_restore(self):
+        self.workflow.inspection=Inspection('DMC-GM1','offline-test',0x100,0x0111,1,1,bytes(range(16)))
+        with patch('apps.lumix_updater.workflow.load_local',return_value=b'official-input'), \
+             patch('apps.lumix_updater.workflow.build',side_effect=self.fake_build) as builder:
+            report=self.workflow.prepare('stable',self.root/'gm1-factory',local_firmware='GM1__V11.bin')
+        self.assertEqual([call.kwargs['camera_profile'] for call in builder.call_args_list],
+                         ['gm1-factory-0111','gm1-factory-0111'])
+        self.assertEqual(report['camera']['internal_revision'],'0111')
+        self.assertEqual((self.workflow.output/'stock-restore/GM1__V11.bin').read_bytes(),self.data['restore'])
 
     def test_modified_rom_instructions_do_not_require_usb_write(self):
         self.workflow.inspection=inspection(0)

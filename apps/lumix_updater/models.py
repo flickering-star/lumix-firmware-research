@@ -25,7 +25,8 @@ MODELS={
         destinations={'program':0,'guires':0x900000,'program2':0x1400000},
         sizes={'program':0x900000,'guires':0xB00000,'program2':0x360000},
         lut_program_bytes=0x880000,
-        profiles={0x0110:'gm1-official-0110'},
+        profiles={0x0110:'gm1-official-0110',0x0111:'gm1-factory-0111'},
+        profile_overrides={0x0111:dict(policy_rom_offset=0x358,key_offset=0x78)},
         policy_rom=0x405C5800,policy_rom_offset=0x340,policy_ram=0x70903800,policy_ram_offset=0x14,
         mode=0x7024AC00,mode_offset=0x2AD,key_page=0x405AB400,key_offset=0x60,
         key_sha='555c3fdaafe1cda9d5eb941792bd9c3fac2153e1da17e1203c7c107f533344f5',
@@ -33,6 +34,9 @@ MODELS={
         format_duration_offset=0x153193,format_duration_before='83a528c0092e0707a550c308fcce98b70000')}
 
 
-def model_spec(model):
-    try:return MODELS[model]
+def model_spec(model,revision=None):
+    try:spec=MODELS[model]
     except (KeyError,TypeError):raise ValueError('Only the reviewed DMC-GM1 and DMC-GM5 profiles are supported') from None
+    if revision is None:return spec
+    if revision not in spec['profiles']:raise ValueError('The camera revision has no reviewed model profile')
+    return dict(spec,**spec.get('profile_overrides',{}).get(revision,{}))

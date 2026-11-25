@@ -54,8 +54,10 @@ def archive_catalog(path,expected_digest):
             elif directory!='.':raise ValueError('GM5 patch directory must remain the catalog root')
             if current.get('schema')!=1 or current.get('model')!=model or set(current['choices'])!={'stable','luts','restore'}:
                 raise ValueError('Unexpected shipped model catalog')
-            for choice in current['choices'].values():
-                for part in choice['components'].values():
+            component_sets=[choice['components'] for choice in current['choices'].values()]
+            component_sets.extend(current.get('restore_components_by_profile',{}).values())
+            for components in component_sets:
+                for part in components.values():
                     name=part['file']
                     if not name:continue
                     if PurePosixPath(name).name!=name or not name.endswith('.lxdp'):
