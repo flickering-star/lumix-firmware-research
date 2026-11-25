@@ -28,7 +28,11 @@ class DesktopArchiveTests(unittest.TestCase):
         with zipfile.ZipFile(p,'w') as z:
             z.writestr(self.prefix+'catalog.json',self.catalog if catalog is None else catalog)
             z.writestr(self.prefix+'test.lxdp',self.patch if patch is None else patch)
-            for name,data in extra:z.writestr(name,data)
+            for name,data in extra:
+                # ZipInfo normalizes the host's path separator on Windows.
+                # Preserve the requested raw member name for refusal cases.
+                info=zipfile.ZipInfo(name);info.filename=name
+                z.writestr(info,data)
         return p
 
     def test_actual_shipped_catalog_and_delta_are_checked(self):

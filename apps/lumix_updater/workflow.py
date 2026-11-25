@@ -20,9 +20,9 @@ class Workflow:
         self.assets=assets;self.transport_factory=transport_factory;self.codec_factory=codec_factory
         self.inspection=None;self.output=None;self.manifest=None;self.enabled=False
 
-    def inspect(self,progress=lambda *_:None,*,skip_revision_check=False):
+    def inspect(self,progress=lambda *_:None):
         self.inspection=None;self.output=None;self.manifest=None;self.enabled=False
-        inspection=inspect_camera(self.transport_factory,progress,skip_revision_check=skip_revision_check)
+        inspection=inspect_camera(self.transport_factory,progress)
         self.inspection=inspection;self.output=None;self.manifest=None;self.enabled=False
         return inspection.report()
 
@@ -39,12 +39,6 @@ class Workflow:
         restore,restore_report=(candidate,report) if choice=='restore' else build(
             raw,self.inspection.key,codec,'restore',assets=self.assets,progress=progress,
             camera_profile=self.inspection.profile,model=model)
-        if self.inspection.revision_check_skipped:
-            report['limitations'].append(
-                f'Camera internal revision 0x{self.inspection.version:04x} was accepted by layout compatibility only. '
-                'The exact installed build was not identified. '
-                f'The prepared files use reviewed profile {self.inspection.profile}. '
-                'This update installs internal revision 0x'+report['target_internal_revision']+'.')
         root=Path(destination).expanduser().absolute()
         if root.exists():raise FileExistsError('Choose a new folder for the prepared firmware')
         root.parent.mkdir(parents=True,exist_ok=True)

@@ -15,7 +15,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from apps.lumix_updater import camera
-from apps.lumix_updater.layout import CODE, COPY, POLICY_JOB, TABLE
+from lumix_updater_historical_layout import CODE, COPY, POLICY_JOB, TABLE,layout_pages
 from apps.lumix_updater.models import model_spec
 from apps.lumix_updater.protocol import checksum, policy_packet
 
@@ -25,7 +25,7 @@ class Peer:
         self.model = model
         self.spec = model_spec(model)
         self.identity = dict(model=model, serial='explicit-offline-layout-peer', usb_release=0x100)
-        self.allowed = camera.profile_pages(model) | camera.profile_pages(model, layout_only=True)
+        self.allowed = camera.profile_pages(model) | layout_pages(model)
         self.pages = {}
         self.reads = []
         self.writes = []

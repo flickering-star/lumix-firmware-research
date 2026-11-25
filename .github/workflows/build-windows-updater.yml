@@ -38,6 +38,9 @@ jobs:
           }
           New-Item -ItemType Directory -Path 'build-native' | Out-Null
           Copy-Item -LiteralPath $usb -Destination 'build-native\libusb-1.0.dll'
+      - name: Check backup integrity and updater refusals
+        shell: pwsh
+        run: python -m unittest tests.test_lumix_backup tests.test_lumix_updater tests.test_lumix_updater_release
       - name: Build the native Windows app
         shell: pwsh
         run: |

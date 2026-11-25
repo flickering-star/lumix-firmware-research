@@ -12,7 +12,7 @@ from tkinter import filedialog,messagebox,ttk
 import webbrowser
 
 from . import __version__
-from .camera import UnreviewedFirmwareError
+from .backup import SLEEP_INSTRUCTIONS,copy_flash
 from .download import OFFICIAL_PAGE
 from .firmware import STOCK_RESTORE_RESET,catalog
 from .workflow import Workflow
@@ -23,7 +23,7 @@ class App:
     def __init__(self,root,*,assets=None,workflow=None):
         self.root=root;self.workflow=workflow or Workflow(assets=assets)
         self.assets=assets;self.events=queue.Queue();self.busy=None
-        self.revision_retry_allowed=False;self.read_hold_timer=None;self.read_hold_fired=False
+        self.backup_cancel=threading.Event();self.backup_folder=None;self.close_after_backup=False
         _,self.catalog=catalog(assets)
         root.title('Lumix Firmware Updater');root.geometry('840x740');root.minsize(800,690)
         root.protocol('WM_DELETE_WINDOW',self.close)
@@ -38,13 +38,14 @@ class App:
         ttk.Label(page,text='Read the connected camera',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
         ttk.Label(page,textvariable=self.camera_text,wraplength=670,justify='left').pack(anchor='w',pady=(12,18))
         self.read_button=ttk.Button(page,text='Read camera',command=self.on_inspect);self.read_button.pack(anchor='w')
-        self.read_button.bind('<ButtonPress-1>',self.on_read_press)
-        self.read_button.bind('<ButtonRelease-1>',self.on_read_release)
-        self.read_button.bind('<Leave>',self.cancel_read_hold)
-        self.read_button.bind('<FocusOut>',self.cancel_read_hold)
         ttk.Button(page,text='USB connection help',command=self.connection_help).pack(anchor='w',pady=(12,0))
-        ttk.Label(page,text='Supports GM1 and GM5. Unrecognized builds can be retried with a layout compatibility check by holding Read camera for 5 seconds after the error.',
-            wraplength=660).pack(anchor='w',pady=(24,0))
+        ttk.Label(page,text='Patching requires a recognized GM1/GM5 firmware build. Unrecognized revisions can still use Data backup.',
+            wraplength=660).pack(anchor='w',pady=(16,0))
+        ttk.Separator(page).pack(fill='x',pady=16)
+        ttk.Label(page,text='Data backup — entire 32 MiB',font=('TkDefaultFont',12,'bold')).pack(anchor='w')
+        ttk.Label(page,text=SLEEP_INSTRUCTIONS,wraplength=660,justify='left').pack(anchor='w',pady=(8,10))
+        self.backup_button=ttk.Button(page,text='Data backup / Resume…',command=self.on_backup)
+        self.backup_button.pack(anchor='w')
         page=self.pages[1]
         ttk.Label(page,text='Choose the firmware',font=('TkDefaultFont',13,'bold')).pack(anchor='w')
         self.choice=tk.StringVar(value='stable')
@@ -101,10 +102,9 @@ class App:
 
     def start(self,action,operation):
         if self.busy:return
-        self.cancel_read_hold();self.revision_retry_allowed=False
-        self.read_button.configure(text='Read camera')
         self.busy=action;self.status.set('Working…')
-        for button in (self.read_button,self.build_button,self.enable_button,self.open_button):button.configure(state='disabled')
+        for button in (self.read_button,self.build_button,self.enable_button,self.open_button,self.backup_button):button.configure(state='disabled')
+        if action=='backup':self.backup_button.configure(state='normal',text='Pause backup')
         self.card_check.configure(state='disabled')
         if action in ('inspect','prepare'):self.card.set(False)
         def progress(label,done,total):self.events.put(('progress',(label,done,total)))
@@ -122,12 +122,16 @@ class App:
                     self.bar.configure(maximum=max(1,total),value=done)
                     continue
                 action,result=payload;self.busy=None;self.read_button.configure(state='normal')
+                self.backup_button.configure(state='normal',text='Data backup / Resume…')
                 self.build_button.configure(state='normal' if self.workflow.inspection else 'disabled')
-                if action=='enable':
+                if action in ('enable','backup'):
                     ready=bool(self.workflow.inspection and self.workflow.output and self.workflow.manifest
                         and self.workflow.manifest['temporary_flag_needed'])
                     self.enable_button.configure(state='normal' if ready else 'disabled')
                     self.card_check.configure(state='normal' if ready else 'disabled')
+                    if self.workflow.output:self.open_button.configure(state='normal')
+                if action=='backup' and self.close_after_backup:
+                    self.root.destroy();return
                 if kind=='error':
                     error=result;result=str(error)
                     # Backend readiness is invalidated before a fresh read or
@@ -137,12 +141,7 @@ class App:
                         self.set_steps('Read the camera and prepare a verified update before installation.')
                         self.set_limitations([])
                     if action=='inspect':
-                        self.camera_text.set('Camera check did not complete. Reconnect an awake service camera and read it again.')
-                        if isinstance(error,UnreviewedFirmwareError):
-                            self.revision_retry_allowed=True
-                            self.read_button.configure(text='Read camera (hold 5s to retry)')
-                            result+='\n\nHold Read camera for 5 seconds to skip exact revision/build matching and check layout compatibility instead.'
-                            self.camera_text.set(result)
+                        self.camera_text.set(result+'\n\nData backup is available without a supported patch profile.')
                     if action=='enable' and self.workflow.output:
                         self.open_button.configure(state='normal')
                     self.status.set('Stopped: '+result)
@@ -159,12 +158,14 @@ class App:
                     self.download_text.set('Download the official '+model_spec(result['model'])['token']+' 1.1 firmware')
                     self.camera_text.set(result['model']+' — firmware '+result['firmware']+' (internal '+result['internal_revision']+')\n\n'+
                         ('This camera already accepts custom updates. No temporary USB change is needed.' if enabled else
-                         'The update policy is stock. After preparing the card, reconnect service USB to enable this update.')+
-                        ('\n\nExact revision/build matching skipped. The update layout is compatible.'
-                         if result.get('revision_check_skipped') else ''))
+                         'The update policy is stock. After preparing the card, reconnect service USB to enable this update.'))
                     self.open_button.configure(state='disabled');self.enable_button.configure(state='disabled')
                     self.card.set(False);self.set_steps('Choose a patch and prepare the firmware files.');self.set_limitations([])
                     self.status.set('Camera firmware checked');self.tabs.select(1)
+                elif action=='backup':
+                    self.status.set('Data backup complete — 32 MiB saved and verified.')
+                    messagebox.showinfo('Data backup complete','Saved a complete 32 MiB recovery backup of this camera.\n\n'+
+                        str(Path(result['folder'])/'flash32m.bin')+'\n\nSHA-256: '+result['sha256'],parent=self.root)
                 elif action=='prepare':
                     self.set_steps(self.workflow.instructions(result).split('\nLimitations:')[0])
                     self.set_limitations(result['candidate']['limitations']);self.card.set(False)
@@ -184,30 +185,19 @@ class App:
         except queue.Empty:pass
         self.root.after(80,self.poll)
 
-    def cancel_read_hold(self,event=None):
-        if self.read_hold_timer is not None:
-            self.root.after_cancel(self.read_hold_timer);self.read_hold_timer=None
+    def on_inspect(self):
+        self.start('inspect',lambda p:self.workflow.inspect(p))
 
-    def on_read_press(self,event):
-        self.cancel_read_hold();self.read_hold_fired=False
-        if self.revision_retry_allowed and not self.busy and not self.read_button.instate(['disabled']):
-            self.status.set('Keep holding Read camera for 5 seconds to check layout compatibility.')
-            self.read_hold_timer=self.root.after(5000,self.on_read_hold)
-
-    def on_read_release(self,event):
-        self.cancel_read_hold()
-        if self.read_hold_fired:
-            self.read_button.state(['!pressed'])
-            return 'break'
-
-    def on_read_hold(self):
-        self.read_hold_timer=None
-        if self.revision_retry_allowed and not self.busy:
-            self.read_hold_fired=True
-            self.on_inspect(skip_revision_check=True)
-
-    def on_inspect(self,*,skip_revision_check=False):
-        self.start('inspect',lambda p:self.workflow.inspect(p,skip_revision_check=skip_revision_check))
+    def on_backup(self):
+        if self.busy=='backup':
+            self.backup_cancel.set();self.backup_button.configure(state='disabled')
+            self.status.set('Pausing after the current block is saved…');return
+        if self.busy:return
+        folder=filedialog.askdirectory(parent=self.root,title='Choose an empty backup folder, or the same folder to resume',
+            **({'initialdir':str(self.backup_folder)} if self.backup_folder else {}))
+        if not folder:return
+        self.backup_folder=Path(folder);self.backup_cancel.clear()
+        self.start('backup',lambda p:copy_flash(self.backup_folder,self.workflow.transport_factory,p,self.backup_cancel))
 
     def choose_file(self):
         path=filedialog.askopenfilename(parent=self.root,title='Official camera firmware',
@@ -246,7 +236,9 @@ class App:
             'The initial camera check only reads firmware. A temporary RAM flag can be changed after the update is built and the card is prepared.',parent=self.root)
 
     def close(self):
-        self.cancel_read_hold()
+        if self.busy=='backup':
+            self.close_after_backup=True;self.backup_cancel.set()
+            self.status.set('Saving the current backup block before closing…');return
         if self.busy=='enable':
             self.status.set('Finishing the camera flag check; keep USB connected.');return
         self.root.destroy()

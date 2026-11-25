@@ -21,30 +21,18 @@ connection files are excluded from Git history.
 
 ## GM1/GM5 desktop updater
 
-The current **v0.2.10 release** changes the five-second retry to check layout
-compatibility instead of requiring an exact installed-build fingerprint.
-After an unrecognized revision or build error, hold **Read camera** for five
-seconds. The retry checks the service read/write paths and the update-policy
-memory mapping and consumer; header metadata and unrelated page contents may
-differ. Normal reads retain exact-build checks.
+Version **0.2.12** removes the firmware revision/build override and adds **Data backup / Resume**. Patching requires an exact reviewed profile: GM1 internal0110, or GM5 internal0110/0111. The displayed1.1 version is not a unique build identity.
 
-The preparation report distinguishes compatibility verification from build
-identification and names the reviewed source used for prepared firmware and
-stock restore. An unrecognized installed build is not reconstructed by restore.
-Both apps preserve native recording limits following the earlier withdrawal.
+Data backup saves a complete camera backup for later recovery if something goes wrong. It reads the full32MiB mapped flash window even when patch inspection refuses a build. It saves verified checkpoints, supports pause/disconnect/resume, checks camera identity and source anchors, and verifies the final saved image. The app displays instructions to turn Sleep Mode OFF before reconnecting in service mode. Select the same backup folder to resume. Conversion to AHX and physical restoration still need validation.
 
 Both apps include all26 native firmware languages on GM1 and GM5, including
 Korean and Middle East languages in the same catalog. The language-only and
 LUT options use this catalog. See
 [complete-language findings](docs/lumix-all-languages.md).
 
-Both apps are compiled from source on their target systems. The Windows build
-uses the previously tested USB library. Offline controls cover109 cases across
-three retained firmware inputs, including metadata changes, moved addresses,
-rechecks before enabling and complete RAM-page readback. These are declared
-wire-page fixtures, not physical tests of an unrecognized camera build.
+Both apps are compiled from source on their target systems. The Windows build uses the previously tested USB library. The read-only backup workflow has full-window and interruption/integrity controls; these offline checks do not replace testing the new workflow on the camera.
 
-- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.10)
+- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.12)
 - [Instructions, build source and limitations](apps/README.md)
 - [Recording-limit withdrawal](evidence/lumix-recording-limit-withdrawal.json)
 

@@ -10,7 +10,43 @@ Desktop application for preparing an SD firmware update. The owner requested
 removal of the faulty recording-limit option and publication of the replacements.
 GM1S is unsupported and is rejected by the model-specific firmware guards.
 
-## Release 0.2.10
+## 0.2.12 — strict profiles and recovery backups
+
+The revision/build skip has been removed. Patching requires the exact reviewed
+GM1 internal `0110` or GM5 internal `0110`/`0111` profile. Displayed firmware
+"1.1" is not an internal build identifier. A dispatcher mismatch means required
+code was not recognized at its expected address; it does not identify the cause
+or establish that every possible patch is incompatible. The retained GM5 `0111`
+reference passes the exact profile checks. The owner's GM1 `0111` is unreviewed.
+
+**Data backup / Resume** saves a complete camera backup for later recovery if
+something goes wrong. It is available on the Camera tab even if firmware
+inspection fails. It reads the entire mapped 32 MiB flash window, addresses
+`40000000–41ffffff`, using fixed 1 KiB read requests. It does not change the
+camera or enable updates. Choose an empty folder for a new backup, or the same
+folder to resume. Verified blocks are flushed before their durable checkpoints;
+resume checks local block hashes, camera identity and three source anchors.
+Corrupt saved data or changed anchors are refused. Pause and window close save
+the current block; a disconnect leaves the completed blocks available to resume.
+
+Before starting in service mode, use normal camera mode and set
+**MENU/SET → Setup (wrench) → Economy → Sleep Mode → OFF**. Then reconnect in
+service mode. See Panasonic's [GM1 advanced manual, page 49](https://help.na.panasonic.com/wp-content/uploads/2023/02/DMCGM1_VQT5D68_ENG.pdf)
+and [GM5 advanced manual, page 69](https://www.panasonic.com/content/dam/Panasonic/support_manual/Digital_Still_Camera/English/DMC-GM5_Operating_Instructions_for_advanced_features.pdf).
+The app displays these instructions without changing the setting. Keep the
+computer awake and use stable camera power. The copy can take an hour or more.
+
+The completed file is `flash32m.bin`, exactly 33,554,432 bytes, with a final
+disk-read verification, SHA-256 and report. Partial copies use
+`flash32m.bin.part`; keep the whole folder for resume. This is a sequential
+mapped-flash copy. Its intended recovery route is conversion to the camera's
+AHX format; conversion and physical restoration have not yet been validated.
+The raw backup is not directly installable as an update BIN or AHX file. It can
+include camera-specific settings, calibration and identity data; keep it private.
+Full-window hardware backup on the owner's unreviewed GM1 build is still to be
+tested. The app's firmware patch choices are unchanged.
+
+## Previous release 0.2.10
 
 Both apps are version0.2.10 and were compiled from source on their target
 systems. The recording-limit checkbox, implementation and catalog variants

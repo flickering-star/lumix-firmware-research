@@ -1,15 +1,16 @@
-"""The memory and service ABI used by the explicit compatibility override.
+"""Historical ABI checker retained for offline research of the 0.2.10 override.
 
 These are hashes of bounded instructions, not complete firmware pages. Build
 metadata, unrelated routines and initializer contents are deliberately excluded.
-No firmware bytes or camera keys are embedded here.
+No firmware bytes or camera keys are embedded here. The desktop application
+does not import this checker or expose a revision/build bypass in 0.2.11.
 """
 from __future__ import annotations
 
 import hashlib
 import struct
 
-from .models import model_spec
+from apps.lumix_updater.models import model_spec
 
 
 # Each range has one purpose in the host's two service operations. In particular,

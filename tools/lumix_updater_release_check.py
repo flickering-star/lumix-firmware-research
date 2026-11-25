@@ -18,12 +18,15 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 def archive_catalog(path,expected_digest):
     """Check the actual shipped catalog and every declared delta inside the ZIP."""
     with zipfile.ZipFile(path) as archive:
-        names=archive.namelist()
+        # On Windows ZipInfo.filename has already normalized backslashes.
+        # Validate the original central-directory names before that rewrite.
+        names=[entry.orig_filename for entry in archive.infolist()]
         if len(names)!=len(set(names)):
             raise ValueError('Duplicate archive entry')
-        for name in names:
+        for entry,name in zip(archive.infolist(),names):
             p=PurePosixPath(name)
-            if p.is_absolute() or '..' in p.parts or '\\' in name:
+            if (name!=entry.filename or p.is_absolute() or '..' in p.parts
+                    or '\\' in name or '\0' in name):
                 raise ValueError('Unsafe archive path')
         if archive.testzip():raise ValueError('Desktop archive CRC differs')
         catalogs=[n for n in names if n.endswith('/apps/lumix_updater/patches/catalog.json')]
