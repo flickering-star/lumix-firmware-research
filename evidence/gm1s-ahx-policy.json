@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "time_utc": "2026-11-27T00:32:54.171971+00:00",
+  "model": "DMC-GM1S",
+  "internal_revision": "0x0106",
+  "physical_AHX_entry_tested": true,
+  "physical_update_tested": true,
+  "policy_change_confirmed": true,
+  "owner_observation": {
+    "activation": "Hold Playback + Q.Menu/Delete/Return + UP while switching on",
+    "file": "GM1S.AHX in SD root",
+    "sequence": [
+      "Normal menu did not open",
+      "Power LED blinked for several minutes",
+      "Front lamp stayed on for several minutes",
+      "Camera restarted automatically"
+    ],
+    "timings": "Approximate owner observations; individual updater phases not measured"
+  },
+  "readback": {
+    "schema": 1,
+    "passed": true,
+    "verified_at_utc": "2026-11-27T00:35:29.400247+00:00",
+    "model": "DMC-GM1S",
+    "internal_revision": "0x0106",
+    "original_backup_bytes": 33554432,
+    "original_backup_sha256": "31a976014477704164844ccb9618bf5e920f50a0cc250ecf824ca9189d5f3230",
+    "policy": {
+      "flash_address": "0x40692634",
+      "RAM_address": "0x70a4ebc4",
+      "flash_before": 1,
+      "flash_after": 0,
+      "RAM_before": 1,
+      "RAM_after": 0,
+      "flash_page_changed_bytes": 1,
+      "flash_page_changed_addresses": [
+        "0x40692634"
+      ]
+    },
+    "before_time_utc": "2026-11-27T00:18:06.804339+00:00",
+    "after_time_utc": "2026-11-27T00:32:54.171971+00:00",
+    "native_flash_type": 4,
+    "verified_wire_frames": 10,
+    "bytes_per_capture": 5120,
+    "before_pages": [
+      {
+        "address": "0x40000400",
+        "bytes": 1024,
+        "sha256": "7f6ac2bbc594e31d1bc03393b355296bcb0d979977e1fe274ad5a9f14c21c157",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x40692400",
+        "bytes": 1024,
+        "sha256": "a800f6513e364e8946360932924c62f3329c0cd38008fafc87c58b3f513d0637",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x70a4e800",
+        "bytes": 1024,
+        "sha256": "76b2e33747a58e1aefe0106d3a74f48f912e8b27bf555b5dd3d0848b49c49a14",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x701a7400",
+        "bytes": 1024,
+        "sha256": "0b2186dcb0ede6798f14796e159167c050c4d00b1dcee3117dd5153845dce893",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x41fe9400",
+        "bytes": 1024,
+        "sha256": "eff99683987acf1f0d9e5f3ef8c80fb346eb9d02e64c70b969a4866767720c5d",
+        "valid_wire_response": true
+      }
+    ],
+    "after_pages": [
+      {
+        "address": "0x40000400",
+        "bytes": 1024,
+        "sha256": "7f6ac2bbc594e31d1bc03393b355296bcb0d979977e1fe274ad5a9f14c21c157",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x40692400",
+        "bytes": 1024,
+        "sha256": "472eccdce4c7c7c7334b57c60cff6f18c5b8374df93cc546dfb7f2bc7ddb42b5",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x70a4e800",
+        "bytes": 1024,
+        "sha256": "cbf2d6123aa0ce66dc01b285d5df79185a9051533b10f475174e26be4993146f",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x701a7400",
+        "bytes": 1024,
+        "sha256": "0b2186dcb0ede6798f14796e159167c050c4d00b1dcee3117dd5153845dce893",
+        "valid_wire_response": true
+      },
+      {
+        "address": "0x41fe9400",
+        "bytes": 1024,
+        "sha256": "eff99683987acf1f0d9e5f3ef8c80fb346eb9d02e64c70b969a4866767720c5d",
+        "valid_wire_response": true
+      }
+    ],
+    "USB_identity_matches": true,
+    "USB_serial_is_nonempty": false,
+    "agent_camera_memory_writes": 0,
+    "automatic_retries": false,
+    "header_and_sampled_fixed_calibration_unchanged": true,
+    "complete_post_update_flash_readback": false,
+    "additional_manual_power_cycle_tested": false,
+    "offline_verifier_sha256": "3800689e02e1eb9d6131b1d11ca06e359d1fea7b194a2e72a3c3d1c1ef18d2bd",
+    "scope": "Consistency of retained wire responses and source-backup guards; no device I/O or independent hardware attestation"
+  },
+  "policy_mapping": {
+    "ROM": "0x40692634",
+    "RAM": "0x70a4ebc4",
+    "file_offset": "0x692634",
+    "before": 1,
+    "after": 0,
+    "changed_bytes": 1,
+    "initialized_data_source": "0x406318b0",
+    "initialized_data_end_exclusive": "0x406bd7bc",
+    "initialized_data_destination": "0x709ede40",
+    "updater_load": "0x7bd4e76f",
+    "allowance_store": "0x7bd4e806",
+    "allowance_context_offset": 112,
+    "unsigned_gate": "0x7bd4dd23..0x7bd4dd44"
+  },
+  "source_backup": {
+    "bytes": 33554432,
+    "sha256": "31a976014477704164844ccb9618bf5e920f50a0cc250ecf824ca9189d5f3230",
+    "complete": true
+  },
+  "candidate_raw_sha256": "7cda3e36c9e25f69a7283eb72aef62c5472853f7daf94663563068acd7172668",
+  "images": {
+    "candidate": {
+      "bytes": 100663312,
+      "sha256": "69fab144d429cf85a62f9932423eedb9beeb3c2838fbb985c0f0710507aa4c8f",
+      "records": 2097152,
+      "decoded_bytes": 33554432,
+      "decoded_sha256": "7cda3e36c9e25f69a7283eb72aef62c5472853f7daf94663563068acd7172668",
+      "all_records_independently_validated": true,
+      "addresses": "sequential offsets 0x00000000..0x01fffff0",
+      "trailer": "S70500000000FA + CRLF"
+    },
+    "rollback": {
+      "bytes": 100663312,
+      "sha256": "337bc311f117827a145a6a011412519d28aa7f507c973988262038fe39f2600c",
+      "records": 2097152,
+      "decoded_bytes": 33554432,
+      "decoded_sha256": "31a976014477704164844ccb9618bf5e920f50a0cc250ecf824ca9189d5f3230",
+      "all_records_independently_validated": true,
+      "addresses": "sequential offsets 0x00000000..0x01fffff0",
+      "trailer": "S70500000000FA + CRLF"
+    }
+  },
+  "preparation_native_checks": {
+    "cases": [
+      {
+        "name": "stock_initializer",
+        "stop": "copied",
+        "instructions": 859800
+      },
+      {
+        "name": "stock_policy_load",
+        "stop": "policy_loaded",
+        "instructions": 5
+      },
+      {
+        "name": "stock_allowance",
+        "stop": "allowance_selected",
+        "instructions": 515
+      },
+      {
+        "name": "stock_unsigned_gate",
+        "stop": "unsigned_rejected",
+        "instructions": 11
+      },
+      {
+        "name": "policy_zero_initializer",
+        "stop": "copied",
+        "instructions": 859800
+      },
+      {
+        "name": "policy_zero_policy_load",
+        "stop": "policy_loaded",
+        "instructions": 5
+      },
+      {
+        "name": "policy_zero_allowance",
+        "stop": "allowance_selected",
+        "instructions": 517
+      },
+      {
+        "name": "policy_zero_unsigned_gate",
+        "stop": "unsigned_allowed",
+        "instructions": 15
+      },
+      {
+        "name": "parser_first",
+        "stop": "returned",
+        "instructions": 1171
+      },
+      {
+        "name": "parser_policy",
+        "stop": "returned",
+        "instructions": 1136
+      },
+      {
+        "name": "parser_last",
+        "stop": "returned",
+        "instructions": 1311
+      },
+      {
+        "name": "extent_type_2",
+        "stop": "returned",
+        "instructions": 18
+      },
+      {
+        "name": "extent_type_3",
+        "stop": "returned",
+        "instructions": 13
+      },
+      {
+        "name": "extent_type_4",
+        "stop": "returned",
+        "instructions": 15
+      },
+      {
+        "name": "extent_type_5",
+        "stop": "returned",
+        "instructions": 17
+      }
+    ],
+    "count": 15,
+    "instruction_regions": [
+      {
+        "name": "initialized_data",
+        "address": "0x40003000",
+        "end_exclusive": "0x4000301e",
+        "instructions": 12,
+        "sha256": "ae3925989e6fd3c776c33f54c015dddcbf2da628876c587d84c7dce1602d1f14"
+      },
+      {
+        "name": "policy_load_and_allowance",
+        "address": "0x7bd4e76b",
+        "end_exclusive": "0x7bd4e808",
+        "instructions": 63,
+        "sha256": "8db3c58d84bf6495a17a377c00767c011d7a783949a33c39a8dd74e7c8ff4ebc"
+      },
+      {
+        "name": "context_initializer",
+        "address": "0x7bd4d841",
+        "end_exclusive": "0x7bd4d84f",
+        "instructions": 5,
+        "sha256": "7039f5483dd437ca2b29d720bf4fa5fc5d9bc467d97225bcdb32cda01feb8ffd"
+      },
+      {
+        "name": "unsigned_marker_gate",
+        "address": "0x7bd4dd23",
+        "end_exclusive": "0x7bd4dda1",
+        "instructions": 48,
+        "sha256": "7da3bcec8887cea6da2580357c3f506905b6dc095bf65415a31861071e829b7e"
+      },
+      {
+        "name": "startup_factory_calls",
+        "address": "0x4001d6b5",
+        "end_exclusive": "0x4001d706",
+        "instructions": 20,
+        "sha256": "62501a318ef0630d885061754d4a7ff53e0961bc1898cb5a509be26c173795a9"
+      },
+      {
+        "name": "factory_keys",
+        "address": "0x7bd42bfb",
+        "end_exclusive": "0x7bd42c77",
+        "instructions": 40,
+        "sha256": "7d92aeb8999a347ffafae22e4e9d339e82d141c5d09037b6ffbc9f301f2898c4"
+      },
+      {
+        "name": "key_decoders",
+        "address": "0x7bd42165",
+        "end_exclusive": "0x7bd42259",
+        "instructions": 90,
+        "sha256": "449a026686b91dd7fb6373e658ffb0bad6682e45557a0a3b32cfe4ac5b8f40f8"
+      },
+      {
+        "name": "card_gate",
+        "address": "0x7bdf5677",
+        "end_exclusive": "0x7bdf569e",
+        "instructions": 19,
+        "sha256": "17e1100cf75abb2dbc9b4fc6e7301f8219cdfdf1a916b89f413e945e2c528c68"
+      },
+      {
+        "name": "file_selection",
+        "address": "0x401330f7",
+        "end_exclusive": "0x4013319d",
+        "instructions": 59,
+        "sha256": "835c06d23f2056e5bef85f3834db9e35a5a7b64626fb1a607af2b41ea4bff8b0"
+      },
+      {
+        "name": "extent",
+        "address": "0x40133266",
+        "end_exclusive": "0x40133294",
+        "instructions": 18,
+        "sha256": "4e9ba4ee2d88ea5b1b7ce45dc48129e312fa4d4e7d0ded974b741829cbef567d"
+      },
+      {
+        "name": "reader",
+        "address": "0x40237952",
+        "end_exclusive": "0x40237a39",
+        "instructions": 103,
+        "sha256": "dee86d4503fe4b59e5b9e0992f326a62ff8ea657805ef206b605ac1c1a3f4504"
+      },
+      {
+        "name": "parser",
+        "address": "0x40237b77",
+        "end_exclusive": "0x40237c5d",
+        "instructions": 113,
+        "sha256": "7de8712df140d9124ed8128d0e85c324443135b076d3bcdd0a107eb0119bc6fa"
+      },
+      {
+        "name": "writer_wrapper",
+        "address": "0x7bd23603",
+        "end_exclusive": "0x7bd23ad7",
+        "instructions": 331,
+        "sha256": "720782375a42ab8e41e1fd8510d9d63deddd232bef7681113ec78f0540af8345"
+      },
+      {
+        "name": "writer",
+        "address": "0x7bd23ad7",
+        "end_exclusive": "0x7bd2433d",
+        "instructions": 738,
+        "sha256": "ab21ac1855395a0c25ad0f23c4ed3f1f17ad1816a12a09a0730745d1b3ebf607"
+      }
+    ],
+    "backend_sha256": "c5734de55b8cd666f6ddc6b69f6a0288a3a4ea02abae7af4ce2ee19793c245d8",
+    "full_native_file_reader_executed": false,
+    "hardware_writer_emulated": false
+  },
+  "scope": "Owner performed the SD AHX update; agent confirmed stored/RAM policy through read-only USB inspection and replayed saved frames offline",
+  "firmware_or_raw_capture_included": false,
+  "agent_sent_USB_memory_write": false,
+  "limitations": [
+    "Complete post-update32MiB flash readback has not been performed.",
+    "USB serial is empty; descriptor equality alone cannot uniquely identify a body.",
+    "An additional controlled manual power cycle and rollback installation have not been tested.",
+    "AHX depends on existing firmware startup/card/writer code; this does not demonstrate blank-flash or independent processor-ROM recovery.",
+    "This result is specific to the retained GM1S build/body and does not make GM1 firmware or existing desktop patches compatible."
+  ]
+}

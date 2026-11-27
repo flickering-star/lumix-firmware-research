@@ -63,6 +63,14 @@ GM5 has an equivalent. This path itself lives in the existing flash firmware,
 so it requires enough working code to reach it. No AHX file was generated or
 placed on a card, no activation sequence was attempted, and no flash was written.
 
+The later [GM1S AHX experiment](gm1s-ahx-policy.md) is a separate physical
+result: the owner activated its SD updater and installed a full same-body
+image with one policy byte changed. Before/after read-only USB inspection
+confirms flash and RAM policy `1 → 0`, with only that byte changed in the
+complete flash policy page. The owner reports LED activity followed by an
+automatic restart. A complete post-update flash readback and recovery from
+damaged startup firmware have not been demonstrated.
+
 The earlier [GH2 AHX investigation](gh2-sd-factory-inputs.md) established a
 similar separate image-input path. The GM1 finding above comes from GM1 bytes,
 not an assumption of compatibility with GH2.

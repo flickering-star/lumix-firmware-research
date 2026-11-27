@@ -19,6 +19,17 @@ evidence. Obtain firmware and device backups yourself. Firmware binaries,
 patched update files, raw USB/memory captures, compiled tools and private
 connection files are excluded from Git history.
 
+## GM1S AHX installation
+
+The owner successfully activated the GM1S SD AHX updater with **Playback +
+Q.Menu/Delete/Return + UP held while switching on**. Read-only inspection after
+its automatic restart confirms stored policy `1 → 0` at `0x40692634` and RAM
+policy `1 → 0` at `0x70a4ebc4`. The full same-body image changed only one intended
+payload byte. See [the procedure, image format and evidence](docs/gm1s-ahx-policy.md).
+This route requires working startup firmware; independent ROM recovery and a
+complete post-update flash readback have not been demonstrated. GM1S desktop
+patch support remains separate from this result.
+
 ## GM1/GM5 desktop updater
 
 Version **0.2.12** removes the firmware revision/build override and adds **Data backup / Resume**. Patching requires an exact reviewed profile: GM1 internal0110, or GM5 internal0110/0111. The displayed1.1 version is not a unique build identity.
