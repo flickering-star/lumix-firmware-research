@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "recorded_at_utc": "2026-11-27T02:43:15.928139+00:00",
+  "event_date_local": "2026-11-26",
+  "event_timezone": "America/St_Johns",
+  "model": "DMC-GM5",
+  "internal_revision": "0x0111/0x0111",
+  "scope": "Owner-confirmed AHX recovery; image preparation and SD copy independently checked; no post-recovery device readback",
+  "owner_observation": {
+    "before": "GM5 described as bricked",
+    "after": "restored",
+    "physical_recovery_owner_confirmed": true,
+    "exact_failure_regions_captured": false,
+    "button_sequence_reconfirmed_for_this_case": false,
+    "LED_timings_recorded_for_this_case": false
+  },
+  "backup": {
+    "bytes": 33554432,
+    "sha256": "c51dca467a8bd24c0be75915acb54692f9213a7d7b9896c5e50a010d830a35ca",
+    "captured_at_utc": "2026-11-06T03:39:21.211249+00:00",
+    "complete": true,
+    "capture_and_resumed_prefix_revalidated": true,
+    "photo_and_backup_internal_serial_match": true,
+    "serial_values_or_photo_published": false
+  },
+  "candidate": {
+    "raw_bytes": 33554432,
+    "raw_sha256": "672d389bb8f09a551c0889e66d911ff307932768ed37221cd727d68abc28b67a",
+    "AHX_bytes": 100663312,
+    "AHX_sha256": "14b5071b0c52a75e39ca7921f3fed56271068bfe190b26d0fe1c6959bab13aac",
+    "filename": "GM5.AHX",
+    "full_encoding_independently_decoded": true,
+    "policy": {
+      "flash_address": "0x406b1bdc",
+      "RAM_address": "0x70a68490",
+      "file_offset": "0x6b1bdc",
+      "before": 1,
+      "after": 0,
+      "changed_bytes": 1
+    },
+    "other_payload_bytes_identical_to_backup": true,
+    "calibration_payload_unchanged": true,
+    "calibration_sectors_excluded_from_programming": false,
+    "stock_writer_mode": 0,
+    "later_aspect_or_LUT_patches_included": false
+  },
+  "SD_copy": {
+    "sha256": "14b5071b0c52a75e39ca7921f3fed56271068bfe190b26d0fe1c6959bab13aac",
+    "bytes": 100663312,
+    "source_and_SD_hashes_match": true,
+    "photo_identity_revalidated": true
+  },
+  "mode_ranges": [
+    {
+      "mode": 0,
+      "start": "0x0000000",
+      "end_exclusive": "0x2000000",
+      "bytes": 33554432,
+      "calibration_sectors_written": true
+    },
+    {
+      "mode": 1,
+      "start": "0x0000000",
+      "end_exclusive": "0x1fa0000",
+      "bytes": 33161216,
+      "calibration_sectors_written": false
+    },
+    {
+      "mode": 2,
+      "start": "0x1fa0000",
+      "end_exclusive": "0x2000000",
+      "bytes": 393216,
+      "calibration_sectors_written": true
+    }
+  ],
+  "stock_selection": {
+    "normal_filename": "GM5.AHX",
+    "normal_mode": 0,
+    "normal_mode_clear": "0x40133603",
+    "mode_to_wrapper": "0x4013369f",
+    "wrapper": "0x7bd24722",
+    "mode_storage": "0x703690e9",
+    "tail_gate": "0x7bd2507b",
+    "only_mode_1_skips_tail": true,
+    "extended_filename": "GM5E.AHX",
+    "extended_mode": 3,
+    "extended_only_after_normal_file_open_failure": "0xffffffff",
+    "extended_skips_normal_preservation": true,
+    "extended_skips_calibration_tail": false,
+    "mode_not_selectable_from_AHX_contents": true
+  },
+  "normal_wrapper_staging_preservation": [
+    {
+      "offset": "0x1fe0000",
+      "bytes": 20480
+    },
+    {
+      "offset": "0x1fa1e00",
+      "bytes": 504
+    },
+    {
+      "offset": "0x1fc1e00",
+      "bytes": 504
+    }
+  ],
+  "preparation_native": {
+    "passed": true,
+    "cases": [
+      {
+        "name": "original_initializer",
+        "instructions": 897684
+      },
+      {
+        "name": "policy_zero_initializer",
+        "instructions": 897684
+      },
+      {
+        "name": "parser_first",
+        "instructions": 1171
+      },
+      {
+        "name": "parser_policy",
+        "instructions": 1154
+      },
+      {
+        "name": "parser_last",
+        "instructions": 1311
+      },
+      {
+        "name": "stock_caller_mode_0",
+        "instructions": 12
+      },
+      {
+        "name": "stock_caller_mode_3",
+        "instructions": 12
+      },
+      {
+        "name": "tail_gate_mode_0",
+        "instructions": 3
+      },
+      {
+        "name": "tail_gate_mode_1",
+        "instructions": 4
+      },
+      {
+        "name": "tail_gate_mode_2",
+        "instructions": 3
+      },
+      {
+        "name": "tail_gate_mode_3",
+        "instructions": 3
+      }
+    ],
+    "count": 11,
+    "hardware_programmer_executed_in_these_checks": false
+  },
+  "prior_full_virtual_NOR_controls": {
+    "passed": 7,
+    "mode_cases": [
+      {
+        "name": "application_only",
+        "mode": 1,
+        "erases": 253,
+        "program_buffers": 32384,
+        "complete_virtual_nor_matches_oracle": true
+      },
+      {
+        "name": "all_regions",
+        "mode": 0,
+        "erases": 256,
+        "program_buffers": 32768,
+        "complete_virtual_nor_matches_oracle": true
+      },
+      {
+        "name": "data_only",
+        "mode": 2,
+        "erases": 3,
+        "program_buffers": 384,
+        "complete_virtual_nor_matches_oracle": true
+      }
+    ],
+    "physical_reset_or_display_teardown_executed": false
+  },
+  "post_recovery": {
+    "USB_readback_performed": false,
+    "policy_value_independently_confirmed": false,
+    "calibration_contents_independently_read_back": false,
+    "complete_32MiB_flash_readback": false
+  },
+  "backup_recommendation": "Make and verify a complete same-body32MiB backup before any firmware modification; retain an untouched copy off the SD card",
+  "firmware_backups_keys_or_raw_captures_published": false,
+  "limits": [
+    "Stock full-image AHX erases and rewrites calibration sectors even when their payload bytes match the backup.",
+    "The normal wrapper may replace selected staging bytes with live settings; file verification is not post-recovery flash verification.",
+    "AHX requires surviving installed startup/card/programmer code; this is not blank-flash or independent processor-ROM recovery.",
+    "A shortened prefix-only AHX does not select mode1 and can fail after erasure has begun.",
+    "This is one owner-confirmed GM5 failure/recovery case, not proof of every firmware modification or failure."
+  ]
+}

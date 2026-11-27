@@ -58,10 +58,10 @@ pins both complete program hashes, nine instruction regions and ten call links.
 
 This establishes an additional **factory/recovery-style SD image programming
 path in GM1 software**. It does not establish that this was used for the first
-programming step in manufacturing, that it accepts an arbitrary image, or that
-GM5 has an equivalent. This path itself lives in the existing flash firmware,
-so it requires enough working code to reach it. No AHX file was generated or
-placed on a card, no activation sequence was attempted, and no flash was written.
+programming step in manufacturing or that it accepts an arbitrary image.
+This path itself lives in the existing flash firmware, so it requires enough
+working code to reach it. That initial GM1 investigation generated no AHX file
+and attempted no physical activation or flash write.
 
 The later [GM1S AHX experiment](gm1s-ahx-policy.md) is a separate physical
 result: the owner activated its SD updater and installed a full same-body
@@ -70,6 +70,21 @@ confirms flash and RAM policy `1 → 0`, with only that byte changed in the
 complete flash policy page. The owner reports LED activity followed by an
 automatic restart. A complete post-update flash readback and recovery from
 damaged startup firmware have not been demonstrated.
+
+The owner subsequently [restored a bricked GM5 using AHX](gm5-ahx-recovery.md)
+from a complete same-body backup with one policy byte changed. The input file
+and completed SD copy were verified; the successful restoration is owner-reported.
+No post-recovery GM5 policy/calibration or full-flash readback has been performed.
+
+**Make and verify a complete same-body backup before any firmware modification.**
+The GM1/GM5 full backup is 32 MiB and includes identity, settings and calibration
+that an official update BIN cannot replace. Keep an untouched copy off the SD card.
+Stock `GM5.AHX` selects full-image mode 0 and rewrites the final data sectors.
+Mode 1 skips the final 384 KiB; mode 2 writes only that tail. These are internal
+writer choices, not modes selected by shortening or editing the AHX file.
+`GM5E.AHX` uses extended fallback mode 3 and does not exclude calibration.
+The linked recovery guide explains the caller/core distinction and live-settings
+preservation. AHX is a firmware-resident recovery path, not processor-ROM recovery.
 
 The earlier [GH2 AHX investigation](gh2-sd-factory-inputs.md) established a
 similar separate image-input path. The GM1 finding above comes from GM1 bytes,
@@ -85,7 +100,7 @@ The verifier checks source identity, disassembly annotations, instruction
 continuity, relative calls and filenames. The behavioral interpretation is
 manual analysis; this is not emulation or hardware validation of the writer.
 
-## What remains unknown for GM5 and USB
+## What remains unknown for blank-board recovery and USB
 
 The [GM5 service manual](service-manual-findings.md) identifies IC6003 as
 32 MiB of parallel NOR with a sixteen-bit data bus. It does not identify a
@@ -101,5 +116,6 @@ GH2's service protocol alone cannot establish either.
 Panasonic's [consumer update instructions](https://av.jpn.support.panasonic.com/support/global/cs/dsc/download/fts/step2.html)
 describe an SD-card update on an already functioning camera. That documents the
 user process, not the factory's first programming method. Finding a separate
-loader could give another installation route, but accepted image checks and
-GM5 support still need to be established.
+loader gives another installation route. One same-body GM5 AHX recovery is now
+owner-confirmed; manufacturing methods, recovery with an unusable AHX entry and
+independent processor-ROM recovery remain unestablished.

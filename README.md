@@ -6,7 +6,7 @@ The current GM1 patch uses fixed 100% LUT strength; brief colored lines after
 Import/No LUT remain unresolved.**
 **All original project code was written by a chatbot. Flashing Panasonic
 cameras is risky because recovery options are limited. No independent GM1/GM5
-recovery procedure is validated here; a bad update can leave a camera unusable.**
+processor-ROM recovery procedure is validated here; a bad update can leave a camera unusable.**
 
 An unmaintained reference archive of Panasonic Lumix firmware research, USB
 service protocols, update authentication, native-code emulation and a tested
@@ -18,6 +18,20 @@ The repository contains source, patch recipes, documentation and summarized
 evidence. Obtain firmware and device backups yourself. Firmware binaries,
 patched update files, raw USB/memory captures, compiled tools and private
 connection files are excluded from Git history.
+
+## GM5 AHX recovery and backups
+
+**Make and verify a complete same-body backup before any firmware modification.**
+For GM1/GM5, retain the entire 32 MiB flash image, including identity, settings
+and calibration, and keep an untouched copy off the camera's SD card.
+
+On November 26 the owner reported successful recovery of a bricked GM5 using
+`GM5.AHX` built from its own full backup, with one policy byte changed. The
+stock route selected full-image mode 0, which rewrites the calibration sectors;
+application-only mode 1 cannot be selected by editing an AHX file. See
+[the recovery case, updater modes and file structure](docs/gm5-ahx-recovery.md).
+Recovery is owner-confirmed; post-recovery policy/calibration readback has not
+been performed. AHX still requires surviving startup/card/programmer code.
 
 ## GM1S AHX installation
 
@@ -34,7 +48,7 @@ patch support remains separate from this result.
 
 Version **0.2.12** removes the firmware revision/build override and adds **Data backup / Resume**. Patching requires an exact reviewed profile: GM1 internal0110, or GM5 internal0110/0111. The displayed1.1 version is not a unique build identity.
 
-Data backup saves a complete camera backup for later recovery if something goes wrong. It reads the full32MiB mapped flash window even when patch inspection refuses a build. It saves verified checkpoints, supports pause/disconnect/resume, checks camera identity and source anchors, and verifies the final saved image. The app displays instructions to turn Sleep Mode OFF before reconnecting in service mode. Select the same backup folder to resume. Conversion to AHX and physical restoration still need validation.
+Data backup saves a complete camera backup for later recovery if something goes wrong. It reads the full32MiB mapped flash window even when patch inspection refuses a build. It saves verified checkpoints, supports pause/disconnect/resume, checks camera identity and source anchors, and verifies the final saved image. The app displays instructions to turn Sleep Mode OFF before reconnecting in service mode. Select the same backup folder to resume. Full-backup AHX restoration is now owner-confirmed for one GM5 case; see the recovery guide above for its mode selection and limits.
 
 Both apps include all26 native firmware languages on GM1 and GM5, including
 Korean and Middle East languages in the same catalog. The language-only and
