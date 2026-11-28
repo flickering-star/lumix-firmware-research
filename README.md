@@ -31,6 +31,17 @@ application-only mode 1 cannot be selected by editing an AHX file. See
 Recovery is owner-confirmed; post-recovery policy/calibration readback has not
 been performed. AHX still requires surviving startup/card/programmer code.
 
+## GM1 startup UPD flashing
+
+The owner confirmed successful startup flashing of the existing GM1 LUT update
+renamed to **`GM1.upd`**, with **Q.Menu + UP + Playback held while switching on**.
+The camera already had unsigned-update policy disabled. This normal-container
+route may offer recovery when the UI cannot start; the reviewed three-component
+package excludes the settings/calibration tail. Preservation depends on the
+package's write ranges, and recovery from an actually bricked GM1 is not yet
+demonstrated. See [the successful case, exact filename, checks and recovery
+limits](docs/gm1-startup-upd-route.md). GM5's counterpart is traced but untested.
+
 ## GM1S AHX installation
 
 The owner successfully activated the GM1S SD AHX updater with **Playback +

@@ -20,6 +20,13 @@ card and programming code in the installed firmware.
 
 ## What was restored
 
+A separate [startup `.upd` route](gm1-startup-upd-route.md) is now
+owner-confirmed for flashing on GM1 and statically traced on GM5. Its normal
+component directory allows a package to exclude calibration sectors. It is a
+potential alternative when the UI is damaged; GM5 UPD flashing and actual brick
+recovery through UPD remain unconfirmed. This does not change full-image AHX
+behavior or replace a same-body backup.
+
 The source backup contains 33,554,432 bytes and was captured on November 6 UTC.
 Its original internal revision is `0x0111/0x0111`. Before preparing the recovery
 file, the internal serial in an original photograph from the affected camera

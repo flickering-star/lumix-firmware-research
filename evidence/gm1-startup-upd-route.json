@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "date": "2026-11-28",
+  "model": "DMC-GM1",
+  "physical_startup_UPD_flashing_owner_confirmed": true,
+  "physical_bricked_camera_recovery_via_UPD_confirmed": false,
+  "owner_report": "Owner requested documentation of successful .upd flashing after correcting the earlier actual filename GM1.upd.bin.",
+  "reported_entry": "Q.Menu + UP + Playback held while switching on",
+  "normal_filename": "GM1.upd",
+  "installed_firmware": "Owner reports already running GM1 LUT firmware with unsigned-update policy disabled.",
+  "reviewed_package_sha256": "a528d4f7c873d10be9a0bd57d50f86b97b2dadfdbbb7920ab993977fa509f900",
+  "reviewed_package_bytes": 23987712,
+  "reviewed_package_components": [
+    {
+      "name": "program",
+      "flash_offset_start": "0x0",
+      "flash_offset_end_exclusive": "0x880000",
+      "bytes": 8912896
+    },
+    {
+      "name": "guires",
+      "flash_offset_start": "0x900000",
+      "flash_offset_end_exclusive": "0x1400000",
+      "bytes": 11534336
+    },
+    {
+      "name": "program2",
+      "flash_offset_start": "0x1400000",
+      "flash_offset_end_exclusive": "0x1760000",
+      "bytes": 3538944
+    }
+  ],
+  "reviewed_package_excludes_settings_calibration_tail": true,
+  "settings_calibration_tail": {
+    "start": "0x1fa0000",
+    "end_exclusive": "0x2000000"
+  },
+  "on_card_package_hash_independently_read": false,
+  "post_update_calibration_readback_performed": false,
+  "native_header_control_cases": [
+    {
+      "name": "normal",
+      "selector": 2,
+      "policy_input": 0,
+      "wrong_model": false,
+      "status": "0x0",
+      "steps": 310,
+      "native_report_sha256": "f65441f0507351acc093f92c0e76d0d408b69622845647b84d13bbe863ea969b"
+    },
+    {
+      "name": "extended",
+      "selector": 3,
+      "policy_input": 0,
+      "wrong_model": false,
+      "status": "0x80000064",
+      "steps": 280,
+      "native_report_sha256": "454f89d2e4c38da02245f15311ebb3b6a64a8b486ff7e003c488e6a2d7e609c6"
+    },
+    {
+      "name": "normal-policy-one",
+      "selector": 2,
+      "policy_input": 1,
+      "wrong_model": false,
+      "status": "0x0",
+      "steps": 313,
+      "native_report_sha256": "d2ba2b42b4f5bec121dc7725b7d569c4c50a149074d4328cef499c6de5d3b055"
+    },
+    {
+      "name": "wrong-model",
+      "selector": 2,
+      "policy_input": 0,
+      "wrong_model": true,
+      "status": "0x80000064",
+      "steps": 257,
+      "native_report_sha256": "3d63f00e3a80bd584f59e417273b38d7b3f74c0d31d90732ac2d1a534699f00b"
+    }
+  ],
+  "native_header_control_instructions": 1160,
+  "native_regions": [
+    {
+      "name": "startup-dispatch",
+      "start": "0x4004ffdc",
+      "end_exclusive": "0x4005005a",
+      "instructions": 34,
+      "native_sha256": "f4a6cb206e7590c58ff1a620c023cc34e12eab959409651a786ce033065488d9",
+      "disassembly_sha256": "54ae7862c437a626ae0fbc591453db9ae912e3efbbcd9d771597e929064b9a6c"
+    },
+    {
+      "name": "startup-upd-wrapper",
+      "start": "0x7bd97b79",
+      "end_exclusive": "0x7bd97d54",
+      "instructions": 154,
+      "native_sha256": "ce3f7285325737a8dd5f1547bf6f8bcbafac1edad311f172a0907993bf864682",
+      "disassembly_sha256": "9fa30583a78250921d6b68249c8eeab43dd1397d90a14d9706fb22450162eda6"
+    },
+    {
+      "name": "model-info",
+      "start": "0x4028bb25",
+      "end_exclusive": "0x4028bb8a",
+      "instructions": 25,
+      "native_sha256": "64d37e6125bdcd62f0fad99c38a081e7f19cfa827cdb16df21a2b9ec2b47afef",
+      "disassembly_sha256": "fff163dba4a709ef2ac17dd4b4b45b9de54ba3747b9bbd05741a7a532f6dbc98"
+    },
+    {
+      "name": "header-gate",
+      "start": "0x7bd4a0dd",
+      "end_exclusive": "0x7bd4a198",
+      "instructions": 81,
+      "native_sha256": "544bf346a1c34ec61991728d4fed957503591b3a447e8823ab5249d28882230b",
+      "disassembly_sha256": "7b8a7f2746aa691b48cc7a9f8cca1fdfc65457afe7147723087cb4b746ffaba3"
+    }
+  ],
+  "startup_route": {
+    "ahx_call": "0x4005000a -> 0x40158fe8",
+    "UPD_call_if_AHX_returns": "0x40050011 -> 0x7bd97b79",
+    "job": "0x7bd97cc1 -> 0x7bd4a254",
+    "policy": "0x70903814",
+    "unsigned_allowance_context_offset": 92
+  },
+  "GM5": {
+    "static_startup_counterpart_traced": true,
+    "physical_startup_UPD_flashing_confirmed": false,
+    "wrapper": "0x7bda76c8",
+    "update_job": "0x7bd4fb93"
+  },
+  "agent_camera_USB_SD_or_flash_operation_performed": false,
+  "raw_firmware_backup_or_calibration_published": false,
+  "limits": [
+    "Successful flashing is owner-reported; no new camera readback was performed.",
+    "Reviewed package identity follows the owner description of the last released LUT BIN; the on-card hash was not read.",
+    "Calibration exclusion is a property of the reviewed component ranges, not of the .upd extension.",
+    "Surviving startup firmware, card access and updater code are required; this is not independent processor-ROM recovery.",
+    "The test camera already had unsigned-update policy disabled; renaming does not bypass stock authentication.",
+    "No GM5, GM1S or GX9 physical success is inferred from this GM1 result."
+  ]
+}

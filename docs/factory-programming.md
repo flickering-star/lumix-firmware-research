@@ -100,6 +100,22 @@ The verifier checks source identity, disassembly annotations, instruction
 continuity, relative calls and filenames. The behavioral interpretation is
 manual analysis; this is not emulation or hardware validation of the writer.
 
+## Startup UPD: a separate component-based update route
+
+The owner has also confirmed [successful GM1 startup `.upd`
+flashing](gm1-startup-upd-route.md). With the existing LUT update renamed to
+`GM1.upd`, the reported entry combination is Q.Menu + UP + Playback while
+switching on. The camera already had unsigned-update policy disabled. The
+startup wrapper runs after the AHX job returns and uses the normal update
+container and decoder, rather than the S3 text reader.
+
+The reviewed three-component package excludes the final settings/calibration
+area. This makes it a potential UI-independent recovery option that can leave
+calibration sectors untouched. Preservation depends on the package's component
+ranges; the `.upd` filename itself does not enforce it. Actual unbricking via
+UPD remains untested, and enough startup/card/updater code must survive. GM5's
+corresponding wrapper is statically traced but not physically confirmed.
+
 ## What remains unknown for blank-board recovery and USB
 
 The [GM5 service manual](service-manual-findings.md) identifies IC6003 as
