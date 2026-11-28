@@ -1,0 +1,53 @@
+{
+  "version": "0.2.14",
+  "source_commit": "fa9e3017fb00153ed73c0dd31c1ca952b89ba00d",
+  "GM1_cache_author": "ShawnMayer",
+  "GM1_cache_repository": "https://github.com/ShawnMayer/gm1-lut-opacity-cache",
+  "GM1_native_proof_sha256": "10623b41a8f9891f28e0cede2b299250a268a0666c27ac2710de7a120501f0ad",
+  "GM1_native_table_and_ABI_controls_passed": true,
+  "GM1_owner_feedback": "A little slower than without Opacity control, but quite responsive.",
+  "complete_physical_regression_coverage_claimed": false,
+  "GM5_cache_excluded": true,
+  "GM5_released_output_unchanged": true,
+  "host_tests_passed": 34,
+  "camera_contacted": false,
+  "schema": 1,
+  "artifacts": [
+    {
+      "name": "Lumix-Firmware-Updater-darwin-arm64.zip",
+      "bytes": 19293529,
+      "sha256": "8aea85bc8b7b8f89fe22109980a68ebf74ca652e4c03247b53a620a44e2b8675",
+      "credits_notice_present": true
+    },
+    {
+      "name": "Lumix-Firmware-Updater-win32-x86_64.zip",
+      "bytes": 21015109,
+      "sha256": "d6c2213bc131d0f89d145855bef57ffd4b3839012a396f4e81a6196b55c12169",
+      "credits_notice_present": true
+    }
+  ],
+  "release_tag": "updater-v0.2.14",
+  "GM1_main_before_language_sha256": "a2543e4171aa1afc22e375d8fdce13a45d0c29f3830cee5b6be763f7e106a5d9",
+  "GM1_main_with_languages_sha256": "66d9bf3d7d29b985335d390f48ab015f83be3594848d144ba6950075df834427",
+  "GM1_cache_commit": "52b4b23e93446d36e2024f3b4f59d39724aa55b6",
+  "GM1_cache_addon_bytes": 209,
+  "GM1_cache_addon_uses_new_allocation": false,
+  "GM1_cache_requires_cell_migration": false,
+  "GM5_released_package_sha256": "3ba90798135dda9df1df623264f56ad853b13a071c0628035b512b06d9fc57aa",
+  "GM1_package_matches_owner_test_sha256": "a528d4f7c873d10be9a0bd57d50f86b97b2dadfdbbb7920ab993977fa509f900",
+  "windows_build_from_source": true,
+  "windows_workflow_run": 46091700626,
+  "windows_build_commit": "fa9e3017fb00153ed73c0dd31c1ca952b89ba00d",
+  "mac_frozen_runtime_and_GUI_checks_passed": true,
+  "windows_runtime_or_GUI_execution_verified": false,
+  "both_apps_shipped_code_and_catalogs_verified": true,
+  "application_modules_per_app": 14,
+  "credits_in_both_apps_and_source": true,
+  "all_26_languages_retained": true,
+  "native_recording_limits_retained": true,
+  "saved_LUT_banks_preserved": true,
+  "revision_skips_removed": true,
+  "settings_and_calibration_excluded": true,
+  "firmware_binaries_and_camera_keys_bundled": false,
+  "pair_audit_sha256": "493803a879c9e684d4b3663aa34203529aeee2f0bf767a597cde1aae3703394a"
+}
