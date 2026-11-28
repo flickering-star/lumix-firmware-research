@@ -1,3 +1,3 @@
-"""Guided, profile-checked Lumix SD firmware preparation and USB bootstrap."""
+"""Lumix Firmware Updater."""
 
-__version__ = "0.2.13"
+__version__ = "0.2.14"

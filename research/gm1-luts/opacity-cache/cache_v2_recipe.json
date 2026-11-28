@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "id": "gm1-v024-strength-cache-v2",
+  "model": "DMC-GM1",
+  "base": "official V1.1 + recipes/gm1-v11-luts-opacity-v0.2.4.json (program target 2698d38d...)",
+  "source": "patches/cache_strength_v2.S",
+  "rows": [
+    {
+      "id": "C1-hook",
+      "component": "program",
+      "address": "0x407f434a",
+      "offset": 8340298,
+      "length": 33,
+      "before_sha1": "d9cd47969a7e8ef2d87f07a9fc3b35d314d8a219",
+      "after_sha1": "5b30048c59b152ef64d078be8883f8764b0959fb",
+      "after_hex": "dcb6bcf4ffcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcb"
+    },
+    {
+      "id": "C2-entry",
+      "component": "program",
+      "address": "0x40740000",
+      "offset": 7602176,
+      "length": 176,
+      "before_sha1": "36d22b3270b8012ef57d476e725e79f086f1a1ee",
+      "after_sha1": "e725f6be1c978782aa9af1d1d38f55dbf1445379",
+      "after_hex": "5c182060040c2e230270e1e750fcc601000000c9f646284e2c580c850af2445908f8c108f214fce40000434b42245d1821e075a4c92ff805045810a4c927f805085828a4c91ff8050c582ca4c9175c1820605d1c2c8c08dd5b81533b3008dc0d430b005d1821e00061580c850af2445c1c5d182160dd8b1f0600f014a000c92d5c1820605d1c2c8c08dd2981533b30085d1821e05810f811045828f81108582cf8110c582461dcc5420b00dc02430b00"
+    }
+  ]
+}

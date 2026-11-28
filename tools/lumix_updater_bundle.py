@@ -65,6 +65,7 @@ def bundle(output,assets,*,architecture=None,cc=None,skip_checks=False,usb_libra
         '--paths',REPO,'--add-data',str(assets)+':apps/lumix_updater/patches',
         '--add-binary',str(codec)+':apps/lumix_updater/native',
         '--add-binary',str(usb)+':apps/lumix_updater/native',
+        '--add-data',str(REPO/'CREDITS.md')+':.',
         '--collect-data','certifi','--exclude-module','libusb_package',
         '--exclude-module','pytest']
     if sys.platform=='darwin':command+=['--target-arch',target,

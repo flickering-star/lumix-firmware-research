@@ -89,7 +89,12 @@ class App:
         self.status=tk.StringVar(value='Ready')
         self.bar=ttk.Progressbar(outer,mode='determinate');self.bar.pack(fill='x',pady=(15,6))
         ttk.Label(outer,textvariable=self.status,wraplength=730).pack(anchor='w')
-        ttk.Label(outer,text='Version '+__version__,font=('TkDefaultFont',9)).pack(anchor='e')
+        footer=ttk.Frame(outer);footer.pack(fill='x')
+        credit=ttk.Label(footer,text='GM1 Opacity cache: ShawnMayer',font=('TkDefaultFont',9),
+            foreground='#2165b0',cursor='hand2')
+        credit.pack(side='left')
+        credit.bind('<Button-1>',lambda event:webbrowser.open('https://github.com/ShawnMayer/gm1-lut-opacity-cache'))
+        ttk.Label(footer,text='Version '+__version__,font=('TkDefaultFont',9)).pack(side='right')
         root.after(80,self.poll)
 
     def set_steps(self,text):

@@ -1,9 +1,7 @@
 # Lumix Firmware Research
 **Recording-limit removal is withdrawn.** The owner reports corrupt SD video files after recording beyond30 minutes. Rebuild and install firmware with native recording limits to remove an already installed limit patch.
 
-**GM1: use the current desktop release. Earlier LUT builds with Opacity can cause severe UI lag.
-The current GM1 patch uses fixed 100% LUT strength; brief colored lines after
-Import/No LUT remain unresolved.**
+**GM1: updater0.2.14 restores Opacity with the blend cache by [ShawnMayer](https://github.com/ShawnMayer/gm1-lut-opacity-cache). The owner reports responsive controls with slight overhead versus fixed strength. Brief colored lines after Import/No LUT remain unresolved.**
 **All original project code was written by a chatbot. Flashing Panasonic
 cameras is risky because recovery options are limited. No independent GM1/GM5
 processor-ROM recovery procedure is validated here; a bad update can leave a camera unusable.**
@@ -46,8 +44,14 @@ patch support remains separate from this result.
 
 ## GM1/GM5 desktop updater
 
-Version **0.2.12** removes the firmware revision/build override and adds **Data backup / Resume**. Patching requires an exact reviewed profile: GM1 internal0110, or GM5 internal0110/0111. The displayed1.1 version is not a unique build identity.
+Version **0.2.14** integrates the GM1 LUT Opacity cache by
+[ShawnMayer](https://github.com/ShawnMayer/gm1-lut-opacity-cache), restoring
+adjustment without recomputing an unchanged blend on every frame. See
+[credits and usage notice](CREDITS.md). GM5 retains its existing released LUT
+implementation; the separate failing cache experiment is excluded.
 
+Exact GM1/GM5 internal0110/0111 profile checks and **Data backup / Resume** remain
+available. The displayed1.1 version is not a unique build identity.
 Data backup saves a complete camera backup for later recovery if something goes wrong. It reads the full32MiB mapped flash window even when patch inspection refuses a build. It saves verified checkpoints, supports pause/disconnect/resume, checks camera identity and source anchors, and verifies the final saved image. The app displays instructions to turn Sleep Mode OFF before reconnecting in service mode. Select the same backup folder to resume. Full-backup AHX restoration is now owner-confirmed for one GM5 case; see the recovery guide above for its mode selection and limits.
 
 Both apps include all26 native firmware languages on GM1 and GM5, including
@@ -57,14 +61,15 @@ LUT options use this catalog. See
 
 Both apps are compiled from source on their target systems. The Windows build uses the previously tested USB library. The read-only backup workflow has full-window and interruption/integrity controls; these offline checks do not replace testing the new workflow on the camera.
 
-- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.12)
+- [Mac and Windows apps, checksums and release notes](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.14)
 - [Instructions, build source and limitations](apps/README.md)
 - [Recording-limit withdrawal](evidence/lumix-recording-limit-withdrawal.json)
 
-Supported profiles are GM1 firmware1.1/internal0110 and GM5 internal0110/0111.
-**GM1S is unsupported** and is rejected. GM1 uses fixed100% LUT strength and
-blocks invisible adjustment rows. GM5 retains Opacity. GM1 can remain slightly
-slower than native styles and may show brief colored lines after Import/No LUT.
+Supported profiles are GM1 firmware1.1/internal0110/0111 and GM5 internal0110/0111.
+**GM1S is unsupported** and is rejected. Both models expose LUT Opacity. GM1
+uses the new blend cache; GM5 keeps the previously released implementation.
+GM1 can remain slightly slower than native styles and may show brief colored
+lines after Import/No LUT.
 The [previous v0.2.4 release](https://github.com/flickering-star/lumix-firmware-research/releases/tag/updater-v0.2.4)
 includes GM1 Opacity and its severe-delay warning. See
 [GM1 LUT instructions and limitations](docs/gm1-luts.md).
